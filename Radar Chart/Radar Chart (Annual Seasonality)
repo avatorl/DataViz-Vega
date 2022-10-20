@@ -8,7 +8,7 @@
   "data": [
     {
       "name": "dataset-url",
-      "url": "https://dl.dropboxusercontent.com/s/g9vz6kzpe1h4gqa/dataset.csv",
+      "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/Radar%20Chart/dataset.csv",
       "format": {"type": "csv", "parse": "auto"}
     },
     {"name": "dataset",
