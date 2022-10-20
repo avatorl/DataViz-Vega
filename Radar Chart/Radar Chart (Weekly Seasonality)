@@ -1,41 +1,106 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
-  "description": "",
-  "width": 700,
-  "height": 700,
-  "padding": 50,
-  "autosize": {
-    "type": "none",
-    "contains": "content"
-  },
-  "data": [{"name": "dataset"}],
-  "title": {
-    "text": "Average Daily Count of Bicycles by Day of Week",
-    "encode": {
-      "title": {
-        "enter": {
-          "align": {"value": "left"},
-          "dx": {
-            "signal": "-radius*1.03"
-          },
-          "dy": {"signal": "-5"},
-          "orient": {"value": "top"},
-          "fill": {"value": "#118DFF"},
-          "font": {
-            "value": "Segoe UI Light"
-          },
-          "fontSize": {"value": 20},
-          "fontStyle": {
-            "value": "normal"
-          }
-        }
-      }
-    }
-  },
-  "signals": [
+  "description": "Average Daily Count of Bicycles by Day of Week",
+  "width": 690,
+  "height": 690,
+  "padding": {"left": 60, "top": 100, "right": 60, "bottom": 50},
+  "autosize": "none",
+  "data": [
     {
-      "name": "radius",
-      "update": "width / 2"
+      "name": "dataset-url",
+      "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/Radar%20Chart/dataset_weekly.csv",
+      "format": {"type": "csv", "parse": "auto"}
+    },
+    {"name": "dataset", "source": "dataset-url"},
+    {
+      "name": "dataset-individual-years",
+      "source": "dataset",
+      "transform": [
+        {
+          "type": "aggregate",
+          "groupby": ["year", "day_of_week"],
+          "ops": ["average", "min", "max"],
+          "fields": ["value", "min", "max"],
+          "as": ["value", "min", "max"]
+        },
+        {"type": "filter", "expr": "Aggregation=='years'"}
+      ]
+    },
+    {
+      "name": "dataset-individual-locations",
+      "source": "dataset",
+      "transform": [
+        {
+          "type": "aggregate",
+          "groupby": ["location", "day_of_week"],
+          "ops": ["average", "min", "max"],
+          "fields": ["value", "min", "max"],
+          "as": ["value", "min", "max"]
+        },
+        {"type": "filter", "expr": "Aggregation=='locations'"}
+      ]
+    },
+    {
+      "name": "dataset-average-gridlines",
+      "source": "dataset",
+      "transform": [
+        {
+          "type": "aggregate",
+          "groupby": ["day_of_week"],
+          "ops": ["average", "min", "max"],
+          "fields": ["value", "min", "max"],
+          "as": ["value", "min", "max"]
+        }
+      ]
+    },
+    {
+      "name": "dataset-average",
+      "source": "dataset-average-gridlines",
+      "transform": [
+        {
+          "type": "aggregate",
+          "groupby": ["day_of_week"],
+          "ops": ["average", "min", "max"],
+          "fields": ["value", "min", "max"],
+          "as": ["value", "min", "max"]
+        },
+        {"type": "filter", "expr": "Aggregation=='average'"}
+      ]
+    }
+  ],
+  "signals": [
+    {"name": "Color1", "value": "#5461c8"},
+    {
+      "name": "Aggregation",
+      "value": "average",
+      "bind": {
+        "input": "radio",
+        "labels": [
+          "All Years & Locations Average",
+          "Individual Years",
+          "Individual Locations"
+        ],
+        "options": ["average", "years", "locations"]
+      }
+    },
+    {"name": "radius", "update": "width / 2"},
+    {"name": "shiftLegendY", "update": "50"},
+    {
+      "name": "hideSpiders",
+      "description": "timer to hide the spider",
+      "init": "true",
+      "on": [{"events": "timer:5000", "update": "!hideSpiders"}]
+    },
+    {
+      "name": "legendElement2_clicked",
+      "value": false,
+      "on": [
+        {
+          "events": "@legendElement2b:click",
+          "update": "!legendElement2_clicked",
+          "force": true
+        }
+      ]
     }
   ],
   "scales": [
@@ -44,52 +109,128 @@
       "type": "point",
       "range": {"signal": "[-PI, PI]"},
       "padding": 0.5,
-      "domain": {
-        "data": "dataset",
-        "field": "day_of_week"
-      }
+      "align": 0,
+      "domain": {"data": "dataset-average-gridlines", "field": "day_of_week"}
     },
     {
       "name": "radial",
-      "nice": false,
-      "zero": false,
       "type": "linear",
-      "range": {
-        "signal": "[0, radius * 0.7]"
-      },
-      "domain": {
-        "data": "dataset",
-        "fields": [
-          "value,",
-          "value_other"
-        ]
-      },
+      "range": {"signal": "[0, radius * 0.7]"},
+      "domain": {"data": "dataset-average-gridlines", "fields": ["value"]},
+      "domainMax": {"signal": "4000 * 0.7"},
       "domainMin": 0
+    },
+    {
+      "name": "color-year",
+      "type": "ordinal",
+      "range": "category",
+      "domain": {"data": "dataset-individual-years", "field": "year"}
+    },
+    {
+      "name": "color-location",
+      "type": "ordinal",
+      "range": "category",
+      "domain": {"data": "dataset-individual-locations", "field": "location"}
     }
   ],
-  "encode": {
-    "enter": {
-      "x": {"signal": "radius"},
-      "y": {"signal": "radius"}
-    }
+  "encode": {"enter": {"x": {"signal": "radius"}, "y": {"signal": "radius"}}},
+  "title": {
+    "text": {
+      "signal": "Aggregation=='years'? 'Average Daily Count of Bicycles by Day of Week (Individual Years)':Aggregation=='locations'? 'Average Daily Count of Bicycles by Day of Week (Individual Locations)':'Average Daily Count of Bicycles by Day of Week (All Years & Locations Average)'"
+    },
+    "anchor": "start",
+    "zindex": 10,
+    "orient": "top",
+    "dy": {"signal": "-20"},
+    "font": {"value": "Tahoma"},
+    "fontSize": {"value": 20},
+    "fontStyle": {"value": "normal"},
+    "encode": {"title": {"enter": {"fill": {"value": "#5461c8"}}}}
   },
   "marks": [
     {
       "type": "text",
-      "name": "day_of_week-label",
-      "from": {"data": "dataset"},
-      "zindex": 5,
+      "name": "legendElement1a",
+      "encode": {
+        "enter": {
+          "x": {"signal": "-radius-45"},
+          "y": {"signal": "-radius-90+shiftLegendY"},
+          "font": {"value": "Tahoma"},
+          "fontSize": {"value": 18},
+          "fill": {"value": "#5461c8"},
+          "text": {"value": "━"}
+        }
+      }
+    },
+    {
+      "type": "text",
+      "name": "legendElement1b",
+      "interactive": true,
+      "encode": {
+        "enter": {
+          "x": {"signal": "-radius-20"},
+          "y": {"signal": "-radius-90+shiftLegendY"},
+          "font": {"value": "Tahoma"},
+          "fontSize": {"value": 18},
+          "text": {"value": "All Years Average"},
+          "fill": {"value": "#000000"},
+          "fillOpacity": {"signal": "1"}
+        },
+        "update": {}
+      }
+    },
+    {
+      "type": "symbol",
+      "name": "legendElement2a",
+      "interactive": true,
+      "encode": {
+        "enter": {
+          "x": {"signal": "-radius-35"},
+          "y": {"signal": "-radius-70+shiftLegendY"},
+          "font": {"value": "Tahoma"},
+          "shape": {"value": "circle"},
+          "size": {"value": 300},
+          "opacity": {"value": 0.2}
+        }
+      }
+    },
+    {
+      "type": "text",
+      "name": "legendElement2b",
+      "interactive": true,
+      "tooltip": "Click to hide the filled area",
+      "encode": {
+        "enter": {
+          "x": {"signal": "-radius-20"},
+          "y": {"signal": "-radius-64+shiftLegendY"},
+          "font": {"value": "Tahoma"},
+          "fontSize": {"value": 18},
+          "text": {"value": "Year-to-Year Variations"},
+          "fill": {"value": "#000000"}
+        },
+        "update": {"fillOpacity": {"signal": "legendElement2_clicked? 0.5: 1"}},
+        "hover": {
+          "tooltip": {
+            "signal": "legendElement2_clicked? 'Click to re-enable' : 'Click to hide the filled area'"
+          },
+          "cursor": {"value": "pointer"}
+        }
+      }
+    },
+    {
+      "type": "text",
+      "name": "Axis labels - day_of_weeks",
+      "from": {"data": "dataset-average-gridlines"},
+      "zindex": 10,
       "encode": {
         "enter": {
           "x": {
-            "signal": "(radius + 5) * cos(scale('angular', datum['day_of_week']))"
+            "signal": "(radius + 15) * cos(scale('angular', datum['day_of_week']))"
           },
           "y": {
-            "signal": "(radius + 5) * sin(scale('angular', datum['day_of_week']))"
+            "signal": "(radius + 15) * sin(scale('angular', datum['day_of_week']))"
           },
-          "text": {
-            "field": "day_of_week"
-          },
+          "text": {"field": "day_of_week"},
           "align": [
             {
               "test": "abs(scale('angular', datum['day_of_week'])) > PI / 2",
@@ -113,7 +254,7 @@
           "fill": [
             {
               "test": "datum['day_of_week'] == 'Sat' || datum['day_of_week'] == 'Sun'",
-              "value": "#E66C37"
+              "value": "#EA7600"
             },
             {"value": "gray"}
           ]
@@ -121,173 +262,10 @@
       }
     },
     {
-      "type": "group",
-      "name": "categories",
-      "zindex": 1,
-      "from": {
-        "facet": {
-          "data": "dataset",
-          "name": "facet",
-          "groupby": ["location"]
-        }
-      },
-      "marks": [
-        {
-          "type": "line",
-          "name": "location-line",
-          "from": {"data": "facet"},
-          "encode": {
-            "enter": {
-              "interpolate": {
-                "value": "linear-closed"
-              },
-              "x": {
-                "signal": "scale('radial', datum['value']) * cos(scale('angular', datum['day_of_week']))"
-              },
-              "y": {
-                "signal": "scale('radial', datum['value']) * sin(scale('angular', datum['day_of_week']))"
-              },
-              "tooltip": {
-                "signal": "datum"
-              },
-              "stroke": {
-                "value": "#118DFF"
-              },
-              "strokeWidth": {
-                "value": 2
-              },
-              "fill": {
-                "value": "#118DFF"
-              },
-              "fillOpacity": {
-                "value": 0.5
-              },
-              "zindex": {"value": 100}
-            }
-          }
-        },
-        {
-          "type": "line",
-          "name": "location-line-other",
-          "interactive": true,
-          "from": {"data": "facet"},
-          "encode": {
-            "enter": {
-              "interpolate": {
-                "value": "linear-closed"
-              },
-              "x": {
-                "signal": "scale('radial', datum['value_other']) * cos(scale('angular', datum['day_of_week']))"
-              },
-              "y": {
-                "signal": "scale('radial', datum['value_other']) * sin(scale('angular', datum['day_of_week']))"
-              },
-              "tooltip": {
-                "signal": "datum"
-              },
-              "stroke": {
-                "value": "#BBBBBB"
-              },
-              "strokeWidth": {
-                "value": 1
-              },
-              "fill": {
-                "value": "#DDDDDD"
-              },
-              "fillOpacity": {
-                "value": 0.05
-              },
-              "zindex": {"value": 0}
-            },
-            "hover": {}
-          }
-        },
-        {
-          "type": "text",
-          "name": "value-text",
-          "from": {
-            "data": "location-line"
-          },
-          "encode": {
-            "enter": {
-              "x": {
-                "signal": "datum.x"
-              },
-              "y": {
-                "signal": "datum.y"
-              },
-              "dx": {
-                "signal": "0.1*datum.x"
-              },
-              "dy": {
-                "signal": "0.1*datum.y"
-              },
-              "text": {
-                "signal": "if(ceil(datum.datum['value'])==0,'',ceil(datum.datum['value']))"
-              },
-              "align": {
-                "value": "center"
-              },
-              "baseline": {
-                "value": "alphabetic"
-              },
-              "fontWeight": {
-                "value": "bold"
-              },
-              "fontSize": {"value": 24},
-              "fill": {
-                "value": "#118DFF"
-              }
-            }
-          }
-        },
-        {
-          "name": "line",
-          "type": "rule",
-          "zindex": 1,
-          "encode": {
-            "update": {
-              "stroke": {
-                "value": "#EEEEEE"
-              },
-              "x": {"signal": "radius"},
-              "x2": {
-                "signal": "radius"
-              },
-              "y": {"value": 0},
-              "y2": {"value": 127},
-              "strokeWidth": {
-                "value": 1
-              }
-            }
-          }
-        },
-        {
-          "name": "spider",
-          "type": "image",
-          "encode": {
-            "enter": {
-              "x": {
-                "signal": "radius-210"
-              },
-              "y": {"value": 100},
-              "x2": {
-                "signal": "radius+205"
-              },
-              "y2": {"value": 200},
-              "url": {
-                "value": "https://dl.dropboxusercontent.com/s/996giyo4616dz2v/chrome_Ou2WJ7wQJW.png"
-              }
-            }
-          }
-        }
-      ]
-    },
-    {
       "type": "rule",
       "name": "radial-grid",
-      "from": {"data": "dataset"},
-      "zindex": 0,
+      "from": {"data": "dataset-average-gridlines"},
+      "zindex": 5,
       "encode": {
         "enter": {
           "x": {"value": 0},
@@ -298,9 +276,27 @@
           "y2": {
             "signal": "radius * sin(scale('angular', datum['day_of_week']))"
           },
-          "stroke": {
-            "value": "#EEEEEE"
+          "stroke": {"value": "#EEEEEE"},
+          "strokeWidth": {"value": 1}
+        }
+      }
+    },
+    {
+      "type": "rule",
+      "name": "radial-grid 1/2",
+      "from": {"data": "dataset-average-gridlines"},
+      "zindex": 5,
+      "encode": {
+        "enter": {
+          "x": {"value": 0},
+          "y": {"value": 0},
+          "x2": {
+            "signal": "radius / 2 * cos(scale('angular', datum['day_of_week']))"
           },
+          "y2": {
+            "signal": "radius / 2 * sin(scale('angular', datum['day_of_week']))"
+          },
+          "stroke": {"value": "#EEEEEE"},
           "strokeWidth": {"value": 1}
         }
       }
@@ -309,20 +305,232 @@
       "type": "line",
       "name": "outer-line",
       "from": {"data": "radial-grid"},
-      "zindex": 0,
+      "zindex": 5,
       "encode": {
         "enter": {
-          "interpolate": {
-            "value": "linear-closed"
-          },
+          "interpolate": {"value": "linear-closed"},
           "x": {"field": "x2"},
           "y": {"field": "y2"},
-          "stroke": {
-            "value": "#EEEEEE"
-          },
+          "stroke": {"value": "#EEEEEE"},
           "strokeWidth": {"value": 1}
         }
       }
+    },
+    {
+      "type": "line",
+      "name": "outer-line 1/2",
+      "from": {"data": "radial-grid 1/2"},
+      "zindex": 5,
+      "encode": {
+        "enter": {
+          "interpolate": {"value": "linear-closed"},
+          "x": {"field": "x2"},
+          "y": {"field": "y2"},
+          "stroke": {"value": "#EEEEEE"},
+          "strokeWidth": {"value": 1}
+        }
+      }
+    },
+    {
+      "type": "line",
+      "name": "average-value-line",
+      "zindex": 10,
+      "from": {"data": "dataset-average"},
+      "encode": {
+        "enter": {
+          "interpolate": {"value": "linear-closed"},
+          "x": {
+            "signal": "scale('radial', datum['value']) * cos(scale('angular', datum['day_of_week']))"
+          },
+          "y": {
+            "signal": "scale('radial', datum['value']) * sin(scale('angular', datum['day_of_week']))"
+          },
+          "tooltip": {"signal": "datum"},
+          "stroke": {"value": "#5461c8"},
+          "strokeWidth": {"value": 2},
+          "fill": {"value": "#5461c8"},
+          "fillOpacity": {"value": 0},
+          "zindex": {"value": 0}
+        },
+        "update": {}
+      }
+    },
+    {
+      "type": "text",
+      "name": "value-text",
+      "zindex": 10,
+      "from": {"data": "average-value-line"},
+      "encode": {
+        "enter": {
+          "x": {"signal": "datum.x"},
+          "y": {"signal": "datum.y"},
+          "dx": {"signal": "datum.x/abs(datum.x)*25"},
+          "dy": {"signal": "datum.y/abs(datum.y)*25"},
+          "text": {
+            "signal": "if((ceil(datum.datum['value'])==0||datum.datum['value'])==null,'',ceil(datum.datum['value']))"
+          },
+          "align": {"value": "center"},
+          "baseline": {"value": "alphabetic"},
+          "fontSize": {"value": 22},
+          "fontWeight": {"value": "normal"},
+          "fill": {"value": "#5461c8"}
+        },
+        "update": {}
+      }
+    },
+    {
+      "type": "line",
+      "name": "location-line-max",
+      "zindex": 1,
+      "blend": {"value": "difference"},
+      "from": {"data": "dataset-average"},
+      "encode": {
+        "enter": {
+          "interpolate": {"value": "linear-closed"},
+          "x": {
+            "signal": "scale('radial', datum['max']) * cos(scale('angular', datum['day_of_week']))"
+          },
+          "y": {
+            "signal": "scale('radial', datum['max']) * sin(scale('angular', datum['day_of_week']))"
+          },
+          "tooltip": {"signal": "datum"},
+          "strokeWidth": {"value": 0},
+          "zindex": {"value": 0}
+        },
+        "update": {
+          "stroke": {"signal": "Color1"},
+          "fill": {"signal": "Color1"},
+          "fillOpacity": {"signal": "legendElement2_clicked? 0 : 0.2"}
+        }
+      }
+    },
+    {
+      "type": "line",
+      "name": "location-line-min",
+      "zindex": 3,
+      "from": {"data": "dataset-average"},
+      "encode": {
+        "enter": {
+          "interpolate": {"value": "linear-closed"},
+          "x": {
+            "signal": "scale('radial', datum['min']) * cos(scale('angular', datum['day_of_week']))"
+          },
+          "y": {
+            "signal": "scale('radial', datum['min']) * sin(scale('angular', datum['day_of_week']))"
+          },
+          "tooltip": {"signal": "datum"},
+          "stroke": {"value": "#FFFFFF"},
+          "strokeWidth": {"value": 0},
+          "fill": {"value": "#FFFFFF"},
+          "fillOpacity": {"value": 1}
+        },
+        "update": {"fillOpacity": {"signal": "legendElement2_clicked? 0 : 1"}}
+      }
+    },
+    {
+      "name": "line-spider-hang",
+      "type": "rule",
+      "zindex": 1,
+      "encode": {
+        "update": {
+          "stroke": {"value": "#EEEEEE"},
+          "x": {"signal": "radius"},
+          "x2": {"signal": "radius"},
+          "y": {"value": 0},
+          "y2": {"value": 300},
+          "strokeWidth": {"value": 1},
+          "opacity": {"signal": "hideSpiders? 1: 0"}
+        }
+      }
+    },
+    {
+      "name": "spider",
+      "type": "image",
+      "zindex": 0,
+      "encode": {
+        "enter": {
+          "x": {"signal": "radius-210"},
+          "y": {"value": 275},
+          "x2": {"signal": "radius+212"},
+          "y2": {"value": 375},
+          "url": {
+            "value": "https://dl.dropboxusercontent.com/s/th6da40qm8ybq91/spider.png"
+          }
+        },
+        "update": {"opacity": {"signal": "hideSpiders? 1: 0"}}
+      }
+    },
+    {
+      "type": "group",
+      "name": "group-years",
+      "zindex": 10,
+      "from": {
+        "facet": {
+          "name": "series-years",
+          "data": "dataset-individual-years",
+          "groupby": "year"
+        }
+      },
+      "marks": [
+        {
+          "type": "line",
+          "name": "year-value-line",
+          "zindex": 10,
+          "from": {"data": "series-years"},
+          "encode": {
+            "enter": {
+              "interpolate": {"value": "linear-closed"},
+              "x": {
+                "signal": "scale('radial', datum['value']) * cos(scale('angular', datum['day_of_week']))"
+              },
+              "y": {
+                "signal": "scale('radial', datum['value']) * sin(scale('angular', datum['day_of_week']))"
+              },
+              "tooltip": {"signal": "datum"},
+              "stroke": {"signal": "Color1"},
+              "strokeWidth": {"value": 1},
+              "zindex": {"value": 0}
+            },
+            "update": {}
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "name": "group-locations",
+      "zindex": 10,
+      "from": {
+        "facet": {
+          "name": "series-locations",
+          "data": "dataset-individual-locations",
+          "groupby": "location"
+        }
+      },
+      "marks": [
+        {
+          "type": "line",
+          "name": "location-value-line",
+          "zindex": 100,
+          "from": {"data": "series-locations"},
+          "encode": {
+            "enter": {
+              "interpolate": {"value": "linear-closed"},
+              "x": {
+                "signal": "scale('radial', datum['value']) * cos(scale('angular', datum['day_of_week']))"
+              },
+              "y": {
+                "signal": "scale('radial', datum['value']) * sin(scale('angular', datum['day_of_week']))"
+              },
+              "tooltip": {"signal": "datum"},
+              "stroke": {"signal": "Color1"},
+              "strokeWidth": {"value": 1},
+              "zindex": {"value": 0}
+            },
+            "update": {}
+          }
+        }
+      ]
     }
   ]
 }
