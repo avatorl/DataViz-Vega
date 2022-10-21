@@ -8,12 +8,10 @@
   "data": [
     {
       "name": "dataset-url",
-      "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/Radar%20Chart/dataset_annual.csv",
+      "url": "https://dl.dropboxusercontent.com/s/4xx1wpeejebh4nx/dataset_annual.csv",
       "format": {"type": "csv", "parse": "auto"}
     },
-    {"name": "dataset",
-      "source": "dataset-url"
-    },
+    {"name": "dataset"},
     {
       "name": "dataset-individual-years",
       "source": "dataset",
@@ -21,11 +19,11 @@
         {
           "type": "aggregate",
           "groupby": ["year", "month"],
-          "ops": ["average", "min", "max"],
-          "fields": ["value", "min", "max"],
-          "as": ["value", "min", "max"]
+          "ops": ["average", "min", "max", "min"],
+          "fields": ["value", "min", "max", "aggregation"],
+          "as": ["value", "min", "max", "aggregation"]
         },
-        {"type": "filter", "expr": "Aggregation=='years'"}
+        {"type": "filter", "expr": "datum.aggregation==2"}
       ]
     },
     {
@@ -35,11 +33,11 @@
         {
           "type": "aggregate",
           "groupby": ["location", "month"],
-          "ops": ["average", "min", "max"],
-          "fields": ["value", "min", "max"],
-          "as": ["value", "min", "max"]
+          "ops": ["average", "min", "max", "min"],
+          "fields": ["value", "min", "max", "aggregation"],
+          "as": ["value", "min", "max", "aggregation"]
         },
-        {"type": "filter", "expr": "Aggregation=='locations'"}
+        {"type": "filter", "expr": "datum.aggregation==3"}
       ]
     },
     {
@@ -49,9 +47,9 @@
         {
           "type": "aggregate",
           "groupby": ["month"],
-          "ops": ["average", "min", "max"],
-          "fields": ["value", "min", "max"],
-          "as": ["value", "min", "max"]
+          "ops": ["average", "min", "max", "min"],
+          "fields": ["value", "min", "max", "aggregation"],
+          "as": ["value", "min", "max", "aggregation"]
         }
       ]
     },
@@ -62,29 +60,16 @@
         {
           "type": "aggregate",
           "groupby": ["month"],
-          "ops": ["average", "min", "max"],
-          "fields": ["value", "min", "max"],
-          "as": ["value", "min", "max"]
+          "ops": ["average", "min", "max", "min"],
+          "fields": ["value", "min", "max", "aggregation"],
+          "as": ["value", "min", "max", "aggregation"]
         },
-        {"type": "filter", "expr": "Aggregation=='average'"}
+        {"type": "filter", "expr": "datum.aggregation==1"}
       ]
     }
   ],
   "signals": [
     {"name": "Color1", "value": "#5461c8"},
-    {
-      "name": "Aggregation",
-      "value": "average",
-      "bind": {
-        "input": "radio",
-        "labels": [
-          "All Years & Locations Average",
-          "Individual Years",
-          "Individual Locations"
-        ],
-        "options": ["average", "years", "locations"]
-      }
-    },
     {"name": "radius", "update": "width / 2"},
     {"name": "shiftLegendY", "update": "50"},
     {
@@ -137,9 +122,7 @@
   ],
   "encode": {"enter": {"x": {"signal": "radius"}, "y": {"signal": "radius"}}},
   "title": {
-    "text": {
-      "signal": "Aggregation=='years'? 'Average Daily Count of Bicycles by Month (Individual Years)':Aggregation=='locations'? 'Average Daily Count of Bicycles by Month (Individual Locations)':'Average Daily Count of Bicycles by Month (All Years & Locations Average)'"
-    },
+    "text": {"signal": "'Average Daily Count of Bicycles by Month'"},
     "anchor": "start",
     "zindex": 10,
     "orient": "top",
