@@ -8,10 +8,10 @@
   "data": [
     {
       "name": "dataset-url",
-      "url": "https://dl.dropboxusercontent.com/s/4xx1wpeejebh4nx/dataset_annual.csv",
+      "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/Radar%20Chart/dataset_annual.csv",
       "format": {"type": "csv", "parse": "auto"}
     },
-    {"name": "dataset"},
+    {"name": "dataset", "source": "dataset-url"},
     {
       "name": "dataset-individual-years",
       "source": "dataset",
