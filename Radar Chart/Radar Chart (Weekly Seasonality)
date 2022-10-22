@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
-  "description": "Average Daily Count of Bicycles by Day of Week",
+  "description": "Average Daily Count of Bicyclesby Day of Week",
   "width": 690,
   "height": 690,
   "padding": {
@@ -12,14 +12,14 @@
   "autosize": "none",
   "data": [
     {
-      "name": "dataset-url",
-      "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/Radar%20Chart/dataset_weekly.csv",
+      "name": "dataset-url-for-non-deneb-usage",
+      "url": "https://dl.dropboxusercontent.com/s/4xx1wpeejebh4nx/dataset_annual.csv",
       "format": {
         "type": "csv",
         "parse": "auto"
       }
     },
-    {"name": "dataset", "source": "dataset-url"},
+    {"name": "dataset", "source": "dataset-url-for-non-deneb-usage"},
     {
       "name": "dataset-individual-years",
       "source": "dataset",
@@ -51,7 +51,7 @@
         },
         {
           "type": "filter",
-          "expr": "datum.aggregation==2"
+          "expr": "datum['aggregation']==2"
         }
       ]
     },
@@ -86,7 +86,7 @@
         },
         {
           "type": "filter",
-          "expr": "datum.aggregation==3"
+          "expr": "datum['aggregation']==3"
         }
       ]
     },
@@ -119,7 +119,7 @@
       ]
     },
     {
-      "name": "dataset-average",
+      "name": "dataset-average-datalines",
       "source": "dataset-average-gridlines",
       "transform": [
         {
@@ -146,15 +146,56 @@
         },
         {
           "type": "filter",
-          "expr": "datum.aggregation==1"
+          "expr": "datum['aggregation']==1"
+        }
+      ]
+    },
+    {
+      "name": "selected-legend-item",
+      "on": [
+        {
+          "trigger": "clear",
+          "remove": true
+        },
+        {
+          "trigger": "!shift",
+          "remove": true
+        },
+        {
+          "trigger": "legendItems_clicked",
+          "insert": "legendItems_clicked"
         }
       ]
     }
   ],
   "signals": [
     {
-      "name": "Color1",
-      "value": "#5461c8"
+      "name": "ColorMain",
+      "value": "#5461C8"
+    },
+    {
+      "name": "ColorNeutralLabels",
+      "value": "gray"
+    },
+    {
+      "name": "ColorAccent",
+      "value": "#EA7600"
+    },
+    {
+      "name": "ColorAccent2",
+      "value": "#A2E354"
+    },
+    {
+      "name": "ColorGridline",
+      "value": "#EEEEEE"
+    },
+    {
+      "name": "ColorBackground",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "OpacityInactiveItem",
+      "value": 0.5
     },
     {
       "name": "radius",
@@ -185,9 +226,54 @@
           "force": true
         }
       ]
+    },
+    {
+      "name": "legendItems_clicked",
+      "value": false,
+      "on": [
+        {
+          "events": "@legendItems:click,@legendItemLabels:click",
+          "update": "{value: datum.value}",
+          "force": true
+        }
+      ]
+    },
+    {
+      "name": "shift",
+      "value": false,
+      "on": [
+        {
+          "events": "@legendItems:click, @legendItemLabels:click",
+          "update": "event.shiftKey",
+          "force": true
+        }
+      ]
+    },
+    {
+      "name": "clear",
+      "value": true,
+      "on": [
+        {
+          "events": "mouseup[!event.item]",
+          "update": "true",
+          "force": true
+        }
+      ]
     }
   ],
   "scales": [
+    {
+      "name": "label",
+      "type": "ordinal",
+      "domain": {
+        "data": "dataset",
+        "field": "year"
+      },
+      "range": {
+        "data": "dataset",
+        "field": "year"
+      }
+    },
     {
       "name": "angular",
       "type": "point",
@@ -215,12 +301,25 @@
       "domainMin": 0
     },
     {
-      "name": "color-year",
+      "name": "color-legend-items-years",
       "type": "ordinal",
-      "range": "category",
+      "range": [
+        {"signal": "ColorMain"}
+      ],
       "domain": {
         "data": "dataset-individual-years",
         "field": "year"
+      }
+    },
+    {
+      "name": "color-legend-items-locations",
+      "type": "ordinal",
+      "range": [
+        {"signal": "ColorMain"}
+      ],
+      "domain": {
+        "data": "dataset-individual-locations",
+        "field": "location"
       }
     },
     {
@@ -239,110 +338,249 @@
       "y": {"signal": "radius"}
     }
   },
-  "title": {
-    "text": {
-      "signal": "'Average Daily Count of Bicycles by Day of Week'"
-    },
-    "anchor": "start",
-    "zindex": 10,
-    "orient": "top",
-    "dy": {"signal": "-20"},
-    "font": {"value": "Tahoma"},
-    "fontSize": {"value": 20},
-    "fontStyle": {"value": "normal"},
-    "encode": {
+  "legends": [
+    {
       "title": {
-        "enter": {
-          "fill": {"value": "#5461c8"}
+        "signal": "length(data('dataset-individual-years')) ? 'Years' : ''"
+      },
+      "titleFontSize": 18,
+      "titleColor": {
+        "signal": "ColorNeutralLabels"
+      },
+      "fill": "color-legend-items-years",
+      "orient": "none",
+      "legendX": {
+        "signal": "radius-20"
+      },
+      "legendY": {
+        "signal": "-radius-100"
+      },
+      "symbolType": {"value": "stroke"},
+      "symbolStrokeWidth": {"value": 3},
+      "symbolStrokeColor": {
+        "signal": "ColorMain"
+      },
+      "encode": {
+        "symbols": {
+          "name": "legendItems",
+          "interactive": true,
+          "update": {
+            "opacity": {
+              "signal": "!length(data('selected-legend-item')) || indata('selected-legend-item', 'value', datum.value) ? 1 : OpacityInactiveItem"
+            },
+            "stroke": {
+              "signal": "!length(data('selected-legend-item')) || !indata('selected-legend-item', 'value', datum.value) ? ColorMain : ColorAccent"
+            }
+          }
+        },
+        "labels": {
+          "name": "legendItemLabels",
+          "interactive": true,
+          "update": {
+            "fontSize": {"value": 18},
+            "opacity": {
+              "signal": "!length(data('selected-legend-item')) || indata('selected-legend-item', 'value', datum.value) ? 0.8 : OpacityInactiveItem"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": {
+        "signal": "length(data('dataset-individual-locations')) ? 'Locations' : ''"
+      },
+      "zindex": 10,
+      "titleFontSize": 18,
+      "titleColor": {
+        "signal": "ColorNeutralLabels"
+      },
+      "fill": "color-legend-items-locations",
+      "fillColor": {
+        "signal": "ColorBackground"
+      },
+      "orient": "none",
+      "legendX": {
+        "signal": "radius-90"
+      },
+      "legendY": {
+        "signal": "-radius-100"
+      },
+      "symbolType": {"value": "stroke"},
+      "symbolStrokeWidth": {"value": 3},
+      "symbolStrokeColor": {
+        "signal": "ColorMain"
+      },
+      "encode": {
+        "symbols": {
+          "name": "legendItems",
+          "interactive": true,
+          "update": {
+            "opacity": {
+              "signal": "!length(data('selected-legend-item')) || indata('selected-legend-item', 'value', datum.value) ? 1 : OpacityInactiveItem"
+            },
+            "stroke": {
+              "signal": "!length(data('selected-legend-item')) || !indata('selected-legend-item', 'value', datum.value) ? ColorMain : ColorAccent"
+            }
+          }
+        },
+        "labels": {
+          "name": "legendItemLabels",
+          "interactive": true,
+          "update": {
+            "fontSize": {"value": 18},
+            "opacity": {
+              "signal": "!length(data('selected-legend-item')) || indata('selected-legend-item', 'value', datum.value) ? 0.8 : OpacityInactiveItem"
+            }
+          }
         }
       }
     }
-  },
+  ],
   "marks": [
     {
       "type": "text",
-      "name": "legendElement1a",
+      "name": "Subtitle",
       "encode": {
         "enter": {
-          "x": {"signal": "-radius-45"},
-          "y": {
-            "signal": "-radius-90+shiftLegendY"
-          },
+          "x": {"signal": "-radius-50"},
+          "y": {"signal": "-radius-80"},
           "font": {"value": "Tahoma"},
-          "fontSize": {"value": 18},
-          "fill": {"value": "#5461c8"},
-          "text": {"value": "━"}
+          "fontSize": {"value": 20},
+          "fill": {
+            "signal": "ColorMain"
+          },
+          "text": {
+            "value": "Average Daily Count of Bicyclesby Day of Week"
+          }
         }
       }
     },
     {
-      "type": "text",
-      "name": "legendElement1b",
-      "interactive": true,
-      "encode": {
-        "enter": {
-          "x": {"signal": "-radius-20"},
-          "y": {
-            "signal": "-radius-90+shiftLegendY"
-          },
-          "font": {"value": "Tahoma"},
-          "fontSize": {"value": 18},
-          "text": {
-            "value": "All Years Average"
-          },
-          "fill": {"value": "#000000"},
-          "fillOpacity": {"signal": "1"}
-        },
-        "update": {}
-      }
-    },
-    {
-      "type": "symbol",
-      "name": "legendElement2a",
-      "interactive": true,
-      "encode": {
-        "enter": {
-          "x": {"signal": "-radius-35"},
-          "y": {
-            "signal": "-radius-70+shiftLegendY"
-          },
-          "font": {"value": "Tahoma"},
-          "shape": {"value": "circle"},
-          "size": {"value": 300},
-          "opacity": {"value": 0.2}
+      "type": "group",
+      "name": "group-legend-average",
+      "from": {
+        "facet": {
+          "name": "series-years",
+          "data": "dataset-average-datalines",
+          "groupby": "year"
         }
-      }
-    },
-    {
-      "type": "text",
-      "name": "legendElement2b",
-      "interactive": true,
-      "tooltip": "Click to hide the filled area",
-      "encode": {
-        "enter": {
-          "x": {"signal": "-radius-20"},
-          "y": {
-            "signal": "-radius-64+shiftLegendY"
-          },
-          "font": {"value": "Tahoma"},
-          "fontSize": {"value": 18},
-          "text": {
-            "value": "Year-to-Year Variations"
-          },
-          "fill": {"value": "#000000"}
-        },
-        "update": {
-          "fillOpacity": {
-            "signal": "legendElement2_clicked? 0.5: 1"
+      },
+      "zindex": 10,
+      "marks": [
+        {
+          "type": "text",
+          "name": "legendElement1a",
+          "encode": {
+            "enter": {
+              "x": {
+                "signal": "-radius-45"
+              },
+              "y": {
+                "signal": "-radius-90+shiftLegendY"
+              },
+              "font": {
+                "value": "Tahoma"
+              },
+              "fontSize": {"value": 18},
+              "fill": {
+                "signal": "ColorMain"
+              },
+              "text": {"value": "━"}
+            }
           }
         },
-        "hover": {
-          "tooltip": {
-            "signal": "legendElement2_clicked? 'Click to re-enable' : 'Click to hide the filled area'"
-          },
-          "cursor": {"value": "pointer"}
+        {
+          "type": "text",
+          "name": "legendElement1b",
+          "interactive": true,
+          "encode": {
+            "enter": {
+              "x": {
+                "signal": "-radius-20"
+              },
+              "y": {
+                "signal": "-radius-90+shiftLegendY"
+              },
+              "font": {
+                "value": "Tahoma"
+              },
+              "fontSize": {"value": 18},
+              "text": {
+                "value": "All Years Average"
+              },
+              "fill": {
+                "value": "#000000"
+              },
+              "fillOpacity": {
+                "signal": "1"
+              }
+            },
+            "update": {}
+          }
+        },
+        {
+          "type": "symbol",
+          "name": "legendElement2a",
+          "interactive": true,
+          "encode": {
+            "enter": {
+              "x": {
+                "signal": "-radius-35"
+              },
+              "y": {
+                "signal": "-radius-70+shiftLegendY"
+              },
+              "font": {
+                "value": "Tahoma"
+              },
+              "shape": {
+                "value": "circle"
+              },
+              "size": {"value": 300},
+              "opacity": {"value": 0.2}
+            }
+          }
+        },
+        {
+          "type": "text",
+          "name": "legendElement2b",
+          "interactive": true,
+          "tooltip": "Click to hide the filled area",
+          "encode": {
+            "enter": {
+              "x": {
+                "signal": "-radius-20"
+              },
+              "y": {
+                "signal": "-radius-64+shiftLegendY"
+              },
+              "font": {
+                "value": "Tahoma"
+              },
+              "fontSize": {"value": 18},
+              "text": {
+                "value": "Year-to-Year Variations"
+              },
+              "fill": {
+                "value": "#000000"
+              }
+            },
+            "update": {
+              "fillOpacity": {
+                "signal": "legendElement2_clicked? OpacityInactiveItem: 1"
+              }
+            },
+            "hover": {
+              "tooltip": {
+                "signal": "legendElement2_clicked? 'Click to re-enable' : 'Click to hide the filled area'"
+              },
+              "cursor": {
+                "value": "pointer"
+              }
+            }
+          }
         }
-      }
+      ]
     },
     {
       "type": "text",
@@ -362,13 +600,9 @@
           "text": {
             "field": "day_of_week"
           },
-          "align": [
-            {
-              "test": "abs(scale('angular', datum['day_of_week'])) > PI / 2",
-              "value": "right"
-            },
-            {"value": "left"}
-          ],
+          "align": {
+            "signal": "abs(scale('angular', datum['day_of_week'])) > PI / 2 ? 'right' : 'left'"
+          },
           "baseline": [
             {
               "test": "scale('angular', datum['day_of_week']) > 0",
@@ -385,9 +619,11 @@
           "fill": [
             {
               "test": "datum['day_of_week'] == 'Sat' || datum['day_of_week'] == 'Sun'",
-              "value": "#EA7600"
+              "signal": "ColorAccent"
             },
-            {"value": "gray"}
+            {
+              "signal": "ColorNeutralLabels"
+            }
           ]
         }
       }
@@ -410,7 +646,7 @@
             "signal": "radius * sin(scale('angular', datum['day_of_week']))"
           },
           "stroke": {
-            "value": "#EEEEEE"
+            "signal": "ColorGridline"
           },
           "strokeWidth": {"value": 1}
         }
@@ -434,7 +670,7 @@
             "signal": "radius / 2 * sin(scale('angular', datum['day_of_week']))"
           },
           "stroke": {
-            "value": "#EEEEEE"
+            "signal": "ColorGridline"
           },
           "strokeWidth": {"value": 1}
         }
@@ -453,7 +689,7 @@
           "x": {"field": "x2"},
           "y": {"field": "y2"},
           "stroke": {
-            "value": "#EEEEEE"
+            "signal": "ColorGridline"
           },
           "strokeWidth": {"value": 1}
         }
@@ -474,7 +710,7 @@
           "x": {"field": "x2"},
           "y": {"field": "y2"},
           "stroke": {
-            "value": "#EEEEEE"
+            "signal": "ColorGridline"
           },
           "strokeWidth": {"value": 1}
         }
@@ -485,7 +721,7 @@
       "name": "average-value-line",
       "zindex": 10,
       "from": {
-        "data": "dataset-average"
+        "data": "dataset-average-datalines"
       },
       "encode": {
         "enter": {
@@ -502,14 +738,15 @@
             "signal": "datum"
           },
           "stroke": {
-            "value": "#5461c8"
+            "signal": "ColorMain"
           },
           "strokeWidth": {"value": 2},
-          "fill": {"value": "#5461c8"},
+          "fill": {
+            "signal": "ColorMain"
+          },
           "fillOpacity": {"value": 0},
           "zindex": {"value": 0}
-        },
-        "update": {}
+        }
       }
     },
     {
@@ -540,7 +777,9 @@
           "fontWeight": {
             "value": "normal"
           },
-          "fill": {"value": "#5461c8"}
+          "fill": {
+            "signal": "ColorMain"
+          }
         },
         "update": {}
       }
@@ -551,7 +790,7 @@
       "zindex": 1,
       "blend": {"value": "difference"},
       "from": {
-        "data": "dataset-average"
+        "data": "dataset-average-datalines"
       },
       "encode": {
         "enter": {
@@ -572,9 +811,11 @@
         },
         "update": {
           "stroke": {
-            "signal": "Color1"
+            "signal": "ColorMain"
           },
-          "fill": {"signal": "Color1"},
+          "fill": {
+            "signal": "ColorMain"
+          },
           "fillOpacity": {
             "signal": "legendElement2_clicked? 0 : 0.2"
           }
@@ -586,7 +827,7 @@
       "name": "location-line-min",
       "zindex": 3,
       "from": {
-        "data": "dataset-average"
+        "data": "dataset-average-datalines"
       },
       "encode": {
         "enter": {
@@ -603,58 +844,17 @@
             "signal": "datum"
           },
           "stroke": {
-            "value": "#FFFFFF"
+            "signal": "ColorBackground"
           },
           "strokeWidth": {"value": 0},
-          "fill": {"value": "#FFFFFF"},
+          "fill": {
+            "signal": "ColorBackground"
+          },
           "fillOpacity": {"value": 1}
         },
         "update": {
           "fillOpacity": {
             "signal": "legendElement2_clicked? 0 : 1"
-          }
-        }
-      }
-    },
-    {
-      "name": "line-spider-hang",
-      "type": "rule",
-      "zindex": 1,
-      "encode": {
-        "update": {
-          "stroke": {
-            "value": "#EEEEEE"
-          },
-          "x": {"signal": "radius"},
-          "x2": {"signal": "radius"},
-          "y": {"value": 0},
-          "y2": {"value": 300},
-          "strokeWidth": {"value": 1},
-          "opacity": {
-            "signal": "0"
-          }
-        }
-      }
-    },
-    {
-      "name": "spider",
-      "type": "image",
-      "zindex": 0,
-      "encode": {
-        "enter": {
-          "x": {"signal": "radius-210"},
-          "y": {"value": 275},
-          "x2": {
-            "signal": "radius+212"
-          },
-          "y2": {"value": 375},
-          "url": {
-            "value": "https://dl.dropboxusercontent.com/s/th6da40qm8ybq91/spider.png"
-          }
-        },
-        "update": {
-          "opacity": {
-            "signal": "0"
           }
         }
       }
@@ -692,15 +892,24 @@
               "tooltip": {
                 "signal": "datum"
               },
-              "stroke": {
-                "signal": "Color1"
-              },
-              "strokeWidth": {
-                "value": 1
-              },
               "zindex": {"value": 0}
             },
-            "update": {}
+            "update": {
+              "stroke": {
+                "signal": "indata('selected-legend-item', 'value', datum.year) ? ColorAccent : ColorMain"
+              },
+              "strokeWidth": {
+                "signal": "indata('selected-legend-item', 'value', datum.year) ? 3 : 2"
+              },
+              "strokeOpacity": {
+                "signal": "(!length(data('selected-legend-item')) || indata('selected-legend-item', 'value', datum.year)) ? 1 : OpacityInactiveItem"
+              }
+            },
+            "hover": {
+              "stroke": {
+                "signal": "ColorAccent"
+              }
+            }
           }
         }
       ]
@@ -738,15 +947,24 @@
               "tooltip": {
                 "signal": "datum"
               },
-              "stroke": {
-                "signal": "Color1"
-              },
-              "strokeWidth": {
-                "value": 1
-              },
               "zindex": {"value": 0}
             },
-            "update": {}
+            "update": {
+              "stroke": {
+                "signal": "indata('selected-legend-item', 'value', datum.location) ? ColorAccent : ColorMain"
+              },
+              "strokeWidth": {
+                "signal": "indata('selected-legend-item', 'value', datum.location) ? 3 : 2"
+              },
+              "strokeOpacity": {
+                "signal": "(!length(data('selected-legend-item')) || indata('selected-legend-item', 'value', datum.location)) ? 1 : OpacityInactiveItem"
+              }
+            },
+            "hover": {
+              "stroke": {
+                "signal": "ColorAccent"
+              }
+            }
           }
         }
       ]
