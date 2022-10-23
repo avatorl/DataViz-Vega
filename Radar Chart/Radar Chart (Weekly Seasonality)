@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
-  "description": "Average Daily Count of Bicyclesby Day of Week",
+  "description": "Average Daily Count of Bicycles by Day of Week",
   "width": 690,
   "height": 690,
   "padding": {
@@ -164,6 +164,14 @@
         {
           "trigger": "legendItems_clicked",
           "insert": "legendItems_clicked"
+        },
+        {
+          "trigger": "chartYearItems_clicked",
+          "insert": "chartYearItems_clicked"
+        },
+        {
+          "trigger": "chartLocationItems_clicked",
+          "insert": "chartLocationItems_clicked"
         }
       ]
     }
@@ -195,7 +203,19 @@
     },
     {
       "name": "OpacityInactiveItem",
-      "value": 0.5
+      "value": 0.4
+    },
+    {
+      "name": "LabelsFontSizeSingleLine",
+      "value": 22
+    },
+    {
+      "name": "LabelsFontSizeHighlightedLine",
+      "value": 20
+    },
+    {
+      "name": "LegendItemsFontSize",
+      "value": 18
     },
     {
       "name": "radius",
@@ -228,6 +248,28 @@
       ]
     },
     {
+      "name": "clear",
+      "value": true,
+      "on": [
+        {
+          "events": "mouseup[!event.item]",
+          "update": "true",
+          "force": true
+        }
+      ]
+    },
+    {
+      "name": "shift",
+      "value": false,
+      "on": [
+        {
+          "events": "@legendItems:click, @legendItemLabels:click,@year-value-line:click,@location-value-line:click",
+          "update": "event.shiftKey",
+          "force": true
+        }
+      ]
+    },
+    {
       "name": "legendItems_clicked",
       "value": false,
       "on": [
@@ -239,23 +281,23 @@
       ]
     },
     {
-      "name": "shift",
+      "name": "chartYearItems_clicked",
       "value": false,
       "on": [
         {
-          "events": "@legendItems:click, @legendItemLabels:click",
-          "update": "event.shiftKey",
+          "events": "@year-value-line:click",
+          "update": "{value: datum.year}",
           "force": true
         }
       ]
     },
     {
-      "name": "clear",
-      "value": true,
+      "name": "chartLocationItems_clicked",
+      "value": false,
       "on": [
         {
-          "events": "mouseup[!event.item]",
-          "update": "true",
+          "events": "@location-value-line:click",
+          "update": "{value: datum.location}",
           "force": true
         }
       ]
@@ -377,7 +419,9 @@
           "name": "legendItemLabels",
           "interactive": true,
           "update": {
-            "fontSize": {"value": 18},
+            "fontSize": {
+              "signal": "LegendItemsFontSize"
+            },
             "opacity": {
               "signal": "!length(data('selected-legend-item')) || indata('selected-legend-item', 'value', datum.value) ? 0.8 : OpacityInactiveItem"
             }
@@ -427,7 +471,9 @@
           "name": "legendItemLabels",
           "interactive": true,
           "update": {
-            "fontSize": {"value": 18},
+            "fontSize": {
+              "signal": "LegendItemsFontSize"
+            },
             "opacity": {
               "signal": "!length(data('selected-legend-item')) || indata('selected-legend-item', 'value', datum.value) ? 0.8 : OpacityInactiveItem"
             }
@@ -450,7 +496,7 @@
             "signal": "ColorMain"
           },
           "text": {
-            "value": "Average Daily Count of Bicyclesby Day of Week"
+            "value": "Average Daily Count of Bicycles by Day of Week"
           }
         }
       }
@@ -481,7 +527,9 @@
               "font": {
                 "value": "Tahoma"
               },
-              "fontSize": {"value": 18},
+              "fontSize": {
+                "signal": "LegendItemsFontSize"
+              },
               "fill": {
                 "signal": "ColorMain"
               },
@@ -504,7 +552,9 @@
               "font": {
                 "value": "Tahoma"
               },
-              "fontSize": {"value": 18},
+              "fontSize": {
+                "signal": "LegendItemsFontSize"
+              },
               "text": {
                 "value": "All Years Average"
               },
@@ -557,7 +607,9 @@
               "font": {
                 "value": "Tahoma"
               },
-              "fontSize": {"value": 18},
+              "fontSize": {
+                "signal": "LegendItemsFontSize"
+              },
               "text": {
                 "value": "Year-to-Year Variations"
               },
@@ -773,7 +825,9 @@
           "baseline": {
             "value": "alphabetic"
           },
-          "fontSize": {"value": 22},
+          "fontSize": {
+            "signal": "LabelsFontSizeSingleLine"
+          },
           "fontWeight": {
             "value": "normal"
           },
@@ -874,6 +928,7 @@
         {
           "type": "line",
           "name": "year-value-line",
+          "interactive": true,
           "zindex": 10,
           "from": {
             "data": "series-years"
@@ -908,6 +963,50 @@
             "hover": {
               "stroke": {
                 "signal": "ColorAccent"
+              }
+            }
+          }
+        },
+        {
+          "type": "text",
+          "name": "value-text-highlighted-year",
+          "zindex": 10,
+          "from": {
+            "data": "series-years"
+          },
+          "encode": {
+            "enter": {
+              "x": {
+                "signal": "scale('radial', datum['value']) * cos(scale('angular', datum['day_of_week']))"
+              },
+              "y": {
+                "signal": "scale('radial', datum['value']) * sin(scale('angular', datum['day_of_week']))"
+              },
+              "text": {
+                "signal": "if((ceil(datum['value'])==0||datum['value'])==null,'',ceil(datum['value']))"
+              },
+              "align": {
+                "value": "center"
+              },
+              "baseline": {
+                "value": "alphabetic"
+              },
+              "fontWeight": {
+                "value": "normal"
+              },
+              "fill": {
+                "signal": "ColorAccent"
+              }
+            },
+            "update": {
+              "dx": {
+                "signal": "scale('radial', datum['value']) * cos(scale('angular', datum['day_of_week']))/abs(scale('radial', datum['value']) * cos(scale('angular', datum['day_of_week'])))*25"
+              },
+              "dy": {
+                "signal": "scale('radial', datum['value']) * sin(scale('angular', datum['day_of_week']))/abs(scale('radial', datum['value']) * sin(scale('angular', datum['day_of_week'])))*25"
+              },
+              "fontSize": {
+                "signal": "indata('selected-legend-item', 'value', datum.year) ? LabelsFontSizeHighlightedLine : 0"
               }
             }
           }
@@ -963,6 +1062,50 @@
             "hover": {
               "stroke": {
                 "signal": "ColorAccent"
+              }
+            }
+          }
+        },
+        {
+          "type": "text",
+          "name": "value-text-highlighted-locations",
+          "zindex": 10,
+          "from": {
+            "data": "series-locations"
+          },
+          "encode": {
+            "enter": {
+              "x": {
+                "signal": "scale('radial', datum['value']) * cos(scale('angular', datum['day_of_week']))"
+              },
+              "y": {
+                "signal": "scale('radial', datum['value']) * sin(scale('angular', datum['day_of_week']))"
+              },
+              "text": {
+                "signal": "if((ceil(datum['value'])==0||datum['value'])==null,'',ceil(datum['value']))"
+              },
+              "align": {
+                "value": "center"
+              },
+              "baseline": {
+                "value": "alphabetic"
+              },
+              "fontWeight": {
+                "value": "normal"
+              },
+              "fill": {
+                "signal": "ColorAccent"
+              }
+            },
+            "update": {
+              "dx": {
+                "signal": "scale('radial', datum['value']) * cos(scale('angular', datum['day_of_week']))/abs(scale('radial', datum['value']) * cos(scale('angular', datum['day_of_week'])))*25"
+              },
+              "dy": {
+                "signal": "scale('radial', datum['value']) * sin(scale('angular', datum['day_of_week']))/abs(scale('radial', datum['value']) * sin(scale('angular', datum['day_of_week'])))*25"
+              },
+              "fontSize": {
+                "signal": "indata('selected-legend-item', 'value', datum.location) ? LabelsFontSizeHighlightedLine : 0"
               }
             }
           }
