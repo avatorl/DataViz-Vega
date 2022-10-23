@@ -21,6 +21,66 @@
     },
     {"name": "dataset", "source": "dataset-url-for-non-deneb-usage"},
     {
+      "name": "dataset-average-gridlines",
+      "source": "dataset",
+      "transform": [
+        {
+          "type": "aggregate",
+          "groupby": ["day_of_week"],
+          "ops": [
+            "average",
+            "min",
+            "max",
+            "min"
+          ],
+          "fields": [
+            "value",
+            "min",
+            "max",
+            "aggregation"
+          ],
+          "as": [
+            "value",
+            "min",
+            "max",
+            "aggregation"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "dataset-average-datalines",
+      "source": "dataset-average-gridlines",
+      "transform": [
+        {
+          "type": "aggregate",
+          "groupby": ["day_of_week"],
+          "ops": [
+            "average",
+            "min",
+            "max",
+            "min"
+          ],
+          "fields": [
+            "value",
+            "min",
+            "max",
+            "aggregation"
+          ],
+          "as": [
+            "value",
+            "min",
+            "max",
+            "aggregation"
+          ]
+        },
+        {
+          "type": "filter",
+          "expr": "datum['aggregation']==1"
+        }
+      ]
+    },
+    {
       "name": "dataset-individual-years",
       "source": "dataset",
       "transform": [
@@ -91,66 +151,6 @@
       ]
     },
     {
-      "name": "dataset-average-gridlines",
-      "source": "dataset",
-      "transform": [
-        {
-          "type": "aggregate",
-          "groupby": ["day_of_week"],
-          "ops": [
-            "average",
-            "min",
-            "max",
-            "min"
-          ],
-          "fields": [
-            "value",
-            "min",
-            "max",
-            "aggregation"
-          ],
-          "as": [
-            "value",
-            "min",
-            "max",
-            "aggregation"
-          ]
-        }
-      ]
-    },
-    {
-      "name": "dataset-average-datalines",
-      "source": "dataset-average-gridlines",
-      "transform": [
-        {
-          "type": "aggregate",
-          "groupby": ["day_of_week"],
-          "ops": [
-            "average",
-            "min",
-            "max",
-            "min"
-          ],
-          "fields": [
-            "value",
-            "min",
-            "max",
-            "aggregation"
-          ],
-          "as": [
-            "value",
-            "min",
-            "max",
-            "aggregation"
-          ]
-        },
-        {
-          "type": "filter",
-          "expr": "datum['aggregation']==1"
-        }
-      ]
-    },
-    {
       "name": "selected-legend-item",
       "on": [
         {
@@ -162,16 +162,20 @@
           "remove": true
         },
         {
+          "trigger": "shift",
+          "remove": true
+        },
+        {
           "trigger": "legendItems_clicked",
           "insert": "legendItems_clicked"
         },
         {
-          "trigger": "chartYearItems_clicked",
-          "insert": "chartYearItems_clicked"
+          "trigger": "chartYearLine_clicked",
+          "insert": "chartYearLine_clicked"
         },
         {
-          "trigger": "chartLocationItems_clicked",
-          "insert": "chartLocationItems_clicked"
+          "trigger": "chartLocationLine_clicked",
+          "insert": "chartLocationLine_clicked"
         }
       ]
     }
@@ -186,11 +190,11 @@
       "value": "gray"
     },
     {
-      "name": "ColorAccent",
+      "name": "ColorAccentMain",
       "value": "#EA7600"
     },
     {
-      "name": "ColorAccent2",
+      "name": "ColorAccentSecondary",
       "value": "#A2E354"
     },
     {
@@ -202,20 +206,60 @@
       "value": "#FFFFFF"
     },
     {
+      "name": "ColorLegendText",
+      "value": "#000000"
+    },
+    {
+      "name": "OpacityLegendItem",
+      "value": 0.8
+    },
+    {
       "name": "OpacityInactiveItem",
       "value": 0.4
     },
     {
-      "name": "LabelsFontSizeSingleLine",
+      "name": "OpacityFillArea",
+      "value": 0.2
+    },
+    {
+      "name": "FontSizeLabelsSingleLine",
       "value": 22
     },
     {
-      "name": "LabelsFontSizeHighlightedLine",
+      "name": "FontSizeLabelsSelectedLine",
       "value": 20
     },
     {
-      "name": "LegendItemsFontSize",
+      "name": "FontSizeLabelsInactiveLine",
+      "value": 0
+    },
+    {
+      "name": "FontSizeLegendTitle",
       "value": 18
+    },
+    {
+      "name": "FontSizeLegendItems",
+      "value": 18
+    },
+    {
+      "name": "StrokeWidthLegendSymbol",
+      "value": 4
+    },
+    {
+      "name": "StrokeWidthSingleLine",
+      "value": 3
+    },
+    {
+      "name": "StrokeWidthSelectedLine",
+      "value": 3
+    },
+    {
+      "name": "StrokeWidthInactiveLine",
+      "value": 2
+    },
+    {
+      "name": "StrokeWidthGridline",
+      "value": 2
     },
     {
       "name": "radius",
@@ -281,7 +325,7 @@
       ]
     },
     {
-      "name": "chartYearItems_clicked",
+      "name": "chartYearLine_clicked",
       "value": false,
       "on": [
         {
@@ -292,7 +336,7 @@
       ]
     },
     {
-      "name": "chartLocationItems_clicked",
+      "name": "chartLocationLine_clicked",
       "value": false,
       "on": [
         {
@@ -385,7 +429,9 @@
       "title": {
         "signal": "length(data('dataset-individual-years')) ? 'Years' : ''"
       },
-      "titleFontSize": 18,
+      "titleFontSize": {
+        "signal": "FontSizeLegendTitle"
+      },
       "titleColor": {
         "signal": "ColorNeutralLabels"
       },
@@ -398,7 +444,9 @@
         "signal": "-radius-100"
       },
       "symbolType": {"value": "stroke"},
-      "symbolStrokeWidth": {"value": 3},
+      "symbolStrokeWidth": {
+        "signal": "StrokeWidthLegendSymbol"
+      },
       "symbolStrokeColor": {
         "signal": "ColorMain"
       },
@@ -411,7 +459,7 @@
               "signal": "!length(data('selected-legend-item')) || indata('selected-legend-item', 'value', datum.value) ? 1 : OpacityInactiveItem"
             },
             "stroke": {
-              "signal": "!length(data('selected-legend-item')) || !indata('selected-legend-item', 'value', datum.value) ? ColorMain : ColorAccent"
+              "signal": "!length(data('selected-legend-item')) || !indata('selected-legend-item', 'value', datum.value) ? ColorMain : ColorAccentMain"
             }
           }
         },
@@ -420,10 +468,10 @@
           "interactive": true,
           "update": {
             "fontSize": {
-              "signal": "LegendItemsFontSize"
+              "signal": "FontSizeLegendItems"
             },
             "opacity": {
-              "signal": "!length(data('selected-legend-item')) || indata('selected-legend-item', 'value', datum.value) ? 0.8 : OpacityInactiveItem"
+              "signal": "!length(data('selected-legend-item')) || indata('selected-legend-item', 'value', datum.value) ? OpacityLegendItem : OpacityInactiveItem"
             }
           }
         }
@@ -434,7 +482,9 @@
         "signal": "length(data('dataset-individual-locations')) ? 'Locations' : ''"
       },
       "zindex": 10,
-      "titleFontSize": 18,
+      "titleFontSize": {
+        "signal": "FontSizeLegendTitle"
+      },
       "titleColor": {
         "signal": "ColorNeutralLabels"
       },
@@ -450,7 +500,9 @@
         "signal": "-radius-100"
       },
       "symbolType": {"value": "stroke"},
-      "symbolStrokeWidth": {"value": 3},
+      "symbolStrokeWidth": {
+        "signal": "StrokeWidthLegendSymbol"
+      },
       "symbolStrokeColor": {
         "signal": "ColorMain"
       },
@@ -463,7 +515,7 @@
               "signal": "!length(data('selected-legend-item')) || indata('selected-legend-item', 'value', datum.value) ? 1 : OpacityInactiveItem"
             },
             "stroke": {
-              "signal": "!length(data('selected-legend-item')) || !indata('selected-legend-item', 'value', datum.value) ? ColorMain : ColorAccent"
+              "signal": "!length(data('selected-legend-item')) || !indata('selected-legend-item', 'value', datum.value) ? ColorMain : ColorAccentMain"
             }
           }
         },
@@ -472,10 +524,10 @@
           "interactive": true,
           "update": {
             "fontSize": {
-              "signal": "LegendItemsFontSize"
+              "signal": "FontSizeLegendItems"
             },
             "opacity": {
-              "signal": "!length(data('selected-legend-item')) || indata('selected-legend-item', 'value', datum.value) ? 0.8 : OpacityInactiveItem"
+              "signal": "!length(data('selected-legend-item')) || indata('selected-legend-item', 'value', datum.value) ? OpacityLegendItem : OpacityInactiveItem"
             }
           }
         }
@@ -528,7 +580,7 @@
                 "value": "Tahoma"
               },
               "fontSize": {
-                "signal": "LegendItemsFontSize"
+                "signal": "FontSizeLegendItems"
               },
               "fill": {
                 "signal": "ColorMain"
@@ -553,16 +605,16 @@
                 "value": "Tahoma"
               },
               "fontSize": {
-                "signal": "LegendItemsFontSize"
+                "signal": "FontSizeLegendItems"
               },
               "text": {
                 "value": "All Years Average"
               },
               "fill": {
-                "value": "#000000"
+                "signal": "ColorLegendText"
               },
               "fillOpacity": {
-                "signal": "1"
+                "signal": "OpacityLegendItem"
               }
             },
             "update": {}
@@ -587,7 +639,9 @@
                 "value": "circle"
               },
               "size": {"value": 300},
-              "opacity": {"value": 0.2}
+              "opacity": {
+                "signal": "OpacityFillArea"
+              }
             }
           }
         },
@@ -608,18 +662,18 @@
                 "value": "Tahoma"
               },
               "fontSize": {
-                "signal": "LegendItemsFontSize"
+                "signal": "FontSizeLegendItems"
               },
               "text": {
                 "value": "Year-to-Year Variations"
               },
               "fill": {
-                "value": "#000000"
+                "signal": "ColorLegendText"
               }
             },
             "update": {
               "fillOpacity": {
-                "signal": "legendElement2_clicked? OpacityInactiveItem: 1"
+                "signal": "legendElement2_clicked? OpacityInactiveItem: OpacityLegendItem"
               }
             },
             "hover": {
@@ -671,7 +725,7 @@
           "fill": [
             {
               "test": "datum['day_of_week'] == 'Sat' || datum['day_of_week'] == 'Sun'",
-              "signal": "ColorAccent"
+              "signal": "ColorAccentMain"
             },
             {
               "signal": "ColorNeutralLabels"
@@ -700,7 +754,9 @@
           "stroke": {
             "signal": "ColorGridline"
           },
-          "strokeWidth": {"value": 1}
+          "strokeWidth": {
+            "signal": "StrokeWidthGridline"
+          }
         }
       }
     },
@@ -724,7 +780,9 @@
           "stroke": {
             "signal": "ColorGridline"
           },
-          "strokeWidth": {"value": 1}
+          "strokeWidth": {
+            "signal": "StrokeWidthGridline"
+          }
         }
       }
     },
@@ -743,7 +801,9 @@
           "stroke": {
             "signal": "ColorGridline"
           },
-          "strokeWidth": {"value": 1}
+          "strokeWidth": {
+            "signal": "StrokeWidthGridline"
+          }
         }
       }
     },
@@ -764,7 +824,9 @@
           "stroke": {
             "signal": "ColorGridline"
           },
-          "strokeWidth": {"value": 1}
+          "strokeWidth": {
+            "signal": "StrokeWidthGridline"
+          }
         }
       }
     },
@@ -792,7 +854,9 @@
           "stroke": {
             "signal": "ColorMain"
           },
-          "strokeWidth": {"value": 2},
+          "strokeWidth": {
+            "signal": "StrokeWidthSingleLine"
+          },
           "fill": {
             "signal": "ColorMain"
           },
@@ -826,7 +890,7 @@
             "value": "alphabetic"
           },
           "fontSize": {
-            "signal": "LabelsFontSizeSingleLine"
+            "signal": "FontSizeLabelsSingleLine"
           },
           "fontWeight": {
             "value": "normal"
@@ -871,7 +935,7 @@
             "signal": "ColorMain"
           },
           "fillOpacity": {
-            "signal": "legendElement2_clicked? 0 : 0.2"
+            "signal": "legendElement2_clicked? 0 : OpacityFillArea"
           }
         }
       }
@@ -951,10 +1015,10 @@
             },
             "update": {
               "stroke": {
-                "signal": "indata('selected-legend-item', 'value', datum.year) ? ColorAccent : ColorMain"
+                "signal": "indata('selected-legend-item', 'value', datum.year) ? ColorAccentMain : ColorMain"
               },
               "strokeWidth": {
-                "signal": "indata('selected-legend-item', 'value', datum.year) ? 3 : 2"
+                "signal": "indata('selected-legend-item', 'value', datum.year) ? StrokeWidthSelectedLine : StrokeWidthInactiveLine"
               },
               "strokeOpacity": {
                 "signal": "(!length(data('selected-legend-item')) || indata('selected-legend-item', 'value', datum.year)) ? 1 : OpacityInactiveItem"
@@ -962,7 +1026,7 @@
             },
             "hover": {
               "stroke": {
-                "signal": "ColorAccent"
+                "signal": "ColorAccentMain"
               }
             }
           }
@@ -995,7 +1059,7 @@
                 "value": "normal"
               },
               "fill": {
-                "signal": "ColorAccent"
+                "signal": "ColorAccentMain"
               }
             },
             "update": {
@@ -1006,7 +1070,7 @@
                 "signal": "scale('radial', datum['value']) * sin(scale('angular', datum['day_of_week']))/abs(scale('radial', datum['value']) * sin(scale('angular', datum['day_of_week'])))*25"
               },
               "fontSize": {
-                "signal": "indata('selected-legend-item', 'value', datum.year) ? LabelsFontSizeHighlightedLine : 0"
+                "signal": "indata('selected-legend-item', 'value', datum.year) ? FontSizeLabelsSelectedLine : FontSizeLabelsInactiveLine"
               }
             }
           }
@@ -1050,10 +1114,10 @@
             },
             "update": {
               "stroke": {
-                "signal": "indata('selected-legend-item', 'value', datum.location) ? ColorAccent : ColorMain"
+                "signal": "indata('selected-legend-item', 'value', datum.location) ? ColorAccentMain : ColorMain"
               },
               "strokeWidth": {
-                "signal": "indata('selected-legend-item', 'value', datum.location) ? 3 : 2"
+                "signal": "indata('selected-legend-item', 'value', datum.location) ? StrokeWidthSelectedLine : StrokeWidthInactiveLine"
               },
               "strokeOpacity": {
                 "signal": "(!length(data('selected-legend-item')) || indata('selected-legend-item', 'value', datum.location)) ? 1 : OpacityInactiveItem"
@@ -1061,7 +1125,7 @@
             },
             "hover": {
               "stroke": {
-                "signal": "ColorAccent"
+                "signal": "ColorAccentMain"
               }
             }
           }
@@ -1094,7 +1158,7 @@
                 "value": "normal"
               },
               "fill": {
-                "signal": "ColorAccent"
+                "signal": "ColorAccentMain"
               }
             },
             "update": {
@@ -1105,7 +1169,7 @@
                 "signal": "scale('radial', datum['value']) * sin(scale('angular', datum['day_of_week']))/abs(scale('radial', datum['value']) * sin(scale('angular', datum['day_of_week'])))*25"
               },
               "fontSize": {
-                "signal": "indata('selected-legend-item', 'value', datum.location) ? LabelsFontSizeHighlightedLine : 0"
+                "signal": "indata('selected-legend-item', 'value', datum.location) ? FontSizeLabelsSelectedLine : FontSizeLabelsInactiveLine"
               }
             }
           }
