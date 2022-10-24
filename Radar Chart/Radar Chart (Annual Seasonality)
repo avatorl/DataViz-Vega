@@ -87,6 +87,7 @@
     {"name": "ColorNeutralLabels", "value": "gray"},
     {"name": "ColorAccentMain", "value": "#EA7600"},
     {"name": "ColorAccentSecondary", "value": "#A2E354"},
+    {"name": "ColorAccentTertiary", "value": "#CE26ED"},
     {"name": "ColorGridline", "value": "#EEEEEE"},
     {"name": "ColorBackground", "value": "#FFFFFF"},
     {"name": "ColorLegendText", "value": "#000000"},
@@ -433,7 +434,7 @@
             },
             {
               "test": "datum['month'] == 'Dec' || datum['month'] == 'Jan' || datum['month'] == 'Feb'",
-              "signal": "ColorAccentMain"
+              "signal": "ColorAccentTertiary"
             },
             {"signal": "ColorNeutralLabels"}
           ]
