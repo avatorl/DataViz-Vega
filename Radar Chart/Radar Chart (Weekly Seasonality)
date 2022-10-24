@@ -198,6 +198,10 @@
       "value": "#A2E354"
     },
     {
+      "name": "ColorAccentTertiary",
+      "value": "#CE26ED"
+    },
+    {
       "name": "ColorGridline",
       "value": "#EEEEEE"
     },
@@ -725,7 +729,7 @@
           "fill": [
             {
               "test": "datum['day_of_week'] == 'Sat' || datum['day_of_week'] == 'Sun'",
-              "signal": "ColorAccentMain"
+              "signal": "ColorAccentTertiary"
             },
             {
               "signal": "ColorNeutralLabels"
