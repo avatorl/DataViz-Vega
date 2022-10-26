@@ -67,7 +67,7 @@
   "data": [
     {
       "name": "dataset",
-      "url": "https://dl.dropboxusercontent.com/s/28q9lso8enncqgl/csvjson%20%286%29.json"
+      "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/US%20Elections%20Chart/us-elections-data.json"
     },
     {
       "name": "data-left",
