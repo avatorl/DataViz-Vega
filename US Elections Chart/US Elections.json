@@ -301,7 +301,10 @@
                 "signal": "indata('claimed-left-state', 'value', datum.index) ? fillOpacityClaimed : fillOpacityGray"
               }
             },
-            "hover": {"fillOpacity": {"signal": "fillOpacityHoverGray"}}
+            "hover": {
+              "fillOpacity": {"signal": "fillOpacityHoverGray"},
+              "cursor": {"value": "pointer"}
+            }
           }
         },
         {
@@ -394,7 +397,10 @@
                 "signal": "indata('claimed-right-state', 'value', datum.index) ? fillOpacityClaimed : fillOpacityGray"
               }
             },
-            "hover": {"fillOpacity": {"signal": "fillOpacityHoverGray"}}
+            "hover": {
+              "fillOpacity": {"signal": "fillOpacityHoverGray"},
+              "cursor": {"value": "pointer"}
+            }
           }
         },
         {
