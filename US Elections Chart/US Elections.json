@@ -169,11 +169,11 @@
     },
     {
       "name": "data-left-sum",
-      "source": "data-left",
+      "source": "data-total-left",
       "transform": [
         {
           "type": "aggregate",
-          "groupby": ["candidate"],
+          "groupby": ["side"],
           "ops": ["sum"],
           "fields": ["votes"],
           "as": ["sum"]
@@ -182,11 +182,11 @@
     },
     {
       "name": "data-right-sum",
-      "source": "data-right",
+      "source": "data-total-right",
       "transform": [
         {
           "type": "aggregate",
-          "groupby": ["candidate"],
+          "groupby": ["side"],
           "ops": ["sum"],
           "fields": ["votes"],
           "as": ["sum"]
@@ -258,21 +258,21 @@
           "interactive": true,
           "encode": {
             "enter": {
-              "fill": {"signal": "colorLeftBlue"},
               "fillOpacity": {"signal": "fillOpacityDefault"},
               "x": {"scale": "x", "field": "votes"},
               "x2": {"scale": "x", "value": 0},
               "y": {"scale": "scaleYStates", "field": "index"},
               "height": {"scale": "scaleYStates", "band": 1, "offset": -1},
+              "fill": {"scale": "scaleLRCandidates", "field": "candidate"},
               "tooltip": {"signal": "datum.state + ' - ' + datum.votes"}
-            }
-          },
-          "update": {
-            "fill": {
-              "signal": "indata('claimed-right-state', 'value', datum.index) ? colorGray : colorLeftBlue"
             },
-            "fillOpacity": {
-              "signal": "indata('claimed-right-state', 'value', datum.index) ? fillOpacityGray : fillOpacityDefault"
+            "update": {
+              "fill": {
+                "signal": "indata('claimed-right-state', 'value', datum.index) ? colorGray : colorLeftBlue"
+              },
+              "fillOpacity": {
+                "signal": "indata('claimed-right-state', 'value', datum.index) ? fillOpacityGray : fillOpacityDefault"
+              }
             }
           }
         },
@@ -484,7 +484,7 @@
           "type": "text",
           "from": {"data": "data-left-sum"},
           "encode": {
-            "enter": {
+            "update": {
               "x": {"scale": "scaleTotalLeft", "field": "sum"},
               "dx": {"value": 5},
               "dy": {"value": 17},
@@ -597,7 +597,7 @@
           "type": "text",
           "from": {"data": "data-right-sum"},
           "encode": {
-            "enter": {
+            "update": {
               "x": {"scale": "scaleTotalRight", "field": "sum"},
               "dx": {"value": 5},
               "dy": {"value": 17},
