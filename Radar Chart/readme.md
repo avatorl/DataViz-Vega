@@ -10,3 +10,7 @@ A slicer on the bottom of the page allows to shitch data agregation level:
 - individual locations (one line for each location)
 
 ![Alt text](https://dl.dropboxusercontent.com/s/d39d83dqzg4wokj/chrome_0bkX0oMD7z.png "Radar Charts for Krakow Bicycle Counters")
+
+![Alt text](https://dl.dropboxusercontent.com/s/gtx5efwjsze9rdy/chrome_Ibm8UZLzQO.png "Radar Charts for Krakow Bicycle Counters")
+
+
