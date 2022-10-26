@@ -8,3 +8,5 @@ A slicer on the bottom of the page allows to shitch data agregation level:
 - all years and locations average (one line for the average, filled area to show range of annual variations)
 - individual years (one line for each year)
 - individual locations (one line for each location)
+
+![Alt text](https://dl.dropboxusercontent.com/s/d39d83dqzg4wokj/chrome_0bkX0oMD7z.png "Radar Charts for Krakow Bicycle Counters")
