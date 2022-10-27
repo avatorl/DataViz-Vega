@@ -754,7 +754,7 @@
               "x": {"signal": "140"},
               "y": {"signal": "185"},
               "fill": {"value": "#BBBBBB"},
-              "fillOpacity": {"value": 0.6},
+              "fillOpacity": {"value": 0.7},
               "fontWeight": {"value": "normal"},
               "fontSize": {"value": 14},
               "lineBreak": {"value": "/n"}
@@ -785,5 +785,16 @@
         }
       ]
     }
-  ]
+  ],
+  "config": {
+    "autosize": {"contains": "padding", "type": "fit"},
+    "text": {"font": "Arial"},
+    "axis": {
+      "grid": false,
+      "domain": false,
+      "labelColor": "#BBBBBB",
+      "labelFontSize": 12,
+      "titleFontSize": 20
+    }
+  }
 }
