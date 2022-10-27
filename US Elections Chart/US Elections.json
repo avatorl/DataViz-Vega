@@ -220,6 +220,14 @@
       "name": "data-claimed",
       "source": ["data-left-to-right", "data-right-to-left"],
       "transform": [{"type": "aggregate"}]
+    },
+    {
+      "name": "claimed-any-once",
+      "values": ["1"],
+      "on": [
+        {"trigger": "rightGrayBar_clicked", "remove": true},
+        {"trigger": "leftGrayBar_clicked", "remove": true}
+      ]
     }
   ],
   "scales": [
@@ -731,6 +739,33 @@
     },
     {
       "type": "group",
+      "name": "grpHelp",
+      "marks": [
+        {
+          "type": "text",
+          "from": {"data": "claimed-any-once"},
+          "name": "textClick",
+          "align": "left",
+          "encode": {
+            "enter": {
+              "text": {
+                "value": "👈 Click on any gray bar/nto flip the state/district"
+              },
+              "x": {"signal": "140"},
+              "y": {"signal": "185"},
+              "fill": {"value": "#BBBBBB"},
+              "fillOpacity": {"value": 0.6},
+              "fontWeight": {"value": "normal"},
+              "fontSize": {"value": 14},
+              "lineBreak": {"value": "/n"}
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "name": "grpCopyright",
       "marks": [
         {
           "type": "text",
