@@ -713,6 +713,26 @@
           }
         }
       ]
+    },
+    {
+      "type": "group",
+      "marks": [
+        {
+          "type": "text",
+          "from": {"data": "data-state"},
+          "name": "Copyright",
+          "encode": {
+            "enter": {
+              "text": {"value": "© Andrzej Leszkiewicz, 2022"},
+              "x": {"signal": "width"},
+              "y": {"signal": "height"},
+              "fill": {"value": "#DDDDDD"},
+              "fontWeight": {"value": "normal"},
+              "fontSize": {"value": 12}
+            }
+          }
+        }
+      ]
     }
   ]
 }
