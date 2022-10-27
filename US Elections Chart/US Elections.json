@@ -20,6 +20,7 @@
     {"name": "fillOpacityClaimed", "value": 0.5},
     {"name": "fillOpacityGray", "value": 0.15},
     {"name": "tickOpacity", "value": 0.3},
+    {"name": "tickOpacity270", "value": 1},
     {"name": "chartWidth", "value": 300},
     {"name": "chartPad", "value": 50},
     {"name": "width", "update": "2 * chartWidth + chartPad"},
@@ -66,6 +67,17 @@
           "force": true
         }
       ]
+    },
+    {
+      "name": "resetButton_clicked",
+      "value": false,
+      "on": [
+        {
+          "events": "@resetButtonBackground:click",
+          "update": "true",
+          "force": true
+        }
+      ]
     }
   ],
   "data": [
@@ -99,14 +111,16 @@
       "name": "claimed-left-state",
       "on": [
         {"trigger": "leftGrayBar_clicked", "insert": "leftGrayBar_clicked"},
-        {"trigger": "rightColorBar_clicked", "remove": "rightColorBar_clicked"}
+        {"trigger": "rightColorBar_clicked", "remove": "rightColorBar_clicked"},
+        {"trigger": "resetButton_clicked", "remove": "resetButton_clicked"}
       ]
     },
     {
       "name": "claimed-right-state",
       "on": [
         {"trigger": "rightGrayBar_clicked", "insert": "rightGrayBar_clicked"},
-        {"trigger": "leftColorBar_clicked", "remove": "leftColorBar_clicked"}
+        {"trigger": "leftColorBar_clicked", "remove": "leftColorBar_clicked"},
+        {"trigger": "resetButton_clicked", "remove": "resetButton_clicked"}
       ]
     },
     {
@@ -200,6 +214,10 @@
           "as": ["sum"]
         }
       ]
+    },
+    {
+      "name": "data-claimed",
+      "source": ["data-left-to-right", "data-right-to-left"]
     }
   ],
   "scales": [
@@ -226,8 +244,12 @@
           "font": {"value": "Thahoma"},
           "fontSize": {"value": 14},
           "baseline": {"value": "middle"},
-          "align": {"value": "center"},
-          "fill": {"signal": "colorStateLabel"}
+          "align": {"value": "center"}
+        },
+        "update": {
+          "fill": {
+            "signal": "indata('data-left-with-claimed', 'index', datum.index) ? colorLeftBlue : colorRightRed"
+          }
         }
       }
     },
@@ -251,7 +273,10 @@
           "orient": "top",
           "scale": "scaleLeftX",
           "title": {"signal": "nameLeft"},
-          "titleColor": {"signal": "colorLeftBlue"}
+          "titleColor": {"signal": "colorLeftBlue"},
+          "ticks": true,
+          "labelPadding": 0,
+          "tickSize": 5
         }
       ],
       "marks": [
@@ -275,6 +300,11 @@
               },
               "fillOpacity": {
                 "signal": "indata('claimed-right-state', 'value', datum.index) ? fillOpacityGray : fillOpacityDefault"
+              }
+            },
+            "hover": {
+              "cursor": {
+                "signal": "indata('claimed-right-state', 'value', datum.index) ? 'pointer' : 'default'"
               }
             }
           }
@@ -347,7 +377,10 @@
           "orient": "top",
           "scale": "scaleRightX",
           "title": {"signal": "nameRight"},
-          "titleColor": {"signal": "colorRightRed"}
+          "titleColor": {"signal": "colorRightRed"},
+          "ticks": true,
+          "labelPadding": 0,
+          "tickSize": 5
         }
       ],
       "marks": [
@@ -429,7 +462,7 @@
       "encode": {
         "update": {
           "x": {"signal": "0"},
-          "y": {"signal": "-125"},
+          "y": {"signal": "-130"},
           "height": {"signal": "height"}
         }
       },
@@ -460,13 +493,12 @@
       "axes": [
         {
           "orient": "top",
-          "bandPosition": 0,
           "scale": "scaleTotalLeft",
           "labels": true,
           "ticks": true,
           "tickOpacity": {"signal": "tickOpacity"},
-          "tickSize": -55,
-          "labelPadding": 55,
+          "tickSize": -27,
+          "labelPadding": 27,
           "grid": false
         },
         {
@@ -474,9 +506,10 @@
           "scale": "scaleTotalLeft270",
           "labels": true,
           "labelColor": "red",
+          "labelFontWeight": "bold",
           "ticks": true,
-          "tickOpacity": {"signal": "tickOpacity"},
-          "tickSize": -75,
+          "tickOpacity": {"signal": "tickOpacity270"},
+          "tickSize": -80,
           "tickColor": "red",
           "labelPadding": -15,
           "grid": false
@@ -491,7 +524,7 @@
             "update": {
               "x": {"scale": "scaleTotalLeft", "field": "sum"},
               "dx": {"value": 5},
-              "dy": {"value": 17},
+              "dy": {"value": 21},
               "text": {"signal": "datum.sum"},
               "font": {"value": "Arial"},
               "stroke": {"signal": "colorLeftBlue"}
@@ -503,11 +536,11 @@
           "from": {"data": "data-total-left"},
           "encode": {
             "enter": {
-              "height": {"scale": "scaleStatesY", "band": 1.5, "offset": 0},
+              "height": {"value": 23},
               "tooltip": {"signal": "datum.state + ' - ' + datum.votes"}
             },
             "update": {
-              "y": {"signal": "1"},
+              "y": {"signal": "5"},
               "x": {"scale": "scaleTotalLeft", "field": "y0"},
               "x2": {"scale": "scaleTotalLeft", "field": "y1"},
               "fill": {"signal": "colorLeftBlue"},
@@ -529,7 +562,7 @@
       "encode": {
         "update": {
           "x": {"signal": "-chartWidth"},
-          "y": {"signal": "-100"},
+          "y": {"signal": "-104"},
           "height": {"signal": "height"}
         }
       },
@@ -574,21 +607,20 @@
           "bandPosition": 1,
           "scale": "scaleTotalRight",
           "labels": true,
-          "ticks": false,
-          "tickSize": 0,
+          "ticks": true,
+          "tickSize": -35,
           "tickOpacity": {"signal": "tickOpacity"},
-          "labelPadding": -45,
+          "labelPadding": -15,
           "grid": false
         },
         {
           "orient": "top",
-          "bandPosition": 0,
           "scale": "scaleTotalRight270",
           "labels": false,
           "ticks": true,
           "tickSize": 45,
           "tickColor": "red",
-          "tickOpacity": {"signal": "tickOpacity"},
+          "tickOpacity": {"signal": "tickOpacity270"},
           "labelPadding": -40,
           "grid": false
         }
@@ -601,7 +633,7 @@
             "update": {
               "x": {"scale": "scaleTotalRight", "field": "sum"},
               "dx": {"value": 5},
-              "dy": {"value": 17},
+              "dy": {"value": 24},
               "text": {"signal": "datum.sum"},
               "font": {"value": "Arial"},
               "stroke": {"signal": "colorRightRed"}
@@ -613,11 +645,11 @@
           "from": {"data": "data-total-right"},
           "encode": {
             "enter": {
-              "height": {"scale": "scaleStatesY", "band": 1.5, "offset": 0},
+              "height": {"value": 23},
               "tooltip": {"signal": "datum.state + ' - ' + datum.votes"}
             },
             "update": {
-              "y": {"signal": "1"},
+              "y": {"signal": "8"},
               "x": {"scale": "scaleTotalRight", "field": "y0"},
               "x2": {"scale": "scaleTotalRight", "field": "y1"},
               "fill": {"signal": "colorRightRed"},
@@ -629,6 +661,57 @@
               }
             },
             "hover": {"fillOpacity": {"signal": "fillOpacityHoverTotal"}}
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "name": "ExtraElements",
+      "from": {"data": "data-claimed"},
+      "marks": [
+        {
+          "type": "symbol",
+          "name": "resetButton",
+          "encode": {
+            "enter": {
+              "fill": {"value": "#939597"},
+              "stroke": {"value": "#652c90"}
+            },
+            "update": {
+              "x": {"value": -10},
+              "y": {"value": -25},
+              "size": {"value": 0.005},
+              "shape": {
+                "value": "M512,255.1c0,34.4-6.5,68-20.5,99.6c-14,31.7-31.7,58.6-54.9,81.9s-50.3,41-81.9,54.9 c-31.7,14-64.2,20.5-99.6,20.5c-38.2,0-74.5-8.4-108.9-24.2c-34.4-15.8-64.2-39.1-88.4-68c-1.9-1.9-1.9-4.7-1.9-7.4 s0.9-4.7,2.8-6.5l45.6-45.6c1.9-1.9,4.7-2.8,8.4-2.8c3.7,0,6.5,1.9,7.4,3.7c15.8,21.4,36.3,37.2,59.6,49.3 c23.3,11.2,48.4,17.7,75.4,17.7c23.3,0,45.6-4.7,66.1-14c21.4-9.3,39.1-21.4,54.9-36.3c14.9-14.9,27.9-33.5,36.3-54.9 c9.3-21.4,14-42.8,14-66.1s-4.7-45.6-14-66.1c-9.3-21.4-21.4-39.1-36.3-54.9c-14.9-14.9-33.5-27.9-54.9-36.3 c-21.4-9.3-42.8-14-66.1-14c-21.4,0-42.8,3.7-62.4,12.1c-19.5,7.4-38.2,19.5-53.1,33.5l45.6,45.6c6.5,6.5,8.4,14,4.7,23.3 c-3.7,9.3-10.2,13-19.5,13H21.4c-5.6,0-11.2-1.9-14.9-6.5C2.8,202,0,197.4,0,191.8V42.8C0,33.5,4.7,27,13,23.3s16.8-1.9,23.3,4.7 l43.8,42.8c24.2-22.3,51.2-40,81.9-52.1C192.7,6.5,224.3,0,256.9,0c34.4,0,68,6.5,99.6,20.5s58.6,31.7,81.9,54.9 c23.3,23.3,41,50.3,54.9,81.9C505.5,187.1,512,220.6,512,255.1z"
+              },
+              "blend": {"value": "multiply"},
+              "opacity": {"value": 0.5},
+              "strokeWidth": {"value": 1},
+              "fill": {"value": "black"}
+            }
+          }
+        },
+        {
+          "type": "symbol",
+          "name": "resetButtonBackground",
+          "encode": {
+            "enter": {"fill": {"value": "#white"}, "stroke": {"value": "gray"}},
+            "update": {
+              "x": {"value": -2},
+              "y": {"value": -16},
+              "size": {"value": 750},
+              "shape": {"value": "circle"},
+              "blend": {"value": "overlay"},
+              "strokeOpacity": {"value": 0.1},
+              "strokeWidth": {"value": 1},
+              "fill": {"value": "white"},
+              "fillOpacity": {"value": 0.1}
+            },
+            "hover": {
+              "blend": {"value": "exclusion"},
+              "tooltip": {"value": "Reset"}
+            }
           }
         }
       ]
