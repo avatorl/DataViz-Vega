@@ -278,7 +278,7 @@
           "titleColor": {"signal": "colorLeftBlue"},
           "titlePadding": 10,
           "ticks": true,
-          "tickSize": 5,
+          "tickSize": 10,
           "tickOpacity": {"signal": "tickOpacity"},
           "offset": -25,
           "labelPadding": 0
@@ -385,7 +385,7 @@
           "titleColor": {"signal": "colorRightRed"},
           "titlePadding": 10,
           "ticks": true,
-          "tickSize": 5,
+          "tickSize": 10,
           "tickOpacity": {"signal": "tickOpacity"},
           "offset": -25,
           "labelPadding": 0
@@ -749,5 +749,16 @@
         }
       ]
     }
-  ]
+  ],
+  "config": {
+    "autosize": {"contains": "padding", "type": "fit"},
+    "text": {"font": "Arial"},
+    "axis": {
+      "grid": false,
+      "domain": false,
+      "labelColor": "#BBBBBB",
+      "labelFontSize": 12,
+      "titleFontSize": 20
+    }
+  }
 }
