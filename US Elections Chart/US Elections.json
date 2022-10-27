@@ -773,7 +773,7 @@
           "encode": {
             "enter": {
               "text": {
-                "value": "👈 Click on any gray bar/nto flip the state/district"
+                "value": "👈 Click on any gray bar/nto flip over the state/district/nfrom red to blue or vice versa"
               },
               "x": {"signal": "140"},
               "y": {"signal": "185"},
