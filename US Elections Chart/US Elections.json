@@ -755,7 +755,8 @@
             },
             "hover": {
               "blend": {"value": "exclusion"},
-              "tooltip": {"value": "Reset"}
+              "tooltip": {"value": "Reset"},
+              "cursor": {"value": "pointer"}
             }
           }
         }
