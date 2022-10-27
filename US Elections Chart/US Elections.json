@@ -20,6 +20,7 @@
     {"name": "fillOpacityHoverTotal", "value": 0.9},
     {"name": "fillOpacityClaimed", "value": 0.5},
     {"name": "fillOpacityGray", "value": 0.15},
+    {"name": "fillOpacityMadeGray", "value": 0.3},
     {"name": "tickOpacity", "value": 0.3},
     {"name": "tickOpacity270", "value": 0.5},
     {"name": "chartWidth", "value": 300},
@@ -312,10 +313,13 @@
                 "signal": "indata('claimed-right-state', 'value', datum.index) ? colorGray : colorLeftBlue"
               },
               "fillOpacity": {
-                "signal": "indata('claimed-right-state', 'value', datum.index) ? fillOpacityGray : fillOpacityDefault"
+                "signal": "indata('claimed-right-state', 'value', datum.index) ? fillOpacityMadeGray : fillOpacityDefault"
               }
             },
             "hover": {
+              "fillOpacity": {
+                "signal": "indata('claimed-right-state', 'value', datum.index) ? fillOpacityHoverGray : fillOpacityDefault"
+              },
               "cursor": {
                 "signal": "indata('claimed-right-state', 'value', datum.index) ? 'pointer' : 'default'"
               }
@@ -345,8 +349,12 @@
               }
             },
             "hover": {
-              "fillOpacity": {"signal": "fillOpacityHoverGray"},
-              "cursor": {"value": "pointer"}
+              "fillOpacity": {
+                "signal": "indata('claimed-left-state', 'value', datum.index) ? fillOpacityClaimed : fillOpacityHoverGray"
+              },
+              "cursor": {
+                "signal": "indata('claimed-left-state', 'value', datum.index) ? 'default' : 'pointer'"
+              }
             }
           }
         },
@@ -419,7 +427,15 @@
                 "signal": "indata('claimed-left-state', 'value', datum.index) ? colorGray : colorRightRed"
               },
               "fillOpacity": {
-                "signal": "indata('claimed-left-state', 'value', datum.index) ? fillOpacityGray : fillOpacityDefault"
+                "signal": "indata('claimed-left-state', 'value', datum.index) ? fillOpacityMadeGray : fillOpacityDefault"
+              }
+            },
+            "hover": {
+              "fillOpacity": {
+                "signal": "indata('claimed-left-state', 'value', datum.index) ? fillOpacityHoverGray : fillOpacityDefault"
+              },
+              "cursor": {
+                "signal": "indata('claimed-left-state', 'value', datum.index) ? 'pointer' : 'default'"
               }
             }
           }
@@ -447,8 +463,12 @@
               }
             },
             "hover": {
-              "fillOpacity": {"signal": "fillOpacityHoverGray"},
-              "cursor": {"value": "pointer"}
+              "fillOpacity": {
+                "signal": "indata('claimed-right-state', 'value', datum.index) ? fillOpacityClaimed : fillOpacityHoverGray"
+              },
+              "cursor": {
+                "signal": "indata('claimed-right-state', 'value', datum.index) ? 'default' : 'pointer'"
+              }
             }
           }
         },
@@ -789,5 +809,16 @@
         }
       ]
     }
-  ]
+  ],
+  "config": {
+    "autosize": {"contains": "padding", "type": "fit"},
+    "text": {"font": "Arial"},
+    "axis": {
+      "grid": false,
+      "domain": false,
+      "labelColor": "#BBBBBB",
+      "labelFontSize": 12,
+      "titleFontSize": 20
+    }
+  }
 }
