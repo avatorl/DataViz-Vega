@@ -217,7 +217,8 @@
     },
     {
       "name": "data-claimed",
-      "source": ["data-left-to-right", "data-right-to-left"]
+      "source": ["data-left-to-right", "data-right-to-left"],
+      "transform": [{"type": "aggregate"}]
     }
   ],
   "scales": [
