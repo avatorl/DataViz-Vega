@@ -500,6 +500,7 @@
       "axes": [
         {
           "orient": "top",
+          "zindex": 0,
           "scale": "scaleTotalLeft",
           "labels": true,
           "ticks": true,
@@ -510,6 +511,7 @@
         },
         {
           "orient": "top",
+          "zindex": 2,
           "scale": "scaleTotalLeft270",
           "labels": false,
           "labelColor": "red",
@@ -612,7 +614,7 @@
       "axes": [
         {
           "orient": "top",
-          "bandPosition": 1,
+          "zindex": 0,
           "scale": "scaleTotalRight",
           "labels": true,
           "ticks": true,
@@ -623,6 +625,7 @@
         },
         {
           "orient": "top",
+          "zindex": 2,
           "scale": "scaleTotalRight270",
           "labels": true,
           "labelColor": "red",
@@ -633,7 +636,7 @@
           "tickColor": "red",
           "tickOpacity": {"signal": "tickOpacity270"},
           "offset": -9,
-          "labelPadding": -17
+          "labelPadding": -20
         }
       ],
       "marks": [
