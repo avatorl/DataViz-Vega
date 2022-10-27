@@ -21,7 +21,7 @@
     {"name": "fillOpacityClaimed", "value": 0.5},
     {"name": "fillOpacityGray", "value": 0.15},
     {"name": "tickOpacity", "value": 0.3},
-    {"name": "tickOpacity270", "value": 1},
+    {"name": "tickOpacity270", "value": 0.5},
     {"name": "chartWidth", "value": 300},
     {"name": "chartPad", "value": 50},
     {"name": "width", "update": "2 * chartWidth + chartPad"},
@@ -537,6 +537,7 @@
       "marks": [
         {
           "type": "text",
+          "zindex": 3,
           "from": {"data": "data-left-sum"},
           "encode": {
             "update": {
@@ -546,7 +547,8 @@
               "text": {"signal": "datum.sum"},
               "font": {"value": "Arial"},
               "fontSize": {"value": 14},
-              "stroke": {"signal": "colorLeftBlue"}
+              "stroke": {"signal": "colorLeftBlue"},
+              "fill": {"signal": "colorLeftBlue"}
             }
           }
         },
@@ -651,6 +653,7 @@
       "marks": [
         {
           "type": "text",
+          "zindex": 3,
           "from": {"data": "data-right-sum"},
           "encode": {
             "update": {
@@ -660,7 +663,8 @@
               "text": {"signal": "datum.sum"},
               "font": {"value": "Arial"},
               "fontSize": {"value": 14},
-              "stroke": {"signal": "colorRightRed"}
+              "stroke": {"signal": "colorRightRed"},
+              "fill": {"signal": "colorRightRed"}
             }
           }
         },
@@ -769,32 +773,21 @@
       "marks": [
         {
           "type": "text",
-          "from": {"data": "data-state"},
           "name": "Copyright",
-          "align": "left",
+          "align": "right",
           "encode": {
             "enter": {
               "text": {"value": "© Andrzej Leszkiewicz, 2022"},
-              "x": {"signal": "width"},
+              "x": {"signal": "width+150"},
               "y": {"signal": "height"},
-              "fill": {"value": "#DDDDDD"},
+              "fill": {"value": "#BBBBBB"},
+              "fillOpacity": {"value": 0.7},
               "fontWeight": {"value": "normal"},
-              "fontSize": {"value": 12}
+              "fontSize": {"value": 14}
             }
           }
         }
       ]
     }
-  ],
-  "config": {
-    "autosize": {"contains": "padding", "type": "fit"},
-    "text": {"font": "Arial"},
-    "axis": {
-      "grid": false,
-      "domain": false,
-      "labelColor": "#BBBBBB",
-      "labelFontSize": 12,
-      "titleFontSize": 20
-    }
-  }
+  ]
 }
