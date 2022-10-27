@@ -736,6 +736,7 @@
           "type": "text",
           "from": {"data": "data-state"},
           "name": "Copyright",
+          "align": "left",
           "encode": {
             "enter": {
               "text": {"value": "© Andrzej Leszkiewicz, 2022"},
@@ -749,16 +750,5 @@
         }
       ]
     }
-  ],
-  "config": {
-    "autosize": {"contains": "padding", "type": "fit"},
-    "text": {"font": "Arial"},
-    "axis": {
-      "grid": false,
-      "domain": false,
-      "labelColor": "#BBBBBB",
-      "labelFontSize": 12,
-      "titleFontSize": 20
-    }
-  }
+  ]
 }
