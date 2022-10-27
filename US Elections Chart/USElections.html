@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.2.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.20.8"></script>
+</head>
+<body>
+  <div id="vis"/>
+  <script>
+    const spec = {
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "",
+  "height": 1000,
+  "padding": 5,
+  "signals": [
+    {"name": "nameLeft", "value": "Biden"},
+    {"name": "nameRight", "value": "Trump"},
+    {"name": "votesMax", "value": 538},
+    {"name": "colorLeftBlue", "value": "#0F4392"},
+    {"name": "colorRightRed", "value": "#DD1717"},
+    {"name": "colorGray", "value": "gray"},
+    {"name": "colorBarStroke", "value": "white"},
+    {"name": "colorStackSeparator", "value": "#FFFFFF"},
+    {"name": "colorStateLabel", "value": "#000000"},
+    {"name": "colorAxisTicksAndLabels", "value": "#BBBBBB"},
+    {"name": "fillOpacityDefault", "value": 0.8},
+    {"name": "fillOpacityHoverGray", "value": 0.3},
+    {"name": "fillOpacityHoverTotal", "value": 0.9},
+    {"name": "fillOpacityClaimed", "value": 0.5},
+    {"name": "fillOpacityGray", "value": 0.15},
+    {"name": "tickOpacity", "value": 0.3},
+    {"name": "tickOpacity270", "value": 1},
+    {"name": "chartWidth", "value": 300},
+    {"name": "chartPad", "value": 50},
+    {"name": "width", "update": "2 * chartWidth + chartPad"},
+    {
+      "name": "leftGrayBar_clicked",
+      "value": false,
+      "on": [
+        {
+          "events": "@leftGrayBar:click",
+          "update": "{value: datum.index}",
+          "force": true
+        }
+      ]
+    },
+    {
+      "name": "leftColorBar_clicked",
+      "value": false,
+      "on": [
+        {
+          "events": "@leftColorBar:click",
+          "update": "{value: datum.index}",
+          "force": true
+        }
+      ]
+    },
+    {
+      "name": "rightGrayBar_clicked",
+      "value": false,
+      "on": [
+        {
+          "events": "@rightGrayBar:click",
+          "update": "{value: datum.index}",
+          "force": true
+        }
+      ]
+    },
+    {
+      "name": "rightColorBar_clicked",
+      "value": false,
+      "on": [
+        {
+          "events": "@rightColorBar:click",
+          "update": "{value: datum.index}",
+          "force": true
+        }
+      ]
+    },
+    {
+      "name": "resetButton_clicked",
+      "value": false,
+      "on": [
+        {
+          "events": "@resetButtonBackground:click",
+          "update": "true",
+          "force": true
+        }
+      ]
+    }
+  ],
+  "data": [
+    {
+      "name": "dataset",
+      "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/US%20Elections%20Chart/us-elections-data.json"
+    },
+    {
+      "name": "data-left",
+      "source": "dataset",
+      "transform": [
+        {"type": "filter", "expr": "datum['candidate'] == nameLeft"}
+      ]
+    },
+    {
+      "name": "data-right",
+      "source": "dataset",
+      "transform": [
+        {"type": "filter", "expr": "datum['candidate'] == nameRight"}
+      ]
+    },
+    {
+      "name": "data-state",
+      "source": "dataset",
+      "transform": [
+        {"type": "aggregate", "groupby": ["state", "index", "votes"]},
+        {"type": "collect", "sort": {"field": "votes"}}
+      ]
+    },
+    {
+      "name": "claimed-left-state",
+      "on": [
+        {"trigger": "leftGrayBar_clicked", "insert": "leftGrayBar_clicked"},
+        {"trigger": "rightColorBar_clicked", "remove": "rightColorBar_clicked"},
+        {"trigger": "resetButton_clicked", "remove": "resetButton_clicked"}
+      ]
+    },
+    {
+      "name": "claimed-right-state",
+      "on": [
+        {"trigger": "rightGrayBar_clicked", "insert": "rightGrayBar_clicked"},
+        {"trigger": "leftColorBar_clicked", "remove": "leftColorBar_clicked"},
+        {"trigger": "resetButton_clicked", "remove": "resetButton_clicked"}
+      ]
+    },
+    {
+      "name": "data-left-to-right",
+      "source": "data-left",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "indata('claimed-right-state', 'value', datum.index)"
+        }
+      ]
+    },
+    {
+      "name": "data-right-with-claimed",
+      "source": ["data-right", "data-left-to-right"],
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "!indata('claimed-left-state', 'value', datum.index)"
+        },
+        {"type": "formula", "as": "side", "expr": "nameRight"}
+      ]
+    },
+    {
+      "name": "data-total-right",
+      "source": "data-right-with-claimed",
+      "transform": [
+        {
+          "type": "stack",
+          "groupby": ["side"],
+          "sort": {"field": "votes", "order": "descending"},
+          "field": "votes"
+        }
+      ]
+    },
+    {
+      "name": "data-right-to-left",
+      "source": "data-right",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "indata('claimed-left-state', 'value', datum.index)"
+        }
+      ]
+    },
+    {
+      "name": "data-left-with-claimed",
+      "source": ["data-left", "data-right-to-left"],
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "!indata('claimed-right-state', 'value', datum.index)"
+        },
+        {"type": "formula", "as": "side", "expr": "nameRight"}
+      ]
+    },
+    {
+      "name": "data-total-left",
+      "source": "data-left-with-claimed",
+      "transform": [
+        {
+          "type": "stack",
+          "groupby": ["side"],
+          "sort": {"field": "votes", "order": "descending"},
+          "field": "votes"
+        }
+      ]
+    },
+    {
+      "name": "data-left-sum",
+      "source": "data-total-left",
+      "transform": [
+        {
+          "type": "aggregate",
+          "groupby": ["side"],
+          "ops": ["sum"],
+          "fields": ["votes"],
+          "as": ["sum"]
+        }
+      ]
+    },
+    {
+      "name": "data-right-sum",
+      "source": "data-total-right",
+      "transform": [
+        {
+          "type": "aggregate",
+          "groupby": ["side"],
+          "ops": ["sum"],
+          "fields": ["votes"],
+          "as": ["sum"]
+        }
+      ]
+    },
+    {
+      "name": "data-claimed",
+      "source": ["data-left-to-right", "data-right-to-left"],
+      "transform": [{"type": "aggregate"}]
+    }
+  ],
+  "scales": [
+    {
+      "name": "scaleStatesY",
+      "type": "band",
+      "range": [{"signal": "height"}, 0],
+      "round": true,
+      "domain": {"data": "data-state", "field": "index"}
+    },
+    {"name": "scaleLRCandidates"}
+  ],
+  "marks": [
+    {
+      "type": "text",
+      "name": "stateName",
+      "interactive": false,
+      "from": {"data": "data-state"},
+      "encode": {
+        "enter": {
+          "x": {"signal": "0"},
+          "y": {"scale": "scaleStatesY", "field": "index", "band": 0.5},
+          "text": {"field": "state"},
+          "font": {"value": "Thahoma"},
+          "fontSize": {"value": 14},
+          "baseline": {"value": "middle"},
+          "align": {"value": "center"}
+        },
+        "update": {
+          "fill": {
+            "signal": "indata('data-left-with-claimed', 'index', datum.index) ? colorLeftBlue : colorRightRed"
+          }
+        }
+      }
+    },
+    {
+      "type": "group",
+      "name": "leftHorizontalBars",
+      "encode": {"enter": {"x": {"value": 0}, "height": {"signal": "height"}}},
+      "scales": [
+        {
+          "name": "scaleLeftX",
+          "reverse": true,
+          "type": "linear",
+          "range": [{"signal": "-chartWidth"}, {"signal": "-chartPad"}],
+          "nice": true,
+          "zero": true,
+          "domain": {"data": "dataset", "field": "votes"}
+        }
+      ],
+      "axes": [
+        {
+          "orient": "top",
+          "scale": "scaleLeftX",
+          "title": {"signal": "nameLeft"},
+          "titleColor": {"signal": "colorLeftBlue"},
+          "ticks": true,
+          "labelPadding": 0,
+          "tickSize": 5
+        }
+      ],
+      "marks": [
+        {
+          "type": "rect",
+          "name": "leftColorBar",
+          "from": {"data": "data-left"},
+          "interactive": true,
+          "encode": {
+            "enter": {
+              "x": {"scale": "scaleLeftX", "field": "votes"},
+              "x2": {"scale": "scaleLeftX", "value": 0},
+              "y": {"scale": "scaleStatesY", "field": "index"},
+              "height": {"scale": "scaleStatesY", "band": 1, "offset": 0},
+              "stroke": {"signal": "colorBarStroke"},
+              "tooltip": {"signal": "datum.state + ' - ' + datum.votes"}
+            },
+            "update": {
+              "fill": {
+                "signal": "indata('claimed-right-state', 'value', datum.index) ? colorGray : colorLeftBlue"
+              },
+              "fillOpacity": {
+                "signal": "indata('claimed-right-state', 'value', datum.index) ? fillOpacityGray : fillOpacityDefault"
+              }
+            },
+            "hover": {
+              "cursor": {
+                "signal": "indata('claimed-right-state', 'value', datum.index) ? 'pointer' : 'default'"
+              }
+            }
+          }
+        },
+        {
+          "type": "rect",
+          "name": "leftGrayBar",
+          "from": {"data": "data-right"},
+          "interactive": true,
+          "encode": {
+            "enter": {
+              "x": {"scale": "scaleLeftX", "field": "votes"},
+              "x2": {"scale": "scaleLeftX", "value": 0},
+              "y": {"scale": "scaleStatesY", "field": "index"},
+              "height": {"scale": "scaleStatesY", "band": 1, "offset": 0},
+              "stroke": {"signal": "colorBarStroke"},
+              "fillOpacity": {"signal": "fillOpacityGray"}
+            },
+            "update": {
+              "fill": {
+                "signal": "indata('claimed-left-state', 'value', datum.index) ? colorLeftBlue : colorGray"
+              },
+              "fillOpacity": {
+                "signal": "indata('claimed-left-state', 'value', datum.index) ? fillOpacityClaimed : fillOpacityGray"
+              }
+            },
+            "hover": {
+              "fillOpacity": {"signal": "fillOpacityHoverGray"},
+              "cursor": {"value": "pointer"}
+            }
+          }
+        },
+        {
+          "type": "text",
+          "from": {"data": "data-left-with-claimed"},
+          "encode": {
+            "enter": {
+              "x": {"scale": "scaleLeftX", "field": "votes"},
+              "y": {"scale": "scaleStatesY", "field": "index"},
+              "dx": {"value": -4},
+              "dy": {"value": 2},
+              "text": {"signal": "datum.votes"},
+              "fontSize": {"signal": "datum.side==nameRight ? 11 : 0"},
+              "font": {"value": "Arial"},
+              "align": {"value": "right"},
+              "baseline": {"value": "top"},
+              "fill": {"signal": "colorLeftBlue"}
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "name": "rightHorizontalBars",
+      "encode": {"enter": {"x": {"value": 0}, "height": {"signal": "height"}}},
+      "scales": [
+        {
+          "name": "scaleRightX",
+          "reverse": false,
+          "type": "linear",
+          "range": [{"signal": "chartPad"}, {"signal": "chartWidth"}],
+          "nice": true,
+          "zero": true,
+          "domain": {"data": "dataset", "field": "votes"}
+        }
+      ],
+      "axes": [
+        {
+          "orient": "top",
+          "scale": "scaleRightX",
+          "title": {"signal": "nameRight"},
+          "titleColor": {"signal": "colorRightRed"},
+          "ticks": true,
+          "labelPadding": 0,
+          "tickSize": 5
+        }
+      ],
+      "marks": [
+        {
+          "type": "rect",
+          "name": "rightColorBar",
+          "from": {"data": "data-right"},
+          "interactive": true,
+          "encode": {
+            "enter": {
+              "x": {"scale": "scaleRightX", "value": 0},
+              "x2": {"scale": "scaleRightX", "field": "votes"},
+              "y": {"scale": "scaleStatesY", "field": "index"},
+              "height": {"scale": "scaleStatesY", "band": 1, "offset": 0},
+              "stroke": {"signal": "colorBarStroke"},
+              "tooltip": {"signal": "datum.state + ' - ' + datum.votes"}
+            },
+            "update": {
+              "fill": {
+                "signal": "indata('claimed-left-state', 'value', datum.index) ? colorGray : colorRightRed"
+              },
+              "fillOpacity": {
+                "signal": "indata('claimed-left-state', 'value', datum.index) ? fillOpacityGray : fillOpacityDefault"
+              }
+            }
+          }
+        },
+        {
+          "type": "rect",
+          "name": "rightGrayBar",
+          "from": {"data": "data-left"},
+          "interactive": true,
+          "encode": {
+            "enter": {
+              "x": {"scale": "scaleRightX", "value": 0},
+              "x2": {"scale": "scaleRightX", "field": "votes"},
+              "y": {"scale": "scaleStatesY", "field": "index"},
+              "height": {"scale": "scaleStatesY", "band": 1, "offset": 0},
+              "stroke": {"signal": "colorBarStroke"},
+              "fillOpacity": {"signal": "fillOpacityGray"}
+            },
+            "update": {
+              "fill": {
+                "signal": "indata('claimed-right-state', 'value', datum.index) ? colorRightRed : colorGray"
+              },
+              "fillOpacity": {
+                "signal": "indata('claimed-right-state', 'value', datum.index) ? fillOpacityClaimed : fillOpacityGray"
+              }
+            },
+            "hover": {
+              "fillOpacity": {"signal": "fillOpacityHoverGray"},
+              "cursor": {"value": "pointer"}
+            }
+          }
+        },
+        {
+          "type": "text",
+          "from": {"data": "data-right-with-claimed"},
+          "encode": {
+            "enter": {
+              "x": {"scale": "scaleRightX", "field": "votes"},
+              "y": {"scale": "scaleStatesY", "field": "index"},
+              "dx": {"value": 4},
+              "dy": {"value": 2},
+              "text": {"signal": "datum.votes"},
+              "fontSize": {"signal": "datum.side==nameRight ? 11 : 0"},
+              "font": {"value": "Arial"},
+              "align": {"value": "left"},
+              "baseline": {"value": "top"},
+              "fill": {"signal": "colorRightRed"}
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "name": "grpTotalLeft",
+      "encode": {
+        "update": {
+          "x": {"signal": "0"},
+          "y": {"signal": "-130"},
+          "height": {"signal": "height"}
+        }
+      },
+      "scales": [
+        {
+          "name": "scaleTotalLeft",
+          "type": "linear",
+          "range": [{"signal": "-chartWidth"}, {"signal": "chartWidth"}],
+          "reverse": false,
+          "domain": {"data": "dataset", "field": "votes"},
+          "bins": [0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 538],
+          "domainMin": 0,
+          "domainMax": {"signal": "votesMax"}
+        },
+        {
+          "name": "scaleTotalLeft270",
+          "type": "linear",
+          "range": [{"signal": "-chartWidth"}, {"signal": "chartWidth"}],
+          "reverse": false,
+          "domain": {"data": "dataset", "field": "votes"},
+          "bins": [270],
+          "domainMin": 0,
+          "domainMax": {"signal": "votesMax"}
+        },
+        {"name": "y", "type": "band"},
+        {"name": "color", "type": "ordinal", "range": "category"}
+      ],
+      "axes": [
+        {
+          "orient": "top",
+          "scale": "scaleTotalLeft",
+          "labels": true,
+          "ticks": true,
+          "tickOpacity": {"signal": "tickOpacity"},
+          "tickSize": -27,
+          "labelPadding": 27,
+          "grid": false
+        },
+        {
+          "orient": "top",
+          "scale": "scaleTotalLeft270",
+          "labels": true,
+          "labelColor": "red",
+          "labelFontWeight": "bold",
+          "ticks": true,
+          "tickOpacity": {"signal": "tickOpacity270"},
+          "tickSize": -80,
+          "tickColor": "red",
+          "labelPadding": -15,
+          "grid": false
+        },
+        {"orient": "right", "scale": "y", "ticks": true}
+      ],
+      "marks": [
+        {
+          "type": "text",
+          "from": {"data": "data-left-sum"},
+          "encode": {
+            "update": {
+              "x": {"scale": "scaleTotalLeft", "field": "sum"},
+              "dx": {"value": 5},
+              "dy": {"value": 21},
+              "text": {"signal": "datum.sum"},
+              "font": {"value": "Arial"},
+              "stroke": {"signal": "colorLeftBlue"}
+            }
+          }
+        },
+        {
+          "type": "rect",
+          "from": {"data": "data-total-left"},
+          "encode": {
+            "enter": {
+              "height": {"value": 23},
+              "tooltip": {"signal": "datum.state + ' - ' + datum.votes"}
+            },
+            "update": {
+              "y": {"signal": "5"},
+              "x": {"scale": "scaleTotalLeft", "field": "y0"},
+              "x2": {"scale": "scaleTotalLeft", "field": "y1"},
+              "fill": {"signal": "colorLeftBlue"},
+              "strokeWidth": {"value": 0.5},
+              "strokeOpacity": {"value": 0.5},
+              "stroke": {"signal": "colorStackSeparator"},
+              "fillOpacity": {
+                "signal": "datum.side==datum.candidate? fillOpacityClaimed : fillOpacityDefault"
+              }
+            },
+            "hover": {"fillOpacity": {"signal": "fillOpacityHoverTotal"}}
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "name": "grpTotalRight",
+      "encode": {
+        "update": {
+          "x": {"signal": "-chartWidth"},
+          "y": {"signal": "-104"},
+          "height": {"signal": "height"}
+        }
+      },
+      "scales": [
+        {
+          "name": "scaleTotalRight",
+          "type": "linear",
+          "range": [{"signal": "chartWidth*2"}, 0],
+          "reverse": true,
+          "domain": {"data": "dataset", "field": "votes"},
+          "bins": [0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 538],
+          "domainMin": 0,
+          "domainMax": {"signal": "votesMax"}
+        },
+        {
+          "name": "scaleTotalRight270",
+          "type": "linear",
+          "range": [{"signal": "chartWidth*2"}, 0],
+          "reverse": true,
+          "domain": {"data": "dataset", "field": "votes"},
+          "bins": [270],
+          "domainMin": 0,
+          "domainMax": {"signal": "votesMax"}
+        },
+        {
+          "name": "y",
+          "type": "band",
+          "reverse": true,
+          "range": "width",
+          "domain": {"data": "data-total-right", "field": "candidate"}
+        },
+        {
+          "name": "color",
+          "type": "ordinal",
+          "range": "width",
+          "domain": {"data": "data-total-right", "field": "index"}
+        }
+      ],
+      "axes": [
+        {
+          "orient": "top",
+          "bandPosition": 1,
+          "scale": "scaleTotalRight",
+          "labels": true,
+          "ticks": true,
+          "tickSize": -35,
+          "tickOpacity": {"signal": "tickOpacity"},
+          "labelPadding": -15,
+          "grid": false
+        },
+        {
+          "orient": "top",
+          "scale": "scaleTotalRight270",
+          "labels": false,
+          "ticks": true,
+          "tickSize": 45,
+          "tickColor": "red",
+          "tickOpacity": {"signal": "tickOpacity270"},
+          "labelPadding": -40,
+          "grid": false
+        }
+      ],
+      "marks": [
+        {
+          "type": "text",
+          "from": {"data": "data-right-sum"},
+          "encode": {
+            "update": {
+              "x": {"scale": "scaleTotalRight", "field": "sum"},
+              "dx": {"value": 5},
+              "dy": {"value": 24},
+              "text": {"signal": "datum.sum"},
+              "font": {"value": "Arial"},
+              "stroke": {"signal": "colorRightRed"}
+            }
+          }
+        },
+        {
+          "type": "rect",
+          "from": {"data": "data-total-right"},
+          "encode": {
+            "enter": {
+              "height": {"value": 23},
+              "tooltip": {"signal": "datum.state + ' - ' + datum.votes"}
+            },
+            "update": {
+              "y": {"signal": "8"},
+              "x": {"scale": "scaleTotalRight", "field": "y0"},
+              "x2": {"scale": "scaleTotalRight", "field": "y1"},
+              "fill": {"signal": "colorRightRed"},
+              "strokeWidth": {"value": 0.5},
+              "strokeOpacity": {"value": 0.5},
+              "stroke": {"signal": "colorStackSeparator"},
+              "fillOpacity": {
+                "signal": "datum.side==datum.candidate? fillOpacityDefault : fillOpacityClaimed"
+              }
+            },
+            "hover": {"fillOpacity": {"signal": "fillOpacityHoverTotal"}}
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "name": "ExtraElements",
+      "from": {"data": "data-claimed"},
+      "marks": [
+        {
+          "type": "symbol",
+          "name": "resetButton",
+          "encode": {
+            "enter": {"fill": {"value": "black"}, "stroke": {"value": "black"}},
+            "update": {
+              "x": {"value": -10},
+              "y": {"value": -25},
+              "size": {"value": 0.005},
+              "shape": {
+                "value": "M512,255.1c0,34.4-6.5,68-20.5,99.6c-14,31.7-31.7,58.6-54.9,81.9s-50.3,41-81.9,54.9 c-31.7,14-64.2,20.5-99.6,20.5c-38.2,0-74.5-8.4-108.9-24.2c-34.4-15.8-64.2-39.1-88.4-68c-1.9-1.9-1.9-4.7-1.9-7.4 s0.9-4.7,2.8-6.5l45.6-45.6c1.9-1.9,4.7-2.8,8.4-2.8c3.7,0,6.5,1.9,7.4,3.7c15.8,21.4,36.3,37.2,59.6,49.3 c23.3,11.2,48.4,17.7,75.4,17.7c23.3,0,45.6-4.7,66.1-14c21.4-9.3,39.1-21.4,54.9-36.3c14.9-14.9,27.9-33.5,36.3-54.9 c9.3-21.4,14-42.8,14-66.1s-4.7-45.6-14-66.1c-9.3-21.4-21.4-39.1-36.3-54.9c-14.9-14.9-33.5-27.9-54.9-36.3 c-21.4-9.3-42.8-14-66.1-14c-21.4,0-42.8,3.7-62.4,12.1c-19.5,7.4-38.2,19.5-53.1,33.5l45.6,45.6c6.5,6.5,8.4,14,4.7,23.3 c-3.7,9.3-10.2,13-19.5,13H21.4c-5.6,0-11.2-1.9-14.9-6.5C2.8,202,0,197.4,0,191.8V42.8C0,33.5,4.7,27,13,23.3s16.8-1.9,23.3,4.7 l43.8,42.8c24.2-22.3,51.2-40,81.9-52.1C192.7,6.5,224.3,0,256.9,0c34.4,0,68,6.5,99.6,20.5s58.6,31.7,81.9,54.9 c23.3,23.3,41,50.3,54.9,81.9C505.5,187.1,512,220.6,512,255.1z"
+              },
+              "blend": {"value": "multiply"},
+              "opacity": {"value": 0.4},
+              "strokeWidth": {"value": 2},
+              "fill": {"value": "black"}
+            }
+          }
+        },
+        {
+          "type": "symbol",
+          "name": "resetButtonBackground",
+          "encode": {
+            "enter": {"fill": {"value": "#white"}, "stroke": {"value": "gray"}},
+            "update": {
+              "x": {"value": -2},
+              "y": {"value": -16},
+              "size": {"value": 750},
+              "shape": {"value": "circle"},
+              "blend": {"value": "overlay"},
+              "strokeOpacity": {"value": 0.1},
+              "strokeWidth": {"value": 1},
+              "fill": {"value": "white"},
+              "fillOpacity": {"value": 0.05}
+            },
+            "hover": {
+              "blend": {"value": "exclusion"},
+              "tooltip": {"value": "Reset"}
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "marks": [
+        {
+          "type": "text",
+          "from": {"data": "data-state"},
+          "name": "Copyright",
+          "encode": {
+            "enter": {
+              "text": {"value": "Â© Andrzej Leszkiewicz, 2022"},
+              "x": {"signal": "width"},
+              "y": {"signal": "height"},
+              "fill": {"value": "#DDDDDD"},
+              "fontWeight": {"value": "normal"},
+              "fontSize": {"value": 12}
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "config": {
+    "autosize": {"contains": "padding", "type": "fit"},
+    "text": {"font": "Arial", "fontSize": 14},
+    "axis": {
+      "ticks": true,
+      "tickColor": "#BBBBBB",
+      "grid": false,
+      "domain": false,
+      "labelColor": "#BBBBBB",
+      "labelFontSize": 12,
+      "titleFontSize": 20
+    },
+    "axisX": {"labelPadding": 5}
+  }
+};
+    vegaEmbed("#vis", spec, {mode: "vega"}).then(console.log).catch(console.warn);
+  </script>
+</body>
+</html>
