@@ -4,6 +4,7 @@
   "height": 1000,
   "padding": 5,
   "signals": [
+    {"name": "chartTitle", "value": "Presidential Election Results 2020"},
     {"name": "nameLeft", "value": "Biden"},
     {"name": "nameRight", "value": "Trump"},
     {"name": "votesMax", "value": 538},
