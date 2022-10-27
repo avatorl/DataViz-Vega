@@ -1,1 +1,1 @@
-![Alt text](https://dl.dropboxusercontent.com/s/8tfjz2ao2eoi392/chrome_mP8Ustcqjb.png "US Elections Chart")
+![Alt text](https://dl.dropboxusercontent.com/s/00t4y5nji399vtf/chrome_7mqGFDmGuD.png "US Elections Chart")
