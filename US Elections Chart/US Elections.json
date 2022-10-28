@@ -305,8 +305,7 @@
               "x2": {"scale": "scaleLeftX", "value": 0},
               "y": {"scale": "scaleStatesY", "field": "index"},
               "height": {"scale": "scaleStatesY", "band": 1, "offset": 0},
-              "stroke": {"signal": "colorBarStroke"},
-              "tooltip": {"signal": "datum.state + ' - ' + datum.votes"}
+              "stroke": {"signal": "colorBarStroke"}
             },
             "update": {
               "fill": {
@@ -419,8 +418,7 @@
               "x2": {"scale": "scaleRightX", "field": "votes"},
               "y": {"scale": "scaleStatesY", "field": "index"},
               "height": {"scale": "scaleStatesY", "band": 1, "offset": 0},
-              "stroke": {"signal": "colorBarStroke"},
-              "tooltip": {"signal": "datum.state + ' - ' + datum.votes"}
+              "stroke": {"signal": "colorBarStroke"}
             },
             "update": {
               "fill": {
