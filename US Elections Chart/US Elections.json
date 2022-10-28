@@ -27,6 +27,12 @@
     {"name": "chartPad", "value": 50},
     {"name": "width", "update": "2 * chartWidth + chartPad"},
     {
+      "name": "showHelper",
+      "description": "timer to hide the helper",
+      "init": "true",
+      "on": [{"events": "timer:10000", "update": "!showHelper"}]
+    },
+    {
       "name": "leftGrayBar_clicked",
       "value": false,
       "on": [
@@ -777,11 +783,11 @@
               "x": {"signal": "140"},
               "y": {"signal": "185"},
               "fill": {"value": "#BBBBBB"},
-              "fillOpacity": {"value": 0.7},
               "fontWeight": {"value": "normal"},
               "fontSize": {"value": 14},
               "lineBreak": {"value": "/n"}
-            }
+            },
+            "update": {"fillOpacity": {"signal": "showHelper?  0.8 : 0"}}
           }
         }
       ]
