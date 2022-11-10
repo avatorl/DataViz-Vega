@@ -1,0 +1,239 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "...",
+  "width": 700,
+  "height": 700,
+  "padding": 5,
+  "signals": [
+    {
+      "name": "clear",
+      "value": true,
+      "on": [
+        {"events": "mouseup[!event.item]", "update": "true", "force": true}
+      ]
+    },
+    {
+      "name": "ctrl",
+      "value": false,
+      "on": [
+        {
+          "events": "@legendSymbol:click, @legendLabel:click",
+          "update": "event.ctrlKey",
+          "force": true
+        }
+      ]
+    },
+    {
+      "name": "clicked",
+      "value": null,
+      "on": [
+        {
+          "events": "@legendSymbol:click, @legendLabel:click",
+          "update": "{value: datum.value}",
+          "force": true
+        }
+      ]
+    }
+  ],
+  "data": [
+    {
+      "name": "dataset-csv",
+      "url": "https://dl.dropboxusercontent.com/s/3vn50z80xksjsf3/data.csv",
+      "format": {"type": "csv", "parse": "auto", "delimiter": ","}
+    },
+    {"name": "dataset", "source": "dataset-csv"},
+    {
+      "name": "data-trend",
+      "source": "dataset",
+      "transform": [
+        {
+          "type": "regression",
+          "method": "linear",
+          "groupby": ["year"],
+          "extent": {"signal": "[-3,27]"},
+          "x": "temp_avg",
+          "y": "count_avg",
+          "as": ["xt", "yt"]
+        }
+      ]
+    },
+    {
+      "name": "legend-selected",
+      "on": [
+        {"trigger": "clear", "remove": true},
+        {"trigger": "!ctrl", "remove": true},
+        {"trigger": "!ctrl && clicked", "insert": "clicked"},
+        {"trigger": "ctrl && clicked", "insert": "clicked"}
+      ]
+    }
+  ],
+  "scales": [
+    {
+      "name": "x",
+      "type": "linear",
+      "domain": {"data": "dataset", "field": "temp_avg"},
+      "range": "width",
+      "nice": true,
+      "zero": true,
+      "round": true
+    },
+    {
+      "name": "y",
+      "type": "linear",
+      "domain": {"data": "dataset", "field": "count_avg"},
+      "range": "height",
+      "nice": true,
+      "zero": true,
+      "round": true
+    },
+    {
+      "name": "color",
+      "type": "sequential",
+      "domain": {"data": "dataset", "field": "year"},
+      "range": {"scheme": "orangered"}
+    },
+    {
+      "name": "colorGray",
+      "type": "ordinal",
+      "domain": {"data": "dataset", "field": "year"},
+      "range": ["#EEEEEE"]
+    }
+  ],
+  "axes": [
+    {"orient": "top", "scale": "x", "labels": false, "tickCount": 5},
+    {
+      "orient": "bottom",
+      "scale": "x",
+      "title": "Average Temperature, °C",
+      "tickCount": 5,
+      "labels": true,
+      "format": "+0f",
+      "gridOpacity": 0.1
+    },
+    {
+      "orient": "left",
+      "scale": "y",
+      "title": "Number of Bicycles, daily average",
+      "tickCount": 5,
+      "format": "0.0f"
+    },
+    {"orient": "right", "scale": "y", "titleFontSize": 16, "labels": false}
+  ],
+  "legends": [
+    {
+      "stroke": "color",
+      "title": "Year",
+      "type": "symbol",
+      "format": "0f",
+      "encode": {
+        "symbols": {
+          "shape": {"value": "circle"},
+          "name": "legendSymbol",
+          "interactive": true,
+          "update": {
+            "cursor": {"value": "pointer"},
+            "strokeOpacity": {
+              "signal": "!length(data('legend-selected')) || indata('legend-selected', 'value', datum.value)?0.5:0.1"
+            },
+            "strokeWidth": {"value": 6},
+            "size": {"value": 40}
+          }
+        },
+        "labels": {
+          "name": "legendLabel",
+          "interactive": true,
+          "update": {
+            "fontSize": {"value": 14},
+            "cursor": {"value": "pointer"},
+            "opacity": {
+              "signal": "!length(data('legend-selected')) || indata('legend-selected', 'value', datum.value)?1:0.1"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "title": {
+    "text": {
+      "signal": "'Correlation Between Average Temperature and Number of Bicycles, '"
+    },
+    "fontSize": 20,
+    "font": "Tahoma",
+    "fontWeight": "lighter",
+    "anchor": "start",
+    "offset": 5
+  },
+  "marks": [
+    {
+      "type": "symbol",
+      "filled": true,
+      "interactive": true,
+      "from": {"data": "dataset"},
+      "sort": {"field": "year", "order": "descending"},
+      "encode": {
+        "update": {
+          "shape": {"value": "circle"},
+          "x": {"scale": "x", "field": "temp_avg"},
+          "y": {"scale": "y", "field": "count_avg"},
+          "fillOpacity": {"signal": "0.5"},
+          "stroke": {
+            "scale": {
+              "signal": "!length(data('legend-selected'))?'color':indata('legend-selected', 'value', datum.year)?datum.rain>3?'color':'color':'colorGray'"
+            },
+            "field": {"signal": "'year'"}
+          },
+          "strokeWidth": {"value": 0.5},
+          "strokeOpacity": {"value": 0.5},
+          "size": {"value": 70},
+          "tooltip": {"signal": "datum.year + ' ' + datum.month"},
+          "fill": {
+            "scale": {
+              "signal": "!length(data('legend-selected'))?'color':indata('legend-selected', 'value', datum.year)?datum.rain>3?'color':'color':'colorGray'"
+            },
+            "field": {"signal": "'year'"}
+          }
+        }
+      }
+    },
+    {
+      "type": "group",
+      "from": {
+        "facet": {"data": "data-trend", "name": "data-trend", "groupby": "year"}
+      },
+      "marks": [
+        {
+          "type": "line",
+          "from": {"data": "data-trend"},
+          "sort": {"field": "year", "order": "descending"},
+          "encode": {
+            "enter": {
+              "x": {"scale": "x", "field": "xt"},
+              "y": {"scale": "y", "field": "yt"},
+              "stroke": {
+                "scale": {"signal": "'color'"},
+                "field": {"signal": "'year'"}
+              },
+              "strokeOpacity": {"value": 0.5},
+              "strokeWidth": {"value": 2}
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "config": {
+    "autosize": {"contains": "padding", "type": "fit"},
+    "axis": {
+      "domain": false,
+      "titleColor": "gray",
+      "labelFontSize": 12,
+      "labelFontWeight": "bold",
+      "labelColor": "#CCCCCC",
+      "titleFontSize": 16,
+      "ticks": true,
+      "tickSize": 0,
+      "grid": true,
+      "gridOpacity": 0.1
+    }
+  }
+}
