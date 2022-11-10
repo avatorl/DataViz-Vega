@@ -1,0 +1,163 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "A basic line chart example.",
+  "width": 100,
+  "height": 50,
+  "padding": 5,
+  "signals": [],
+  "data": [
+    {
+      "name": "dataset-csv",
+      "url": "https://dl.dropboxusercontent.com/s/4j8mdeme3lzqe98/Last%2030%20days%20Bicycle%20Count.csv",
+      "format": {"type": "csv", "parse": "auto", "delimiter": ","}
+    },
+    {"name": "dataset", "source": "dataset-csv"},
+    {
+      "name": "dataset-last",
+      "source": "dataset",
+      "transform": [{"type": "filter", "expr": "datum.last_count != null"}]
+    }
+  ],
+  "scales": [
+    {
+      "name": "x",
+      "type": "point",
+      "range": "width",
+      "domain": {"data": "dataset", "field": "date"}
+    },
+    {
+      "name": "y",
+      "type": "linear",
+      "range": "height",
+      "nice": true,
+      "zero": true,
+      "domain": {"data": "dataset", "field": "count"}
+    },
+    {
+      "name": "color",
+      "type": "ordinal",
+      "range": "category",
+      "domain": {"data": "dataset", "field": "location"}
+    }
+  ],
+  "marks": [
+    {
+      "type": "group",
+      "marks": [
+        {
+          "type": "text",
+          "from": {"data": "dataset"},
+          "encode": {
+            "enter": {
+              "x": {"value": 500},
+              "text": {"value": "[PLACEHOLDER]"},
+              "fill": {"value": "red"}
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "layout": {"align": "all", "bounds": "full", "columns": 3, "padding": 10},
+      "marks": [
+        {
+          "type": "group",
+          "from": {
+            "facet": {
+              "name": "series",
+              "data": "dataset",
+              "groupby": "location"
+            }
+          },
+          "marks": [
+            {
+              "type": "line",
+              "from": {"data": "series"},
+              "encode": {
+                "enter": {
+                  "x": {"scale": "x", "field": "date"},
+                  "y": {"scale": "y", "field": "count"},
+                  "stroke": {"value": "gray"},
+                  "strokeWidth": {"value": 2}
+                },
+                "update": {"strokeOpacity": {"value": 1}},
+                "hover": {"strokeOpacity": {"value": 0.5}}
+              }
+            },
+            {
+              "type": "group",
+              "from": {
+                "facet": {
+                  "name": "series2",
+                  "data": "dataset-last",
+                  "groupby": "location"
+                }
+              },
+              "marks": [
+                {
+                  "type": "symbol",
+                  "from": {"data": "series"},
+                  "encode": {
+                    "enter": {
+                      "x": {"scale": "x", "field": "date"},
+                      "y": {"scale": "y", "field": "last_count"},
+                      "fill": {"value": "#5e6cd5"},
+                      "stroke": {"value": "gray"},
+                      "strokeWidth": {"value": 0.5}
+                    },
+                    "update": {
+                      "size": {"signal": "datum.count == datum.last_count?40:0"}
+                    }
+                  }
+                },
+                {
+                  "type": "text",
+                  "from": {"data": "series"},
+                  "encode": {
+                    "enter": {
+                      "text": {"field": "last_count"},
+                      "fontSize": {"value": 20},
+                      "x": {"scale": "x", "field": "date"},
+                      "y": {"scale": "y", "field": "last_count"},
+                      "fill": {"value": "#5e6cd5"},
+                      "stroke": {"value": "gray"},
+                      "strokeWidth": {"value": 0},
+                      "dx": {"value": -10},
+                      "dy": {"value": -10}
+                    },
+                    "update": {
+                      "size": {"signal": "datum.count == datum.last_count?40:0"}
+                    }
+                  }
+                },
+                {
+                  "type": "text",
+                  "from": {"data": "series"},
+                  "encode": {
+                    "enter": {
+                      "text": {"field": "location"},
+                      "font": {"value": "Tahoma"},
+                      "fontWeight": {"value": "lighter"},
+                      "fill": {"value": "#333333"},
+                      "stroke": {"value": "gray"},
+                      "strokeWidth": {"value": 0},
+                      "x": {"value": 0},
+                      "y": {"value": 0}
+                    },
+                    "update": {
+                      "fontSize": {
+                        "signal": "datum.count == datum.last_count?14:0"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "config": {"autosize": "pad"}
+}
