@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
-  "description": "A box plot example showing aggregate statistics for penguin body mass.",
+  "description": "Box Plot Small Multiples",
   "height": 200,
   "width": 250,
   "padding": 5,
