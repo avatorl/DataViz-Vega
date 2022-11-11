@@ -8,7 +8,7 @@
     "axisBand": {"bandPosition": 1, "tickExtra": true, "tickOffset": 0}
   },
   "signals": [
-    {"name": "gridColumns", "value": 5},
+    {"name": "gridColumns", "value": 3},
     {"name": "gridPadding", "value": 25},
     {"name": "boxWidth", "value": 50},
     {"name": "lineColor", "value": "gray"},
