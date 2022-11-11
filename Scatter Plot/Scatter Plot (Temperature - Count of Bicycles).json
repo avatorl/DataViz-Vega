@@ -38,7 +38,7 @@
   "data": [
     {
       "name": "dataset-csv",
-      "url": "https://dl.dropboxusercontent.com/s/3vn50z80xksjsf3/data.csv",
+      "url": "https://dl.dropboxusercontent.com/s/bclut1geq5xtorc/DataScatterPlot.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","}
     },
     {"name": "dataset", "source": "dataset-csv"},
@@ -155,7 +155,7 @@
   ],
   "title": {
     "text": {
-      "signal": "'Correlation Between Average Temperature and Number of Bicycles, '"
+      "signal": "'Correlation Between Average Temperature and Number of Bicycles'"
     },
     "fontSize": 20,
     "font": "Tahoma",
