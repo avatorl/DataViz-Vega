@@ -64,7 +64,10 @@
           "title": {
             "text": {"signal": "parent[\"location\"]"},
             "anchor": "start",
-            "font": {"value": "Tahoma"}
+            "font": {"value": "Tahoma"},
+            "fontSize": {"value": 16},
+            "fontWeight": "lighter",
+            "dy": 10
           },
           "axes": [
             {
