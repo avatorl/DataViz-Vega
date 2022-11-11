@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
   "description": "A basic line chart example.",
-  "width": 100,
+  "width": 150,
   "height": 50,
   "padding": 5,
   "signals": [
