@@ -1,0 +1,142 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "A box plot example showing aggregate statistics for penguin body mass.",
+  "height": 200,
+  "width": 250,
+  "padding": 5,
+  "config": {
+    "axisBand": {"bandPosition": 1, "tickExtra": true, "tickOffset": 0}
+  },
+  "signals": [
+    {"name": "boxWidth", "value": 50},
+    {"name": "lineColor", "value": "gray"}
+  ],
+  "data": [
+    {
+      "name": "dataset-csv",
+      "url": "https://dl.dropboxusercontent.com/s/ceq9iizktf4rexk/BoxPlotData.csv",
+      "format": {"type": "csv", "parse": "auto", "delimiter": ","}
+    },
+    {"name": "dataset", "source": "dataset-csv"}
+  ],
+  "scales": [
+    {
+      "name": "layout",
+      "type": "band",
+      "range": "width",
+      "domain": {"data": "dataset", "field": "year"}
+    },
+    {
+      "name": "xscale",
+      "type": "linear",
+      "range": "height",
+      "round": true,
+      "domain": {"data": "dataset", "field": "max"},
+      "domainMin": 0,
+      "zero": true,
+      "nice": true
+    }
+  ],
+  "marks": [
+    {
+      "type": "group",
+      "layout": {"align": "all", "bounds": "full", "columns": 1, "padding": 10},
+      "marks": [
+        {
+          "type": "group",
+          "from": {
+            "facet": {
+              "name": "series",
+              "data": "dataset",
+              "groupby": "location"
+            }
+          },
+          "axes": [
+            {
+              "orient": "bottom",
+              "ticks": false,
+              "domain": false,
+              "scale": "layout",
+              "zindex": 1,
+              "tickColor": "#CCCCCC",
+              "domainColor": "#CCCCCC",
+              "labelColor": "gray"
+            },
+            {
+              "orient": "left",
+              "scale": "xscale",
+              "tickCount": 5,
+              "zindex": 1,
+              "tickColor": "#CCCCCC",
+              "domainColor": "#CCCCCC",
+              "labelColor": "gray"
+            }
+          ],
+          "marks": [
+            {
+              "type": "group",
+              "from": {
+                "facet": {"data": "series", "name": "year", "groupby": "year"}
+              },
+              "encode": {
+                "enter": {
+                  "xc": {"scale": "layout", "field": "year", "band": 0.5},
+                  "width": {"signal": "boxWidth"},
+                  "height": {"signal": "height"}
+                }
+              },
+              "marks": [
+                {
+                  "type": "rect",
+                  "from": {"data": "year"},
+                  "encode": {
+                    "enter": {
+                      "fill": {"signal": "lineColor"},
+                      "width": {"value": 1}
+                    },
+                    "update": {
+                      "xc": {"signal": "boxWidth / 2", "offset": -0.5},
+                      "y": {"scale": "xscale", "field": "min"},
+                      "y2": {"scale": "xscale", "field": "max"}
+                    }
+                  }
+                },
+                {
+                  "type": "rect",
+                  "from": {"data": "year"},
+                  "encode": {
+                    "enter": {
+                      "fill": {"value": "#5e6cd5"},
+                      "cornerRadius": {"value": 2}
+                    },
+                    "update": {
+                      "xc": {"signal": "boxWidth / 2"},
+                      "width": {"signal": "boxWidth / 2"},
+                      "y": {"scale": "xscale", "field": "25th"},
+                      "y2": {"scale": "xscale", "field": "75th"}
+                    }
+                  }
+                },
+                {
+                  "type": "rect",
+                  "from": {"data": "year"},
+                  "encode": {
+                    "enter": {
+                      "fill": {"value": "#EEEEEE"},
+                      "height": {"value": 2}
+                    },
+                    "update": {
+                      "xc": {"signal": "boxWidth / 2"},
+                      "width": {"signal": "boxWidth / 2"},
+                      "y": {"scale": "xscale", "field": "50th"}
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
