@@ -8,6 +8,7 @@
     "axisBand": {"bandPosition": 1, "tickExtra": true, "tickOffset": 0}
   },
   "signals": [
+    {"name": "gridColumns", "value": 5},
     {"name": "boxWidth", "value": 50},
     {"name": "lineColor", "value": "gray"}
   ],
@@ -40,7 +41,12 @@
   "marks": [
     {
       "type": "group",
-      "layout": {"align": "all", "bounds": "full", "columns": 1, "padding": 10},
+      "layout": {
+        "align": "all",
+        "bounds": "full",
+        "columns": {"signal": "gridColumns"},
+        "padding": 10
+      },
       "marks": [
         {
           "type": "group",
@@ -53,7 +59,12 @@
           },
           "axes": [
             {
-              "orient": "bottom",
+              "orient": "top",
+              "title": {"signal": "'Title'"},
+              "titleAnchor": "start",
+              "titleColor": "gray",
+              "titleFontSize": 20,
+              "titlePadding": 0,
               "ticks": false,
               "domain": false,
               "scale": "layout",
