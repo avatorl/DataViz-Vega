@@ -2,4 +2,4 @@
 
 Number of bicycles (annual data), by location
 
-![Image](https://dl.dropboxusercontent.com/s/j3g0qx2z1b5qzij/chrome_0xTyy7X0E1.png)
+![Image](https://dl.dropboxusercontent.com/s/5nr1go8q19g77t7/chrome_X9wFuOzDe2.png)
