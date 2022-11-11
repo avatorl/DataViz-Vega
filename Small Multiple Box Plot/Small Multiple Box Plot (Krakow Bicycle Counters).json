@@ -61,7 +61,11 @@
               "groupby": "location"
             }
           },
-          "title": {"text": {"signal": "''"}, "anchor": "start"},
+          "title": {
+            "text": {"signal": "parent[\"location\"]"},
+            "anchor": "start",
+            "font": {"value": "Tahoma"}
+          },
           "axes": [
             {
               "orient": "left",
