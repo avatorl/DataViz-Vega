@@ -23,7 +23,7 @@
     {"name": "fillOpacityMadeGray", "value": 0.3},
     {"name": "tickOpacity", "value": 0.3},
     {"name": "tickOpacity270", "value": 0.5},
-    {"name": "chartWidth", "value": 300},
+    {"name": "chartWidth", "value": 350},
     {"name": "chartPad", "value": 50},
     {"name": "width", "update": "2 * chartWidth + chartPad"},
     {
