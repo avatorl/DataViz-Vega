@@ -9,8 +9,12 @@
   },
   "signals": [
     {"name": "gridColumns", "value": 5},
+    {"name": "gridPadding", "value": 25},
     {"name": "boxWidth", "value": 50},
-    {"name": "lineColor", "value": "gray"}
+    {"name": "lineColor", "value": "gray"},
+    {"name": "axeLabelColor", "value": "#AAAAAA"},
+    {"name": "axeTickColor", "value": "#CCCCCC"},
+    {"name": "boxColor", "value": "#5e6cd5"}
   ],
   "data": [
     {
@@ -22,13 +26,13 @@
   ],
   "scales": [
     {
-      "name": "layout",
+      "name": "scaleX",
       "type": "band",
       "range": "width",
       "domain": {"data": "dataset", "field": "year"}
     },
     {
-      "name": "xscale",
+      "name": "scaleY",
       "type": "linear",
       "range": "height",
       "round": true,
@@ -45,53 +49,51 @@
         "align": "all",
         "bounds": "full",
         "columns": {"signal": "gridColumns"},
-        "padding": 10
+        "padding": {"signal": "gridPadding"}
       },
       "marks": [
         {
           "type": "group",
           "from": {
             "facet": {
-              "name": "series",
+              "name": "facet-locations",
               "data": "dataset",
               "groupby": "location"
             }
           },
+          "title": {"text": {"signal": "''"}, "anchor": "start"},
           "axes": [
             {
-              "orient": "top",
-              "title": {"signal": "'Title'"},
-              "titleAnchor": "start",
-              "titleColor": "gray",
-              "titleFontSize": 20,
-              "titlePadding": 0,
-              "ticks": false,
+              "orient": "left",
+              "scale": "scaleY",
+              "tickCount": 5,
               "domain": false,
-              "scale": "layout",
-              "zindex": 1,
-              "tickColor": "#CCCCCC",
-              "domainColor": "#CCCCCC",
-              "labelColor": "gray"
+              "tickColor": {"signal": "axeTickColor"},
+              "labelColor": {"signal": "axeLabelColor"}
             },
             {
-              "orient": "left",
-              "scale": "xscale",
-              "tickCount": 5,
-              "zindex": 1,
-              "tickColor": "#CCCCCC",
-              "domainColor": "#CCCCCC",
-              "labelColor": "gray"
+              "orient": "bottom",
+              "offset": {"signal": "height+5"},
+              "ticks": false,
+              "domain": false,
+              "scale": "scaleX",
+              "tickColor": {"signal": "axeTickColor"},
+              "labelColor": {"signal": "axeLabelColor"}
             }
           ],
           "marks": [
             {
               "type": "group",
               "from": {
-                "facet": {"data": "series", "name": "year", "groupby": "year"}
+                "facet": {
+                  "data": "facet-locations",
+                  "name": "year",
+                  "groupby": "year"
+                }
               },
               "encode": {
                 "enter": {
-                  "xc": {"scale": "layout", "field": "year", "band": 0.5},
+                  "xc": {"scale": "scaleX", "field": "year", "band": 0.5},
                   "width": {"signal": "boxWidth"},
                   "height": {"signal": "height"}
                 }
@@ -107,8 +109,8 @@
                     },
                     "update": {
                       "xc": {"signal": "boxWidth / 2", "offset": -0.5},
-                      "y": {"scale": "xscale", "field": "min"},
-                      "y2": {"scale": "xscale", "field": "max"}
+                      "y": {"scale": "scaleY", "field": "min"},
+                      "y2": {"scale": "scaleY", "field": "max"}
                     }
                   }
                 },
@@ -117,14 +119,14 @@
                   "from": {"data": "year"},
                   "encode": {
                     "enter": {
-                      "fill": {"value": "#5e6cd5"},
+                      "fill": {"signal": "boxColor"},
                       "cornerRadius": {"value": 2}
                     },
                     "update": {
                       "xc": {"signal": "boxWidth / 2"},
                       "width": {"signal": "boxWidth / 2"},
-                      "y": {"scale": "xscale", "field": "25th"},
-                      "y2": {"scale": "xscale", "field": "75th"}
+                      "y": {"scale": "scaleY", "field": "25th"},
+                      "y2": {"scale": "scaleY", "field": "75th"}
                     }
                   }
                 },
@@ -139,7 +141,7 @@
                     "update": {
                       "xc": {"signal": "boxWidth / 2"},
                       "width": {"signal": "boxWidth / 2"},
-                      "y": {"scale": "xscale", "field": "50th"}
+                      "y": {"scale": "scaleY", "field": "50th"}
                     }
                   }
                 }
