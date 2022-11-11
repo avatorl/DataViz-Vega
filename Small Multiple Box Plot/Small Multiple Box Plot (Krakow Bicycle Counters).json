@@ -20,7 +20,13 @@
     {
       "name": "dataset-csv",
       "url": "https://dl.dropboxusercontent.com/s/ceq9iizktf4rexk/BoxPlotData.csv",
-      "format": {"type": "csv", "parse": "auto", "delimiter": ","}
+      "format": {"type": "csv", "parse": "auto", "delimiter": ","},
+      "transform": [
+        {
+          "type": "collect",
+          "sort": {"field": ["location"], "order": ["ascending"]}
+        }
+      ]
     },
     {"name": "dataset", "source": "dataset-csv"}
   ],
@@ -29,7 +35,7 @@
       "name": "scaleX",
       "type": "band",
       "range": "width",
-      "domain": {"data": "dataset", "field": "year"}
+      "domain": {"data": "dataset", "field": "year", "sort": true}
     },
     {
       "name": "scaleY",
