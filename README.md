@@ -4,7 +4,7 @@ This repository contains code (JSON) for data visualizations created usig [Vega]
 
 The published data visualizations are just examples and results of author's experiments with Vega and Deneb. Some of them may still require debugging and code optimization/cleaning. The author is not responsible for the quality, accuracy, reliability or any other aspect of the shared code and data.
 
-# Author
+## Author
 Andrzej Leszkiewicz
 - Web-site (blog): [Power of Business Intelligence](https://powerofbi.org/)
 - Twitter: [@avatorl](https://twitter.com/avatorl)
