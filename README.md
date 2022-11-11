@@ -1,4 +1,4 @@
-# Deneb-Vega templates and examples
+# Deneb-Vega data visualization examples
 
 This repository contains code (JSON) for data visualizations created by Andrzej Leszkiewicz usig [Vega](https://vega.github.io/vega/). They are created to be embedded into Power BI reports using [Deneb](https://deneb-viz.github.io/) custom visual for Power BI, but can be embedded into any web page. All visualizations published here are based on open data with data files (CSV) attached.
 
