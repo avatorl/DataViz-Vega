@@ -2,7 +2,7 @@
 
 This repository contains code for data visualizations created by Andrzej Leszkiewicz usig [Vega](https://vega.github.io/vega/). They are created to be used inside of [Deneb](https://deneb-viz.github.io/) custom visual for Power BI, but can be embeded into any web page. All visualizations published here are based on open data with data files (*.csv) attached.
 
-##Attribution 4.0 International (CC BY 4.0)
+## Attribution 4.0 International (CC BY 4.0)
 
 If not otherwise stated you are free to:
 - **Share** — copy and redistribute the material in any medium or format
