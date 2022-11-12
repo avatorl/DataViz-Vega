@@ -13,16 +13,7 @@
       "name": "title",
       "init": "'Number of Bicycles by bicycle counter location, daily (last 30 days)'"
     },
-    {
-      "name": "gridColumns",
-      "init": "isFinite(containerSize()[0]) ? ceil(containerSize()[0] / 210) : 3",
-      "on": [
-        {
-          "update": "isFinite(containerSize()[0]) ? ceil(containerSize()[0] / 210) : 3",
-          "events": "window:resize"
-        }
-      ]
-    }
+    {"name": "gridColumns", "value": 3}
   ],
   "data": [
     {
