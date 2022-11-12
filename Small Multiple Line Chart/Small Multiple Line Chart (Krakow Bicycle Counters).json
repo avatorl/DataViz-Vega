@@ -86,8 +86,7 @@
                   "stroke": {"signal": "colorLine"},
                   "strokeWidth": {"value": 2}
                 },
-                "update": {"strokeOpacity": {"value": 1}},
-                "hover": {"strokeOpacity": {"value": 0.5}}
+                "update": {"strokeOpacity": {"value": 1}}
               }
             },
             {
@@ -103,8 +102,7 @@
                   },
                   "stroke": {"signal": "'orange'"}
                 },
-                "update": {"strokeOpacity": {"value": 0.1}},
-                "hover": {"strokeOpacity": {"value": 0.5}}
+                "update": {"strokeOpacity": {"value": 0.1}}
               }
             },
             {
