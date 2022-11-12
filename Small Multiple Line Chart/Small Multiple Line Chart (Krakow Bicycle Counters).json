@@ -8,13 +8,13 @@
     {"name": "colorTitle", "value": "#333333"},
     {"name": "colorLine", "value": "gray"},
     {"name": "colorEndPoint", "value": "#5e6cd5"},
-    {"name": "title", "init": "ceil(screenSize()[0])"},
+    {"name": "title", "init": "ceil(windowSize()[0])"},
     {
       "name": "gridColumns",
-      "init": "isFinite(screenSize()[0]) ? ceil(screenSize()[0] / 205) : 3",
+      "init": "isFinite(windowSize()[0]) ? ceil(windowSize()[0] / 350) : 3",
       "on": [
         {
-          "update": "isFinite(screenSize()[0]) ? ceil(screenSize()[0] / 205) : 3",
+          "update": "isFinite(windowSize()[0]) ? ceil(windowSize()[0] / 350) : 3",
           "events": "window:resize"
         }
       ]
