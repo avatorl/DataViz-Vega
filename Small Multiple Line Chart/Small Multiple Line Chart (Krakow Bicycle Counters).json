@@ -8,7 +8,11 @@
     {"name": "colorTitle", "value": "#333333"},
     {"name": "colorLine", "value": "gray"},
     {"name": "colorEndPoint", "value": "#5e6cd5"},
-    {"name": "title", "init": "ceil(windowSize()[0])"},
+    {"name": "colorWeekend", "value": "red"},
+    {
+      "name": "title",
+      "init": "'Number of Bicycles by bicycle counter location, daily (last 30 days)'"
+    },
     {
       "name": "gridColumns",
       "init": "isFinite(windowSize()[0]) ? ceil(windowSize()[0] / 350) : 3",
@@ -55,7 +59,13 @@
       "domain": {"data": "dataset", "field": "location"}
     }
   ],
-  "title": {"text": {"signal": "title"}},
+  "title": {
+    "text": {"signal": "title"},
+    "anchor": "start",
+    "font": "Tahoma",
+    "fontSize": 18,
+    "fontWeight": "lighter"
+  },
   "marks": [
     {
       "type": "group",
@@ -95,14 +105,14 @@
               "encode": {
                 "enter": {
                   "x": {"scale": "x", "field": "date"},
-                  "y": {"value": 0},
+                  "y": {"value": 5},
                   "y2": {"signal": "height"},
                   "strokeWidth": {
                     "signal": "(day(datum.date)==6 || day(datum.date)==0) ? 2 : 0"
                   },
-                  "stroke": {"signal": "'orange'"}
+                  "stroke": {"signal": "colorWeekend"}
                 },
-                "update": {"strokeOpacity": {"value": 0.1}}
+                "update": {"strokeOpacity": {"value": 0.05}}
               }
             },
             {
