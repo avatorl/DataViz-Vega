@@ -15,10 +15,10 @@
     },
     {
       "name": "gridColumns",
-      "init": "isFinite(containerSize()[0]) ? ceil(containerSize()[0] / 250) : 3",
+      "init": "isFinite(containerSize()[0]) ? ceil(containerSize()[0] / 275) : 3",
       "on": [
         {
-          "update": "isFinite(containerSize()[0]) ? ceil(containerSize()[0] / 250) : 3",
+          "update": "isFinite(containerSize()[0]) ? ceil(containerSize()[0] / 275) : 3",
           "events": "window:resize"
         }
       ]
