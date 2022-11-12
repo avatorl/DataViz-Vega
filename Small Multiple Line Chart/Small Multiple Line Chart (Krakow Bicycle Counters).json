@@ -18,7 +18,7 @@
   "data": [
     {
       "name": "dataset-csv",
-      "url": "https://dl.dropboxusercontent.com/s/4j8mdeme3lzqe98/Last%2030%20days%20Bicycle%20Count.csv",
+      "url": "https://dl.dropboxusercontent.com/s/w0qrt2ycjgqkiia/Last%2030%20days%20Bicycle%20Count%20%283%29.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","}
     },
     {"name": "dataset", "source": "dataset-csv"},
@@ -40,7 +40,7 @@
       "type": "linear",
       "range": "height",
       "nice": true,
-      "zero": true,
+      "zero": false,
       "domain": {"data": "dataset", "field": "count"}
     },
     {
@@ -128,7 +128,7 @@
                       "strokeWidth": {"value": 0.5}
                     },
                     "update": {
-                      "size": {"signal": "datum.count == datum.last_count?40:0"}
+                      "size": {"signal": "datum.last_count==null?0:40"}
                     }
                   }
                 },
