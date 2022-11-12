@@ -7,7 +7,18 @@
   "signals": [
     {"name": "colorTitle", "value": "#333333"},
     {"name": "colorLine", "value": "gray"},
-    {"name": "colorEndPoint", "value": "#5e6cd5"}
+    {"name": "colorEndPoint", "value": "#5e6cd5"},
+    {"name": "title", "init": "ceil(windowSize()[0])"},
+    {
+      "name": "gridColumns",
+      "init": "isFinite(windowSize()[0]) ? ceil(windowSize()[0] / 205) : 3",
+      "on": [
+        {
+          "update": "isFinite(windowSize()[0]) ? ceil(windowSize()[0] / 205) : 3",
+          "events": "window:resize"
+        }
+      ]
+    }
   ],
   "data": [
     {
@@ -44,10 +55,16 @@
       "domain": {"data": "dataset", "field": "location"}
     }
   ],
+  "title": {"text": {"signal": "title"}},
   "marks": [
     {
       "type": "group",
-      "layout": {"align": "all", "bounds": "full", "columns": 3, "padding": 10},
+      "layout": {
+        "align": "all",
+        "bounds": "full",
+        "columns": {"signal": "gridColumns"},
+        "padding": 10
+      },
       "marks": [
         {
           "type": "group",
@@ -70,6 +87,23 @@
                   "strokeWidth": {"value": 2}
                 },
                 "update": {"strokeOpacity": {"value": 1}},
+                "hover": {"strokeOpacity": {"value": 0.5}}
+              }
+            },
+            {
+              "type": "rect",
+              "from": {"data": "series"},
+              "encode": {
+                "enter": {
+                  "x": {"scale": "x", "field": "date"},
+                  "y": {"value": 0},
+                  "y2": {"signal": "height"},
+                  "strokeWidth": {
+                    "signal": "(day(datum.date)==6 || day(datum.date)==0) ? 2 : 0"
+                  },
+                  "stroke": {"signal": "'orange'"}
+                },
+                "update": {"strokeOpacity": {"value": 0.1}},
                 "hover": {"strokeOpacity": {"value": 0.5}}
               }
             },
