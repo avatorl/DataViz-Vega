@@ -17,6 +17,7 @@
     {"name": "colorAxisTicksAndLabels", "value": "#BBBBBB"},
     {"name": "fillOpacityDefault", "value": 0.8},
     {"name": "fillOpacityHoverGray", "value": 0.3},
+    {"name": "fillOpacityHoverUnclaimed", "value": 0.5},
     {"name": "fillOpacityHoverTotal", "value": 0.9},
     {"name": "fillOpacityClaimed", "value": 0.5},
     {"name": "fillOpacityGray", "value": 0.15},
@@ -323,7 +324,7 @@
             },
             "hover": {
               "fillOpacity": {
-                "signal": "indata('claimed-right-state', 'value', datum.index) ? fillOpacityHoverGray : fillOpacityDefault"
+                "signal": "indata('claimed-right-state', 'value', datum.index) ? fillOpacityHoverUnclaimed : fillOpacityDefault"
               },
               "cursor": {
                 "signal": "indata('claimed-right-state', 'value', datum.index) ? 'pointer' : 'default'"
@@ -436,7 +437,7 @@
             },
             "hover": {
               "fillOpacity": {
-                "signal": "indata('claimed-left-state', 'value', datum.index) ? fillOpacityHoverGray : fillOpacityDefault"
+                "signal": "indata('claimed-left-state', 'value', datum.index) ? fillOpacityHoverUnclaimed : fillOpacityDefault"
               },
               "cursor": {
                 "signal": "indata('claimed-left-state', 'value', datum.index) ? 'pointer' : 'default'"
