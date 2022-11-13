@@ -31,7 +31,7 @@
       "name": "showHelper",
       "description": "timer to hide the helper",
       "init": "true",
-      "on": [{"events": "timer:10000", "update": "!showHelper"}]
+      "on": [{"events": "timer:15000", "update": "!showHelper"}]
     },
     {
       "name": "leftGrayBar_clicked",
@@ -750,7 +750,7 @@
             "update": {
               "x": {"value": 0},
               "y": {"value": 0},
-              "size": {"value": 900},
+              "size": {"value": 1200},
               "shape": {"value": "circle"},
               "blend": {"value": "overlay"},
               "strokeOpacity": {"value": 0.1},
@@ -759,7 +759,7 @@
               "fillOpacity": {"value": 0.05}
             },
             "hover": {
-              "blend": {"value": "exclusion"},
+              "strokeWidth": {"value": 3},
               "tooltip": {"value": "Reset"},
               "cursor": {"value": "pointer"}
             }
