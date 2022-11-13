@@ -19,7 +19,7 @@
   "data": [
     {
       "name": "dataset-csv",
-      "url": "https://github.com/avatorl/Deneb-Vega/blob/main/small-multiples-box-plot/data-bike-box-plot.csv",
+      "url": "https://github.com/avatorl/Deneb-Vega/blob/main/small-multiple-box-plot/data-bike-box-plot.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","},
       "transform": [
         {
