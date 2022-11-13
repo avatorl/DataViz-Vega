@@ -91,7 +91,7 @@
   "data": [
     {
       "name": "dataset",
-      "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/US%20Elections%20Chart/us-elections-data.json"
+      "url": "https://github.com/avatorl/Deneb-Vega/raw/main/us-elections-chart/data-us-elections.json"
     },
     {
       "name": "data-left",
