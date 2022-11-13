@@ -1,0 +1,289 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "Combined Small Multiple",
+  "height": 200,
+  "width": 500,
+  "padding": 5,
+  "signals": [
+    {"name": "gridColumns", "value": 1},
+    {"name": "gridPadding", "value": 40},
+    {"name": "boxWidth", "value": 50},
+    {"name": "lineColor", "value": "gray"},
+    {"name": "axeLabelColor", "value": "#AAAAAA"},
+    {"name": "axeGridColor", "value": "#CCCCCC"},
+    {"name": "boxColor", "value": "#5E6CD5"},
+    {"name": "colorTitle", "value": "#333333"},
+    {"name": "colorLine", "value": "gray"},
+    {"name": "colorEndPoint", "value": "#5E6CD5"},
+    {"name": "colorWeekend", "value": "red"}
+  ],
+  "data": [
+    {
+      "name": "dataset1-csv",
+      "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/small-multiple-box-plot/data-bike-box-plot.csv",
+      "format": {"type": "csv", "parse": "auto", "delimiter": ","},
+      "transform": [
+        {
+          "type": "collect",
+          "sort": {"field": ["location"], "order": ["ascending"]}
+        }
+      ]
+    },
+    {"name": "dataset1", "source": "dataset1-csv"},
+    {
+      "name": "dataset2-csv",
+      "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/small-multiple-line-chart/data-bike-line-chart.csv",
+      "format": {"type": "csv", "parse": "auto", "delimiter": ","}
+    },
+    {"name": "dataset2", "source": "dataset2-csv"},
+    {
+      "name": "dataset-last",
+      "source": "dataset2",
+      "transform": [{"type": "filter", "expr": "datum.last_count != null"}]
+    }
+  ],
+  "scales": [
+    {
+      "name": "scaleY",
+      "type": "linear",
+      "range": "height",
+      "round": true,
+      "domain": {"data": "dataset1", "field": "max"},
+      "domainMin": 0,
+      "zero": true,
+      "nice": true
+    },
+    {
+      "name": "scaleX1",
+      "type": "point",
+      "range": [5, 200],
+      "domain": {"data": "dataset2", "field": "date"}
+    },
+    {
+      "name": "scaleX2",
+      "type": "band",
+      "range": [260, 500],
+      "domain": {"data": "dataset1", "field": "year", "sort": true}
+    }
+  ],
+  "marks": [
+    {
+      "type": "group",
+      "layout": {
+        "align": "all",
+        "bounds": "full",
+        "columns": {"signal": "gridColumns"},
+        "padding": {"signal": "gridPadding"}
+      },
+      "marks": [
+        {
+          "type": "group",
+          "from": {
+            "facet": {
+              "name": "facet-locations",
+              "data": "dataset1",
+              "groupby": "location"
+            }
+          },
+          "title": {
+            "text": {"signal": "parent[\"location\"]"},
+            "anchor": "start",
+            "font": {"value": "Tahoma"},
+            "fontSize": {"value": 16},
+            "fontWeight": "lighter"
+          },
+          "axes": [
+            {
+              "orient": "left",
+              "scale": "scaleY",
+              "domain": false,
+              "grid": true,
+              "gridWidth": 0.2,
+              "gridColor": {"signal": "axeGridColor"},
+              "ticks": false,
+              "tickCount": 5,
+              "labelColor": {"signal": "axeLabelColor"}
+            },
+            {
+              "orient": "bottom",
+              "offset": {"signal": "height"},
+              "ticks": false,
+              "domain": false,
+              "scale": "scaleX2",
+              "tickColor": {"signal": "axeGridColor"},
+              "labelColor": {"signal": "axeLabelColor"}
+            }
+          ],
+          "marks": [
+            {
+              "type": "group",
+              "from": {
+                "facet": {
+                  "data": "facet-locations",
+                  "name": "year",
+                  "groupby": "year"
+                }
+              },
+              "encode": {
+                "enter": {
+                  "xc": {"scale": "scaleX2", "field": "year", "band": 0.5},
+                  "width": {"signal": "boxWidth"},
+                  "height": {"signal": "height"}
+                }
+              },
+              "marks": [
+                {
+                  "type": "rect",
+                  "from": {"data": "year"},
+                  "encode": {
+                    "enter": {
+                      "fill": {"signal": "lineColor"},
+                      "width": {"value": 1}
+                    },
+                    "update": {
+                      "xc": {"signal": "boxWidth / 2", "offset": -0.5},
+                      "y": {"scale": "scaleY", "field": "min"},
+                      "y2": {"scale": "scaleY", "field": "max"}
+                    }
+                  }
+                },
+                {
+                  "type": "rect",
+                  "from": {"data": "year"},
+                  "encode": {
+                    "enter": {
+                      "fill": {"signal": "boxColor"},
+                      "cornerRadius": {"value": 2}
+                    },
+                    "update": {
+                      "xc": {"signal": "boxWidth / 2"},
+                      "width": {"signal": "boxWidth / 2"},
+                      "y": {"scale": "scaleY", "field": "25th"},
+                      "y2": {"scale": "scaleY", "field": "75th"}
+                    }
+                  }
+                },
+                {
+                  "type": "rect",
+                  "from": {"data": "year"},
+                  "encode": {
+                    "enter": {
+                      "fill": {"value": "#EEEEEE"},
+                      "height": {"value": 2}
+                    },
+                    "update": {
+                      "xc": {"signal": "boxWidth / 2"},
+                      "width": {"signal": "boxWidth / 2"},
+                      "y": {"scale": "scaleY", "field": "50th"}
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "description": "line chart",
+      "layout": {
+        "align": "all",
+        "bounds": "full",
+        "columns": {"signal": "gridColumns"},
+        "padding": {"signal": "gridPadding+9"}
+      },
+      "marks": [
+        {
+          "type": "group",
+          "from": {
+            "facet": {
+              "name": "series1",
+              "data": "dataset2",
+              "groupby": "location"
+            }
+          },
+          "marks": [
+            {
+              "type": "line",
+              "from": {"data": "series1"},
+              "encode": {
+                "enter": {
+                  "x": {"scale": "scaleX1", "field": "date"},
+                  "y": {"scale": "scaleY", "field": "count"},
+                  "stroke": {"signal": "colorLine"},
+                  "strokeWidth": {"value": 2}
+                },
+                "update": {"strokeOpacity": {"value": 1}}
+              }
+            },
+            {
+              "type": "rect",
+              "from": {"data": "series1"},
+              "encode": {
+                "enter": {
+                  "x": {"scale": "scaleX1", "field": "date"},
+                  "y": {"scale": "scaleY", "value": 0},
+                  "y2": {"scale": "scaleY", "value": 8000},
+                  "strokeWidth": {
+                    "signal": "(day(datum.date)==6 || day(datum.date)==0) ? 2 : 0"
+                  },
+                  "stroke": {"signal": "colorWeekend"}
+                },
+                "update": {"strokeOpacity": {"value": 0.05}}
+              }
+            },
+            {
+              "type": "group",
+              "from": {
+                "facet": {
+                  "name": "series2",
+                  "data": "dataset-last",
+                  "groupby": "location"
+                }
+              },
+              "marks": [
+                {
+                  "type": "symbol",
+                  "from": {"data": "series1"},
+                  "encode": {
+                    "enter": {
+                      "x": {"scale": "scaleX1", "field": "date"},
+                      "y": {"scale": "scaleY", "field": "last_count"},
+                      "fill": {"signal": "colorEndPoint"},
+                      "stroke": {"signal": "colorLine"},
+                      "strokeWidth": {"value": 0.5}
+                    },
+                    "update": {
+                      "size": {"signal": "datum.last_count==null?0:40"}
+                    }
+                  }
+                },
+                {
+                  "type": "text",
+                  "from": {"data": "series1"},
+                  "encode": {
+                    "enter": {
+                      "text": {"field": "last_count"},
+                      "fontSize": {"value": 20},
+                      "x": {"scale": "scaleX1", "field": "date"},
+                      "y": {"scale": "scaleY", "field": "last_count"},
+                      "fill": {"signal": "colorEndPoint"},
+                      "stroke": {"signal": "colorLine"},
+                      "strokeWidth": {"value": 0},
+                      "dx": {"value": 5},
+                      "dy": {"value": -5}
+                    },
+                    "update": {
+                      "size": {"signal": "datum.count == datum.last_count?40:0"}
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
