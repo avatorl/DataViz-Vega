@@ -18,7 +18,7 @@
   "data": [
     {
       "name": "dataset-csv",
-      "url": "https://dl.dropboxusercontent.com/s/w0qrt2ycjgqkiia/Last%2030%20days%20Bicycle%20Count%20%283%29.csv",
+      "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/small-multiple-line-chart/data-bike-line-chart.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","}
     },
     {"name": "dataset", "source": "dataset-csv"},
