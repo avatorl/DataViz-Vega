@@ -13,7 +13,7 @@
     {"name": "boxWidth", "value": 50},
     {"name": "lineColor", "value": "gray"},
     {"name": "axeLabelColor", "value": "#AAAAAA"},
-    {"name": "axeTickColor", "value": "#CCCCCC"},
+    {"name": "axeGridColor", "value": "#CCCCCC"},
     {"name": "boxColor", "value": "#5e6cd5"}
   ],
   "data": [
@@ -79,9 +79,12 @@
             {
               "orient": "left",
               "scale": "scaleY",
-              "tickCount": 5,
               "domain": false,
-              "tickColor": {"signal": "axeTickColor"},
+              "grid": true,
+              "gridWidth": 0.2,
+              "gridColor": {"signal": "axeGridColor"},
+              "ticks": false,
+              "tickCount": 5,
               "labelColor": {"signal": "axeLabelColor"}
             },
             {
@@ -90,7 +93,7 @@
               "ticks": false,
               "domain": false,
               "scale": "scaleX",
-              "tickColor": {"signal": "axeTickColor"},
+              "tickColor": {"signal": "axeGridColor"},
               "labelColor": {"signal": "axeLabelColor"}
             }
           ],
