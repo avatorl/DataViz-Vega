@@ -248,6 +248,13 @@
     },
     {"name": "scaleLRCandidates"}
   ],
+  "title": {
+    "text": "2020 US Presidential Election",
+    "anchor": "start",
+    "fontSize": 18,
+    "fontWeight": "lighter",
+    "font": "Tahoma"
+  },
   "marks": [
     {
       "type": "text",
@@ -296,7 +303,7 @@
           "ticks": true,
           "tickSize": 10,
           "tickOpacity": {"signal": "tickOpacity"},
-          "offset": -25,
+          "offset": -13,
           "labelPadding": 0
         }
       ],
@@ -409,7 +416,7 @@
           "ticks": true,
           "tickSize": 10,
           "tickOpacity": {"signal": "tickOpacity"},
-          "offset": -25,
+          "offset": -13,
           "labelPadding": 0
         }
       ],
