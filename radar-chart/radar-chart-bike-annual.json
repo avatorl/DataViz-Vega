@@ -8,7 +8,7 @@
   "data": [
     {
       "name": "dataset-url-for-non-deneb-usage",
-      "url": "https://dl.dropboxusercontent.com/s/4xx1wpeejebh4nx/dataset_annual.csv",
+      "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/radar-chart/data-bike-annual.csv",
       "format": {"type": "csv", "parse": "auto"}
     },
     {"name": "dataset", "source": "dataset-url-for-non-deneb-usage"},
