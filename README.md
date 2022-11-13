@@ -2,7 +2,7 @@
 
 This repository contains code (JSON) for data visualizations created usig [Vega](https://vega.github.io/vega/) by Andrzej Leszkiewicz. They are created to be embedded into Power BI reports using [Deneb](https://deneb-viz.github.io/) custom visual, but they also can be embedded into any web page/application independently of Power BI. All visualizations published here are based on open data with the data files (CSV or JSON) attached.
 
-See [rendered charts](https://powerofbi.org/deneb-vega-data-visualization-examples/) on my web site. The renders are based on the current version of the code stored in this repository. The screenshots placed into the README.md files in this repository may be outdated.
+See [rendered charts](https://powerofbi.org/deneb-vega-data-visualization-examples/) on my web site. The renders are based on the current version of the code stored in this repository.
 
 The materials shared in this repository are just examples and results of author's experiments with Vega. Some of the data visualizations may still require additional formatting, debugging and code cleaning to be done.
 
