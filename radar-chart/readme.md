@@ -1,6 +1,5 @@
 # Radar Charts for Krakow Bicycle Counters report
 
-I created 2 radar charts for my Krakow Bicycle Counters report https://powerofbi.org/krakow-bicycle-counters/?pageName=ReportSection48dfef449877c00bc200
 The charts (vega code) are almost identical, but one charts shows annual seasonality (by month), another chart shows weekly seasonality (by day of week).
 The only difference between two charts are: different data sources (one with 'month' column, another with 'day_of_week' column) and corresponding column references, and different conditional formatting for the axis labels (to highlight either winter/summer months or Saturday/Sunday with different colors). I also removed the spider on the weekly chart.
 
