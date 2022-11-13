@@ -38,7 +38,7 @@
   "data": [
     {
       "name": "dataset-csv",
-      "url": "https://dl.dropboxusercontent.com/s/bclut1geq5xtorc/DataScatterPlot.csv",
+      "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/scatter-plot/data-bike-scatter-weather.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","}
     },
     {"name": "dataset", "source": "dataset-csv"},
