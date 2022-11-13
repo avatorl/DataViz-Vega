@@ -679,7 +679,7 @@
           "tickColor": "red",
           "tickOpacity": {"signal": "tickOpacity270"},
           "offset": -9,
-          "labelPadding": -20
+          "labelPadding": -17
         }
       ],
       "marks": [
