@@ -26,7 +26,7 @@
     {"name": "tickOpacity270", "value": 0.5},
     {"name": "chartWidth", "value": 350},
     {"name": "chartPad", "value": 50},
-    {"name": "width", "update": "2 * chartWidth + chartPad"},
+    {"name": "width", "update": "2 * chartWidth + chartPad + 2"},
     {
       "name": "showHelper",
       "description": "timer to hide the helper",
