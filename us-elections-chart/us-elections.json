@@ -1,8 +1,24 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
-  "description": "",
+  "description": "US Presidential Election Chart",
+  "usermeta": {
+    "Author": "Andrzej Leszkiewicz",
+    "License": "CC BY 4.0 (Share and Adapt with Attribution)",
+    "Github": "https://github.com/avatorl/Deneb-Vega/"
+  },
   "height": 1000,
   "padding": 5,
+  "config": {
+    "autosize": {"contains": "padding", "type": "fit"},
+    "text": {"font": "Arial"},
+    "axis": {
+      "grid": false,
+      "domain": false,
+      "labelColor": "#BBBBBB",
+      "labelFontSize": 12,
+      "titleFontSize": 20
+    }
+  },
   "signals": [
     {"name": "chartTitle", "value": "Presidential Election Results 2020"},
     {"name": "nameLeft", "value": "Biden"},
@@ -822,16 +838,5 @@
         }
       ]
     }
-  ],
-  "config": {
-    "autosize": {"contains": "padding", "type": "fit"},
-    "text": {"font": "Arial"},
-    "axis": {
-      "grid": false,
-      "domain": false,
-      "labelColor": "#BBBBBB",
-      "labelFontSize": 12,
-      "titleFontSize": 20
-    }
-  }
+  ]
 }
