@@ -17,7 +17,7 @@
     {"name": "rectColor", "value": "#BBBBBB"}
   ],
   "title": {
-    "text": "Avg. daily number of bicycles by Month and avg. temperature",
+    "text": "Avg. daily number of bicycles by month and avg. temperature",
     "anchor": "start",
     "fontWeight": "lighter",
     "font": "Tahoma",
@@ -156,11 +156,10 @@
         "enter": {
           "fontSize": {"signal": "9"},
           "text": {"signal": "(datum.temp>0?'+':'')+datum.temp+'°C'"},
-          "fill": {"scale": "color", "field": "temp"},
-          "width": {"value": 20}
+          "fill": {"scale": "color", "field": "temp"}
         },
         "update": {
-          "x": {"scale": "scaleX", "field": "month", "offset": 3},
+          "x": {"scale": "scaleX", "field": "month", "offset": 6},
           "y": {"scale": "scaleY", "value": "-400"}
         }
       }
