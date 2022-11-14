@@ -1,6 +1,11 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
   "description": "Combined Small Multiple",
+    "usermeta": {
+    "Author": "Andrzej Leszkiewicz",
+    "License": "CC BY 4.0 (Share and Adapt with Attribution)",
+    "Github": "https://github.com/avatorl/Deneb-Vega/"
+  },
   "height": 200,
   "width": 500,
   "padding": 5,
