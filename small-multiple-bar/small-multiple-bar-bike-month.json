@@ -1,0 +1,167 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "...",
+  "usermeta": {
+    "Author": "Andrzej Leszkiewicz",
+    "License": "CC BY 4.0 (Share and Adapt with Attribution)",
+    "Github": "https://github.com/avatorl/Deneb-Vega/"
+  },
+  "background": "white",
+  "width": 400,
+  "height": 200,
+  "padding": 5,
+  "signals": [
+    {"name": "axeXLabelColor", "value": "#666666"},
+    {"name": "axeLabelColor", "value": "#AAAAAA"},
+    {"name": "axeGridColor", "value": "#CCCCCC"},
+    {"name": "rectColor", "value": "#BBBBBB"}
+  ],
+  "title": {
+    "text": "Number of Bicycles by Month and avg. temperature",
+    "anchor": "start",
+    "fontWeight": "lighter",
+    "font": "Tahoma",
+    "fontSize": 14
+  },
+  "data": [
+    {
+      "name": "data-csv",
+      "url": "https://dl.dropboxusercontent.com/s/qiid7gdvaa5ttw2/data-bike-month.csv",
+      "format": {
+        "type": "csv",
+        "parse": {
+          "location": "string",
+          "m": "number",
+          "month": "string",
+          "temp": "number",
+          "count": "number"
+        },
+        "delimiter": ","
+      }
+    },
+    {
+      "name": "data",
+      "source": "data-csv",
+      "transform": [
+        {
+          "type": "aggregate",
+          "groupby": ["m", "month"],
+          "fields": ["temp", "count"],
+          "ops": ["average", "average"],
+          "as": ["temp", "count"]
+        }
+      ]
+    }
+  ],
+  "scales": [
+    {
+      "name": "scaleX",
+      "type": "band",
+      "range": "width",
+      "domain": {
+        "data": "data",
+        "field": "month",
+        "sort": {"field": "m", "order": "ascending"}
+      }
+    },
+    {
+      "name": "scaleY",
+      "type": "linear",
+      "domain": {"data": "data", "fields": ["count"]},
+      "range": [0, {"signal": "height"}],
+      "reverse": true,
+      "nice": true,
+      "zero": true
+    },
+    {
+      "name": "scaleY2",
+      "type": "band",
+      "domain": [0],
+      "range": [{"signal": "height"}, {"signal": "height-10"}],
+      "reverse": true
+    },
+    {
+      "name": "color",
+      "type": "sequential",
+      "domain": {"data": "data", "field": "temp"},
+      "range": [
+        "#2F78B3",
+        "#5da2cb",
+        "#9dcae1",
+        "#AAAAAA",
+        "#fbbf74",
+        "#e8932f",
+        "C5690D"
+      ],
+      "domainMin": -5,
+      "domainMid": 20,
+      "domainMax": 25,
+      "interpolate": "rgb"
+    }
+  ],
+  "axes": [
+    {
+      "orient": "left",
+      "scale": "scaleY",
+      "domain": false,
+      "grid": true,
+      "gridWidth": 0.2,
+      "ticks": false,
+      "tickCount": 5,
+      "labelColor": {"signal": "axeLabelColor"}
+    },
+    {
+      "orient": "bottom",
+      "ticks": false,
+      "domain": false,
+      "scale": "scaleX",
+      "labelColor": {"signal": "axeXLabelColor"}
+    }
+  ],
+  "marks": [
+    {
+      "type": "rect",
+      "from": {"data": "data"},
+      "encode": {
+        "enter": {"fill": {"signal": "rectColor"}, "width": {"value": 20}},
+        "update": {
+          "x": {"scale": "scaleX", "field": "month"},
+          "y": {"scale": "scaleY", "field": "count"},
+          "y2": {"scale": "scaleY", "value": 0}
+        }
+      }
+    },
+    {
+      "type": "rect",
+      "from": {"data": "data"},
+      "encode": {
+        "enter": {
+          "fill": {"scale": "color", "field": "temp"},
+          "width": {"value": 20}
+        },
+        "update": {
+          "x": {"scale": "scaleX", "field": "month"},
+          "y": {"scale": "scaleY", "value": "-200"},
+          "y2": {"scale": "scaleY", "value": -275}
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {"data": "data"},
+      "encode": {
+        "enter": {
+          "fontSize": {"signal": "9"},
+          "text": {"signal": "(datum.temp>0?'+':'')+datum.temp+'°C'"},
+          "fill": {"scale": "color", "field": "temp"},
+          "width": {"value": 20}
+        },
+        "update": {
+          "x": {"scale": "scaleX", "field": "month"},
+          "y": {"scale": "scaleY", "value": "-400"}
+        }
+      }
+    }
+  ],
+  "config": {}
+}
