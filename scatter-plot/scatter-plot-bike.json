@@ -1,6 +1,11 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
   "description": "...",
+    "usermeta": {
+    "Author": "Andrzej Leszkiewicz",
+    "License": "CC BY 4.0 (Share and Adapt with Attribution)",
+    "Github": "https://github.com/avatorl/Deneb-Vega/"
+  },
   "width": 700,
   "height": 700,
   "padding": 5,
