@@ -123,9 +123,12 @@
       "type": "rect",
       "from": {"data": "data"},
       "encode": {
-        "enter": {"fill": {"signal": "rectColor"}, "width": {"value": 20}},
+        "enter": {
+          "fill": {"signal": "rectColor"},
+          "width": {"scale": "scaleX", "band": 0.6, "offset": 8}
+        },
         "update": {
-          "x": {"scale": "scaleX", "field": "month"},
+          "x": {"scale": "scaleX", "field": "month", "offset": 3},
           "y": {"scale": "scaleY", "field": "count"},
           "y2": {"scale": "scaleY", "value": 0}
         }
@@ -137,10 +140,10 @@
       "encode": {
         "enter": {
           "fill": {"scale": "color", "field": "temp"},
-          "width": {"value": 20}
+          "width": {"scale": "scaleX", "band": 0.6, "offset": 8}
         },
         "update": {
-          "x": {"scale": "scaleX", "field": "month"},
+          "x": {"scale": "scaleX", "field": "month", "offset": 3},
           "y": {"scale": "scaleY", "value": "-200"},
           "y2": {"scale": "scaleY", "value": -275}
         }
@@ -157,7 +160,7 @@
           "width": {"value": 20}
         },
         "update": {
-          "x": {"scale": "scaleX", "field": "month"},
+          "x": {"scale": "scaleX", "field": "month", "offset": 3},
           "y": {"scale": "scaleY", "value": "-400"}
         }
       }
