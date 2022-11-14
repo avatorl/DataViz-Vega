@@ -1,0 +1,205 @@
+location,m,month,temp,count
+Armii Krajowej,1,Jan,-1,140
+Bora-Komorowskiego,1,Jan,-1,174
+Bulwary,1,Jan,-1,275
+Dworzec,1,Jan,-1,360
+Grzegórzecka,1,Jan,-1,642
+Kamieńskiego,1,Jan,-1,139
+Klimeckiego,1,Jan,-1,288
+Kopernika,1,Jan,-1,625
+Kotlarska,1,Jan,-1,464
+Mogilska,1,Jan,-1,596
+Monte Cassino,1,Jan,-1,386
+Niepołomska,1,Jan,-1,133
+Nowohucka,1,Jan,-1,127
+Smoleńsk,1,Jan,-1,291
+Tyniecka,1,Jan,-1,236
+Wadowicka,1,Jan,-1,251
+Wielicka,1,Jan,-1,237
+Armii Krajowej,2,Feb,1,181
+Bora-Komorowskiego,2,Feb,1,240
+Bulwary,2,Feb,1,409
+Dworzec,2,Feb,1,414
+Grzegórzecka,2,Feb,1,762
+Kamieńskiego,2,Feb,1,211
+Klimeckiego,2,Feb,1,377
+Kopernika,2,Feb,1,771
+Kotlarska,2,Feb,1,569
+Mogilska,2,Feb,1,724
+Monte Cassino,2,Feb,1,476
+Niepołomska,2,Feb,1,176
+Nowohucka,2,Feb,1,178
+Smoleńsk,2,Feb,1,333
+Tyniecka,2,Feb,1,353
+Wadowicka,2,Feb,1,305
+Wielicka,2,Feb,1,296
+Armii Krajowej,3,Mar,5,419
+Bora-Komorowskiego,3,Mar,5,443
+Bulwary,3,Mar,5,920
+Dworzec,3,Mar,5,622
+Grzegórzecka,3,Mar,5,1138
+Kamieńskiego,3,Mar,5,466
+Klimeckiego,3,Mar,5,643
+Kopernika,3,Mar,5,1206
+Kotlarska,3,Mar,5,945
+Mogilska,3,Mar,5,1227
+Monte Cassino,3,Mar,5,810
+Niepołomska,3,Mar,5,522
+Nowohucka,3,Mar,5,328
+Smoleńsk,3,Mar,5,471
+Tyniecka,3,Mar,5,787
+Wadowicka,3,Mar,5,606
+Wielicka,3,Mar,5,523
+Armii Krajowej,4,Apr,9,539
+Bora-Komorowskiego,4,Apr,9,635
+Bulwary,4,Apr,9,1508
+Dworzec,4,Apr,9,908
+Grzegórzecka,4,Apr,9,1192
+Kamieńskiego,4,Apr,9,589
+Klimeckiego,4,Apr,9,845
+Kopernika,4,Apr,9,1494
+Kotlarska,4,Apr,9,1439
+Mogilska,4,Apr,9,1843
+Monte Cassino,4,Apr,9,1310
+Niepołomska,4,Apr,9,753
+Nowohucka,4,Apr,9,464
+Smoleńsk,4,Apr,9,621
+Tyniecka,4,Apr,9,1394
+Wadowicka,4,Apr,9,733
+Wielicka,4,Apr,9,797
+Armii Krajowej,5,May,13,1090
+Bora-Komorowskiego,5,May,13,1063
+Bulwary,5,May,13,2404
+Dworzec,5,May,13,1337
+Grzegórzecka,5,May,13,1929
+Kamieńskiego,5,May,13,1195
+Klimeckiego,5,May,13,1394
+Kopernika,5,May,13,2313
+Kotlarska,5,May,13,2156
+Mogilska,5,May,13,2716
+Monte Cassino,5,May,13,1941
+Niepołomska,5,May,13,1459
+Nowohucka,5,May,13,775
+Smoleńsk,5,May,13,856
+Tyniecka,5,May,13,2269
+Wadowicka,5,May,13,1056
+Wielicka,5,May,13,1219
+Armii Krajowej,6,Jun,18,1349
+Bora-Komorowskiego,6,Jun,18,1437
+Bulwary,6,Jun,18,2983
+Dworzec,6,Jun,18,1708
+Grzegórzecka,6,Jun,18,2340
+Kamieńskiego,6,Jun,18,1417
+Klimeckiego,6,Jun,18,2080
+Kopernika,6,Jun,18,3100
+Kotlarska,6,Jun,18,2670
+Mogilska,6,Jun,18,3534
+Monte Cassino,6,Jun,18,2538
+Niepołomska,6,Jun,18,1627
+Nowohucka,6,Jun,18,1067
+Smoleńsk,6,Jun,18,1045
+Tyniecka,6,Jun,18,2613
+Wadowicka,6,Jun,18,1369
+Wielicka,6,Jun,18,1618
+Armii Krajowej,7,Jul,19,1150
+Bora-Komorowskiego,7,Jul,19,1238
+Bulwary,7,Jul,19,2753
+Dworzec,7,Jul,19,1635
+Grzegórzecka,7,Jul,19,2116
+Kamieńskiego,7,Jul,19,1224
+Klimeckiego,7,Jul,19,1903
+Kopernika,7,Jul,19,2792
+Kotlarska,7,Jul,19,2747
+Mogilska,7,Jul,19,3310
+Monte Cassino,7,Jul,19,2386
+Niepołomska,7,Jul,19,1377
+Nowohucka,7,Jul,19,943
+Smoleńsk,7,Jul,19,938
+Tyniecka,7,Jul,19,2380
+Wadowicka,7,Jul,19,1436
+Wielicka,7,Jul,19,1564
+Armii Krajowej,8,Aug,20,1092
+Bora-Komorowskiego,8,Aug,20,1252
+Bulwary,8,Aug,20,2727
+Dworzec,8,Aug,20,1555
+Grzegórzecka,8,Aug,20,2005
+Kamieńskiego,8,Aug,20,1200
+Klimeckiego,8,Aug,20,1806
+Kopernika,8,Aug,20,2646
+Kotlarska,8,Aug,20,2528
+Mogilska,8,Aug,20,3185
+Monte Cassino,8,Aug,20,2311
+Niepołomska,8,Aug,20,1311
+Nowohucka,8,Aug,20,904
+Smoleńsk,8,Aug,20,900
+Tyniecka,8,Aug,20,2446
+Wadowicka,8,Aug,20,1340
+Wielicka,8,Aug,20,1516
+Armii Krajowej,9,Sep,15,843
+Bora-Komorowskiego,9,Sep,15,992
+Bulwary,9,Sep,15,2016
+Dworzec,9,Sep,15,1423
+Grzegórzecka,9,Sep,15,1764
+Kamieńskiego,9,Sep,15,970
+Klimeckiego,9,Sep,15,1429
+Kopernika,9,Sep,15,2392
+Kotlarska,9,Sep,15,2103
+Mogilska,9,Sep,15,2703
+Monte Cassino,9,Sep,15,1913
+Niepołomska,9,Sep,15,885
+Nowohucka,9,Sep,15,706
+Smoleńsk,9,Sep,15,903
+Tyniecka,9,Sep,15,1820
+Wadowicka,9,Sep,15,1189
+Wielicka,9,Sep,15,1244
+Armii Krajowej,10,Oct,11,770
+Bora-Komorowskiego,10,Oct,11,727
+Bulwary,10,Oct,11,1493
+Dworzec,10,Oct,11,1212
+Grzegórzecka,10,Oct,11,1639
+Kamieńskiego,10,Oct,11,845
+Klimeckiego,10,Oct,11,1037
+Kopernika,10,Oct,11,1965
+Kotlarska,10,Oct,11,1704
+Mogilska,10,Oct,11,2195
+Monte Cassino,10,Oct,11,1489
+Niepołomska,10,Oct,11,770
+Nowohucka,10,Oct,11,520
+Smoleńsk,10,Oct,11,794
+Tyniecka,10,Oct,11,1319
+Wadowicka,10,Oct,11,836
+Wielicka,10,Oct,11,961
+Armii Krajowej,11,Nov,6,437
+Bora-Komorowskiego,11,Nov,6,419
+Bulwary,11,Nov,6,775
+Dworzec,11,Nov,6,734
+Grzegórzecka,11,Nov,6,1163
+Kamieńskiego,11,Nov,6,479
+Klimeckiego,11,Nov,6,631
+Kopernika,11,Nov,6,1272
+Kotlarska,11,Nov,6,1023
+Mogilska,11,Nov,6,1325
+Monte Cassino,11,Nov,6,869
+Niepołomska,11,Nov,6,344
+Nowohucka,11,Nov,6,295
+Smoleńsk,11,Nov,6,532
+Tyniecka,11,Nov,6,610
+Wadowicka,11,Nov,6,545
+Wielicka,11,Nov,6,555
+Armii Krajowej,12,Dec,1,174
+Bora-Komorowskiego,12,Dec,1,208
+Bulwary,12,Dec,1,356
+Dworzec,12,Dec,1,419
+Grzegórzecka,12,Dec,1,713
+Kamieńskiego,12,Dec,1,192
+Klimeckiego,12,Dec,1,343
+Kopernika,12,Dec,1,743
+Kotlarska,12,Dec,1,545
+Mogilska,12,Dec,1,718
+Monte Cassino,12,Dec,1,457
+Niepołomska,12,Dec,1,135
+Nowohucka,12,Dec,1,155
+Smoleńsk,12,Dec,1,346
+Tyniecka,12,Dec,1,260
+Wadowicka,12,Dec,1,294
+Wielicka,12,Dec,1,287
