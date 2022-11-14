@@ -17,11 +17,11 @@
     {"name": "rectColor", "value": "#BBBBBB"}
   ],
   "title": {
-    "text": "Avg. daily number of bicycles by month and avg. temperature",
+    "text": "Average daily number of bicycles by month and average temperature",
     "anchor": "start",
     "fontWeight": "lighter",
     "font": "Tahoma",
-    "fontSize": 14
+    "fontSize": 18
   },
   "data": [
     {
@@ -108,13 +108,16 @@
       "gridWidth": 0.2,
       "ticks": false,
       "tickCount": 5,
-      "labelColor": {"signal": "axeLabelColor"}
+      "labelColor": {"signal": "axeLabelColor"},
+      "labelFontSize": 11
     },
     {
       "orient": "bottom",
       "ticks": false,
       "domain": false,
       "scale": "scaleX",
+      "labelFontSize": 11,
+      "labelPadding": 3,
       "labelColor": {"signal": "axeXLabelColor"}
     }
   ],
@@ -128,7 +131,7 @@
           "width": {"scale": "scaleX", "band": 0.6, "offset": 8}
         },
         "update": {
-          "x": {"scale": "scaleX", "field": "month", "offset": 3},
+          "x": {"scale": "scaleX", "field": "month", "offset": 7},
           "y": {"scale": "scaleY", "field": "count"},
           "y2": {"scale": "scaleY", "value": 0}
         }
@@ -143,9 +146,9 @@
           "width": {"scale": "scaleX", "band": 0.6, "offset": 8}
         },
         "update": {
-          "x": {"scale": "scaleX", "field": "month", "offset": 3},
-          "y": {"scale": "scaleY", "value": "-200"},
-          "y2": {"scale": "scaleY", "value": -275}
+          "x": {"scale": "scaleX", "field": "month", "offset": 7},
+          "y": {"scale": "scaleY", "value": "-150"},
+          "y2": {"scale": "scaleY", "value": -225}
         }
       }
     },
@@ -154,16 +157,16 @@
       "from": {"data": "data"},
       "encode": {
         "enter": {
-          "fontSize": {"signal": "9"},
+          "fontSize": {"signal": "11"},
           "text": {"signal": "(datum.temp>0?'+':'')+datum.temp+'°C'"},
           "fill": {"scale": "color", "field": "temp"}
         },
         "update": {
-          "x": {"scale": "scaleX", "field": "month", "offset": 6},
-          "y": {"scale": "scaleY", "value": "-400"}
+          "x": {"scale": "scaleX", "field": "month", "offset": 13},
+          "y": {"scale": "scaleY", "value": "-325"}
         }
       }
     }
   ],
-  "config": {}
+  "config": {"font": "Tahoma"}
 }
