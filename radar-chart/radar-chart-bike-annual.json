@@ -1,6 +1,11 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
   "description": "Average Daily Count of Bicycles by Month",
+  "usermeta": {
+    "Author": "Andrzej Leszkiewicz",
+    "License": "CC BY 4.0 (Share and Adapt with Attribution)",
+    "Github": "https://github.com/avatorl/Deneb-Vega/"
+  },
   "width": 690,
   "height": 690,
   "padding": {"left": 60, "top": 100, "right": 60, "bottom": 50},
