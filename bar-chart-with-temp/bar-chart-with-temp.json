@@ -26,7 +26,7 @@
   "data": [
     {
       "name": "data-csv",
-      "url": "https://dl.dropboxusercontent.com/s/qiid7gdvaa5ttw2/data-bike-month.csv",
+      "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/bar-chart-with-temp/bike-monthly-temp.csv",
       "format": {
         "type": "csv",
         "parse": {
