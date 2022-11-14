@@ -7,8 +7,8 @@
     "Github": "https://github.com/avatorl/Deneb-Vega/"
   },
   "background": "white",
-  "width": 400,
-  "height": 200,
+  "width": 600,
+  "height": 300,
   "padding": 5,
   "signals": [
     {"name": "axeXLabelColor", "value": "#666666"},
