@@ -1,0 +1,197 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "Box Plot Small Multiples",
+  "usermeta": {
+    "Author": "Andrzej Leszkiewicz",
+    "License": "CC BY 4.0 (Share and Adapt with Attribution)",
+    "Github": "https://github.com/avatorl/Deneb-Vega/"
+  },
+  "height": 300,
+  "width": 600,
+  "padding": 5,
+  "config": {},
+  "signals": [
+    {"name": "boxWidth", "value": 80},
+    {"name": "lineColor", "value": "gray"},
+    {"name": "axeLabelColor", "value": "#AAAAAA"},
+    {"name": "axeGridColor", "value": "#CCCCCC"},
+    {"name": "boxColor", "value": "#EEEEEE"},
+    {"name": "upColor", "value": "#7aca00"},
+    {"name": "downColor", "value": "#FE0000"}
+  ],
+  "data": [
+    {
+      "name": "dataset-csv",
+      "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/small-multiple-box-plot/data-bike-box-plot.csv",
+      "format": {"type": "csv", "parse": "auto", "delimiter": ","},
+      "transform": [
+        {"type": "filter", "expr": "datum.location=='Mogilska'"},
+        {
+          "type": "collect",
+          "sort": {"field": ["location"], "order": ["ascending"]}
+        }
+      ]
+    },
+    {"name": "dataset1", "source": "dataset-csv"},
+    {
+      "name": "dataset2",
+      "source": "dataset-csv",
+      "transform": [
+        {"type": "formula", "as": "year_prev", "expr": "datum.year-1"}
+      ]
+    },
+    {
+      "name": "dataset",
+      "source": "dataset2",
+      "transform": [
+        {
+          "type": "lookup",
+          "from": "dataset1",
+          "key": "year",
+          "values": ["year", "location", "50th", "avg"],
+          "fields": ["year_prev"],
+          "as": ["year_prev", "location", "50th_prev", "avg_prev"]
+        }
+      ]
+    }
+  ],
+  "scales": [
+    {
+      "name": "scaleX",
+      "type": "band",
+      "range": "width",
+      "domain": {"data": "dataset", "field": "year", "sort": true}
+    },
+    {
+      "name": "scaleY",
+      "type": "linear",
+      "range": "height",
+      "round": true,
+      "domain": {"data": "dataset", "field": "max"},
+      "domainMin": 0,
+      "zero": true,
+      "nice": true
+    }
+  ],
+  "title": {
+    "text": {"signal": "'Box Plot with Waterfall'"},
+    "anchor": "start",
+    "font": {"value": "Tahoma"},
+    "fontSize": {"value": 16},
+    "fontWeight": "lighter"
+  },
+  "axes": [
+    {
+      "orient": "left",
+      "scale": "scaleY",
+      "domain": false,
+      "grid": true,
+      "gridWidth": 0.2,
+      "gridColor": {"signal": "axeGridColor"},
+      "ticks": false,
+      "tickCount": 5,
+      "labelColor": {"signal": "axeLabelColor"},
+      "labelFontSize": 13
+    },
+    {
+      "orient": "bottom",
+      "offset": {"signal": "5"},
+      "ticks": false,
+      "domain": false,
+      "scale": "scaleX",
+      "tickColor": {"signal": "axeGridColor"},
+      "labelColor": {"signal": "axeLabelColor"},
+      "labelFontSize": 13
+    }
+  ],
+  "marks": [
+    {
+      "type": "group",
+      "from": {"facet": {"data": "dataset", "name": "year", "groupby": "year"}},
+      "encode": {
+        "enter": {
+          "xc": {"scale": "scaleX", "field": "year", "band": 0.5},
+          "width": {"signal": "boxWidth"},
+          "height": {"signal": "height"}
+        }
+      },
+      "marks": [
+        {
+          "type": "rect",
+          "from": {"data": "year"},
+          "encode": {
+            "enter": {"fill": {"signal": "lineColor"}, "width": {"value": 1}},
+            "update": {
+              "xc": {"signal": "boxWidth / 2", "offset": -0.5},
+              "y": {"scale": "scaleY", "field": "min"},
+              "y2": {"scale": "scaleY", "field": "max"}
+            }
+          }
+        },
+        {
+          "type": "rect",
+          "from": {"data": "year"},
+          "encode": {
+            "enter": {
+              "fill": {"signal": "boxColor"},
+              "stroke": {"signal": "lineColor"},
+              "cornerRadius": {"value": 2}
+            },
+            "update": {
+              "xc": {"signal": "boxWidth / 2"},
+              "width": {"signal": "boxWidth / 2"},
+              "y": {"scale": "scaleY", "field": "25th"},
+              "y2": {"scale": "scaleY", "field": "75th"}
+            }
+          }
+        },
+        {
+          "type": "rect",
+          "from": {"data": "year"},
+          "encode": {
+            "enter": {"fill": {"signal": "lineColor"}, "height": {"value": 1}},
+            "update": {
+              "xc": {"signal": "boxWidth / 2"},
+              "width": {"signal": "boxWidth / 2"},
+              "y": {"scale": "scaleY", "field": "50th"}
+            }
+          }
+        },
+        {
+          "type": "symbol",
+          "from": {"data": "year"},
+          "encode": {
+            "enter": {
+              "fill": {"signal": "'white'"},
+              "stroke": {"signal": "lineColor"},
+              "height": {"value": 1}
+            },
+            "update": {
+              "xc": {"signal": "boxWidth/2"},
+              "y": {"scale": "scaleY", "field": "avg"}
+            }
+          }
+        },
+        {
+          "type": "rect",
+          "from": {"data": "year"},
+          "encode": {
+            "enter": {
+              "fill": {
+                "signal": "datum['50th']>=datum['50th_prev']?upColor:downColor"
+              },
+              "height": {"value": 2}
+            },
+            "update": {
+              "text": {"signal": "datum['50th']"},
+              "xc": {"signal": "-boxWidth / 8"},
+              "width": {"signal": "boxWidth / 6"},
+              "y": {"scale": "scaleY", "field": "50th_prev"},
+              "y2": {"scale": "scaleY", "field": "50th"}
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
