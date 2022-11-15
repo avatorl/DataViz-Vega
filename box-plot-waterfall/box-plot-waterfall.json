@@ -22,7 +22,7 @@
   "data": [
     {
       "name": "dataset-csv",
-      "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/small-multiple-box-plot/data-bike-box-plot.csv",
+      "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/box-plot-waterfall/data-bike-box-plot.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","},
       "transform": [
         {"type": "filter", "expr": "datum.location=='Mogilska'"},
