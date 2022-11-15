@@ -10,7 +10,7 @@
   "width": 500,
   "padding": 5,
   "signals": [
-    {"name": "gridColumns", "value": 1},
+    {"name": "gridColumns", "value": 3},
     {"name": "gridPadding", "value": 40},
     {"name": "boxWidth", "value": 50},
     {"name": "lineColor", "value": "gray"},
