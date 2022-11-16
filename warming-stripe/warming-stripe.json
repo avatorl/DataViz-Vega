@@ -52,7 +52,7 @@
     "font": {"value": "Tahoma"},
     "fontSize": {"value": 16},
     "fontWeight": "lighter",
-    "dy": -10
+    "dy": 0
   },
   "axes": [
     {
@@ -88,6 +88,7 @@
           "update": {
             "y": {"value": -5},
             "y2": {"value": 0},
+            "stroke": {"value": "gray"},
             "strokeWidth": {
               "signal": "(datum.value==1951||datum.value==1980)?1:0"
             }
@@ -95,6 +96,7 @@
         },
         "labels": {
           "update": {
+            "fill": {"value": "gray"},
             "fontSize": {
               "signal": "(datum.value==1951||datum.value==1980)?14:0"
             }
@@ -104,10 +106,36 @@
           "update": {
             "x": {"scale": "scaleX", "value": 1951},
             "x2": {"scale": "scaleX", "value": 1980},
-            "stroke": {"value": "#333"},
+            "stroke": {"value": "red"},
             "strokeWidth": {"signal": "0.5"}
           }
         }
+      }
+    }
+  ],
+  "legends": [
+    {
+      "fill": "color",
+      "title": "°C",
+      "titleColor": "gray",
+      "tickCount": 5,
+      "tickMinStep": 0.2,
+      "padding": 20,
+      "orient": "none",
+      "legendX": {"signal": "width+40"},
+      "legendY": -40,
+      "encode": {
+        "title": {"update": {"fontSize": {"value": 14}}},
+        "labels": {
+          "update": {
+            "dx": {"value": 3},
+            "fontSize": {"value": 12},
+            "fill": {"value": "gray"},
+            "text": {"signal": "(datum.value>0?'+':'')+datum.label"}
+          }
+        },
+        "symbols": {"update": {"stroke": {"value": "transparent"}}},
+        "legend": {"update": {}}
       }
     }
   ],
