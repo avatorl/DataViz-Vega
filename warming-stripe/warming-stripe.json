@@ -1,0 +1,85 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "Global Temperature",
+  "usermeta": {
+    "Author": "Andrzej Leszkiewicz",
+    "License": "CC BY 4.0 (Share and Adapt with Attribution)",
+    "Github": "https://github.com/avatorl/Deneb-Vega/"
+  },
+  "background": "white",
+  "padding": 5,
+  "width": 650,
+  "height": 200,
+  "autosize": "pad",
+  "config": {},
+  "data": [
+    {
+      "name": "dataset-csv",
+      "url": "https://dl.dropboxusercontent.com/s/p5wzq9t3apvo5gt/global-temp.csv",
+      "format": {"type": "csv", "parse": "auto", "delimiter": ","}
+    },
+    {"name": "dataset", "source": "dataset-csv"}
+  ],
+  "signals": [],
+  "scales": [
+    {
+      "name": "scaleX",
+      "type": "linear",
+      "domain": {"data": "dataset", "field": "year"},
+      "range": [0, {"signal": "width"}],
+      "zero": false
+    },
+    {
+      "name": "y",
+      "type": "point",
+      "domain": [1],
+      "range": [0, {"signal": "height"}],
+      "padding": 0.5
+    },
+    {
+      "name": "color",
+      "type": "linear",
+      "range": {"scheme": "redblue"},
+      "domain": {"data": "dataset", "field": "temp"},
+      "reverse": true,
+      "domainMid": 0
+    }
+  ],
+  "title": {
+    "text": {"signal": "'Global Temperature'"},
+    "anchor": "start",
+    "font": {"value": "Tahoma"},
+    "fontSize": {"value": 16},
+    "fontWeight": "lighter"
+  },
+  "axes": [
+    {
+      "scale": "scaleX",
+      "orient": "bottom",
+      "domain": false,
+      "tickCount": {"signal": "5"},
+      "labelFontSize": {"signal": "14"},
+      "labelColor": "gray",
+      "format": ".4"
+    }
+  ],
+  "marks": [
+    {
+      "name": "marks",
+      "type": "rect",
+      "style": ["tick"],
+      "from": {"data": "dataset"},
+      "encode": {
+        "update": {
+          "opacity": {"value": 1},
+          "fill": {"scale": "color", "field": "temp"},
+          "xc": {"scale": "scaleX", "field": "year"},
+          "yc": {"scale": "y", "value": 1},
+          "height": {"signal": "height*0.95"},
+          "width": {"signal": "4"},
+          "tooltip": {"signal": "datum.year+': '+datum.temp+'°C'"}
+        }
+      }
+    }
+  ]
+}
