@@ -12,7 +12,15 @@
   "padding": 5,
   "autosize": "pad",
   "config": {},
-  "signals": [],
+  "signals": [
+    {"name": "labelColor", "value": "gray"},
+    {"name": "labelFontSizeMajor", "value": "20"},
+    {"name": "labelFontSizeMinor", "value": "14"},
+    {"name": "legendFontSize", "value": "12"},
+    {"name": "basePeriodColor", "value": "black"},
+    {"name": "basePeriodS", "value": "1951"},
+    {"name": "basePeriodE", "value": "1980"}
+  ],
   "data": [
     {
       "name": "dataset-csv",
@@ -36,9 +44,29 @@
       "range": [0, {"signal": "height"}]
     },
     {
-      "name": "color",
+      "name": "colorHawkins",
       "type": "linear",
-      "range": {"scheme": "redblue"},
+      "range": {
+        "scheme": [
+          "#67000D",
+          "#A50F15",
+          "#CB181D",
+          "#EF3B2C",
+          "#FB6A4A",
+          "#FC9272",
+          "#FCBBA1",
+          "#FEE0D2",
+          "#FFFFFF",
+          "#DEEBF7",
+          "#C6DBEF",
+          "#9ECAE1",
+          "#6BAED6",
+          "#4292C6",
+          "#2171B5",
+          "#08519C",
+          "#08306B"
+        ]
+      },
       "domain": {"data": "dataset", "field": "temp"},
       "reverse": true,
       "domainMid": 0
@@ -46,13 +74,12 @@
   ],
   "title": {
     "text": {
-      "signal": "'Global Temperature in 1880-2021 (compared to 1951-1980 average)'"
+      "signal": "'Global Temperature in 1880-2021 (compared to '+ basePeriodS+'-'+basePeriodE+' average)'"
     },
     "anchor": "start",
     "font": {"value": "Tahoma"},
     "fontSize": {"value": 16},
-    "fontWeight": "lighter",
-    "dy": 0
+    "fontWeight": "lighter"
   },
   "axes": [
     {
@@ -60,15 +87,13 @@
       "orient": "bottom",
       "domain": false,
       "tickCount": {"signal": "5"},
-      "labelFontSize": {"signal": "0"},
-      "labelColor": "gray",
+      "labelColor": {"signal": "labelColor"},
       "format": ".4",
-      "zindex": 0,
       "encode": {
         "labels": {
           "update": {
             "fontSize": {
-              "signal": "(datum.value==1900||datum.value==2000)?20:14"
+              "signal": "(datum.value==1900||datum.value==2000)?labelFontSizeMajor:labelFontSizeMinor"
             }
           }
         }
@@ -78,36 +103,34 @@
       "scale": "scaleX",
       "orient": "top",
       "domain": true,
-      "tickCount": {"signal": "200"},
+      "tickCount": {"signal": "999"},
       "labelFontSize": {"signal": "0"},
-      "labelColor": "gray",
       "format": ".4",
-      "zindex": 0,
       "encode": {
         "ticks": {
           "update": {
             "y": {"value": -5},
             "y2": {"value": 0},
-            "stroke": {"value": "gray"},
+            "stroke": {"signal": "basePeriodColor"},
             "strokeWidth": {
-              "signal": "(datum.value==1951||datum.value==1980)?1:0"
+              "signal": "(datum.value==basePeriodS||datum.value==basePeriodE)?1:0"
             }
           }
         },
         "labels": {
           "update": {
-            "fill": {"value": "gray"},
+            "fill": {"signal": "basePeriodColor"},
             "fontSize": {
-              "signal": "(datum.value==1951||datum.value==1980)?14:0"
+              "signal": "(datum.value==basePeriodS||datum.value==basePeriodE)?labelFontSizeMinor:0"
             }
           }
         },
         "domain": {
           "update": {
-            "x": {"scale": "scaleX", "value": 1951},
-            "x2": {"scale": "scaleX", "value": 1980},
-            "stroke": {"value": "red"},
-            "strokeWidth": {"signal": "0.5"}
+            "x": {"scale": "scaleX", "signal": "basePeriodS"},
+            "x2": {"scale": "scaleX", "signal": "basePeriodE"},
+            "stroke": {"signal": "basePeriodColor"},
+            "strokeWidth": {"signal": "0.9"}
           }
         }
       }
@@ -115,27 +138,26 @@
   ],
   "legends": [
     {
-      "fill": "color",
+      "fill": "colorHawkins",
+      "orient": "none",
+      "legendX": {"signal": "width+40"},
+      "legendY": -40,
+      "padding": 20,
       "title": "°C",
       "titleColor": "gray",
       "tickCount": 5,
       "tickMinStep": 0.2,
-      "padding": 20,
-      "orient": "none",
-      "legendX": {"signal": "width+40"},
-      "legendY": -40,
       "encode": {
-        "title": {"update": {"fontSize": {"value": 14}}},
+        "title": {"update": {"fontSize": {"signal": "labelFontSizeMinor"}}},
         "labels": {
           "update": {
             "dx": {"value": 3},
-            "fontSize": {"value": 12},
-            "fill": {"value": "gray"},
+            "fontSize": {"signal": "legendFontSize"},
+            "fill": {"signal": "labelColor"},
             "text": {"signal": "(datum.value>0?'+':'')+datum.label"}
           }
         },
-        "symbols": {"update": {"stroke": {"value": "transparent"}}},
-        "legend": {"update": {}}
+        "symbols": {"update": {"stroke": {"value": "transparent"}}}
       }
     }
   ],
@@ -148,12 +170,14 @@
       "encode": {
         "update": {
           "opacity": {"value": 1},
-          "fill": {"scale": "color", "field": "temp"},
+          "fill": {"scale": "colorHawkins", "field": "temp"},
           "xc": {"scale": "scaleX", "field": "year"},
           "yc": {"scale": "scaleY", "value": 1},
           "height": {"signal": "height*0.95"},
-          "width": {"signal": "4"},
-          "tooltip": {"signal": "datum.year+': '+datum.temp+'°C'"}
+          "width": {"signal": "4.0"},
+          "tooltip": {
+            "signal": "datum.year+': '+(datum.temp>0?'+':'')+datum.temp+'°C'"
+          }
         }
       }
     }
