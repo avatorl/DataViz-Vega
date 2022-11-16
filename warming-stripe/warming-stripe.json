@@ -164,7 +164,7 @@
   ],
   "marks": [
     {
-      "name": "marks",
+      "name": "stripes",
       "type": "rect",
       "style": ["tick"],
       "from": {"data": "dataset"},
