@@ -1,17 +1,18 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
-  "description": "Global Temperature",
+  "description": "Global Temperature)",
   "usermeta": {
     "Author": "Andrzej Leszkiewicz",
     "License": "CC BY 4.0 (Share and Adapt with Attribution)",
     "Github": "https://github.com/avatorl/Deneb-Vega/"
   },
   "background": "white",
-  "padding": 5,
   "width": 650,
   "height": 200,
+  "padding": 5,
   "autosize": "pad",
   "config": {},
+  "signals": [],
   "data": [
     {
       "name": "dataset-csv",
@@ -20,7 +21,6 @@
     },
     {"name": "dataset", "source": "dataset-csv"}
   ],
-  "signals": [],
   "scales": [
     {
       "name": "scaleX",
@@ -30,11 +30,10 @@
       "zero": false
     },
     {
-      "name": "y",
+      "name": "scaleY",
       "type": "point",
       "domain": [1],
-      "range": [0, {"signal": "height"}],
-      "padding": 0.5
+      "range": [0, {"signal": "height"}]
     },
     {
       "name": "color",
@@ -46,7 +45,9 @@
     }
   ],
   "title": {
-    "text": {"signal": "'Global Temperature'"},
+    "text": {
+      "signal": "'Global Temperature in 1880-2021 (compared to 1951-1980 average)'"
+    },
     "anchor": "start",
     "font": {"value": "Tahoma"},
     "fontSize": {"value": 16},
@@ -58,9 +59,19 @@
       "orient": "bottom",
       "domain": false,
       "tickCount": {"signal": "5"},
-      "labelFontSize": {"signal": "14"},
+      "labelFontSize": {"signal": "0"},
       "labelColor": "gray",
-      "format": ".4"
+      "format": ".4",
+      "zindex": 0,
+      "encode": {
+        "labels": {
+          "update": {
+            "fontSize": {
+              "signal": "(datum.value==1900||datum.value==2000)?20:14"
+            }
+          }
+        }
+      }
     }
   ],
   "marks": [
@@ -74,7 +85,7 @@
           "opacity": {"value": 1},
           "fill": {"scale": "color", "field": "temp"},
           "xc": {"scale": "scaleX", "field": "year"},
-          "yc": {"scale": "y", "value": 1},
+          "yc": {"scale": "scaleY", "value": 1},
           "height": {"signal": "height*0.95"},
           "width": {"signal": "4"},
           "tooltip": {"signal": "datum.year+': '+datum.temp+'°C'"}
