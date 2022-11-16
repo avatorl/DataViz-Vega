@@ -15,7 +15,7 @@
   "data": [
     {
       "name": "dataset-csv",
-      "url": "https://dl.dropboxusercontent.com/s/p5wzq9t3apvo5gt/global-temp.csv",
+      "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/warming-stripe/global-temp.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","}
     },
     {"name": "dataset", "source": "dataset-csv"}
