@@ -90,8 +90,10 @@
       "labelColor": {"signal": "labelColor"},
       "format": ".4",
       "encode": {
+        "ticks": {"update": {"y": {"value": -3}}},
         "labels": {
           "update": {
+            "y": {"value": 8},
             "fontSize": {
               "signal": "(datum.value==1900||datum.value==2000)?labelFontSizeMajor:labelFontSizeMinor"
             }
@@ -156,8 +158,7 @@
             "fill": {"signal": "labelColor"},
             "text": {"signal": "(datum.value>0?'+':'')+datum.label"}
           }
-        },
-        "symbols": {"update": {"stroke": {"value": "transparent"}}}
+        }
       }
     }
   ],
@@ -170,14 +171,22 @@
       "encode": {
         "update": {
           "opacity": {"value": 1},
+          "strokeWidth": {"value": 0},
+          "stroke": {"value": "gray"},
           "fill": {"scale": "colorHawkins", "field": "temp"},
           "xc": {"scale": "scaleX", "field": "year"},
           "yc": {"scale": "scaleY", "value": 1},
-          "height": {"signal": "height*0.95"},
+          "height": {"signal": "height*0.92"},
           "width": {"signal": "4.0"},
           "tooltip": {
             "signal": "datum.year+': '+(datum.temp>0?'+':'')+datum.temp+'°C'"
           }
+        },
+        "hover": {
+          "y": {"value": 3},
+          "height": {"signal": "height*0.92+10"},
+          "width": {"signal": "4.2"},
+          "strokeWidth": {"value": 0.05}
         }
       }
     }
