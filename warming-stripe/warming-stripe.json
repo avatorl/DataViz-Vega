@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
-  "description": "Global Temperature)",
+  "description": "Global Temperature (Warming Stripe)",
   "usermeta": {
     "Author": "Andrzej Leszkiewicz",
     "License": "CC BY 4.0 (Share and Adapt with Attribution)",
