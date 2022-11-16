@@ -51,7 +51,8 @@
     "anchor": "start",
     "font": {"value": "Tahoma"},
     "fontSize": {"value": 16},
-    "fontWeight": "lighter"
+    "fontWeight": "lighter",
+    "dy": -10
   },
   "axes": [
     {
@@ -69,6 +70,42 @@
             "fontSize": {
               "signal": "(datum.value==1900||datum.value==2000)?20:14"
             }
+          }
+        }
+      }
+    },
+    {
+      "scale": "scaleX",
+      "orient": "top",
+      "domain": true,
+      "tickCount": {"signal": "200"},
+      "labelFontSize": {"signal": "0"},
+      "labelColor": "gray",
+      "format": ".4",
+      "zindex": 0,
+      "encode": {
+        "ticks": {
+          "update": {
+            "y": {"value": -5},
+            "y2": {"value": 0},
+            "strokeWidth": {
+              "signal": "(datum.value==1951||datum.value==1980)?1:0"
+            }
+          }
+        },
+        "labels": {
+          "update": {
+            "fontSize": {
+              "signal": "(datum.value==1951||datum.value==1980)?14:0"
+            }
+          }
+        },
+        "domain": {
+          "update": {
+            "x": {"scale": "scaleX", "value": 1951},
+            "x2": {"scale": "scaleX", "value": 1980},
+            "stroke": {"value": "#333"},
+            "strokeWidth": {"signal": "0.5"}
           }
         }
       }
