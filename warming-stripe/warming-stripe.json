@@ -189,9 +189,8 @@
       "titleColor": "gray",
       "tickCount": 5,
       "tickMinStep": 0.2,
-      "zindex": 2,
+      "titleFontSize": {"signal": "labelFontSizeMinor"},
       "encode": {
-        "title": {"update": {"fontSize": {"signal": "labelFontSizeMinor"}}},
         "labels": {
           "update": {
             "dx": {"value": 3},
