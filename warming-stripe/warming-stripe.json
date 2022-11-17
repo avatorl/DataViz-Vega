@@ -249,7 +249,6 @@
           "opacity": {"value": 1},
           "x": {"signal": "650"},
           "y": {"signal": "250"},
-          "dx": {"signal": "0"},
           "fontSize": {"signal": "12"}
         }
       }
