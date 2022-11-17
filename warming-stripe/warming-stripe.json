@@ -19,7 +19,16 @@
     {"name": "legendFontSize", "value": "12"},
     {"name": "basePeriodColor", "value": "black"},
     {"name": "basePeriodS", "value": "1951"},
-    {"name": "basePeriodE", "value": "1980"}
+    {"name": "basePeriodE", "value": "1980"},
+    {
+      "name": "selectedStripeTemp",
+      "description": "Temperature at the selected striep",
+      "value": "0",
+      "on": [
+        {"events": "@stripe:mouseover", "update": "datum.temp"},
+        {"events": "@stripe:mouseout", "update": "0"}
+      ]
+    }
   ],
   "data": [
     {
@@ -42,6 +51,14 @@
       "type": "point",
       "domain": [1],
       "range": [0, {"signal": "height"}]
+    },
+    {
+      "name": "scaleYLegend",
+      "type": "linear",
+      "domain": {"data": "dataset", "field": "temp"},
+      "range": [0, {"signal": "height"}],
+      "zero": false,
+      "reverse": true
     },
     {
       "name": "colorHawkins",
@@ -136,6 +153,26 @@
           }
         }
       }
+    },
+    {
+      "scale": "scaleYLegend",
+      "orient": "right",
+      "domain": false,
+      "labels": false,
+      "ticks": true,
+      "tickColor": "black",
+      "offset": 45,
+      "zindex": 0,
+      "encode": {
+        "ticks": {
+          "update": {
+            "x": {"value": -7},
+            "x2": {"value": 13},
+            "y": {"scale": "scaleYLegend", "signal": "selectedStripeTemp"},
+            "strokeWidth": {"signal": "datum.value==0?0.5:0"}
+          }
+        }
+      }
     }
   ],
   "legends": [
@@ -149,6 +186,7 @@
       "titleColor": "gray",
       "tickCount": 5,
       "tickMinStep": 0.2,
+      "zindex": 2,
       "encode": {
         "title": {"update": {"fontSize": {"signal": "labelFontSizeMinor"}}},
         "labels": {
@@ -156,7 +194,9 @@
             "dx": {"value": 3},
             "fontSize": {"signal": "legendFontSize"},
             "fill": {"signal": "labelColor"},
-            "text": {"signal": "(datum.value>0?'+':'')+datum.label"}
+            "text": {
+              "signal": "(datum.value>0?'+':datum.value==0?'':'')+datum.label"
+            }
           }
         }
       }
@@ -164,7 +204,7 @@
   ],
   "marks": [
     {
-      "name": "stripes",
+      "name": "stripe",
       "type": "rect",
       "style": ["tick"],
       "from": {"data": "dataset"},
