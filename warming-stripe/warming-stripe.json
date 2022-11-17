@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
-  "description": "Global Temperature (Warming Stripe)",
+  "description": "Global Temperature (Warming Stripes Chart)",
   "usermeta": {
     "Author": "Andrzej Leszkiewicz",
     "License": "CC BY 4.0 (Share and Adapt with Attribution)",
@@ -22,7 +22,7 @@
     {"name": "basePeriodE", "value": "1980"},
     {
       "name": "selectedStripeTemp",
-      "description": "Temperature at the selected striep",
+      "description": "Temperature at the selected stripe (to dispaly as a tick on the legend)",
       "value": "0",
       "on": [
         {"events": "@stripe:mouseover", "update": "datum.temp"},
@@ -53,7 +53,7 @@
       "range": [0, {"signal": "height"}]
     },
     {
-      "name": "scaleYLegend",
+      "name": "scaleYForLegendTick",
       "type": "linear",
       "domain": {"data": "dataset", "field": "temp"},
       "range": [0, {"signal": "height"}],
@@ -122,7 +122,7 @@
       "scale": "scaleX",
       "orient": "top",
       "domain": true,
-      "tickCount": {"signal": "999"},
+      "tickCount": {"signal": "2021-1880+1"},
       "labelFontSize": {"signal": "0"},
       "format": ".4",
       "encode": {
@@ -155,7 +155,7 @@
       }
     },
     {
-      "scale": "scaleYLegend",
+      "scale": "scaleYForLegendTick",
       "orient": "right",
       "domain": false,
       "labels": false,
@@ -168,7 +168,10 @@
           "update": {
             "x": {"value": -7},
             "x2": {"value": 13},
-            "y": {"scale": "scaleYLegend", "signal": "selectedStripeTemp"},
+            "y": {
+              "scale": "scaleYForLegendTick",
+              "signal": "selectedStripeTemp"
+            },
             "strokeWidth": {"signal": "datum.value==0?0.5:0"}
           }
         }
@@ -206,6 +209,7 @@
     {
       "name": "stripe",
       "type": "rect",
+      "interactive": true,
       "style": ["tick"],
       "from": {"data": "dataset"},
       "encode": {
