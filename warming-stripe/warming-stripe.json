@@ -14,6 +14,7 @@
   "config": {},
   "signals": [
     {"name": "labelColor", "value": "gray"},
+    {"name": "labelDataSrc", "value": "#CCCCCC"},
     {"name": "labelFontSizeMajor", "value": "20"},
     {"name": "labelFontSizeMinor", "value": "14"},
     {"name": "legendFontSize", "value": "12"},
@@ -237,7 +238,7 @@
       "type": "text",
       "encode": {
         "enter": {
-          "fill": {"value": "#CCCCCC"},
+          "fill": {"signal": "labelDataSrc"},
           "text": {"value": "Data Source: NASA 🔗"},
           "href": {
             "value": "https://climate.nasa.gov/vital-signs/global-temperature/"
