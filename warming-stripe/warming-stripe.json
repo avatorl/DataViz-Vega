@@ -232,6 +232,26 @@
           "strokeWidth": {"value": 0.05}
         }
       }
+    },
+    {
+      "type": "text",
+      "encode": {
+        "enter": {
+          "fill": {"value": "#CCCCCC"},
+          "text": {"value": "Data Source: NASA 🔗"},
+          "href": {
+            "value": "https://climate.nasa.gov/vital-signs/global-temperature/"
+          },
+          "cursor": {"value": "pointer"}
+        },
+        "update": {
+          "opacity": {"value": 1},
+          "x": {"signal": "650"},
+          "y": {"signal": "250"},
+          "dx": {"signal": "0"},
+          "fontSize": {"signal": "12"}
+        }
+      }
     }
   ]
 }
