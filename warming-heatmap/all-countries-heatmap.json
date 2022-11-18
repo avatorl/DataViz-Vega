@@ -222,11 +222,8 @@
         "update": {
           "text": {"value": "✕"},
           "fontSize": {"value": 6},
-          "opacity": {"value": 1},
-          "strokeWidth": {"value": 0},
-          "stroke": {"value": "gray"},
           "fill": [
-            {"test": "datum.temp === null", "value": "gray"},
+            {"test": "datum.temp === null", "value": "#DDDDDD"},
             {"scale": "colorHawkins", "field": "temp"}
           ],
           "xc": {"scale": "scaleX", "field": "year"},
