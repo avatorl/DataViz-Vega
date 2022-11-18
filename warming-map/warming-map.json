@@ -1,0 +1,191 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "Global Temperature (Map)",
+  "usermeta": {
+    "Author": "Andrzej Leszkiewicz",
+    "License": "CC BY 4.0 (Share and Adapt with Attribution)",
+    "Github": "https://github.com/avatorl/Deneb-Vega/"
+  },
+  "width": 650,
+  "height": 350,
+  "autosize": "pad",
+  "signals": [
+    {
+      "name": "yearSelected",
+      "init": "1961",
+      "on": [
+        {
+          "events": {"type": "timer", "throttle": 500},
+          "update": "yearSelected==2021?1961:yearSelected+1"
+        }
+      ]
+    },
+    {"name": "scale", "value": 130},
+    {"name": "opacity", "value": 1}
+  ],
+  "data": [
+    {
+      "name": "dataset-csv",
+      "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/warming-heatmap/temperature-change-country.csv",
+      "format": {"type": "csv", "parse": "auto", "delimiter": ","}
+    },
+    {
+      "name": "dataset",
+      "source": "dataset-csv",
+      "transform": [{"type": "filter", "expr": "datum.year==yearSelected"}]
+    },
+    {
+      "name": "world",
+      "url": "https://dl.dropboxusercontent.com/s/325uaqu1ez1x0du/custom.geo%20%283%29.json",
+      "format": {"type": "json", "property": "features"},
+      "transform": [
+        {
+          "type": "lookup",
+          "from": "dataset",
+          "key": "iso3",
+          "fields": ["properties.gu_a3"],
+          "values": ["temp"]
+        }
+      ]
+    },
+    {
+      "name": "global",
+      "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/warming-stripe/global-temp.csv",
+      "format": {"type": "csv", "parse": "auto", "delimiter": ","},
+      "transform": [{"type": "filter", "expr": "datum.year==yearSelected"}]
+    }
+  ],
+  "projections": [
+    {
+      "name": "projection",
+      "type": {"signal": "'naturalEarth1'"},
+      "scale": {"signal": "scale"},
+      "rotate": {"signal": "[0, 0, 0]"},
+      "translate": {"signal": "[width/2, height/2+25]"}
+    }
+  ],
+  "scales": [
+    {
+      "name": "colorHawkins",
+      "type": "linear",
+      "range": {
+        "scheme": [
+          "#67000D",
+          "#A50F15",
+          "#CB181D",
+          "#EF3B2C",
+          "#FB6A4A",
+          "#FC9272",
+          "#FCBBA1",
+          "#FEE0D2",
+          "#FFFFFF",
+          "#DEEBF7",
+          "#C6DBEF",
+          "#9ECAE1",
+          "#6BAED6",
+          "#4292C6",
+          "#2171B5",
+          "#08519C",
+          "#08306B"
+        ]
+      },
+      "domain": {"data": "dataset-csv", "field": "temp"},
+      "reverse": true,
+      "domainMid": 0
+    },
+    {
+      "name": "scaleYForLegendTick",
+      "type": "linear",
+      "domain": {"data": "dataset-csv", "field": "temp"},
+      "range": [0, {"signal": "height"}],
+      "zero": false,
+      "reverse": true
+    }
+  ],
+  "title": {
+    "anchor": "start",
+    "font": {"value": "Tahoma"},
+    "fontSize": {"value": 36},
+    "fontWeight": "bold",
+    "encode": {
+      "title": {
+        "update": {
+          "text": {"signal": "yearSelected"},
+          "strokeWidth": {"value": 1},
+          "stroke": {"value": "black"},
+          "fill": {
+            "scale": "colorHawkins",
+            "signal": "data('global')[0]['temp']"
+          }
+        }
+      }
+    }
+  },
+  "legends": [
+    {
+      "fill": "colorHawkins",
+      "orient": "none",
+      "legendX": {"signal": "width+40"},
+      "legendY": 60,
+      "padding": 20,
+      "title": "°C",
+      "titleColor": "gray",
+      "tickCount": 5,
+      "tickMinStep": 0.2,
+      "titleFontSize": {"signal": "12"},
+      "encode": {
+        "labels": {
+          "update": {
+            "dx": {"value": 3},
+            "fontSize": {"signal": "14"},
+            "fill": {"signal": "'gray'"},
+            "text": {
+              "signal": "(datum.value>0?'+':datum.value==0?'':'')+datum.label"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "axes": [
+    {
+      "scale": "scaleYForLegendTick",
+      "orient": "right",
+      "domain": false,
+      "labels": false,
+      "ticks": true,
+      "tickColor": "black",
+      "offset": 45,
+      "zindex": 0,
+      "encode": {
+        "ticks": {
+          "update": {
+            "x": {"signal": "-7"},
+            "x2": {"signal": "13"},
+            "y": {
+              "scale": "scaleYForLegendTick",
+              "signal": "data('global')[0]['temp']"
+            },
+            "strokeWidth": {"signal": "datum.value==0?0.5:0"}
+          }
+        }
+      }
+    }
+  ],
+  "marks": [
+    {
+      "type": "shape",
+      "clip": true,
+      "from": {"data": "world"},
+      "encode": {
+        "update": {
+          "strokeWidth": {"value": 1},
+          "stroke": {"value": "#eee"},
+          "fill": {"scale": "colorHawkins", "field": "temp"}
+        }
+      },
+      "transform": [{"type": "geoshape", "projection": "projection"}]
+    }
+  ],
+  "config": {"legend": {"layout": {"anchor": "middle"}}}
+}
