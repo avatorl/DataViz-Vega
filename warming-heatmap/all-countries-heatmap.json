@@ -34,7 +34,7 @@
   "data": [
     {
       "name": "dataset-csv",
-      "url": "https://dl.dropboxusercontent.com/s/3vwxn1x8qe5ms1h/Annual_Surface_Temperature_Change2.csv",
+      "url": "https://dl.dropboxusercontent.com/s/6wpctvp2j6eikuq/Annual_Surface_Temperature_Change3.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","}
     },
     {"name": "dataset", "source": "dataset-csv"}
@@ -50,7 +50,11 @@
     {
       "name": "scaleY",
       "type": "point",
-      "domain": {"data": "dataset", "field": "country"},
+      "domain": {
+        "data": "dataset",
+        "field": "country",
+        "sort": {"op": "average", "field": "latitude", "order": "descending"}
+      },
       "range": [0, {"signal": "height"}]
     },
     {
