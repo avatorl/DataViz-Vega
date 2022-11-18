@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
-  "description": "Global Temperature (Map)",
+  "description": "Annual Surface Temperature Change (Animated Map)",
   "usermeta": {
     "Author": "Andrzej Leszkiewicz",
     "License": "CC BY 4.0 (Share and Adapt with Attribution)",
@@ -9,8 +9,13 @@
   "width": 650,
   "height": 350,
   "autosize": "pad",
+  "config": {"background": "#FFFFFF", "group": {"fill": "#FBFBFB"}},
   "signals": [
+    {"name": "titleColor", "value": "#555555"},
     {"name": "labelColor", "value": "gray"},
+    {"name": "subtitleStrokeColor", "value": "#AAAAAA"},
+    {"name": "mapStrokeColor", "value": "#CCCCCC"},
+    {"name": "mapNoDataFillColor", "value": "EEEEEE"},
     {"name": "labelFontSizeMajor", "value": "20"},
     {"name": "labelFontSizeMinor", "value": "14"},
     {
@@ -23,28 +28,27 @@
         }
       ]
     },
-    {"name": "scale", "value": 130},
-    {"name": "opacity", "value": 1}
+    {"name": "scale", "value": 130}
   ],
   "data": [
     {
-      "name": "dataset-csv",
+      "name": "data-all-years",
       "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/warming-heatmap/temperature-change-country.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","}
     },
     {
-      "name": "dataset",
-      "source": "dataset-csv",
+      "name": "data-selected-year",
+      "source": "data-all-years",
       "transform": [{"type": "filter", "expr": "datum.year==floor(year/10)"}]
     },
     {
-      "name": "world",
+      "name": "data-geojson",
       "url": "https://dl.dropboxusercontent.com/s/325uaqu1ez1x0du/custom.geo%20%283%29.json",
       "format": {"type": "json", "property": "features"},
       "transform": [
         {
           "type": "lookup",
-          "from": "dataset",
+          "from": "data-selected-year",
           "key": "iso3",
           "fields": ["properties.gu_a3"],
           "values": ["temp"]
@@ -52,13 +56,13 @@
       ]
     },
     {
-      "name": "global-all",
+      "name": "data-global",
       "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/warming-stripe/global-temp.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","}
     },
     {
-      "name": "global",
-      "source": "global-all",
+      "name": "data-global-selected-year",
+      "source": "data-global",
       "transform": [{"type": "filter", "expr": "datum.year==floor(year/10)"}]
     }
   ],
@@ -67,7 +71,7 @@
       "name": "projection",
       "type": {"signal": "'naturalEarth1'"},
       "scale": {"signal": "scale"},
-      "rotate": {"signal": "[0, 0, 0]"},
+      "rotate": {"signal": "[-25, 0, 0]"},
       "translate": {"signal": "[width/2, height/2+25]"}
     }
   ],
@@ -96,23 +100,15 @@
           "#08306B"
         ]
       },
-      "domain": {"data": "dataset-csv", "field": "temp"},
+      "domain": {"data": "data-all-years", "field": "temp"},
       "reverse": true,
       "domainMid": 0
-    },
-    {
-      "name": "scaleYForLegendTick",
-      "type": "linear",
-      "domain": {"data": "dataset-csv", "field": "temp"},
-      "range": [0, {"signal": "height"}],
-      "zero": false,
-      "reverse": true
     }
   ],
   "title": {
     "anchor": "start",
     "font": {"value": "Tahoma"},
-    "fontSize": {"value": 20},
+    "fontSize": {"value": 18},
     "fontWeight": "bold",
     "subtitle": "-",
     "subtitleFontSize": 36,
@@ -123,17 +119,19 @@
           "text": {
             "signal": "'Annual Surface Temperature Change (compared to 1951-1980 average)'"
           },
-          "fill": {"value": "black"}
+          "fill": {"signal": "titleColor"}
         }
       },
       "subtitle": {
         "update": {
-          "text": {"signal": "floor(year/10)"},
-          "strokeWidth": {"value": 0.5},
-          "stroke": {"value": "black"},
+          "text": {
+            "signal": "floor(year/10)+': '+(data('data-global-selected-year')[0]['temp']>0?'+':'')+format(data('data-global-selected-year')[0]['temp'],'.2')+'°C'"
+          },
+          "strokeWidth": {"signal": "0.5"},
+          "stroke": {"signal": "subtitleStrokeColor"},
           "fill": {
             "scale": "colorHawkins",
-            "signal": "data('global')[0]['temp']"
+            "signal": "data('data-global-selected-year')[0]['temp']"
           }
         }
       }
@@ -143,13 +141,13 @@
     {
       "fill": "colorHawkins",
       "orient": "none",
-      "legendX": {"signal": "width+40"},
-      "legendY": 60,
+      "legendX": {"signal": "width"},
+      "legendY": 40,
       "padding": 20,
       "title": "°C",
       "titleColor": "gray",
       "tickCount": 5,
-      "tickMinStep": 0.2,
+      "tickMinStep": 1,
       "titleFontSize": {"signal": "labelFontSizeMajor"},
       "encode": {
         "labels": {
@@ -165,45 +163,23 @@
       }
     }
   ],
-  "axes": [
-    {
-      "scale": "scaleYForLegendTick",
-      "orient": "right",
-      "domain": false,
-      "labels": false,
-      "ticks": true,
-      "tickColor": "black",
-      "offset": 45,
-      "zindex": 0,
-      "encode": {
-        "ticks": {
-          "update": {
-            "x": {"signal": "-7"},
-            "x2": {"signal": "13"},
-            "y": {
-              "scale": "scaleYForLegendTick",
-              "signal": "data('global')[0]['temp']"
-            },
-            "strokeWidth": {"signal": "datum.value==0?0.0:0"}
-          }
-        }
-      }
-    }
-  ],
+  "axes": [],
   "marks": [
     {
       "type": "shape",
       "clip": true,
-      "from": {"data": "world"},
+      "from": {"data": "data-geojson"},
       "encode": {
         "update": {
           "strokeWidth": {"value": 1},
-          "stroke": {"value": "#eee"},
-          "fill": {"scale": "colorHawkins", "field": "temp"}
+          "stroke": {"signal": "mapStrokeColor"},
+          "fill": [
+            {"test": "datum.temp===null", "signal": "mapNoDataFillColor"},
+            {"scale": "colorHawkins", "field": "temp"}
+          ]
         }
       },
       "transform": [{"type": "geoshape", "projection": "projection"}]
     }
-  ],
-  "config": {"legend": {"layout": {"anchor": "middle"}}}
+  ]
 }
