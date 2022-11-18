@@ -19,7 +19,7 @@
       "on": [
         {
           "events": {"type": "timer", "throttle": 500},
-          "update": "yearSelected==2021?1961:yearSelected+1"
+          "update": "floor(yearSelected)==2021?yearSelected+0.1:yearSelected>2021.7?1961:floor(yearSelected)==1961?yearSelected+0.1:yearSelected>1961.7&&yearSelected<1962?1962:yearSelected+1"
         }
       ]
     },
@@ -35,7 +35,9 @@
     {
       "name": "dataset",
       "source": "dataset-csv",
-      "transform": [{"type": "filter", "expr": "datum.year==yearSelected"}]
+      "transform": [
+        {"type": "filter", "expr": "datum.year==floor(yearSelected)"}
+      ]
     },
     {
       "name": "world",
@@ -59,7 +61,9 @@
     {
       "name": "global",
       "source": "global-all",
-      "transform": [{"type": "filter", "expr": "datum.year==yearSelected"}]
+      "transform": [
+        {"type": "filter", "expr": "datum.year==floor(yearSelected)"}
+      ]
     }
   ],
   "projections": [
@@ -128,7 +132,7 @@
       },
       "subtitle": {
         "update": {
-          "text": {"signal": "yearSelected"},
+          "text": {"signal": "floor(yearSelected)"},
           "strokeWidth": {"value": 0.5},
           "stroke": {"value": "black"},
           "fill": {
