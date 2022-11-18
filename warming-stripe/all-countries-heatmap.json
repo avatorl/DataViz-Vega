@@ -1,0 +1,223 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "Global Temperature (Warming Stripes Chart)",
+  "usermeta": {
+    "Author": "Andrzej Leszkiewicz",
+    "License": "CC BY 4.0 (Share and Adapt with Attribution)",
+    "Github": "https://github.com/avatorl/Deneb-Vega/"
+  },
+  "background": "white",
+  "width": 600,
+  "height": 2000,
+  "padding": 5,
+  "autosize": "pad",
+  "config": {},
+  "signals": [
+    {"name": "labelColor", "value": "gray"},
+    {"name": "labelDataSrc", "value": "#CCCCCC"},
+    {"name": "labelFontSizeMajor", "value": "20"},
+    {"name": "labelFontSizeMinor", "value": "14"},
+    {"name": "legendFontSize", "value": "12"},
+    {"name": "basePeriodColor", "value": "black"},
+    {"name": "basePeriodS", "value": "1951"},
+    {"name": "basePeriodE", "value": "1980"},
+    {
+      "name": "selectedStripeTemp",
+      "description": "Temperature at the selected stripe (to dispaly as a tick on the legend)",
+      "value": "0",
+      "on": [
+        {"events": "@stripe:mouseover", "update": "datum.temp"},
+        {"events": "@stripe:mouseout", "update": "0"}
+      ]
+    }
+  ],
+  "data": [
+    {
+      "name": "dataset-csv",
+      "url": "https://dl.dropboxusercontent.com/s/3vwxn1x8qe5ms1h/Annual_Surface_Temperature_Change2.csv",
+      "format": {"type": "csv", "parse": "auto", "delimiter": ","}
+    },
+    {"name": "dataset", "source": "dataset-csv"}
+  ],
+  "scales": [
+    {
+      "name": "scaleX",
+      "type": "linear",
+      "domain": {"data": "dataset", "field": "year"},
+      "range": [0, {"signal": "width"}],
+      "zero": false
+    },
+    {
+      "name": "scaleY",
+      "type": "point",
+      "domain": {"data": "dataset", "field": "country"},
+      "range": [0, {"signal": "height"}]
+    },
+    {
+      "name": "scaleYForLegendTick",
+      "type": "linear",
+      "domain": {"data": "dataset", "field": "temp"},
+      "range": [0, {"signal": "height"}],
+      "zero": false,
+      "reverse": true
+    },
+    {
+      "name": "colorHawkins",
+      "type": "linear",
+      "range": {
+        "scheme": [
+          "#67000D",
+          "#A50F15",
+          "#CB181D",
+          "#EF3B2C",
+          "#FB6A4A",
+          "#FC9272",
+          "#FCBBA1",
+          "#FEE0D2",
+          "#FFFFFF",
+          "#DEEBF7",
+          "#C6DBEF",
+          "#9ECAE1",
+          "#6BAED6",
+          "#4292C6",
+          "#2171B5",
+          "#08519C",
+          "#08306B"
+        ]
+      },
+      "domain": {"data": "dataset", "field": "temp"},
+      "reverse": true,
+      "domainMid": 0
+    }
+  ],
+  "title": {
+    "text": {
+      "signal": "'Global Temperature in 1961-2021 (compared to '+ basePeriodS+'-'+basePeriodE+' average)'"
+    },
+    "anchor": "start",
+    "font": {"value": "Tahoma"},
+    "fontSize": {"value": 16},
+    "fontWeight": "lighter"
+  },
+  "axes": [
+    {
+      "scale": "scaleY",
+      "orient": "left",
+      "domain": false,
+      "ticks": false,
+      "labelPadding": 8,
+      "labelFontSize": 8,
+      "labelColor": {"signal": "labelColor"}
+    },
+    {
+      "scale": "scaleX",
+      "orient": "bottom",
+      "domain": false,
+      "tickCount": {"signal": "5"},
+      "labelColor": {"signal": "labelColor"},
+      "format": ".4",
+      "encode": {
+        "ticks": {"update": {"y": {"value": -3}}},
+        "labels": {
+          "update": {
+            "y": {"value": 8},
+            "fontSize": {
+              "signal": "(datum.value==1900||datum.value==2000)?labelFontSizeMajor:labelFontSizeMinor"
+            }
+          }
+        }
+      }
+    },
+    {
+      "scale": "scaleYForLegendTick",
+      "orient": "right",
+      "domain": false,
+      "labels": false,
+      "ticks": true,
+      "tickColor": "black",
+      "offset": 45,
+      "zindex": 0,
+      "encode": {
+        "ticks": {
+          "update": {
+            "x": {"value": -7},
+            "x2": {"value": 13},
+            "y": {
+              "scale": "scaleYForLegendTick",
+              "signal": "selectedStripeTemp"
+            },
+            "strokeWidth": {"signal": "datum.value==0?0:0"}
+          }
+        }
+      }
+    }
+  ],
+  "legends": [
+    {
+      "fill": "colorHawkins",
+      "orient": "none",
+      "legendX": {"signal": "width+40"},
+      "legendY": -40,
+      "padding": 20,
+      "title": "°C",
+      "titleColor": "gray",
+      "tickCount": 5,
+      "tickMinStep": 0.2,
+      "titleFontSize": {"signal": "labelFontSizeMinor"},
+      "encode": {
+        "labels": {
+          "update": {
+            "dx": {"value": 3},
+            "fontSize": {"signal": "legendFontSize"},
+            "fill": {"signal": "labelColor"},
+            "text": {
+              "signal": "(datum.value>0?'+':datum.value==0?'':'')+datum.label"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "marks": [
+    {
+      "name": "stripe",
+      "type": "rect",
+      "interactive": true,
+      "style": ["tick"],
+      "from": {"data": "dataset"},
+      "encode": {
+        "update": {
+          "opacity": {"value": 1},
+          "strokeWidth": {"value": 0},
+          "stroke": {"value": "gray"},
+          "fill": {"scale": "colorHawkins", "field": "temp"},
+          "xc": {"scale": "scaleX", "field": "year"},
+          "yc": {"scale": "scaleY", "field": "country"},
+          "height": {"signal": "10"},
+          "width": {"signal": "9.5"},
+          "tooltip": {
+            "signal": "datum.country+', '+datum.year+': '+(datum.temp>0?'+':'')+datum.temp+'°C'"
+          }
+        },
+        "hover": {"width": {"signal": "4.2"}, "strokeWidth": {"value": 0.05}}
+      }
+    },
+    {
+      "type": "text",
+      "encode": {
+        "enter": {
+          "fill": {"signal": "labelDataSrc"},
+          "text": {"value": ""},
+          "href": {"value": ""},
+          "cursor": {"value": "pointer"}
+        },
+        "update": {
+          "opacity": {"value": 1},
+          "x": {"signal": "650"},
+          "y": {"signal": "250"},
+          "fontSize": {"signal": "12"}
+        }
+      }
+    }
+  ]
+}
