@@ -121,7 +121,7 @@
       "title": {
         "update": {
           "text": {
-            "signal": "'Global Temperature (compared to 1951-1980 average)'"
+            "signal": "'Annual Surface Temperature Change (compared to 1951-1980 average)'"
           },
           "fill": {"value": "black"}
         }
@@ -129,7 +129,7 @@
       "subtitle": {
         "update": {
           "text": {"signal": "yearSelected"},
-          "strokeWidth": {"value": 1},
+          "strokeWidth": {"value": 0.5},
           "stroke": {"value": "black"},
           "fill": {
             "scale": "colorHawkins",
