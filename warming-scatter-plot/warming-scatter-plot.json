@@ -1,0 +1,173 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "Annual Surface Temperature Change (Animated Scatter Plot)",
+  "usermeta": {
+    "Author": "Andrzej Leszkiewicz",
+    "License": "CC BY 4.0 (Share and Adapt with Attribution)",
+    "Github": "https://github.com/avatorl/Deneb-Vega/"
+  },
+  "width": 650,
+  "height": 350,
+  "autosize": "pad",
+  "config": {"background": "#FFFFFF", "group": {"fill": "#FFFFFF"}},
+  "signals": [
+    {"name": "titleColor", "value": "#555555"},
+    {"name": "labelColor", "value": "gray"},
+    {"name": "subtitleStrokeColor", "value": "#AAAAAA"},
+    {"name": "mapStrokeColor", "value": "#CCCCCC"},
+    {"name": "mapNoDataFillColor", "value": "EEEEEE"},
+    {"name": "labelFontSizeMajor", "value": "20"},
+    {"name": "labelFontSizeMinor", "value": "14"},
+    {"name": "scale", "value": 130},
+    {
+      "name": "year",
+      "init": "19610",
+      "on": [
+        {
+          "events": {"type": "timer", "throttle": 500},
+          "update": "(year>=19610&&year<=19619)?year+1:year<20210?year+10:year<=20218?year+1:19610"
+        }
+      ]
+    }
+  ],
+  "data": [
+    {
+      "name": "data-all-years",
+      "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/warming-heatmap/temperature-change-country.csv",
+      "format": {"type": "csv", "parse": "auto", "delimiter": ","}
+    },
+    {
+      "name": "data-before-year",
+      "source": "data-all-years",
+      "transform": [{"type": "filter", "expr": "datum.year<floor(year/10)"}]
+    },
+    {
+      "name": "data-selected-year",
+      "source": "data-all-years",
+      "transform": [{"type": "filter", "expr": "datum.year==floor(year/10)"}]
+    }
+  ],
+  "projections": [
+    {
+      "name": "projection",
+      "type": {"signal": "'naturalEarth1'"},
+      "scale": {"signal": "scale"},
+      "rotate": {"signal": "[-25, 0, 0]"},
+      "translate": {"signal": "[width/2, height/2+25]"}
+    }
+  ],
+  "scales": [
+    {
+      "name": "x",
+      "type": "linear",
+      "domain": {"data": "data-all-years", "field": "latitude"},
+      "range": "width"
+    },
+    {
+      "name": "y",
+      "type": "linear",
+      "domain": {"data": "data-all-years", "field": "temp"},
+      "range": "height"
+    },
+    {
+      "name": "colorHawkins",
+      "type": "linear",
+      "range": {
+        "scheme": [
+          "#67000D",
+          "#A50F15",
+          "#CB181D",
+          "#EF3B2C",
+          "#FB6A4A",
+          "#FC9272",
+          "#FCBBA1",
+          "#FEE0D2",
+          "#FFFFFF",
+          "#DEEBF7",
+          "#C6DBEF",
+          "#9ECAE1",
+          "#6BAED6",
+          "#4292C6",
+          "#2171B5",
+          "#08519C",
+          "#08306B"
+        ]
+      },
+      "domain": {"data": "data-all-years", "field": "temp"},
+      "reverse": true,
+      "domainMid": 0
+    }
+  ],
+  "legends": [],
+  "axes": [
+    {"orient": "left", "scale": "y", "title": "Temperature Change"},
+    {"orient": "bottom", "scale": "x", "title": "Latitude"}
+  ],
+  "title": {
+    "anchor": "start",
+    "font": {"value": "Tahoma"},
+    "fontSize": {"value": 18},
+    "fontWeight": "bold",
+    "subtitle": "-",
+    "subtitleFontSize": 36,
+    "subtitleFontWeight": "bold",
+    "encode": {
+      "title": {
+        "update": {
+          "text": {
+            "signal": "'Annual Surface Temperature Change (compared to 1951-1980 average)'"
+          },
+          "fill": {"signal": "titleColor"}
+        }
+      },
+      "subtitle": {
+        "update": {
+          "text": {"signal": "floor(year/10)"},
+          "strokeWidth": {"signal": "0.5"},
+          "stroke": {"signal": "subtitleStrokeColor"},
+          "fill": {"signal": "'black'"}
+        }
+      }
+    }
+  },
+  "marks": [
+    {
+      "name": "pointsOld",
+      "type": "symbol",
+      "from": {"data": "data-before-year"},
+      "encode": {
+        "enter": {
+          "zindex": {"value": 0},
+          "tooltip": {"signal": "datum.country+', '+datum.year"},
+          "x": {"scale": "x", "field": "latitude"},
+          "y": {"scale": "y", "field": "temp"},
+          "fill": {"value": "#EEEEEE"},
+          "strokeOpacity": {"signal": "1"},
+          "fillOpacity": {"signal": "(datum.year-1961)/65/2"},
+          "size": {"signal": "20"}
+        },
+        "update": {}
+      }
+    },
+    {
+      "name": "points",
+      "type": "symbol",
+      "from": {"data": "data-selected-year"},
+      "encode": {
+        "enter": {
+          "zindex": {"value": 1},
+          "tooltip": {"signal": "datum.country+', '+datum.year"},
+          "x": {"scale": "x", "field": "latitude"},
+          "y": {"scale": "y", "field": "temp"},
+          "stroke": {"scale": "colorHawkins", "field": "temp"},
+          "fill": {"scale": "colorHawkins", "field": "temp"},
+          "strokeOpacity": {"signal": "1"},
+          "strokeWidth": {"signal": "0.3"},
+          "fillOpacity": {"signal": "1"},
+          "size": {"signal": "30"}
+        },
+        "update": {}
+      }
+    }
+  ]
+}
