@@ -14,12 +14,12 @@
     {"name": "labelFontSizeMajor", "value": "20"},
     {"name": "labelFontSizeMinor", "value": "14"},
     {
-      "name": "yearSelected",
-      "init": "1961",
+      "name": "year",
+      "init": "19610",
       "on": [
         {
           "events": {"type": "timer", "throttle": 500},
-          "update": "floor(yearSelected)==2021?yearSelected+0.1:yearSelected>2021.7?1961:floor(yearSelected)==1961?yearSelected+0.1:yearSelected>1961.7&&yearSelected<1962?1962:yearSelected+1"
+          "update": "(year>=19610&&year<=19619)?year+1:year<20210?year+10:year<=20218?year+1:19610"
         }
       ]
     },
@@ -35,9 +35,7 @@
     {
       "name": "dataset",
       "source": "dataset-csv",
-      "transform": [
-        {"type": "filter", "expr": "datum.year==floor(yearSelected)"}
-      ]
+      "transform": [{"type": "filter", "expr": "datum.year==floor(year/10)"}]
     },
     {
       "name": "world",
@@ -61,9 +59,7 @@
     {
       "name": "global",
       "source": "global-all",
-      "transform": [
-        {"type": "filter", "expr": "datum.year==floor(yearSelected)"}
-      ]
+      "transform": [{"type": "filter", "expr": "datum.year==floor(year/10)"}]
     }
   ],
   "projections": [
@@ -132,7 +128,7 @@
       },
       "subtitle": {
         "update": {
-          "text": {"signal": "floor(yearSelected)"},
+          "text": {"signal": "floor(year/10)"},
           "strokeWidth": {"value": 0.5},
           "stroke": {"value": "black"},
           "fill": {
