@@ -101,34 +101,6 @@
       "domainMid": 0
     },
     {
-      "name": "colorHawkins2",
-      "type": "linear",
-      "range": {
-        "scheme": [
-          "#67000D",
-          "#A50F15",
-          "#CB181D",
-          "#EF3B2C",
-          "#FB6A4A",
-          "#FC9272",
-          "#FCBBA1",
-          "#FEE0D2",
-          "#FFFFFF",
-          "#DEEBF7",
-          "#C6DBEF",
-          "#9ECAE1",
-          "#6BAED6",
-          "#4292C6",
-          "#2171B5",
-          "#08519C",
-          "#08306B"
-        ]
-      },
-      "domain": {"data": "global-all", "field": "temp"},
-      "reverse": true,
-      "domainMid": 0
-    },
-    {
       "name": "scaleYForLegendTick",
       "type": "linear",
       "domain": {"data": "dataset-csv", "field": "temp"},
@@ -169,7 +141,7 @@
   },
   "legends": [
     {
-      "fill": "colorHawkins2",
+      "fill": "colorHawkins",
       "orient": "none",
       "legendX": {"signal": "width+40"},
       "legendY": 60,
