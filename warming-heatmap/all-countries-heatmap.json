@@ -11,7 +11,7 @@
   "height": 2000,
   "padding": 5,
   "autosize": "pad",
-  "config": {},
+  "config": {"background": "white", "group": {"fill": "white"}},
   "signals": [
     {"name": "labelColor", "value": "gray"},
     {"name": "labelDataSrc", "value": "#CCCCCC"},
@@ -194,16 +194,18 @@
           "opacity": {"value": 1},
           "strokeWidth": {"value": 0},
           "stroke": {"value": "gray"},
-          "fill": {"scale": "colorHawkins", "field": "temp"},
+          "fill": [
+            {"test": "datum.temp === null", "value": "black"},
+            {"scale": "colorHawkins", "field": "temp"}
+          ],
           "xc": {"scale": "scaleX", "field": "year"},
           "yc": {"scale": "scaleY", "field": "country"},
-          "height": {"signal": "10"},
+          "height": {"signal": "9.5"},
           "width": {"signal": "9.5"},
           "tooltip": {
             "signal": "datum.country+', '+datum.year+': '+(datum.temp>0?'+':'')+datum.temp+'°C'"
           }
-        },
-        "hover": {"width": {"signal": "4.2"}, "strokeWidth": {"value": 0.05}}
+        }
       }
     },
     {
