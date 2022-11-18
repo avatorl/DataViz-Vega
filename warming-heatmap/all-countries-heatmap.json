@@ -37,7 +37,12 @@
       "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/warming-heatmap/temperature-change-country.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","}
     },
-    {"name": "dataset", "source": "dataset-csv"}
+    {"name": "dataset", "source": "dataset-csv"},
+    {
+      "name": "dataset-nodata",
+      "source": "dataset",
+      "transform": [{"type": "filter", "expr": "datum.temp == null"}]
+    }
   ],
   "scales": [
     {
@@ -195,7 +200,7 @@
           "strokeWidth": {"value": 0},
           "stroke": {"value": "gray"},
           "fill": [
-            {"test": "datum.temp === null", "value": "black"},
+            {"test": "datum.temp === null", "value": "white"},
             {"scale": "colorHawkins", "field": "temp"}
           ],
           "xc": {"scale": "scaleX", "field": "year"},
@@ -205,6 +210,32 @@
           "tooltip": {
             "signal": "datum.country+', '+datum.year+': '+(datum.temp>0?'+':'')+datum.temp+'°C'"
           }
+        }
+      }
+    },
+    {
+      "name": "NoDataX",
+      "type": "text",
+      "interactive": true,
+      "from": {"data": "dataset-nodata"},
+      "encode": {
+        "update": {
+          "text": {"value": "✕"},
+          "fontSize": {"value": 6},
+          "opacity": {"value": 1},
+          "strokeWidth": {"value": 0},
+          "stroke": {"value": "gray"},
+          "fill": [
+            {"test": "datum.temp === null", "value": "gray"},
+            {"scale": "colorHawkins", "field": "temp"}
+          ],
+          "xc": {"scale": "scaleX", "field": "year"},
+          "yc": {"scale": "scaleY", "field": "country"},
+          "dx": {"value": -4},
+          "dy": {"value": 2},
+          "height": {"signal": "0"},
+          "width": {"signal": "0"},
+          "tooltip": {"signal": "datum.country+', '+datum.year+': '+'No Data'"}
         }
       }
     },
