@@ -234,6 +234,9 @@ year,country,iso2,iso3,temp,latitude,longitude
 2013,American Samoa,AS,ASM,0.883,-14.270972,-170.132217
 2014,American Samoa,AS,ASM,0.554,-14.270972,-170.132217
 2015,American Samoa,AS,ASM,0.394,-14.270972,-170.132217
+1997,American Samoa,,,,,
+1998,American Samoa,,,,,
+2009,American Samoa,,,,,
 2016,American Samoa,AS,ASM,0.924,-14.270972,-170.132217
 2017,American Samoa,AS,ASM,0.82,-14.270972,-170.132217
 2018,American Samoa,AS,ASM,0.574,-14.270972,-170.132217
@@ -477,6 +480,7 @@ year,country,iso2,iso3,temp,latitude,longitude
 2013,Antigua and Barbuda,AG,ATG,0.766,17.060816,-61.796428
 2014,Antigua and Barbuda,AG,ATG,0.723,17.060816,-61.796428
 2015,Antigua and Barbuda,AG,ATG,1.032,17.060816,-61.796428
+2001,Antigua and Barbuda,,,,,
 2016,Antigua and Barbuda,AG,ATG,1.105,17.060816,-61.796428
 2017,Antigua and Barbuda,AG,ATG,0.965,17.060816,-61.796428
 2018,Antigua and Barbuda,AG,ATG,0.694,17.060816,-61.796428
@@ -544,6 +548,9 @@ year,country,iso2,iso3,temp,latitude,longitude
 2019,Argentina,AR,ARG,0.756,-38.416097,-63.616672
 2020,Argentina,AR,ARG,1.109,-38.416097,-63.616672
 2021,Argentina,AR,ARG,1.011,-38.416097,-63.616672
+1961,Armenia,,,,,
+1962,Armenia,,,,,
+1963,Armenia,,,,,
 1992,Armenia,AM,ARM,-1.294,40.069099,45.038189
 1993,Armenia,AM,ARM,-0.947,40.069099,45.038189
 1994,Armenia,AM,ARM,0.479,40.069099,45.038189
@@ -568,6 +575,34 @@ year,country,iso2,iso3,temp,latitude,longitude
 2013,Armenia,AM,ARM,1.407,40.069099,45.038189
 2014,Armenia,AM,ARM,1.258,40.069099,45.038189
 2015,Armenia,AM,ARM,1.921,40.069099,45.038189
+1964,Armenia,,,,,
+1965,Armenia,,,,,
+1966,Armenia,,,,,
+1967,Armenia,,,,,
+1968,Armenia,,,,,
+1969,Armenia,,,,,
+1970,Armenia,,,,,
+1971,Armenia,,,,,
+1972,Armenia,,,,,
+1973,Armenia,,,,,
+1974,Armenia,,,,,
+1975,Armenia,,,,,
+1976,Armenia,,,,,
+1977,Armenia,,,,,
+1978,Armenia,,,,,
+1979,Armenia,,,,,
+1980,Armenia,,,,,
+1981,Armenia,,,,,
+1982,Armenia,,,,,
+1983,Armenia,,,,,
+1984,Armenia,,,,,
+1985,Armenia,,,,,
+1986,Armenia,,,,,
+1987,Armenia,,,,,
+1988,Armenia,,,,,
+1989,Armenia,,,,,
+1990,Armenia,,,,,
+1991,Armenia,,,,,
 2016,Armenia,AM,ARM,1.339,40.069099,45.038189
 2017,Armenia,AM,ARM,0.901,40.069099,45.038189
 2018,Armenia,AM,ARM,2.781,40.069099,45.038189
@@ -627,11 +662,14 @@ year,country,iso2,iso3,temp,latitude,longitude
 2013,Aruba,AW,ABW,1.017,12.52111,-69.968338
 2014,Aruba,AW,ABW,0.804,12.52111,-69.968338
 2015,Aruba,AW,ABW,1.604,12.52111,-69.968338
+1979,Aruba,,,,,
+1993,Aruba,,,,,
 2016,Aruba,AW,ABW,0.781,12.52111,-69.968338
 2017,Aruba,AW,ABW,1.177,12.52111,-69.968338
 2018,Aruba,AW,ABW,0.817,12.52111,-69.968338
 2019,Aruba,AW,ABW,1.152,12.52111,-69.968338
 2020,Aruba,AW,ABW,1.479,12.52111,-69.968338
+2021,Aruba,,,,,
 1961,Australia,AU,AUS,0.151,-25.274398,133.775136
 1962,Australia,AU,AUS,0.118,-25.274398,133.775136
 1963,Australia,AU,AUS,-0.111,-25.274398,133.775136
@@ -754,6 +792,10 @@ year,country,iso2,iso3,temp,latitude,longitude
 2019,Austria,AT,AUT,2.369,47.516231,14.550072
 2020,Austria,AT,AUT,2.32,47.516231,14.550072
 2021,Austria,AT,AUT,1.397,47.516231,14.550072
+1961,Azerbaijan,,,,,
+1962,Azerbaijan,,,,,
+1963,Azerbaijan,,,,,
+1964,Azerbaijan,,,,,
 1992,Azerbaijan,AZ,AZE,-0.823,40.143105,47.576927
 1993,Azerbaijan,AZ,AZE,-1.003,40.143105,47.576927
 1994,Azerbaijan,AZ,AZE,0.105,40.143105,47.576927
@@ -778,6 +820,33 @@ year,country,iso2,iso3,temp,latitude,longitude
 2013,Azerbaijan,AZ,AZE,1.565,40.143105,47.576927
 2014,Azerbaijan,AZ,AZE,1.242,40.143105,47.576927
 2015,Azerbaijan,AZ,AZE,1.667,40.143105,47.576927
+1965,Azerbaijan,,,,,
+1966,Azerbaijan,,,,,
+1967,Azerbaijan,,,,,
+1968,Azerbaijan,,,,,
+1969,Azerbaijan,,,,,
+1970,Azerbaijan,,,,,
+1971,Azerbaijan,,,,,
+1972,Azerbaijan,,,,,
+1973,Azerbaijan,,,,,
+1974,Azerbaijan,,,,,
+1975,Azerbaijan,,,,,
+1976,Azerbaijan,,,,,
+1977,Azerbaijan,,,,,
+1978,Azerbaijan,,,,,
+1979,Azerbaijan,,,,,
+1980,Azerbaijan,,,,,
+1981,Azerbaijan,,,,,
+1982,Azerbaijan,,,,,
+1983,Azerbaijan,,,,,
+1984,Azerbaijan,,,,,
+1985,Azerbaijan,,,,,
+1986,Azerbaijan,,,,,
+1987,Azerbaijan,,,,,
+1988,Azerbaijan,,,,,
+1989,Azerbaijan,,,,,
+1990,Azerbaijan,,,,,
+1991,Azerbaijan,,,,,
 2016,Azerbaijan,AZ,AZE,1.455,40.143105,47.576927
 2017,Azerbaijan,AZ,AZE,1.306,40.143105,47.576927
 2018,Azerbaijan,AZ,AZE,2.252,40.143105,47.576927
@@ -1022,10 +1091,17 @@ year,country,iso2,iso3,temp,latitude,longitude
 2013,Barbados,BB,BRB,0.786,13.193887,-59.543198
 2014,Barbados,BB,BRB,0.447,13.193887,-59.543198
 2015,Barbados,BB,BRB,0.983,13.193887,-59.543198
+2016,Barbados,,,,,
+2017,Barbados,,,,,
 2018,Barbados,BB,BRB,0.775,13.193887,-59.543198
 2019,Barbados,BB,BRB,1.111,13.193887,-59.543198
 2020,Barbados,BB,BRB,1.033,13.193887,-59.543198
 2021,Barbados,BB,BRB,1.132,13.193887,-59.543198
+1961,Belarus,,,,,
+1962,Belarus,,,,,
+1963,Belarus,,,,,
+1964,Belarus,,,,,
+1965,Belarus,,,,,
 1992,Belarus,BY,BLR,1.271,53.709807,27.953389
 1993,Belarus,BY,BLR,0.023,53.709807,27.953389
 1994,Belarus,BY,BLR,1.139,53.709807,27.953389
@@ -1050,12 +1126,43 @@ year,country,iso2,iso3,temp,latitude,longitude
 2013,Belarus,BY,BLR,1.169,53.709807,27.953389
 2014,Belarus,BY,BLR,2.137,53.709807,27.953389
 2015,Belarus,BY,BLR,2.211,53.709807,27.953389
+1966,Belarus,,,,,
+1967,Belarus,,,,,
+1968,Belarus,,,,,
+1969,Belarus,,,,,
+1970,Belarus,,,,,
+1971,Belarus,,,,,
+1972,Belarus,,,,,
+1973,Belarus,,,,,
+1974,Belarus,,,,,
+1975,Belarus,,,,,
+1976,Belarus,,,,,
+1977,Belarus,,,,,
+1978,Belarus,,,,,
+1979,Belarus,,,,,
+1980,Belarus,,,,,
+1981,Belarus,,,,,
+1982,Belarus,,,,,
+1983,Belarus,,,,,
+1984,Belarus,,,,,
+1985,Belarus,,,,,
+1986,Belarus,,,,,
+1987,Belarus,,,,,
+1988,Belarus,,,,,
+1989,Belarus,,,,,
+1990,Belarus,,,,,
+1991,Belarus,,,,,
 2016,Belarus,BY,BLR,2.168,53.709807,27.953389
 2017,Belarus,BY,BLR,1.562,53.709807,27.953389
 2018,Belarus,BY,BLR,2.31,53.709807,27.953389
 2019,Belarus,BY,BLR,2.65,53.709807,27.953389
 2020,Belarus,BY,BLR,3.476,53.709807,27.953389
 2021,Belarus,BY,BLR,1.683,53.709807,27.953389
+1961,Belgium,,,,,
+1962,Belgium,,,,,
+1963,Belgium,,,,,
+1964,Belgium,,,,,
+1965,Belgium,,,,,
 2000,Belgium,BE,BEL,1.468,50.503887,4.469936
 2001,Belgium,BE,BEL,1.317,50.503887,4.469936
 2002,Belgium,BE,BEL,1.378,50.503887,4.469936
@@ -1072,6 +1179,40 @@ year,country,iso2,iso3,temp,latitude,longitude
 2013,Belgium,BE,BEL,0.449,50.503887,4.469936
 2014,Belgium,BE,BEL,2.399,50.503887,4.469936
 2015,Belgium,BE,BEL,1.35,50.503887,4.469936
+1966,Belgium,,,,,
+1967,Belgium,,,,,
+1968,Belgium,,,,,
+1969,Belgium,,,,,
+1970,Belgium,,,,,
+1971,Belgium,,,,,
+1972,Belgium,,,,,
+1973,Belgium,,,,,
+1974,Belgium,,,,,
+1975,Belgium,,,,,
+1976,Belgium,,,,,
+1977,Belgium,,,,,
+1978,Belgium,,,,,
+1979,Belgium,,,,,
+1980,Belgium,,,,,
+1981,Belgium,,,,,
+1982,Belgium,,,,,
+1983,Belgium,,,,,
+1984,Belgium,,,,,
+1985,Belgium,,,,,
+1986,Belgium,,,,,
+1987,Belgium,,,,,
+1988,Belgium,,,,,
+1989,Belgium,,,,,
+1990,Belgium,,,,,
+1991,Belgium,,,,,
+1992,Belgium,,,,,
+1993,Belgium,,,,,
+1994,Belgium,,,,,
+1995,Belgium,,,,,
+1996,Belgium,,,,,
+1997,Belgium,,,,,
+1998,Belgium,,,,,
+1999,Belgium,,,,,
 2016,Belgium,BE,BEL,1.861,50.503887,4.469936
 2017,Belgium,BE,BEL,1.695,50.503887,4.469936
 2018,Belgium,BE,BEL,2.151,50.503887,4.469936
@@ -1322,6 +1463,12 @@ year,country,iso2,iso3,temp,latitude,longitude
 2019,Bolivia,BO,BOL,0.713,-16.290154,-63.588653
 2020,Bolivia,BO,BOL,1.167,-16.290154,-63.588653
 2021,Bolivia,BO,BOL,0.553,-16.290154,-63.588653
+1961,Bosnia and Herzegovina,,,,,
+1962,Bosnia and Herzegovina,,,,,
+1963,Bosnia and Herzegovina,,,,,
+1964,Bosnia and Herzegovina,,,,,
+1965,Bosnia and Herzegovina,,,,,
+1966,Bosnia and Herzegovina,,,,,
 1992,Bosnia and Herzegovina,BA,BIH,0.682,43.915886,17.679076
 1993,Bosnia and Herzegovina,BA,BIH,0.279,43.915886,17.679076
 1994,Bosnia and Herzegovina,BA,BIH,1.721,43.915886,17.679076
@@ -1346,6 +1493,31 @@ year,country,iso2,iso3,temp,latitude,longitude
 2013,Bosnia and Herzegovina,BA,BIH,1.379,43.915886,17.679076
 2014,Bosnia and Herzegovina,BA,BIH,1.887,43.915886,17.679076
 2015,Bosnia and Herzegovina,BA,BIH,1.867,43.915886,17.679076
+1967,Bosnia and Herzegovina,,,,,
+1968,Bosnia and Herzegovina,,,,,
+1969,Bosnia and Herzegovina,,,,,
+1970,Bosnia and Herzegovina,,,,,
+1971,Bosnia and Herzegovina,,,,,
+1972,Bosnia and Herzegovina,,,,,
+1973,Bosnia and Herzegovina,,,,,
+1974,Bosnia and Herzegovina,,,,,
+1975,Bosnia and Herzegovina,,,,,
+1976,Bosnia and Herzegovina,,,,,
+1977,Bosnia and Herzegovina,,,,,
+1978,Bosnia and Herzegovina,,,,,
+1979,Bosnia and Herzegovina,,,,,
+1980,Bosnia and Herzegovina,,,,,
+1981,Bosnia and Herzegovina,,,,,
+1982,Bosnia and Herzegovina,,,,,
+1983,Bosnia and Herzegovina,,,,,
+1984,Bosnia and Herzegovina,,,,,
+1985,Bosnia and Herzegovina,,,,,
+1986,Bosnia and Herzegovina,,,,,
+1987,Bosnia and Herzegovina,,,,,
+1988,Bosnia and Herzegovina,,,,,
+1989,Bosnia and Herzegovina,,,,,
+1990,Bosnia and Herzegovina,,,,,
+1991,Bosnia and Herzegovina,,,,,
 2016,Bosnia and Herzegovina,BA,BIH,1.729,43.915886,17.679076
 2017,Bosnia and Herzegovina,BA,BIH,1.477,43.915886,17.679076
 2018,Bosnia and Herzegovina,BA,BIH,2.334,43.915886,17.679076
@@ -1747,6 +1919,38 @@ year,country,iso2,iso3,temp,latitude,longitude
 2003,Burundi,BI,BDI,1.18,-3.373056,29.918886
 2004,Burundi,BI,BDI,1.279,-3.373056,29.918886
 2007,Burundi,BI,BDI,1.388,-3.373056,29.918886
+1975,Burundi,,,,,
+1976,Burundi,,,,,
+1977,Burundi,,,,,
+1978,Burundi,,,,,
+1979,Burundi,,,,,
+1980,Burundi,,,,,
+1981,Burundi,,,,,
+1984,Burundi,,,,,
+1985,Burundi,,,,,
+1993,Burundi,,,,,
+1994,Burundi,,,,,
+1995,Burundi,,,,,
+1996,Burundi,,,,,
+1997,Burundi,,,,,
+1999,Burundi,,,,,
+2000,Burundi,,,,,
+2005,Burundi,,,,,
+2006,Burundi,,,,,
+2008,Burundi,,,,,
+2009,Burundi,,,,,
+2010,Burundi,,,,,
+2011,Burundi,,,,,
+2012,Burundi,,,,,
+2013,Burundi,,,,,
+2014,Burundi,,,,,
+2015,Burundi,,,,,
+2016,Burundi,,,,,
+2017,Burundi,,,,,
+2018,Burundi,,,,,
+2019,Burundi,,,,,
+2020,Burundi,,,,,
+2021,Burundi,,,,,
 1961,Cabo Verde,CV,CPV,-0.121,16.002082,-24.013197
 1962,Cabo Verde,CV,CPV,0.218,16.002082,-24.013197
 1963,Cabo Verde,CV,CPV,0.444,16.002082,-24.013197
@@ -1799,6 +2003,9 @@ year,country,iso2,iso3,temp,latitude,longitude
 2013,Cabo Verde,CV,CPV,1.684,16.002082,-24.013197
 2014,Cabo Verde,CV,CPV,1.437,16.002082,-24.013197
 2015,Cabo Verde,CV,CPV,1.424,16.002082,-24.013197
+1975,Cabo Verde,,,,,
+1984,Cabo Verde,,,,,
+2010,Cabo Verde,,,,,
 2016,Cabo Verde,CV,CPV,2.017,16.002082,-24.013197
 2017,Cabo Verde,CV,CPV,2.34,16.002082,-24.013197
 2018,Cabo Verde,CV,CPV,1.281,16.002082,-24.013197
@@ -1988,8 +2195,11 @@ year,country,iso2,iso3,temp,latitude,longitude
 2019,Canada,CA,CAN,1.32,56.130366,-106.346771
 2020,Canada,CA,CAN,1.139,56.130366,-106.346771
 2021,Canada,CA,CAN,2.536,56.130366,-106.346771
+1961,Cayman Islands,,,,,
 1962,Cayman Islands,KY,CYM,-0.221,19.513469,-80.566956
 1963,Cayman Islands,KY,CYM,-0.265,19.513469,-80.566956
+1964,Cayman Islands,,,,,
+1965,Cayman Islands,,,,,
 1966,Cayman Islands,KY,CYM,-0.238,19.513469,-80.566956
 1967,Cayman Islands,KY,CYM,-0.269,19.513469,-80.566956
 1968,Cayman Islands,KY,CYM,-0.376,19.513469,-80.566956
@@ -2034,6 +2244,12 @@ year,country,iso2,iso3,temp,latitude,longitude
 2013,Cayman Islands,KY,CYM,0.559,19.513469,-80.566956
 2014,Cayman Islands,KY,CYM,0.767,19.513469,-80.566956
 2015,Cayman Islands,KY,CYM,1.008,19.513469,-80.566956
+1974,Cayman Islands,,,,,
+2000,Cayman Islands,,,,,
+2001,Cayman Islands,,,,,
+2002,Cayman Islands,,,,,
+2003,Cayman Islands,,,,,
+2004,Cayman Islands,,,,,
 2016,Cayman Islands,KY,CYM,0.946,19.513469,-80.566956
 2017,Cayman Islands,KY,CYM,0.918,19.513469,-80.566956
 2018,Cayman Islands,KY,CYM,0.639,19.513469,-80.566956
@@ -2337,6 +2553,8 @@ year,country,iso2,iso3,temp,latitude,longitude
 2013,Comoros,KM,COM,0.223,-11.875001,43.872219
 2014,Comoros,KM,COM,0.312,-11.875001,43.872219
 2015,Comoros,KM,COM,0.529,-11.875001,43.872219
+1983,Comoros,,,,,
+1985,Comoros,,,,,
 2016,Comoros,KM,COM,0.504,-11.875001,43.872219
 2017,Comoros,KM,COM,0.754,-11.875001,43.872219
 2018,Comoros,KM,COM,0.509,-11.875001,43.872219
@@ -2397,6 +2615,7 @@ year,country,iso2,iso3,temp,latitude,longitude
 2013,Congo,CG,COG,0.888,-0.228021,15.827659
 2014,Congo,CG,COG,0.836,-0.228021,15.827659
 2015,Congo,CG,COG,1.208,-0.228021,15.827659
+1997,Congo,,,,,
 2016,Congo,CG,COG,1.584,-0.228021,15.827659
 2017,Congo,CG,COG,1.183,-0.228021,15.827659
 2018,Congo,CG,COG,1.276,-0.228021,15.827659
@@ -2464,6 +2683,16 @@ year,country,iso2,iso3,temp,latitude,longitude
 2019,Cook Islands,CK,COK,1.119,-21.236736,-159.777671
 2020,Cook Islands,CK,COK,1.174,-21.236736,-159.777671
 2021,Cook Islands,CK,COK,1.467,-21.236736,-159.777671
+1961,Costa Rica,,,,,
+1962,Costa Rica,,,,,
+1963,Costa Rica,,,,,
+1964,Costa Rica,,,,,
+1965,Costa Rica,,,,,
+1966,Costa Rica,,,,,
+1967,Costa Rica,,,,,
+1968,Costa Rica,,,,,
+1969,Costa Rica,,,,,
+1970,Costa Rica,,,,,
 1971,Costa Rica,CR,CRI,-0.421,9.748917,-83.753428
 1972,Costa Rica,CR,CRI,0.213,9.748917,-83.753428
 1973,Costa Rica,CR,CRI,0.209,9.748917,-83.753428
@@ -2502,8 +2731,34 @@ year,country,iso2,iso3,temp,latitude,longitude
 2009,Costa Rica,CR,CRI,0.782,9.748917,-83.753428
 2010,Costa Rica,CR,CRI,0.714,9.748917,-83.753428
 2011,Costa Rica,CR,CRI,0.288,9.748917,-83.753428
+1982,Costa Rica,,,,,
+1983,Costa Rica,,,,,
+1986,Costa Rica,,,,,
+2012,Costa Rica,,,,,
+2013,Costa Rica,,,,,
+2014,Costa Rica,,,,,
+2015,Costa Rica,,,,,
+2016,Costa Rica,,,,,
+2017,Costa Rica,,,,,
+2018,Costa Rica,,,,,
+2019,Costa Rica,,,,,
+2020,Costa Rica,,,,,
+2021,Costa Rica,,,,,
+1961,Croatia,,,,,
+1962,Croatia,,,,,
+1963,Croatia,,,,,
+1964,Croatia,,,,,
+1965,Croatia,,,,,
+1966,Croatia,,,,,
+1967,Croatia,,,,,
+1968,Croatia,,,,,
+1969,Croatia,,,,,
+1970,Croatia,,,,,
+1971,Croatia,,,,,
+1972,Croatia,,,,,
 1992,Croatia,HR,HRV,0.829,45.1,15.2
 1993,Croatia,HR,HRV,0.402,45.1,15.2
+1973,Croatia,,,,,
 1994,Croatia,HR,HRV,1.715,45.1,15.2
 1995,Croatia,HR,HRV,0.431,45.1,15.2
 1996,Croatia,HR,HRV,-0.029,45.1,15.2
@@ -2526,6 +2781,24 @@ year,country,iso2,iso3,temp,latitude,longitude
 2013,Croatia,HR,HRV,1.282,45.1,15.2
 2014,Croatia,HR,HRV,2.044,45.1,15.2
 2015,Croatia,HR,HRV,1.933,45.1,15.2
+1974,Croatia,,,,,
+1975,Croatia,,,,,
+1976,Croatia,,,,,
+1977,Croatia,,,,,
+1978,Croatia,,,,,
+1979,Croatia,,,,,
+1980,Croatia,,,,,
+1981,Croatia,,,,,
+1982,Croatia,,,,,
+1983,Croatia,,,,,
+1984,Croatia,,,,,
+1985,Croatia,,,,,
+1986,Croatia,,,,,
+1987,Croatia,,,,,
+1988,Croatia,,,,,
+1989,Croatia,,,,,
+1990,Croatia,,,,,
+1991,Croatia,,,,,
 2016,Croatia,HR,HRV,1.843,45.1,15.2
 2017,Croatia,HR,HRV,1.562,45.1,15.2
 2018,Croatia,HR,HRV,2.321,45.1,15.2
@@ -2654,6 +2927,19 @@ year,country,iso2,iso3,temp,latitude,longitude
 2019,Cyprus,CY,CYP,1.589,35.126413,33.429859
 2020,Cyprus,CY,CYP,1.746,35.126413,33.429859
 2021,Cyprus,CY,CYP,2.082,35.126413,33.429859
+1961,Czech Rep.,,,,,
+1962,Czech Rep.,,,,,
+1963,Czech Rep.,,,,,
+1964,Czech Rep.,,,,,
+1965,Czech Rep.,,,,,
+1966,Czech Rep.,,,,,
+1967,Czech Rep.,,,,,
+1968,Czech Rep.,,,,,
+1969,Czech Rep.,,,,,
+1970,Czech Rep.,,,,,
+1971,Czech Rep.,,,,,
+1972,Czech Rep.,,,,,
+1973,Czech Rep.,,,,,
 1993,Czech Rep.,CZ,CZE,0.286,49.817492,15.472962
 1994,Czech Rep.,CZ,CZE,1.797,49.817492,15.472962
 1995,Czech Rep.,CZ,CZE,1.03,49.817492,15.472962
@@ -2677,6 +2963,25 @@ year,country,iso2,iso3,temp,latitude,longitude
 2013,Czech Rep.,CZ,CZE,0.77,49.817492,15.472962
 2014,Czech Rep.,CZ,CZE,2.494,49.817492,15.472962
 2015,Czech Rep.,CZ,CZE,2.112,49.817492,15.472962
+1974,Czech Rep.,,,,,
+1975,Czech Rep.,,,,,
+1976,Czech Rep.,,,,,
+1977,Czech Rep.,,,,,
+1978,Czech Rep.,,,,,
+1979,Czech Rep.,,,,,
+1980,Czech Rep.,,,,,
+1981,Czech Rep.,,,,,
+1982,Czech Rep.,,,,,
+1983,Czech Rep.,,,,,
+1984,Czech Rep.,,,,,
+1985,Czech Rep.,,,,,
+1986,Czech Rep.,,,,,
+1987,Czech Rep.,,,,,
+1988,Czech Rep.,,,,,
+1989,Czech Rep.,,,,,
+1990,Czech Rep.,,,,,
+1991,Czech Rep.,,,,,
+1992,Czech Rep.,,,,,
 2016,Czech Rep.,CZ,CZE,2.067,49.817492,15.472962
 2017,Czech Rep.,CZ,CZE,1.585,49.817492,15.472962
 2018,Czech Rep.,CZ,CZE,2.641,49.817492,15.472962
@@ -2798,10 +3103,13 @@ year,country,iso2,iso3,temp,latitude,longitude
 2013,Djibouti,DJ,DJI,1.293,11.825138,42.590275
 2014,Djibouti,DJ,DJI,1.178,11.825138,42.590275
 2015,Djibouti,DJ,DJI,1.696,11.825138,42.590275
+2012,Djibouti,,,,,
 2016,Djibouti,DJ,DJI,1.496,11.825138,42.590275
 2017,Djibouti,DJ,DJI,1.77,11.825138,42.590275
 2018,Djibouti,DJ,DJI,1.199,11.825138,42.590275
 2019,Djibouti,DJ,DJI,1.351,11.825138,42.590275
+2020,Djibouti,,,,,
+2021,Djibouti,,,,,
 1961,Dominica,DM,DMA,-0.058,15.414999,-61.370976
 1962,Dominica,DM,DMA,0.041,15.414999,-61.370976
 1963,Dominica,DM,DMA,0.16,15.414999,-61.370976
@@ -3221,12 +3529,29 @@ year,country,iso2,iso3,temp,latitude,longitude
 2013,Equatorial Guinea,GQ,GNQ,0.757,1.650801,10.267895
 2014,Equatorial Guinea,GQ,GNQ,0.823,1.650801,10.267895
 2015,Equatorial Guinea,GQ,GNQ,0.801,1.650801,10.267895
+1991,Equatorial Guinea,,,,,
+1997,Equatorial Guinea,,,,,
 2016,Equatorial Guinea,GQ,GNQ,1.371,1.650801,10.267895
 2017,Equatorial Guinea,GQ,GNQ,1.184,1.650801,10.267895
 2018,Equatorial Guinea,GQ,GNQ,0.571,1.650801,10.267895
 2019,Equatorial Guinea,GQ,GNQ,1.452,1.650801,10.267895
 2020,Equatorial Guinea,GQ,GNQ,1.361,1.650801,10.267895
 2021,Equatorial Guinea,GQ,GNQ,1.037,1.650801,10.267895
+1961,Eritrea,,,,,
+1962,Eritrea,,,,,
+1963,Eritrea,,,,,
+1964,Eritrea,,,,,
+1965,Eritrea,,,,,
+1966,Eritrea,,,,,
+1967,Eritrea,,,,,
+1968,Eritrea,,,,,
+1969,Eritrea,,,,,
+1970,Eritrea,,,,,
+1971,Eritrea,,,,,
+1972,Eritrea,,,,,
+1973,Eritrea,,,,,
+1974,Eritrea,,,,,
+1975,Eritrea,,,,,
 1996,Eritrea,ER,ERI,0.168,15.179384,39.782334
 1997,Eritrea,ER,ERI,0.365,15.179384,39.782334
 1998,Eritrea,ER,ERI,0.515,15.179384,39.782334
@@ -3247,12 +3572,49 @@ year,country,iso2,iso3,temp,latitude,longitude
 2013,Eritrea,ER,ERI,1.191,15.179384,39.782334
 2014,Eritrea,ER,ERI,0.902,15.179384,39.782334
 2015,Eritrea,ER,ERI,1.771,15.179384,39.782334
+1976,Eritrea,,,,,
+1977,Eritrea,,,,,
+1978,Eritrea,,,,,
+1979,Eritrea,,,,,
+1980,Eritrea,,,,,
+1981,Eritrea,,,,,
+1982,Eritrea,,,,,
+1983,Eritrea,,,,,
+1984,Eritrea,,,,,
+1985,Eritrea,,,,,
+1986,Eritrea,,,,,
+1987,Eritrea,,,,,
+1988,Eritrea,,,,,
+1989,Eritrea,,,,,
+1990,Eritrea,,,,,
+1991,Eritrea,,,,,
+1992,Eritrea,,,,,
+1993,Eritrea,,,,,
+1994,Eritrea,,,,,
+1995,Eritrea,,,,,
 2016,Eritrea,ER,ERI,1.028,15.179384,39.782334
 2017,Eritrea,ER,ERI,1.349,15.179384,39.782334
 2018,Eritrea,ER,ERI,0.908,15.179384,39.782334
 2019,Eritrea,ER,ERI,0.872,15.179384,39.782334
+2020,Eritrea,,,,,
 2021,Eritrea,ER,ERI,1.416,15.179384,39.782334
+1961,Estonia,,,,,
+1962,Estonia,,,,,
+1963,Estonia,,,,,
+1964,Estonia,,,,,
+1965,Estonia,,,,,
+1966,Estonia,,,,,
+1967,Estonia,,,,,
+1968,Estonia,,,,,
+1969,Estonia,,,,,
+1970,Estonia,,,,,
+1971,Estonia,,,,,
+1972,Estonia,,,,,
+1973,Estonia,,,,,
+1974,Estonia,,,,,
+1975,Estonia,,,,,
 1992,Estonia,EE,EST,1.588,58.595272,25.013607
+1976,Estonia,,,,,
 1993,Estonia,EE,EST,0.525,58.595272,25.013607
 1994,Estonia,EE,EST,0.348,58.595272,25.013607
 1995,Estonia,EE,EST,1.731,58.595272,25.013607
@@ -3276,6 +3638,21 @@ year,country,iso2,iso3,temp,latitude,longitude
 2013,Estonia,EE,EST,1.157,58.595272,25.013607
 2014,Estonia,EE,EST,2.403,58.595272,25.013607
 2015,Estonia,EE,EST,2.344,58.595272,25.013607
+1977,Estonia,,,,,
+1978,Estonia,,,,,
+1979,Estonia,,,,,
+1980,Estonia,,,,,
+1981,Estonia,,,,,
+1982,Estonia,,,,,
+1983,Estonia,,,,,
+1984,Estonia,,,,,
+1985,Estonia,,,,,
+1986,Estonia,,,,,
+1987,Estonia,,,,,
+1988,Estonia,,,,,
+1989,Estonia,,,,,
+1990,Estonia,,,,,
+1991,Estonia,,,,,
 2016,Estonia,EE,EST,1.895,58.595272,25.013607
 2017,Estonia,EE,EST,1.474,58.595272,25.013607
 2018,Estonia,EE,EST,2.381,58.595272,25.013607
@@ -3343,6 +3720,22 @@ year,country,iso2,iso3,temp,latitude,longitude
 2019,Eswatini,SZ,SWZ,1.591,-26.522503,31.465866
 2020,Eswatini,SZ,SWZ,0.551,-26.522503,31.465866
 2021,Eswatini,SZ,SWZ,0.436,-26.522503,31.465866
+1961,Ethiopia,,,,,
+1962,Ethiopia,,,,,
+1963,Ethiopia,,,,,
+1964,Ethiopia,,,,,
+1965,Ethiopia,,,,,
+1966,Ethiopia,,,,,
+1967,Ethiopia,,,,,
+1968,Ethiopia,,,,,
+1969,Ethiopia,,,,,
+1970,Ethiopia,,,,,
+1971,Ethiopia,,,,,
+1972,Ethiopia,,,,,
+1973,Ethiopia,,,,,
+1974,Ethiopia,,,,,
+1975,Ethiopia,,,,,
+1976,Ethiopia,,,,,
 1993,Ethiopia,ET,ETH,0.192,9.145,40.489673
 1994,Ethiopia,ET,ETH,0.524,9.145,40.489673
 1995,Ethiopia,ET,ETH,0.75,9.145,40.489673
@@ -3366,6 +3759,22 @@ year,country,iso2,iso3,temp,latitude,longitude
 2013,Ethiopia,ET,ETH,1.244,9.145,40.489673
 2014,Ethiopia,ET,ETH,1.201,9.145,40.489673
 2015,Ethiopia,ET,ETH,1.462,9.145,40.489673
+1977,Ethiopia,,,,,
+1978,Ethiopia,,,,,
+1979,Ethiopia,,,,,
+1980,Ethiopia,,,,,
+1981,Ethiopia,,,,,
+1982,Ethiopia,,,,,
+1983,Ethiopia,,,,,
+1984,Ethiopia,,,,,
+1985,Ethiopia,,,,,
+1986,Ethiopia,,,,,
+1987,Ethiopia,,,,,
+1988,Ethiopia,,,,,
+1989,Ethiopia,,,,,
+1990,Ethiopia,,,,,
+1991,Ethiopia,,,,,
+1992,Ethiopia,,,,,
 2016,Ethiopia,ET,ETH,1.565,9.145,40.489673
 2017,Ethiopia,ET,ETH,1.523,9.145,40.489673
 2018,Ethiopia,ET,ETH,0.964,9.145,40.489673
@@ -3393,6 +3802,46 @@ year,country,iso2,iso3,temp,latitude,longitude
 1979,Falkland Islands (Malvinas),FK,FLK,0.644,-51.796253,-59.523613
 1980,Falkland Islands (Malvinas),FK,FLK,0.186,-51.796253,-59.523613
 1981,Falkland Islands (Malvinas),FK,FLK,0.186,-51.796253,-59.523613
+1982,Falkland Islands (Malvinas),,,,,
+1983,Falkland Islands (Malvinas),,,,,
+1984,Falkland Islands (Malvinas),,,,,
+1985,Falkland Islands (Malvinas),,,,,
+1986,Falkland Islands (Malvinas),,,,,
+1987,Falkland Islands (Malvinas),,,,,
+1988,Falkland Islands (Malvinas),,,,,
+1989,Falkland Islands (Malvinas),,,,,
+1990,Falkland Islands (Malvinas),,,,,
+1991,Falkland Islands (Malvinas),,,,,
+1992,Falkland Islands (Malvinas),,,,,
+1993,Falkland Islands (Malvinas),,,,,
+1994,Falkland Islands (Malvinas),,,,,
+1995,Falkland Islands (Malvinas),,,,,
+1996,Falkland Islands (Malvinas),,,,,
+1997,Falkland Islands (Malvinas),,,,,
+1998,Falkland Islands (Malvinas),,,,,
+1999,Falkland Islands (Malvinas),,,,,
+2000,Falkland Islands (Malvinas),,,,,
+2001,Falkland Islands (Malvinas),,,,,
+2002,Falkland Islands (Malvinas),,,,,
+2003,Falkland Islands (Malvinas),,,,,
+2004,Falkland Islands (Malvinas),,,,,
+2005,Falkland Islands (Malvinas),,,,,
+2006,Falkland Islands (Malvinas),,,,,
+2007,Falkland Islands (Malvinas),,,,,
+2008,Falkland Islands (Malvinas),,,,,
+2009,Falkland Islands (Malvinas),,,,,
+2010,Falkland Islands (Malvinas),,,,,
+2011,Falkland Islands (Malvinas),,,,,
+2012,Falkland Islands (Malvinas),,,,,
+2013,Falkland Islands (Malvinas),,,,,
+2014,Falkland Islands (Malvinas),,,,,
+2015,Falkland Islands (Malvinas),,,,,
+2016,Falkland Islands (Malvinas),,,,,
+2017,Falkland Islands (Malvinas),,,,,
+2018,Falkland Islands (Malvinas),,,,,
+2019,Falkland Islands (Malvinas),,,,,
+2020,Falkland Islands (Malvinas),,,,,
+2021,Falkland Islands (Malvinas),,,,,
 1961,Faroe Islands,FO,FRO,0.634,61.892635,-6.911806
 1962,Faroe Islands,FO,FRO,-0.476,61.892635,-6.911806
 1963,Faroe Islands,FO,FRO,-0.053,61.892635,-6.911806
@@ -3820,6 +4269,24 @@ year,country,iso2,iso3,temp,latitude,longitude
 2019,Gambia,GM,GMB,1.548,13.443182,-15.310139
 2020,Gambia,GM,GMB,1.978,13.443182,-15.310139
 2021,Gambia,GM,GMB,1.878,13.443182,-15.310139
+1961,Georgia,,,,,
+1962,Georgia,,,,,
+1963,Georgia,,,,,
+1964,Georgia,,,,,
+1965,Georgia,,,,,
+1966,Georgia,,,,,
+1967,Georgia,,,,,
+1968,Georgia,,,,,
+1969,Georgia,,,,,
+1970,Georgia,,,,,
+1971,Georgia,,,,,
+1972,Georgia,,,,,
+1973,Georgia,,,,,
+1974,Georgia,,,,,
+1975,Georgia,,,,,
+1976,Georgia,,,,,
+1977,Georgia,,,,,
+1978,Georgia,,,,,
 1992,Georgia,GE,GEO,-1.151,42.315407,43.356892
 1993,Georgia,GE,GEO,-1.212,42.315407,43.356892
 1994,Georgia,GE,GEO,0.456,42.315407,43.356892
@@ -3844,6 +4311,19 @@ year,country,iso2,iso3,temp,latitude,longitude
 2013,Georgia,GE,GEO,1.388,42.315407,43.356892
 2014,Georgia,GE,GEO,1.247,42.315407,43.356892
 2015,Georgia,GE,GEO,1.757,42.315407,43.356892
+1979,Georgia,,,,,
+1980,Georgia,,,,,
+1981,Georgia,,,,,
+1982,Georgia,,,,,
+1983,Georgia,,,,,
+1984,Georgia,,,,,
+1985,Georgia,,,,,
+1986,Georgia,,,,,
+1987,Georgia,,,,,
+1988,Georgia,,,,,
+1989,Georgia,,,,,
+1990,Georgia,,,,,
+1991,Georgia,,,,,
 2016,Georgia,GE,GEO,1.353,42.315407,43.356892
 2017,Georgia,GE,GEO,0.822,42.315407,43.356892
 2018,Georgia,GE,GEO,2.517,42.315407,43.356892
@@ -5452,6 +5932,9 @@ year,country,iso2,iso3,temp,latitude,longitude
 1974,Jamaica,JM,JAM,0.242,18.109581,-77.297508
 1975,Jamaica,JM,JAM,0.341,18.109581,-77.297508
 1976,Jamaica,JM,JAM,-0.252,18.109581,-77.297508
+1977,Jamaica,,,,,
+1978,Jamaica,,,,,
+1979,Jamaica,,,,,
 1980,Jamaica,JM,JAM,0.512,18.109581,-77.297508
 1981,Jamaica,JM,JAM,0.763,18.109581,-77.297508
 1982,Jamaica,JM,JAM,0.357,18.109581,-77.297508
@@ -5616,6 +6099,32 @@ year,country,iso2,iso3,temp,latitude,longitude
 2019,Jordan,JO,JOR,1.433,30.585164,36.238414
 2020,Jordan,JO,JOR,1.781,30.585164,36.238414
 2021,Jordan,JO,JOR,2.089,30.585164,36.238414
+1961,Kazakhstan,,,,,
+1962,Kazakhstan,,,,,
+1963,Kazakhstan,,,,,
+1964,Kazakhstan,,,,,
+1965,Kazakhstan,,,,,
+1966,Kazakhstan,,,,,
+1967,Kazakhstan,,,,,
+1968,Kazakhstan,,,,,
+1969,Kazakhstan,,,,,
+1970,Kazakhstan,,,,,
+1971,Kazakhstan,,,,,
+1972,Kazakhstan,,,,,
+1973,Kazakhstan,,,,,
+1974,Kazakhstan,,,,,
+1975,Kazakhstan,,,,,
+1976,Kazakhstan,,,,,
+1977,Kazakhstan,,,,,
+1978,Kazakhstan,,,,,
+1979,Kazakhstan,,,,,
+1980,Kazakhstan,,,,,
+1981,Kazakhstan,,,,,
+1982,Kazakhstan,,,,,
+1983,Kazakhstan,,,,,
+1984,Kazakhstan,,,,,
+1985,Kazakhstan,,,,,
+1986,Kazakhstan,,,,,
 1992,Kazakhstan,KZ,KAZ,0.275,48.019573,66.923684
 1993,Kazakhstan,KZ,KAZ,-0.375,48.019573,66.923684
 1994,Kazakhstan,KZ,KAZ,-0.05,48.019573,66.923684
@@ -5640,6 +6149,11 @@ year,country,iso2,iso3,temp,latitude,longitude
 2013,Kazakhstan,KZ,KAZ,1.614,48.019573,66.923684
 2014,Kazakhstan,KZ,KAZ,0.669,48.019573,66.923684
 2015,Kazakhstan,KZ,KAZ,1.605,48.019573,66.923684
+1987,Kazakhstan,,,,,
+1988,Kazakhstan,,,,,
+1989,Kazakhstan,,,,,
+1990,Kazakhstan,,,,,
+1991,Kazakhstan,,,,,
 2016,Kazakhstan,KZ,KAZ,2.24,48.019573,66.923684
 2017,Kazakhstan,KZ,KAZ,1.752,48.019573,66.923684
 2018,Kazakhstan,KZ,KAZ,0.629,48.019573,66.923684
@@ -5760,6 +6274,8 @@ year,country,iso2,iso3,temp,latitude,longitude
 2013,Kiribati,KI,KIR,1.054,-3.370417,-168.734039
 2014,Kiribati,KI,KIR,1.194,-3.370417,-168.734039
 2015,Kiribati,KI,KIR,1.329,-3.370417,-168.734039
+2004,Kiribati,,,,,
+2005,Kiribati,,,,,
 2016,Kiribati,KI,KIR,1.656,-3.370417,-168.734039
 2017,Kiribati,KI,KIR,1.468,-3.370417,-168.734039
 2018,Kiribati,KI,KIR,1.374,-3.370417,-168.734039
@@ -5888,6 +6404,33 @@ year,country,iso2,iso3,temp,latitude,longitude
 2019,Kuwait,KW,KWT,1.693,29.31166,47.481766
 2020,Kuwait,KW,KWT,1.76,29.31166,47.481766
 2021,Kuwait,KW,KWT,2.459,29.31166,47.481766
+1961,Kyrgyz Rep.,,,,,
+1962,Kyrgyz Rep.,,,,,
+1963,Kyrgyz Rep.,,,,,
+1964,Kyrgyz Rep.,,,,,
+1965,Kyrgyz Rep.,,,,,
+1966,Kyrgyz Rep.,,,,,
+1967,Kyrgyz Rep.,,,,,
+1968,Kyrgyz Rep.,,,,,
+1969,Kyrgyz Rep.,,,,,
+1970,Kyrgyz Rep.,,,,,
+1971,Kyrgyz Rep.,,,,,
+1972,Kyrgyz Rep.,,,,,
+1973,Kyrgyz Rep.,,,,,
+1974,Kyrgyz Rep.,,,,,
+1975,Kyrgyz Rep.,,,,,
+1976,Kyrgyz Rep.,,,,,
+1977,Kyrgyz Rep.,,,,,
+1978,Kyrgyz Rep.,,,,,
+1979,Kyrgyz Rep.,,,,,
+1980,Kyrgyz Rep.,,,,,
+1981,Kyrgyz Rep.,,,,,
+1982,Kyrgyz Rep.,,,,,
+1983,Kyrgyz Rep.,,,,,
+1984,Kyrgyz Rep.,,,,,
+1985,Kyrgyz Rep.,,,,,
+1986,Kyrgyz Rep.,,,,,
+1987,Kyrgyz Rep.,,,,,
 1992,Kyrgyz Rep.,KG,KGZ,0.067,41.20438,74.766098
 1993,Kyrgyz Rep.,KG,KGZ,-0.08,41.20438,74.766098
 1994,Kyrgyz Rep.,KG,KGZ,0.292,41.20438,74.766098
@@ -5912,6 +6455,10 @@ year,country,iso2,iso3,temp,latitude,longitude
 2013,Kyrgyz Rep.,KG,KGZ,1.383,41.20438,74.766098
 2014,Kyrgyz Rep.,KG,KGZ,0.495,41.20438,74.766098
 2015,Kyrgyz Rep.,KG,KGZ,1.482,41.20438,74.766098
+1988,Kyrgyz Rep.,,,,,
+1989,Kyrgyz Rep.,,,,,
+1990,Kyrgyz Rep.,,,,,
+1991,Kyrgyz Rep.,,,,,
 2016,Kyrgyz Rep.,KG,KGZ,1.877,41.20438,74.766098
 2017,Kyrgyz Rep.,KG,KGZ,1.43,41.20438,74.766098
 2018,Kyrgyz Rep.,KG,KGZ,1.21,41.20438,74.766098
@@ -5979,6 +6526,33 @@ year,country,iso2,iso3,temp,latitude,longitude
 2019,Lao People's Dem. Rep.,LA,LAO,2.124,19.85627,102.495496
 2020,Lao People's Dem. Rep.,LA,LAO,1.645,19.85627,102.495496
 2021,Lao People's Dem. Rep.,LA,LAO,1.183,19.85627,102.495496
+1961,Latvia,,,,,
+1962,Latvia,,,,,
+1963,Latvia,,,,,
+1964,Latvia,,,,,
+1965,Latvia,,,,,
+1966,Latvia,,,,,
+1967,Latvia,,,,,
+1968,Latvia,,,,,
+1969,Latvia,,,,,
+1970,Latvia,,,,,
+1971,Latvia,,,,,
+1972,Latvia,,,,,
+1973,Latvia,,,,,
+1974,Latvia,,,,,
+1975,Latvia,,,,,
+1976,Latvia,,,,,
+1977,Latvia,,,,,
+1978,Latvia,,,,,
+1979,Latvia,,,,,
+1980,Latvia,,,,,
+1981,Latvia,,,,,
+1982,Latvia,,,,,
+1983,Latvia,,,,,
+1984,Latvia,,,,,
+1985,Latvia,,,,,
+1986,Latvia,,,,,
+1987,Latvia,,,,,
 1992,Latvia,LV,LVA,1.567,56.879635,24.603189
 1993,Latvia,LV,LVA,0.375,56.879635,24.603189
 1994,Latvia,LV,LVA,0.668,56.879635,24.603189
@@ -6001,8 +6575,12 @@ year,country,iso2,iso3,temp,latitude,longitude
 2011,Latvia,LV,LVA,1.118,56.879635,24.603189
 2012,Latvia,LV,LVA,1.369,56.879635,24.603189
 2013,Latvia,LV,LVA,1.046,56.879635,24.603189
+1988,Latvia,,,,,
 2014,Latvia,LV,LVA,2.284,56.879635,24.603189
 2015,Latvia,LV,LVA,2.126,56.879635,24.603189
+1989,Latvia,,,,,
+1990,Latvia,,,,,
+1991,Latvia,,,,,
 2016,Latvia,LV,LVA,1.905,56.879635,24.603189
 2017,Latvia,LV,LVA,1.469,56.879635,24.603189
 2018,Latvia,LV,LVA,2.324,56.879635,24.603189
@@ -6314,6 +6892,35 @@ year,country,iso2,iso3,temp,latitude,longitude
 2019,Liechtenstein,LI,LIE,2.054,47.166,9.555373
 2020,Liechtenstein,LI,LIE,2.352,47.166,9.555373
 2021,Liechtenstein,LI,LIE,1.202,47.166,9.555373
+1961,Lithuania,,,,,
+1962,Lithuania,,,,,
+1963,Lithuania,,,,,
+1964,Lithuania,,,,,
+1965,Lithuania,,,,,
+1966,Lithuania,,,,,
+1967,Lithuania,,,,,
+1968,Lithuania,,,,,
+1969,Lithuania,,,,,
+1970,Lithuania,,,,,
+1971,Lithuania,,,,,
+1972,Lithuania,,,,,
+1973,Lithuania,,,,,
+1974,Lithuania,,,,,
+1975,Lithuania,,,,,
+1976,Lithuania,,,,,
+1977,Lithuania,,,,,
+1978,Lithuania,,,,,
+1979,Lithuania,,,,,
+1980,Lithuania,,,,,
+1981,Lithuania,,,,,
+1982,Lithuania,,,,,
+1983,Lithuania,,,,,
+1984,Lithuania,,,,,
+1985,Lithuania,,,,,
+1986,Lithuania,,,,,
+1987,Lithuania,,,,,
+1988,Lithuania,,,,,
+1989,Lithuania,,,,,
 1992,Lithuania,LT,LTU,1.482,55.169438,23.881275
 1993,Lithuania,LT,LTU,0.295,55.169438,23.881275
 1994,Lithuania,LT,LTU,0.943,55.169438,23.881275
@@ -6337,6 +6944,8 @@ year,country,iso2,iso3,temp,latitude,longitude
 2012,Lithuania,LT,LTU,1.323,55.169438,23.881275
 2013,Lithuania,LT,LTU,0.926,55.169438,23.881275
 2014,Lithuania,LT,LTU,2.196,55.169438,23.881275
+1990,Lithuania,,,,,
+1991,Lithuania,,,,,
 2015,Lithuania,LT,LTU,2.063,55.169438,23.881275
 2016,Lithuania,LT,LTU,1.913,55.169438,23.881275
 2017,Lithuania,LT,LTU,1.511,55.169438,23.881275
@@ -6344,6 +6953,35 @@ year,country,iso2,iso3,temp,latitude,longitude
 2019,Lithuania,LT,LTU,2.601,55.169438,23.881275
 2020,Lithuania,LT,LTU,3.394,55.169438,23.881275
 2021,Lithuania,LT,LTU,1.737,55.169438,23.881275
+1961,Luxembourg,,,,,
+1962,Luxembourg,,,,,
+1963,Luxembourg,,,,,
+1964,Luxembourg,,,,,
+1965,Luxembourg,,,,,
+1966,Luxembourg,,,,,
+1967,Luxembourg,,,,,
+1968,Luxembourg,,,,,
+1969,Luxembourg,,,,,
+1970,Luxembourg,,,,,
+1971,Luxembourg,,,,,
+1972,Luxembourg,,,,,
+1973,Luxembourg,,,,,
+1974,Luxembourg,,,,,
+1975,Luxembourg,,,,,
+1976,Luxembourg,,,,,
+1977,Luxembourg,,,,,
+1978,Luxembourg,,,,,
+1979,Luxembourg,,,,,
+1980,Luxembourg,,,,,
+1981,Luxembourg,,,,,
+1982,Luxembourg,,,,,
+1983,Luxembourg,,,,,
+1984,Luxembourg,,,,,
+1985,Luxembourg,,,,,
+1986,Luxembourg,,,,,
+1987,Luxembourg,,,,,
+1988,Luxembourg,,,,,
+1989,Luxembourg,,,,,
 2000,Luxembourg,LU,LUX,1.636,49.815273,6.129583
 2001,Luxembourg,LU,LUX,1.412,49.815273,6.129583
 2002,Luxembourg,LU,LUX,1.369,49.815273,6.129583
@@ -6359,6 +6997,16 @@ year,country,iso2,iso3,temp,latitude,longitude
 2012,Luxembourg,LU,LUX,1.244,49.815273,6.129583
 2013,Luxembourg,LU,LUX,0.553,49.815273,6.129583
 2014,Luxembourg,LU,LUX,2.452,49.815273,6.129583
+1990,Luxembourg,,,,,
+1991,Luxembourg,,,,,
+1992,Luxembourg,,,,,
+1993,Luxembourg,,,,,
+1994,Luxembourg,,,,,
+1995,Luxembourg,,,,,
+1996,Luxembourg,,,,,
+1997,Luxembourg,,,,,
+1998,Luxembourg,,,,,
+1999,Luxembourg,,,,,
 2015,Luxembourg,LU,LUX,1.498,49.815273,6.129583
 2016,Luxembourg,LU,LUX,1.849,49.815273,6.129583
 2017,Luxembourg,LU,LUX,1.622,49.815273,6.129583
@@ -6671,11 +7319,17 @@ year,country,iso2,iso3,temp,latitude,longitude
 2019,Malaysia,MY,MYS,1.446,4.210484,101.975766
 2020,Malaysia,MY,MYS,1.417,4.210484,101.975766
 2021,Malaysia,MY,MYS,1.192,4.210484,101.975766
+1961,Maldives,,,,,
 1962,Maldives,MV,MDV,-0.041,3.202778,73.22068
+1963,Maldives,,,,,
+1964,Maldives,,,,,
+1965,Maldives,,,,,
 1966,Maldives,MV,MDV,0.445,3.202778,73.22068
 1967,Maldives,MV,MDV,-0.154,3.202778,73.22068
 1968,Maldives,MV,MDV,-0.254,3.202778,73.22068
 1969,Maldives,MV,MDV,0.212,3.202778,73.22068
+1970,Maldives,,,,,
+1971,Maldives,,,,,
 1972,Maldives,MV,MDV,0.233,3.202778,73.22068
 1973,Maldives,MV,MDV,0.597,3.202778,73.22068
 1974,Maldives,MV,MDV,-0.121,3.202778,73.22068
@@ -6848,6 +7502,36 @@ year,country,iso2,iso3,temp,latitude,longitude
 2019,Malta,MT,MLT,1.243,35.937496,14.375416
 2020,Malta,MT,MLT,1.574,35.937496,14.375416
 2021,Malta,MT,MLT,2.035,35.937496,14.375416
+1961,Marshall Islands,,,,,
+1962,Marshall Islands,,,,,
+1963,Marshall Islands,,,,,
+1964,Marshall Islands,,,,,
+1965,Marshall Islands,,,,,
+1966,Marshall Islands,,,,,
+1967,Marshall Islands,,,,,
+1968,Marshall Islands,,,,,
+1969,Marshall Islands,,,,,
+1970,Marshall Islands,,,,,
+1971,Marshall Islands,,,,,
+1972,Marshall Islands,,,,,
+1973,Marshall Islands,,,,,
+1974,Marshall Islands,,,,,
+1975,Marshall Islands,,,,,
+1976,Marshall Islands,,,,,
+1977,Marshall Islands,,,,,
+1978,Marshall Islands,,,,,
+1979,Marshall Islands,,,,,
+1980,Marshall Islands,,,,,
+1981,Marshall Islands,,,,,
+1982,Marshall Islands,,,,,
+1983,Marshall Islands,,,,,
+1984,Marshall Islands,,,,,
+1985,Marshall Islands,,,,,
+1986,Marshall Islands,,,,,
+1987,Marshall Islands,,,,,
+1988,Marshall Islands,,,,,
+1989,Marshall Islands,,,,,
+1990,Marshall Islands,,,,,
 1991,Marshall Islands,MH,MHL,0.017,7.131474,171.184478
 1992,Marshall Islands,MH,MHL,0.122,7.131474,171.184478
 1993,Marshall Islands,MH,MHL,-0.032,7.131474,171.184478
@@ -7077,11 +7761,14 @@ year,country,iso2,iso3,temp,latitude,longitude
 1973,Mayotte,YT,MYT,0.182,-12.8275,45.166244
 1974,Mayotte,YT,MYT,-0.508,-12.8275,45.166244
 1975,Mayotte,YT,MYT,-0.136,-12.8275,45.166244
+1976,Mayotte,,,,,
+1977,Mayotte,,,,,
 1978,Mayotte,YT,MYT,0.24,-12.8275,45.166244
 1979,Mayotte,YT,MYT,0.168,-12.8275,45.166244
 1980,Mayotte,YT,MYT,0.313,-12.8275,45.166244
 1981,Mayotte,YT,MYT,0.221,-12.8275,45.166244
 1982,Mayotte,YT,MYT,0.561,-12.8275,45.166244
+1983,Mayotte,,,,,
 1984,Mayotte,YT,MYT,-0.42,-12.8275,45.166244
 1985,Mayotte,YT,MYT,-0.084,-12.8275,45.166244
 1986,Mayotte,YT,MYT,0.065,-12.8275,45.166244
@@ -7181,6 +7868,36 @@ year,country,iso2,iso3,temp,latitude,longitude
 2019,Mexico,MX,MEX,1.307,23.634501,-102.552784
 2020,Mexico,MX,MEX,1.64,23.634501,-102.552784
 2021,Mexico,MX,MEX,1.09,23.634501,-102.552784
+1961,Micronesia,,,,,
+1962,Micronesia,,,,,
+1963,Micronesia,,,,,
+1964,Micronesia,,,,,
+1965,Micronesia,,,,,
+1966,Micronesia,,,,,
+1967,Micronesia,,,,,
+1968,Micronesia,,,,,
+1969,Micronesia,,,,,
+1970,Micronesia,,,,,
+1971,Micronesia,,,,,
+1972,Micronesia,,,,,
+1973,Micronesia,,,,,
+1974,Micronesia,,,,,
+1975,Micronesia,,,,,
+1976,Micronesia,,,,,
+1977,Micronesia,,,,,
+1978,Micronesia,,,,,
+1979,Micronesia,,,,,
+1980,Micronesia,,,,,
+1981,Micronesia,,,,,
+1982,Micronesia,,,,,
+1983,Micronesia,,,,,
+1984,Micronesia,,,,,
+1985,Micronesia,,,,,
+1986,Micronesia,,,,,
+1987,Micronesia,,,,,
+1988,Micronesia,,,,,
+1989,Micronesia,,,,,
+1990,Micronesia,,,,,
 1991,Micronesia,FM,FSM,0.139,7.425554,150.550812
 1992,Micronesia,FM,FSM,0.262,7.425554,150.550812
 1993,Micronesia,FM,FSM,0.014,7.425554,150.550812
@@ -7212,6 +7929,37 @@ year,country,iso2,iso3,temp,latitude,longitude
 2019,Micronesia,FM,FSM,0.791,7.425554,150.550812
 2020,Micronesia,FM,FSM,0.767,7.425554,150.550812
 2021,Micronesia,FM,FSM,0.434,7.425554,150.550812
+1961,Moldova,,,,,
+1962,Moldova,,,,,
+1963,Moldova,,,,,
+1964,Moldova,,,,,
+1965,Moldova,,,,,
+1966,Moldova,,,,,
+1967,Moldova,,,,,
+1968,Moldova,,,,,
+1969,Moldova,,,,,
+1970,Moldova,,,,,
+1971,Moldova,,,,,
+1972,Moldova,,,,,
+1973,Moldova,,,,,
+1974,Moldova,,,,,
+1975,Moldova,,,,,
+1976,Moldova,,,,,
+1977,Moldova,,,,,
+1978,Moldova,,,,,
+1979,Moldova,,,,,
+1980,Moldova,,,,,
+1981,Moldova,,,,,
+1982,Moldova,,,,,
+1983,Moldova,,,,,
+1984,Moldova,,,,,
+1985,Moldova,,,,,
+1986,Moldova,,,,,
+1987,Moldova,,,,,
+1988,Moldova,,,,,
+1989,Moldova,,,,,
+1990,Moldova,,,,,
+1991,Moldova,,,,,
 1992,Moldova,MD,MDA,0.472,47.411631,28.369885
 1993,Moldova,MD,MDA,-0.666,47.411631,28.369885
 1994,Moldova,MD,MDA,1.644,47.411631,28.369885
@@ -7364,6 +8112,39 @@ year,country,iso2,iso3,temp,latitude,longitude
 2019,Mongolia,MN,MNG,1.849,46.862496,103.846656
 2020,Mongolia,MN,MNG,2.353,46.862496,103.846656
 2021,Mongolia,MN,MNG,1.991,46.862496,103.846656
+1961,Montenegro,,,,,
+1962,Montenegro,,,,,
+1963,Montenegro,,,,,
+1964,Montenegro,,,,,
+1965,Montenegro,,,,,
+1966,Montenegro,,,,,
+1967,Montenegro,,,,,
+1968,Montenegro,,,,,
+1969,Montenegro,,,,,
+1970,Montenegro,,,,,
+1971,Montenegro,,,,,
+1972,Montenegro,,,,,
+1973,Montenegro,,,,,
+1974,Montenegro,,,,,
+1975,Montenegro,,,,,
+1976,Montenegro,,,,,
+1977,Montenegro,,,,,
+1978,Montenegro,,,,,
+1979,Montenegro,,,,,
+1980,Montenegro,,,,,
+1981,Montenegro,,,,,
+1982,Montenegro,,,,,
+1983,Montenegro,,,,,
+1984,Montenegro,,,,,
+1985,Montenegro,,,,,
+1986,Montenegro,,,,,
+1987,Montenegro,,,,,
+1988,Montenegro,,,,,
+1989,Montenegro,,,,,
+1990,Montenegro,,,,,
+1991,Montenegro,,,,,
+1992,Montenegro,,,,,
+1993,Montenegro,,,,,
 2006,Montenegro,ME,MNE,0.535,42.708678,19.37439
 2007,Montenegro,ME,MNE,1.781,42.708678,19.37439
 2008,Montenegro,ME,MNE,1.339,42.708678,19.37439
@@ -7373,6 +8154,18 @@ year,country,iso2,iso3,temp,latitude,longitude
 2012,Montenegro,ME,MNE,1.712,42.708678,19.37439
 2013,Montenegro,ME,MNE,1.515,42.708678,19.37439
 2014,Montenegro,ME,MNE,1.605,42.708678,19.37439
+1994,Montenegro,,,,,
+1995,Montenegro,,,,,
+1996,Montenegro,,,,,
+1997,Montenegro,,,,,
+1998,Montenegro,,,,,
+1999,Montenegro,,,,,
+2000,Montenegro,,,,,
+2001,Montenegro,,,,,
+2002,Montenegro,,,,,
+2003,Montenegro,,,,,
+2004,Montenegro,,,,,
+2005,Montenegro,,,,,
 2015,Montenegro,ME,MNE,1.779,42.708678,19.37439
 2016,Montenegro,ME,MNE,1.558,42.708678,19.37439
 2017,Montenegro,ME,MNE,1.364,42.708678,19.37439
@@ -7433,6 +8226,7 @@ year,country,iso2,iso3,temp,latitude,longitude
 2012,Montserrat,MS,MSR,0.682,16.742498,-62.187366
 2013,Montserrat,MS,MSR,0.766,16.742498,-62.187366
 2014,Montserrat,MS,MSR,0.723,16.742498,-62.187366
+2001,Montserrat,,,,,
 2015,Montserrat,MS,MSR,1.032,16.742498,-62.187366
 2016,Montserrat,MS,MSR,1.105,16.742498,-62.187366
 2017,Montserrat,MS,MSR,0.965,16.742498,-62.187366
@@ -7685,7 +8479,15 @@ year,country,iso2,iso3,temp,latitude,longitude
 2020,Namibia,NA,NAM,1.548,-22.95764,18.49041
 2021,Namibia,NA,NAM,0.866,-22.95764,18.49041
 1961,Nauru,NR,NRU,-0.363,-0.522778,166.931503
+1962,Nauru,,,,,
+1963,Nauru,,,,,
+1964,Nauru,,,,,
+1965,Nauru,,,,,
 1966,Nauru,NR,NRU,-0.523,-0.522778,166.931503
+1967,Nauru,,,,,
+1968,Nauru,,,,,
+1969,Nauru,,,,,
+1970,Nauru,,,,,
 1971,Nauru,NR,NRU,-0.356,-0.522778,166.931503
 1972,Nauru,NR,NRU,-0.752,-0.522778,166.931503
 1973,Nauru,NR,NRU,0.235,-0.522778,166.931503
@@ -7698,12 +8500,45 @@ year,country,iso2,iso3,temp,latitude,longitude
 1980,Nauru,NR,NRU,0.224,-0.522778,166.931503
 1981,Nauru,NR,NRU,0.366,-0.522778,166.931503
 1982,Nauru,NR,NRU,-0.179,-0.522778,166.931503
+1983,Nauru,,,,,
 1984,Nauru,NR,NRU,0.014,-0.522778,166.931503
 1985,Nauru,NR,NRU,0.082,-0.522778,166.931503
+1986,Nauru,,,,,
+1987,Nauru,,,,,
+1988,Nauru,,,,,
 1989,Nauru,NR,NRU,0.321,-0.522778,166.931503
 1990,Nauru,NR,NRU,-0.059,-0.522778,166.931503
 1991,Nauru,NR,NRU,0.116,-0.522778,166.931503
 1992,Nauru,NR,NRU,-0.313,-0.522778,166.931503
+1993,Nauru,,,,,
+1994,Nauru,,,,,
+1995,Nauru,,,,,
+1996,Nauru,,,,,
+1997,Nauru,,,,,
+1998,Nauru,,,,,
+1999,Nauru,,,,,
+2000,Nauru,,,,,
+2001,Nauru,,,,,
+2002,Nauru,,,,,
+2003,Nauru,,,,,
+2004,Nauru,,,,,
+2005,Nauru,,,,,
+2006,Nauru,,,,,
+2007,Nauru,,,,,
+2008,Nauru,,,,,
+2009,Nauru,,,,,
+2010,Nauru,,,,,
+2011,Nauru,,,,,
+2012,Nauru,,,,,
+2013,Nauru,,,,,
+2014,Nauru,,,,,
+2015,Nauru,,,,,
+2016,Nauru,,,,,
+2017,Nauru,,,,,
+2018,Nauru,,,,,
+2019,Nauru,,,,,
+2020,Nauru,,,,,
+2021,Nauru,,,,,
 1961,Nepal,NP,NPL,0.066,28.394857,84.124008
 1962,Nepal,NP,NPL,-0.508,28.394857,84.124008
 1963,Nepal,NP,NPL,-0.202,28.394857,84.124008
@@ -8139,6 +8974,9 @@ year,country,iso2,iso3,temp,latitude,longitude
 1966,Niue,NU,NIU,-0.045,-19.054445,-169.867233
 1967,Niue,NU,NIU,0.214,-19.054445,-169.867233
 1968,Niue,NU,NIU,0.371,-19.054445,-169.867233
+1969,Niue,,,,,
+1970,Niue,,,,,
+1971,Niue,,,,,
 1972,Niue,NU,NIU,-0.293,-19.054445,-169.867233
 1973,Niue,NU,NIU,0.365,-19.054445,-169.867233
 1974,Niue,NU,NIU,-0.119,-19.054445,-169.867233
@@ -8160,6 +8998,35 @@ year,country,iso2,iso3,temp,latitude,longitude
 1990,Niue,NU,NIU,0.177,-19.054445,-169.867233
 1991,Niue,NU,NIU,0.419,-19.054445,-169.867233
 1992,Niue,NU,NIU,0.051,-19.054445,-169.867233
+1993,Niue,,,,,
+1994,Niue,,,,,
+1995,Niue,,,,,
+1996,Niue,,,,,
+1997,Niue,,,,,
+1998,Niue,,,,,
+1999,Niue,,,,,
+2000,Niue,,,,,
+2001,Niue,,,,,
+2002,Niue,,,,,
+2003,Niue,,,,,
+2004,Niue,,,,,
+2005,Niue,,,,,
+2006,Niue,,,,,
+2007,Niue,,,,,
+2008,Niue,,,,,
+2009,Niue,,,,,
+2010,Niue,,,,,
+2011,Niue,,,,,
+2012,Niue,,,,,
+2013,Niue,,,,,
+2014,Niue,,,,,
+2015,Niue,,,,,
+2016,Niue,,,,,
+2017,Niue,,,,,
+2018,Niue,,,,,
+2019,Niue,,,,,
+2020,Niue,,,,,
+2021,Niue,,,,,
 1961,Norfolk Island,NF,NFK,-0.315,-29.040835,167.954712
 1962,Norfolk Island,NF,NFK,0.396,-29.040835,167.954712
 1963,Norfolk Island,NF,NFK,0.1,-29.040835,167.954712
@@ -8173,6 +9040,8 @@ year,country,iso2,iso3,temp,latitude,longitude
 1971,Norfolk Island,NF,NFK,0.378,-29.040835,167.954712
 1972,Norfolk Island,NF,NFK,-0.088,-29.040835,167.954712
 1973,Norfolk Island,NF,NFK,0.758,-29.040835,167.954712
+1974,Norfolk Island,,,,,
+1975,Norfolk Island,,,,,
 1976,Norfolk Island,NF,NFK,-0.179,-29.040835,167.954712
 1977,Norfolk Island,NF,NFK,-0.246,-29.040835,167.954712
 1978,Norfolk Island,NF,NFK,-0.118,-29.040835,167.954712
@@ -8209,6 +9078,9 @@ year,country,iso2,iso3,temp,latitude,longitude
 2012,Norfolk Island,NF,NFK,0.251,-29.040835,167.954712
 2013,Norfolk Island,NF,NFK,0.303,-29.040835,167.954712
 2014,Norfolk Island,NF,NFK,0.145,-29.040835,167.954712
+1999,Norfolk Island,,,,,
+2007,Norfolk Island,,,,,
+2008,Norfolk Island,,,,,
 2015,Norfolk Island,NF,NFK,0.682,-29.040835,167.954712
 2016,Norfolk Island,NF,NFK,1.2,-29.040835,167.954712
 2017,Norfolk Island,NF,NFK,0.867,-29.040835,167.954712
@@ -8277,6 +9149,37 @@ year,country,iso2,iso3,temp,latitude,longitude
 2019,North Korea,KP,PRK,1.886,40.339852,127.510093
 2020,North Korea,KP,PRK,1.967,40.339852,127.510093
 2021,North Korea,KP,PRK,1.972,40.339852,127.510093
+1961,North Macedonia,,,,,
+1962,North Macedonia,,,,,
+1963,North Macedonia,,,,,
+1964,North Macedonia,,,,,
+1965,North Macedonia,,,,,
+1966,North Macedonia,,,,,
+1967,North Macedonia,,,,,
+1968,North Macedonia,,,,,
+1969,North Macedonia,,,,,
+1970,North Macedonia,,,,,
+1971,North Macedonia,,,,,
+1972,North Macedonia,,,,,
+1973,North Macedonia,,,,,
+1974,North Macedonia,,,,,
+1975,North Macedonia,,,,,
+1976,North Macedonia,,,,,
+1977,North Macedonia,,,,,
+1978,North Macedonia,,,,,
+1979,North Macedonia,,,,,
+1980,North Macedonia,,,,,
+1981,North Macedonia,,,,,
+1982,North Macedonia,,,,,
+1983,North Macedonia,,,,,
+1984,North Macedonia,,,,,
+1985,North Macedonia,,,,,
+1986,North Macedonia,,,,,
+1987,North Macedonia,,,,,
+1988,North Macedonia,,,,,
+1989,North Macedonia,,,,,
+1990,North Macedonia,,,,,
+1991,North Macedonia,,,,,
 1992,North Macedonia,MK,MKD,0.026,41.608635,21.745275
 1993,North Macedonia,MK,MKD,0.014,41.608635,21.745275
 1994,North Macedonia,MK,MKD,1.487,41.608635,21.745275
@@ -8490,6 +9393,37 @@ year,country,iso2,iso3,temp,latitude,longitude
 2019,Pakistan,PK,PAK,0.648,30.375321,69.345116
 2020,Pakistan,PK,PAK,0.432,30.375321,69.345116
 2021,Pakistan,PK,PAK,1.118,30.375321,69.345116
+1961,Palau,,,,,
+1962,Palau,,,,,
+1963,Palau,,,,,
+1964,Palau,,,,,
+1965,Palau,,,,,
+1966,Palau,,,,,
+1967,Palau,,,,,
+1968,Palau,,,,,
+1969,Palau,,,,,
+1970,Palau,,,,,
+1971,Palau,,,,,
+1972,Palau,,,,,
+1973,Palau,,,,,
+1974,Palau,,,,,
+1975,Palau,,,,,
+1976,Palau,,,,,
+1977,Palau,,,,,
+1978,Palau,,,,,
+1979,Palau,,,,,
+1980,Palau,,,,,
+1981,Palau,,,,,
+1982,Palau,,,,,
+1983,Palau,,,,,
+1984,Palau,,,,,
+1985,Palau,,,,,
+1986,Palau,,,,,
+1987,Palau,,,,,
+1988,Palau,,,,,
+1989,Palau,,,,,
+1990,Palau,,,,,
+1991,Palau,,,,,
 1992,Palau,PW,PLW,0.208,7.51498,134.58252
 1993,Palau,PW,PLW,0.16,7.51498,134.58252
 1994,Palau,PW,PLW,0.392,7.51498,134.58252
@@ -8510,12 +9444,20 @@ year,country,iso2,iso3,temp,latitude,longitude
 2012,Palau,PW,PLW,0.789,7.51498,134.58252
 2013,Palau,PW,PLW,0.907,7.51498,134.58252
 2014,Palau,PW,PLW,0.963,7.51498,134.58252
+2001,Palau,,,,,
+2002,Palau,,,,,
+2008,Palau,,,,,
 2015,Palau,PW,PLW,1.226,7.51498,134.58252
 2016,Palau,PW,PLW,1.291,7.51498,134.58252
 2017,Palau,PW,PLW,1.162,7.51498,134.58252
 2018,Palau,PW,PLW,1.236,7.51498,134.58252
+2019,Palau,,,,,
 2020,Palau,PW,PLW,0.429,7.51498,134.58252
 2021,Palau,PW,PLW,-0.288,7.51498,134.58252
+1961,Panama,,,,,
+1962,Panama,,,,,
+1963,Panama,,,,,
+1964,Panama,,,,,
 1965,Panama,PA,PAN,-0.299,8.537981,-80.782127
 1966,Panama,PA,PAN,0.033,8.537981,-80.782127
 1967,Panama,PA,PAN,-0.289,8.537981,-80.782127
@@ -8855,6 +9797,7 @@ year,country,iso2,iso3,temp,latitude,longitude
 1996,Pitcairn Islands,PN,PCN,-0.29,-24.703615,-127.439308
 1997,Pitcairn Islands,PN,PCN,-0.309,-24.703615,-127.439308
 1998,Pitcairn Islands,PN,PCN,-0.501,-24.703615,-127.439308
+1999,Pitcairn Islands,,,,,
 2000,Pitcairn Islands,PN,PCN,0.438,-24.703615,-127.439308
 2001,Pitcairn Islands,PN,PCN,0.195,-24.703615,-127.439308
 2002,Pitcairn Islands,PN,PCN,0.534,-24.703615,-127.439308
@@ -8866,6 +9809,17 @@ year,country,iso2,iso3,temp,latitude,longitude
 2008,Pitcairn Islands,PN,PCN,-0.033,-24.703615,-127.439308
 2009,Pitcairn Islands,PN,PCN,-0.195,-24.703615,-127.439308
 2010,Pitcairn Islands,PN,PCN,-0.003,-24.703615,-127.439308
+2011,Pitcairn Islands,,,,,
+2012,Pitcairn Islands,,,,,
+2013,Pitcairn Islands,,,,,
+2014,Pitcairn Islands,,,,,
+2015,Pitcairn Islands,,,,,
+2016,Pitcairn Islands,,,,,
+2017,Pitcairn Islands,,,,,
+2018,Pitcairn Islands,,,,,
+2019,Pitcairn Islands,,,,,
+2020,Pitcairn Islands,,,,,
+2021,Pitcairn Islands,,,,,
 1961,Poland,PL,POL,1.399,51.919438,19.145136
 1962,Poland,PL,POL,-0.514,51.919438,19.145136
 1963,Poland,PL,POL,-0.883,51.919438,19.145136
@@ -9171,6 +10125,37 @@ year,country,iso2,iso3,temp,latitude,longitude
 2019,Romania,RO,ROU,2.266,45.943161,24.96676
 2020,Romania,RO,ROU,2.283,45.943161,24.96676
 2021,Romania,RO,ROU,1.497,45.943161,24.96676
+1961,Russian Federation,,,,,
+1962,Russian Federation,,,,,
+1963,Russian Federation,,,,,
+1964,Russian Federation,,,,,
+1965,Russian Federation,,,,,
+1966,Russian Federation,,,,,
+1967,Russian Federation,,,,,
+1968,Russian Federation,,,,,
+1969,Russian Federation,,,,,
+1970,Russian Federation,,,,,
+1971,Russian Federation,,,,,
+1972,Russian Federation,,,,,
+1973,Russian Federation,,,,,
+1974,Russian Federation,,,,,
+1975,Russian Federation,,,,,
+1976,Russian Federation,,,,,
+1977,Russian Federation,,,,,
+1978,Russian Federation,,,,,
+1979,Russian Federation,,,,,
+1980,Russian Federation,,,,,
+1981,Russian Federation,,,,,
+1982,Russian Federation,,,,,
+1983,Russian Federation,,,,,
+1984,Russian Federation,,,,,
+1985,Russian Federation,,,,,
+1986,Russian Federation,,,,,
+1987,Russian Federation,,,,,
+1988,Russian Federation,,,,,
+1989,Russian Federation,,,,,
+1990,Russian Federation,,,,,
+1991,Russian Federation,,,,,
 1992,Russian Federation,RU,RUS,0.364,61.52401,105.318756
 1993,Russian Federation,RU,RUS,0.954,61.52401,105.318756
 1994,Russian Federation,RU,RUS,0.575,61.52401,105.318756
@@ -9215,8 +10200,17 @@ year,country,iso2,iso3,temp,latitude,longitude
 1972,Rwanda,RW,RWA,0.1,-1.940278,29.873888
 1973,Rwanda,RW,RWA,0.471,-1.940278,29.873888
 1974,Rwanda,RW,RWA,-0.038,-1.940278,29.873888
+1975,Rwanda,,,,,
+1976,Rwanda,,,,,
+1977,Rwanda,,,,,
+1978,Rwanda,,,,,
+1979,Rwanda,,,,,
+1980,Rwanda,,,,,
+1981,Rwanda,,,,,
 1982,Rwanda,RW,RWA,0.724,-1.940278,29.873888
 1983,Rwanda,RW,RWA,1.025,-1.940278,29.873888
+1984,Rwanda,,,,,
+1985,Rwanda,,,,,
 1986,Rwanda,RW,RWA,0.896,-1.940278,29.873888
 1987,Rwanda,RW,RWA,0.696,-1.940278,29.873888
 1988,Rwanda,RW,RWA,0.542,-1.940278,29.873888
@@ -9224,12 +10218,35 @@ year,country,iso2,iso3,temp,latitude,longitude
 1990,Rwanda,RW,RWA,0.586,-1.940278,29.873888
 1991,Rwanda,RW,RWA,0.175,-1.940278,29.873888
 1992,Rwanda,RW,RWA,0.312,-1.940278,29.873888
+1993,Rwanda,,,,,
+1994,Rwanda,,,,,
+1995,Rwanda,,,,,
+1996,Rwanda,,,,,
+1997,Rwanda,,,,,
 1998,Rwanda,RW,RWA,0.853,-1.940278,29.873888
+1999,Rwanda,,,,,
+2000,Rwanda,,,,,
 2001,Rwanda,RW,RWA,0.467,-1.940278,29.873888
 2002,Rwanda,RW,RWA,0.862,-1.940278,29.873888
 2003,Rwanda,RW,RWA,1.081,-1.940278,29.873888
 2004,Rwanda,RW,RWA,0.935,-1.940278,29.873888
 2007,Rwanda,RW,RWA,1.395,-1.940278,29.873888
+2005,Rwanda,,,,,
+2006,Rwanda,,,,,
+2008,Rwanda,,,,,
+2009,Rwanda,,,,,
+2010,Rwanda,,,,,
+2011,Rwanda,,,,,
+2012,Rwanda,,,,,
+2013,Rwanda,,,,,
+2014,Rwanda,,,,,
+2015,Rwanda,,,,,
+2016,Rwanda,,,,,
+2017,Rwanda,,,,,
+2018,Rwanda,,,,,
+2019,Rwanda,,,,,
+2020,Rwanda,,,,,
+2021,Rwanda,,,,,
 1961,Saint Helena,SH,SHN,0.156,-24.143474,-10.030696
 1962,Saint Helena,SH,SHN,-0.221,-24.143474,-10.030696
 1963,Saint Helena,SH,SHN,-0.123,-24.143474,-10.030696
@@ -9388,6 +10405,8 @@ year,country,iso2,iso3,temp,latitude,longitude
 1994,Samoa,WS,WSM,0.265,-13.759029,-172.104629
 1995,Samoa,WS,WSM,0.712,-13.759029,-172.104629
 1996,Samoa,WS,WSM,0.695,-13.759029,-172.104629
+1997,Samoa,,,,,
+1998,Samoa,,,,,
 1999,Samoa,WS,WSM,0.167,-13.759029,-172.104629
 2000,Samoa,WS,WSM,0.585,-13.759029,-172.104629
 2001,Samoa,WS,WSM,0.862,-13.759029,-172.104629
@@ -9403,6 +10422,7 @@ year,country,iso2,iso3,temp,latitude,longitude
 2012,Samoa,WS,WSM,0.56,-13.759029,-172.104629
 2013,Samoa,WS,WSM,0.798,-13.759029,-172.104629
 2014,Samoa,WS,WSM,0.459,-13.759029,-172.104629
+2009,Samoa,,,,,
 2015,Samoa,WS,WSM,0.298,-13.759029,-172.104629
 2016,Samoa,WS,WSM,0.828,-13.759029,-172.104629
 2017,Samoa,WS,WSM,0.724,-13.759029,-172.104629
@@ -9500,10 +10520,14 @@ year,country,iso2,iso3,temp,latitude,longitude
 1987,São Tomé and Príncipe,ST,STP,0.443,0.18636,6.613081
 1988,São Tomé and Príncipe,ST,STP,0.433,0.18636,6.613081
 1989,São Tomé and Príncipe,ST,STP,-0.067,0.18636,6.613081
+1990,São Tomé and Príncipe,,,,,
+1991,São Tomé and Príncipe,,,,,
 1992,São Tomé and Príncipe,ST,STP,0.016,0.18636,6.613081
 1993,São Tomé and Príncipe,ST,STP,0.488,0.18636,6.613081
 1994,São Tomé and Príncipe,ST,STP,0.364,0.18636,6.613081
 1995,São Tomé and Príncipe,ST,STP,0.948,0.18636,6.613081
+1996,São Tomé and Príncipe,,,,,
+1997,São Tomé and Príncipe,,,,,
 1998,São Tomé and Príncipe,ST,STP,1.293,0.18636,6.613081
 1999,São Tomé and Príncipe,ST,STP,0.995,0.18636,6.613081
 2000,São Tomé and Príncipe,ST,STP,0.526,0.18636,6.613081
@@ -9650,6 +10674,49 @@ year,country,iso2,iso3,temp,latitude,longitude
 2019,Senegal,SN,SEN,1.492,14.497401,-14.452362
 2020,Senegal,SN,SEN,1.757,14.497401,-14.452362
 2021,Senegal,SN,SEN,1.871,14.497401,-14.452362
+1961,Serbia,,,,,
+1962,Serbia,,,,,
+1963,Serbia,,,,,
+1964,Serbia,,,,,
+1965,Serbia,,,,,
+1966,Serbia,,,,,
+1967,Serbia,,,,,
+1968,Serbia,,,,,
+1969,Serbia,,,,,
+1970,Serbia,,,,,
+1971,Serbia,,,,,
+1972,Serbia,,,,,
+1973,Serbia,,,,,
+1974,Serbia,,,,,
+1975,Serbia,,,,,
+1976,Serbia,,,,,
+1977,Serbia,,,,,
+1978,Serbia,,,,,
+1979,Serbia,,,,,
+1980,Serbia,,,,,
+1981,Serbia,,,,,
+1982,Serbia,,,,,
+1983,Serbia,,,,,
+1984,Serbia,,,,,
+1985,Serbia,,,,,
+1986,Serbia,,,,,
+1987,Serbia,,,,,
+1988,Serbia,,,,,
+1989,Serbia,,,,,
+1990,Serbia,,,,,
+1991,Serbia,,,,,
+1992,Serbia,,,,,
+1993,Serbia,,,,,
+1994,Serbia,,,,,
+1995,Serbia,,,,,
+1996,Serbia,,,,,
+1997,Serbia,,,,,
+1998,Serbia,,,,,
+1999,Serbia,,,,,
+2000,Serbia,,,,,
+2001,Serbia,,,,,
+2002,Serbia,,,,,
+2003,Serbia,,,,,
 2006,Serbia,RS,SRB,0.588,44.016521,21.005859
 2007,Serbia,RS,SRB,1.926,44.016521,21.005859
 2008,Serbia,RS,SRB,1.371,44.016521,21.005859
@@ -9659,6 +10726,8 @@ year,country,iso2,iso3,temp,latitude,longitude
 2012,Serbia,RS,SRB,1.725,44.016521,21.005859
 2013,Serbia,RS,SRB,1.45,44.016521,21.005859
 2014,Serbia,RS,SRB,1.641,44.016521,21.005859
+2004,Serbia,,,,,
+2005,Serbia,,,,,
 2015,Serbia,RS,SRB,1.79,44.016521,21.005859
 2016,Serbia,RS,SRB,1.758,44.016521,21.005859
 2017,Serbia,RS,SRB,1.339,44.016521,21.005859
@@ -9766,6 +10835,7 @@ year,country,iso2,iso3,temp,latitude,longitude
 1997,Sierra Leone,SL,SLE,0.625,8.460555,-11.779889
 1998,Sierra Leone,SL,SLE,0.827,8.460555,-11.779889
 1999,Sierra Leone,SL,SLE,0.481,8.460555,-11.779889
+2000,Sierra Leone,,,,,
 2001,Sierra Leone,SL,SLE,0.849,8.460555,-11.779889
 2002,Sierra Leone,SL,SLE,1.013,8.460555,-11.779889
 2003,Sierra Leone,SL,SLE,0.75,8.460555,-11.779889
@@ -9794,6 +10864,7 @@ year,country,iso2,iso3,temp,latitude,longitude
 1965,Singapore,SG,SGP,-0.199,1.352083,103.819836
 1966,Singapore,SG,SGP,0.11,1.352083,103.819836
 1967,Singapore,SG,SGP,-0.209,1.352083,103.819836
+1968,Singapore,,,,,
 1969,Singapore,SG,SGP,0.307,1.352083,103.819836
 1970,Singapore,SG,SGP,0.124,1.352083,103.819836
 1971,Singapore,SG,SGP,-0.109,1.352083,103.819836
@@ -9815,6 +10886,70 @@ year,country,iso2,iso3,temp,latitude,longitude
 1987,Singapore,SG,SGP,0.541,1.352083,103.819836
 1988,Singapore,SG,SGP,0.453,1.352083,103.819836
 1989,Singapore,SG,SGP,0.182,1.352083,103.819836
+1990,Singapore,,,,,
+1991,Singapore,,,,,
+1992,Singapore,,,,,
+1993,Singapore,,,,,
+1994,Singapore,,,,,
+1995,Singapore,,,,,
+1996,Singapore,,,,,
+1997,Singapore,,,,,
+1998,Singapore,,,,,
+1999,Singapore,,,,,
+2000,Singapore,,,,,
+2001,Singapore,,,,,
+2002,Singapore,,,,,
+2003,Singapore,,,,,
+2004,Singapore,,,,,
+2005,Singapore,,,,,
+2006,Singapore,,,,,
+2007,Singapore,,,,,
+2008,Singapore,,,,,
+2009,Singapore,,,,,
+2010,Singapore,,,,,
+2011,Singapore,,,,,
+2012,Singapore,,,,,
+2013,Singapore,,,,,
+2014,Singapore,,,,,
+2015,Singapore,,,,,
+2016,Singapore,,,,,
+2017,Singapore,,,,,
+2018,Singapore,,,,,
+2019,Singapore,,,,,
+2020,Singapore,,,,,
+2021,Singapore,,,,,
+1961,Slovak Rep.,,,,,
+1962,Slovak Rep.,,,,,
+1963,Slovak Rep.,,,,,
+1964,Slovak Rep.,,,,,
+1965,Slovak Rep.,,,,,
+1966,Slovak Rep.,,,,,
+1967,Slovak Rep.,,,,,
+1968,Slovak Rep.,,,,,
+1969,Slovak Rep.,,,,,
+1970,Slovak Rep.,,,,,
+1971,Slovak Rep.,,,,,
+1972,Slovak Rep.,,,,,
+1973,Slovak Rep.,,,,,
+1974,Slovak Rep.,,,,,
+1975,Slovak Rep.,,,,,
+1976,Slovak Rep.,,,,,
+1977,Slovak Rep.,,,,,
+1978,Slovak Rep.,,,,,
+1979,Slovak Rep.,,,,,
+1980,Slovak Rep.,,,,,
+1981,Slovak Rep.,,,,,
+1982,Slovak Rep.,,,,,
+1983,Slovak Rep.,,,,,
+1984,Slovak Rep.,,,,,
+1985,Slovak Rep.,,,,,
+1986,Slovak Rep.,,,,,
+1987,Slovak Rep.,,,,,
+1988,Slovak Rep.,,,,,
+1989,Slovak Rep.,,,,,
+1990,Slovak Rep.,,,,,
+1991,Slovak Rep.,,,,,
+1992,Slovak Rep.,,,,,
 1993,Slovak Rep.,SK,SVK,0.032,48.669026,19.699024
 1994,Slovak Rep.,SK,SVK,1.687,48.669026,19.699024
 1995,Slovak Rep.,SK,SVK,0.682,48.669026,19.699024
@@ -9844,6 +10979,37 @@ year,country,iso2,iso3,temp,latitude,longitude
 2019,Slovak Rep.,SK,SVK,2.423,48.669026,19.699024
 2020,Slovak Rep.,SK,SVK,2.03,48.669026,19.699024
 2021,Slovak Rep.,SK,SVK,1.29,48.669026,19.699024
+1961,Slovenia,,,,,
+1962,Slovenia,,,,,
+1963,Slovenia,,,,,
+1964,Slovenia,,,,,
+1965,Slovenia,,,,,
+1966,Slovenia,,,,,
+1967,Slovenia,,,,,
+1968,Slovenia,,,,,
+1969,Slovenia,,,,,
+1970,Slovenia,,,,,
+1971,Slovenia,,,,,
+1972,Slovenia,,,,,
+1973,Slovenia,,,,,
+1974,Slovenia,,,,,
+1975,Slovenia,,,,,
+1976,Slovenia,,,,,
+1977,Slovenia,,,,,
+1978,Slovenia,,,,,
+1979,Slovenia,,,,,
+1980,Slovenia,,,,,
+1981,Slovenia,,,,,
+1982,Slovenia,,,,,
+1983,Slovenia,,,,,
+1984,Slovenia,,,,,
+1985,Slovenia,,,,,
+1986,Slovenia,,,,,
+1987,Slovenia,,,,,
+1988,Slovenia,,,,,
+1989,Slovenia,,,,,
+1990,Slovenia,,,,,
+1991,Slovenia,,,,,
 1992,Slovenia,SI,SVN,1.169,46.151241,14.995463
 1993,Slovenia,SI,SVN,0.576,46.151241,14.995463
 1994,Slovenia,SI,SVN,1.883,46.151241,14.995463
@@ -9914,6 +11080,8 @@ year,country,iso2,iso3,temp,latitude,longitude
 1998,Solomon Islands,SB,SLB,0.652,-9.64571,160.156194
 1999,Solomon Islands,SB,SLB,0.238,-9.64571,160.156194
 2000,Solomon Islands,SB,SLB,0.52,-9.64571,160.156194
+2001,Solomon Islands,,,,,
+2002,Solomon Islands,,,,,
 2003,Solomon Islands,SB,SLB,0.438,-9.64571,160.156194
 2004,Solomon Islands,SB,SLB,0.398,-9.64571,160.156194
 2005,Solomon Islands,SB,SLB,0.627,-9.64571,160.156194
@@ -9925,6 +11093,7 @@ year,country,iso2,iso3,temp,latitude,longitude
 2012,Solomon Islands,SB,SLB,0.223,-9.64571,160.156194
 2013,Solomon Islands,SB,SLB,0.59,-9.64571,160.156194
 2014,Solomon Islands,SB,SLB,0.655,-9.64571,160.156194
+2008,Solomon Islands,,,,,
 2015,Solomon Islands,SB,SLB,0.443,-9.64571,160.156194
 2016,Solomon Islands,SB,SLB,0.785,-9.64571,160.156194
 2017,Solomon Islands,SB,SLB,0.579,-9.64571,160.156194
@@ -10216,6 +11385,7 @@ year,country,iso2,iso3,temp,latitude,longitude
 1998,St. Kitts and Nevis,KN,KNA,1.158,17.357822,-62.782998
 1999,St. Kitts and Nevis,KN,KNA,0.611,17.357822,-62.782998
 2000,St. Kitts and Nevis,KN,KNA,0.384,17.357822,-62.782998
+2001,St. Kitts and Nevis,,,,,
 2002,St. Kitts and Nevis,KN,KNA,0.681,17.357822,-62.782998
 2003,St. Kitts and Nevis,KN,KNA,0.9,17.357822,-62.782998
 2004,St. Kitts and Nevis,KN,KNA,0.566,17.357822,-62.782998
@@ -10358,10 +11528,60 @@ year,country,iso2,iso3,temp,latitude,longitude
 2019,St. Vincent and the Grenadines,VC,VCT,0.879,12.984305,-61.287228
 2020,St. Vincent and the Grenadines,VC,VCT,1.167,12.984305,-61.287228
 2021,St. Vincent and the Grenadines,VC,VCT,0.878,12.984305,-61.287228
+1961,Sudan,,,,,
+1962,Sudan,,,,,
+1963,Sudan,,,,,
+1964,Sudan,,,,,
+1965,Sudan,,,,,
+1966,Sudan,,,,,
+1967,Sudan,,,,,
+1968,Sudan,,,,,
+1969,Sudan,,,,,
+1970,Sudan,,,,,
+1971,Sudan,,,,,
+1972,Sudan,,,,,
+1973,Sudan,,,,,
+1974,Sudan,,,,,
+1975,Sudan,,,,,
+1976,Sudan,,,,,
+1977,Sudan,,,,,
+1978,Sudan,,,,,
+1979,Sudan,,,,,
+1980,Sudan,,,,,
+1981,Sudan,,,,,
+1982,Sudan,,,,,
+1983,Sudan,,,,,
+1984,Sudan,,,,,
+1985,Sudan,,,,,
+1986,Sudan,,,,,
+1987,Sudan,,,,,
+1988,Sudan,,,,,
+1989,Sudan,,,,,
+1990,Sudan,,,,,
+1991,Sudan,,,,,
+1992,Sudan,,,,,
+1993,Sudan,,,,,
+1994,Sudan,,,,,
+1995,Sudan,,,,,
+1996,Sudan,,,,,
+1997,Sudan,,,,,
+1998,Sudan,,,,,
+1999,Sudan,,,,,
+2000,Sudan,,,,,
+2001,Sudan,,,,,
+2002,Sudan,,,,,
+2003,Sudan,,,,,
+2004,Sudan,,,,,
+2005,Sudan,,,,,
+2006,Sudan,,,,,
 2011,Sudan,SD,SDN,0.82,12.862807,30.217636
 2012,Sudan,SD,SDN,0.97,12.862807,30.217636
 2013,Sudan,SD,SDN,1.08,12.862807,30.217636
 2014,Sudan,SD,SDN,0.863,12.862807,30.217636
+2007,Sudan,,,,,
+2008,Sudan,,,,,
+2009,Sudan,,,,,
+2010,Sudan,,,,,
 2015,Sudan,SD,SDN,1.42,12.862807,30.217636
 2016,Sudan,SD,SDN,1.079,12.862807,30.217636
 2017,Sudan,SD,SDN,1.09,12.862807,30.217636
@@ -10674,6 +11894,37 @@ year,country,iso2,iso3,temp,latitude,longitude
 2019,Taiwan,TW,TWN,1.407,23.69781,120.960515
 2020,Taiwan,TW,TWN,1.878,23.69781,120.960515
 2021,Taiwan,TW,TWN,2.064,23.69781,120.960515
+1961,Tajikistan,,,,,
+1962,Tajikistan,,,,,
+1963,Tajikistan,,,,,
+1964,Tajikistan,,,,,
+1965,Tajikistan,,,,,
+1966,Tajikistan,,,,,
+1967,Tajikistan,,,,,
+1968,Tajikistan,,,,,
+1969,Tajikistan,,,,,
+1970,Tajikistan,,,,,
+1971,Tajikistan,,,,,
+1972,Tajikistan,,,,,
+1973,Tajikistan,,,,,
+1974,Tajikistan,,,,,
+1975,Tajikistan,,,,,
+1976,Tajikistan,,,,,
+1977,Tajikistan,,,,,
+1978,Tajikistan,,,,,
+1979,Tajikistan,,,,,
+1980,Tajikistan,,,,,
+1981,Tajikistan,,,,,
+1982,Tajikistan,,,,,
+1983,Tajikistan,,,,,
+1984,Tajikistan,,,,,
+1985,Tajikistan,,,,,
+1986,Tajikistan,,,,,
+1987,Tajikistan,,,,,
+1988,Tajikistan,,,,,
+1989,Tajikistan,,,,,
+1990,Tajikistan,,,,,
+1991,Tajikistan,,,,,
 1992,Tajikistan,TJ,TJK,-0.235,38.861034,71.276093
 1993,Tajikistan,TJ,TJK,-0.122,38.861034,71.276093
 1994,Tajikistan,TJ,TJK,0.469,38.861034,71.276093
@@ -10830,6 +12081,7 @@ year,country,iso2,iso3,temp,latitude,longitude
 1962,Timor-Leste,TL,TLS,0.016,-8.874217,125.727539
 1963,Timor-Leste,TL,TLS,-0.587,-8.874217,125.727539
 1964,Timor-Leste,TL,TLS,-0.157,-8.874217,125.727539
+1965,Timor-Leste,,,,,
 1966,Timor-Leste,TL,TLS,0.125,-8.874217,125.727539
 1967,Timor-Leste,TL,TLS,-0.386,-8.874217,125.727539
 1968,Timor-Leste,TL,TLS,0.009,-8.874217,125.727539
@@ -10851,12 +12103,22 @@ year,country,iso2,iso3,temp,latitude,longitude
 1984,Timor-Leste,TL,TLS,0.172,-8.874217,125.727539
 1985,Timor-Leste,TL,TLS,0.569,-8.874217,125.727539
 1986,Timor-Leste,TL,TLS,0.242,-8.874217,125.727539
+1987,Timor-Leste,,,,,
+1988,Timor-Leste,,,,,
+1989,Timor-Leste,,,,,
 1990,Timor-Leste,TL,TLS,-0.758,-8.874217,125.727539
+1991,Timor-Leste,,,,,
+1992,Timor-Leste,,,,,
+1993,Timor-Leste,,,,,
+1994,Timor-Leste,,,,,
 1995,Timor-Leste,TL,TLS,0.529,-8.874217,125.727539
 1996,Timor-Leste,TL,TLS,0.54,-8.874217,125.727539
 1997,Timor-Leste,TL,TLS,0.283,-8.874217,125.727539
 1998,Timor-Leste,TL,TLS,1.16,-8.874217,125.727539
 1999,Timor-Leste,TL,TLS,0.311,-8.874217,125.727539
+2000,Timor-Leste,,,,,
+2001,Timor-Leste,,,,,
+2002,Timor-Leste,,,,,
 2003,Timor-Leste,TL,TLS,0.64,-8.874217,125.727539
 2004,Timor-Leste,TL,TLS,0.706,-8.874217,125.727539
 2005,Timor-Leste,TL,TLS,1.306,-8.874217,125.727539
@@ -10868,6 +12130,7 @@ year,country,iso2,iso3,temp,latitude,longitude
 2011,Timor-Leste,TL,TLS,0.024,-8.874217,125.727539
 2013,Timor-Leste,TL,TLS,0.555,-8.874217,125.727539
 2014,Timor-Leste,TL,TLS,0.645,-8.874217,125.727539
+2012,Timor-Leste,,,,,
 2015,Timor-Leste,TL,TLS,0.83,-8.874217,125.727539
 2016,Timor-Leste,TL,TLS,2.019,-8.874217,125.727539
 2017,Timor-Leste,TL,TLS,1.309,-8.874217,125.727539
@@ -10967,6 +12230,36 @@ year,country,iso2,iso3,temp,latitude,longitude
 1989,Tokelau,TK,TKL,0.197,-8.967363,-171.855881
 1990,Tokelau,TK,TKL,0.627,-8.967363,-171.855881
 1991,Tokelau,TK,TKL,1.1,-8.967363,-171.855881
+1992,Tokelau,,,,,
+1993,Tokelau,,,,,
+1994,Tokelau,,,,,
+1995,Tokelau,,,,,
+1996,Tokelau,,,,,
+1997,Tokelau,,,,,
+1998,Tokelau,,,,,
+1999,Tokelau,,,,,
+2000,Tokelau,,,,,
+2001,Tokelau,,,,,
+2002,Tokelau,,,,,
+2003,Tokelau,,,,,
+2004,Tokelau,,,,,
+2005,Tokelau,,,,,
+2006,Tokelau,,,,,
+2007,Tokelau,,,,,
+2008,Tokelau,,,,,
+2009,Tokelau,,,,,
+2010,Tokelau,,,,,
+2011,Tokelau,,,,,
+2012,Tokelau,,,,,
+2013,Tokelau,,,,,
+2014,Tokelau,,,,,
+2015,Tokelau,,,,,
+2016,Tokelau,,,,,
+2017,Tokelau,,,,,
+2018,Tokelau,,,,,
+2019,Tokelau,,,,,
+2020,Tokelau,,,,,
+2021,Tokelau,,,,,
 1961,Tonga,TO,TON,0.341,-21.178986,-175.198242
 1962,Tonga,TO,TON,-0.174,-21.178986,-175.198242
 1963,Tonga,TO,TON,-0.273,-21.178986,-175.198242
@@ -11084,6 +12377,7 @@ year,country,iso2,iso3,temp,latitude,longitude
 2014,Trinidad and Tobago,TT,TTO,0.704,10.691803,-61.222503
 2015,Trinidad and Tobago,TT,TTO,0.979,10.691803,-61.222503
 2016,Trinidad and Tobago,TT,TTO,0.769,10.691803,-61.222503
+2017,Trinidad and Tobago,,,,,
 2018,Trinidad and Tobago,TT,TTO,0.623,10.691803,-61.222503
 2019,Trinidad and Tobago,TT,TTO,1.224,10.691803,-61.222503
 2020,Trinidad and Tobago,TT,TTO,1.506,10.691803,-61.222503
@@ -11210,6 +12504,37 @@ year,country,iso2,iso3,temp,latitude,longitude
 2019,Turkey,TR,TUR,1.639,38.963745,35.243322
 2020,Turkey,TR,TUR,1.852,38.963745,35.243322
 2021,Turkey,TR,TUR,1.93,38.963745,35.243322
+1961,Turkmenistan,,,,,
+1962,Turkmenistan,,,,,
+1963,Turkmenistan,,,,,
+1964,Turkmenistan,,,,,
+1965,Turkmenistan,,,,,
+1966,Turkmenistan,,,,,
+1967,Turkmenistan,,,,,
+1968,Turkmenistan,,,,,
+1969,Turkmenistan,,,,,
+1970,Turkmenistan,,,,,
+1971,Turkmenistan,,,,,
+1972,Turkmenistan,,,,,
+1973,Turkmenistan,,,,,
+1974,Turkmenistan,,,,,
+1975,Turkmenistan,,,,,
+1976,Turkmenistan,,,,,
+1977,Turkmenistan,,,,,
+1978,Turkmenistan,,,,,
+1979,Turkmenistan,,,,,
+1980,Turkmenistan,,,,,
+1981,Turkmenistan,,,,,
+1982,Turkmenistan,,,,,
+1983,Turkmenistan,,,,,
+1984,Turkmenistan,,,,,
+1985,Turkmenistan,,,,,
+1986,Turkmenistan,,,,,
+1987,Turkmenistan,,,,,
+1988,Turkmenistan,,,,,
+1989,Turkmenistan,,,,,
+1990,Turkmenistan,,,,,
+1991,Turkmenistan,,,,,
 1992,Turkmenistan,TM,TKM,-0.108,38.969719,59.556278
 1993,Turkmenistan,TM,TKM,-0.196,38.969719,59.556278
 1994,Turkmenistan,TM,TKM,0.235,38.969719,59.556278
@@ -11246,6 +12571,10 @@ year,country,iso2,iso3,temp,latitude,longitude
 1964,Turks and Caicos Islands,TC,TCA,0.43,21.694025,-71.797928
 1965,Turks and Caicos Islands,TC,TCA,-0.128,21.694025,-71.797928
 1966,Turks and Caicos Islands,TC,TCA,0.274,21.694025,-71.797928
+1967,Turks and Caicos Islands,,,,,
+1968,Turks and Caicos Islands,,,,,
+1969,Turks and Caicos Islands,,,,,
+1970,Turks and Caicos Islands,,,,,
 1971,Turks and Caicos Islands,TC,TCA,-0.17,21.694025,-71.797928
 1972,Turks and Caicos Islands,TC,TCA,-0.23,21.694025,-71.797928
 1973,Turks and Caicos Islands,TC,TCA,0.04,21.694025,-71.797928
@@ -11256,6 +12585,47 @@ year,country,iso2,iso3,temp,latitude,longitude
 1978,Turks and Caicos Islands,TC,TCA,0.572,21.694025,-71.797928
 1979,Turks and Caicos Islands,TC,TCA,-0.085,21.694025,-71.797928
 1980,Turks and Caicos Islands,TC,TCA,0.124,21.694025,-71.797928
+1981,Turks and Caicos Islands,,,,,
+1982,Turks and Caicos Islands,,,,,
+1983,Turks and Caicos Islands,,,,,
+1984,Turks and Caicos Islands,,,,,
+1985,Turks and Caicos Islands,,,,,
+1986,Turks and Caicos Islands,,,,,
+1987,Turks and Caicos Islands,,,,,
+1988,Turks and Caicos Islands,,,,,
+1989,Turks and Caicos Islands,,,,,
+1990,Turks and Caicos Islands,,,,,
+1991,Turks and Caicos Islands,,,,,
+1992,Turks and Caicos Islands,,,,,
+1993,Turks and Caicos Islands,,,,,
+1994,Turks and Caicos Islands,,,,,
+1995,Turks and Caicos Islands,,,,,
+1996,Turks and Caicos Islands,,,,,
+1997,Turks and Caicos Islands,,,,,
+1998,Turks and Caicos Islands,,,,,
+1999,Turks and Caicos Islands,,,,,
+2000,Turks and Caicos Islands,,,,,
+2001,Turks and Caicos Islands,,,,,
+2002,Turks and Caicos Islands,,,,,
+2003,Turks and Caicos Islands,,,,,
+2004,Turks and Caicos Islands,,,,,
+2005,Turks and Caicos Islands,,,,,
+2006,Turks and Caicos Islands,,,,,
+2007,Turks and Caicos Islands,,,,,
+2008,Turks and Caicos Islands,,,,,
+2009,Turks and Caicos Islands,,,,,
+2010,Turks and Caicos Islands,,,,,
+2011,Turks and Caicos Islands,,,,,
+2012,Turks and Caicos Islands,,,,,
+2013,Turks and Caicos Islands,,,,,
+2014,Turks and Caicos Islands,,,,,
+2015,Turks and Caicos Islands,,,,,
+2016,Turks and Caicos Islands,,,,,
+2017,Turks and Caicos Islands,,,,,
+2018,Turks and Caicos Islands,,,,,
+2019,Turks and Caicos Islands,,,,,
+2020,Turks and Caicos Islands,,,,,
+2021,Turks and Caicos Islands,,,,,
 1961,Tuvalu,TV,TUV,-0.037,-7.109535,177.64933
 1962,Tuvalu,TV,TUV,0.118,-7.109535,177.64933
 1963,Tuvalu,TV,TUV,0.002,-7.109535,177.64933
@@ -11270,6 +12640,7 @@ year,country,iso2,iso3,temp,latitude,longitude
 1972,Tuvalu,TV,TUV,-0.147,-7.109535,177.64933
 1973,Tuvalu,TV,TUV,0.146,-7.109535,177.64933
 1974,Tuvalu,TV,TUV,-0.381,-7.109535,177.64933
+1975,Tuvalu,,,,,
 1976,Tuvalu,TV,TUV,-0.07,-7.109535,177.64933
 1977,Tuvalu,TV,TUV,-0.108,-7.109535,177.64933
 1978,Tuvalu,TV,TUV,0.01,-7.109535,177.64933
@@ -11288,6 +12659,7 @@ year,country,iso2,iso3,temp,latitude,longitude
 1991,Tuvalu,TV,TUV,0.541,-7.109535,177.64933
 1992,Tuvalu,TV,TUV,0.218,-7.109535,177.64933
 1993,Tuvalu,TV,TUV,0.052,-7.109535,177.64933
+1994,Tuvalu,,,,,
 1995,Tuvalu,TV,TUV,0.473,-7.109535,177.64933
 1996,Tuvalu,TV,TUV,0.44,-7.109535,177.64933
 1997,Tuvalu,TV,TUV,0.489,-7.109535,177.64933
@@ -11376,6 +12748,37 @@ year,country,iso2,iso3,temp,latitude,longitude
 2019,Uganda,UG,UGA,1.227,1.373333,32.290275
 2020,Uganda,UG,UGA,0.85,1.373333,32.290275
 2021,Uganda,UG,UGA,1.121,1.373333,32.290275
+1961,Ukraine,,,,,
+1962,Ukraine,,,,,
+1963,Ukraine,,,,,
+1964,Ukraine,,,,,
+1965,Ukraine,,,,,
+1966,Ukraine,,,,,
+1967,Ukraine,,,,,
+1968,Ukraine,,,,,
+1969,Ukraine,,,,,
+1970,Ukraine,,,,,
+1971,Ukraine,,,,,
+1972,Ukraine,,,,,
+1973,Ukraine,,,,,
+1974,Ukraine,,,,,
+1975,Ukraine,,,,,
+1976,Ukraine,,,,,
+1977,Ukraine,,,,,
+1978,Ukraine,,,,,
+1979,Ukraine,,,,,
+1980,Ukraine,,,,,
+1981,Ukraine,,,,,
+1982,Ukraine,,,,,
+1983,Ukraine,,,,,
+1984,Ukraine,,,,,
+1985,Ukraine,,,,,
+1986,Ukraine,,,,,
+1987,Ukraine,,,,,
+1988,Ukraine,,,,,
+1989,Ukraine,,,,,
+1990,Ukraine,,,,,
+1991,Ukraine,,,,,
 1992,Ukraine,UA,UKR,0.459,48.379433,31.16558
 1993,Ukraine,UA,UKR,-0.741,48.379433,31.16558
 1994,Ukraine,UA,UKR,1.149,48.379433,31.16558
@@ -11711,6 +13114,37 @@ year,country,iso2,iso3,temp,latitude,longitude
 2019,Uruguay,UY,URY,0.862,-32.522779,-55.765835
 2020,Uruguay,UY,URY,1.086,-32.522779,-55.765835
 2021,Uruguay,UY,URY,1.032,-32.522779,-55.765835
+1961,Uzbekistan,,,,,
+1962,Uzbekistan,,,,,
+1963,Uzbekistan,,,,,
+1964,Uzbekistan,,,,,
+1965,Uzbekistan,,,,,
+1966,Uzbekistan,,,,,
+1967,Uzbekistan,,,,,
+1968,Uzbekistan,,,,,
+1969,Uzbekistan,,,,,
+1970,Uzbekistan,,,,,
+1971,Uzbekistan,,,,,
+1972,Uzbekistan,,,,,
+1973,Uzbekistan,,,,,
+1974,Uzbekistan,,,,,
+1975,Uzbekistan,,,,,
+1976,Uzbekistan,,,,,
+1977,Uzbekistan,,,,,
+1978,Uzbekistan,,,,,
+1979,Uzbekistan,,,,,
+1980,Uzbekistan,,,,,
+1981,Uzbekistan,,,,,
+1982,Uzbekistan,,,,,
+1983,Uzbekistan,,,,,
+1984,Uzbekistan,,,,,
+1985,Uzbekistan,,,,,
+1986,Uzbekistan,,,,,
+1987,Uzbekistan,,,,,
+1988,Uzbekistan,,,,,
+1989,Uzbekistan,,,,,
+1990,Uzbekistan,,,,,
+1991,Uzbekistan,,,,,
 1992,Uzbekistan,UZ,UZB,0.132,41.377491,64.585262
 1993,Uzbekistan,UZ,UZB,-0.206,41.377491,64.585262
 1994,Uzbekistan,UZ,UZB,-0.013,41.377491,64.585262
@@ -12137,7 +13571,37 @@ year,country,iso2,iso3,temp,latitude,longitude
 1988,Yemen,YE,YEM,0.992,15.552727,48.516388
 1989,Yemen,YE,YEM,0.391,15.552727,48.516388
 1990,Yemen,YE,YEM,0.451,15.552727,48.516388
+1991,Yemen,,,,,
+1992,Yemen,,,,,
+1993,Yemen,,,,,
+1994,Yemen,,,,,
+1995,Yemen,,,,,
+1996,Yemen,,,,,
 1997,Yemen,YE,YEM,0.061,15.552727,48.516388
+1998,Yemen,,,,,
+1999,Yemen,,,,,
+2000,Yemen,,,,,
+2001,Yemen,,,,,
+2002,Yemen,,,,,
+2003,Yemen,,,,,
+2004,Yemen,,,,,
+2005,Yemen,,,,,
+2006,Yemen,,,,,
+2007,Yemen,,,,,
+2008,Yemen,,,,,
+2009,Yemen,,,,,
+2010,Yemen,,,,,
+2011,Yemen,,,,,
+2012,Yemen,,,,,
+2013,Yemen,,,,,
+2014,Yemen,,,,,
+2015,Yemen,,,,,
+2016,Yemen,,,,,
+2017,Yemen,,,,,
+2018,Yemen,,,,,
+2019,Yemen,,,,,
+2020,Yemen,,,,,
+2021,Yemen,,,,,
 1961,Zambia,ZM,ZMB,0.22,-13.133897,27.849332
 1962,Zambia,ZM,ZMB,-0.177,-13.133897,27.849332
 1963,Zambia,ZM,ZMB,-0.397,-13.133897,27.849332
