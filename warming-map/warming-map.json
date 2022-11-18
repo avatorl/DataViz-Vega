@@ -10,6 +10,9 @@
   "height": 350,
   "autosize": "pad",
   "signals": [
+    {"name": "labelColor", "value": "gray"},
+    {"name": "labelFontSizeMajor", "value": "20"},
+    {"name": "labelFontSizeMinor", "value": "14"},
     {
       "name": "yearSelected",
       "init": "1961",
@@ -49,9 +52,13 @@
       ]
     },
     {
-      "name": "global",
+      "name": "global-all",
       "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/warming-stripe/global-temp.csv",
-      "format": {"type": "csv", "parse": "auto", "delimiter": ","},
+      "format": {"type": "csv", "parse": "auto", "delimiter": ","}
+    },
+    {
+      "name": "global",
+      "source": "global-all",
       "transform": [{"type": "filter", "expr": "datum.year==yearSelected"}]
     }
   ],
@@ -94,6 +101,34 @@
       "domainMid": 0
     },
     {
+      "name": "colorHawkins2",
+      "type": "linear",
+      "range": {
+        "scheme": [
+          "#67000D",
+          "#A50F15",
+          "#CB181D",
+          "#EF3B2C",
+          "#FB6A4A",
+          "#FC9272",
+          "#FCBBA1",
+          "#FEE0D2",
+          "#FFFFFF",
+          "#DEEBF7",
+          "#C6DBEF",
+          "#9ECAE1",
+          "#6BAED6",
+          "#4292C6",
+          "#2171B5",
+          "#08519C",
+          "#08306B"
+        ]
+      },
+      "domain": {"data": "global-all", "field": "temp"},
+      "reverse": true,
+      "domainMid": 0
+    },
+    {
       "name": "scaleYForLegendTick",
       "type": "linear",
       "domain": {"data": "dataset-csv", "field": "temp"},
@@ -105,10 +140,21 @@
   "title": {
     "anchor": "start",
     "font": {"value": "Tahoma"},
-    "fontSize": {"value": 36},
+    "fontSize": {"value": 20},
     "fontWeight": "bold",
+    "subtitle": "-",
+    "subtitleFontSize": 36,
+    "subtitleFontWeight": "bold",
     "encode": {
       "title": {
+        "update": {
+          "text": {
+            "signal": "'Global Temperature (compared to 1951-1980 average)'"
+          },
+          "fill": {"value": "black"}
+        }
+      },
+      "subtitle": {
         "update": {
           "text": {"signal": "yearSelected"},
           "strokeWidth": {"value": 1},
@@ -123,7 +169,7 @@
   },
   "legends": [
     {
-      "fill": "colorHawkins",
+      "fill": "colorHawkins2",
       "orient": "none",
       "legendX": {"signal": "width+40"},
       "legendY": 60,
@@ -132,13 +178,13 @@
       "titleColor": "gray",
       "tickCount": 5,
       "tickMinStep": 0.2,
-      "titleFontSize": {"signal": "12"},
+      "titleFontSize": {"signal": "labelFontSizeMajor"},
       "encode": {
         "labels": {
           "update": {
             "dx": {"value": 3},
-            "fontSize": {"signal": "14"},
-            "fill": {"signal": "'gray'"},
+            "fontSize": {"signal": "labelFontSizeMinor"},
+            "fill": {"signal": "labelColor"},
             "text": {
               "signal": "(datum.value>0?'+':datum.value==0?'':'')+datum.label"
             }
