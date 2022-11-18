@@ -96,7 +96,7 @@
   ],
   "title": {
     "text": {
-      "signal": "'Global Temperature in 1961-2021 (compared to '+ basePeriodS+'-'+basePeriodE+' average)'"
+      "signal": "'Annual Surface Temperature Change in 1961-2021 (compared to '+ basePeriodS+'-'+basePeriodE+' average) by country'"
     },
     "anchor": "start",
     "font": {"value": "Tahoma"},
