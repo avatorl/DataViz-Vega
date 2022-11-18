@@ -121,10 +121,10 @@
       "labelColor": {"signal": "labelColor"},
       "format": ".4",
       "encode": {
-        "ticks": {"update": {"y": {"value": -3}}},
+        "ticks": {"update": {"y": {"value": 10}}},
         "labels": {
           "update": {
-            "y": {"value": 8},
+            "y": {"value": 12},
             "fontSize": {
               "signal": "(datum.value==1900||datum.value==2000)?labelFontSizeMajor:labelFontSizeMinor"
             }
