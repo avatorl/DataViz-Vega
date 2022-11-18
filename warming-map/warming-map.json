@@ -184,7 +184,7 @@
               "scale": "scaleYForLegendTick",
               "signal": "data('global')[0]['temp']"
             },
-            "strokeWidth": {"signal": "datum.value==0?0.5:0"}
+            "strokeWidth": {"signal": "datum.value==0?0.0:0"}
           }
         }
       }
