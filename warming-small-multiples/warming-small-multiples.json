@@ -112,13 +112,13 @@
       "encode": {
         "ticks": {
           "update": {
-            "strokeWidth": {"signal": "datum.value<=2&&datum.value>=-1?1:0"}
+            "strokeWidth": {"signal": "datum.value<=3&&datum.value>=-1?1:0"}
           }
         },
         "labels": {
           "update": {
             "text": {
-              "signal": "datum.value<=2&&datum.value>=-1?+datum.value:''"
+              "signal": "datum.value<=3&&datum.value>=-1?+datum.value:''"
             },
             "fill": {
               "signal": "datum.value==0?'gray':datum.value<0?'#08306B':'#67000D'"
