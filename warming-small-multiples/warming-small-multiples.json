@@ -7,19 +7,23 @@
     "Github": "https://github.com/avatorl/Deneb-Vega/"
   },
   "width": 150,
-  "height": 100,
+  "height": 110,
+  "padding": 5,
   "autosize": "pad",
-  "config": {"background": "#FFFFFF", "group": {"fill": "#FFFFFF"}},
+  "background": "#FAFFFA",
+  "config": {
+    "axis": {
+      "titleColor": "#666666",
+      "titleFontWeight": "lighter",
+      "titleFontSize": 8,
+      "domain": false,
+      "ticks": true,
+      "tickSize": 3
+    }
+  },
   "signals": [
     {"name": "titleColor", "value": "#555555"},
-    {"name": "labelColor", "value": "gray"},
-    {"name": "subtitleStrokeColor", "value": "#AAAAAA"},
-    {"name": "mapStrokeColor", "value": "#CCCCCC"},
-    {"name": "mapNoDataFillColor", "value": "EEEEEE"},
-    {"name": "labelFontSizeMajor", "value": "20"},
-    {"name": "labelFontSizeMinor", "value": "14"},
-    {"name": "gridColumns", "value": 5},
-    {"name": "gridPadding", "value": 0}
+    {"name": "gridColumns", "value": 5}
   ],
   "data": [
     {
@@ -36,13 +40,13 @@
   ],
   "scales": [
     {
-      "name": "x",
+      "name": "scaleX",
       "type": "linear",
       "domain": {"data": "data-all-years", "field": "latitude"},
       "range": "width"
     },
     {
-      "name": "y",
+      "name": "scaleY",
       "type": "linear",
       "domain": {"data": "data-all-years", "field": "temp"},
       "range": "height"
@@ -77,7 +81,53 @@
     }
   ],
   "legends": [],
-  "axes": [],
+  "axes": [
+    {
+      "scale": "scaleX",
+      "orient": "bottom",
+      "title": "Latitude",
+      "offset": -18,
+      "labelBaseline": "top",
+      "encode": {
+        "labels": {
+          "update": {
+            "text": {
+              "signal": "datum.value==0?'0':datum.value==70?'N':datum.value==-40?'S':abs(datum.value)"
+            },
+            "fill": {
+              "signal": "datum.value==70?'red':datum.value==-40?'black':'gray'"
+            }
+          }
+        }
+      }
+    },
+    {
+      "scale": "scaleY",
+      "orient": "left",
+      "title": "Temp. change, °C",
+      "offset": 10,
+      "labelOffset": 5,
+      "tickCount": 5,
+      "labelBaseline": "bottom",
+      "encode": {
+        "ticks": {
+          "update": {
+            "strokeWidth": {"signal": "datum.value<=2&&datum.value>=-1?1:0"}
+          }
+        },
+        "labels": {
+          "update": {
+            "text": {
+              "signal": "datum.value<=2&&datum.value>=-1?+datum.value:''"
+            },
+            "fill": {
+              "signal": "datum.value==0?'gray':datum.value<0?'#08306B':'#67000D'"
+            }
+          }
+        }
+      }
+    }
+  ],
   "title": {
     "anchor": "start",
     "font": {"value": "Tahoma"},
@@ -87,7 +137,7 @@
       "title": {
         "update": {
           "text": {
-            "signal": "'Annual Surface Temperature Change (compared to 1951-1980 average)'"
+            "signal": "'Annual Surface Temperature Change, 1961-2021 (compared to 1951-1980 average)'"
           },
           "fill": {"signal": "titleColor"}
         }
@@ -139,14 +189,14 @@
                 "enter": {
                   "zindex": {"value": 1},
                   "tooltip": {"signal": "datum.country+', '+datum.year"},
-                  "x": {"scale": "x", "field": "latitude"},
-                  "y": {"scale": "y", "field": "temp"},
-                  "stroke": {"scale": "colorHawkins", "field": "temp"},
+                  "x": {"scale": "scaleX", "field": "latitude"},
+                  "y": {"scale": "scaleY", "field": "temp"},
+                  "stroke": {"signal": "'#000000'"},
                   "fill": {"scale": "colorHawkins", "field": "temp"},
                   "strokeOpacity": {"signal": "1"},
-                  "strokeWidth": {"signal": "0.3"},
+                  "strokeWidth": {"signal": "0.1"},
                   "fillOpacity": {"signal": "1"},
-                  "size": {"signal": "10"}
+                  "size": {"signal": "isNumber(datum.temp)?10:0"}
                 },
                 "update": {}
               }
