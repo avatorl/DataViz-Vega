@@ -10,7 +10,7 @@
   "height": 110,
   "padding": 5,
   "autosize": "pad",
-  "background": "#FAFFFA",
+  "background": "white",
   "config": {
     "axis": {
       "titleColor": "#666666",
