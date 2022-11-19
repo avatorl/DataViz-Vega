@@ -118,7 +118,7 @@
         "labels": {
           "update": {
             "text": {
-              "signal": "datum.value<=3&&datum.value>=-1?+datum.value:''"
+              "signal": "datum.value<=3&&datum.value>=-1?(datum.value>0?'+':'')+datum.value:''"
             },
             "fill": {
               "signal": "datum.value==0?'gray':datum.value<0?'#08306B':'#67000D'"
