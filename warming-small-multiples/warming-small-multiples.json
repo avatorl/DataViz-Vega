@@ -18,7 +18,6 @@
     {"name": "mapNoDataFillColor", "value": "EEEEEE"},
     {"name": "labelFontSizeMajor", "value": "20"},
     {"name": "labelFontSizeMinor", "value": "14"},
-    {"name": "scale", "value": 130},
     {"name": "gridColumns", "value": 6},
     {"name": "gridPadding", "value": 0}
   ],
@@ -129,7 +128,7 @@
               "scale": "colorHawkins",
               "signal": "data('data-global')[data('series')[0]['year']-1961]['temp']"
             },
-            "fontSize": 20,
+            "fontSize": 16,
             "encode": {
               "title": {
                 "update": {
