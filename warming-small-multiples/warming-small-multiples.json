@@ -18,7 +18,7 @@
     {"name": "mapNoDataFillColor", "value": "EEEEEE"},
     {"name": "labelFontSizeMajor", "value": "20"},
     {"name": "labelFontSizeMinor", "value": "14"},
-    {"name": "gridColumns", "value": 6},
+    {"name": "gridColumns", "value": 5},
     {"name": "gridPadding", "value": 0}
   ],
   "data": [
@@ -32,15 +32,6 @@
       "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/warming-stripe/global-temp.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","},
       "transform": [{"type": "filter", "expr": "datum.year>=1961"}]
-    }
-  ],
-  "projections": [
-    {
-      "name": "projection",
-      "type": {"signal": "'naturalEarth1'"},
-      "scale": {"signal": "scale"},
-      "rotate": {"signal": "[-25, 0, 0]"},
-      "translate": {"signal": "[width/2, height/2+25]"}
     }
   ],
   "scales": [
@@ -128,12 +119,13 @@
               "scale": "colorHawkins",
               "signal": "data('data-global')[data('series')[0]['year']-1961]['temp']"
             },
-            "fontSize": 16,
+            "fontSize": 30,
+            "dy": 25,
             "encode": {
               "title": {
                 "update": {
                   "stroke": {"value": "#CCCCCC"},
-                  "strokeWidth": {"value": "0.5"}
+                  "strokeWidth": {"value": "0.8"}
                 }
               }
             }
