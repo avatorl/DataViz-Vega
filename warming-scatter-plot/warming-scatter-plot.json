@@ -179,17 +179,16 @@
       "type": "symbol",
       "from": {"data": "data-before-year"},
       "encode": {
-        "enter": {
+        "update": {
           "zindex": {"value": 0},
-          "tooltip": {"signal": "datum.country+', '+datum.year"},
           "x": {"scale": "scaleX", "field": "latitude"},
           "y": {"scale": "scaleY", "field": "temp"},
           "fill": {"value": "#EEEEEE"},
-          "strokeOpacity": {"signal": "1"},
-          "fillOpacity": {"signal": "(datum.year-1961)/65/2"},
-          "size": {"signal": "25"}
-        },
-        "update": {}
+          "strokeOpacity": {"signal": "0"},
+          "size": {"signal": "25"},
+          "fillOpacity": {"signal": "pow((61+(datum.year-year/10))/60,1/2.5)"},
+          "tooltip": {"signal": "datum.country+', '+datum.year"}
+        }
       }
     },
     {
@@ -202,7 +201,7 @@
           "tooltip": {"signal": "datum.country+', '+datum.year"},
           "x": {"scale": "scaleX", "field": "latitude"},
           "y": {"scale": "scaleY", "field": "temp"},
-          "stroke": {"value": "#EEEEEE"},
+          "stroke": {"value": "#999999"},
           "fill": {"scale": "colorHawkins", "field": "temp"},
           "strokeOpacity": {"signal": "1"},
           "strokeWidth": {"signal": "0.3"},
