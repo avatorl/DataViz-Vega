@@ -19,16 +19,53 @@
     {"name": "labelFontSizeMajor", "value": "20"},
     {"name": "labelFontSizeMinor", "value": "14"},
     {
+      "name": "pauseClicked",
+      "value": false,
+      "on": [
+        {
+          "events": "@buttonPause:click,@buttonPauseBackground:click",
+          "update": "!pauseClicked",
+          "force": true
+        }
+      ]
+    },
+    {
       "name": "year",
       "init": "19610",
       "on": [
         {
           "events": {"type": "timer", "throttle": 500},
-          "update": "(year>=19610&&year<=19619)?year+1:year<20210?year+10:year<=20218?year+1:19610"
+          "update": "pauseClicked?year:(year>=19610&&year<=19619)?year+1:year<20210?year+10:year<=20218?year+1:19610"
+        },
+        {
+          "events": "@buttonLeft:click,@buttonLeftBackground:click",
+          "update": "year==19610?year:year-10",
+          "force": true
+        },
+        {
+          "events": "@buttonRight:click,@buttonRightBackground:click",
+          "update": "year==20210?year:year+10",
+          "force": true
         }
       ]
     },
-    {"name": "scale", "value": 130}
+    {"name": "scale", "value": 130},
+    {
+      "name": "svgPause",
+      "value": "M200 160C186.8 160 176 170.8 176 184v144C176 341.3 186.8 352 200 352S224 341.3 224 328v-144C224 170.8 213.3 160 200 160zM312 160C298.8 160 288 170.8 288 184v144c0 13.25 10.75 24 24 24s24-10.75 24-24v-144C336 170.8 325.3 160 312 160zM256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 464c-114.7 0-208-93.31-208-208S141.3 48 256 48s208 93.31 208 208S370.7 464 256 464z"
+    },
+    {
+      "name": "svgPlay",
+      "value": "M188.3 147.1C195.8 142.8 205.1 142.1 212.5 147.5L356.5 235.5C363.6 239.9 368 247.6 368 256C368 264.4 363.6 272.1 356.5 276.5L212.5 364.5C205.1 369 195.8 369.2 188.3 364.9C180.7 360.7 176 352.7 176 344V167.1C176 159.3 180.7 151.3 188.3 147.1V147.1zM512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 48C141.1 48 48 141.1 48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48z"
+    },
+    {
+      "name": "svgRight",
+      "value": "M280.2 150.2C273.1 143.8 262.1 142.2 254.3 146.1S239.1 158.5 239.1 167.1l.002 56L152 224C138.8 224 128 234.8 128 248v16C128 277.3 138.8 288 152 288L240 287.1v56c0 9.531 5.656 18.16 14.38 22c8.75 3.812 18.91 2.094 25.91-4.375l96-88.75C381.2 268.3 384 261.9 384 255.2c-.3125-7.781-2.875-13.25-7.844-17.75L280.2 150.2zM256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 464c-114.7 0-208-93.31-208-208S141.3 48 256 48s208 93.31 208 208S370.7 464 256 464z"
+    },
+    {
+      "name": "svgLeft",
+      "value": "M360 224L272 224v-56c0-9.531-5.656-18.16-14.38-22C248.9 142.2 238.7 143.9 231.7 150.4l-96 88.75C130.8 243.7 128 250.1 128 256.8c.3125 7.781 2.875 13.25 7.844 17.75l96 87.25c7.031 6.406 17.19 8.031 25.88 4.188s14.28-12.44 14.28-21.94l-.002-56L360 288C373.3 288 384 277.3 384 264v-16C384 234.8 373.3 224 360 224zM256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 464c-114.7 0-208-93.31-208-208S141.3 48 256 48s208 93.31 208 208S370.7 464 256 464z"
+    }
   ],
   "data": [
     {
@@ -167,6 +204,7 @@
   "marks": [
     {
       "type": "shape",
+      "name": "geoshapeCountry",
       "clip": true,
       "from": {"data": "data-geojson"},
       "encode": {
@@ -180,6 +218,108 @@
         }
       },
       "transform": [{"type": "geoshape", "projection": "projection"}]
+    },
+    {
+      "type": "symbol",
+      "name": "buttonPause",
+      "interactive": true,
+      "zindex": 1,
+      "encode": {
+        "update": {
+          "x": {"value": 35},
+          "y": {"value": 5},
+          "size": {"value": 0.01},
+          "fill": {"value": "white"},
+          "opacity": {"value": 0.6},
+          "stroke": {"value": "gray"},
+          "shape": {"signal": "pauseClicked?svgPlay:svgPause"}
+        }
+      }
+    },
+    {
+      "type": "symbol",
+      "name": "buttonPauseBackground",
+      "interactive": true,
+      "zindex": 0,
+      "encode": {
+        "update": {
+          "x": {"value": 48},
+          "y": {"value": 18},
+          "size": {"value": 700},
+          "fill": {"value": "white"},
+          "opacity": {"value": 0.6},
+          "stroke": {"value": "white"},
+          "shape": {"signal": "'circle'"}
+        }
+      }
+    },
+    {
+      "type": "symbol",
+      "name": "buttonLeft",
+      "interactive": true,
+      "zindex": 1,
+      "encode": {
+        "update": {
+          "x": {"value": 5},
+          "y": {"value": 5},
+          "size": {"signal": "pauseClicked?0.01:0"},
+          "fill": {"value": "white"},
+          "opacity": {"value": 0.6},
+          "stroke": {"value": "gray"},
+          "shape": {"signal": "pauseClicked?svgLeft:svgLeft"}
+        }
+      }
+    },
+    {
+      "type": "symbol",
+      "name": "buttonLeftBackground",
+      "interactive": true,
+      "zindex": 0,
+      "encode": {
+        "update": {
+          "x": {"value": 18},
+          "y": {"value": 18},
+          "size": {"signal": "pauseClicked?700:0"},
+          "fill": {"value": "white"},
+          "opacity": {"value": 0.6},
+          "stroke": {"value": "white"},
+          "shape": {"signal": "'circle'"}
+        }
+      }
+    },
+    {
+      "type": "symbol",
+      "name": "buttonRight",
+      "interactive": true,
+      "zindex": 1,
+      "encode": {
+        "update": {
+          "x": {"value": 65},
+          "y": {"value": 5},
+          "size": {"signal": "pauseClicked?0.01:0"},
+          "fill": {"value": "white"},
+          "opacity": {"value": 0.6},
+          "stroke": {"value": "gray"},
+          "shape": {"signal": "pauseClicked?svgRight:svgRight"}
+        }
+      }
+    },
+    {
+      "type": "symbol",
+      "name": "buttonRightBackground",
+      "interactive": true,
+      "zindex": 0,
+      "encode": {
+        "update": {
+          "x": {"value": 78},
+          "y": {"value": 18},
+          "size": {"signal": "pauseClicked?700:0"},
+          "fill": {"value": "white"},
+          "opacity": {"value": 0.6},
+          "stroke": {"value": "white"},
+          "shape": {"signal": "'circle'"}
+        }
+      }
     }
   ]
 }
