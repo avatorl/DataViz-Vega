@@ -112,6 +112,7 @@
       "orient": "left",
       "scale": "scaleY",
       "title": "Temperature Change, °C",
+      "offset": 10,
       "encode": {
         "labels": {
           "update": {"text": {"signal": "(datum.value>0?'+':'')+datum.label"}}
