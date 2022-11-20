@@ -186,7 +186,7 @@
           "y": {"scale": "scaleY", "field": "temp"},
           "fill": {"value": "#EEEEEE"},
           "strokeOpacity": {"signal": "0"},
-          "size": {"signal": "25"},
+          "size": {"signal": "isNumber(datum.temp)?25:0"},
           "fillOpacity": {"signal": "pow((61+(datum.year-year/10))/60,1/2.5)"},
           "tooltip": {"signal": "datum.country+', '+datum.year"}
         }
@@ -207,7 +207,7 @@
           "strokeOpacity": {"signal": "1"},
           "strokeWidth": {"signal": "0.3"},
           "fillOpacity": {"signal": "1"},
-          "size": {"signal": "30"}
+          "size": {"signal": "isNumber(datum.temp)?30:0"}
         },
         "update": {}
       }
