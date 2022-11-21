@@ -1,0 +1,199 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "Bamboo chart (by Jorge Camoes)",
+  "usermeta": {
+    "Author": "Andrzej Leszkiewicz",
+    "License": "CC BY 4.0 (Share and Adapt with Attribution)",
+    "Github": "https://github.com/avatorl/Deneb-Vega/"
+  },
+  "background": "white",
+  "width": 650,
+  "height": 100,
+  "padding": 5,
+  "autosize": "pad",
+  "config": {},
+  "signals": [
+    {"name": "labelColor", "value": "gray"},
+    {"name": "labelDataSrc", "value": "#CCCCCC"},
+    {"name": "labelFontSizeMajor", "value": "20"},
+    {"name": "labelFontSizeMinor", "value": "14"},
+    {"name": "legendFontSize", "value": "12"},
+    {"name": "basePeriodColor", "value": "black"},
+    {"name": "basePeriodS", "value": "1951"},
+    {"name": "basePeriodE", "value": "1980"},
+    {
+      "name": "selectedStripeTemp",
+      "description": "Temperature at the selected stripe (to dispaly as a tick on the legend)",
+      "value": "0",
+      "on": [
+        {"events": "@stripe:mouseover", "update": "datum.temp"},
+        {"events": "@stripe:mouseout", "update": "0"}
+      ]
+    }
+  ],
+  "data": [
+    {
+      "name": "dataset-csv",
+      "url": "https://dl.dropboxusercontent.com/s/2thadzac4bkwe6s/risk-poverty-dataset.csv",
+      "format": {"type": "csv", "parse": "auto", "delimiter": ","},
+      "transform": [{"type": "filter", "expr": "datum.Group=='Sex'"}]
+    },
+    {
+      "name": "dataset1",
+      "source": "dataset-csv",
+      "transform": [{"type": "filter", "expr": "datum.Point<=2"}]
+    },
+    {
+      "name": "dataset2",
+      "source": "dataset-csv",
+      "transform": [{"type": "filter", "expr": "datum.Point>=3"}]
+    }
+  ],
+  "scales": [
+    {
+      "name": "scaleX",
+      "type": "linear",
+      "domain": {"data": "dataset-csv", "field": "Value"},
+      "range": [0, {"signal": "width"}],
+      "zero": false
+    },
+    {
+      "name": "scaleYTotal",
+      "type": "point",
+      "domain": [1],
+      "range": [0, {"signal": "height"}]
+    },
+    {
+      "name": "scaleY",
+      "type": "point",
+      "domain": {"data": "dataset-csv", "field": "Metric"},
+      "range": [0, {"signal": "height"}]
+    },
+    {
+      "name": "scaleYBranches",
+      "type": "point",
+      "domain": [1, 2, 3, 4],
+      "range": [0, {"signal": "height"}]
+    }
+  ],
+  "title": {
+    "text": {"signal": "''"},
+    "anchor": "start",
+    "font": {"value": "Tahoma"},
+    "fontSize": {"value": 16},
+    "fontWeight": "lighter"
+  },
+  "axes": [
+    {
+      "scale": "scaleX",
+      "orient": "top",
+      "domain": true,
+      "tickCount": {"signal": ""},
+      "labelFontSize": {"signal": "8"},
+      "labelBaseline": "middle",
+      "labelPadding": 30,
+      "format": ".3",
+      "labels": true,
+      "labelAngle": 90
+    },
+    {
+      "scale": "scaleY",
+      "orient": "left",
+      "domain": true,
+      "labelFontSize": {"signal": "8"},
+      "labelBaseline": "middle",
+      "labelPadding": 30,
+      "labels": true
+    },
+    {
+      "scale": "scaleYBranches",
+      "orient": "right",
+      "domain": true,
+      "labelFontSize": {"signal": "8"},
+      "labelBaseline": "middle",
+      "labelPadding": 30,
+      "labels": true
+    }
+  ],
+  "legends": [],
+  "marks": [
+    {
+      "type": "group",
+      "from": {
+        "facet": {
+          "name": "countrySeries",
+          "data": "dataset1",
+          "groupby": "Country"
+        }
+      },
+      "marks": [
+        {
+          "name": "line",
+          "type": "line",
+          "interactive": true,
+          "from": {"data": "countrySeries"},
+          "encode": {
+            "update": {
+              "opacity": {"value": 1},
+              "strokeWidth": {"value": 0.5},
+              "stroke": {"value": "gray"},
+              "defined": {"signal": "true"},
+              "x": {
+                "scale": "scaleX",
+                "signal": "datum.Point==1?datum.Total:datum.Point==2?datum.Value:null"
+              },
+              "y": {"scale": "scaleYBranches", "signal": "datum.Point"}
+            }
+          }
+        },
+        {
+          "name": "stripe",
+          "type": "rect",
+          "interactive": true,
+          "from": {"data": "countrySeries"},
+          "encode": {
+            "update": {
+              "opacity": {"value": 1},
+              "strokeWidth": {"value": 0.5},
+              "stroke": {"value": "gray"},
+              "xc": {"scale": "scaleX", "signal": "datum.Total"},
+              "yc": {"scale": "scaleYTotal", "signal": "1"},
+              "height": {"signal": "height"}
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "from": {
+        "facet": {
+          "name": "countrySeries",
+          "data": "dataset2",
+          "groupby": "Country"
+        }
+      },
+      "marks": [
+        {
+          "name": "line",
+          "type": "line",
+          "interactive": true,
+          "from": {"data": "countrySeries"},
+          "encode": {
+            "update": {
+              "opacity": {"value": 1},
+              "strokeWidth": {"value": 0.5},
+              "stroke": {"value": "gray"},
+              "defined": {"signal": "true"},
+              "x": {
+                "scale": "scaleX",
+                "signal": "datum.Point==3?datum.Total:datum.Point==4?datum.Value:null"
+              },
+              "y": {"scale": "scaleYBranches", "signal": "datum.Point"}
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
