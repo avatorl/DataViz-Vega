@@ -1,0 +1,81 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "A basic line chart example.",
+  "width": 600,
+  "height": 800,
+  "padding": 5,
+  "config": {"background": "black"},
+  "signals": [],
+  "data": [
+    {
+      "name": "dataset",
+      "url": "https://dl.dropboxusercontent.com/s/7fmnfh1dg02t4vl/Qatar1950-2100Population.csv",
+      "format": {"type": "csv", "parse": "auto", "delimiter": ","}
+    }
+  ],
+  "scales": [
+    {
+      "name": "scaleY",
+      "type": "point",
+      "range": "height",
+      "domain": {"data": "dataset", "field": "AgeGrp"}
+    },
+    {
+      "name": "scaleX",
+      "type": "linear",
+      "range": "width",
+      "domain": [{"signal": "-50"}, {"signal": "50"}]
+    },
+    {
+      "name": "color",
+      "type": "ordinal",
+      "range": {"scheme": "oranges"},
+      "domain": {"data": "dataset", "field": "Year"}
+    }
+  ],
+  "axes": [],
+  "marks": [
+    {
+      "type": "group",
+      "from": {
+        "facet": {"name": "series", "data": "dataset", "groupby": "Year"}
+      },
+      "marks": [
+        {
+          "type": "line",
+          "from": {"data": "series"},
+          "encode": {
+            "enter": {
+              "x": {"scale": "scaleX", "signal": "-datum.Female"},
+              "y": {"scale": "scaleY", "field": "AgeGrp"},
+              "stroke": {"scale": "color", "field": "Year"},
+              "strokeWidth": {"value": 0.5}
+            },
+            "update": {
+              "interpolate": {"signal": "'linear'"},
+              "strokeOpacity": {"value": 1}
+            },
+            "hover": {"strokeOpacity": {"value": 0.5}}
+          }
+        },
+        {
+          "type": "line",
+          "from": {"data": "series"},
+          "encode": {
+            "enter": {
+              "x": {"scale": "scaleX", "signal": "datum.Male"},
+              "y": {"scale": "scaleY", "field": "AgeGrp"},
+              "stroke": {"scale": "color", "field": "Year"},
+              "strokeWidth": {"value": 0.5}
+            },
+            "update": {
+              "interpolate": {"signal": "'linear'"},
+              "strokeOpacity": {"value": 1}
+            },
+            "hover": {"strokeOpacity": {"value": 0.5}}
+          }
+        }
+      ]
+    }
+  ]
+}
