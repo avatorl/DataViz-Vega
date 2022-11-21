@@ -10,7 +10,10 @@
     {
       "name": "dataset",
       "url": "https://dl.dropboxusercontent.com/s/7fmnfh1dg02t4vl/Qatar1950-2100Population.csv",
-      "format": {"type": "csv", "parse": "auto", "delimiter": ","}
+      "format": {"type": "csv", "parse": "auto", "delimiter": ","},
+      "transform": [
+        {"type": "filter", "expr": "datum.Year<=2050 && datum.AgeGrp<=95"}
+      ]
     }
   ],
   "scales": [
@@ -18,7 +21,8 @@
       "name": "scaleY",
       "type": "point",
       "range": "height",
-      "domain": {"data": "dataset", "field": "AgeGrp"}
+      "domain": {"data": "dataset", "field": "AgeGrp"},
+      "reverse": true
     },
     {
       "name": "scaleX",
