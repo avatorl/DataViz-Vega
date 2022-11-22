@@ -9,7 +9,7 @@
   "data": [
     {
       "name": "dataset",
-      "url": "https://dl.dropboxusercontent.com/s/7fmnfh1dg02t4vl/Qatar1950-2100Population.csv",
+      "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/population%20pyramid/Qatar1950-2100Population.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","},
       "transform": [
         {"type": "filter", "expr": "datum.Year<=2050 && datum.AgeGrp<=95"}
