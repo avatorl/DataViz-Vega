@@ -11,7 +11,18 @@
   "width": 600,
   "height": 600,
   "padding": 20,
-  "config": {"background": "black"},
+  "config": {
+    "background": "black",
+    "axis": {
+      "titleFont": "Tahoma",
+      "titleFontSize": 14,
+      "labelFont": "Tahoma",
+      "labelFontSize": 13,
+      "labels": true,
+      "ticks": true,
+      "domain": false
+    }
+  },
   "signals": [
     {"name": "colorMain", "value": "#E65B15"},
     {
@@ -31,11 +42,7 @@
       "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/population-pyramid/Qatar1950-2100Population.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","}
     },
-    {
-      "name": "dataset",
-      "source": "dataset-csv",
-      "transform": [{"type": "filter", "expr": "true"}]
-    },
+    {"name": "dataset", "source": "dataset-csv"},
     {
       "name": "data-max",
       "source": "dataset",
@@ -78,10 +85,7 @@
       "scale": "scaleY",
       "title": "Age Group",
       "titleColor": {"signal": "colorMain"},
-      "labels": true,
-      "labelFontSize": 12,
       "labelColor": {"signal": "colorMain"},
-      "domain": false,
       "tickColor": {"signal": "colorMain"},
       "encode": {
         "labels": {
@@ -94,7 +98,7 @@
         "ticks": {
           "update": {
             "strokeWidth": {
-              "signal": "(ceil(datum.value/10)==datum.value/10)?'1':0"
+              "signal": "(ceil(datum.value/10)==datum.value/10)?'1':0.3"
             }
           }
         }
@@ -105,10 +109,7 @@
       "scale": "scaleY",
       "title": "Age Group",
       "titleColor": {"signal": "colorMain"},
-      "labels": true,
-      "labelFontSize": 12,
       "labelColor": {"signal": "colorMain"},
-      "domain": false,
       "tickColor": {"signal": "colorMain"},
       "encode": {
         "labels": {
@@ -121,7 +122,7 @@
         "ticks": {
           "update": {
             "strokeWidth": {
-              "signal": "(ceil(datum.value/10)==datum.value/10)?'1':0"
+              "signal": "(ceil(datum.value/10)==datum.value/10)?'1':0.3"
             }
           }
         }
@@ -132,11 +133,7 @@
       "scale": "scaleX",
       "title": "% of Population",
       "titleColor": {"signal": "colorMain"},
-      "labelFontSize": 12,
-      "domain": false,
-      "labels": true,
       "labelColor": {"signal": "colorMain"},
-      "tickMinStep": 0.5,
       "tickColor": {"signal": "colorMain"},
       "encode": {
         "labels": {"update": {"text": {"signal": "abs(datum.value)+'%'"}}}
@@ -151,15 +148,24 @@
       "title": "Year",
       "titleColor": {"signal": "colorMain"},
       "titleFont": "Tahoma",
+      "titleFontSize": 14,
       "titleAlign": "center",
       "offset": 10,
       "labelColor": {"signal": "colorMain"},
       "labelAlign": "center",
       "labelOffset": 10,
-      "labelFontSize": 12,
+      "labelFontSize": 13,
       "format": ".4"
     }
   ],
+  "title": {
+    "anchor": "start",
+    "fontSize": 18,
+    "text": {"signal": "'Qatar Population Pyramid, 1950-2100'"},
+    "color": {"signal": "colorMain"},
+    "subtitle": " ",
+    "subtitlePadding": 5
+  },
   "marks": [
     {
       "type": "group",
