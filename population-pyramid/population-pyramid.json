@@ -156,7 +156,8 @@
       "labelColor": {"signal": "colorMain"},
       "labelAlign": "center",
       "labelOffset": 10,
-      "labelFontSize": 12
+      "labelFontSize": 12,
+      "format": ".4"
     }
   ],
   "marks": [
