@@ -16,7 +16,7 @@
   "data": [
     {
       "name": "dataset-csv",
-      "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/population%20pyramid/Qatar1950-2100Population.csv",
+      "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/population-pyramid/Qatar1950-2100Population.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","}
     },
     {"name": "dataset", "source": "dataset-csv"},
