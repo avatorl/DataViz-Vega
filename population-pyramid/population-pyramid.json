@@ -18,6 +18,7 @@
       "titleFontSize": 14,
       "labelFont": "Tahoma",
       "labelFontSize": 13,
+      "labelPadding": 5,
       "labels": true,
       "ticks": true,
       "domain": false
@@ -91,7 +92,7 @@
         "labels": {
           "update": {
             "text": {
-              "signal": "(ceil(datum.value/10)==datum.value/10)?datum.label:''"
+              "signal": "(ceil(datum.value/10)==datum.value/10)?(datum.label+(datum.value==100?'+':'')):''"
             }
           }
         },
@@ -115,7 +116,7 @@
         "labels": {
           "update": {
             "text": {
-              "signal": "(ceil(datum.value/10)==datum.value/10)?datum.label:''"
+              "signal": "(ceil(datum.value/10)==datum.value/10)?(datum.label+(datum.value==100?'+':'')):''"
             }
           }
         },
