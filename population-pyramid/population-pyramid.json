@@ -16,16 +16,23 @@
     "axis": {
       "titleFont": "Tahoma",
       "titleFontSize": 14,
+      "titleOpacity": {"signal": "opacityMain"},
+      "titleColor": {"signal": "colorMain"},
+      "labels": true,
       "labelFont": "Tahoma",
       "labelFontSize": 13,
+      "labelOpacity": {"signal": "opacityMain"},
+      "labelColor": {"signal": "colorMain"},
       "labelPadding": 5,
-      "labels": true,
       "ticks": true,
+      "tickOpacity": {"signal": "opacityMain"},
+      "tickColor": {"signal": "colorMain"},
       "domain": false
     }
   },
   "signals": [
     {"name": "colorMain", "value": "#E65B15"},
+    {"name": "opacityMain", "value": 0.8},
     {
       "name": "year",
       "init": "19500",
@@ -85,7 +92,6 @@
       "orient": "left",
       "scale": "scaleY",
       "title": "Age Group",
-      "titleColor": {"signal": "colorMain"},
       "labelColor": {"signal": "colorMain"},
       "tickColor": {"signal": "colorMain"},
       "encode": {
@@ -109,9 +115,6 @@
       "orient": "right",
       "scale": "scaleY",
       "title": "Age Group",
-      "titleColor": {"signal": "colorMain"},
-      "labelColor": {"signal": "colorMain"},
-      "tickColor": {"signal": "colorMain"},
       "encode": {
         "labels": {
           "update": {
@@ -133,9 +136,6 @@
       "orient": "bottom",
       "scale": "scaleX",
       "title": "% of Population",
-      "titleColor": {"signal": "colorMain"},
-      "labelColor": {"signal": "colorMain"},
-      "tickColor": {"signal": "colorMain"},
       "encode": {
         "labels": {"update": {"text": {"signal": "abs(datum.value)+'%'"}}}
       }
