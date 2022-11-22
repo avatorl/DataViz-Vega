@@ -1,20 +1,25 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
-  "description": "A basic line chart example.",
-  "width": 600,
+  "description": "Population Pyramid",
+  "usermeta": {
+    "Author": "Andrzej Leszkiewicz",
+    "License": "CC BY 4.0 (Share and Adapt with Attribution)",
+    "Github": "https://github.com/avatorl/Deneb-Vega/",
+    "Original Idea Author": "Jorge Camoes",
+    "Original Idea URL": ""
+  },
+  "width": 1000,
   "height": 800,
   "padding": 5,
   "config": {"background": "black"},
   "signals": [],
   "data": [
     {
-      "name": "dataset",
-      "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/population%20pyramid/Qatar1950-2100Population.csv",
-      "format": {"type": "csv", "parse": "auto", "delimiter": ","},
-      "transform": [
-        {"type": "filter", "expr": "datum.Year<=2050 && datum.AgeGrp<=95"}
-      ]
-    }
+      "name": "dataset-csv",
+      "url": "https://dl.dropboxusercontent.com/s/3vn50z80xksjsf3/data.csv",
+      "format": {"type": "csv", "parse": "auto", "delimiter": ","}
+    },
+    {"name": "dataset", "source": "dataset-csv"}
   ],
   "scales": [
     {
@@ -28,7 +33,10 @@
       "name": "scaleX",
       "type": "linear",
       "range": "width",
-      "domain": [{"signal": "-50"}, {"signal": "50"}]
+      "domain": [
+        {"signal": "-data('dataset')[0]['Max']"},
+        {"signal": "data('dataset')[0]['Max']"}
+      ]
     },
     {
       "name": "color",
@@ -37,7 +45,22 @@
       "domain": {"data": "dataset", "field": "Year"}
     }
   ],
-  "axes": [],
+  "axes": [
+    {
+      "orient": "left",
+      "scale": "scaleY",
+      "labels": true,
+      "labelColor": "orange",
+      "tickCount": 0
+    },
+    {
+      "orient": "bottom",
+      "scale": "scaleX",
+      "labels": true,
+      "labelColor": "orange",
+      "tickCount": 10
+    }
+  ],
   "marks": [
     {
       "type": "group",
@@ -50,7 +73,7 @@
           "from": {"data": "series"},
           "encode": {
             "enter": {
-              "x": {"scale": "scaleX", "signal": "-datum.Female"},
+              "x": {"scale": "scaleX", "signal": "datum.Female"},
               "y": {"scale": "scaleY", "field": "AgeGrp"},
               "stroke": {"scale": "color", "field": "Year"},
               "strokeWidth": {"value": 0.5}
@@ -67,7 +90,7 @@
           "from": {"data": "series"},
           "encode": {
             "enter": {
-              "x": {"scale": "scaleX", "signal": "datum.Male"},
+              "x": {"scale": "scaleX", "signal": "-datum.Male"},
               "y": {"scale": "scaleY", "field": "AgeGrp"},
               "stroke": {"scale": "color", "field": "Year"},
               "strokeWidth": {"value": 0.5}
