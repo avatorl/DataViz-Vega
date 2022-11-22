@@ -8,18 +8,34 @@
     "Original Idea Author": "Jorge Camoes",
     "Original Idea URL": ""
   },
-  "width": 800,
-  "height": 800,
+  "width": 600,
+  "height": 600,
   "padding": 20,
   "config": {"background": "black"},
-  "signals": [{"name": "colorMain", "value": "#E65B15"}],
+  "signals": [
+    {"name": "colorMain", "value": "#E65B15"},
+    {
+      "name": "year",
+      "init": "19500",
+      "on": [
+        {
+          "events": {"type": "timer", "throttle": 100},
+          "update": "(year>=19500&&year<=19509)?year+1:year<21010?year+10:year<=21018?year+1:19500"
+        }
+      ]
+    }
+  ],
   "data": [
     {
       "name": "dataset-csv",
       "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/population-pyramid/Qatar1950-2100Population.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","}
     },
-    {"name": "dataset", "source": "dataset-csv"},
+    {
+      "name": "dataset",
+      "source": "dataset-csv",
+      "transform": [{"type": "filter", "expr": "true"}]
+    },
     {
       "name": "data-max",
       "source": "dataset",
@@ -50,9 +66,10 @@
     },
     {
       "name": "scaleColor",
-      "type": "ordinal",
+      "type": "linear",
       "range": {"scheme": "oranges"},
-      "domain": {"data": "dataset", "field": "Year"}
+      "domain": {"data": "dataset", "field": "Year", "sort": true},
+      "reverse": true
     }
   ],
   "axes": [
