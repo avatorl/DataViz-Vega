@@ -62,7 +62,7 @@
       "title": "Age Group",
       "titleColor": {"signal": "colorMain"},
       "labels": true,
-      "labelFontSize": 8,
+      "labelFontSize": 12,
       "labelColor": {"signal": "colorMain"},
       "domain": false,
       "tickColor": {"signal": "colorMain"},
@@ -89,7 +89,7 @@
       "title": "Age Group",
       "titleColor": {"signal": "colorMain"},
       "labels": true,
-      "labelFontSize": 8,
+      "labelFontSize": 12,
       "labelColor": {"signal": "colorMain"},
       "domain": false,
       "tickColor": {"signal": "colorMain"},
@@ -115,6 +115,7 @@
       "scale": "scaleX",
       "title": "% of Population",
       "titleColor": {"signal": "colorMain"},
+      "labelFontSize": 12,
       "domain": false,
       "labels": true,
       "labelColor": {"signal": "colorMain"},
@@ -137,7 +138,8 @@
       "offset": 10,
       "labelColor": {"signal": "colorMain"},
       "labelAlign": "center",
-      "labelOffset": 10
+      "labelOffset": 10,
+      "labelFontSize": 12
     }
   ],
   "marks": [
