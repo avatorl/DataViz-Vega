@@ -10,16 +10,29 @@
   },
   "width": 800,
   "height": 800,
-  "padding": 5,
+  "padding": 20,
   "config": {"background": "black"},
-  "signals": [],
+  "signals": [{"name": "colorMain", "value": "#E65B15"}],
   "data": [
     {
       "name": "dataset-csv",
       "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/population%20pyramid/Qatar1950-2100Population.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","}
     },
-    {"name": "dataset", "source": "dataset-csv"}
+    {"name": "dataset", "source": "dataset-csv"},
+    {
+      "name": "data-max",
+      "source": "dataset",
+      "transform": [
+        {"type": "aggregate", "fields": ["Max"], "ops": ["max"], "as": ["max"]}
+      ]
+    },
+    {
+      "name": "data-min",
+      "source": "data-max",
+      "transform": [{"type": "formula", "expr": "-datum.max", "as": "max"}]
+    },
+    {"name": "data-range", "source": ["data-max", "data-min"]}
   ],
   "scales": [
     {
@@ -33,10 +46,7 @@
       "name": "scaleX",
       "type": "linear",
       "range": "width",
-      "domain": [
-        {"signal": "-data('dataset')[0]['Max']"},
-        {"signal": "data('dataset')[0]['Max']"}
-      ]
+      "domain": {"data": "data-range", "field": "max"}
     },
     {
       "name": "scaleColor",
@@ -49,24 +59,85 @@
     {
       "orient": "left",
       "scale": "scaleY",
+      "title": "Age Group",
+      "titleColor": {"signal": "colorMain"},
       "labels": true,
-      "labelColor": "orange",
-      "tickCount": 0
+      "labelFontSize": 8,
+      "labelColor": {"signal": "colorMain"},
+      "domain": false,
+      "tickColor": {"signal": "colorMain"},
+      "encode": {
+        "labels": {
+          "update": {
+            "text": {
+              "signal": "(ceil(datum.value/10)==datum.value/10)?datum.label:''"
+            }
+          }
+        },
+        "ticks": {
+          "update": {
+            "strokeWidth": {
+              "signal": "(ceil(datum.value/10)==datum.value/10)?'1':0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "orient": "right",
+      "scale": "scaleY",
+      "title": "Age Group",
+      "titleColor": {"signal": "colorMain"},
+      "labels": true,
+      "labelFontSize": 8,
+      "labelColor": {"signal": "colorMain"},
+      "domain": false,
+      "tickColor": {"signal": "colorMain"},
+      "encode": {
+        "labels": {
+          "update": {
+            "text": {
+              "signal": "(ceil(datum.value/10)==datum.value/10)?datum.label:''"
+            }
+          }
+        },
+        "ticks": {
+          "update": {
+            "strokeWidth": {
+              "signal": "(ceil(datum.value/10)==datum.value/10)?'1':0"
+            }
+          }
+        }
+      }
     },
     {
       "orient": "bottom",
       "scale": "scaleX",
+      "title": "% of Population",
+      "titleColor": {"signal": "colorMain"},
+      "domain": false,
       "labels": true,
-      "labelColor": "orange",
-      "tickCount": 10
+      "labelColor": {"signal": "colorMain"},
+      "tickMinStep": 0.5,
+      "tickColor": {"signal": "colorMain"},
+      "encode": {
+        "labels": {"update": {"text": {"signal": "abs(datum.value)+'%'"}}}
+      }
     }
   ],
   "legends": [
     {
       "type": "gradient",
       "fill": "scaleColor",
-      "orient": "right",
-      "labelColor": "orange"
+      "orient": "left",
+      "title": "Year",
+      "titleColor": {"signal": "colorMain"},
+      "titleFont": "Tahoma",
+      "titleAlign": "center",
+      "offset": 10,
+      "labelColor": {"signal": "colorMain"},
+      "labelAlign": "center",
+      "labelOffset": 10
     }
   ],
   "marks": [
