@@ -39,7 +39,7 @@
       ]
     },
     {
-      "name": "color",
+      "name": "scaleColor",
       "type": "ordinal",
       "range": {"scheme": "oranges"},
       "domain": {"data": "dataset", "field": "Year"}
@@ -61,6 +61,14 @@
       "tickCount": 10
     }
   ],
+  "legends": [
+    {
+      "type": "gradient",
+      "fill": "scaleColor",
+      "orient": "right",
+      "labelColor": "orange"
+    }
+  ],
   "marks": [
     {
       "type": "group",
@@ -75,7 +83,7 @@
             "enter": {
               "x": {"scale": "scaleX", "signal": "datum.Female"},
               "y": {"scale": "scaleY", "field": "AgeGrp"},
-              "stroke": {"scale": "color", "field": "Year"},
+              "stroke": {"scale": "scaleColor", "field": "Year"},
               "strokeWidth": {"value": 0.5}
             },
             "update": {
@@ -92,7 +100,7 @@
             "enter": {
               "x": {"scale": "scaleX", "signal": "-datum.Male"},
               "y": {"scale": "scaleY", "field": "AgeGrp"},
-              "stroke": {"scale": "color", "field": "Year"},
+              "stroke": {"scale": "scaleColor", "field": "Year"},
               "strokeWidth": {"value": 0.5}
             },
             "update": {
