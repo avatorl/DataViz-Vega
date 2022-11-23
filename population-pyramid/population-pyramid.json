@@ -81,7 +81,11 @@
     {
       "orient": "left",
       "scale": "scaleY",
-      "title": "Age Group",
+      "title": "Male Age Group",
+      "titleAngle": 0,
+      "titleAnchor": "end",
+      "titleAlign": "left",
+      "titleY": -15,
       "labelColor": {"signal": "colorMain"},
       "tickColor": {"signal": "colorMain"},
       "encode": {
@@ -104,7 +108,11 @@
     {
       "orient": "right",
       "scale": "scaleY",
-      "title": "Age Group",
+      "title": "Female Age Group",
+      "titleAngle": 0,
+      "titleAnchor": "end",
+      "titleAlign": "right",
+      "titleY": -15,
       "encode": {
         "labels": {
           "update": {
@@ -216,6 +224,7 @@
               "y": {"signal": "height+50"},
               "fill": {"signal": "colorMain"},
               "fillOpacity": {"value": 0.7},
+              "font": {"value": "Tahoma"},
               "fontWeight": {"value": "normal"},
               "fontSize": {"value": 12}
             }
@@ -233,6 +242,7 @@
               "y": {"signal": "height+50"},
               "fill": {"signal": "colorMain"},
               "fillOpacity": {"value": 0.7},
+              "font": {"value": "Tahoma"},
               "fontWeight": {"value": "normal"},
               "fontSize": {"value": 12},
               "href": {
