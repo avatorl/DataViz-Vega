@@ -32,17 +32,7 @@
   },
   "signals": [
     {"name": "colorMain", "value": "#E65B15"},
-    {"name": "opacityMain", "value": 0.8},
-    {
-      "name": "year",
-      "init": "19500",
-      "on": [
-        {
-          "events": {"type": "timer", "throttle": 100},
-          "update": "(year>=19500&&year<=19509)?year+1:year<21010?year+10:year<=21018?year+1:19500"
-        }
-      ]
-    }
+    {"name": "opacityMain", "value": 0.8}
   ],
   "data": [
     {
