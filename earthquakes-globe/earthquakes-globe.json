@@ -2,8 +2,8 @@
   "$schema": "https://vega.github.io/schema/vega/v5.json",
   "description": "An interactive globe depicting earthquake locations and magnitudes.",
   "padding": 10,
-  "width": 450,
-  "height": 450,
+  "width": 600,
+  "height": 600,
   "autosize": "none",
   "background": "black",
   "signals": [
