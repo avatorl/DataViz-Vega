@@ -209,6 +209,50 @@
           }
         }
       ]
+    },
+    {
+      "type": "group",
+      "name": "grpCopyright",
+      "marks": [
+        {
+          "type": "text",
+          "name": "Copyright",
+          "align": "right",
+          "encode": {
+            "enter": {
+              "align": {"value": "right"},
+              "text": {"value": "© Andrzej Leszkiewicz, 2022"},
+              "x": {"signal": "width+50"},
+              "y": {"signal": "height+50"},
+              "fill": {"signal": "colorMain"},
+              "fillOpacity": {"value": 0.7},
+              "fontWeight": {"value": "normal"},
+              "fontSize": {"value": 12}
+            }
+          }
+        },
+        {
+          "type": "text",
+          "name": "DataSource",
+          "align": "left",
+          "encode": {
+            "enter": {
+              "align": {"value": "right"},
+              "text": {"value": "Data Source: UN 🔗"},
+              "x": {"signal": "50"},
+              "y": {"signal": "height+50"},
+              "fill": {"signal": "colorMain"},
+              "fillOpacity": {"value": 0.7},
+              "fontWeight": {"value": "normal"},
+              "fontSize": {"value": 12},
+              "href": {
+                "value": "https://population.un.org/wpp/Download/Standard/CSV/"
+              },
+              "cursor": {"value": "pointer"}
+            }
+          }
+        }
+      ]
     }
   ]
 }
