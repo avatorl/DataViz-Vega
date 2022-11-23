@@ -5,6 +5,7 @@
   "width": 450,
   "height": 450,
   "autosize": "none",
+  "background": "black",
   "signals": [
     {
       "name": "rotate0",
@@ -58,8 +59,9 @@
         "update": {
           "fill": {"value": "#349AE2"},
           "fillOpacity": {"value": 1},
-          "stroke": {"value": "gray"},
-          "strokeWidth": {"value": 1.5}
+          "stroke": {"value": "blue"},
+          "strokeWidth": {"value": 5},
+          "strokeOpacity": {"value": 0.2}
         }
       },
       "transform": [{"type": "geoshape", "projection": "projection"}]
