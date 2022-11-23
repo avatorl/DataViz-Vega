@@ -1,21 +1,26 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
   "description": "An interactive globe depicting earthquake locations and magnitudes.",
-  "padding": 10,
+  "padding": 5,
   "width": 600,
   "height": 600,
-  "autosize": "none",
+  "autosize": "pad",
   "background": "black",
   "signals": [
     {
-      "name": "rotate0",
-      "value": 90,
-      "bind": {"input": "range", "min": -180, "max": 180}
+      "name": "quakeSize",
+      "value": 12,
+      "bind": {"input": "range", "min": 0, "max": 12}
     },
     {
-      "name": "rotate1",
-      "value": -5,
-      "bind": {"input": "range", "min": -180, "max": 180}
+      "name": "rotate",
+      "init": "-180",
+      "on": [
+        {
+          "events": {"type": "timer", "throttle": 100},
+          "update": "rotate<=179?rotate+1:-180"
+        }
+      ]
     }
   ],
   "data": [
@@ -26,8 +31,8 @@
       "format": {"type": "topojson", "feature": "countries"}
     },
     {
-      "name": "earthquakes",
-      "url": "https://wfs.geonet.org.nz/geonet/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=geonet:quake_search_v1&maxFeatures=200&outputFormat=csv",
+      "name": "earthquakes2",
+      "url": "https://wfs.geonet.org.nz/geonet/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=geonet:quake_search_v1&maxFeatures=10000&outputFormat=csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","},
       "transform": [
         {
@@ -45,11 +50,16 @@
       "scale": 225,
       "type": "orthographic",
       "translate": {"signal": "[width/2, height/2]"},
-      "rotate": [{"signal": "rotate0"}, {"signal": "rotate1"}, 0]
+      "rotate": [{"signal": "rotate"}, 0, 0]
     }
   ],
   "scales": [
-    {"name": "size", "type": "sqrt", "domain": [0, 200], "range": [0, 12]}
+    {
+      "name": "size",
+      "type": "sqrt",
+      "domain": [0, 100],
+      "range": [0, {"signal": "quakeSize"}]
+    }
   ],
   "marks": [
     {
@@ -60,8 +70,8 @@
           "fill": {"value": "#349AE2"},
           "fillOpacity": {"value": 1},
           "stroke": {"value": "blue"},
-          "strokeWidth": {"value": 5},
-          "strokeOpacity": {"value": 0.2}
+          "strokeWidth": {"value": 2},
+          "strokeOpacity": {"value": 0.5}
         }
       },
       "transform": [{"type": "geoshape", "projection": "projection"}]
@@ -72,26 +82,26 @@
       "encode": {
         "update": {
           "fill": {"value": "mintcream"},
+          "fillOpacity": {"value": 1},
           "stroke": {"value": "black"},
-          "strokeWidth": {"value": 0.35}
+          "strokeWidth": {"value": 0.1}
         }
       },
       "transform": [{"type": "geoshape", "projection": "projection"}]
     },
     {
-      "name": "cyrcles",
       "type": "symbol",
-      "interactive": true,
-      "from": {"data": "earthquakes"},
+      "shape": "cross",
+      "from": {"data": "earthquakes2"},
       "encode": {
         "update": {
-          "opacity": {"value": 0.1},
-          "fill": {"value": "red"},
-          "x": {"field": "x"},
-          "y": {"field": "y"},
-          "size": {"scale": "size", "field": "magnitude*100"},
-          "shape": {"value": "circle"},
-          "tooltip": {"signal": "datum.publicid"}
+          "xc": {"signal": "datum.x"},
+          "yc": {"signal": "datum.y"},
+          "opacity": {"value": 1},
+          "fill": {"signal": "(abs(rotate)<=90?datum.longitude>(-rotate-90)&&datum.longitude<(-rotate+90)?'red':'black':rotate>90?datum.longitude<(-rotate-90)||datum.longitude>(-rotate+180+90)?'blue':'black':rotate<-90?datum.longitude>(-rotate-90)||datum.longitude<(-rotate-180-90)?'green':'black':'black')"},
+          "size": {
+            "signal": "(abs(rotate)<=90?datum.longitude>(-rotate-90)&&datum.longitude<(-rotate+90)?1:0:rotate>90?datum.longitude<(-rotate-90)||datum.longitude>(-rotate+180+90)?1:0:rotate<-90?datum.longitude>(-rotate-90)||datum.longitude<(-rotate-180-90)?1:0:0)*pow(1.9,datum.magnitude)"
+          }
         }
       }
     }
