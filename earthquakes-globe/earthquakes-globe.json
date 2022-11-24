@@ -8,11 +8,6 @@
   "background": "black",
   "signals": [
     {
-      "name": "quakeSize",
-      "value": 12,
-      "bind": {"input": "range", "min": 0, "max": 12}
-    },
-    {
       "name": "rotate",
       "init": "-180",
       "on": [
@@ -31,14 +26,15 @@
       "format": {"type": "topojson", "feature": "countries"}
     },
     {
-      "name": "earthquakes2",
+      "name": "earthquakes",
       "url": "https://wfs.geonet.org.nz/geonet/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=geonet:quake_search_v1&maxFeatures=10000&outputFormat=csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","},
       "transform": [
+        {"type": "filter", "expr": "datum.magnitude>=2"},
         {
           "type": "geopoint",
           "projection": "projection",
-          "fields": ["longitude", "latitude"],
+          "fields": ["latitude", "longitude"],
           "as": ["x", "y"]
         }
       ]
@@ -54,11 +50,12 @@
     }
   ],
   "scales": [
+    {"name": "size", "type": "sqrt", "domain": [0, 100], "range": [0, 12]},
     {
-      "name": "size",
-      "type": "sqrt",
-      "domain": [0, 100],
-      "range": [0, {"signal": "quakeSize"}]
+      "name": "color",
+      "type": "linear",
+      "domain": {"data": "earthquakes", "field": "magnitude"},
+      "range": {"scheme": "yelloworangered"}
     }
   ],
   "marks": [
@@ -92,15 +89,18 @@
     {
       "type": "symbol",
       "shape": "cross",
-      "from": {"data": "earthquakes2"},
+      "from": {"data": "earthquakes"},
       "encode": {
         "update": {
           "xc": {"signal": "datum.x"},
           "yc": {"signal": "datum.y"},
-          "opacity": {"value": 1},
-          "fill": {"signal": "(abs(rotate)<=90?datum.longitude>(-rotate-90)&&datum.longitude<(-rotate+90)?'red':'black':rotate>90?datum.longitude<(-rotate-90)||datum.longitude>(-rotate+180+90)?'blue':'black':rotate<-90?datum.longitude>(-rotate-90)||datum.longitude<(-rotate-180-90)?'green':'black':'black')"},
+          "strokeOpacity": {"value": 1},
+          "opacity": {"value": 0.5},
+          "fill": {"scale": "color", "field": "magnitude"},
+          "stroke": {"scale": "color", "field": "magnitude"},
+          "strokeWidth": {"value": 2},
           "size": {
-            "signal": "(abs(rotate)<=90?datum.longitude>(-rotate-90)&&datum.longitude<(-rotate+90)?1:0:rotate>90?datum.longitude<(-rotate-90)||datum.longitude>(-rotate+180+90)?1:0:rotate<-90?datum.longitude>(-rotate-90)||datum.longitude<(-rotate-180-90)?1:0:0)*pow(1.9,datum.magnitude)"
+            "signal": "(abs(rotate)<=90?datum.longitude>=(-rotate-90)&&datum.longitude<=(-rotate+90)?1:0:-rotate<-90?datum.longitude<(-rotate-90)||datum.longitude>(-rotate+180+90)||datum.longitude>-rotate?1:0:-rotate>90?datum.longitude>(-rotate-90)||datum.longitude<(-rotate-180-90)?1:0:0)*pow(1.99,datum.magnitude)"
           }
         }
       }
