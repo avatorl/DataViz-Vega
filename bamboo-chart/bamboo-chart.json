@@ -13,94 +13,36 @@
   "height": 30,
   "padding": 5,
   "autosize": "pad",
-  "config": {},
+  "config": {"legends": {"font": "Tahoma", "fontSize": 18}},
   "signals": [
     {"name": "gridColumns", "value": 1},
     {"name": "lineColor", "value": "#AAAAAA"},
     {"name": "lineStrokeWidth", "value": "0.3"},
     {"name": "lineSelectedStrokeWidth", "value": "2"},
-    {
-      "name": "country1",
-      "value": "Norway",
-      "bind": {
-        "input": "select",
-        "options": [
-          "Belgium",
-          "Bulgaria",
-          "Czech_Republic",
-          "Denmark",
-          "Germany",
-          "Estonia",
-          "Ireland",
-          "Greece",
-          "Spain",
-          "France",
-          "Italy",
-          "Cyprus",
-          "Latvia",
-          "Lithuania",
-          "Luxembourg",
-          "Hungary",
-          "Malta",
-          "Netherlands",
-          "Austria",
-          "Poland",
-          "Portugal",
-          "Romania",
-          "Slovenia",
-          "Slovakia",
-          "Finland",
-          "Sweden",
-          "United_Kingdom",
-          "Iceland",
-          "Norway",
-          "Switzerland",
-          "Croatia"
-        ]
-      }
-    },
-    {
-      "name": "country2",
-      "value": "Poland",
-      "bind": {
-        "input": "select",
-        "options": [
-          "Belgium",
-          "Bulgaria",
-          "Czech_Republic",
-          "Denmark",
-          "Germany",
-          "Estonia",
-          "Ireland",
-          "Greece",
-          "Spain",
-          "France",
-          "Italy",
-          "Cyprus",
-          "Latvia",
-          "Lithuania",
-          "Luxembourg",
-          "Hungary",
-          "Malta",
-          "Netherlands",
-          "Austria",
-          "Poland",
-          "Portugal",
-          "Romania",
-          "Slovenia",
-          "Slovakia",
-          "Finland",
-          "Sweden",
-          "United_Kingdom",
-          "Iceland",
-          "Norway",
-          "Switzerland",
-          "Croatia"
-        ]
-      }
-    },
     {"name": "selected1Color", "value": "#377eb8"},
-    {"name": "selected2Color", "value": "#e41a1c"}
+    {"name": "selected2Color", "value": "#e41a1c"},
+    {
+      "name": "max_selected",
+      "value": -1,
+      "on": [
+        {
+          "events": "@legendSymbol:click, @legendLabel:click",
+          "update": "length(data('selected-countries'))==2",
+          "force": true
+        }
+      ]
+    },
+    {
+      "name": "legendItems_clicked",
+      "value": false,
+      "on": [
+        {
+          "events": "@legendSymbol:click,@legendLabel:click",
+          "update": "{country: datum.value}",
+          "force": true
+        }
+      ]
+    }
   ],
   "data": [
     {
@@ -109,7 +51,26 @@
       "format": {"type": "csv", "parse": "auto", "delimiter": ","}
     },
     {"name": "dataset", "source": "dataset-csv"},
-    {"name": "legend", "values": ["blue", "red"]}
+    {
+      "name": "countries",
+      "source": "dataset",
+      "transform": [
+        {
+          "type": "aggregate",
+          "groupby": ["Country"],
+          "fields": ["Country"],
+          "drop": true
+        }
+      ]
+    },
+    {
+      "name": "selected-countries",
+      "values": ["Bulgaria", "Czech_Republic"],
+      "on": [
+        {"trigger": "max_selected", "remove": "true"},
+        {"trigger": "legendItems_clicked", "insert": "legendItems_clicked"}
+      ]
+    }
   ],
   "scales": [
     {
@@ -133,9 +94,8 @@
     },
     {
       "name": "color",
-      "type": "ordinal",
-      "range": ["#377eb8", "#e41a1c"],
-      "domain": {"data": "legend", "field": "data"}
+      "type": "point",
+      "domain": {"data": "countries", "field": "Country"}
     }
   ],
   "title": {
@@ -165,10 +125,11 @@
   "legends": [
     {
       "stroke": "color",
-      "orient": "bottom",
+      "orient": "left",
       "padding": 0,
       "type": "symbol",
       "symbolType": "stroke",
+      "symbolLimit": 50,
       "encode": {
         "symbols": {
           "name": "legendSymbol",
@@ -184,7 +145,9 @@
           "name": "legendLabel",
           "interactive": true,
           "update": {
-            "text": {"signal": "datum.label=='blue'?country1:country2"},
+            "fill": {
+              "signal": "datum.label==data('selected-countries')[0].country?selected1Color:datum.label==data('selected-countries')[1].country?selected2Color:lineColor"
+            },
             "opacity": {"value": 1}
           }
         }
@@ -247,10 +210,10 @@
                     "update": {
                       "opacity": {"value": 1},
                       "strokeWidth": {
-                        "signal": "datum.Country==country1||datum.Country==country2?lineSelectedStrokeWidth:lineStrokeWidth"
+                        "signal": "indata('selected-countries','country',datum.Country)?lineSelectedStrokeWidth:lineStrokeWidth"
                       },
                       "stroke": {
-                        "signal": "datum.Country==country1?selected1Color:datum.Country==country2?selected2Color:lineColor"
+                        "signal": "datum.Country==data('selected-countries')[0].country?length(data('selected-countries'))>1?selected1Color:datum.Country==data('selected-countries')[1].country?selected2Color:lineColor:lineColor"
                       },
                       "defined": {"signal": "true"},
                       "x": {
@@ -270,10 +233,10 @@
                     "update": {
                       "opacity": {"value": 1},
                       "strokeWidth": {
-                        "signal": "datum.Country==country1||datum.Country==country2?lineSelectedStrokeWidth:lineStrokeWidth"
+                        "signal": "indata('selected-countries','country',datum.Country)?lineSelectedStrokeWidth:lineStrokeWidth"
                       },
                       "stroke": {
-                        "signal": "datum.Country==country1?selected1Color:datum.Country==country2?selected2Color:lineColor"
+                        "signal": "datum.Country==data('selected-countries')[0].country?length(data('selected-countries'))>1?selected1Color:datum.Country==data('selected-countries')[1].country?selected2Color:lineColor:lineColor"
                       },
                       "xc": {"scale": "scaleX", "signal": "datum.Total"},
                       "yc": {"scale": "scaleYTotal", "signal": "1"},
