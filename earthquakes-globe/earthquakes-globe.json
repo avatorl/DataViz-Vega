@@ -8,12 +8,12 @@
   "background": "black",
   "signals": [
     {
-      "name": "rotate",
-      "init": "-180",
+      "name": "angle",
+      "init": "0",
       "on": [
         {
           "events": {"type": "timer", "throttle": 100},
-          "update": "rotate<=179?rotate+1:-180"
+          "update": "angle==-179?180:angle-1"
         }
       ]
     }
@@ -46,7 +46,7 @@
       "scale": 225,
       "type": "orthographic",
       "translate": {"signal": "[width/2, height/2]"},
-      "rotate": [{"signal": "rotate"}, 0, 0]
+      "rotate": [{"signal": "-angle"}, 0, 0]
     }
   ],
   "scales": [
@@ -95,12 +95,13 @@
           "xc": {"signal": "datum.x"},
           "yc": {"signal": "datum.y"},
           "strokeOpacity": {"value": 1},
+          
           "opacity": {"value": 0.5},
           "fill": {"scale": "color", "field": "magnitude"},
           "stroke": {"scale": "color", "field": "magnitude"},
           "strokeWidth": {"value": 2},
           "size": {
-            "signal": "(abs(rotate)<=90?datum.longitude>=(-rotate-90)&&datum.longitude<=(-rotate+90)?1:0:-rotate<-90?datum.longitude<(-rotate-90)||datum.longitude>(-rotate+180+90)||datum.longitude>-rotate?1:0:-rotate>90?datum.longitude>(-rotate-90)||datum.longitude<(-rotate-180-90)?1:0:0)*pow(1.99,datum.magnitude)"
+            "signal": "(datum.longitude+360>angle-90+360&&datum.longitude<angle+90+360?1:1)*pow(2,datum.magnitude)"
           }
         }
       }
