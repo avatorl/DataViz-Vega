@@ -5,17 +5,12 @@
   "width": 600,
   "height": 600,
   "autosize": "pad",
-  "background": "black",
+  "background": "#000022",
   "signals": [
     {
-      "name": "angle",
+      "name": "Angle",
       "init": "0",
-      "on": [
-        {
-          "events": {"type": "timer", "throttle": 100},
-          "update": "angle==-179?180:angle-1"
-        }
-      ]
+      "on": [{"events": "timer{200}", "update": "Angle==-180?180:Angle-2"}]
     }
   ],
   "data": [
@@ -27,14 +22,13 @@
     },
     {
       "name": "earthquakes",
-      "url": "https://wfs.geonet.org.nz/geonet/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=geonet:quake_search_v1&maxFeatures=10000&outputFormat=csv",
+      "url": "https://wfs.geonet.org.nz/geonet/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=geonet:quake_search_v1&maxFeatures=1000&outputFormat=csv&cql_filter=magnitude>3",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","},
       "transform": [
-        {"type": "filter", "expr": "datum.magnitude>=2"},
         {
           "type": "geopoint",
           "projection": "projection",
-          "fields": ["latitude", "longitude"],
+          "fields": ["longitude", "latitude"],
           "as": ["x", "y"]
         }
       ]
@@ -46,11 +40,10 @@
       "scale": 225,
       "type": "orthographic",
       "translate": {"signal": "[width/2, height/2]"},
-      "rotate": [{"signal": "-angle"}, 0, 0]
+      "rotate": [{"signal": "-Angle"}, 0, 0]
     }
   ],
   "scales": [
-    {"name": "size", "type": "sqrt", "domain": [0, 100], "range": [0, 12]},
     {
       "name": "color",
       "type": "linear",
@@ -88,20 +81,19 @@
     },
     {
       "type": "symbol",
-      "shape": "cross",
+      "shape": "circle",
       "from": {"data": "earthquakes"},
       "encode": {
         "update": {
           "xc": {"signal": "datum.x"},
           "yc": {"signal": "datum.y"},
           "strokeOpacity": {"value": 1},
-          
           "opacity": {"value": 0.5},
           "fill": {"scale": "color", "field": "magnitude"},
           "stroke": {"scale": "color", "field": "magnitude"},
-          "strokeWidth": {"value": 2},
+          "strokeWidth": {"value": 1},
           "size": {
-            "signal": "(datum.longitude+360>angle-90+360&&datum.longitude<angle+90+360?1:1)*pow(2,datum.magnitude)"
+            "signal": "(abs(Angle)<=90?datum.longitude>=(Angle-90)&&datum.longitude<=(Angle+90)?1:0:Angle<-90?datum.longitude>(Angle-90+360)||datum.longitude<(Angle+90)?1:0:Angle>90?datum.longitude>(Angle-90)||datum.longitude<(Angle-180-90)?1:0:0)*exp(datum.magnitude)/4"
           }
         }
       }
