@@ -9,7 +9,7 @@
   "data": [
     {
       "name": "dataset-csv",
-      "url": "https://dl.dropboxusercontent.com/s/hgwhrxrfxcgevjo/horse.csv",
+      "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/not-a-chart-just-a-horse/horse.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","}
     },
     {"name": "dataset", "source": "dataset-csv"}
