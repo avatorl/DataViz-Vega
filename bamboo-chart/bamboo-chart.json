@@ -1,11 +1,11 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
-  "description": "Bamboo chart (by Jorge Camoes)",
+  "description": "Reproduction of the Bamboo chart (initially designed by Jorge Camoes)",
   "usermeta": {
     "Author": "Andrzej Leszkiewicz",
     "License": "CC BY 4.0 (Share and Adapt with Attribution)",
     "Github": "https://github.com/avatorl/Deneb-Vega/",
-    "Original Idea Author": "Jorge Camoes",
+    "Original Idea Author": "Jorge Camões",
     "Original Idea URL": "https://excelcharts.com/bamboo-charts-people-at-risk-of-poverty-or-social-exclusion/"
   },
   "background": "white",
@@ -108,7 +108,8 @@
       "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/bamboo-chart/risk-poverty-dataset-full.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","}
     },
-    {"name": "dataset", "source": "dataset-csv"}
+    {"name": "dataset", "source": "dataset-csv"},
+    {"name": "legend", "values": ["blue", "red"]}
   ],
   "scales": [
     {
@@ -129,18 +130,21 @@
       "type": "point",
       "domain": [1, 2],
       "range": [0, {"signal": "height"}]
+    },
+    {
+      "name": "color",
+      "type": "ordinal",
+      "range": ["#377eb8", "#e41a1c"],
+      "domain": {"data": "legend", "field": "data"}
     }
   ],
   "title": {
-    "text": {"signal": "'Bamboo chart (by Jorge Camoes)'"},
-    "subtitle": "People at risk of poverty or social exclusion",
+    "text": {"signal": "'People at risk of poverty or social exclusion'"},
+    "dy": -10,
     "anchor": "start",
     "font": {"value": "Tahoma"},
-    "subtitleFont": {"value": "Tahoma"},
     "fontSize": {"value": 16},
-    "subtitleFontSize": {"value": 12},
-    "fontWeight": "lighter",
-    "subtitlePadding": 10
+    "fontWeight": "lighter"
   },
   "axes": [
     {
@@ -158,7 +162,35 @@
       "titlePadding": -5
     }
   ],
-  "legends": [],
+  "legends": [
+    {
+      "stroke": "color",
+      "orient": "bottom",
+      "padding": 0,
+      "type": "symbol",
+      "symbolType": "stroke",
+      "encode": {
+        "symbols": {
+          "name": "legendSymbol",
+          "interactive": true,
+          "update": {
+            "angle": {"value": 90},
+            "strokeWidth": {"value": 3},
+            "opacity": {"value": 1},
+            "size": {"value": 128}
+          }
+        },
+        "labels": {
+          "name": "legendLabel",
+          "interactive": true,
+          "update": {
+            "text": {"signal": "datum.label=='blue'?country1:country2"},
+            "opacity": {"value": 1}
+          }
+        }
+      }
+    }
+  ],
   "marks": [
     {
       "type": "group",
