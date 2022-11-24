@@ -1,0 +1,33 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "SVG drawing",
+  "usermeta": {"SVG source": "https://freesvg.org/horse-line-art"},
+  "width": 200,
+  "height": 200,
+  "padding": 5,
+  "signals": [],
+  "data": [
+    {
+      "name": "dataset-csv",
+      "url": "https://dl.dropboxusercontent.com/s/hgwhrxrfxcgevjo/horse.csv",
+      "format": {"type": "csv", "parse": "auto", "delimiter": ","}
+    },
+    {"name": "dataset", "source": "dataset-csv"}
+  ],
+  "marks": [
+    {
+      "type": "path",
+      "from": {"data": "dataset"},
+      "encode": {
+        "enter": {"fill": {"value": "black"}, "stroke": {"value": "#black"}},
+        "update": {
+          "x": {"signal": "0"},
+          "y": {"signal": "0"},
+          "path": {"signal": "datum.path"},
+          "opacity": {"value": 1},
+          "strokeWidth": {"signal": "datum.width"}
+        }
+      }
+    }
+  ]
+}
