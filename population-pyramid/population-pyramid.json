@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
-  "description": "Population Pyramid",
+  "description": "Reproduction of the chart initially designed by Jorge Camões",
   "usermeta": {
     "Author": "Andrzej Leszkiewicz",
     "License": "CC BY 4.0 (Share and Adapt with Attribution)",
@@ -162,8 +162,10 @@
     "fontSize": 18,
     "text": {"signal": "'Qatar Population Pyramid, 1950-2100'"},
     "color": {"signal": "colorMain"},
-    "subtitle": " ",
-    "subtitlePadding": 5
+    "subtitle": "Reproduction of the chart initially designed by Jorge Camões",
+    "subtitleColor": {"signal": "colorMain"},
+    "subtitlePadding": 5,
+    "dy": -10
   },
   "marks": [
     {
