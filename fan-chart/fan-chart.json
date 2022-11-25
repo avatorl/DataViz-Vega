@@ -130,8 +130,8 @@
                       "encode": {
                         "enter": {
                           "stroke": {"scale": "color", "field": "age"},
-                          "strokeWidth": {"value": 1.5},
-                          "strokeOpacity": {"value": 1},
+                          "strokeWidth": {"value": 1.4},
+                          "strokeOpacity": {"value": 0.9},
                           "x": {"signal": "radius"},
                           "y": {"signal": "radius"},
                           "x2": {
