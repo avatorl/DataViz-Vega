@@ -8,59 +8,187 @@
     "Original Idea Author": "Jorge Camões",
     "Original Idea URL": "https://www.wisevis.com/part-whole-proportions-fan-chart/"
   },
-  "width": 500,
-  "height": 500,
-  "autosize": "none",
-  "signals": [],
+  "width": 200,
+  "height": 200,
+  "autosize": "pad",
+  "background": "white",
+  "signals": [
+    {"name": "radius", "update": "width/2"},
+    {"name": "gridColumns", "value": "4"}
+  ],
   "data": [
     {
       "name": "dataset-csv",
-      "url": "https://dl.dropboxusercontent.com/s/yq96fge9j2y2zdu/data-asia.csv",
+      "url": "https://dl.dropboxusercontent.com/s/yvdhu3t1qqd7xyr/data-population.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","}
     },
     {
       "name": "dataset",
       "source": "dataset-csv",
       "transform": [{"type": "filter", "expr": "true"}]
-    }
+    },
+    {"name": "squares", "values": [1, 2, 3, 4]}
   ],
   "scales": [
     {
-      "name": "angular",
-      "type": "linear",
-      "range": {"signal": "[PI, -PI]"},
-      "domain": [0, 1],
-      "domainMin": 0,
-      "domainMax": 1
-    },
-    {
       "name": "color",
       "type": "ordinal",
-      "domain": {"data": "dataset", "field": "age"},
-      "range": {"scheme": "category20"}
+      "domain": ["Adults", "Children", "Eldery"],
+      "range": ["#1f77b4", "#ff7f0e", "#2ca02c"]
     }
   ],
-  "marks": [
-    {
-      "type": "rule",
-      "from": {"data": "dataset"},
-      "encode": {
-        "enter": {
-          "stroke": {"scale": "color", "field": "age"},
-          "strokeWidth": {"value": 1},
-          "strokeOpacity": {"value": 1},
-          "x": {"signal": "width/2"},
-          "y": {"signal": "height/2"},
-          "x2": {
-            "signal": " width/2 * cos(scale('angular', datum.age_percent))"
-          },
-          "y2": {
-            "signal": "width/2 * sin(scale('angular', datum.age_percent))"
-          },
-          "tooltip": {"signal": "datum.age_percent"}
-        },
-        "update": {}
+  "title": {
+    "anchor": "start",
+    "font": {"value": "Tahoma"},
+    "fontSize": {"value": 20},
+    "fontWeight": "bold",
+    "dy": -10,
+    "encode": {
+      "title": {
+        "update": {
+          "text": {"signal": "'Age Structure of World Population'"},
+          "fill": {"signal": "'black'"}
+        }
       }
     }
-  ]
+  },
+  "marks": [
+    {
+      "type": "group",
+      "layout": {
+        "align": "all",
+        "bounds": "full",
+        "columns": {"signal": "1"},
+        "padding": 10
+      },
+      "marks": [
+        {
+          "type": "group",
+          "from": {
+            "facet": {
+              "name": "series_region",
+              "data": "dataset",
+              "groupby": "region"
+            }
+          },
+          "title": {
+            "text": {"signal": "data('series_region')[0]['region']"},
+            "anchor": "start",
+            "color": {"signal": "'#333333'"},
+            "fontSize": 20,
+            "fontWeight": "lighter",
+            "dy": 0,
+            "offset": 0,
+            "align": "left",
+            "encode": {
+              "title": {
+                "update": {
+                  "stroke": {"value": "#333333"},
+                  "strokeWidth": {"value": "1"}
+                }
+              }
+            }
+          },
+          "marks": [
+            {
+              "type": "group",
+              "layout": {
+                "align": "all",
+                "bounds": "full",
+                "columns": {"signal": "gridColumns"},
+                "padding": 10
+              },
+              "marks": [
+                {
+                  "type": "group",
+                  "from": {
+                    "facet": {
+                      "name": "series_year_region",
+                      "data": "series_region",
+                      "groupby": "year"
+                    }
+                  },
+                  "title": {
+                    "text": {"signal": "data('series_year_region')[0]['year']"},
+                    "color": {"signal": "'gray'"},
+                    "fontSize": 20,
+                    "dy": 35,
+                    "encode": {
+                      "title": {
+                        "update": {
+                          "stroke": {"value": "#CCCCCC"},
+                          "strokeWidth": {"value": "0.1"}
+                        }
+                      }
+                    }
+                  },
+                  "marks": [
+                    {
+                      "type": "rule",
+                      "zindex": 1,
+                      "from": {"data": "series_year_region"},
+                      "encode": {
+                        "enter": {
+                          "stroke": {"scale": "color", "field": "age"},
+                          "strokeWidth": {"value": 1.5},
+                          "strokeOpacity": {"value": 1},
+                          "x": {"signal": "radius"},
+                          "y": {"signal": "radius"},
+                          "x2": {
+                            "signal": "radius + radius*pow(datum.population/1000000,1/10)*cos((datum.age_percent-.25)*2*PI)"
+                          },
+                          "y2": {
+                            "signal": "radius + radius*pow(datum.population/1000000,1/10)*sin((datum.age_percent-.25)*2*PI)"
+                          },
+                          "tooltip": {
+                            "signal": "datum.country+', '+datum.age+': '+datum.age_percent*100+'%'"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "type": "group",
+                      "marks": [
+                        {
+                          "type": "rect",
+                          "from": {"data": "squares"},
+                          "zindex": 0,
+                          "encode": {
+                            "enter": {
+                              "x": {"signal": "datum.data<=2?0:radius"},
+                              "y": {
+                                "signal": "datum.data==2||datum.data==4?0:radius"
+                              },
+                              "width": {"signal": "radius"},
+                              "height": {"signal": "radius"},
+                              "strokeWidth": {"signal": "0"},
+                              "fill": {
+                                "value": {
+                                  "x1": 1,
+                                  "y1": 1,
+                                  "x2": 0,
+                                  "y2": 0,
+                                  "gradient": "linear",
+                                  "stops": [
+                                    {"offset": 0, "color": "white"},
+                                    {"offset": 1, "color": "brown"}
+                                  ]
+                                }
+                              },
+                              "fillOpacity": {"value": 0.1}
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "config": {}
 }
