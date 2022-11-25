@@ -62,12 +62,16 @@
           "ops": ["min"],
           "as": ["Total"],
           "drop": true
-        }
+        },
+        {"type": "collect", "sort": {"field": "Country"}}
       ]
     },
     {
       "name": "selected-countries",
-      "values": [{"country": "Bulgaria"}, {"country": "Czech Republic"}],
+      "values": [
+        {"country": "Bulgaria", "total": 41.6},
+        {"country": "Czech Republic", "total": 14.4}
+      ],
       "on": [
         {
           "trigger": "legendItem_clicked",
@@ -147,6 +151,7 @@
       "titleFont": "Tahoma",
       "titleFontSize": 12,
       "titleColor": "#333333",
+      "titlePadding": 10,
       "padding": 30,
       "type": "symbol",
       "symbolSize": 0,
@@ -159,7 +164,8 @@
             "cursor": {"value": "pointer"},
             "fontSize": {"value": 13},
             "dy": {"value": 5},
-            "opacity": {"value": 1}
+            "opacity": {"value": 1},
+            "align": {"value": "left"}
           },
           "update": {
             "fill": {
