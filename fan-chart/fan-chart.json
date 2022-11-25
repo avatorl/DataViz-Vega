@@ -52,7 +52,9 @@
           "fill": {"signal": "'black'"}
         }
       }
-    }
+    },
+    "subtitle": "Reproduction of the 'fan chart' initially designed by Jorge Camões",
+    "subtitlePadding": 10
   },
   "marks": [
     {
