@@ -1,0 +1,2833 @@
+﻿region,country,year,age,age_percent,population
+Africa,Algeria,1960,Adults,0.51,5825
+Africa,Angola,1960,Adults,0.55,2931
+Africa,Benin,1960,Adults,0.56,1396
+Africa,Botswana,1960,Adults,0.50,259
+Africa,Burkina Faso,1960,Adults,0.57,2746
+Africa,Burundi,1960,Adults,0.52,1428
+Africa,Cabo Verde,1960,Adults,0.52,109
+Africa,Cameroon,1960,Adults,0.57,2925
+Africa,Central African Republic,1960,Adults,0.56,938
+Africa,Chad,1960,Adults,0.55,1679
+Africa,Comoros,1960,Adults,0.55,107
+Africa,Congo,1960,Adults,0.54,572
+Africa,Côte d'Ivoire,1960,Adults,0.55,2022
+Africa,Democratic Republic of the Congo,1960,Adults,0.54,8255
+Africa,Djibouti,1960,Adults,0.53,46
+Africa,Egypt,1960,Adults,0.54,14644
+Africa,Equatorial Guinea,1960,Adults,0.56,150
+Africa,Eritrea,1960,Adults,0.55,545
+Africa,Eswatini,1960,Adults,0.50,172
+Africa,Ethiopia,1960,Adults,0.54,11827
+Africa,Gabon,1960,Adults,0.61,313
+Africa,Gambia,1960,Adults,0.56,225
+Africa,Ghana,1960,Adults,0.52,3598
+Africa,Guinea,1960,Adults,0.57,1992
+Africa,Guinea-Bissau,1960,Adults,0.58,338
+Africa,Kenya,1960,Adults,0.48,3725
+Africa,Lesotho,1960,Adults,0.50,372
+Africa,Liberia,1960,Adults,0.56,642
+Africa,Libya,1960,Adults,0.54,769
+Africa,Madagascar,1960,Adults,0.52,2628
+Africa,Malawi,1960,Adults,0.54,1961
+Africa,Mali,1960,Adults,0.57,3043
+Africa,Mauritania,1960,Adults,0.55,458
+Africa,Mauritius,1960,Adults,0.52,349
+Africa,Mayotte,1960,Adults,0.52,13
+Africa,Morocco,1960,Adults,0.52,6087
+Africa,Mozambique,1960,Adults,0.55,3737
+Africa,Namibia,1960,Adults,0.53,313
+Africa,Niger,1960,Adults,0.50,1751
+Africa,Nigeria,1960,Adults,0.56,25011
+Africa,Réunion,1960,Adults,0.50,184
+Africa,Rwanda,1960,Adults,0.49,1442
+Africa,Saint Helena,1960,Adults,0.25,1
+Africa,Sao Tome and Principe,1960,Adults,0.64,43
+Africa,Senegal,1960,Adults,0.54,1755
+Africa,Seychelles,1960,Adults,0.57,24
+Africa,Sierra Leone,1960,Adults,0.58,1327
+Africa,Somalia,1960,Adults,0.53,1509
+Africa,South Africa,1960,Adults,0.54,8948
+Africa,South Sudan,1960,Adults,0.55,1615
+Africa,Sudan,1960,Adults,0.51,4231
+Africa,Togo,1960,Adults,0.53,870
+Africa,Tunisia,1960,Adults,0.53,2232
+Africa,Uganda,1960,Adults,0.51,3913
+Africa,United Republic of Tanzania,1960,Adults,0.52,5236
+Africa,Western Sahara,1960,Adults,0.65,20
+Africa,Zambia,1960,Adults,0.51,1597
+Africa,Zimbabwe,1960,Adults,0.49,1879
+Africa,Algeria,1960,Children,0.46,5212
+Africa,Angola,1960,Children,0.42,2262
+Africa,Benin,1960,Children,0.38,966
+Africa,Botswana,1960,Children,0.45,232
+Africa,Burkina Faso,1960,Children,0.40,1909
+Africa,Burundi,1960,Children,0.45,1231
+Africa,Cabo Verde,1960,Children,0.44,91
+Africa,Cameroon,1960,Children,0.39,1998
+Africa,Central African Republic,1960,Children,0.40,670
+Africa,Chad,1960,Children,0.41,1229
+Africa,Comoros,1960,Children,0.41,80
+Africa,Congo,1960,Children,0.42,449
+Africa,Côte d'Ivoire,1960,Children,0.43,1599
+Africa,Democratic Republic of the Congo,1960,Children,0.43,6560
+Africa,Djibouti,1960,Children,0.44,38
+Africa,Egypt,1960,Children,0.42,11391
+Africa,Equatorial Guinea,1960,Children,0.39,104
+Africa,Eritrea,1960,Children,0.42,420
+Africa,Eswatini,1960,Children,0.47,163
+Africa,Ethiopia,1960,Children,0.43,9297
+Africa,Gabon,1960,Children,0.31,161
+Africa,Gambia,1960,Children,0.41,164
+Africa,Ghana,1960,Children,0.45,3109
+Africa,Guinea,1960,Children,0.39,1368
+Africa,Guinea-Bissau,1960,Children,0.38,218
+Africa,Kenya,1960,Children,0.49,3781
+Africa,Lesotho,1960,Children,0.45,333
+Africa,Liberia,1960,Children,0.41,462
+Africa,Libya,1960,Children,0.42,595
+Africa,Madagascar,1960,Children,0.45,2276
+Africa,Malawi,1960,Children,0.43,1553
+Africa,Mali,1960,Children,0.41,2166
+Africa,Mauritania,1960,Children,0.43,362
+Africa,Mauritius,1960,Children,0.46,309
+Africa,Mayotte,1960,Children,0.48,12
+Africa,Morocco,1960,Children,0.45,5356
+Africa,Mozambique,1960,Children,0.42,2853
+Africa,Namibia,1960,Children,0.43,252
+Africa,Niger,1960,Children,0.49,1709
+Africa,Nigeria,1960,Children,0.41,18423
+Africa,Réunion,1960,Children,0.46,170
+Africa,Rwanda,1960,Children,0.48,1432
+Africa,Saint Helena,1960,Children,0.75,3
+Africa,Sao Tome and Principe,1960,Children,0.33,22
+Africa,Senegal,1960,Children,0.44,1424
+Africa,Seychelles,1960,Children,0.38,16
+Africa,Sierra Leone,1960,Children,0.38,886
+Africa,Somalia,1960,Children,0.44,1273
+Africa,South Africa,1960,Children,0.42,7013
+Africa,South Sudan,1960,Children,0.41,1205
+Africa,Sudan,1960,Children,0.46,3851
+Africa,Togo,1960,Children,0.44,723
+Africa,Tunisia,1960,Children,0.44,1829
+Africa,Uganda,1960,Children,0.47,3545
+Africa,United Republic of Tanzania,1960,Children,0.45,4569
+Africa,Western Sahara,1960,Children,0.35,11
+Africa,Zambia,1960,Children,0.46,1439
+Africa,Zimbabwe,1960,Children,0.47,1801
+Africa,Algeria,1960,Eldery,0.03,358
+Africa,Angola,1960,Eldery,0.03,165
+Africa,Benin,1960,Eldery,0.06,150
+Africa,Botswana,1960,Eldery,0.04,23
+Africa,Burkina Faso,1960,Eldery,0.03,127
+Africa,Burundi,1960,Eldery,0.03,87
+Africa,Cabo Verde,1960,Eldery,0.04,9
+Africa,Cameroon,1960,Eldery,0.04,195
+Africa,Central African Republic,1960,Eldery,0.04,72
+Africa,Chad,1960,Eldery,0.04,120
+Africa,Comoros,1960,Eldery,0.04,7
+Africa,Congo,1960,Eldery,0.03,37
+Africa,Côte d'Ivoire,1960,Eldery,0.02,88
+Africa,Democratic Republic of the Congo,1960,Eldery,0.03,461
+Africa,Djibouti,1960,Eldery,0.02,2
+Africa,Egypt,1960,Eldery,0.04,1002
+Africa,Equatorial Guinea,1960,Eldery,0.05,13
+Africa,Eritrea,1960,Eldery,0.03,28
+Africa,Eswatini,1960,Eldery,0.03,10
+Africa,Ethiopia,1960,Eldery,0.03,616
+Africa,Gabon,1960,Eldery,0.08,39
+Africa,Gambia,1960,Eldery,0.03,11
+Africa,Ghana,1960,Eldery,0.03,204
+Africa,Guinea,1960,Eldery,0.04,158
+Africa,Guinea-Bissau,1960,Eldery,0.04,23
+Africa,Kenya,1960,Eldery,0.03,243
+Africa,Lesotho,1960,Eldery,0.04,32
+Africa,Liberia,1960,Eldery,0.03,34
+Africa,Libya,1960,Eldery,0.04,64
+Africa,Madagascar,1960,Eldery,0.03,169
+Africa,Malawi,1960,Eldery,0.03,107
+Africa,Mali,1960,Eldery,0.03,139
+Africa,Mauritania,1960,Eldery,0.02,19
+Africa,Mauritius,1960,Eldery,0.03,19
+Africa,Mayotte,1960,Eldery,0.00,0
+Africa,Morocco,1960,Eldery,0.03,329
+Africa,Mozambique,1960,Eldery,0.03,198
+Africa,Namibia,1960,Eldery,0.04,25
+Africa,Niger,1960,Eldery,0.01,40
+Africa,Nigeria,1960,Eldery,0.03,1494
+Africa,Réunion,1960,Eldery,0.03,12
+Africa,Rwanda,1960,Eldery,0.03,93
+Africa,Saint Helena,1960,Eldery,0.00,0
+Africa,Sao Tome and Principe,1960,Eldery,0.03,2
+Africa,Senegal,1960,Eldery,0.03,94
+Africa,Seychelles,1960,Eldery,0.05,2
+Africa,Sierra Leone,1960,Eldery,0.04,89
+Africa,Somalia,1960,Eldery,0.03,91
+Africa,South Africa,1960,Eldery,0.03,558
+Africa,South Sudan,1960,Eldery,0.03,90
+Africa,Sudan,1960,Eldery,0.03,244
+Africa,Togo,1960,Eldery,0.04,58
+Africa,Tunisia,1960,Eldery,0.03,133
+Africa,Uganda,1960,Eldery,0.02,161
+Africa,United Republic of Tanzania,1960,Eldery,0.02,239
+Africa,Western Sahara,1960,Eldery,0.00,0
+Africa,Zambia,1960,Eldery,0.03,84
+Africa,Zimbabwe,1960,Eldery,0.03,127
+Africa,Algeria,1980,Adults,0.50,9455
+Africa,Angola,1980,Adults,0.52,4307
+Africa,Benin,1980,Adults,0.51,1951
+Africa,Botswana,1980,Adults,0.50,471
+Africa,Burkina Faso,1980,Adults,0.52,3598
+Africa,Burundi,1980,Adults,0.52,2231
+Africa,Cabo Verde,1980,Adults,0.48,152
+Africa,Cameroon,1980,Adults,0.51,4381
+Africa,Central African Republic,1980,Adults,0.53,1273
+Africa,Chad,1980,Adults,0.50,2190
+Africa,Comoros,1980,Adults,0.50,165
+Africa,Congo,1980,Adults,0.51,934
+Africa,Côte d'Ivoire,1980,Adults,0.53,4360
+Africa,Democratic Republic of the Congo,1980,Adults,0.53,14121
+Africa,Djibouti,1980,Adults,0.52,168
+Africa,Egypt,1980,Adults,0.55,23857
+Africa,Equatorial Guinea,1980,Adults,0.54,152
+Africa,Eritrea,1980,Adults,0.53,876
+Africa,Eswatini,1980,Adults,0.48,286
+Africa,Ethiopia,1980,Adults,0.51,17968
+Africa,Gabon,1980,Adults,0.54,401
+Africa,Gambia,1980,Adults,0.52,376
+Africa,Ghana,1980,Adults,0.52,6142
+Africa,Guinea,1980,Adults,0.54,2663
+Africa,Guinea-Bissau,1980,Adults,0.50,414
+Africa,Kenya,1980,Adults,0.46,7473
+Africa,Lesotho,1980,Adults,0.54,759
+Africa,Liberia,1980,Adults,0.53,1018
+Africa,Libya,1980,Adults,0.50,1492
+Africa,Madagascar,1980,Adults,0.49,4423
+Africa,Malawi,1980,Adults,0.52,3237
+Africa,Mali,1980,Adults,0.53,3884
+Africa,Mauritania,1980,Adults,0.51,771
+Africa,Mauritius,1980,Adults,0.62,592
+Africa,Mayotte,1980,Adults,0.47,25
+Africa,Morocco,1980,Adults,0.53,10437
+Africa,Mozambique,1980,Adults,0.52,5933
+Africa,Namibia,1980,Adults,0.49,481
+Africa,Niger,1980,Adults,0.51,3146
+Africa,Nigeria,1980,Adults,0.53,38513
+Africa,Réunion,1980,Adults,0.58,319
+Africa,Rwanda,1980,Adults,0.51,2670
+Africa,Saint Helena,1980,Adults,0.40,2
+Africa,Sao Tome and Principe,1980,Adults,0.51,50
+Africa,Senegal,1980,Adults,0.51,2921
+Africa,Seychelles,1980,Adults,0.58,37
+Africa,Sierra Leone,1980,Adults,0.54,1807
+Africa,Somalia,1980,Adults,0.52,3081
+Africa,South Africa,1980,Adults,0.57,16689
+Africa,South Sudan,1980,Adults,0.53,2215
+Africa,Sudan,1980,Adults,0.50,8405
+Africa,Togo,1980,Adults,0.51,1455
+Africa,Tunisia,1980,Adults,0.54,3554
+Africa,Uganda,1980,Adults,0.49,6516
+Africa,United Republic of Tanzania,1980,Adults,0.50,9693
+Africa,Western Sahara,1980,Adults,0.60,69
+Africa,Zambia,1980,Adults,0.47,2701
+Africa,Zimbabwe,1980,Adults,0.47,3305
+Africa,Algeria,1980,Children,0.46,8697
+Africa,Angola,1980,Children,0.46,3823
+Africa,Benin,1980,Children,0.45,1715
+Africa,Botswana,1980,Children,0.47,440
+Africa,Burkina Faso,1980,Children,0.45,3089
+Africa,Burundi,1980,Children,0.45,1942
+Africa,Cabo Verde,1980,Children,0.47,148
+Africa,Cameroon,1980,Children,0.45,3814
+Africa,Central African Republic,1980,Children,0.44,1051
+Africa,Chad,1980,Children,0.47,2055
+Africa,Comoros,1980,Children,0.45,149
+Africa,Congo,1980,Children,0.46,835
+Africa,Côte d'Ivoire,1980,Children,0.45,3735
+Africa,Democratic Republic of the Congo,1980,Children,0.44,11828
+Africa,Djibouti,1980,Children,0.45,146
+Africa,Egypt,1980,Children,0.41,18047
+Africa,Equatorial Guinea,1980,Children,0.42,119
+Africa,Eritrea,1980,Children,0.45,741
+Africa,Eswatini,1980,Children,0.49,296
+Africa,Ethiopia,1980,Children,0.46,15986
+Africa,Gabon,1980,Children,0.40,297
+Africa,Gambia,1980,Children,0.44,317
+Africa,Ghana,1980,Children,0.46,5414
+Africa,Guinea,1980,Children,0.42,2102
+Africa,Guinea-Bissau,1980,Children,0.45,376
+Africa,Kenya,1980,Children,0.52,8385
+Africa,Lesotho,1980,Children,0.42,596
+Africa,Liberia,1980,Children,0.45,865
+Africa,Libya,1980,Children,0.47,1392
+Africa,Madagascar,1980,Children,0.47,4225
+Africa,Malawi,1980,Children,0.45,2840
+Africa,Mali,1980,Children,0.44,3231
+Africa,Mauritania,1980,Children,0.46,692
+Africa,Mauritius,1980,Children,0.34,323
+Africa,Mayotte,1980,Children,0.51,27
+Africa,Morocco,1980,Children,0.44,8714
+Africa,Mozambique,1980,Children,0.45,5159
+Africa,Namibia,1980,Children,0.47,458
+Africa,Niger,1980,Children,0.47,2911
+Africa,Nigeria,1980,Children,0.44,32098
+Africa,Réunion,1980,Children,0.38,206
+Africa,Rwanda,1980,Children,0.47,2445
+Africa,Saint Helena,1980,Children,0.60,3
+Africa,Sao Tome and Principe,1980,Children,0.45,44
+Africa,Senegal,1980,Children,0.46,2622
+Africa,Seychelles,1980,Children,0.38,24
+Africa,Sierra Leone,1980,Children,0.42,1423
+Africa,Somalia,1980,Children,0.44,2614
+Africa,South Africa,1980,Children,0.39,11638
+Africa,South Sudan,1980,Children,0.45,1872
+Africa,Sudan,1980,Children,0.47,7861
+Africa,Togo,1980,Children,0.46,1302
+Africa,Tunisia,1980,Children,0.42,2778
+Africa,Uganda,1980,Children,0.48,6388
+Africa,United Republic of Tanzania,1980,Children,0.47,9053
+Africa,Western Sahara,1980,Children,0.37,43
+Africa,Zambia,1980,Children,0.50,2854
+Africa,Zimbabwe,1980,Children,0.50,3505
+Africa,Algeria,1980,Eldery,0.03,588
+Africa,Angola,1980,Eldery,0.02,202
+Africa,Benin,1980,Eldery,0.04,168
+Africa,Botswana,1980,Eldery,0.03,26
+Africa,Burkina Faso,1980,Eldery,0.04,245
+Africa,Burundi,1980,Eldery,0.03,139
+Africa,Cabo Verde,1980,Eldery,0.05,15
+Africa,Cameroon,1980,Eldery,0.04,326
+Africa,Central African Republic,1980,Eldery,0.04,91
+Africa,Chad,1980,Eldery,0.04,164
+Africa,Comoros,1980,Eldery,0.04,14
+Africa,Congo,1980,Eldery,0.03,60
+Africa,Côte d'Ivoire,1980,Eldery,0.03,209
+Africa,Democratic Republic of the Congo,1980,Eldery,0.03,758
+Africa,Djibouti,1980,Eldery,0.03,9
+Africa,Egypt,1980,Eldery,0.04,1847
+Africa,Equatorial Guinea,1980,Eldery,0.04,11
+Africa,Eritrea,1980,Eldery,0.03,42
+Africa,Eswatini,1980,Eldery,0.03,16
+Africa,Ethiopia,1980,Eldery,0.03,994
+Africa,Gabon,1980,Eldery,0.07,50
+Africa,Gambia,1980,Eldery,0.04,26
+Africa,Ghana,1980,Eldery,0.03,309
+Africa,Guinea,1980,Eldery,0.04,207
+Africa,Guinea-Bissau,1980,Eldery,0.05,39
+Africa,Kenya,1980,Eldery,0.02,327
+Africa,Lesotho,1980,Eldery,0.04,52
+Africa,Liberia,1980,Eldery,0.03,51
+Africa,Libya,1980,Eldery,0.03,80
+Africa,Madagascar,1980,Eldery,0.03,299
+Africa,Malawi,1980,Eldery,0.03,189
+Africa,Mali,1980,Eldery,0.03,258
+Africa,Mauritania,1980,Eldery,0.03,44
+Africa,Mauritius,1980,Eldery,0.04,40
+Africa,Mayotte,1980,Eldery,0.02,1
+Africa,Morocco,1980,Eldery,0.03,528
+Africa,Mozambique,1980,Eldery,0.03,320
+Africa,Namibia,1980,Eldery,0.04,38
+Africa,Niger,1980,Eldery,0.02,117
+Africa,Nigeria,1980,Eldery,0.03,2341
+Africa,Réunion,1980,Eldery,0.04,24
+Africa,Rwanda,1980,Eldery,0.03,132
+Africa,Saint Helena,1980,Eldery,0.00,0
+Africa,Sao Tome and Principe,1980,Eldery,0.04,4
+Africa,Senegal,1980,Eldery,0.03,161
+Africa,Seychelles,1980,Eldery,0.05,3
+Africa,Sierra Leone,1980,Eldery,0.04,137
+Africa,Somalia,1980,Eldery,0.03,198
+Africa,South Africa,1980,Eldery,0.04,1137
+Africa,South Sudan,1980,Eldery,0.03,105
+Africa,Sudan,1980,Eldery,0.02,408
+Africa,Togo,1980,Eldery,0.03,83
+Africa,Tunisia,1980,Eldery,0.04,245
+Africa,Uganda,1980,Eldery,0.03,380
+Africa,United Republic of Tanzania,1980,Eldery,0.03,551
+Africa,Western Sahara,1980,Eldery,0.03,3
+Africa,Zambia,1980,Eldery,0.03,164
+Africa,Zimbabwe,1980,Eldery,0.03,240
+Africa,Algeria,2000,Adults,0.62,19055
+Africa,Angola,2000,Adults,0.51,8383
+Africa,Benin,2000,Adults,0.52,3608
+Africa,Botswana,2000,Adults,0.58,996
+Africa,Burkina Faso,2000,Adults,0.50,5999
+Africa,Burundi,2000,Adults,0.49,3113
+Africa,Cabo Verde,2000,Adults,0.53,243
+Africa,Cameroon,2000,Adults,0.51,7764
+Africa,Central African Republic,2000,Adults,0.52,1961
+Africa,Chad,2000,Adults,0.48,3998
+Africa,Comoros,2000,Adults,0.50,268
+Africa,Congo,2000,Adults,0.54,1700
+Africa,Côte d'Ivoire,2000,Adults,0.52,8808
+Africa,Democratic Republic of the Congo,2000,Adults,0.51,24759
+Africa,Djibouti,2000,Adults,0.57,427
+Africa,Egypt,2000,Adults,0.58,41746
+Africa,Equatorial Guinea,2000,Adults,0.54,371
+Africa,Eritrea,2000,Adults,0.52,1243
+Africa,Eswatini,2000,Adults,0.53,551
+Africa,Ethiopia,2000,Adults,0.50,33381
+Africa,Gabon,2000,Adults,0.54,691
+Africa,Gambia,2000,Adults,0.51,729
+Africa,Ghana,2000,Adults,0.55,10723
+Africa,Guinea,2000,Adults,0.51,4245
+Africa,Guinea-Bissau,2000,Adults,0.52,638
+Africa,Kenya,2000,Adults,0.52,16028
+Africa,Lesotho,2000,Adults,0.56,1126
+Africa,Liberia,2000,Adults,0.54,1579
+Africa,Libya,2000,Adults,0.63,3238
+Africa,Madagascar,2000,Adults,0.52,8434
+Africa,Malawi,2000,Adults,0.51,5725
+Africa,Mali,2000,Adults,0.50,5649
+Africa,Mauritania,2000,Adults,0.53,1427
+Africa,Mauritius,2000,Adults,0.68,827
+Africa,Mayotte,2000,Adults,0.53,84
+Africa,Morocco,2000,Adults,0.62,17600
+Africa,Mozambique,2000,Adults,0.53,9385
+Africa,Namibia,2000,Adults,0.55,1003
+Africa,Niger,2000,Adults,0.51,5876
+Africa,Nigeria,2000,Adults,0.54,65738
+Africa,Réunion,2000,Adults,0.64,504
+Africa,Rwanda,2000,Adults,0.52,4178
+Africa,Saint Helena,2000,Adults,1.00,1
+Africa,Sao Tome and Principe,2000,Adults,0.53,75
+Africa,Senegal,2000,Adults,0.53,5103
+Africa,Seychelles,2000,Adults,0.66,52
+Africa,Sierra Leone,2000,Adults,0.53,2414
+Africa,Somalia,2000,Adults,0.50,4382
+Africa,South Africa,2000,Adults,0.61,28370
+Africa,South Sudan,2000,Adults,0.50,3082
+Africa,Sudan,2000,Adults,0.53,13812
+Africa,Togo,2000,Adults,0.54,2718
+Africa,Tunisia,2000,Adults,0.64,6372
+Africa,Uganda,2000,Adults,0.47,11359
+Africa,United Republic of Tanzania,2000,Adults,0.53,18110
+Africa,Western Sahara,2000,Adults,0.65,173
+Africa,Zambia,2000,Adults,0.49,4884
+Africa,Zimbabwe,2000,Adults,0.55,6500
+Africa,Algeria,2000,Children,0.34,10414
+Africa,Angola,2000,Children,0.46,7614
+Africa,Benin,2000,Children,0.45,3161
+Africa,Botswana,2000,Children,0.39,675
+Africa,Burkina Faso,2000,Children,0.47,5534
+Africa,Burundi,2000,Children,0.48,3041
+Africa,Cabo Verde,2000,Children,0.42,194
+Africa,Cameroon,2000,Children,0.45,6828
+Africa,Central African Republic,2000,Children,0.46,1719
+Africa,Chad,2000,Children,0.49,4028
+Africa,Comoros,2000,Children,0.46,246
+Africa,Congo,2000,Children,0.43,1339
+Africa,Côte d'Ivoire,2000,Children,0.45,7555
+Africa,Democratic Republic of the Congo,2000,Children,0.46,22423
+Africa,Djibouti,2000,Children,0.39,292
+Africa,Egypt,2000,Children,0.37,26430
+Africa,Equatorial Guinea,2000,Children,0.43,293
+Africa,Eritrea,2000,Children,0.45,1077
+Africa,Eswatini,2000,Children,0.44,455
+Africa,Ethiopia,2000,Children,0.48,31886
+Africa,Gabon,2000,Children,0.41,521
+Africa,Gambia,2000,Children,0.46,659
+Africa,Ghana,2000,Children,0.42,8315
+Africa,Guinea,2000,Children,0.45,3758
+Africa,Guinea-Bissau,2000,Children,0.45,549
+Africa,Kenya,2000,Children,0.46,14145
+Africa,Lesotho,2000,Children,0.39,783
+Africa,Liberia,2000,Children,0.42,1226
+Africa,Libya,2000,Children,0.34,1728
+Africa,Madagascar,2000,Children,0.45,7324
+Africa,Malawi,2000,Children,0.45,5092
+Africa,Mali,2000,Children,0.47,5234
+Africa,Mauritania,2000,Children,0.44,1186
+Africa,Mauritius,2000,Children,0.26,312
+Africa,Mayotte,2000,Children,0.45,71
+Africa,Morocco,2000,Children,0.34,9729
+Africa,Mozambique,2000,Children,0.44,7882
+Africa,Namibia,2000,Children,0.42,758
+Africa,Niger,2000,Children,0.47,5488
+Africa,Nigeria,2000,Children,0.43,53293
+Africa,Réunion,2000,Children,0.29,228
+Africa,Rwanda,2000,Children,0.46,3738
+Africa,Saint Helena,2000,Children,0.00,0
+Africa,Sao Tome and Principe,2000,Children,0.43,61
+Africa,Senegal,2000,Children,0.44,4283
+Africa,Seychelles,2000,Children,0.28,22
+Africa,Sierra Leone,2000,Children,0.44,2012
+Africa,Somalia,2000,Children,0.47,4112
+Africa,South Africa,2000,Children,0.35,16498
+Africa,South Sudan,2000,Children,0.47,2882
+Africa,Sudan,2000,Children,0.45,11827
+Africa,Togo,2000,Children,0.43,2149
+Africa,Tunisia,2000,Children,0.30,2982
+Africa,Uganda,2000,Children,0.50,12125
+Africa,United Republic of Tanzania,2000,Children,0.45,15393
+Africa,Western Sahara,2000,Children,0.33,88
+Africa,Zambia,2000,Children,0.48,4789
+Africa,Zimbabwe,2000,Children,0.42,4971
+Africa,Algeria,2000,Eldery,0.04,1307
+Africa,Angola,2000,Eldery,0.02,396
+Africa,Benin,2000,Eldery,0.03,230
+Africa,Botswana,2000,Eldery,0.03,57
+Africa,Burkina Faso,2000,Eldery,0.03,349
+Africa,Burundi,2000,Eldery,0.02,152
+Africa,Cabo Verde,2000,Eldery,0.05,21
+Africa,Cameroon,2000,Eldery,0.03,501
+Africa,Central African Republic,2000,Eldery,0.02,79
+Africa,Chad,2000,Eldery,0.03,231
+Africa,Comoros,2000,Eldery,0.04,21
+Africa,Congo,2000,Eldery,0.03,95
+Africa,Côte d'Ivoire,2000,Eldery,0.03,437
+Africa,Democratic Republic of the Congo,2000,Eldery,0.03,1436
+Africa,Djibouti,2000,Eldery,0.03,24
+Africa,Egypt,2000,Eldery,0.04,3194
+Africa,Equatorial Guinea,2000,Eldery,0.03,22
+Africa,Eritrea,2000,Eldery,0.03,75
+Africa,Eswatini,2000,Eldery,0.02,24
+Africa,Ethiopia,2000,Eldery,0.03,1766
+Africa,Gabon,2000,Eldery,0.05,62
+Africa,Gambia,2000,Eldery,0.04,52
+Africa,Ghana,2000,Eldery,0.03,629
+Africa,Guinea,2000,Eldery,0.04,335
+Africa,Guinea-Bissau,2000,Eldery,0.04,44
+Africa,Kenya,2000,Eldery,0.02,681
+Africa,Lesotho,2000,Eldery,0.04,88
+Africa,Liberia,2000,Eldery,0.03,93
+Africa,Libya,2000,Eldery,0.04,187
+Africa,Madagascar,2000,Eldery,0.03,458
+Africa,Malawi,2000,Eldery,0.04,414
+Africa,Mali,2000,Eldery,0.03,355
+Africa,Mauritania,2000,Eldery,0.03,81
+Africa,Mauritius,2000,Eldery,0.06,74
+Africa,Mayotte,2000,Eldery,0.02,3
+Africa,Morocco,2000,Eldery,0.04,1227
+Africa,Mozambique,2000,Eldery,0.03,500
+Africa,Namibia,2000,Eldery,0.03,58
+Africa,Niger,2000,Eldery,0.02,261
+Africa,Nigeria,2000,Eldery,0.03,3823
+Africa,Réunion,2000,Eldery,0.07,53
+Africa,Rwanda,2000,Eldery,0.02,194
+Africa,Saint Helena,2000,Eldery,0.00,0
+Africa,Sao Tome and Principe,2000,Eldery,0.04,6
+Africa,Senegal,2000,Eldery,0.03,319
+Africa,Seychelles,2000,Eldery,0.06,5
+Africa,Sierra Leone,2000,Eldery,0.03,157
+Africa,Somalia,2000,Eldery,0.03,228
+Africa,South Africa,2000,Eldery,0.04,1947
+Africa,South Sudan,2000,Eldery,0.02,150
+Africa,Sudan,2000,Eldery,0.03,660
+Africa,Togo,2000,Eldery,0.03,141
+Africa,Tunisia,2000,Eldery,0.05,540
+Africa,Uganda,2000,Eldery,0.02,537
+Africa,United Republic of Tanzania,2000,Eldery,0.03,959
+Africa,Western Sahara,2000,Eldery,0.03,7
+Africa,Zambia,2000,Eldery,0.02,220
+Africa,Zimbabwe,2000,Eldery,0.03,364
+Africa,Algeria,2020,Adults,0.63,27520
+Africa,Angola,2020,Adults,0.52,17419
+Africa,Benin,2020,Adults,0.54,6853
+Africa,Botswana,2020,Adults,0.63,1610
+Africa,Burkina Faso,2020,Adults,0.53,11407
+Africa,Burundi,2020,Adults,0.51,6210
+Africa,Cabo Verde,2020,Adults,0.68,396
+Africa,Cameroon,2020,Adults,0.55,14475
+Africa,Central African Republic,2020,Adults,0.49,2635
+Africa,Chad,2020,Adults,0.50,8347
+Africa,Comoros,2020,Adults,0.57,462
+Africa,Congo,2020,Adults,0.56,3175
+Africa,Côte d'Ivoire,2020,Adults,0.55,14875
+Africa,Democratic Republic of the Congo,2020,Adults,0.51,46893
+Africa,Djibouti,2020,Adults,0.64,702
+Africa,Egypt,2020,Adults,0.62,66717
+Africa,Equatorial Guinea,2020,Adults,0.58,926
+Africa,Eritrea,2020,Adults,0.56,1976
+Africa,Eswatini,2020,Adults,0.61,717
+Africa,Ethiopia,2020,Adults,0.57,66281
+Africa,Gabon,2020,Adults,0.60,1365
+Africa,Gambia,2020,Adults,0.54,1380
+Africa,Ghana,2020,Adults,0.59,18991
+Africa,Guinea,2020,Adults,0.55,7197
+Africa,Guinea-Bissau,2020,Adults,0.56,1132
+Africa,Kenya,2020,Adults,0.58,30269
+Africa,Lesotho,2020,Adults,0.62,1389
+Africa,Liberia,2020,Adults,0.55,2808
+Africa,Libya,2020,Adults,0.66,4377
+Africa,Madagascar,2020,Adults,0.57,16099
+Africa,Malawi,2020,Adults,0.53,10362
+Africa,Mali,2020,Adults,0.50,10589
+Africa,Mauritania,2020,Adults,0.54,2444
+Africa,Mauritius,2020,Adults,0.71,924
+Africa,Mayotte,2020,Adults,0.52,159
+Africa,Morocco,2020,Adults,0.66,24125
+Africa,Mozambique,2020,Adults,0.54,16692
+Africa,Namibia,2020,Adults,0.60,1488
+Africa,Niger,2020,Adults,0.49,11830
+Africa,Nigeria,2020,Adults,0.53,111447
+Africa,Réunion,2020,Adults,0.64,615
+Africa,Rwanda,2020,Adults,0.58,7568
+Africa,Saint Helena,2020,Adults,,0
+Africa,Sao Tome and Principe,2020,Adults,0.56,122
+Africa,Senegal,2020,Adults,0.55,9001
+Africa,Seychelles,2020,Adults,0.69,72
+Africa,Sierra Leone,2020,Adults,0.57,4697
+Africa,Somalia,2020,Adults,0.50,8274
+Africa,South Africa,2020,Adults,0.65,38374
+Africa,South Sudan,2020,Adults,0.52,5483
+Africa,Sudan,2020,Adults,0.55,24657
+Africa,Togo,2020,Adults,0.56,4765
+Africa,Tunisia,2020,Adults,0.66,8084
+Africa,Uganda,2020,Adults,0.53,23386
+Africa,United Republic of Tanzania,2020,Adults,0.53,32701
+Africa,Western Sahara,2020,Adults,0.70,388
+Africa,Zambia,2020,Adults,0.55,10333
+Africa,Zimbabwe,2020,Adults,0.55,8689
+Africa,Algeria,2020,Children,0.31,13316
+Africa,Angola,2020,Children,0.45,15146
+Africa,Benin,2020,Children,0.43,5401
+Africa,Botswana,2020,Children,0.33,844
+Africa,Burkina Faso,2020,Children,0.44,9564
+Africa,Burundi,2020,Children,0.47,5710
+Africa,Cabo Verde,2020,Children,0.27,158
+Africa,Cameroon,2020,Children,0.43,11292
+Africa,Central African Republic,2020,Children,0.48,2576
+Africa,Chad,2020,Children,0.48,7959
+Africa,Comoros,2020,Children,0.38,310
+Africa,Congo,2020,Children,0.42,2376
+Africa,Côte d'Ivoire,2020,Children,0.42,11290
+Africa,Democratic Republic of the Congo,2020,Children,0.46,43171
+Africa,Djibouti,2020,Children,0.31,340
+Africa,Egypt,2020,Children,0.33,35690
+Africa,Equatorial Guinea,2020,Children,0.39,620
+Africa,Eritrea,2020,Children,0.40,1437
+Africa,Eswatini,2020,Children,0.35,418
+Africa,Ethiopia,2020,Children,0.40,47244
+Africa,Gabon,2020,Children,0.37,838
+Africa,Gambia,2020,Children,0.44,1131
+Africa,Ghana,2020,Children,0.38,12094
+Africa,Guinea,2020,Children,0.42,5560
+Africa,Guinea-Bissau,2020,Children,0.41,826
+Africa,Kenya,2020,Children,0.39,20261
+Africa,Lesotho,2020,Children,0.34,772
+Africa,Liberia,2020,Children,0.41,2109
+Africa,Libya,2020,Children,0.29,1956
+Africa,Madagascar,2020,Children,0.40,11211
+Africa,Malawi,2020,Children,0.44,8473
+Africa,Mali,2020,Children,0.48,10104
+Africa,Mauritania,2020,Children,0.42,1906
+Africa,Mauritius,2020,Children,0.17,220
+Africa,Mayotte,2020,Children,0.45,136
+Africa,Morocco,2020,Children,0.27,9939
+Africa,Mozambique,2020,Children,0.44,13676
+Africa,Namibia,2020,Children,0.36,901
+Africa,Niger,2020,Children,0.49,11911
+Africa,Nigeria,2020,Children,0.44,90626
+Africa,Réunion,2020,Children,0.23,225
+Africa,Rwanda,2020,Children,0.39,5171
+Africa,Saint Helena,2020,Children,,0
+Africa,Sao Tome and Principe,2020,Children,0.40,88
+Africa,Senegal,2020,Children,0.42,6914
+Africa,Seychelles,2020,Children,0.24,25
+Africa,Sierra Leone,2020,Children,0.40,3276
+Africa,Somalia,2020,Children,0.47,7829
+Africa,South Africa,2020,Children,0.29,16899
+Africa,South Sudan,2020,Children,0.45,4826
+Africa,Sudan,2020,Children,0.41,18299
+Africa,Togo,2020,Children,0.40,3419
+Africa,Tunisia,2020,Children,0.25,3035
+Africa,Uganda,2020,Children,0.46,20280
+Africa,United Republic of Tanzania,2020,Children,0.44,27074
+Africa,Western Sahara,2020,Children,0.25,138
+Africa,Zambia,2020,Children,0.44,8267
+Africa,Zimbabwe,2020,Children,0.41,6449
+Africa,Algeria,2020,Eldery,0.06,2614
+Africa,Angola,2020,Eldery,0.03,865
+Africa,Benin,2020,Eldery,0.03,391
+Africa,Botswana,2020,Eldery,0.04,90
+Africa,Burkina Faso,2020,Eldery,0.03,552
+Africa,Burundi,2020,Eldery,0.02,301
+Africa,Cabo Verde,2020,Eldery,0.05,31
+Africa,Cameroon,2020,Eldery,0.03,725
+Africa,Central African Republic,2020,Eldery,0.02,133
+Africa,Chad,2020,Eldery,0.02,338
+Africa,Comoros,2020,Eldery,0.04,35
+Africa,Congo,2020,Eldery,0.03,151
+Africa,Côte d'Ivoire,2020,Eldery,0.02,646
+Africa,Democratic Republic of the Congo,2020,Eldery,0.03,2786
+Africa,Djibouti,2020,Eldery,0.04,48
+Africa,Egypt,2020,Eldery,0.05,5060
+Africa,Equatorial Guinea,2020,Eldery,0.03,51
+Africa,Eritrea,2020,Eldery,0.04,142
+Africa,Eswatini,2020,Eldery,0.04,45
+Africa,Ethiopia,2020,Eldery,0.03,3667
+Africa,Gabon,2020,Eldery,0.04,89
+Africa,Gambia,2020,Eldery,0.02,63
+Africa,Ghana,2020,Eldery,0.03,1096
+Africa,Guinea,2020,Eldery,0.03,448
+Africa,Guinea-Bissau,2020,Eldery,0.03,57
+Africa,Kenya,2020,Eldery,0.03,1458
+Africa,Lesotho,2020,Eldery,0.04,96
+Africa,Liberia,2020,Eldery,0.03,172
+Africa,Libya,2020,Eldery,0.05,319
+Africa,Madagascar,2020,Eldery,0.03,916
+Africa,Malawi,2020,Eldery,0.03,541
+Africa,Mali,2020,Eldery,0.02,530
+Africa,Mauritania,2020,Eldery,0.03,149
+Africa,Mauritius,2020,Eldery,0.12,154
+Africa,Mayotte,2020,Eldery,0.03,8
+Africa,Morocco,2020,Eldery,0.07,2624
+Africa,Mozambique,2020,Eldery,0.03,810
+Africa,Namibia,2020,Eldery,0.04,100
+Africa,Niger,2020,Eldery,0.02,591
+Africa,Nigeria,2020,Eldery,0.03,6255
+Africa,Réunion,2020,Eldery,0.12,119
+Africa,Rwanda,2020,Eldery,0.03,408
+Africa,Saint Helena,2020,Eldery,,0
+Africa,Sao Tome and Principe,2020,Eldery,0.04,8
+Africa,Senegal,2020,Eldery,0.03,521
+Africa,Seychelles,2020,Eldery,0.08,8
+Africa,Sierra Leone,2020,Eldery,0.03,258
+Africa,Somalia,2020,Eldery,0.03,432
+Africa,South Africa,2020,Eldery,0.06,3529
+Africa,South Sudan,2020,Eldery,0.03,298
+Africa,Sudan,2020,Eldery,0.03,1484
+Africa,Togo,2020,Eldery,0.03,259
+Africa,Tunisia,2020,Eldery,0.09,1043
+Africa,Uganda,2020,Eldery,0.02,740
+Africa,United Republic of Tanzania,2020,Eldery,0.03,1931
+Africa,Western Sahara,2020,Eldery,0.05,30
+Africa,Zambia,2020,Eldery,0.02,328
+Africa,Zimbabwe,2020,Eldery,0.03,530
+America,Anguilla,1960,Adults,0.25,1
+America,Antigua and Barbuda,1960,Adults,0.55,31
+America,Argentina,1960,Adults,0.64,12966
+America,Aruba,1960,Adults,0.55,30
+America,Bahamas,1960,Adults,0.55,63
+America,Barbados,1960,Adults,0.57,134
+America,Belize,1960,Adults,0.51,47
+America,Bermuda,1960,Adults,0.61,25
+America,Bolivia (Plurinational State of),1960,Adults,0.54,2012
+America,"Bonaire, Sint Eustatius and Saba",1960,Adults,0.25,1
+America,Brazil,1960,Adults,0.53,38947
+America,British Virgin Islands,1960,Adults,0.40,2
+America,Canada,1960,Adults,0.59,10495
+America,Cayman Islands,1960,Adults,0.57,4
+America,Chile,1960,Adults,0.57,4649
+America,Colombia,1960,Adults,0.50,7864
+America,Costa Rica,1960,Adults,0.51,689
+America,Cuba,1960,Adults,0.60,4343
+America,Curaçao,1960,Adults,0.54,70
+America,Dominica,1960,Adults,0.50,30
+America,Dominican Republic,1960,Adults,0.49,1618
+America,Ecuador,1960,Adults,0.51,2370
+America,El Salvador,1960,Adults,0.51,1419
+America,Falkland Islands (Malvinas),1960,Adults,,0
+America,French Guiana,1960,Adults,0.57,17
+America,Greenland,1960,Adults,0.58,18
+America,Grenada,1960,Adults,0.47,44
+America,Guadeloupe,1960,Adults,0.52,145
+America,Guatemala,1960,Adults,0.51,2095
+America,Guyana,1960,Adults,0.50,283
+America,Haiti,1960,Adults,0.57,2209
+America,Honduras,1960,Adults,0.50,1037
+America,Jamaica,1960,Adults,0.54,892
+America,Martinique,1960,Adults,0.51,149
+America,Mexico,1960,Adults,0.51,18327
+America,Montserrat,1960,Adults,0.45,5
+America,Nicaragua,1960,Adults,0.50,888
+America,Panama,1960,Adults,0.52,589
+America,Paraguay,1960,Adults,0.49,933
+America,Peru,1960,Adults,0.52,5326
+America,Puerto Rico,1960,Adults,0.53,1242
+America,Saint Barthélemy,1960,Adults,,0
+America,Saint Kitts and Nevis,1960,Adults,0.50,29
+America,Saint Lucia,1960,Adults,0.49,46
+America,Saint Martin (French part),1960,Adults,0.00,0
+America,Saint Pierre and Miquelon,1960,Adults,0.00,0
+America,Saint Vincent and the Grenadines,1960,Adults,0.47,40
+America,Sint Maarten (Dutch part),1960,Adults,,0
+America,Suriname,1960,Adults,0.50,133
+America,Trinidad and Tobago,1960,Adults,0.53,452
+America,Turks and Caicos Islands,1960,Adults,0.00,0
+America,United States of America,1960,Adults,0.60,105632
+America,United States Virgin Islands,1960,Adults,0.56,18
+America,Uruguay,1960,Adults,0.64,1624
+America,Venezuela (Bolivarian Republic of),1960,Adults,0.51,4147
+America,Anguilla,1960,Children,0.75,3
+America,Antigua and Barbuda,1960,Children,0.41,23
+America,Argentina,1960,Children,0.31,6332
+America,Aruba,1960,Children,0.44,24
+America,Bahamas,1960,Children,0.41,47
+America,Barbados,1960,Children,0.38,88
+America,Belize,1960,Children,0.45,41
+America,Bermuda,1960,Children,0.34,14
+America,Bolivia (Plurinational State of),1960,Children,0.41,1513
+America,"Bonaire, Sint Eustatius and Saba",1960,Children,0.75,3
+America,Brazil,1960,Children,0.44,32225
+America,British Virgin Islands,1960,Children,0.60,3
+America,Canada,1960,Children,0.34,6041
+America,Cayman Islands,1960,Children,0.43,3
+America,Chile,1960,Children,0.40,3224
+America,Colombia,1960,Children,0.47,7340
+America,Costa Rica,1960,Children,0.46,616
+America,Cuba,1960,Children,0.36,2607
+America,Curaçao,1960,Children,0.42,54
+America,Dominica,1960,Children,0.45,27
+America,Dominican Republic,1960,Children,0.48,1594
+America,Ecuador,1960,Children,0.44,2036
+America,El Salvador,1960,Children,0.46,1270
+America,Falkland Islands (Malvinas),1960,Children,,0
+America,French Guiana,1960,Children,0.37,11
+America,Greenland,1960,Children,0.42,13
+America,Grenada,1960,Children,0.48,45
+America,Guadeloupe,1960,Children,0.43,120
+America,Guatemala,1960,Children,0.46,1904
+America,Guyana,1960,Children,0.47,269
+America,Haiti,1960,Children,0.40,1566
+America,Honduras,1960,Children,0.47,974
+America,Jamaica,1960,Children,0.41,680
+America,Martinique,1960,Children,0.44,129
+America,Mexico,1960,Children,0.47,16886
+America,Montserrat,1960,Children,0.55,6
+America,Nicaragua,1960,Children,0.48,858
+America,Panama,1960,Children,0.44,495
+America,Paraguay,1960,Children,0.47,890
+America,Peru,1960,Children,0.44,4472
+America,Puerto Rico,1960,Children,0.42,1002
+America,Saint Barthélemy,1960,Children,,0
+America,Saint Kitts and Nevis,1960,Children,0.45,26
+America,Saint Lucia,1960,Children,0.46,43
+America,Saint Martin (French part),1960,Children,1.00,2
+America,Saint Pierre and Miquelon,1960,Children,1.00,3
+America,Saint Vincent and the Grenadines,1960,Children,0.49,42
+America,Sint Maarten (Dutch part),1960,Children,,0
+America,Suriname,1960,Children,0.46,124
+America,Trinidad and Tobago,1960,Children,0.43,368
+America,Turks and Caicos Islands,1960,Children,1.00,3
+America,United States of America,1960,Children,0.31,54292
+America,United States Virgin Islands,1960,Children,0.38,12
+America,Uruguay,1960,Children,0.28,696
+America,Venezuela (Bolivarian Republic of),1960,Children,0.47,3823
+America,Anguilla,1960,Eldery,0.00,0
+America,Antigua and Barbuda,1960,Eldery,0.04,2
+America,Argentina,1960,Eldery,0.05,1053
+America,Aruba,1960,Eldery,0.02,1
+America,Bahamas,1960,Eldery,0.04,4
+America,Barbados,1960,Eldery,0.05,12
+America,Belize,1960,Eldery,0.04,4
+America,Bermuda,1960,Eldery,0.05,2
+America,Bolivia (Plurinational State of),1960,Eldery,0.05,184
+America,"Bonaire, Sint Eustatius and Saba",1960,Eldery,0.00,0
+America,Brazil,1960,Eldery,0.03,1923
+America,British Virgin Islands,1960,Eldery,0.00,0
+America,Canada,1960,Eldery,0.08,1374
+America,Cayman Islands,1960,Eldery,0.00,0
+America,Chile,1960,Eldery,0.03,270
+America,Colombia,1960,Eldery,0.03,483
+America,Costa Rica,1960,Eldery,0.03,40
+America,Cuba,1960,Eldery,0.04,318
+America,Curaçao,1960,Eldery,0.05,6
+America,Dominica,1960,Eldery,0.05,3
+America,Dominican Republic,1960,Eldery,0.03,85
+America,Ecuador,1960,Eldery,0.05,213
+America,El Salvador,1960,Eldery,0.03,90
+America,Falkland Islands (Malvinas),1960,Eldery,,0
+America,French Guiana,1960,Eldery,0.07,2
+America,Greenland,1960,Eldery,0.00,0
+America,Grenada,1960,Eldery,0.05,5
+America,Guadeloupe,1960,Eldery,0.05,13
+America,Guatemala,1960,Eldery,0.02,98
+America,Guyana,1960,Eldery,0.03,19
+America,Haiti,1960,Eldery,0.03,128
+America,Honduras,1960,Eldery,0.03,68
+America,Jamaica,1960,Eldery,0.04,70
+America,Martinique,1960,Eldery,0.04,13
+America,Mexico,1960,Eldery,0.03,1057
+America,Montserrat,1960,Eldery,0.00,0
+America,Nicaragua,1960,Eldery,0.02,44
+America,Panama,1960,Eldery,0.04,40
+America,Paraguay,1960,Eldery,0.04,71
+America,Peru,1960,Eldery,0.04,375
+America,Puerto Rico,1960,Eldery,0.05,120
+America,Saint Barthélemy,1960,Eldery,,0
+America,Saint Kitts and Nevis,1960,Eldery,0.05,3
+America,Saint Lucia,1960,Eldery,0.04,4
+America,Saint Martin (French part),1960,Eldery,0.00,0
+America,Saint Pierre and Miquelon,1960,Eldery,0.00,0
+America,Saint Vincent and the Grenadines,1960,Eldery,0.04,3
+America,Sint Maarten (Dutch part),1960,Eldery,,0
+America,Suriname,1960,Eldery,0.04,10
+America,Trinidad and Tobago,1960,Eldery,0.03,26
+America,Turks and Caicos Islands,1960,Eldery,0.00,0
+America,United States of America,1960,Eldery,0.09,16261
+America,United States Virgin Islands,1960,Eldery,0.06,2
+America,Uruguay,1960,Eldery,0.08,208
+America,Venezuela (Bolivarian Republic of),1960,Eldery,0.02,186
+America,Anguilla,1980,Adults,0.40,2
+America,Antigua and Barbuda,1980,Adults,0.59,38
+America,Argentina,1980,Adults,0.62,17277
+America,Aruba,1980,Adults,0.65,41
+America,Bahamas,1980,Adults,0.60,136
+America,Barbados,1980,Adults,0.62,155
+America,Belize,1980,Adults,0.50,72
+America,Bermuda,1980,Adults,0.70,37
+America,Bolivia (Plurinational State of),1980,Adults,0.55,3148
+America,"Bonaire, Sint Eustatius and Saba",1980,Adults,0.70,7
+America,Brazil,1980,Adults,0.58,70666
+America,British Virgin Islands,1980,Adults,0.63,5
+America,Canada,1980,Adults,0.68,16626
+America,Cayman Islands,1980,Adults,0.71,12
+America,Chile,1980,Adults,0.62,7105
+America,Colombia,1980,Adults,0.56,14756
+America,Costa Rica,1980,Adults,0.59,1419
+America,Cuba,1980,Adults,0.61,5961
+America,Curaçao,1980,Adults,0.63,99
+America,Dominica,1980,Adults,0.51,37
+America,Dominican Republic,1980,Adults,0.54,3093
+America,Ecuador,1980,Adults,0.54,4401
+America,El Salvador,1980,Adults,0.53,2391
+America,Falkland Islands (Malvinas),1980,Adults,,0
+America,French Guiana,1980,Adults,0.61,41
+America,Greenland,1980,Adults,0.67,33
+America,Grenada,1980,Adults,0.54,50
+America,Guadeloupe,1980,Adults,0.58,193
+America,Guatemala,1980,Adults,0.51,3587
+America,Guyana,1980,Adults,0.54,421
+America,Haiti,1980,Adults,0.55,3119
+America,Honduras,1980,Adults,0.49,1861
+America,Jamaica,1980,Adults,0.52,1114
+America,Martinique,1980,Adults,0.60,200
+America,Mexico,1980,Adults,0.52,35042
+America,Montserrat,1980,Adults,0.63,5
+America,Nicaragua,1980,Adults,0.50,1650
+America,Panama,1980,Adults,0.55,1079
+America,Paraguay,1980,Adults,0.54,1655
+America,Peru,1980,Adults,0.53,9354
+America,Puerto Rico,1980,Adults,0.60,1932
+America,Saint Barthélemy,1980,Adults,,0
+America,Saint Kitts and Nevis,1980,Adults,0.56,23
+America,Saint Lucia,1980,Adults,0.50,60
+America,Saint Martin (French part),1980,Adults,0.57,4
+America,Saint Pierre and Miquelon,1980,Adults,0.50,2
+America,Saint Vincent and the Grenadines,1980,Adults,0.51,55
+America,Sint Maarten (Dutch part),1980,Adults,0.64,7
+America,Suriname,1980,Adults,0.55,207
+America,Trinidad and Tobago,1980,Adults,0.61,686
+America,Turks and Caicos Islands,1980,Adults,0.40,2
+America,United States of America,1980,Adults,0.66,147827
+America,United States Virgin Islands,1980,Adults,0.60,56
+America,Uruguay,1980,Adults,0.62,1844
+America,Venezuela (Bolivarian Republic of),1980,Adults,0.55,8435
+America,Anguilla,1980,Children,0.60,3
+America,Antigua and Barbuda,1980,Children,0.34,22
+America,Argentina,1980,Children,0.31,8587
+America,Aruba,1980,Children,0.29,18
+America,Bahamas,1980,Children,0.35,79
+America,Barbados,1980,Children,0.28,71
+America,Belize,1980,Children,0.46,67
+America,Bermuda,1980,Children,0.23,12
+America,Bolivia (Plurinational State of),1980,Children,0.41,2367
+America,"Bonaire, Sint Eustatius and Saba",1980,Children,0.30,3
+America,Brazil,1980,Children,0.38,46980
+America,British Virgin Islands,1980,Children,0.38,3
+America,Canada,1980,Children,0.23,5581
+America,Cayman Islands,1980,Children,0.29,5
+America,Chile,1980,Children,0.33,3831
+America,Colombia,1980,Children,0.40,10506
+America,Costa Rica,1980,Children,0.37,895
+America,Cuba,1980,Children,0.32,3126
+America,Curaçao,1980,Children,0.32,50
+America,Dominica,1980,Children,0.42,30
+America,Dominican Republic,1980,Children,0.43,2473
+America,Ecuador,1980,Children,0.42,3433
+America,El Salvador,1980,Children,0.44,1991
+America,Falkland Islands (Malvinas),1980,Children,,0
+America,French Guiana,1980,Children,0.34,23
+America,Greenland,1980,Children,0.29,14
+America,Grenada,1980,Children,0.39,36
+America,Guadeloupe,1980,Children,0.36,118
+America,Guatemala,1980,Children,0.46,3202
+America,Guyana,1980,Children,0.42,329
+America,Haiti,1980,Children,0.41,2291
+America,Honduras,1980,Children,0.47,1794
+America,Jamaica,1980,Children,0.41,868
+America,Martinique,1980,Children,0.33,109
+America,Mexico,1980,Children,0.45,30186
+America,Montserrat,1980,Children,0.38,3
+America,Nicaragua,1980,Children,0.48,1571
+America,Panama,1980,Children,0.41,795
+America,Paraguay,1980,Children,0.42,1289
+America,Peru,1980,Children,0.42,7429
+America,Puerto Rico,1980,Children,0.32,1027
+America,Saint Barthélemy,1980,Children,,0
+America,Saint Kitts and Nevis,1980,Children,0.37,15
+America,Saint Lucia,1980,Children,0.45,55
+America,Saint Martin (French part),1980,Children,0.43,3
+America,Saint Pierre and Miquelon,1980,Children,0.50,2
+America,Saint Vincent and the Grenadines,1980,Children,0.43,46
+America,Sint Maarten (Dutch part),1980,Children,0.36,4
+America,Suriname,1980,Children,0.41,153
+America,Trinidad and Tobago,1980,Children,0.34,389
+America,Turks and Caicos Islands,1980,Children,0.60,3
+America,United States of America,1980,Children,0.22,50146
+America,United States Virgin Islands,1980,Children,0.36,34
+America,Uruguay,1980,Children,0.27,801
+America,Venezuela (Bolivarian Republic of),1980,Children,0.41,6295
+America,Anguilla,1980,Eldery,0.00,0
+America,Antigua and Barbuda,1980,Eldery,0.06,4
+America,Argentina,1980,Eldery,0.08,2160
+America,Aruba,1980,Eldery,0.06,4
+America,Bahamas,1980,Eldery,0.04,10
+America,Barbados,1980,Eldery,0.10,24
+America,Belize,1980,Eldery,0.04,6
+America,Bermuda,1980,Eldery,0.08,4
+America,Bolivia (Plurinational State of),1980,Eldery,0.04,221
+America,"Bonaire, Sint Eustatius and Saba",1980,Eldery,0.00,0
+America,Brazil,1980,Eldery,0.04,4642
+America,British Virgin Islands,1980,Eldery,0.00,0
+America,Canada,1980,Eldery,0.09,2303
+America,Cayman Islands,1980,Eldery,0.00,0
+America,Chile,1980,Eldery,0.05,533
+America,Colombia,1980,Eldery,0.03,914
+America,Costa Rica,1980,Eldery,0.04,99
+America,Cuba,1980,Eldery,0.07,721
+America,Curaçao,1980,Eldery,0.06,9
+America,Dominica,1980,Eldery,0.07,5
+America,Dominican Republic,1980,Eldery,0.03,187
+America,Ecuador,1980,Eldery,0.04,302
+America,El Salvador,1980,Eldery,0.03,130
+America,Falkland Islands (Malvinas),1980,Eldery,,0
+America,French Guiana,1980,Eldery,0.04,3
+America,Greenland,1980,Eldery,0.04,2
+America,Grenada,1980,Eldery,0.07,6
+America,Guadeloupe,1980,Eldery,0.06,21
+America,Guatemala,1980,Eldery,0.03,198
+America,Guyana,1980,Eldery,0.04,28
+America,Haiti,1980,Eldery,0.04,237
+America,Honduras,1980,Eldery,0.03,123
+America,Jamaica,1980,Eldery,0.07,153
+America,Martinique,1980,Eldery,0.07,23
+America,Mexico,1980,Eldery,0.04,2479
+America,Montserrat,1980,Eldery,0.00,0
+America,Nicaragua,1980,Eldery,0.02,82
+America,Panama,1980,Eldery,0.04,81
+America,Paraguay,1980,Eldery,0.04,134
+America,Peru,1980,Eldery,0.04,709
+America,Puerto Rico,1980,Eldery,0.08,255
+America,Saint Barthélemy,1980,Eldery,,0
+America,Saint Kitts and Nevis,1980,Eldery,0.07,3
+America,Saint Lucia,1980,Eldery,0.05,6
+America,Saint Martin (French part),1980,Eldery,0.00,0
+America,Saint Pierre and Miquelon,1980,Eldery,0.00,0
+America,Saint Vincent and the Grenadines,1980,Eldery,0.06,6
+America,Sint Maarten (Dutch part),1980,Eldery,0.00,0
+America,Suriname,1980,Eldery,0.04,15
+America,Trinidad and Tobago,1980,Eldery,0.05,54
+America,Turks and Caicos Islands,1980,Eldery,0.00,0
+America,United States of America,1980,Eldery,0.11,25167
+America,United States Virgin Islands,1980,Eldery,0.04,4
+America,Uruguay,1980,Eldery,0.10,306
+America,Venezuela (Bolivarian Republic of),1980,Eldery,0.03,480
+America,Anguilla,2000,Adults,0.70,7
+America,Antigua and Barbuda,2000,Adults,0.64,47
+America,Argentina,2000,Adults,0.62,23014
+America,Aruba,2000,Adults,0.69,61
+America,Bahamas,2000,Adults,0.65,213
+America,Barbados,2000,Adults,0.66,176
+America,Belize,2000,Adults,0.56,135
+America,Bermuda,2000,Adults,0.71,44
+America,Bolivia (Plurinational State of),2000,Adults,0.56,4851
+America,"Bonaire, Sint Eustatius and Saba",2000,Adults,0.75,9
+America,Brazil,2000,Adults,0.65,113724
+America,British Virgin Islands,2000,Adults,0.70,14
+America,Canada,2000,Adults,0.68,20967
+America,Cayman Islands,2000,Adults,0.75,30
+America,Chile,2000,Adults,0.65,10009
+America,Colombia,2000,Adults,0.63,24608
+America,Costa Rica,2000,Adults,0.63,2517
+America,Cuba,2000,Adults,0.69,7650
+America,Curaçao,2000,Adults,0.65,92
+America,Dominica,2000,Adults,0.60,41
+America,Dominican Republic,2000,Adults,0.60,5143
+America,Ecuador,2000,Adults,0.60,7541
+America,El Salvador,2000,Adults,0.58,3454
+America,Falkland Islands (Malvinas),2000,Adults,,0
+America,French Guiana,2000,Adults,0.60,99
+America,Greenland,2000,Adults,0.70,39
+America,Grenada,2000,Adults,0.58,63
+America,Guadeloupe,2000,Adults,0.65,274
+America,Guatemala,2000,Adults,0.53,6170
+America,Guyana,2000,Adults,0.60,452
+America,Haiti,2000,Adults,0.56,4674
+America,Honduras,2000,Adults,0.54,3609
+America,Jamaica,2000,Adults,0.61,1585
+America,Martinique,2000,Adults,0.65,284
+America,Mexico,2000,Adults,0.61,59465
+America,Montserrat,2000,Adults,,0
+America,Nicaragua,2000,Adults,0.56,2886
+America,Panama,2000,Adults,0.63,1878
+America,Paraguay,2000,Adults,0.57,2913
+America,Peru,2000,Adults,0.61,16181
+America,Puerto Rico,2000,Adults,0.65,2482
+America,Saint Barthélemy,2000,Adults,1.00,4
+America,Saint Kitts and Nevis,2000,Adults,0.62,28
+America,Saint Lucia,2000,Adults,0.62,98
+America,Saint Martin (French part),2000,Adults,0.69,20
+America,Saint Pierre and Miquelon,2000,Adults,1.00,3
+America,Saint Vincent and the Grenadines,2000,Adults,0.60,70
+America,Sint Maarten (Dutch part),2000,Adults,0.73,22
+America,Suriname,2000,Adults,0.62,298
+America,Trinidad and Tobago,2000,Adults,0.69,917
+America,Turks and Caicos Islands,2000,Adults,0.65,11
+America,United States of America,2000,Adults,0.66,187108
+America,United States Virgin Islands,2000,Adults,0.65,71
+America,Uruguay,2000,Adults,0.63,2060
+America,Venezuela (Bolivarian Republic of),2000,Adults,0.61,14974
+America,Anguilla,2000,Children,0.30,3
+America,Antigua and Barbuda,2000,Children,0.29,21
+America,Argentina,2000,Children,0.28,10447
+America,Aruba,2000,Children,0.24,21
+America,Bahamas,2000,Children,0.30,98
+America,Barbados,2000,Children,0.22,59
+America,Belize,2000,Children,0.40,96
+America,Bermuda,2000,Children,0.19,12
+America,Bolivia (Plurinational State of),2000,Children,0.38,3304
+America,"Bonaire, Sint Eustatius and Saba",2000,Children,0.25,3
+America,Brazil,2000,Children,0.30,52470
+America,British Virgin Islands,2000,Children,0.30,6
+America,Canada,2000,Children,0.19,5885
+America,Cayman Islands,2000,Children,0.20,8
+America,Chile,2000,Children,0.27,4116
+America,Colombia,2000,Children,0.33,12810
+America,Costa Rica,2000,Children,0.31,1229
+America,Cuba,2000,Children,0.21,2356
+America,Curaçao,2000,Children,0.26,37
+America,Dominica,2000,Children,0.29,20
+America,Dominican Republic,2000,Children,0.35,2993
+America,Ecuador,2000,Children,0.35,4477
+America,El Salvador,2000,Children,0.37,2213
+America,Falkland Islands (Malvinas),2000,Children,,0
+America,French Guiana,2000,Children,0.37,61
+America,Greenland,2000,Children,0.27,15
+America,Grenada,2000,Children,0.33,36
+America,Guadeloupe,2000,Children,0.25,107
+America,Guatemala,2000,Children,0.44,5115
+America,Guyana,2000,Children,0.37,277
+America,Haiti,2000,Children,0.40,3374
+America,Honduras,2000,Children,0.43,2848
+America,Jamaica,2000,Children,0.33,873
+America,Martinique,2000,Children,0.24,106
+America,Mexico,2000,Children,0.34,33511
+America,Montserrat,2000,Children,,0
+America,Nicaragua,2000,Children,0.40,2073
+America,Panama,2000,Children,0.32,971
+America,Paraguay,2000,Children,0.39,1992
+America,Peru,2000,Children,0.35,9219
+America,Puerto Rico,2000,Children,0.24,919
+America,Saint Barthélemy,2000,Children,0.00,0
+America,Saint Kitts and Nevis,2000,Children,0.29,13
+America,Saint Lucia,2000,Children,0.32,50
+America,Saint Martin (French part),2000,Children,0.31,9
+America,Saint Pierre and Miquelon,2000,Children,0.00,0
+America,Saint Vincent and the Grenadines,2000,Children,0.32,37
+America,Sint Maarten (Dutch part),2000,Children,0.27,8
+America,Suriname,2000,Children,0.33,158
+America,Trinidad and Tobago,2000,Children,0.26,343
+America,Turks and Caicos Islands,2000,Children,0.35,6
+America,United States of America,2000,Children,0.21,60505
+America,United States Virgin Islands,2000,Children,0.27,29
+America,Uruguay,2000,Children,0.24,801
+America,Venezuela (Bolivarian Republic of),2000,Children,0.34,8294
+America,Anguilla,2000,Eldery,0.00,0
+America,Antigua and Barbuda,2000,Eldery,0.07,5
+America,Argentina,2000,Eldery,0.10,3611
+America,Aruba,2000,Eldery,0.08,7
+America,Bahamas,2000,Eldery,0.05,16
+America,Barbados,2000,Eldery,0.11,30
+America,Belize,2000,Eldery,0.04,9
+America,Bermuda,2000,Eldery,0.10,6
+America,Bolivia (Plurinational State of),2000,Eldery,0.05,436
+America,"Bonaire, Sint Eustatius and Saba",2000,Eldery,0.00,0
+America,Brazil,2000,Eldery,0.06,9679
+America,British Virgin Islands,2000,Eldery,0.00,0
+America,Canada,2000,Eldery,0.12,3831
+America,Cayman Islands,2000,Eldery,0.05,2
+America,Chile,2000,Eldery,0.08,1225
+America,Colombia,2000,Eldery,0.05,1796
+America,Costa Rica,2000,Eldery,0.06,233
+America,Cuba,2000,Eldery,0.10,1099
+America,Curaçao,2000,Eldery,0.09,13
+America,Dominica,2000,Eldery,0.10,7
+America,Dominican Republic,2000,Eldery,0.05,405
+America,Ecuador,2000,Eldery,0.05,610
+America,El Salvador,2000,Eldery,0.05,291
+America,Falkland Islands (Malvinas),2000,Eldery,,0
+America,French Guiana,2000,Eldery,0.04,6
+America,Greenland,2000,Eldery,0.04,2
+America,Grenada,2000,Eldery,0.08,9
+America,Guadeloupe,2000,Eldery,0.10,41
+America,Guatemala,2000,Eldery,0.04,451
+America,Guyana,2000,Eldery,0.04,28
+America,Haiti,2000,Eldery,0.04,308
+America,Honduras,2000,Eldery,0.03,200
+America,Jamaica,2000,Eldery,0.06,154
+America,Martinique,2000,Eldery,0.10,44
+America,Mexico,2000,Eldery,0.05,4899
+America,Montserrat,2000,Eldery,,0
+America,Nicaragua,2000,Eldery,0.03,165
+America,Panama,2000,Eldery,0.05,152
+America,Paraguay,2000,Eldery,0.04,217
+America,Peru,2000,Eldery,0.05,1255
+America,Puerto Rico,2000,Eldery,0.11,427
+America,Saint Barthélemy,2000,Eldery,0.00,0
+America,Saint Kitts and Nevis,2000,Eldery,0.09,4
+America,Saint Lucia,2000,Eldery,0.06,10
+America,Saint Martin (French part),2000,Eldery,0.00,0
+America,Saint Pierre and Miquelon,2000,Eldery,0.00,0
+America,Saint Vincent and the Grenadines,2000,Eldery,0.08,9
+America,Sint Maarten (Dutch part),2000,Eldery,0.00,0
+America,Suriname,2000,Eldery,0.05,24
+America,Trinidad and Tobago,2000,Eldery,0.05,70
+America,Turks and Caicos Islands,2000,Eldery,0.00,0
+America,United States of America,2000,Eldery,0.12,34785
+America,United States Virgin Islands,2000,Eldery,0.08,9
+America,Uruguay,2000,Eldery,0.13,431
+America,Venezuela (Bolivarian Republic of),2000,Eldery,0.05,1160
+America,Anguilla,2020,Adults,0.73,11
+America,Antigua and Barbuda,2020,Adults,0.71,67
+America,Argentina,2020,Adults,0.65,29101
+America,Aruba,2020,Adults,0.68,73
+America,Bahamas,2020,Adults,0.72,290
+America,Barbados,2020,Adults,0.68,189
+America,Belize,2020,Adults,0.67,263
+America,Bermuda,2020,Adults,0.68,42
+America,Bolivia (Plurinational State of),2020,Adults,0.64,7594
+America,"Bonaire, Sint Eustatius and Saba",2020,Adults,0.69,18
+America,Brazil,2020,Adults,0.70,148969
+America,British Virgin Islands,2020,Adults,0.77,23
+America,Canada,2020,Adults,0.66,25049
+America,Cayman Islands,2020,Adults,0.77,51
+America,Chile,2020,Adults,0.69,13314
+America,Colombia,2020,Adults,0.70,35451
+America,Costa Rica,2020,Adults,0.69,3529
+America,Cuba,2020,Adults,0.69,7752
+America,Curaçao,2020,Adults,0.68,129
+America,Dominica,2020,Adults,0.71,51
+America,Dominican Republic,2020,Adults,0.65,7194
+America,Ecuador,2020,Adults,0.66,11604
+America,El Salvador,2020,Adults,0.66,4140
+America,Falkland Islands (Malvinas),2020,Adults,,0
+America,French Guiana,2020,Adults,0.62,180
+America,Greenland,2020,Adults,0.72,41
+America,Grenada,2020,Adults,0.66,82
+America,Guadeloupe,2020,Adults,0.62,246
+America,Guatemala,2020,Adults,0.62,10709
+America,Guyana,2020,Adults,0.65,519
+America,Haiti,2020,Adults,0.63,7115
+America,Honduras,2020,Adults,0.65,6561
+America,Jamaica,2020,Adults,0.72,2033
+America,Martinique,2020,Adults,0.62,230
+America,Mexico,2020,Adults,0.67,83968
+America,Montserrat,2020,Adults,,0
+America,Nicaragua,2020,Adults,0.65,4361
+America,Panama,2020,Adults,0.65,2790
+America,Paraguay,2020,Adults,0.65,4278
+America,Peru,2020,Adults,0.65,21672
+America,Puerto Rico,2020,Adults,0.64,2105
+America,Saint Barthélemy,2020,Adults,0.90,9
+America,Saint Kitts and Nevis,2020,Adults,0.72,34
+America,Saint Lucia,2020,Adults,0.72,129
+America,Saint Martin (French part),2020,Adults,0.71,22
+America,Saint Pierre and Miquelon,2020,Adults,1.00,2
+America,Saint Vincent and the Grenadines,2020,Adults,0.67,70
+America,Sint Maarten (Dutch part),2020,Adults,0.80,33
+America,Suriname,2020,Adults,0.66,402
+America,Trinidad and Tobago,2020,Adults,0.70,1059
+America,Turks and Caicos Islands,2020,Adults,0.72,33
+America,United States of America,2020,Adults,0.65,219253
+America,United States Virgin Islands,2020,Adults,0.61,60
+America,Uruguay,2020,Adults,0.65,2224
+America,Venezuela (Bolivarian Republic of),2020,Adults,0.64,18096
+America,Anguilla,2020,Children,0.20,3
+America,Antigua and Barbuda,2020,Children,0.19,18
+America,Argentina,2020,Children,0.24,10654
+America,Aruba,2020,Children,0.17,18
+America,Bahamas,2020,Children,0.20,81
+America,Barbados,2020,Children,0.18,49
+America,Belize,2020,Children,0.29,114
+America,Bermuda,2020,Children,0.15,9
+America,Bolivia (Plurinational State of),2020,Children,0.31,3747
+America,"Bonaire, Sint Eustatius and Saba",2020,Children,0.19,5
+America,Brazil,2020,Children,0.21,44420
+America,British Virgin Islands,2020,Children,0.17,5
+America,Canada,2020,Children,0.16,6012
+America,Cayman Islands,2020,Children,0.17,11
+America,Chile,2020,Children,0.19,3593
+America,Colombia,2020,Children,0.22,11166
+America,Costa Rica,2020,Children,0.21,1071
+America,Cuba,2020,Children,0.16,1791
+America,Curaçao,2020,Children,0.17,33
+America,Dominica,2020,Children,0.21,15
+America,Dominican Republic,2020,Children,0.28,3038
+America,Ecuador,2020,Children,0.26,4659
+America,El Salvador,2020,Children,0.26,1642
+America,Falkland Islands (Malvinas),2020,Children,,0
+America,French Guiana,2020,Children,0.32,94
+America,Greenland,2020,Children,0.21,12
+America,Grenada,2020,Children,0.24,30
+America,Guadeloupe,2020,Children,0.19,74
+America,Guatemala,2020,Children,0.33,5812
+America,Guyana,2020,Children,0.29,231
+America,Haiti,2020,Children,0.33,3691
+America,Honduras,2020,Children,0.31,3144
+America,Jamaica,2020,Children,0.21,587
+America,Martinique,2020,Children,0.16,61
+America,Mexico,2020,Children,0.25,31923
+America,Montserrat,2020,Children,,0
+America,Nicaragua,2020,Children,0.30,2054
+America,Panama,2020,Children,0.27,1145
+America,Paraguay,2020,Children,0.29,1932
+America,Peru,2020,Children,0.27,8883
+America,Puerto Rico,2020,Children,0.14,456
+America,Saint Barthélemy,2020,Children,0.10,1
+America,Saint Kitts and Nevis,2020,Children,0.19,9
+America,Saint Lucia,2020,Children,0.19,34
+America,Saint Martin (French part),2020,Children,0.23,7
+America,Saint Pierre and Miquelon,2020,Children,0.00,0
+America,Saint Vincent and the Grenadines,2020,Children,0.22,23
+America,Sint Maarten (Dutch part),2020,Children,0.12,5
+America,Suriname,2020,Children,0.27,163
+America,Trinidad and Tobago,2020,Children,0.20,296
+America,Turks and Caicos Islands,2020,Children,0.17,8
+America,United States of America,2020,Children,0.19,62188
+America,United States Virgin Islands,2020,Children,0.19,19
+America,Uruguay,2020,Children,0.20,680
+America,Venezuela (Bolivarian Republic of),2020,Children,0.28,8116
+America,Anguilla,2020,Eldery,0.07,1
+America,Antigua and Barbuda,2020,Eldery,0.10,9
+America,Argentina,2020,Eldery,0.12,5282
+America,Aruba,2020,Eldery,0.15,16
+America,Bahamas,2020,Eldery,0.08,34
+America,Barbados,2020,Eldery,0.15,42
+America,Belize,2020,Eldery,0.05,18
+America,Bermuda,2020,Eldery,0.18,11
+America,Bolivia (Plurinational State of),2020,Eldery,0.05,594
+America,"Bonaire, Sint Eustatius and Saba",2020,Eldery,0.12,3
+America,Brazil,2020,Eldery,0.09,19809
+America,British Virgin Islands,2020,Eldery,0.07,2
+America,Canada,2020,Eldery,0.18,6826
+America,Cayman Islands,2020,Eldery,0.06,4
+America,Chile,2020,Eldery,0.12,2393
+America,Colombia,2020,Eldery,0.08,4314
+America,Costa Rica,2020,Eldery,0.10,523
+America,Cuba,2020,Eldery,0.16,1757
+America,Curaçao,2020,Eldery,0.14,27
+America,Dominica,2020,Eldery,0.08,6
+America,Dominican Republic,2020,Eldery,0.07,767
+America,Ecuador,2020,Eldery,0.08,1325
+America,El Salvador,2020,Eldery,0.08,509
+America,Falkland Islands (Malvinas),2020,Eldery,,0
+America,French Guiana,2020,Eldery,0.06,16
+America,Greenland,2020,Eldery,0.07,4
+America,Grenada,2020,Eldery,0.10,12
+America,Guadeloupe,2020,Eldery,0.19,75
+America,Guatemala,2020,Eldery,0.05,842
+America,Guyana,2020,Eldery,0.06,48
+America,Haiti,2020,Eldery,0.04,502
+America,Honduras,2020,Eldery,0.04,417
+America,Jamaica,2020,Eldery,0.07,197
+America,Martinique,2020,Eldery,0.21,79
+America,Mexico,2020,Eldery,0.08,10107
+America,Montserrat,2020,Eldery,,0
+America,Nicaragua,2020,Eldery,0.05,342
+America,Panama,2020,Eldery,0.08,358
+America,Paraguay,2020,Eldery,0.06,407
+America,Peru,2020,Eldery,0.08,2748
+America,Puerto Rico,2020,Eldery,0.22,709
+America,Saint Barthélemy,2020,Eldery,0.00,0
+America,Saint Kitts and Nevis,2020,Eldery,0.09,4
+America,Saint Lucia,2020,Eldery,0.09,16
+America,Saint Martin (French part),2020,Eldery,0.06,2
+America,Saint Pierre and Miquelon,2020,Eldery,0.00,0
+America,Saint Vincent and the Grenadines,2020,Eldery,0.11,11
+America,Sint Maarten (Dutch part),2020,Eldery,0.07,3
+America,Suriname,2020,Eldery,0.07,43
+America,Trinidad and Tobago,2020,Eldery,0.11,162
+America,Turks and Caicos Islands,2020,Eldery,0.11,5
+America,United States of America,2020,Eldery,0.16,54502
+America,United States Virgin Islands,2020,Eldery,0.19,19
+America,Uruguay,2020,Eldery,0.15,525
+America,Venezuela (Bolivarian Republic of),2020,Eldery,0.08,2277
+Asia,Afghanistan,1960,Adults,0.56,4789
+Asia,Armenia,1960,Adults,0.56,1065
+Asia,Azerbaijan,1960,Adults,0.54,2247
+Asia,Bahrain,1960,Adults,0.55,88
+Asia,Bangladesh,1960,Adults,0.55,27581
+Asia,Bhutan,1960,Adults,0.57,127
+Asia,Brunei Darussalam,1960,Adults,0.51,44
+Asia,Cambodia,1960,Adults,0.53,2939
+Asia,China,1960,Adults,0.56,364295
+Asia,"China, Hong Kong SAR",1960,Adults,0.56,1757
+Asia,"China, Macao SAR",1960,Adults,0.53,95
+Asia,"China, Taiwan Province of China",1960,Adults,0.53,5768
+Asia,Cyprus,1960,Adults,0.58,338
+Asia,Dem. People's Republic of Korea,1960,Adults,0.59,6883
+Asia,Georgia,1960,Adults,0.64,2587
+Asia,India,1960,Adults,0.56,250572
+Asia,Indonesia,1960,Adults,0.58,51091
+Asia,Iran (Islamic Republic of),1960,Adults,0.53,11269
+Asia,Iraq,1960,Adults,0.57,4037
+Asia,Israel,1960,Adults,0.60,1139
+Asia,Japan,1960,Adults,0.65,61125
+Asia,Jordan,1960,Adults,0.50,423
+Asia,Kazakhstan,1960,Adults,0.57,5335
+Asia,Kuwait,1960,Adults,0.60,185
+Asia,Kyrgyzstan,1960,Adults,0.55,1222
+Asia,Lao People's Democratic Republic,1960,Adults,0.55,1176
+Asia,Lebanon,1960,Adults,0.52,934
+Asia,Malaysia,1960,Adults,0.52,4040
+Asia,Maldives,1960,Adults,0.59,53
+Asia,Mongolia,1960,Adults,0.57,553
+Asia,Myanmar,1960,Adults,0.57,12282
+Asia,Nepal,1960,Adults,0.56,5708
+Asia,Oman,1960,Adults,0.55,297
+Asia,Pakistan,1960,Adults,0.56,25571
+Asia,Philippines,1960,Adults,0.49,14008
+Asia,Qatar,1960,Adults,0.53,19
+Asia,Republic of Korea,1960,Adults,0.55,14145
+Asia,Saudi Arabia,1960,Adults,0.52,2147
+Asia,Singapore,1960,Adults,0.53,850
+Asia,Sri Lanka,1960,Adults,0.54,5286
+Asia,State of Palestine,1960,Adults,0.49,522
+Asia,Syrian Arab Republic,1960,Adults,0.50,2302
+Asia,Tajikistan,1960,Adults,0.55,1182
+Asia,Thailand,1960,Adults,0.53,14080
+Asia,Timor-Leste,1960,Adults,0.57,267
+Asia,Türkiye,1960,Adults,0.54,14775
+Asia,Turkmenistan,1960,Adults,0.56,892
+Asia,United Arab Emirates,1960,Adults,0.60,80
+Asia,Uzbekistan,1960,Adults,0.54,4502
+Asia,Viet Nam,1960,Adults,0.54,17732
+Asia,Yemen,1960,Adults,0.55,3075
+Asia,Afghanistan,1960,Children,0.42,3589
+Asia,Armenia,1960,Children,0.38,726
+Asia,Azerbaijan,1960,Children,0.41,1690
+Asia,Bahrain,1960,Children,0.43,69
+Asia,Bangladesh,1960,Children,0.42,21299
+Asia,Bhutan,1960,Children,0.40,89
+Asia,Brunei Darussalam,1960,Children,0.47,40
+Asia,Cambodia,1960,Children,0.44,2455
+Asia,China,1960,Children,0.40,263923
+Asia,"China, Hong Kong SAR",1960,Children,0.41,1274
+Asia,"China, Macao SAR",1960,Children,0.41,73
+Asia,"China, Taiwan Province of China",1960,Children,0.45,4982
+Asia,Cyprus,1960,Children,0.36,214
+Asia,Dem. People's Republic of Korea,1960,Children,0.38,4412
+Asia,Georgia,1960,Children,0.29,1162
+Asia,India,1960,Children,0.41,180704
+Asia,Indonesia,1960,Children,0.40,35131
+Asia,Iran (Islamic Republic of),1960,Children,0.43,9200
+Asia,Iraq,1960,Children,0.40,2802
+Asia,Israel,1960,Children,0.35,662
+Asia,Japan,1960,Children,0.29,27862
+Asia,Jordan,1960,Children,0.46,388
+Asia,Kazakhstan,1960,Children,0.37,3492
+Asia,Kuwait,1960,Children,0.37,114
+Asia,Kyrgyzstan,1960,Children,0.38,853
+Asia,Lao People's Democratic Republic,1960,Children,0.42,890
+Asia,Lebanon,1960,Children,0.42,757
+Asia,Malaysia,1960,Children,0.46,3590
+Asia,Maldives,1960,Children,0.39,35
+Asia,Mongolia,1960,Children,0.38,373
+Asia,Myanmar,1960,Children,0.40,8683
+Asia,Nepal,1960,Children,0.41,4158
+Asia,Oman,1960,Children,0.41,222
+Asia,Pakistan,1960,Children,0.41,18674
+Asia,Philippines,1960,Children,0.48,13758
+Asia,Qatar,1960,Children,0.44,16
+Asia,Republic of Korea,1960,Children,0.42,10821
+Asia,Saudi Arabia,1960,Children,0.45,1874
+Asia,Singapore,1960,Children,0.45,725
+Asia,Sri Lanka,1960,Children,0.41,4040
+Asia,State of Palestine,1960,Children,0.48,510
+Asia,Syrian Arab Republic,1960,Children,0.45,2081
+Asia,Tajikistan,1960,Children,0.40,857
+Asia,Thailand,1960,Children,0.44,11745
+Asia,Timor-Leste,1960,Children,0.40,189
+Asia,Türkiye,1960,Children,0.42,11587
+Asia,Turkmenistan,1960,Children,0.39,629
+Asia,United Arab Emirates,1960,Children,0.38,51
+Asia,Uzbekistan,1960,Children,0.40,3390
+Asia,Viet Nam,1960,Children,0.41,13372
+Asia,Yemen,1960,Children,0.41,2257
+Asia,Afghanistan,1960,Eldery,0.03,244
+Asia,Armenia,1960,Eldery,0.06,111
+Asia,Azerbaijan,1960,Eldery,0.05,196
+Asia,Bahrain,1960,Eldery,0.02,4
+Asia,Bangladesh,1960,Eldery,0.03,1516
+Asia,Bhutan,1960,Eldery,0.03,6
+Asia,Brunei Darussalam,1960,Eldery,0.02,2
+Asia,Cambodia,1960,Eldery,0.03,148
+Asia,China,1960,Eldery,0.04,25952
+Asia,"China, Hong Kong SAR",1960,Eldery,0.03,85
+Asia,"China, Macao SAR",1960,Eldery,0.06,10
+Asia,"China, Taiwan Province of China",1960,Eldery,0.02,233
+Asia,Cyprus,1960,Eldery,0.06,35
+Asia,Dem. People's Republic of Korea,1960,Eldery,0.03,360
+Asia,Georgia,1960,Eldery,0.08,304
+Asia,India,1960,Eldery,0.03,14678
+Asia,Indonesia,1960,Eldery,0.02,2162
+Asia,Iran (Islamic Republic of),1960,Eldery,0.04,918
+Asia,Iraq,1960,Eldery,0.03,244
+Asia,Israel,1960,Eldery,0.05,101
+Asia,Japan,1960,Eldery,0.06,5477
+Asia,Jordan,1960,Eldery,0.04,35
+Asia,Kazakhstan,1960,Eldery,0.05,494
+Asia,Kuwait,1960,Eldery,0.02,7
+Asia,Kyrgyzstan,1960,Eldery,0.06,141
+Asia,Lao People's Democratic Republic,1960,Eldery,0.03,56
+Asia,Lebanon,1960,Eldery,0.06,107
+Asia,Malaysia,1960,Eldery,0.03,204
+Asia,Maldives,1960,Eldery,0.02,2
+Asia,Mongolia,1960,Eldery,0.05,52
+Asia,Myanmar,1960,Eldery,0.03,756
+Asia,Nepal,1960,Eldery,0.03,302
+Asia,Oman,1960,Eldery,0.03,17
+Asia,Pakistan,1960,Eldery,0.04,1711
+Asia,Philippines,1960,Eldery,0.03,720
+Asia,Qatar,1960,Eldery,0.03,1
+Asia,Republic of Korea,1960,Eldery,0.03,851
+Asia,Saudi Arabia,1960,Eldery,0.04,147
+Asia,Singapore,1960,Eldery,0.02,25
+Asia,Sri Lanka,1960,Eldery,0.05,457
+Asia,State of Palestine,1960,Eldery,0.04,41
+Asia,Syrian Arab Republic,1960,Eldery,0.05,227
+Asia,Tajikistan,1960,Eldery,0.04,92
+Asia,Thailand,1960,Eldery,0.03,769
+Asia,Timor-Leste,1960,Eldery,0.03,12
+Asia,Türkiye,1960,Eldery,0.04,1148
+Asia,Turkmenistan,1960,Eldery,0.05,81
+Asia,United Arab Emirates,1960,Eldery,0.02,3
+Asia,Uzbekistan,1960,Eldery,0.06,479
+Asia,Viet Nam,1960,Eldery,0.05,1614
+Asia,Yemen,1960,Eldery,0.04,211
+Asia,Afghanistan,1980,Adults,0.52,6431
+Asia,Armenia,1980,Adults,0.64,2003
+Asia,Azerbaijan,1980,Adults,0.60,3851
+Asia,Bahrain,1980,Adults,0.62,225
+Asia,Bangladesh,1980,Adults,0.51,43209
+Asia,Bhutan,1980,Adults,0.55,231
+Asia,Brunei Darussalam,1980,Adults,0.59,112
+Asia,Cambodia,1980,Adults,0.55,3439
+Asia,China,1980,Adults,0.59,584364
+Asia,"China, Hong Kong SAR",1980,Adults,0.68,3390
+Asia,"China, Macao SAR",1980,Adults,0.69,169
+Asia,"China, Taiwan Province of China",1980,Adults,0.63,11383
+Asia,Cyprus,1980,Adults,0.65,444
+Asia,Dem. People's Republic of Korea,1980,Adults,0.61,11036
+Asia,Georgia,1980,Adults,0.66,3372
+Asia,India,1980,Adults,0.56,393699
+Asia,Indonesia,1980,Adults,0.56,82847
+Asia,Iran (Islamic Republic of),1980,Adults,0.53,20571
+Asia,Iraq,1980,Adults,0.49,6664
+Asia,Israel,1980,Adults,0.58,2185
+Asia,Japan,1980,Adults,0.68,79520
+Asia,Jordan,1980,Adults,0.48,1061
+Asia,Kazakhstan,1980,Adults,0.62,8844
+Asia,Kuwait,1980,Adults,0.57,852
+Asia,Kyrgyzstan,1980,Adults,0.58,2123
+Asia,Lao People's Democratic Republic,1980,Adults,0.53,1734
+Asia,Lebanon,1980,Adults,0.57,1677
+Asia,Malaysia,1980,Adults,0.58,7607
+Asia,Maldives,1980,Adults,0.52,86
+Asia,Mongolia,1980,Adults,0.52,876
+Asia,Myanmar,1980,Adults,0.56,18863
+Asia,Nepal,1980,Adults,0.56,8669
+Asia,Oman,1980,Adults,0.50,508
+Asia,Pakistan,1980,Adults,0.54,43147
+Asia,Philippines,1980,Adults,0.54,26046
+Asia,Qatar,1980,Adults,0.69,190
+Asia,Republic of Korea,1980,Adults,0.62,23680
+Asia,Saudi Arabia,1980,Adults,0.52,5289
+Asia,Singapore,1980,Adults,0.68,1635
+Asia,Sri Lanka,1980,Adults,0.59,8823
+Asia,State of Palestine,1980,Adults,0.48,693
+Asia,Syrian Arab Republic,1980,Adults,0.48,4266
+Asia,Tajikistan,1980,Adults,0.53,2162
+Asia,Thailand,1980,Adults,0.58,26489
+Asia,Timor-Leste,1980,Adults,0.58,372
+Asia,Türkiye,1980,Adults,0.55,24317
+Asia,Turkmenistan,1980,Adults,0.55,1572
+Asia,United Arab Emirates,1980,Adults,0.71,724
+Asia,Uzbekistan,1980,Adults,0.55,8734
+Asia,Viet Nam,1980,Adults,0.55,28952
+Asia,Yemen,1980,Adults,0.49,4495
+Asia,Afghanistan,1980,Children,0.46,5740
+Asia,Armenia,1980,Children,0.31,957
+Asia,Azerbaijan,1980,Children,0.35,2209
+Asia,Bahrain,1980,Children,0.36,130
+Asia,Bangladesh,1980,Children,0.45,37840
+Asia,Bhutan,1980,Children,0.42,175
+Asia,Brunei Darussalam,1980,Children,0.38,73
+Asia,Cambodia,1980,Children,0.42,2575
+Asia,China,1980,Children,0.36,354886
+Asia,"China, Hong Kong SAR",1980,Children,0.25,1268
+Asia,"China, Macao SAR",1980,Children,0.24,58
+Asia,"China, Taiwan Province of China",1980,Children,0.33,5993
+Asia,Cyprus,1980,Children,0.25,170
+Asia,Dem. People's Republic of Korea,1980,Children,0.35,6325
+Asia,Georgia,1980,Children,0.26,1328
+Asia,India,1980,Children,0.40,275363
+Asia,Indonesia,1980,Children,0.40,59885
+Asia,Iran (Islamic Republic of),1980,Children,0.43,16685
+Asia,Iraq,1980,Children,0.47,6379
+Asia,Israel,1980,Children,0.33,1223
+Asia,Japan,1980,Children,0.23,27167
+Asia,Jordan,1980,Children,0.50,1100
+Asia,Kazakhstan,1980,Children,0.32,4484
+Asia,Kuwait,1980,Children,0.42,623
+Asia,Kyrgyzstan,1980,Children,0.38,1390
+Asia,Lao People's Democratic Republic,1980,Children,0.44,1454
+Asia,Lebanon,1980,Children,0.39,1149
+Asia,Malaysia,1980,Children,0.39,5179
+Asia,Maldives,1980,Children,0.45,75
+Asia,Mongolia,1980,Children,0.44,741
+Asia,Myanmar,1980,Children,0.40,13232
+Asia,Nepal,1980,Children,0.41,6394
+Asia,Oman,1980,Children,0.47,477
+Asia,Pakistan,1980,Children,0.43,34706
+Asia,Philippines,1980,Children,0.43,20754
+Asia,Qatar,1980,Children,0.30,84
+Asia,Republic of Korea,1980,Children,0.34,13030
+Asia,Saudi Arabia,1980,Children,0.45,4603
+Asia,Singapore,1980,Children,0.27,650
+Asia,Sri Lanka,1980,Children,0.36,5395
+Asia,State of Palestine,1980,Children,0.50,729
+Asia,Syrian Arab Republic,1980,Children,0.49,4362
+Asia,Tajikistan,1980,Children,0.43,1724
+Asia,Thailand,1980,Children,0.39,17701
+Asia,Timor-Leste,1980,Children,0.40,256
+Asia,Türkiye,1980,Children,0.40,17702
+Asia,Turkmenistan,1980,Children,0.41,1164
+Asia,United Arab Emirates,1980,Children,0.27,277
+Asia,Uzbekistan,1980,Children,0.41,6509
+Asia,Viet Nam,1980,Children,0.40,21081
+Asia,Yemen,1980,Children,0.48,4421
+Asia,Afghanistan,1980,Eldery,0.03,315
+Asia,Armenia,1980,Eldery,0.06,174
+Asia,Azerbaijan,1980,Eldery,0.05,322
+Asia,Bahrain,1980,Eldery,0.02,7
+Asia,Bangladesh,1980,Eldery,0.03,2881
+Asia,Bhutan,1980,Eldery,0.03,11
+Asia,Brunei Darussalam,1980,Eldery,0.03,5
+Asia,Cambodia,1980,Eldery,0.03,186
+Asia,China,1980,Eldery,0.04,43121
+Asia,"China, Hong Kong SAR",1980,Eldery,0.06,320
+Asia,"China, Macao SAR",1980,Eldery,0.07,18
+Asia,"China, Taiwan Province of China",1980,Eldery,0.04,725
+Asia,Cyprus,1980,Eldery,0.10,66
+Asia,Dem. People's Republic of Korea,1980,Eldery,0.03,612
+Asia,Georgia,1980,Eldery,0.09,446
+Asia,India,1980,Eldery,0.04,27766
+Asia,Indonesia,1980,Eldery,0.04,5444
+Asia,Iran (Islamic Republic of),1980,Eldery,0.03,1264
+Asia,Iraq,1980,Eldery,0.04,609
+Asia,Israel,1980,Eldery,0.09,337
+Asia,Japan,1980,Eldery,0.09,10938
+Asia,Jordan,1980,Eldery,0.02,55
+Asia,Kazakhstan,1980,Eldery,0.06,846
+Asia,Kuwait,1980,Eldery,0.01,19
+Asia,Kyrgyzstan,1980,Eldery,0.05,179
+Asia,Lao People's Democratic Republic,1980,Eldery,0.03,110
+Asia,Lebanon,1980,Eldery,0.05,137
+Asia,Malaysia,1980,Eldery,0.03,430
+Asia,Maldives,1980,Eldery,0.02,4
+Asia,Mongolia,1980,Eldery,0.05,81
+Asia,Myanmar,1980,Eldery,0.04,1369
+Asia,Nepal,1980,Eldery,0.03,538
+Asia,Oman,1980,Eldery,0.03,31
+Asia,Pakistan,1980,Eldery,0.03,2773
+Asia,Philippines,1980,Eldery,0.03,1621
+Asia,Qatar,1980,Eldery,0.01,3
+Asia,Republic of Korea,1980,Eldery,0.04,1461
+Asia,Saudi Arabia,1980,Eldery,0.03,278
+Asia,Singapore,1980,Eldery,0.05,117
+Asia,Sri Lanka,1980,Eldery,0.05,727
+Asia,State of Palestine,1980,Eldery,0.02,32
+Asia,Syrian Arab Republic,1980,Eldery,0.03,270
+Asia,Tajikistan,1980,Eldery,0.04,159
+Asia,Thailand,1980,Eldery,0.03,1549
+Asia,Timor-Leste,1980,Eldery,0.02,14
+Asia,Türkiye,1980,Eldery,0.05,2071
+Asia,Turkmenistan,1980,Eldery,0.04,126
+Asia,United Arab Emirates,1980,Eldery,0.01,12
+Asia,Uzbekistan,1980,Eldery,0.04,705
+Asia,Viet Nam,1980,Eldery,0.06,2935
+Asia,Yemen,1980,Eldery,0.03,289
+Asia,Afghanistan,2000,Adults,0.48,9382
+Asia,Armenia,2000,Adults,0.64,2028
+Asia,Azerbaijan,2000,Adults,0.63,5199
+Asia,Bahrain,2000,Adults,0.68,486
+Asia,Bangladesh,2000,Adults,0.59,76136
+Asia,Bhutan,2000,Adults,0.58,340
+Asia,Brunei Darussalam,2000,Adults,0.64,212
+Asia,Cambodia,2000,Adults,0.57,6879
+Asia,China,2000,Adults,0.69,866482
+Asia,"China, Hong Kong SAR",2000,Adults,0.72,4831
+Asia,"China, Macao SAR",2000,Adults,0.70,302
+Asia,"China, Taiwan Province of China",2000,Adults,0.70,15614
+Asia,Cyprus,2000,Adults,0.68,643
+Asia,Dem. People's Republic of Korea,2000,Adults,0.68,15900
+Asia,Georgia,2000,Adults,0.65,2764
+Asia,India,2000,Adults,0.60,640618
+Asia,Indonesia,2000,Adults,0.64,137812
+Asia,Iran (Islamic Republic of),2000,Adults,0.63,41163
+Asia,Iraq,2000,Adults,0.53,13150
+Asia,Israel,2000,Adults,0.62,3789
+Asia,Japan,2000,Adults,0.68,86000
+Asia,Jordan,2000,Adults,0.57,2881
+Asia,Kazakhstan,2000,Adults,0.65,9975
+Asia,Kuwait,2000,Adults,0.70,1350
+Asia,Kyrgyzstan,2000,Adults,0.59,2914
+Asia,Lao People's Democratic Republic,2000,Adults,0.54,2925
+Asia,Lebanon,2000,Adults,0.63,2719
+Asia,Malaysia,2000,Adults,0.62,14312
+Asia,Maldives,2000,Adults,0.56,158
+Asia,Mongolia,2000,Adults,0.61,1502
+Asia,Myanmar,2000,Adults,0.63,28805
+Asia,Nepal,2000,Adults,0.56,13651
+Asia,Oman,2000,Adults,0.60,1415
+Asia,Pakistan,2000,Adults,0.54,82772
+Asia,Philippines,2000,Adults,0.59,45631
+Asia,Qatar,2000,Adults,0.75,485
+Asia,Republic of Korea,2000,Adults,0.72,33629
+Asia,Saudi Arabia,2000,Adults,0.61,13243
+Asia,Singapore,2000,Adults,0.75,3022
+Asia,Sri Lanka,2000,Adults,0.66,12404
+Asia,State of Palestine,2000,Adults,0.50,1573
+Asia,Syrian Arab Republic,2000,Adults,0.56,9080
+Asia,Tajikistan,2000,Adults,0.54,3380
+Asia,Thailand,2000,Adults,0.70,44049
+Asia,Timor-Leste,2000,Adults,0.54,473
+Asia,Türkiye,2000,Adults,0.64,40717
+Asia,Turkmenistan,2000,Adults,0.59,2681
+Asia,United Arab Emirates,2000,Adults,0.77,2521
+Asia,Uzbekistan,2000,Adults,0.59,14589
+Asia,Viet Nam,2000,Adults,0.62,49318
+Asia,Yemen,2000,Adults,0.48,8936
+Asia,Afghanistan,2000,Children,0.50,9716
+Asia,Armenia,2000,Children,0.27,852
+Asia,Azerbaijan,2000,Children,0.31,2538
+Asia,Bahrain,2000,Children,0.29,208
+Asia,Bangladesh,2000,Children,0.37,48200
+Asia,Bhutan,2000,Children,0.38,224
+Asia,Brunei Darussalam,2000,Children,0.33,110
+Asia,Cambodia,2000,Children,0.40,4869
+Asia,China,2000,Children,0.25,310133
+Asia,"China, Hong Kong SAR",2000,Children,0.17,1149
+Asia,"China, Macao SAR",2000,Children,0.23,100
+Asia,"China, Taiwan Province of China",2000,Children,0.21,4728
+Asia,Cyprus,2000,Children,0.22,212
+Asia,Dem. People's Republic of Korea,2000,Children,0.26,5979
+Asia,Georgia,2000,Children,0.23,995
+Asia,India,2000,Children,0.35,371399
+Asia,Indonesia,2000,Children,0.31,65531
+Asia,Iran (Islamic Republic of),2000,Children,0.33,21687
+Asia,Iraq,2000,Children,0.43,10698
+Asia,Israel,2000,Children,0.28,1717
+Asia,Japan,2000,Children,0.14,18225
+Asia,Jordan,2000,Children,0.40,2040
+Asia,Kazakhstan,2000,Children,0.28,4259
+Asia,Kuwait,2000,Children,0.29,556
+Asia,Kyrgyzstan,2000,Children,0.36,1772
+Asia,Lao People's Democratic Republic,2000,Children,0.43,2314
+Asia,Lebanon,2000,Children,0.32,1378
+Asia,Malaysia,2000,Children,0.34,7694
+Asia,Maldives,2000,Children,0.40,113
+Asia,Mongolia,2000,Children,0.35,863
+Asia,Myanmar,2000,Children,0.32,14486
+Asia,Nepal,2000,Children,0.41,9984
+Asia,Oman,2000,Children,0.37,872
+Asia,Pakistan,2000,Children,0.43,66255
+Asia,Philippines,2000,Children,0.38,29385
+Asia,Qatar,2000,Children,0.24,152
+Asia,Republic of Korea,2000,Children,0.21,9821
+Asia,Saudi Arabia,2000,Children,0.36,7737
+Asia,Singapore,2000,Children,0.19,774
+Asia,Sri Lanka,2000,Children,0.27,5031
+Asia,State of Palestine,2000,Children,0.48,1497
+Asia,Syrian Arab Republic,2000,Children,0.41,6686
+Asia,Tajikistan,2000,Children,0.43,2669
+Asia,Thailand,2000,Children,0.24,15171
+Asia,Timor-Leste,2000,Children,0.43,378
+Asia,Türkiye,2000,Children,0.31,19955
+Asia,Turkmenistan,2000,Children,0.37,1701
+Asia,United Arab Emirates,2000,Children,0.22,726
+Asia,Uzbekistan,2000,Children,0.37,9191
+Asia,Viet Nam,2000,Children,0.31,24785
+Asia,Yemen,2000,Children,0.49,9193
+Asia,Afghanistan,2000,Eldery,0.02,446
+Asia,Armenia,2000,Eldery,0.09,287
+Asia,Azerbaijan,2000,Eldery,0.06,452
+Asia,Bahrain,2000,Eldery,0.03,18
+Asia,Bangladesh,2000,Eldery,0.04,4858
+Asia,Bhutan,2000,Eldery,0.04,24
+Asia,Brunei Darussalam,2000,Eldery,0.03,10
+Asia,Cambodia,2000,Eldery,0.03,371
+Asia,China,2000,Eldery,0.07,87484
+Asia,"China, Hong Kong SAR",2000,Eldery,0.11,750
+Asia,"China, Macao SAR",2000,Eldery,0.07,32
+Asia,"China, Taiwan Province of China",2000,Eldery,0.08,1855
+Asia,Cyprus,2000,Eldery,0.10,94
+Asia,Dem. People's Republic of Korea,2000,Eldery,0.06,1486
+Asia,Georgia,2000,Eldery,0.12,508
+Asia,India,2000,Eldery,0.04,47618
+Asia,Indonesia,2000,Eldery,0.05,10729
+Asia,Iran (Islamic Republic of),2000,Eldery,0.04,2695
+Asia,Iraq,2000,Eldery,0.03,782
+Asia,Israel,2000,Eldery,0.10,610
+Asia,Japan,2000,Eldery,0.18,22577
+Asia,Jordan,2000,Eldery,0.03,137
+Asia,Kazakhstan,2000,Eldery,0.07,1001
+Asia,Kuwait,2000,Eldery,0.02,31
+Asia,Kyrgyzstan,2000,Eldery,0.05,250
+Asia,Lao People's Democratic Republic,2000,Eldery,0.04,194
+Asia,Lebanon,2000,Eldery,0.05,224
+Asia,Malaysia,2000,Eldery,0.04,940
+Asia,Maldives,2000,Eldery,0.04,11
+Asia,Mongolia,2000,Eldery,0.03,83
+Asia,Myanmar,2000,Eldery,0.05,2247
+Asia,Nepal,2000,Eldery,0.04,925
+Asia,Oman,2000,Eldery,0.02,57
+Asia,Pakistan,2000,Eldery,0.03,5343
+Asia,Philippines,2000,Eldery,0.04,2941
+Asia,Qatar,2000,Eldery,0.01,8
+Asia,Republic of Korea,2000,Eldery,0.07,3337
+Asia,Saudi Arabia,2000,Eldery,0.03,567
+Asia,Singapore,2000,Eldery,0.06,255
+Asia,Sri Lanka,2000,Eldery,0.07,1342
+Asia,State of Palestine,2000,Eldery,0.02,70
+Asia,Syrian Arab Republic,2000,Eldery,0.03,542
+Asia,Tajikistan,2000,Eldery,0.04,226
+Asia,Thailand,2000,Eldery,0.06,3848
+Asia,Timor-Leste,2000,Eldery,0.03,28
+Asia,Türkiye,2000,Eldery,0.05,3439
+Asia,Turkmenistan,2000,Eldery,0.04,187
+Asia,United Arab Emirates,2000,Eldery,0.01,30
+Asia,Uzbekistan,2000,Eldery,0.05,1145
+Asia,Viet Nam,2000,Eldery,0.06,4898
+Asia,Yemen,2000,Eldery,0.03,499
+Asia,Afghanistan,2020,Adults,0.54,20958
+Asia,Armenia,2020,Adults,0.67,1888
+Asia,Azerbaijan,2020,Adults,0.69,7127
+Asia,Bahrain,2020,Adults,0.77,1131
+Asia,Bangladesh,2020,Adults,0.67,112817
+Asia,Bhutan,2020,Adults,0.70,544
+Asia,Brunei Darussalam,2020,Adults,0.72,318
+Asia,Cambodia,2020,Adults,0.65,10675
+Asia,China,2020,Adults,0.69,988569
+Asia,"China, Hong Kong SAR",2020,Adults,0.69,5174
+Asia,"China, Macao SAR",2020,Adults,0.74,499
+Asia,"China, Taiwan Province of China",2020,Adults,0.72,17155
+Asia,Cyprus,2020,Adults,0.70,864
+Asia,Dem. People's Republic of Korea,2020,Adults,0.70,18078
+Asia,Georgia,2020,Adults,0.65,2433
+Asia,India,2020,Adults,0.67,938587
+Asia,Indonesia,2020,Adults,0.68,183698
+Asia,Iran (Islamic Republic of),2020,Adults,0.69,60140
+Asia,Iraq,2020,Adults,0.58,24729
+Asia,Israel,2020,Adults,0.60,5251
+Asia,Japan,2020,Adults,0.59,73269
+Asia,Jordan,2020,Adults,0.63,6921
+Asia,Kazakhstan,2020,Adults,0.63,11939
+Asia,Kuwait,2020,Adults,0.75,3273
+Asia,Kyrgyzstan,2020,Adults,0.61,3943
+Asia,Lao People's Democratic Republic,2020,Adults,0.64,4710
+Asia,Lebanon,2020,Adults,0.63,3556
+Asia,Malaysia,2020,Adults,0.70,23144
+Asia,Maldives,2020,Adults,0.74,379
+Asia,Mongolia,2020,Adults,0.64,2093
+Asia,Myanmar,2020,Adults,0.68,36554
+Asia,Nepal,2020,Adults,0.64,18738
+Asia,Oman,2020,Adults,0.72,3254
+Asia,Pakistan,2020,Adults,0.59,133031
+Asia,Philippines,2020,Adults,0.64,71619
+Asia,Qatar,2020,Adults,0.83,2302
+Asia,Republic of Korea,2020,Adults,0.72,37331
+Asia,Saudi Arabia,2020,Adults,0.72,25760
+Asia,Singapore,2020,Adults,0.75,4414
+Asia,Sri Lanka,2020,Adults,0.66,14248
+Asia,State of Palestine,2020,Adults,0.57,2866
+Asia,Syrian Arab Republic,2020,Adults,0.61,12666
+Asia,Tajikistan,2020,Adults,0.60,5752
+Asia,Thailand,2020,Adults,0.70,50093
+Asia,Timor-Leste,2020,Adults,0.59,764
+Asia,Türkiye,2020,Adults,0.68,57303
+Asia,Turkmenistan,2020,Adults,0.64,4002
+Asia,United Arab Emirates,2020,Adults,0.83,7748
+Asia,Uzbekistan,2020,Adults,0.65,21914
+Asia,Viet Nam,2020,Adults,0.69,66571
+Asia,Yemen,2020,Adults,0.57,18433
+Asia,Afghanistan,2020,Children,0.44,17073
+Asia,Armenia,2020,Children,0.20,571
+Asia,Azerbaijan,2020,Children,0.24,2492
+Asia,Bahrain,2020,Children,0.20,299
+Asia,Bangladesh,2020,Children,0.27,45174
+Asia,Bhutan,2020,Children,0.24,182
+Asia,Brunei Darussalam,2020,Children,0.23,101
+Asia,Cambodia,2020,Children,0.30,4857
+Asia,China,2020,Children,0.18,256845
+Asia,"China, Hong Kong SAR",2020,Children,0.12,919
+Asia,"China, Macao SAR",2020,Children,0.14,97
+Asia,"China, Taiwan Province of China",2020,Children,0.13,3046
+Asia,Cyprus,2020,Children,0.16,197
+Asia,Dem. People's Republic of Korea,2020,Children,0.19,4919
+Asia,Georgia,2020,Children,0.21,787
+Asia,India,2020,Children,0.26,364629
+Asia,Indonesia,2020,Children,0.26,69920
+Asia,Iran (Islamic Republic of),2020,Children,0.24,20943
+Asia,Iraq,2020,Children,0.38,16379
+Asia,Israel,2020,Children,0.28,2473
+Asia,Japan,2020,Children,0.12,14924
+Asia,Jordan,2020,Children,0.33,3613
+Asia,Kazakhstan,2020,Children,0.29,5551
+Asia,Kuwait,2020,Children,0.21,915
+Asia,Kyrgyzstan,2020,Children,0.34,2207
+Asia,Lao People's Democratic Republic,2020,Children,0.31,2296
+Asia,Lebanon,2020,Children,0.28,1577
+Asia,Malaysia,2020,Children,0.23,7728
+Asia,Maldives,2020,Children,0.22,112
+Asia,Mongolia,2020,Children,0.32,1061
+Asia,Myanmar,2020,Children,0.25,13422
+Asia,Nepal,2020,Children,0.30,8838
+Asia,Oman,2020,Children,0.26,1165
+Asia,Pakistan,2020,Children,0.37,84681
+Asia,Philippines,2020,Children,0.31,34714
+Asia,Qatar,2020,Children,0.15,424
+Asia,Republic of Korea,2020,Children,0.12,6308
+Asia,Saudi Arabia,2020,Children,0.26,9374
+Asia,Singapore,2020,Children,0.12,718
+Asia,Sri Lanka,2020,Children,0.24,5122
+Asia,State of Palestine,2020,Children,0.39,1981
+Asia,Syrian Arab Republic,2020,Children,0.34,7160
+Asia,Tajikistan,2020,Children,0.36,3483
+Asia,Thailand,2020,Children,0.16,11483
+Asia,Timor-Leste,2020,Children,0.36,467
+Asia,Türkiye,2020,Children,0.24,19949
+Asia,Turkmenistan,2020,Children,0.31,1952
+Asia,United Arab Emirates,2020,Children,0.15,1387
+Asia,Uzbekistan,2020,Children,0.30,9981
+Asia,Viet Nam,2020,Children,0.23,21933
+Asia,Yemen,2020,Children,0.40,12974
+Asia,Afghanistan,2020,Eldery,0.02,943
+Asia,Armenia,2020,Eldery,0.12,348
+Asia,Azerbaijan,2020,Eldery,0.06,666
+Asia,Bahrain,2020,Eldery,0.03,47
+Asia,Bangladesh,2020,Eldery,0.06,9431
+Asia,Bhutan,2020,Eldery,0.06,47
+Asia,Brunei Darussalam,2020,Eldery,0.05,23
+Asia,Cambodia,2020,Eldery,0.05,864
+Asia,China,2020,Eldery,0.13,179518
+Asia,"China, Hong Kong SAR",2020,Eldery,0.19,1409
+Asia,"China, Macao SAR",2020,Eldery,0.12,80
+Asia,"China, Taiwan Province of China",2020,Eldery,0.15,3621
+Asia,Cyprus,2020,Eldery,0.14,176
+Asia,Dem. People's Republic of Korea,2020,Eldery,0.11,2871
+Asia,Georgia,2020,Eldery,0.15,547
+Asia,India,2020,Eldery,0.07,93171
+Asia,Indonesia,2020,Eldery,0.07,18240
+Asia,Iran (Islamic Republic of),2020,Eldery,0.07,6204
+Asia,Iraq,2020,Eldery,0.03,1448
+Asia,Israel,2020,Eldery,0.12,1034
+Asia,Japan,2020,Eldery,0.30,37052
+Asia,Jordan,2020,Eldery,0.04,396
+Asia,Kazakhstan,2020,Eldery,0.08,1489
+Asia,Kuwait,2020,Eldery,0.04,175
+Asia,Kyrgyzstan,2020,Eldery,0.04,274
+Asia,Lao People's Democratic Republic,2020,Eldery,0.04,314
+Asia,Lebanon,2020,Eldery,0.09,530
+Asia,Malaysia,2020,Eldery,0.07,2328
+Asia,Maldives,2020,Eldery,0.04,21
+Asia,Mongolia,2020,Eldery,0.04,140
+Asia,Myanmar,2020,Eldery,0.06,3447
+Asia,Nepal,2020,Eldery,0.06,1773
+Asia,Oman,2020,Eldery,0.03,125
+Asia,Pakistan,2020,Eldery,0.04,9483
+Asia,Philippines,2020,Eldery,0.05,5859
+Asia,Qatar,2020,Eldery,0.01,34
+Asia,Republic of Korea,2020,Eldery,0.16,8206
+Asia,Saudi Arabia,2020,Eldery,0.02,863
+Asia,Singapore,2020,Eldery,0.13,777
+Asia,Sri Lanka,2020,Eldery,0.11,2346
+Asia,State of Palestine,2020,Eldery,0.03,172
+Asia,Syrian Arab Republic,2020,Eldery,0.05,945
+Asia,Tajikistan,2020,Eldery,0.03,310
+Asia,Thailand,2020,Eldery,0.14,9901
+Asia,Timor-Leste,2020,Eldery,0.05,70
+Asia,Türkiye,2020,Eldery,0.08,6884
+Asia,Turkmenistan,2020,Eldery,0.05,295
+Asia,United Arab Emirates,2020,Eldery,0.02,154
+Asia,Uzbekistan,2020,Eldery,0.05,1632
+Asia,Viet Nam,2020,Eldery,0.08,8144
+Asia,Yemen,2020,Eldery,0.03,877
+Australia and Oceania,American Samoa,1960,Adults,0.47,9
+Australia and Oceania,Australia,1960,Adults,0.61,6298
+Australia and Oceania,Cook Islands,1960,Adults,0.50,8
+Australia and Oceania,Fiji,1960,Adults,0.50,201
+Australia and Oceania,French Polynesia,1960,Adults,0.54,46
+Australia and Oceania,Guam,1960,Adults,0.59,42
+Australia and Oceania,Kiribati,1960,Adults,0.52,25
+Australia and Oceania,Marshall Islands,1960,Adults,0.50,7
+Australia and Oceania,Micronesia (Fed. States of),1960,Adults,0.53,23
+Australia and Oceania,Nauru,1960,Adults,0.00,0
+Australia and Oceania,New Caledonia,1960,Adults,0.59,48
+Australia and Oceania,New Zealand,1960,Adults,0.59,1393
+Australia and Oceania,Niue,1960,Adults,0.00,0
+Australia and Oceania,Northern Mariana Islands,1960,Adults,0.38,3
+Australia and Oceania,Palau,1960,Adults,0.38,3
+Australia and Oceania,Papua New Guinea,1960,Adults,0.56,1107
+Australia and Oceania,Samoa,1960,Adults,0.46,53
+Australia and Oceania,Solomon Islands,1960,Adults,0.52,70
+Australia and Oceania,Tokelau,1960,Adults,,0
+Australia and Oceania,Tonga,1960,Adults,0.51,34
+Australia and Oceania,Tuvalu,1960,Adults,0.00,0
+Australia and Oceania,Vanuatu,1960,Adults,0.52,34
+Australia and Oceania,Wallis and Futuna Islands,1960,Adults,0.50,4
+Australia and Oceania,American Samoa,1960,Children,0.53,10
+Australia and Oceania,Australia,1960,Children,0.30,3106
+Australia and Oceania,Cook Islands,1960,Children,0.50,8
+Australia and Oceania,Fiji,1960,Children,0.48,192
+Australia and Oceania,French Polynesia,1960,Children,0.44,37
+Australia and Oceania,Guam,1960,Children,0.39,28
+Australia and Oceania,Kiribati,1960,Children,0.44,21
+Australia and Oceania,Marshall Islands,1960,Children,0.50,7
+Australia and Oceania,Micronesia (Fed. States of),1960,Children,0.44,19
+Australia and Oceania,Nauru,1960,Children,1.00,2
+Australia and Oceania,New Caledonia,1960,Children,0.38,31
+Australia and Oceania,New Zealand,1960,Children,0.33,780
+Australia and Oceania,Niue,1960,Children,1.00,3
+Australia and Oceania,Northern Mariana Islands,1960,Children,0.63,5
+Australia and Oceania,Palau,1960,Children,0.63,5
+Australia and Oceania,Papua New Guinea,1960,Children,0.43,859
+Australia and Oceania,Samoa,1960,Children,0.51,58
+Australia and Oceania,Solomon Islands,1960,Children,0.45,60
+Australia and Oceania,Tokelau,1960,Children,,0
+Australia and Oceania,Tonga,1960,Children,0.46,31
+Australia and Oceania,Tuvalu,1960,Children,1.00,2
+Australia and Oceania,Vanuatu,1960,Children,0.45,29
+Australia and Oceania,Wallis and Futuna Islands,1960,Children,0.50,4
+Australia and Oceania,American Samoa,1960,Eldery,0.00,0
+Australia and Oceania,Australia,1960,Eldery,0.09,882
+Australia and Oceania,Cook Islands,1960,Eldery,0.00,0
+Australia and Oceania,Fiji,1960,Eldery,0.02,10
+Australia and Oceania,French Polynesia,1960,Eldery,0.02,2
+Australia and Oceania,Guam,1960,Eldery,0.01,1
+Australia and Oceania,Kiribati,1960,Eldery,0.04,2
+Australia and Oceania,Marshall Islands,1960,Eldery,0.00,0
+Australia and Oceania,Micronesia (Fed. States of),1960,Eldery,0.02,1
+Australia and Oceania,Nauru,1960,Eldery,0.00,0
+Australia and Oceania,New Caledonia,1960,Eldery,0.04,3
+Australia and Oceania,New Zealand,1960,Eldery,0.09,207
+Australia and Oceania,Niue,1960,Eldery,0.00,0
+Australia and Oceania,Northern Mariana Islands,1960,Eldery,0.00,0
+Australia and Oceania,Palau,1960,Eldery,0.00,0
+Australia and Oceania,Papua New Guinea,1960,Eldery,0.01,20
+Australia and Oceania,Samoa,1960,Eldery,0.03,3
+Australia and Oceania,Solomon Islands,1960,Eldery,0.03,4
+Australia and Oceania,Tokelau,1960,Eldery,,0
+Australia and Oceania,Tonga,1960,Eldery,0.03,2
+Australia and Oceania,Tuvalu,1960,Eldery,0.00,0
+Australia and Oceania,Vanuatu,1960,Eldery,0.03,2
+Australia and Oceania,Wallis and Futuna Islands,1960,Eldery,0.00,0
+Australia and Oceania,American Samoa,1980,Adults,0.56,18
+Australia and Oceania,Australia,1980,Adults,0.65,9577
+Australia and Oceania,Cook Islands,1980,Adults,0.53,9
+Australia and Oceania,Fiji,1980,Adults,0.57,370
+Australia and Oceania,French Polynesia,1980,Adults,0.58,94
+Australia and Oceania,Guam,1980,Adults,0.63,69
+Australia and Oceania,Kiribati,1980,Adults,0.57,34
+Australia and Oceania,Marshall Islands,1980,Adults,0.50,16
+Australia and Oceania,Micronesia (Fed. States of),1980,Adults,0.50,38
+Australia and Oceania,Nauru,1980,Adults,0.63,5
+Australia and Oceania,New Caledonia,1980,Adults,0.57,85
+Australia and Oceania,New Zealand,1980,Adults,0.63,1985
+Australia and Oceania,Niue,1980,Adults,0.00,0
+Australia and Oceania,Northern Mariana Islands,1980,Adults,0.59,10
+Australia and Oceania,Palau,1980,Adults,0.55,6
+Australia and Oceania,Papua New Guinea,1980,Adults,0.55,1704
+Australia and Oceania,Samoa,1980,Adults,0.51,84
+Australia and Oceania,Solomon Islands,1980,Adults,0.49,114
+Australia and Oceania,Tokelau,1980,Adults,,0
+Australia and Oceania,Tonga,1980,Adults,0.53,51
+Australia and Oceania,Tuvalu,1980,Adults,0.50,3
+Australia and Oceania,Vanuatu,1980,Adults,0.52,62
+Australia and Oceania,Wallis and Futuna Islands,1980,Adults,0.40,4
+Australia and Oceania,American Samoa,1980,Children,0.44,14
+Australia and Oceania,Australia,1980,Children,0.25,3713
+Australia and Oceania,Cook Islands,1980,Children,0.47,8
+Australia and Oceania,Fiji,1980,Children,0.40,256
+Australia and Oceania,French Polynesia,1980,Children,0.40,65
+Australia and Oceania,Guam,1980,Children,0.35,39
+Australia and Oceania,Kiribati,1980,Children,0.40,24
+Australia and Oceania,Marshall Islands,1980,Children,0.50,16
+Australia and Oceania,Micronesia (Fed. States of),1980,Children,0.47,36
+Australia and Oceania,Nauru,1980,Children,0.38,3
+Australia and Oceania,New Caledonia,1980,Children,0.39,58
+Australia and Oceania,New Zealand,1980,Children,0.27,857
+Australia and Oceania,Niue,1980,Children,1.00,3
+Australia and Oceania,Northern Mariana Islands,1980,Children,0.41,7
+Australia and Oceania,Palau,1980,Children,0.45,5
+Australia and Oceania,Papua New Guinea,1980,Children,0.44,1366
+Australia and Oceania,Samoa,1980,Children,0.47,77
+Australia and Oceania,Solomon Islands,1980,Children,0.48,113
+Australia and Oceania,Tokelau,1980,Children,,0
+Australia and Oceania,Tonga,1980,Children,0.44,42
+Australia and Oceania,Tuvalu,1980,Children,0.50,3
+Australia and Oceania,Vanuatu,1980,Children,0.45,53
+Australia and Oceania,Wallis and Futuna Islands,1980,Children,0.60,6
+Australia and Oceania,American Samoa,1980,Eldery,0.00,0
+Australia and Oceania,Australia,1980,Eldery,0.10,1414
+Australia and Oceania,Cook Islands,1980,Eldery,0.00,0
+Australia and Oceania,Fiji,1980,Eldery,0.03,18
+Australia and Oceania,French Polynesia,1980,Eldery,0.02,4
+Australia and Oceania,Guam,1980,Eldery,0.02,2
+Australia and Oceania,Kiribati,1980,Eldery,0.03,2
+Australia and Oceania,Marshall Islands,1980,Eldery,0.00,0
+Australia and Oceania,Micronesia (Fed. States of),1980,Eldery,0.03,2
+Australia and Oceania,Nauru,1980,Eldery,0.00,0
+Australia and Oceania,New Caledonia,1980,Eldery,0.04,6
+Australia and Oceania,New Zealand,1980,Eldery,0.10,307
+Australia and Oceania,Niue,1980,Eldery,0.00,0
+Australia and Oceania,Northern Mariana Islands,1980,Eldery,0.00,0
+Australia and Oceania,Palau,1980,Eldery,0.00,0
+Australia and Oceania,Papua New Guinea,1980,Eldery,0.01,33
+Australia and Oceania,Samoa,1980,Eldery,0.02,4
+Australia and Oceania,Solomon Islands,1980,Eldery,0.03,7
+Australia and Oceania,Tokelau,1980,Eldery,,0
+Australia and Oceania,Tonga,1980,Eldery,0.03,3
+Australia and Oceania,Tuvalu,1980,Eldery,0.00,0
+Australia and Oceania,Vanuatu,1980,Eldery,0.03,4
+Australia and Oceania,Wallis and Futuna Islands,1980,Eldery,0.00,0
+Australia and Oceania,American Samoa,2000,Adults,0.56,32
+Australia and Oceania,Australia,2000,Adults,0.67,12722
+Australia and Oceania,Cook Islands,2000,Adults,0.63,10
+Australia and Oceania,Fiji,2000,Adults,0.62,519
+Australia and Oceania,French Polynesia,2000,Adults,0.64,162
+Australia and Oceania,Guam,2000,Adults,0.66,104
+Australia and Oceania,Kiribati,2000,Adults,0.57,51
+Australia and Oceania,Marshall Islands,2000,Adults,0.54,28
+Australia and Oceania,Micronesia (Fed. States of),2000,Adults,0.56,63
+Australia and Oceania,Nauru,2000,Adults,0.67,6
+Australia and Oceania,New Caledonia,2000,Adults,0.65,145
+Australia and Oceania,New Zealand,2000,Adults,0.66,2527
+Australia and Oceania,Niue,2000,Adults,,0
+Australia and Oceania,Northern Mariana Islands,2000,Adults,0.65,51
+Australia and Oceania,Palau,2000,Adults,0.68,13
+Australia and Oceania,Papua New Guinea,2000,Adults,0.57,3159
+Australia and Oceania,Samoa,2000,Adults,0.55,100
+Australia and Oceania,Solomon Islands,2000,Adults,0.54,231
+Australia and Oceania,Tokelau,2000,Adults,,0
+Australia and Oceania,Tonga,2000,Adults,0.56,57
+Australia and Oceania,Tuvalu,2000,Adults,0.70,7
+Australia and Oceania,Vanuatu,2000,Adults,0.54,104
+Australia and Oceania,Wallis and Futuna Islands,2000,Adults,0.60,9
+Australia and Oceania,American Samoa,2000,Children,0.40,23
+Australia and Oceania,Australia,2000,Children,0.21,3944
+Australia and Oceania,Cook Islands,2000,Children,0.38,6
+Australia and Oceania,Fiji,2000,Children,0.35,289
+Australia and Oceania,French Polynesia,2000,Children,0.32,80
+Australia and Oceania,Guam,2000,Children,0.30,47
+Australia and Oceania,Kiribati,2000,Children,0.40,36
+Australia and Oceania,Marshall Islands,2000,Children,0.46,24
+Australia and Oceania,Micronesia (Fed. States of),2000,Children,0.40,45
+Australia and Oceania,Nauru,2000,Children,0.33,3
+Australia and Oceania,New Caledonia,2000,Children,0.30,67
+Australia and Oceania,New Zealand,2000,Children,0.23,877
+Australia and Oceania,Niue,2000,Children,,0
+Australia and Oceania,Northern Mariana Islands,2000,Children,0.35,28
+Australia and Oceania,Palau,2000,Children,0.32,6
+Australia and Oceania,Papua New Guinea,2000,Children,0.40,2223
+Australia and Oceania,Samoa,2000,Children,0.41,75
+Australia and Oceania,Solomon Islands,2000,Children,0.43,184
+Australia and Oceania,Tokelau,2000,Children,,0
+Australia and Oceania,Tonga,2000,Children,0.38,39
+Australia and Oceania,Tuvalu,2000,Children,0.30,3
+Australia and Oceania,Vanuatu,2000,Children,0.43,83
+Australia and Oceania,Wallis and Futuna Islands,2000,Children,0.40,6
+Australia and Oceania,American Samoa,2000,Eldery,0.04,2
+Australia and Oceania,Australia,2000,Eldery,0.12,2352
+Australia and Oceania,Cook Islands,2000,Eldery,0.00,0
+Australia and Oceania,Fiji,2000,Eldery,0.03,26
+Australia and Oceania,French Polynesia,2000,Eldery,0.04,10
+Australia and Oceania,Guam,2000,Eldery,0.04,7
+Australia and Oceania,Kiribati,2000,Eldery,0.02,2
+Australia and Oceania,Marshall Islands,2000,Eldery,0.00,0
+Australia and Oceania,Micronesia (Fed. States of),2000,Eldery,0.04,4
+Australia and Oceania,Nauru,2000,Eldery,0.00,0
+Australia and Oceania,New Caledonia,2000,Eldery,0.05,12
+Australia and Oceania,New Zealand,2000,Eldery,0.12,450
+Australia and Oceania,Niue,2000,Eldery,,0
+Australia and Oceania,Northern Mariana Islands,2000,Eldery,0.00,0
+Australia and Oceania,Palau,2000,Eldery,0.00,0
+Australia and Oceania,Papua New Guinea,2000,Eldery,0.02,126
+Australia and Oceania,Samoa,2000,Eldery,0.04,8
+Australia and Oceania,Solomon Islands,2000,Eldery,0.03,15
+Australia and Oceania,Tokelau,2000,Eldery,,0
+Australia and Oceania,Tonga,2000,Eldery,0.06,6
+Australia and Oceania,Tuvalu,2000,Eldery,0.00,0
+Australia and Oceania,Vanuatu,2000,Eldery,0.03,6
+Australia and Oceania,Wallis and Futuna Islands,2000,Eldery,0.00,0
+Australia and Oceania,American Samoa,2020,Adults,0.69,31
+Australia and Oceania,Australia,2020,Adults,0.65,16743
+Australia and Oceania,Cook Islands,2020,Adults,0.71,10
+Australia and Oceania,Fiji,2020,Adults,0.65,601
+Australia and Oceania,French Polynesia,2020,Adults,0.69,207
+Australia and Oceania,Guam,2020,Adults,0.63,105
+Australia and Oceania,Kiribati,2020,Adults,0.60,75
+Australia and Oceania,Marshall Islands,2020,Adults,0.63,27
+Australia and Oceania,Micronesia (Fed. States of),2020,Adults,0.63,71
+Australia and Oceania,Nauru,2020,Adults,0.55,6
+Australia and Oceania,New Caledonia,2020,Adults,0.67,193
+Australia and Oceania,New Zealand,2020,Adults,0.65,3307
+Australia and Oceania,Niue,2020,Adults,,0
+Australia and Oceania,Northern Mariana Islands,2020,Adults,0.71,36
+Australia and Oceania,Palau,2020,Adults,0.71,10
+Australia and Oceania,Papua New Guinea,2020,Adults,0.62,6049
+Australia and Oceania,Samoa,2020,Adults,0.57,122
+Australia and Oceania,Solomon Islands,2020,Adults,0.57,393
+Australia and Oceania,Tokelau,2020,Adults,,0
+Australia and Oceania,Tonga,2020,Adults,0.59,62
+Australia and Oceania,Tuvalu,2020,Adults,0.73,8
+Australia and Oceania,Vanuatu,2020,Adults,0.56,176
+Australia and Oceania,Wallis and Futuna Islands,2020,Adults,0.71,10
+Australia and Oceania,American Samoa,2020,Children,0.27,12
+Australia and Oceania,Australia,2020,Children,0.19,4760
+Australia and Oceania,Cook Islands,2020,Children,0.21,3
+Australia and Oceania,Fiji,2020,Children,0.29,268
+Australia and Oceania,French Polynesia,2020,Children,0.22,67
+Australia and Oceania,Guam,2020,Children,0.27,45
+Australia and Oceania,Kiribati,2020,Children,0.37,46
+Australia and Oceania,Marshall Islands,2020,Children,0.35,15
+Australia and Oceania,Micronesia (Fed. States of),2020,Children,0.31,35
+Australia and Oceania,Nauru,2020,Children,0.45,5
+Australia and Oceania,New Caledonia,2020,Children,0.22,65
+Australia and Oceania,New Zealand,2020,Children,0.19,965
+Australia and Oceania,Niue,2020,Children,,0
+Australia and Oceania,Northern Mariana Islands,2020,Children,0.22,11
+Australia and Oceania,Palau,2020,Children,0.21,3
+Australia and Oceania,Papua New Guinea,2020,Children,0.35,3405
+Australia and Oceania,Samoa,2020,Children,0.38,81
+Australia and Oceania,Solomon Islands,2020,Children,0.40,273
+Australia and Oceania,Tokelau,2020,Children,,0
+Australia and Oceania,Tonga,2020,Children,0.35,37
+Australia and Oceania,Tuvalu,2020,Children,0.27,3
+Australia and Oceania,Vanuatu,2020,Children,0.40,124
+Australia and Oceania,Wallis and Futuna Islands,2020,Children,0.21,3
+Australia and Oceania,American Samoa,2020,Eldery,0.04,2
+Australia and Oceania,Australia,2020,Eldery,0.16,4166
+Australia and Oceania,Cook Islands,2020,Eldery,0.07,1
+Australia and Oceania,Fiji,2020,Eldery,0.05,49
+Australia and Oceania,French Polynesia,2020,Eldery,0.09,26
+Australia and Oceania,Guam,2020,Eldery,0.11,18
+Australia and Oceania,Kiribati,2020,Eldery,0.03,4
+Australia and Oceania,Marshall Islands,2020,Eldery,0.02,1
+Australia and Oceania,Micronesia (Fed. States of),2020,Eldery,0.05,6
+Australia and Oceania,Nauru,2020,Eldery,0.00,0
+Australia and Oceania,New Caledonia,2020,Eldery,0.11,31
+Australia and Oceania,New Zealand,2020,Eldery,0.16,790
+Australia and Oceania,Niue,2020,Eldery,,0
+Australia and Oceania,Northern Mariana Islands,2020,Eldery,0.08,4
+Australia and Oceania,Palau,2020,Eldery,0.07,1
+Australia and Oceania,Papua New Guinea,2020,Eldery,0.03,295
+Australia and Oceania,Samoa,2020,Eldery,0.05,10
+Australia and Oceania,Solomon Islands,2020,Eldery,0.03,23
+Australia and Oceania,Tokelau,2020,Eldery,,0
+Australia and Oceania,Tonga,2020,Eldery,0.06,6
+Australia and Oceania,Tuvalu,2020,Eldery,0.00,0
+Australia and Oceania,Vanuatu,2020,Eldery,0.04,12
+Australia and Oceania,Wallis and Futuna Islands,2020,Eldery,0.07,1
+Europe,Albania,1960,Adults,0.53,914
+Europe,Andorra,1960,Adults,0.73,8
+Europe,Austria,1960,Adults,0.66,4632
+Europe,Belarus,1960,Adults,0.62,5181
+Europe,Belgium,1960,Adults,0.64,5860
+Europe,Bosnia and Herzegovina,1960,Adults,0.58,1879
+Europe,Bulgaria,1960,Adults,0.66,5245
+Europe,Croatia,1960,Adults,0.66,2766
+Europe,Czechia,1960,Adults,0.65,6201
+Europe,Denmark,1960,Adults,0.64,2943
+Europe,Estonia,1960,Adults,0.66,808
+Europe,Faroe Islands,1960,Adults,0.56,19
+Europe,Finland,1960,Adults,0.62,2758
+Europe,France,1960,Adults,0.62,28351
+Europe,Germany,1960,Adults,0.67,49257
+Europe,Gibraltar,1960,Adults,0.67,16
+Europe,Greece,1960,Adults,0.65,5551
+Europe,Guernsey,1960,Adults,0.63,30
+Europe,Hungary,1960,Adults,0.66,6554
+Europe,Iceland,1960,Adults,0.57,100
+Europe,Ireland,1960,Adults,0.58,1623
+Europe,Isle of Man,1960,Adults,0.63,31
+Europe,Italy,1960,Adults,0.65,32423
+Europe,Jersey,1960,Adults,0.68,43
+Europe,Kosovo (under UNSC res. 1244),1960,Adults,0.52,512
+Europe,Latvia,1960,Adults,0.67,1452
+Europe,Liechtenstein,1960,Adults,0.69,11
+Europe,Lithuania,1960,Adults,0.63,1824
+Europe,Luxembourg,1960,Adults,0.68,213
+Europe,Malta,1960,Adults,0.56,191
+Europe,Monaco,1960,Adults,0.70,14
+Europe,Montenegro,1960,Adults,0.57,271
+Europe,Netherlands,1960,Adults,0.61,7014
+Europe,North Macedonia,1960,Adults,0.58,846
+Europe,Norway,1960,Adults,0.63,2258
+Europe,Poland,1960,Adults,0.61,17940
+Europe,Portugal,1960,Adults,0.63,5574
+Europe,Republic of Moldova,1960,Adults,0.60,1878
+Europe,Romania,1960,Adults,0.65,11990
+Europe,Russian Federation,1960,Adults,0.63,75985
+Europe,San Marino,1960,Adults,0.71,10
+Europe,Serbia,1960,Adults,0.68,4477
+Europe,Slovakia,1960,Adults,0.62,2542
+Europe,Slovenia,1960,Adults,0.65,1042
+Europe,Spain,1960,Adults,0.64,19579
+Europe,Sweden,1960,Adults,0.66,4933
+Europe,Switzerland,1960,Adults,0.66,3502
+Europe,Ukraine,1960,Adults,0.66,28282
+Europe,United Kingdom,1960,Adults,0.65,34110
+Europe,Albania,1960,Children,0.41,702
+Europe,Andorra,1960,Children,0.27,3
+Europe,Austria,1960,Children,0.22,1554
+Europe,Belarus,1960,Children,0.31,2607
+Europe,Belgium,1960,Children,0.24,2157
+Europe,Bosnia and Herzegovina,1960,Children,0.39,1266
+Europe,Bulgaria,1960,Children,0.26,2067
+Europe,Croatia,1960,Children,0.27,1131
+Europe,Czechia,1960,Children,0.26,2445
+Europe,Denmark,1960,Children,0.25,1154
+Europe,Estonia,1960,Children,0.23,283
+Europe,Faroe Islands,1960,Children,0.35,12
+Europe,Finland,1960,Children,0.30,1346
+Europe,France,1960,Children,0.26,11981
+Europe,Germany,1960,Children,0.21,15385
+Europe,Gibraltar,1960,Children,0.25,6
+Europe,Greece,1960,Children,0.27,2256
+Europe,Guernsey,1960,Children,0.25,12
+Europe,Hungary,1960,Children,0.25,2527
+Europe,Iceland,1960,Children,0.35,61
+Europe,Ireland,1960,Children,0.31,871
+Europe,Isle of Man,1960,Children,0.20,10
+Europe,Italy,1960,Children,0.25,12384
+Europe,Jersey,1960,Children,0.19,12
+Europe,Kosovo (under UNSC res. 1244),1960,Children,0.44,435
+Europe,Latvia,1960,Children,0.22,477
+Europe,Liechtenstein,1960,Children,0.31,5
+Europe,Lithuania,1960,Children,0.29,823
+Europe,Luxembourg,1960,Children,0.21,66
+Europe,Malta,1960,Children,0.36,123
+Europe,Monaco,1960,Children,0.15,3
+Europe,Montenegro,1960,Children,0.36,171
+Europe,Netherlands,1960,Children,0.30,3445
+Europe,North Macedonia,1960,Children,0.37,542
+Europe,Norway,1960,Children,0.26,928
+Europe,Poland,1960,Children,0.33,9869
+Europe,Portugal,1960,Children,0.29,2599
+Europe,Republic of Moldova,1960,Children,0.35,1083
+Europe,Romania,1960,Children,0.28,5227
+Europe,Russian Federation,1960,Children,0.30,36472
+Europe,San Marino,1960,Children,0.21,3
+Europe,Serbia,1960,Children,0.27,1795
+Europe,Slovakia,1960,Children,0.31,1298
+Europe,Slovenia,1960,Children,0.27,435
+Europe,Spain,1960,Children,0.27,8345
+Europe,Sweden,1960,Children,0.22,1680
+Europe,Switzerland,1960,Children,0.24,1281
+Europe,Ukraine,1960,Children,0.27,11414
+Europe,United Kingdom,1960,Children,0.23,12274
+Europe,Albania,1960,Eldery,0.05,93
+Europe,Andorra,1960,Eldery,0.00,0
+Europe,Austria,1960,Eldery,0.12,861
+Europe,Belarus,1960,Eldery,0.07,601
+Europe,Belgium,1960,Eldery,0.12,1092
+Europe,Bosnia and Herzegovina,1960,Eldery,0.04,117
+Europe,Bulgaria,1960,Eldery,0.07,580
+Europe,Croatia,1960,Eldery,0.08,318
+Europe,Czechia,1960,Eldery,0.09,894
+Europe,Denmark,1960,Eldery,0.11,487
+Europe,Estonia,1960,Eldery,0.11,128
+Europe,Faroe Islands,1960,Eldery,0.09,3
+Europe,Finland,1960,Eldery,0.07,324
+Europe,France,1960,Eldery,0.12,5327
+Europe,Germany,1960,Eldery,0.12,8424
+Europe,Gibraltar,1960,Eldery,0.08,2
+Europe,Greece,1960,Eldery,0.08,688
+Europe,Guernsey,1960,Eldery,0.13,6
+Europe,Hungary,1960,Eldery,0.09,902
+Europe,Iceland,1960,Eldery,0.08,14
+Europe,Ireland,1960,Eldery,0.11,318
+Europe,Isle of Man,1960,Eldery,0.16,8
+Europe,Italy,1960,Eldery,0.10,4711
+Europe,Jersey,1960,Eldery,0.13,8
+Europe,Kosovo (under UNSC res. 1244),1960,Eldery,0.04,43
+Europe,Latvia,1960,Eldery,0.11,227
+Europe,Liechtenstein,1960,Eldery,0.00,0
+Europe,Lithuania,1960,Eldery,0.08,230
+Europe,Luxembourg,1960,Eldery,0.10,32
+Europe,Malta,1960,Eldery,0.07,25
+Europe,Monaco,1960,Eldery,0.15,3
+Europe,Montenegro,1960,Eldery,0.06,30
+Europe,Netherlands,1960,Eldery,0.09,1034
+Europe,North Macedonia,1960,Eldery,0.05,78
+Europe,Norway,1960,Eldery,0.11,394
+Europe,Poland,1960,Eldery,0.06,1701
+Europe,Portugal,1960,Eldery,0.08,708
+Europe,Republic of Moldova,1960,Eldery,0.05,172
+Europe,Romania,1960,Eldery,0.07,1241
+Europe,Russian Federation,1960,Eldery,0.06,7278
+Europe,San Marino,1960,Eldery,0.07,1
+Europe,Serbia,1960,Eldery,0.05,311
+Europe,Slovakia,1960,Eldery,0.07,284
+Europe,Slovenia,1960,Eldery,0.08,123
+Europe,Spain,1960,Eldery,0.08,2490
+Europe,Sweden,1960,Eldery,0.12,880
+Europe,Switzerland,1960,Eldery,0.10,545
+Europe,Ukraine,1960,Eldery,0.07,3069
+Europe,United Kingdom,1960,Eldery,0.12,6160
+Europe,Albania,1980,Adults,0.59,1730
+Europe,Andorra,1980,Adults,0.69,24
+Europe,Austria,1980,Adults,0.64,4844
+Europe,Belarus,1980,Adults,0.67,6550
+Europe,Belgium,1980,Adults,0.65,6424
+Europe,Bosnia and Herzegovina,1980,Adults,0.66,2766
+Europe,Bulgaria,1980,Adults,0.65,5855
+Europe,Croatia,1980,Adults,0.67,3144
+Europe,Czechia,1980,Adults,0.63,6486
+Europe,Denmark,1980,Adults,0.65,3318
+Europe,Estonia,1980,Adults,0.66,972
+Europe,Faroe Islands,1980,Adults,0.62,26
+Europe,Finland,1980,Adults,0.68,3237
+Europe,France,1980,Adults,0.64,34184
+Europe,Germany,1980,Adults,0.66,51289
+Europe,Gibraltar,1980,Adults,0.67,20
+Europe,Greece,1980,Adults,0.63,5868
+Europe,Guernsey,1980,Adults,0.64,34
+Europe,Hungary,1980,Adults,0.65,6915
+Europe,Iceland,1980,Adults,0.63,143
+Europe,Ireland,1980,Adults,0.59,1990
+Europe,Isle of Man,1980,Adults,0.60,39
+Europe,Italy,1980,Adults,0.64,36329
+Europe,Jersey,1980,Adults,0.68,51
+Europe,Kosovo (under UNSC res. 1244),1980,Adults,0.54,862
+Europe,Latvia,1980,Adults,0.67,1720
+Europe,Liechtenstein,1980,Adults,0.65,15
+Europe,Lithuania,1980,Adults,0.66,2311
+Europe,Luxembourg,1980,Adults,0.68,246
+Europe,Malta,1980,Adults,0.67,225
+Europe,Monaco,1980,Adults,0.68,19
+Europe,Montenegro,1980,Adults,0.64,378
+Europe,Netherlands,1980,Adults,0.66,9352
+Europe,North Macedonia,1980,Adults,0.66,1255
+Europe,Norway,1980,Adults,0.63,2578
+Europe,Poland,1980,Adults,0.66,23310
+Europe,Portugal,1980,Adults,0.63,6136
+Europe,Republic of Moldova,1980,Adults,0.66,2696
+Europe,Romania,1980,Adults,0.63,13846
+Europe,Russian Federation,1980,Adults,0.68,94245
+Europe,San Marino,1980,Adults,0.70,14
+Europe,Serbia,1980,Adults,0.69,5331
+Europe,Slovakia,1980,Adults,0.63,3157
+Europe,Slovenia,1980,Adults,0.66,1249
+Europe,Spain,1980,Adults,0.63,23574
+Europe,Sweden,1980,Adults,0.64,5328
+Europe,Switzerland,1980,Adults,0.66,4197
+Europe,Ukraine,1980,Adults,0.67,33302
+Europe,United Kingdom,1980,Adults,0.64,36074
+Europe,Albania,1980,Children,0.36,1068
+Europe,Andorra,1980,Children,0.26,9
+Europe,Austria,1980,Children,0.20,1542
+Europe,Belarus,1980,Children,0.23,2250
+Europe,Belgium,1980,Children,0.20,1988
+Europe,Bosnia and Herzegovina,1980,Children,0.28,1164
+Europe,Bulgaria,1980,Children,0.23,2038
+Europe,Croatia,1980,Children,0.21,975
+Europe,Czechia,1980,Children,0.23,2409
+Europe,Denmark,1980,Children,0.21,1069
+Europe,Estonia,1980,Children,0.22,320
+Europe,Faroe Islands,1980,Children,0.29,12
+Europe,Finland,1980,Children,0.20,971
+Europe,France,1980,Children,0.22,12016
+Europe,Germany,1980,Children,0.18,14295
+Europe,Gibraltar,1980,Children,0.23,7
+Europe,Greece,1980,Children,0.24,2218
+Europe,Guernsey,1980,Children,0.21,11
+Europe,Hungary,1980,Children,0.22,2348
+Europe,Iceland,1980,Children,0.28,63
+Europe,Ireland,1980,Children,0.30,1031
+Europe,Isle of Man,1980,Children,0.20,13
+Europe,Italy,1980,Children,0.22,12520
+Europe,Jersey,1980,Children,0.17,13
+Europe,Kosovo (under UNSC res. 1244),1980,Children,0.41,657
+Europe,Latvia,1980,Children,0.20,521
+Europe,Liechtenstein,1980,Children,0.26,6
+Europe,Lithuania,1980,Children,0.23,814
+Europe,Luxembourg,1980,Children,0.19,69
+Europe,Malta,1980,Children,0.24,79
+Europe,Monaco,1980,Children,0.11,3
+Europe,Montenegro,1980,Children,0.28,162
+Europe,Netherlands,1980,Children,0.22,3151
+Europe,North Macedonia,1980,Children,0.28,527
+Europe,Norway,1980,Children,0.22,906
+Europe,Poland,1980,Children,0.24,8616
+Europe,Portugal,1980,Children,0.26,2527
+Europe,Republic of Moldova,1980,Children,0.26,1065
+Europe,Romania,1980,Children,0.27,5920
+Europe,Russian Federation,1980,Children,0.22,29920
+Europe,San Marino,1980,Children,0.20,4
+Europe,Serbia,1980,Children,0.21,1672
+Europe,Slovakia,1980,Children,0.26,1298
+Europe,Slovenia,1980,Children,0.23,438
+Europe,Spain,1980,Children,0.26,9733
+Europe,Sweden,1980,Children,0.20,1630
+Europe,Switzerland,1980,Children,0.20,1247
+Europe,Ukraine,1980,Children,0.21,10694
+Europe,United Kingdom,1980,Children,0.21,11843
+Europe,Albania,1980,Eldery,0.05,143
+Europe,Andorra,1980,Eldery,0.06,2
+Europe,Austria,1980,Eldery,0.15,1160
+Europe,Belarus,1980,Eldery,0.10,1018
+Europe,Belgium,1980,Eldery,0.14,1420
+Europe,Bosnia and Herzegovina,1980,Eldery,0.06,270
+Europe,Bulgaria,1980,Eldery,0.12,1087
+Europe,Croatia,1980,Eldery,0.12,561
+Europe,Czechia,1980,Eldery,0.13,1375
+Europe,Denmark,1980,Eldery,0.14,739
+Europe,Estonia,1980,Eldery,0.13,185
+Europe,Faroe Islands,1980,Eldery,0.10,4
+Europe,Finland,1980,Eldery,0.12,572
+Europe,France,1980,Eldery,0.14,7511
+Europe,Germany,1980,Eldery,0.16,12201
+Europe,Gibraltar,1980,Eldery,0.10,3
+Europe,Greece,1980,Eldery,0.13,1222
+Europe,Guernsey,1980,Eldery,0.15,8
+Europe,Hungary,1980,Eldery,0.13,1433
+Europe,Iceland,1980,Eldery,0.10,22
+Europe,Ireland,1980,Eldery,0.11,369
+Europe,Isle of Man,1980,Eldery,0.20,13
+Europe,Italy,1980,Eldery,0.13,7481
+Europe,Jersey,1980,Eldery,0.15,11
+Europe,Kosovo (under UNSC res. 1244),1980,Eldery,0.04,71
+Europe,Latvia,1980,Eldery,0.13,330
+Europe,Liechtenstein,1980,Eldery,0.09,2
+Europe,Lithuania,1980,Eldery,0.11,395
+Europe,Luxembourg,1980,Eldery,0.13,49
+Europe,Malta,1980,Eldery,0.10,32
+Europe,Monaco,1980,Eldery,0.21,6
+Europe,Montenegro,1980,Eldery,0.08,49
+Europe,Netherlands,1980,Eldery,0.12,1626
+Europe,North Macedonia,1980,Eldery,0.07,125
+Europe,Norway,1980,Eldery,0.15,603
+Europe,Poland,1980,Eldery,0.10,3597
+Europe,Portugal,1980,Eldery,0.11,1120
+Europe,Republic of Moldova,1980,Eldery,0.08,341
+Europe,Romania,1980,Eldery,0.11,2360
+Europe,Russian Federation,1980,Eldery,0.10,14093
+Europe,San Marino,1980,Eldery,0.10,2
+Europe,Serbia,1980,Eldery,0.10,775
+Europe,Slovakia,1980,Eldery,0.10,518
+Europe,Slovenia,1980,Eldery,0.11,214
+Europe,Spain,1980,Eldery,0.11,4185
+Europe,Sweden,1980,Eldery,0.16,1355
+Europe,Switzerland,1980,Eldery,0.14,874
+Europe,Ukraine,1980,Eldery,0.12,5979
+Europe,United Kingdom,1980,Eldery,0.15,8412
+Europe,Albania,2000,Adults,0.63,1992
+Europe,Andorra,2000,Adults,0.73,47
+Europe,Austria,2000,Adults,0.68,5411
+Europe,Belarus,2000,Adults,0.68,6934
+Europe,Belgium,2000,Adults,0.66,6732
+Europe,Bosnia and Herzegovina,2000,Adults,0.69,2884
+Europe,Bulgaria,2000,Adults,0.68,5471
+Europe,Croatia,2000,Adults,0.67,3054
+Europe,Czechia,2000,Adults,0.70,7143
+Europe,Denmark,2000,Adults,0.67,3562
+Europe,Estonia,2000,Adults,0.67,941
+Europe,Faroe Islands,2000,Adults,0.63,29
+Europe,Finland,2000,Adults,0.67,3464
+Europe,France,2000,Adults,0.65,38209
+Europe,Germany,2000,Adults,0.68,55423
+Europe,Gibraltar,2000,Adults,0.64,18
+Europe,Greece,2000,Adults,0.68,7541
+Europe,Guernsey,2000,Adults,0.67,40
+Europe,Hungary,2000,Adults,0.68,6954
+Europe,Iceland,2000,Adults,0.65,182
+Europe,Ireland,2000,Adults,0.67,2529
+Europe,Isle of Man,2000,Adults,0.65,49
+Europe,Italy,2000,Adults,0.67,38403
+Europe,Jersey,2000,Adults,0.70,60
+Europe,Kosovo (under UNSC res. 1244),2000,Adults,0.58,1054
+Europe,Latvia,2000,Adults,0.67,1610
+Europe,Liechtenstein,2000,Adults,0.73,24
+Europe,Lithuania,2000,Adults,0.66,2387
+Europe,Luxembourg,2000,Adults,0.67,292
+Europe,Malta,2000,Adults,0.68,270
+Europe,Monaco,2000,Adults,0.63,19
+Europe,Montenegro,2000,Adults,0.67,425
+Europe,Netherlands,2000,Adults,0.68,10783
+Europe,North Macedonia,2000,Adults,0.68,1381
+Europe,Norway,2000,Adults,0.65,2912
+Europe,Poland,2000,Adults,0.68,26375
+Europe,Portugal,2000,Adults,0.67,6938
+Europe,Republic of Moldova,2000,Adults,0.68,2871
+Europe,Romania,2000,Adults,0.68,14913
+Europe,Russian Federation,2000,Adults,0.69,101807
+Europe,San Marino,2000,Adults,0.72,18
+Europe,Serbia,2000,Adults,0.69,5465
+Europe,Slovakia,2000,Adults,0.69,3711
+Europe,Slovenia,2000,Adults,0.70,1392
+Europe,Spain,2000,Adults,0.69,27948
+Europe,Sweden,2000,Adults,0.64,5704
+Europe,Switzerland,2000,Adults,0.67,4835
+Europe,Ukraine,2000,Adults,0.68,33481
+Europe,United Kingdom,2000,Adults,0.65,38385
+Europe,Albania,2000,Children,0.30,939
+Europe,Andorra,2000,Children,0.14,9
+Europe,Austria,2000,Children,0.17,1365
+Europe,Belarus,2000,Children,0.19,1899
+Europe,Belgium,2000,Children,0.18,1807
+Europe,Bosnia and Herzegovina,2000,Children,0.20,820
+Europe,Bulgaria,2000,Children,0.16,1265
+Europe,Croatia,2000,Children,0.17,783
+Europe,Czechia,2000,Children,0.16,1685
+Europe,Denmark,2000,Children,0.18,987
+Europe,Estonia,2000,Children,0.18,246
+Europe,Faroe Islands,2000,Children,0.24,11
+Europe,Finland,2000,Children,0.18,939
+Europe,France,2000,Children,0.19,10980
+Europe,Germany,2000,Children,0.16,12728
+Europe,Gibraltar,2000,Children,0.21,6
+Europe,Greece,2000,Children,0.15,1633
+Europe,Guernsey,2000,Children,0.18,11
+Europe,Hungary,2000,Children,0.17,1717
+Europe,Iceland,2000,Children,0.23,65
+Europe,Ireland,2000,Children,0.22,819
+Europe,Isle of Man,2000,Children,0.19,14
+Europe,Italy,2000,Children,0.14,8133
+Europe,Jersey,2000,Children,0.17,15
+Europe,Kosovo (under UNSC res. 1244),2000,Children,0.36,654
+Europe,Latvia,2000,Children,0.18,422
+Europe,Liechtenstein,2000,Children,0.18,6
+Europe,Lithuania,2000,Children,0.20,708
+Europe,Luxembourg,2000,Children,0.19,82
+Europe,Malta,2000,Children,0.20,78
+Europe,Monaco,2000,Children,0.10,3
+Europe,Montenegro,2000,Children,0.22,139
+Europe,Netherlands,2000,Children,0.19,2955
+Europe,North Macedonia,2000,Children,0.22,458
+Europe,Norway,2000,Children,0.20,899
+Europe,Poland,2000,Children,0.19,7442
+Europe,Portugal,2000,Children,0.16,1685
+Europe,Republic of Moldova,2000,Children,0.22,939
+Europe,Romania,2000,Children,0.19,4080
+Europe,Russian Federation,2000,Children,0.18,26902
+Europe,San Marino,2000,Children,0.12,3
+Europe,Serbia,2000,Children,0.16,1305
+Europe,Slovakia,2000,Children,0.20,1060
+Europe,Slovenia,2000,Children,0.16,318
+Europe,Spain,2000,Children,0.15,5984
+Europe,Sweden,2000,Children,0.18,1635
+Europe,Switzerland,2000,Children,0.17,1248
+Europe,Ukraine,2000,Children,0.18,8578
+Europe,United Kingdom,2000,Children,0.19,11215
+Europe,Albania,2000,Eldery,0.08,249
+Europe,Andorra,2000,Eldery,0.13,8
+Europe,Austria,2000,Eldery,0.15,1234
+Europe,Belarus,2000,Eldery,0.14,1422
+Europe,Belgium,2000,Eldery,0.17,1723
+Europe,Bosnia and Herzegovina,2000,Eldery,0.11,474
+Europe,Bulgaria,2000,Eldery,0.17,1359
+Europe,Croatia,2000,Eldery,0.16,711
+Europe,Czechia,2000,Eldery,0.14,1405
+Europe,Denmark,2000,Eldery,0.15,793
+Europe,Estonia,2000,Eldery,0.15,209
+Europe,Faroe Islands,2000,Eldery,0.13,6
+Europe,Finland,2000,Eldery,0.15,772
+Europe,France,2000,Eldery,0.16,9477
+Europe,Germany,2000,Eldery,0.16,13401
+Europe,Gibraltar,2000,Eldery,0.14,4
+Europe,Greece,2000,Eldery,0.17,1866
+Europe,Guernsey,2000,Eldery,0.15,9
+Europe,Hungary,2000,Eldery,0.15,1530
+Europe,Iceland,2000,Eldery,0.12,33
+Europe,Ireland,2000,Eldery,0.11,421
+Europe,Isle of Man,2000,Eldery,0.16,12
+Europe,Italy,2000,Eldery,0.18,10428
+Europe,Jersey,2000,Eldery,0.13,11
+Europe,Kosovo (under UNSC res. 1244),2000,Eldery,0.06,115
+Europe,Latvia,2000,Eldery,0.15,362
+Europe,Liechtenstein,2000,Eldery,0.09,3
+Europe,Lithuania,2000,Eldery,0.14,505
+Europe,Luxembourg,2000,Eldery,0.14,59
+Europe,Malta,2000,Eldery,0.13,52
+Europe,Monaco,2000,Eldery,0.27,8
+Europe,Montenegro,2000,Eldery,0.11,68
+Europe,Netherlands,2000,Eldery,0.14,2163
+Europe,North Macedonia,2000,Eldery,0.10,198
+Europe,Norway,2000,Eldery,0.15,680
+Europe,Poland,2000,Eldery,0.12,4687
+Europe,Portugal,2000,Eldery,0.16,1676
+Europe,Republic of Moldova,2000,Eldery,0.10,440
+Europe,Romania,2000,Eldery,0.13,2928
+Europe,Russian Federation,2000,Eldery,0.12,18132
+Europe,San Marino,2000,Eldery,0.16,4
+Europe,Serbia,2000,Eldery,0.15,1165
+Europe,Slovakia,2000,Eldery,0.11,607
+Europe,Slovenia,2000,Eldery,0.14,276
+Europe,Spain,2000,Eldery,0.17,6810
+Europe,Sweden,2000,Eldery,0.17,1531
+Europe,Switzerland,2000,Eldery,0.15,1098
+Europe,Ukraine,2000,Eldery,0.14,6822
+Europe,United Kingdom,2000,Eldery,0.16,9250
+Europe,Albania,2020,Adults,0.68,1940
+Europe,Andorra,2020,Adults,0.72,56
+Europe,Austria,2020,Adults,0.66,5918
+Europe,Belarus,2020,Adults,0.67,6417
+Europe,Belgium,2020,Adults,0.64,7397
+Europe,Bosnia and Herzegovina,2020,Adults,0.67,2235
+Europe,Bulgaria,2020,Adults,0.64,4447
+Europe,Croatia,2020,Adults,0.64,2633
+Europe,Czechia,2020,Adults,0.64,6727
+Europe,Denmark,2020,Adults,0.64,3711
+Europe,Estonia,2020,Adults,0.63,844
+Europe,Faroe Islands,2020,Adults,0.60,31
+Europe,Finland,2020,Adults,0.62,3418
+Europe,France,2020,Adults,0.61,39615
+Europe,Germany,2020,Adults,0.64,53567
+Europe,Gibraltar,2020,Adults,0.61,20
+Europe,Greece,2020,Adults,0.64,6688
+Europe,Guernsey,2020,Adults,0.67,41
+Europe,Hungary,2020,Adults,0.65,6371
+Europe,Iceland,2020,Adults,0.67,244
+Europe,Ireland,2020,Adults,0.65,3229
+Europe,Isle of Man,2020,Adults,0.63,53
+Europe,Italy,2020,Adults,0.64,37944
+Europe,Jersey,2020,Adults,0.70,75
+Europe,Kosovo (under UNSC res. 1244),2020,Adults,0.68,1130
+Europe,Latvia,2020,Adults,0.63,1194
+Europe,Liechtenstein,2020,Adults,0.68,26
+Europe,Lithuania,2020,Adults,0.64,1819
+Europe,Luxembourg,2020,Adults,0.69,438
+Europe,Malta,2020,Adults,0.68,351
+Europe,Monaco,2020,Adults,0.55,21
+Europe,Montenegro,2020,Adults,0.66,417
+Europe,Netherlands,2020,Adults,0.65,11290
+Europe,North Macedonia,2020,Adults,0.69,1463
+Europe,Norway,2020,Adults,0.65,3500
+Europe,Poland,2020,Adults,0.66,25468
+Europe,Portugal,2020,Adults,0.64,6611
+Europe,Republic of Moldova,2020,Adults,0.67,2067
+Europe,Romania,2020,Adults,0.65,12693
+Europe,Russian Federation,2020,Adults,0.67,97582
+Europe,San Marino,2020,Adults,0.67,24
+Europe,Serbia,2020,Adults,0.65,4792
+Europe,Slovakia,2020,Adults,0.67,3674
+Europe,Slovenia,2020,Adults,0.65,1370
+Europe,Spain,2020,Adults,0.66,31228
+Europe,Sweden,2020,Adults,0.62,6453
+Europe,Switzerland,2020,Adults,0.66,5720
+Europe,Ukraine,2020,Adults,0.67,29632
+Europe,United Kingdom,2020,Adults,0.63,42576
+Europe,Albania,2020,Children,0.16,472
+Europe,Andorra,2020,Children,0.14,11
+Europe,Austria,2020,Children,0.14,1282
+Europe,Belarus,2020,Children,0.17,1622
+Europe,Belgium,2020,Children,0.17,1941
+Europe,Bosnia and Herzegovina,2020,Children,0.15,495
+Europe,Bulgaria,2020,Children,0.14,978
+Europe,Croatia,2020,Children,0.14,581
+Europe,Czechia,2020,Children,0.16,1681
+Europe,Denmark,2020,Children,0.16,948
+Europe,Estonia,2020,Children,0.16,219
+Europe,Faroe Islands,2020,Children,0.23,12
+Europe,Finland,2020,Children,0.16,866
+Europe,France,2020,Children,0.18,11318
+Europe,Germany,2020,Children,0.14,11459
+Europe,Gibraltar,2020,Children,0.18,6
+Europe,Greece,2020,Children,0.14,1490
+Europe,Guernsey,2020,Children,0.16,10
+Europe,Hungary,2020,Children,0.15,1419
+Europe,Iceland,2020,Children,0.19,69
+Europe,Ireland,2020,Children,0.20,998
+Europe,Isle of Man,2020,Children,0.15,13
+Europe,Italy,2020,Children,0.13,7651
+Europe,Jersey,2020,Children,0.14,15
+Europe,Kosovo (under UNSC res. 1244),2020,Children,0.23,378
+Europe,Latvia,2020,Children,0.16,297
+Europe,Liechtenstein,2020,Children,0.16,6
+Europe,Lithuania,2020,Children,0.15,425
+Europe,Luxembourg,2020,Children,0.16,100
+Europe,Malta,2020,Children,0.13,68
+Europe,Monaco,2020,Children,0.13,5
+Europe,Montenegro,2020,Children,0.18,114
+Europe,Netherlands,2020,Children,0.16,2720
+Europe,North Macedonia,2020,Children,0.16,341
+Europe,Norway,2020,Children,0.17,926
+Europe,Poland,2020,Children,0.15,5899
+Europe,Portugal,2020,Children,0.13,1389
+Europe,Republic of Moldova,2020,Children,0.20,606
+Europe,Romania,2020,Children,0.16,3114
+Europe,Russian Federation,2020,Children,0.18,25746
+Europe,San Marino,2020,Children,0.14,5
+Europe,Serbia,2020,Children,0.14,1040
+Europe,Slovakia,2020,Children,0.16,864
+Europe,Slovenia,2020,Children,0.15,322
+Europe,Spain,2020,Children,0.14,6818
+Europe,Sweden,2020,Children,0.18,1840
+Europe,Switzerland,2020,Children,0.15,1302
+Europe,Ukraine,2020,Children,0.15,6730
+Europe,United Kingdom,2020,Children,0.18,11928
+Europe,Albania,2020,Eldery,0.16,454
+Europe,Andorra,2020,Eldery,0.14,11
+Europe,Austria,2020,Eldery,0.19,1707
+Europe,Belarus,2020,Eldery,0.17,1594
+Europe,Belgium,2020,Eldery,0.19,2221
+Europe,Bosnia and Herzegovina,2020,Eldery,0.18,588
+Europe,Bulgaria,2020,Eldery,0.22,1554
+Europe,Croatia,2020,Eldery,0.22,883
+Europe,Czechia,2020,Eldery,0.20,2124
+Europe,Denmark,2020,Eldery,0.20,1168
+Europe,Estonia,2020,Eldery,0.20,267
+Europe,Faroe Islands,2020,Eldery,0.17,9
+Europe,Finland,2020,Eldery,0.22,1242
+Europe,France,2020,Eldery,0.21,13547
+Europe,Germany,2020,Eldery,0.22,18302
+Europe,Gibraltar,2020,Eldery,0.21,7
+Europe,Greece,2020,Eldery,0.22,2331
+Europe,Guernsey,2020,Eldery,0.16,10
+Europe,Hungary,2020,Eldery,0.20,1961
+Europe,Iceland,2020,Eldery,0.14,53
+Europe,Ireland,2020,Eldery,0.15,720
+Europe,Isle of Man,2020,Eldery,0.21,18
+Europe,Italy,2020,Eldery,0.23,13908
+Europe,Jersey,2020,Eldery,0.16,17
+Europe,Kosovo (under UNSC res. 1244),2020,Eldery,0.10,160
+Europe,Latvia,2020,Eldery,0.21,405
+Europe,Liechtenstein,2020,Eldery,0.16,6
+Europe,Lithuania,2020,Eldery,0.20,577
+Europe,Luxembourg,2020,Eldery,0.15,93
+Europe,Malta,2020,Eldery,0.19,97
+Europe,Monaco,2020,Eldery,0.32,12
+Europe,Montenegro,2020,Eldery,0.16,99
+Europe,Netherlands,2020,Eldery,0.20,3425
+Europe,North Macedonia,2020,Eldery,0.15,308
+Europe,Norway,2020,Eldery,0.18,954
+Europe,Poland,2020,Eldery,0.18,7062
+Europe,Portugal,2020,Eldery,0.22,2295
+Europe,Republic of Moldova,2020,Eldery,0.13,411
+Europe,Romania,2020,Eldery,0.19,3632
+Europe,Russian Federation,2020,Eldery,0.15,22289
+Europe,San Marino,2020,Eldery,0.19,7
+Europe,Serbia,2020,Eldery,0.21,1527
+Europe,Slovakia,2020,Eldery,0.17,917
+Europe,Slovenia,2020,Eldery,0.20,426
+Europe,Spain,2020,Eldery,0.20,9317
+Europe,Sweden,2020,Eldery,0.20,2078
+Europe,Switzerland,2020,Eldery,0.19,1619
+Europe,Ukraine,2020,Eldery,0.17,7548
+Europe,United Kingdom,2020,Eldery,0.19,12555
