@@ -33,12 +33,23 @@
       ]
     },
     {
+      "name": "clickCounter",
+      "value": 0,
+      "on": [
+        {
+          "events": "@legendSymbol:click,@legendLabel:click",
+          "update": "clickCounter+1",
+          "force": true
+        }
+      ]
+    },
+    {
       "name": "legendItem_clicked",
       "value": 0,
       "on": [
         {
           "events": "@legendSymbol:click,@legendLabel:click",
-          "update": "{data: datum.value}",
+          "update": "{id: clickCounter+2, country: datum.value}",
           "force": true
         }
       ]
@@ -67,17 +78,21 @@
     },
     {
       "name": "selected-countries",
-      "values": ["Bulgaria", "Czech_Republic"],
+      "values": [
+        {"id": 1, "country": "Bulgaria"},
+        {"id": 2, "country": "Czech Republic"}
+      ],
       "on": [{"trigger": "legendItem_clicked", "insert": "legendItem_clicked"}],
       "transform": [
         {
           "type": "lookup",
           "from": "countries",
           "key": "Country",
-          "fields": ["data"],
+          "fields": ["country"],
           "values": ["Total"],
-          "as": ["Total"]
-        }
+          "as": ["total"]
+        },
+        {"type": "filter", "expr": "(datum.id>clickCounter-1)"}
       ]
     }
   ],
@@ -157,7 +172,7 @@
           },
           "update": {
             "fill": {
-              "signal": "datum.label==data('selected-countries')[length(data('selected-countries'))-1].data?selected1Color:datum.label==data('selected-countries')[length(data('selected-countries'))-2].data?selected2Color:lineColor"
+              "signal": "datum.label==data('selected-countries')[length(data('selected-countries'))-1].country?selected1Color:datum.label==data('selected-countries')[length(data('selected-countries'))-2].country?selected2Color:lineColor"
             }
           }
         }
@@ -169,17 +184,20 @@
       "type": "text",
       "from": {"data": "selected-countries"},
       "encode": {
-        "enter": {"text": {"signal": "datum.data"}, "fontSize": {"value": 14}},
+        "enter": {
+          "text": {"signal": "datum.country"},
+          "fontSize": {"value": 14}
+        },
         "update": {
           "opacity": {"value": 1},
-          "x": {"scale": "scaleX", "signal": "datum.Total"},
+          "x": {"scale": "scaleX", "signal": "datum.total"},
           "y": {
-            "signal": "datum.data==data('selected-countries')[length(data('selected-countries'))-1].data?-5:datum.data==data('selected-countries')[length(data('selected-countries'))-2].data?-25:0"
+            "signal": "datum.country==data('selected-countries')[length(data('selected-countries'))-1].country?-5:datum.country==data('selected-countries')[length(data('selected-countries'))-2].country?-25:0"
           },
           "dy": {"value": -25},
           "align": {"value": "center"},
           "fill": {
-            "signal": "datum.data==data('selected-countries')[length(data('selected-countries'))-1].data?selected1Color:datum.data==data('selected-countries')[length(data('selected-countries'))-2].data?selected2Color:'white'"
+            "signal": "datum.country==data('selected-countries')[length(data('selected-countries'))-1].country?selected1Color:datum.country==data('selected-countries')[length(data('selected-countries'))-2].country?selected2Color:'white'"
           }
         }
       }
@@ -239,10 +257,10 @@
                     "update": {
                       "opacity": {"value": 1},
                       "strokeWidth": {
-                        "signal": "datum.Country==data('selected-countries')[length(data('selected-countries'))-1].data?lineSelectedStrokeWidth:datum.Country==data('selected-countries')[length(data('selected-countries'))-2].data?lineSelectedStrokeWidth:lineStrokeWidth"
+                        "signal": "datum.Country==data('selected-countries')[length(data('selected-countries'))-1].country?lineSelectedStrokeWidth:datum.Country==data('selected-countries')[length(data('selected-countries'))-2].country?lineSelectedStrokeWidth:lineStrokeWidth"
                       },
                       "stroke": {
-                        "signal": "datum.Country==data('selected-countries')[length(data('selected-countries'))-1].data?selected1Color:datum.Country==data('selected-countries')[length(data('selected-countries'))-2].data?selected2Color:lineColor"
+                        "signal": "datum.Country==data('selected-countries')[length(data('selected-countries'))-1].country?selected1Color:datum.Country==data('selected-countries')[length(data('selected-countries'))-2].country?selected2Color:lineColor"
                       },
                       "defined": {"signal": "true"},
                       "x": {
@@ -262,10 +280,10 @@
                     "update": {
                       "opacity": {"value": 1},
                       "strokeWidth": {
-                        "signal": "datum.Country==data('selected-countries')[length(data('selected-countries'))-1].data?lineSelectedStrokeWidth:datum.Country==data('selected-countries')[length(data('selected-countries'))-2].data?lineSelectedStrokeWidth:lineStrokeWidth"
+                        "signal": "datum.Country==data('selected-countries')[length(data('selected-countries'))-1].country?lineSelectedStrokeWidth:datum.Country==data('selected-countries')[length(data('selected-countries'))-2].country?lineSelectedStrokeWidth:lineStrokeWidth"
                       },
                       "stroke": {
-                        "signal": "datum.Country==data('selected-countries')[length(data('selected-countries'))-1].data?selected1Color:datum.Country==data('selected-countries')[length(data('selected-countries'))-2].data?selected2Color:lineColor"
+                        "signal": "datum.Country==data('selected-countries')[length(data('selected-countries'))-1].country?selected1Color:datum.Country==data('selected-countries')[length(data('selected-countries'))-2].country?selected2Color:lineColor"
                       },
                       "xc": {"scale": "scaleX", "signal": "datum.Total"},
                       "yc": {"scale": "scaleYTotal", "signal": "1"},
