@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
-  "description": "Reproduction of the 'bamboo chart'(initially designed by Jorge Camoes)",
+  "description": "Reproduction of the 'bamboo chart'(initially designed by Jorge Camões)",
   "usermeta": {
     "Author": "Andrzej Leszkiewicz",
     "License": "CC BY 4.0 (Share and Adapt with Attribution)",
@@ -109,7 +109,7 @@
   ],
   "title": {
     "text": {"signal": "'People at risk of poverty or social exclusion'"},
-    "subtitle": "Reproduction of the \"bamboo chart\" initially designed by Jorge Camoes",
+    "subtitle": "Reproduction of the \"bamboo chart\" initially designed by Jorge Camões",
     "subtitlePadding": 5,
     "dy": -10,
     "anchor": "start",
