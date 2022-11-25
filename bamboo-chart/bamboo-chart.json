@@ -155,7 +155,7 @@
       "padding": 30,
       "type": "symbol",
       "symbolSize": 0,
-      "symbolLimit": 50,
+      "symbolLimit": 100,
       "encode": {
         "labels": {
           "name": "legendLabel",
