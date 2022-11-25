@@ -126,25 +126,18 @@
     {
       "stroke": "color",
       "orient": "left",
-      "padding": 0,
+      "title": "Select 1-2 countries",
+      "padding": 20,
       "type": "symbol",
-      "symbolType": "stroke",
+      "symbolSize": 0,
       "symbolLimit": 50,
       "encode": {
-        "symbols": {
-          "name": "legendSymbol",
-          "interactive": true,
-          "update": {
-            "angle": {"value": 90},
-            "strokeWidth": {"value": 3},
-            "opacity": {"value": 1},
-            "size": {"value": 128}
-          }
-        },
         "labels": {
           "name": "legendLabel",
           "interactive": true,
           "update": {
+            "fontSize": {"value": 13},
+            "dy": {"value": 5},
             "fill": {
               "signal": "datum.label==data('selected-countries')[0].country?selected1Color:datum.label==data('selected-countries')[1].country?selected2Color:lineColor"
             },
@@ -213,7 +206,7 @@
                         "signal": "indata('selected-countries','country',datum.Country)?lineSelectedStrokeWidth:lineStrokeWidth"
                       },
                       "stroke": {
-                        "signal": "datum.Country==data('selected-countries')[0].country?length(data('selected-countries'))>1?selected1Color:datum.Country==data('selected-countries')[1].country?selected2Color:lineColor:lineColor"
+                        "signal": "datum.Country==data('selected-countries')[0].country?selected1Color:datum.Country==data('selected-countries')[1].country?selected2Color:lineColor"
                       },
                       "defined": {"signal": "true"},
                       "x": {
@@ -236,7 +229,7 @@
                         "signal": "indata('selected-countries','country',datum.Country)?lineSelectedStrokeWidth:lineStrokeWidth"
                       },
                       "stroke": {
-                        "signal": "datum.Country==data('selected-countries')[0].country?length(data('selected-countries'))>1?selected1Color:datum.Country==data('selected-countries')[1].country?selected2Color:lineColor:lineColor"
+                        "signal": "datum.Country==data('selected-countries')[0].country?selected1Color:datum.Country==data('selected-countries')[1].country?selected2Color:lineColor"
                       },
                       "xc": {"scale": "scaleX", "signal": "datum.Total"},
                       "yc": {"scale": "scaleYTotal", "signal": "1"},
