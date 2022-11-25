@@ -1,7 +1,7 @@
 Group,New Group,Metric,Country,Value,Total,Point
 Sex,1,Males,Belgium,20,20.8,1
 Sex,0,Males,Bulgaria,39.8,41.6,1
-Sex,0,Males,Czech_Republic,12.7,14.4,1
+Sex,0,Males,Czech Republic,12.7,14.4,1
 Sex,0,Males,Denmark,17.7,18.3,1
 Sex,0,Males,Germany,18.6,19.7,1
 Sex,0,Males,Estonia,21.5,21.7,1
@@ -25,14 +25,14 @@ Sex,0,Males,Slovenia,16.5,18.3,1
 Sex,0,Males,Slovakia,19.6,20.6,1
 Sex,0,Males,Finland,16,16.9,1
 Sex,0,Males,Sweden,13.4,15,1
-Sex,0,Males,United_Kingdom,22.1,23.1,1
+Sex,0,Males,United Kingdom,22.1,23.1,1
 Sex,0,Males,Iceland,13.5,13.7,1
 Sex,0,Males,Norway,13.8,14.9,1
 Sex,0,Males,Switzerland,15.6,17.1,1
 Sex,0,Males,Croatia,30.2,31.3,1
 Sex,0,Females,Belgium,21.7,20.8,1
 Sex,0,Females,Bulgaria,43.3,41.6,1
-Sex,0,Females,Czech_Republic,16,14.4,1
+Sex,0,Females,Czech Republic,16,14.4,1
 Sex,0,Females,Denmark,19,18.3,1
 Sex,0,Females,Germany,20.9,19.7,1
 Sex,0,Females,Estonia,22,21.7,1
@@ -56,14 +56,14 @@ Sex,0,Females,Slovenia,20.1,18.3,1
 Sex,0,Females,Slovakia,21.6,20.6,1
 Sex,0,Females,Finland,17.7,16.9,1
 Sex,0,Females,Sweden,16.6,15,1
-Sex,0,Females,United_Kingdom,24.2,23.1,1
+Sex,0,Females,United Kingdom,24.2,23.1,1
 Sex,0,Females,Iceland,14,13.7,1
 Sex,0,Females,Norway,15.9,14.9,1
 Sex,0,Females,Switzerland,18.5,17.1,1
 Sex,0,Females,Croatia,32.3,31.3,1
 Age,1,Less than 6 years,Belgium,25.2,20.8,1
 Age,0,Less than 6 years,Bulgaria,39.3,41.6,1
-Age,0,Less than 6 years,Czech_Republic,16.4,14.4,1
+Age,0,Less than 6 years,Czech Republic,16.4,14.4,1
 Age,0,Less than 6 years,Denmark,15.3,18.3,1
 Age,0,Less than 6 years,Germany,20.6,19.7,1
 Age,0,Less than 6 years,Estonia,21.2,21.7,1
@@ -87,14 +87,14 @@ Age,0,Less than 6 years,Slovenia,13.6,18.3,1
 Age,0,Less than 6 years,Slovakia,25.2,20.6,1
 Age,0,Less than 6 years,Finland,15.6,16.9,1
 Age,0,Less than 6 years,Sweden,14.1,15,1
-Age,0,Less than 6 years,United_Kingdom,30.6,23.1,1
+Age,0,Less than 6 years,United Kingdom,30.6,23.1,1
 Age,0,Less than 6 years,Iceland,18.1,13.7,1
 Age,0,Less than 6 years,Norway,14.1,14.9,1
 Age,0,Less than 6 years,Switzerland,22.3,17.1,1
 Age,0,Less than 6 years,Croatia,24.4,31.3,1
 Age,0,From 6 to 10 years,Belgium,23.7,20.8,1
 Age,0,From 6 to 10 years,Bulgaria,45.6,41.6,1
-Age,0,From 6 to 10 years,Czech_Republic,18.4,14.4,1
+Age,0,From 6 to 10 years,Czech Republic,18.4,14.4,1
 Age,0,From 6 to 10 years,Denmark,16.3,18.3,1
 Age,0,From 6 to 10 years,Germany,21.6,19.7,1
 Age,0,From 6 to 10 years,Estonia,26,21.7,1
@@ -118,14 +118,14 @@ Age,0,From 6 to 10 years,Slovenia,16.6,18.3,1
 Age,0,From 6 to 10 years,Slovakia,25.3,20.6,1
 Age,0,From 6 to 10 years,Finland,12.8,16.9,1
 Age,0,From 6 to 10 years,Sweden,12.5,15,1
-Age,0,From 6 to 10 years,United_Kingdom,30.9,23.1,1
+Age,0,From 6 to 10 years,United Kingdom,30.9,23.1,1
 Age,0,From 6 to 10 years,Iceland,17.9,13.7,1
 Age,0,From 6 to 10 years,Norway,11.6,14.9,1
 Age,0,From 6 to 10 years,Switzerland,17.1,17.1,1
 Age,0,From 6 to 10 years,Croatia,31.9,31.3,1
 Age,0,From 11 to 15 years,Belgium,20.1,20.8,1
 Age,0,From 11 to 15 years,Bulgaria,47.5,41.6,1
-Age,0,From 11 to 15 years,Czech_Republic,20.2,14.4,1
+Age,0,From 11 to 15 years,Czech Republic,20.2,14.4,1
 Age,0,From 11 to 15 years,Denmark,13.4,18.3,1
 Age,0,From 11 to 15 years,Germany,21.9,19.7,1
 Age,0,From 11 to 15 years,Estonia,23.5,21.7,1
@@ -149,14 +149,14 @@ Age,0,From 11 to 15 years,Slovenia,14.8,18.3,1
 Age,0,From 11 to 15 years,Slovakia,24.6,20.6,1
 Age,0,From 11 to 15 years,Finland,13.5,16.9,1
 Age,0,From 11 to 15 years,Sweden,14.5,15,1
-Age,0,From 11 to 15 years,United_Kingdom,27.5,23.1,1
+Age,0,From 11 to 15 years,United Kingdom,27.5,23.1,1
 Age,0,From 11 to 15 years,Iceland,16,13.7,1
 Age,0,From 11 to 15 years,Norway,15.3,14.9,1
 Age,0,From 11 to 15 years,Switzerland,20.2,17.1,1
 Age,0,From 11 to 15 years,Croatia,31.6,31.3,1
 Age,0,From 16 to 24 years,Belgium,21.3,20.8,1
 Age,0,From 16 to 24 years,Bulgaria,41.4,41.6,1
-Age,0,From 16 to 24 years,Czech_Republic,17.8,14.4,1
+Age,0,From 16 to 24 years,Czech Republic,17.8,14.4,1
 Age,0,From 16 to 24 years,Denmark,35.3,18.3,1
 Age,0,From 16 to 24 years,Germany,23.9,19.7,1
 Age,0,From 16 to 24 years,Estonia,26.4,21.7,1
@@ -180,14 +180,14 @@ Age,0,From 16 to 24 years,Slovenia,16.3,18.3,1
 Age,0,From 16 to 24 years,Slovakia,23.5,20.6,1
 Age,0,From 16 to 24 years,Finland,27.1,16.9,1
 Age,0,From 16 to 24 years,Sweden,28.8,15,1
-Age,0,From 16 to 24 years,United_Kingdom,28.3,23.1,1
+Age,0,From 16 to 24 years,United Kingdom,28.3,23.1,1
 Age,0,From 16 to 24 years,Iceland,17.8,13.7,1
 Age,0,From 16 to 24 years,Norway,33.4,14.9,1
 Age,0,From 16 to 24 years,Switzerland,15.5,17.1,1
 Age,0,From 16 to 24 years,Croatia,33.4,31.3,1
 Age,0,From 25 to 49 years,Belgium,17.6,20.8,1
 Age,0,From 25 to 49 years,Bulgaria,35.6,41.6,1
-Age,0,From 25 to 49 years,Czech_Republic,12.9,14.4,1
+Age,0,From 25 to 49 years,Czech Republic,12.9,14.4,1
 Age,0,From 25 to 49 years,Denmark,17.5,18.3,1
 Age,0,From 25 to 49 years,Germany,18.7,19.7,1
 Age,0,From 25 to 49 years,Estonia,19.6,21.7,1
@@ -211,14 +211,14 @@ Age,0,From 25 to 49 years,Slovenia,14.4,18.3,1
 Age,0,From 25 to 49 years,Slovakia,19.1,20.6,1
 Age,0,From 25 to 49 years,Finland,13.8,16.9,1
 Age,0,From 25 to 49 years,Sweden,13.1,15,1
-Age,0,From 25 to 49 years,United_Kingdom,19.7,23.1,1
+Age,0,From 25 to 49 years,United Kingdom,19.7,23.1,1
 Age,0,From 25 to 49 years,Iceland,15,13.7,1
 Age,0,From 25 to 49 years,Norway,13,14.9,1
 Age,0,From 25 to 49 years,Switzerland,13.2,17.1,1
 Age,0,From 25 to 49 years,Croatia,26.7,31.3,1
 Age,0,65 years or over ,Belgium,21,20.8,1
 Age,0,65 years or over ,Bulgaria,55.9,41.6,1
-Age,0,65 years or over ,Czech_Republic,10.1,14.4,1
+Age,0,65 years or over ,Czech Republic,10.1,14.4,1
 Age,0,65 years or over ,Denmark,18.4,18.3,1
 Age,0,65 years or over ,Germany,14.8,19.7,1
 Age,0,65 years or over ,Estonia,19,21.7,1
@@ -242,14 +242,14 @@ Age,0,65 years or over ,Slovenia,22.8,18.3,1
 Age,0,65 years or over ,Slovakia,16.7,20.6,1
 Age,0,65 years or over ,Finland,19.5,16.9,1
 Age,0,65 years or over ,Sweden,15.9,15,1
-Age,0,65 years or over ,United_Kingdom,22.3,23.1,1
+Age,0,65 years or over ,United Kingdom,22.3,23.1,1
 Age,0,65 years or over ,Iceland,5.3,13.7,1
 Age,0,65 years or over ,Norway,12.3,14.9,1
 Age,0,65 years or over ,Switzerland,27.7,17.1,1
 Age,0,65 years or over ,Croatia,34.7,31.3,1
 Education,1,levels 0-2,Belgium,32.4,20.8,1
 Education,0,levels 0-2,Bulgaria,66.7,41.6,1
-Education,0,levels 0-2,Czech_Republic,28.7,14.4,1
+Education,0,levels 0-2,Czech Republic,28.7,14.4,1
 Education,0,levels 0-2,Denmark,25.5,18.3,1
 Education,0,levels 0-2,Germany,34.5,19.7,1
 Education,0,levels 0-2,Estonia,33.2,21.7,1
@@ -273,14 +273,14 @@ Education,0,levels 0-2,Slovenia,36.6,18.3,1
 Education,0,levels 0-2,Slovakia,34.9,20.6,1
 Education,0,levels 0-2,Finland,25.6,16.9,1
 Education,0,levels 0-2,Sweden,24.5,15,1
-Education,0,levels 0-2,United_Kingdom,32.6,23.1,1
+Education,0,levels 0-2,United Kingdom,32.6,23.1,1
 Education,0,levels 0-2,Iceland,15,13.7,1
 Education,0,levels 0-2,Norway,24.7,14.9,1
 Education,0,levels 0-2,Switzerland,29.6,17.1,1
 Education,0,levels 0-2,Croatia,48.5,31.3,1
 Education,0,levels 3 and 4,Belgium,17.2,20.8,1
 Education,0,levels 3 and 4,Bulgaria,34.5,41.6,1
-Education,0,levels 3 and 4,Czech_Republic,12.1,14.4,1
+Education,0,levels 3 and 4,Czech Republic,12.1,14.4,1
 Education,0,levels 3 and 4,Denmark,16.7,18.3,1
 Education,0,levels 3 and 4,Germany,20.9,19.7,1
 Education,0,levels 3 and 4,Estonia,23.7,21.7,1
@@ -304,14 +304,14 @@ Education,0,levels 3 and 4,Slovenia,16.6,18.3,1
 Education,0,levels 3 and 4,Slovakia,19.1,20.6,1
 Education,0,levels 3 and 4,Finland,19,16.9,1
 Education,0,levels 3 and 4,Sweden,14.1,15,1
-Education,0,levels 3 and 4,United_Kingdom,22.6,23.1,1
+Education,0,levels 3 and 4,United Kingdom,22.6,23.1,1
 Education,0,levels 3 and 4,Iceland,14.3,13.7,1
 Education,0,levels 3 and 4,Norway,12.4,14.9,1
 Education,0,levels 3 and 4,Switzerland,15,17.1,1
 Education,0,levels 3 and 4,Croatia,26.7,31.3,1
 Education,0,levels 5 and 6,Belgium,9,20.8,1
 Education,0,levels 5 and 6,Bulgaria,16.4,41.6,1
-Education,0,levels 5 and 6,Czech_Republic,4.6,14.4,1
+Education,0,levels 5 and 6,Czech Republic,4.6,14.4,1
 Education,0,levels 5 and 6,Denmark,11.9,18.3,1
 Education,0,levels 5 and 6,Germany,11.1,19.7,1
 Education,0,levels 5 and 6,Estonia,9.6,21.7,1
@@ -335,14 +335,14 @@ Education,0,levels 5 and 6,Slovenia,5.5,18.3,1
 Education,0,levels 5 and 6,Slovakia,8.7,20.6,1
 Education,0,levels 5 and 6,Finland,6.7,16.9,1
 Education,0,levels 5 and 6,Sweden,10.2,15,1
-Education,0,levels 5 and 6,United_Kingdom,11.1,23.1,1
+Education,0,levels 5 and 6,United Kingdom,11.1,23.1,1
 Education,0,levels 5 and 6,Iceland,6.7,13.7,1
 Education,0,levels 5 and 6,Norway,10.1,14.9,1
 Education,0,levels 5 and 6,Switzerland,8.4,17.1,1
 Education,0,levels 5 and 6,Croatia,11.5,31.3,1
 Income,1,First quintile,Belgium,74.4,20.8,1
 Income,0,First quintile,Bulgaria,100,41.6,1
-Income,0,First quintile,Czech_Republic,45.7,14.4,1
+Income,0,First quintile,Czech Republic,45.7,14.4,1
 Income,0,First quintile,Denmark,79.7,18.3,1
 Income,0,First quintile,Germany,88.1,19.7,1
 Income,0,First quintile,Estonia,73.7,21.7,1
@@ -366,14 +366,14 @@ Income,0,First quintile,Slovenia,81.3,18.3,1
 Income,0,First quintile,Slovakia,67.6,20.6,1
 Income,0,First quintile,Finland,79.4,16.9,1
 Income,0,First quintile,Sweden,68.1,15,1
-Income,0,First quintile,United_Kingdom,92.7,23.1,1
+Income,0,First quintile,United Kingdom,92.7,23.1,1
 Income,0,First quintile,Iceland,53,13.7,1
 Income,0,First quintile,Norway,71.4,14.9,1
 Income,0,First quintile,Switzerland,83.9,17.1,1
 Income,0,First quintile,Croatia,100,31.3,1
 Income,0,Second quintile,Belgium,21,20.8,1
 Income,0,Second quintile,Bulgaria,54.8,41.6,1
-Income,0,Second quintile,Czech_Republic,11.1,14.4,1
+Income,0,Second quintile,Czech Republic,11.1,14.4,1
 Income,0,Second quintile,Denmark,18.6,18.3,1
 Income,0,Second quintile,Germany,12.7,19.7,1
 Income,0,Second quintile,Estonia,9.4,21.7,1
@@ -397,14 +397,14 @@ Income,0,Second quintile,Slovenia,15.6,18.3,1
 Income,0,Second quintile,Slovakia,14.2,20.6,1
 Income,0,Second quintile,Finland,13,16.9,1
 Income,0,Second quintile,Sweden,7.8,15,1
-Income,0,Second quintile,United_Kingdom,14,23.1,1
+Income,0,Second quintile,United Kingdom,14,23.1,1
 Income,0,Second quintile,Iceland,11.3,13.7,1
 Income,0,Second quintile,Norway,14.9,14.9,1
 Income,0,Second quintile,Switzerland,6.1,17.1,1
 Income,0,Second quintile,Croatia,31.5,31.3,1
 Income,0,Third quintile,Belgium,9.4,20.8,1
 Income,0,Third quintile,Bulgaria,43.6,41.6,1
-Income,0,Third quintile,Czech_Republic,9.1,14.4,1
+Income,0,Third quintile,Czech Republic,9.1,14.4,1
 Income,0,Third quintile,Denmark,9.8,18.3,1
 Income,0,Third quintile,Germany,6.4,19.7,1
 Income,0,Third quintile,Estonia,8,21.7,1
@@ -428,14 +428,14 @@ Income,0,Third quintile,Slovenia,5.6,18.3,1
 Income,0,Third quintile,Slovakia,16.5,20.6,1
 Income,0,Third quintile,Finland,6.1,16.9,1
 Income,0,Third quintile,Sweden,4.8,15,1
-Income,0,Third quintile,United_Kingdom,9.5,23.1,1
+Income,0,Third quintile,United Kingdom,9.5,23.1,1
 Income,0,Third quintile,Iceland,8.8,13.7,1
 Income,0,Third quintile,Norway,3.7,14.9,1
 Income,0,Third quintile,Switzerland,3.9,17.1,1
 Income,0,Third quintile,Croatia,20.5,31.3,1
 Income,0,Fourth quintile,Belgium,4.2,20.8,1
 Income,0,Fourth quintile,Bulgaria,33.6,41.6,1
-Income,0,Fourth quintile,Czech_Republic,3.6,14.4,1
+Income,0,Fourth quintile,Czech Republic,3.6,14.4,1
 Income,0,Fourth quintile,Denmark,5,18.3,1
 Income,0,Fourth quintile,Germany,3.5,19.7,1
 Income,0,Fourth quintile,Estonia,4.3,21.7,1
@@ -459,14 +459,14 @@ Income,0,Fourth quintile,Slovenia,3.5,18.3,1
 Income,0,Fourth quintile,Slovakia,12.8,20.6,1
 Income,0,Fourth quintile,Finland,1.7,16.9,1
 Income,0,Fourth quintile,Sweden,1,15,1
-Income,0,Fourth quintile,United_Kingdom,5.4,23.1,1
+Income,0,Fourth quintile,United Kingdom,5.4,23.1,1
 Income,0,Fourth quintile,Iceland,4.7,13.7,1
 Income,0,Fourth quintile,Norway,4.9,14.9,1
 Income,0,Fourth quintile,Switzerland,1.2,17.1,1
 Income,0,Fourth quintile,Croatia,15.2,31.3,1
 Income,0,Fifth quintile,Belgium,4.3,20.8,1
 Income,0,Fifth quintile,Bulgaria,26.5,41.6,1
-Income,0,Fifth quintile,Czech_Republic,1.5,14.4,1
+Income,0,Fifth quintile,Czech Republic,1.5,14.4,1
 Income,0,Fifth quintile,Denmark,2.1,18.3,1
 Income,0,Fifth quintile,Germany,2.5,19.7,1
 Income,0,Fifth quintile,Estonia,1.5,21.7,1
@@ -490,14 +490,14 @@ Income,0,Fifth quintile,Slovenia,3.8,18.3,1
 Income,0,Fifth quintile,Slovakia,4.9,20.6,1
 Income,0,Fifth quintile,Finland,2.8,16.9,1
 Income,0,Fifth quintile,Sweden,1.3,15,1
-Income,0,Fifth quintile,United_Kingdom,0.8,23.1,1
+Income,0,Fifth quintile,United Kingdom,0.8,23.1,1
 Income,0,Fifth quintile,Iceland,2.3,13.7,1
 Income,0,Fifth quintile,Norway,1.4,14.9,1
 Income,0,Fifth quintile,Switzerland,1.6,17.1,1
 Income,0,Fifth quintile,Croatia,8.9,31.3,1
 Household,1,Single person,Belgium,30.6,20.8,1
 Household,0,Single person,Bulgaria,71.7,41.6,1
-Household,0,Single person,Czech_Republic,25.5,14.4,1
+Household,0,Single person,Czech Republic,25.5,14.4,1
 Household,0,Single person,Denmark,36.4,18.3,1
 Household,0,Single person,Germany,35.6,19.7,1
 Household,0,Single person,Estonia,34.5,21.7,1
@@ -521,14 +521,14 @@ Household,0,Single person,Slovenia,45.8,18.3,1
 Household,0,Single person,Slovakia,32.3,20.6,1
 Household,0,Single person,Finland,37.8,16.9,1
 Household,0,Single person,Sweden,32.6,15,1
-Household,0,Single person,United_Kingdom,33.8,23.1,1
+Household,0,Single person,United Kingdom,33.8,23.1,1
 Household,0,Single person,Iceland,27.1,13.7,1
 Household,0,Single person,Norway,34.8,14.9,1
 Household,0,Single person,Switzerland,25.7,17.1,1
 Household,0,Single person,Croatia,56.1,31.3,1
 Household,0,1 adult < 65,Belgium,34.6,20.8,1
 Household,0,1 adult < 65,Bulgaria,58,41.6,1
-Household,0,1 adult < 65,Czech_Republic,27.6,14.4,1
+Household,0,1 adult < 65,Czech Republic,27.6,14.4,1
 Household,0,1 adult < 65,Denmark,42.1,18.3,1
 Household,0,1 adult < 65,Germany,41.1,19.7,1
 Household,0,1 adult < 65,Estonia,34.8,21.7,1
@@ -552,14 +552,14 @@ Household,0,1 adult < 65,Slovenia,45.4,18.3,1
 Household,0,1 adult < 65,Slovakia,38.2,20.6,1
 Household,0,1 adult < 65,Finland,36.7,16.9,1
 Household,0,1 adult < 65,Sweden,32.8,15,1
-Household,0,1 adult < 65,United_Kingdom,37.7,23.1,1
+Household,0,1 adult < 65,United Kingdom,37.7,23.1,1
 Household,0,1 adult < 65,Iceland,34,13.7,1
 Household,0,1 adult < 65,Norway,36.7,14.9,1
 Household,0,1 adult < 65,Switzerland,18.5,17.1,1
 Household,0,1 adult < 65,Croatia,54.8,31.3,1
 Household,0,1 adult 65+,Belgium,24.2,20.8,1
 Household,0,1 adult 65+,Bulgaria,78.9,41.6,1
-Household,0,1 adult 65+,Czech_Republic,23.2,14.4,1
+Household,0,1 adult 65+,Czech Republic,23.2,14.4,1
 Household,0,1 adult 65+,Denmark,23.6,18.3,1
 Household,0,1 adult 65+,Germany,23.9,19.7,1
 Household,0,1 adult 65+,Estonia,34.2,21.7,1
@@ -583,14 +583,14 @@ Household,0,1 adult 65+,Slovenia,46.2,18.3,1
 Household,0,1 adult 65+,Slovakia,26.8,20.6,1
 Household,0,1 adult 65+,Finland,39.8,16.9,1
 Household,0,1 adult 65+,Sweden,32.2,15,1
-Household,0,1 adult 65+,United_Kingdom,29.4,23.1,1
+Household,0,1 adult 65+,United Kingdom,29.4,23.1,1
 Household,0,1 adult 65+,Iceland,12.7,13.7,1
 Household,0,1 adult 65+,Norway,30.1,14.9,1
 Household,0,1 adult 65+,Switzerland,36.9,17.1,1
 Household,0,1 adult 65+,Croatia,56.9,31.3,1
 Household,0,1 person w dep. children,Belgium,49.6,20.8,1
 Household,0,1 person w dep. children,Bulgaria,65.2,41.6,1
-Household,0,1 person w dep. children,Czech_Republic,47.7,14.4,1
+Household,0,1 person w dep. children,Czech Republic,47.7,14.4,1
 Household,0,1 person w dep. children,Denmark,32.2,18.3,1
 Household,0,1 person w dep. children,Germany,53.4,19.7,1
 Household,0,1 person w dep. children,Estonia,45.2,21.7,1
@@ -614,14 +614,14 @@ Household,0,1 person w dep. children,Slovenia,38.3,18.3,1
 Household,0,1 person w dep. children,Slovakia,44.1,20.6,1
 Household,0,1 person w dep. children,Finland,29.7,16.9,1
 Household,0,1 person w dep. children,Sweden,37.5,15,1
-Household,0,1 person w dep. children,United_Kingdom,61.3,23.1,1
+Household,0,1 person w dep. children,United Kingdom,61.3,23.1,1
 Household,0,1 person w dep. children,Iceland,46.2,13.7,1
 Household,0,1 person w dep. children,Norway,37.4,14.9,1
 Household,0,1 person w dep. children,Switzerland,38.3,17.1,1
 Household,0,1 person w dep. children,Croatia,43.4,31.3,1
 Household,0,Single female,Belgium,30.6,20.8,1
 Household,0,Single female,Bulgaria,78.3,41.6,1
-Household,0,Single female,Czech_Republic,29.1,14.4,1
+Household,0,Single female,Czech Republic,29.1,14.4,1
 Household,0,Single female,Denmark,36.3,18.3,1
 Household,0,Single female,Germany,34.7,19.7,1
 Household,0,Single female,Estonia,31.8,21.7,1
@@ -645,14 +645,14 @@ Household,0,Single female,Slovenia,51,18.3,1
 Household,0,Single female,Slovakia,31.8,20.6,1
 Household,0,Single female,Finland,37.3,16.9,1
 Household,0,Single female,Sweden,36.5,15,1
-Household,0,Single female,United_Kingdom,34.2,23.1,1
+Household,0,Single female,United Kingdom,34.2,23.1,1
 Household,0,Single female,Iceland,22.2,13.7,1
 Household,0,Single female,Norway,36.7,14.9,1
 Household,0,Single female,Switzerland,29.9,17.1,1
 Household,0,Single female,Croatia,56.5,31.3,1
 Household,0,Single male,Belgium,30.8,20.8,1
 Household,0,Single male,Bulgaria,57.7,41.6,1
-Household,0,Single male,Czech_Republic,19.8,14.4,1
+Household,0,Single male,Czech Republic,19.8,14.4,1
 Household,0,Single male,Denmark,36.5,18.3,1
 Household,0,Single male,Germany,36.7,19.7,1
 Household,0,Single male,Estonia,39.4,21.7,1
@@ -676,14 +676,14 @@ Household,0,Single male,Slovenia,38.2,18.3,1
 Household,0,Single male,Slovakia,33.5,20.6,1
 Household,0,Single male,Finland,38.4,16.9,1
 Household,0,Single male,Sweden,28.1,15,1
-Household,0,Single male,United_Kingdom,33.3,23.1,1
+Household,0,Single male,United Kingdom,33.3,23.1,1
 Household,0,Single male,Iceland,31.7,13.7,1
 Household,0,Single male,Norway,32.9,14.9,1
 Household,0,Single male,Switzerland,19.6,17.1,1
 Household,0,Single male,Croatia,55,31.3,1
 Household,0,2 adults,Belgium,20.1,20.8,1
 Household,0,2 adults,Bulgaria,47,41.6,1
-Household,0,2 adults,Czech_Republic,11.3,14.4,1
+Household,0,2 adults,Czech Republic,11.3,14.4,1
 Household,0,2 adults,Denmark,12.3,18.3,1
 Household,0,2 adults,Germany,13.9,19.7,1
 Household,0,2 adults,Estonia,16.4,21.7,1
@@ -707,14 +707,14 @@ Household,0,2 adults,Slovenia,20.2,18.3,1
 Household,0,2 adults,Slovakia,17.3,20.6,1
 Household,0,2 adults,Finland,10.3,16.9,1
 Household,0,2 adults,Sweden,8.2,15,1
-Household,0,2 adults,United_Kingdom,16.5,23.1,1
+Household,0,2 adults,United Kingdom,16.5,23.1,1
 Household,0,2 adults,Iceland,6.8,13.7,1
 Household,0,2 adults,Norway,6.2,14.9,1
 Household,0,2 adults,Switzerland,15.2,17.1,1
 Household,0,2 adults,Croatia,36.7,31.3,1
 Household,0,2 adults < 65,Belgium,18.6,20.8,1
 Household,0,2 adults < 65,Bulgaria,38.7,41.6,1
-Household,0,2 adults < 65,Czech_Republic,14.5,14.4,1
+Household,0,2 adults < 65,Czech Republic,14.5,14.4,1
 Household,0,2 adults < 65,Denmark,10.6,18.3,1
 Household,0,2 adults < 65,Germany,15.5,19.7,1
 Household,0,2 adults < 65,Estonia,18.2,21.7,1
@@ -738,14 +738,14 @@ Household,0,2 adults < 65,Slovenia,24,18.3,1
 Household,0,2 adults < 65,Slovakia,19.9,20.6,1
 Household,0,2 adults < 65,Finland,12,16.9,1
 Household,0,2 adults < 65,Sweden,10,15,1
-Household,0,2 adults < 65,United_Kingdom,14.4,23.1,1
+Household,0,2 adults < 65,United Kingdom,14.4,23.1,1
 Household,0,2 adults < 65,Iceland,9.4,13.7,1
 Household,0,2 adults < 65,Norway,9.1,14.9,1
 Household,0,2 adults < 65,Switzerland,9.4,17.1,1
 Household,0,2 adults < 65,Croatia,42.8,31.3,1
 Household,0,"2 adults, 1+ 65+",Belgium,22.3,20.8,1
 Household,0,"2 adults, 1+ 65+",Bulgaria,54.4,41.6,1
-Household,0,"2 adults, 1+ 65+",Czech_Republic,6.9,14.4,1
+Household,0,"2 adults, 1+ 65+",Czech Republic,6.9,14.4,1
 Household,0,"2 adults, 1+ 65+",Denmark,14.9,18.3,1
 Household,0,"2 adults, 1+ 65+",Germany,12.2,19.7,1
 Household,0,"2 adults, 1+ 65+",Estonia,13.8,21.7,1
@@ -769,14 +769,14 @@ Household,0,"2 adults, 1+ 65+",Slovenia,16.4,18.3,1
 Household,0,"2 adults, 1+ 65+",Slovakia,14.2,20.6,1
 Household,0,"2 adults, 1+ 65+",Finland,7.2,16.9,1
 Household,0,"2 adults, 1+ 65+",Sweden,6,15,1
-Household,0,"2 adults, 1+ 65+",United_Kingdom,19.4,23.1,1
+Household,0,"2 adults, 1+ 65+",United Kingdom,19.4,23.1,1
 Household,0,"2 adults, 1+ 65+",Iceland,2.9,13.7,1
 Household,0,"2 adults, 1+ 65+",Norway,1.8,14.9,1
 Household,0,"2 adults, 1+ 65+",Switzerland,24.6,17.1,1
 Household,0,"2 adults, 1+ 65+",Croatia,32.2,31.3,1
 Household,0,2 adults w 1 dep. child,Belgium,13,20.8,1
 Household,0,2 adults w 1 dep. child,Bulgaria,29.2,41.6,1
-Household,0,2 adults w 1 dep. child,Czech_Republic,11.2,14.4,1
+Household,0,2 adults w 1 dep. child,Czech Republic,11.2,14.4,1
 Household,0,2 adults w 1 dep. child,Denmark,10.6,18.3,1
 Household,0,2 adults w 1 dep. child,Germany,12.4,19.7,1
 Household,0,2 adults w 1 dep. child,Estonia,18.4,21.7,1
@@ -800,14 +800,14 @@ Household,0,2 adults w 1 dep. child,Slovenia,12.8,18.3,1
 Household,0,2 adults w 1 dep. child,Slovakia,17.7,20.6,1
 Household,0,2 adults w 1 dep. child,Finland,10.1,16.9,1
 Household,0,2 adults w 1 dep. child,Sweden,8,15,1
-Household,0,2 adults w 1 dep. child,United_Kingdom,14.1,23.1,1
+Household,0,2 adults w 1 dep. child,United Kingdom,14.1,23.1,1
 Household,0,2 adults w 1 dep. child,Iceland,8.2,13.7,1
 Household,0,2 adults w 1 dep. child,Norway,6.4,14.9,1
 Household,0,2 adults w 1 dep. child,Switzerland,13,17.1,1
 Household,0,2 adults w 1 dep. child,Croatia,29.6,31.3,1
 Household,0,2 adults w 2 dep. children,Belgium,12,20.8,1
 Household,0,2 adults w 2 dep. children,Bulgaria,36,41.6,1
-Household,0,2 adults w 2 dep. children,Czech_Republic,11.8,14.4,1
+Household,0,2 adults w 2 dep. children,Czech Republic,11.8,14.4,1
 Household,0,2 adults w 2 dep. children,Denmark,7.2,18.3,1
 Household,0,2 adults w 2 dep. children,Germany,11.4,19.7,1
 Household,0,2 adults w 2 dep. children,Estonia,16.8,21.7,1
@@ -831,14 +831,14 @@ Household,0,2 adults w 2 dep. children,Slovenia,10.8,18.3,1
 Household,0,2 adults w 2 dep. children,Slovakia,13.4,20.6,1
 Household,0,2 adults w 2 dep. children,Finland,9.2,16.9,1
 Household,0,2 adults w 2 dep. children,Sweden,7.6,15,1
-Household,0,2 adults w 2 dep. children,United_Kingdom,16.7,23.1,1
+Household,0,2 adults w 2 dep. children,United Kingdom,16.7,23.1,1
 Household,0,2 adults w 2 dep. children,Iceland,7.8,13.7,1
 Household,0,2 adults w 2 dep. children,Norway,4.1,14.9,1
 Household,0,2 adults w 2 dep. children,Switzerland,14.6,17.1,1
 Household,0,2 adults w 2 dep. children,Croatia,22.8,31.3,1
 Household,0,2 adults w 3+ dep. children,Belgium,20.6,20.8,1
 Household,0,2 adults w 3+ dep. children,Bulgaria,76.7,41.6,1
-Household,0,2 adults w 3+ dep. children,Czech_Republic,26.3,14.4,1
+Household,0,2 adults w 3+ dep. children,Czech Republic,26.3,14.4,1
 Household,0,2 adults w 3+ dep. children,Denmark,12.1,18.3,1
 Household,0,2 adults w 3+ dep. children,Germany,24.4,19.7,1
 Household,0,2 adults w 3+ dep. children,Estonia,21.9,21.7,1
@@ -862,14 +862,14 @@ Household,0,2 adults w 3+ dep. children,Slovenia,16.2,18.3,1
 Household,0,2 adults w 3+ dep. children,Slovakia,33.7,20.6,1
 Household,0,2 adults w 3+ dep. children,Finland,13.9,16.9,1
 Household,0,2 adults w 3+ dep. children,Sweden,12.9,15,1
-Household,0,2 adults w 3+ dep. children,United_Kingdom,36.2,23.1,1
+Household,0,2 adults w 3+ dep. children,United Kingdom,36.2,23.1,1
 Household,0,2 adults w 3+ dep. children,Iceland,13,13.7,1
 Household,0,2 adults w 3+ dep. children,Norway,10,14.9,1
 Household,0,2 adults w 3+ dep. children,Switzerland,24,17.1,1
 Household,0,2 adults w 3+ dep. children,Croatia,38.1,31.3,1
 Household,0,2+ adults w/o dep. children,Belgium,17.5,20.8,1
 Household,0,2+ adults w/o dep. children,Bulgaria,39.1,41.6,1
-Household,0,2+ adults w/o dep. children,Czech_Republic,10.3,14.4,1
+Household,0,2+ adults w/o dep. children,Czech Republic,10.3,14.4,1
 Household,0,2+ adults w/o dep. children,Denmark,12,18.3,1
 Household,0,2+ adults w/o dep. children,Germany,12.9,19.7,1
 Household,0,2+ adults w/o dep. children,Estonia,16.3,21.7,1
@@ -893,14 +893,14 @@ Household,0,2+ adults w/o dep. children,Slovenia,16.9,18.3,1
 Household,0,2+ adults w/o dep. children,Slovakia,15.7,20.6,1
 Household,0,2+ adults w/o dep. children,Finland,10.5,16.9,1
 Household,0,2+ adults w/o dep. children,Sweden,8.3,15,1
-Household,0,2+ adults w/o dep. children,United_Kingdom,15.7,23.1,1
+Household,0,2+ adults w/o dep. children,United Kingdom,15.7,23.1,1
 Household,0,2+ adults w/o dep. children,Iceland,6.7,13.7,1
 Household,0,2+ adults w/o dep. children,Norway,6.3,14.9,1
 Household,0,2+ adults w/o dep. children,Switzerland,13.8,17.1,1
 Household,0,2+ adults w/o dep. children,Croatia,29.7,31.3,1
 Household,0,2+ adults with dep. children,Belgium,15.8,20.8,1
 Household,0,2+ adults with dep. children,Bulgaria,38.5,41.6,1
-Household,0,2+ adults with dep. children,Czech_Republic,12.6,14.4,1
+Household,0,2+ adults with dep. children,Czech Republic,12.6,14.4,1
 Household,0,2+ adults with dep. children,Denmark,10.2,18.3,1
 Household,0,2+ adults with dep. children,Germany,13.8,19.7,1
 Household,0,2+ adults with dep. children,Estonia,18.7,21.7,1
@@ -924,14 +924,14 @@ Household,0,2+ adults with dep. children,Slovenia,12.3,18.3,1
 Household,0,2+ adults with dep. children,Slovakia,20.9,20.6,1
 Household,0,2+ adults with dep. children,Finland,11.1,16.9,1
 Household,0,2+ adults with dep. children,Sweden,9.2,15,1
-Household,0,2+ adults with dep. children,United_Kingdom,20.1,23.1,1
+Household,0,2+ adults with dep. children,United Kingdom,20.1,23.1,1
 Household,0,2+ adults with dep. children,Iceland,8.8,13.7,1
 Household,0,2+ adults with dep. children,Norway,6.8,14.9,1
 Household,0,2+ adults with dep. children,Switzerland,15.9,17.1,1
 Household,0,2+ adults with dep. children,Croatia,28.8,31.3,1
 Household,0,3+ adults,Belgium,8.9,20.8,1
 Household,0,3+ adults,Bulgaria,31.6,41.6,1
-Household,0,3+ adults,Czech_Republic,8.6,14.4,1
+Household,0,3+ adults,Czech Republic,8.6,14.4,1
 Household,0,3+ adults,Denmark,7.8,18.3,1
 Household,0,3+ adults,Germany,8.2,19.7,1
 Household,0,3+ adults,Estonia,16,21.7,1
@@ -955,14 +955,14 @@ Household,0,3+ adults,Slovenia,12.6,18.3,1
 Household,0,3+ adults,Slovakia,14.4,20.6,1
 Household,0,3+ adults,Finland,12.5,16.9,1
 Household,0,3+ adults,Sweden,9,15,1
-Household,0,3+ adults,United_Kingdom,13.6,23.1,1
+Household,0,3+ adults,United Kingdom,13.6,23.1,1
 Household,0,3+ adults,Iceland,6.3,13.7,1
 Household,0,3+ adults,Norway,7.5,14.9,1
 Household,0,3+ adults,Switzerland,8.8,17.1,1
 Household,0,3+ adults,Croatia,23.2,31.3,1
 Household,0,3+ adults w dep. children,Belgium,19.9,20.8,1
 Household,0,3+ adults w dep. children,Bulgaria,40,41.6,1
-Household,0,3+ adults w dep. children,Czech_Republic,9.5,14.4,1
+Household,0,3+ adults w dep. children,Czech Republic,9.5,14.4,1
 Household,0,3+ adults w dep. children,Denmark,20.9,18.3,1
 Household,0,3+ adults w dep. children,Germany,10.7,19.7,1
 Household,0,3+ adults w dep. children,Estonia,19.8,21.7,1
@@ -986,14 +986,14 @@ Household,0,3+ adults w dep. children,Slovenia,12,18.3,1
 Household,0,3+ adults w dep. children,Slovakia,24.4,20.6,1
 Household,0,3+ adults w dep. children,Finland,14.8,16.9,1
 Household,0,3+ adults w dep. children,Sweden,11.9,15,1
-Household,0,3+ adults w dep. children,United_Kingdom,16.9,23.1,1
+Household,0,3+ adults w dep. children,United Kingdom,16.9,23.1,1
 Household,0,3+ adults w dep. children,Iceland,3.3,13.7,1
 Household,0,3+ adults w dep. children,Norway,11.4,14.9,1
 Household,0,3+ adults w dep. children,Switzerland,14.6,17.1,1
 Household,0,3+ adults w dep. children,Croatia,29,31.3,1
 Household,0,Households w/o dep. children,Belgium,21.7,20.8,1
 Household,0,Households w/o dep. children,Bulgaria,44.1,41.6,1
-Household,0,Households w/o dep. children,Czech_Republic,13.2,14.4,1
+Household,0,Households w/o dep. children,Czech Republic,13.2,14.4,1
 Household,0,Households w/o dep. children,Denmark,23,18.3,1
 Household,0,Households w/o dep. children,Germany,20.6,19.7,1
 Household,0,Households w/o dep. children,Estonia,22,21.7,1
@@ -1017,14 +1017,14 @@ Household,0,Households w/o dep. children,Slovenia,23.9,18.3,1
 Household,0,Households w/o dep. children,Slovakia,18.8,20.6,1
 Household,0,Households w/o dep. children,Finland,20.3,16.9,1
 Household,0,Households w/o dep. children,Sweden,17.3,15,1
-Household,0,Households w/o dep. children,United_Kingdom,20.5,23.1,1
+Household,0,Households w/o dep. children,United Kingdom,20.5,23.1,1
 Household,0,Households w/o dep. children,Iceland,13.6,13.7,1
 Household,0,Households w/o dep. children,Norway,17.9,14.9,1
 Household,0,Households w/o dep. children,Switzerland,16.8,17.1,1
 Household,0,Households w/o dep. children,Croatia,34,31.3,1
 Household,0,Households w dep. children,Belgium,20,20.8,1
 Household,0,Households w dep. children,Bulgaria,39.6,41.6,1
-Household,0,Households w dep. children,Czech_Republic,15.5,14.4,1
+Household,0,Households w dep. children,Czech Republic,15.5,14.4,1
 Household,0,Households w dep. children,Denmark,13.4,18.3,1
 Household,0,Households w dep. children,Germany,18.7,19.7,1
 Household,0,Households w dep. children,Estonia,21.5,21.7,1
@@ -1048,14 +1048,14 @@ Household,0,Households w dep. children,Slovenia,14,18.3,1
 Household,0,Households w dep. children,Slovakia,21.9,20.6,1
 Household,0,Households w dep. children,Finland,13.1,16.9,1
 Household,0,Households w dep. children,Sweden,12.7,15,1
-Household,0,Households w dep. children,United_Kingdom,25.7,23.1,1
+Household,0,Households w dep. children,United Kingdom,25.7,23.1,1
 Household,0,Households w dep. children,Iceland,13.8,13.7,1
 Household,0,Households w dep. children,Norway,11.9,14.9,1
 Household,0,Households w dep. children,Switzerland,17.4,17.1,1
 Household,0,Households w dep. children,Croatia,29.1,31.3,1
 Sex,1,Males,Belgium,20,20.8,2
 Sex,0,Males,Bulgaria,39.8,41.6,2
-Sex,0,Males,Czech_Republic,12.7,14.4,2
+Sex,0,Males,Czech Republic,12.7,14.4,2
 Sex,0,Males,Denmark,17.7,18.3,2
 Sex,0,Males,Germany,18.6,19.7,2
 Sex,0,Males,Estonia,21.5,21.7,2
@@ -1079,14 +1079,14 @@ Sex,0,Males,Slovenia,16.5,18.3,2
 Sex,0,Males,Slovakia,19.6,20.6,2
 Sex,0,Males,Finland,16,16.9,2
 Sex,0,Males,Sweden,13.4,15,2
-Sex,0,Males,United_Kingdom,22.1,23.1,2
+Sex,0,Males,United Kingdom,22.1,23.1,2
 Sex,0,Males,Iceland,13.5,13.7,2
 Sex,0,Males,Norway,13.8,14.9,2
 Sex,0,Males,Switzerland,15.6,17.1,2
 Sex,0,Males,Croatia,30.2,31.3,2
 Sex,0,Females,Belgium,21.7,20.8,2
 Sex,0,Females,Bulgaria,43.3,41.6,2
-Sex,0,Females,Czech_Republic,16,14.4,2
+Sex,0,Females,Czech Republic,16,14.4,2
 Sex,0,Females,Denmark,19,18.3,2
 Sex,0,Females,Germany,20.9,19.7,2
 Sex,0,Females,Estonia,22,21.7,2
@@ -1110,14 +1110,14 @@ Sex,0,Females,Slovenia,20.1,18.3,2
 Sex,0,Females,Slovakia,21.6,20.6,2
 Sex,0,Females,Finland,17.7,16.9,2
 Sex,0,Females,Sweden,16.6,15,2
-Sex,0,Females,United_Kingdom,24.2,23.1,2
+Sex,0,Females,United Kingdom,24.2,23.1,2
 Sex,0,Females,Iceland,14,13.7,2
 Sex,0,Females,Norway,15.9,14.9,2
 Sex,0,Females,Switzerland,18.5,17.1,2
 Sex,0,Females,Croatia,32.3,31.3,2
 Age,1,Less than 6 years,Belgium,25.2,20.8,2
 Age,0,Less than 6 years,Bulgaria,39.3,41.6,2
-Age,0,Less than 6 years,Czech_Republic,16.4,14.4,2
+Age,0,Less than 6 years,Czech Republic,16.4,14.4,2
 Age,0,Less than 6 years,Denmark,15.3,18.3,2
 Age,0,Less than 6 years,Germany,20.6,19.7,2
 Age,0,Less than 6 years,Estonia,21.2,21.7,2
@@ -1141,14 +1141,14 @@ Age,0,Less than 6 years,Slovenia,13.6,18.3,2
 Age,0,Less than 6 years,Slovakia,25.2,20.6,2
 Age,0,Less than 6 years,Finland,15.6,16.9,2
 Age,0,Less than 6 years,Sweden,14.1,15,2
-Age,0,Less than 6 years,United_Kingdom,30.6,23.1,2
+Age,0,Less than 6 years,United Kingdom,30.6,23.1,2
 Age,0,Less than 6 years,Iceland,18.1,13.7,2
 Age,0,Less than 6 years,Norway,14.1,14.9,2
 Age,0,Less than 6 years,Switzerland,22.3,17.1,2
 Age,0,Less than 6 years,Croatia,24.4,31.3,2
 Age,0,From 6 to 10 years,Belgium,23.7,20.8,2
 Age,0,From 6 to 10 years,Bulgaria,45.6,41.6,2
-Age,0,From 6 to 10 years,Czech_Republic,18.4,14.4,2
+Age,0,From 6 to 10 years,Czech Republic,18.4,14.4,2
 Age,0,From 6 to 10 years,Denmark,16.3,18.3,2
 Age,0,From 6 to 10 years,Germany,21.6,19.7,2
 Age,0,From 6 to 10 years,Estonia,26,21.7,2
@@ -1172,14 +1172,14 @@ Age,0,From 6 to 10 years,Slovenia,16.6,18.3,2
 Age,0,From 6 to 10 years,Slovakia,25.3,20.6,2
 Age,0,From 6 to 10 years,Finland,12.8,16.9,2
 Age,0,From 6 to 10 years,Sweden,12.5,15,2
-Age,0,From 6 to 10 years,United_Kingdom,30.9,23.1,2
+Age,0,From 6 to 10 years,United Kingdom,30.9,23.1,2
 Age,0,From 6 to 10 years,Iceland,17.9,13.7,2
 Age,0,From 6 to 10 years,Norway,11.6,14.9,2
 Age,0,From 6 to 10 years,Switzerland,17.1,17.1,2
 Age,0,From 6 to 10 years,Croatia,31.9,31.3,2
 Age,0,From 11 to 15 years,Belgium,20.1,20.8,2
 Age,0,From 11 to 15 years,Bulgaria,47.5,41.6,2
-Age,0,From 11 to 15 years,Czech_Republic,20.2,14.4,2
+Age,0,From 11 to 15 years,Czech Republic,20.2,14.4,2
 Age,0,From 11 to 15 years,Denmark,13.4,18.3,2
 Age,0,From 11 to 15 years,Germany,21.9,19.7,2
 Age,0,From 11 to 15 years,Estonia,23.5,21.7,2
@@ -1203,14 +1203,14 @@ Age,0,From 11 to 15 years,Slovenia,14.8,18.3,2
 Age,0,From 11 to 15 years,Slovakia,24.6,20.6,2
 Age,0,From 11 to 15 years,Finland,13.5,16.9,2
 Age,0,From 11 to 15 years,Sweden,14.5,15,2
-Age,0,From 11 to 15 years,United_Kingdom,27.5,23.1,2
+Age,0,From 11 to 15 years,United Kingdom,27.5,23.1,2
 Age,0,From 11 to 15 years,Iceland,16,13.7,2
 Age,0,From 11 to 15 years,Norway,15.3,14.9,2
 Age,0,From 11 to 15 years,Switzerland,20.2,17.1,2
 Age,0,From 11 to 15 years,Croatia,31.6,31.3,2
 Age,0,From 16 to 24 years,Belgium,21.3,20.8,2
 Age,0,From 16 to 24 years,Bulgaria,41.4,41.6,2
-Age,0,From 16 to 24 years,Czech_Republic,17.8,14.4,2
+Age,0,From 16 to 24 years,Czech Republic,17.8,14.4,2
 Age,0,From 16 to 24 years,Denmark,35.3,18.3,2
 Age,0,From 16 to 24 years,Germany,23.9,19.7,2
 Age,0,From 16 to 24 years,Estonia,26.4,21.7,2
@@ -1234,14 +1234,14 @@ Age,0,From 16 to 24 years,Slovenia,16.3,18.3,2
 Age,0,From 16 to 24 years,Slovakia,23.5,20.6,2
 Age,0,From 16 to 24 years,Finland,27.1,16.9,2
 Age,0,From 16 to 24 years,Sweden,28.8,15,2
-Age,0,From 16 to 24 years,United_Kingdom,28.3,23.1,2
+Age,0,From 16 to 24 years,United Kingdom,28.3,23.1,2
 Age,0,From 16 to 24 years,Iceland,17.8,13.7,2
 Age,0,From 16 to 24 years,Norway,33.4,14.9,2
 Age,0,From 16 to 24 years,Switzerland,15.5,17.1,2
 Age,0,From 16 to 24 years,Croatia,33.4,31.3,2
 Age,0,From 25 to 49 years,Belgium,17.6,20.8,2
 Age,0,From 25 to 49 years,Bulgaria,35.6,41.6,2
-Age,0,From 25 to 49 years,Czech_Republic,12.9,14.4,2
+Age,0,From 25 to 49 years,Czech Republic,12.9,14.4,2
 Age,0,From 25 to 49 years,Denmark,17.5,18.3,2
 Age,0,From 25 to 49 years,Germany,18.7,19.7,2
 Age,0,From 25 to 49 years,Estonia,19.6,21.7,2
@@ -1265,14 +1265,14 @@ Age,0,From 25 to 49 years,Slovenia,14.4,18.3,2
 Age,0,From 25 to 49 years,Slovakia,19.1,20.6,2
 Age,0,From 25 to 49 years,Finland,13.8,16.9,2
 Age,0,From 25 to 49 years,Sweden,13.1,15,2
-Age,0,From 25 to 49 years,United_Kingdom,19.7,23.1,2
+Age,0,From 25 to 49 years,United Kingdom,19.7,23.1,2
 Age,0,From 25 to 49 years,Iceland,15,13.7,2
 Age,0,From 25 to 49 years,Norway,13,14.9,2
 Age,0,From 25 to 49 years,Switzerland,13.2,17.1,2
 Age,0,From 25 to 49 years,Croatia,26.7,31.3,2
 Age,0,65 years or over ,Belgium,21,20.8,2
 Age,0,65 years or over ,Bulgaria,55.9,41.6,2
-Age,0,65 years or over ,Czech_Republic,10.1,14.4,2
+Age,0,65 years or over ,Czech Republic,10.1,14.4,2
 Age,0,65 years or over ,Denmark,18.4,18.3,2
 Age,0,65 years or over ,Germany,14.8,19.7,2
 Age,0,65 years or over ,Estonia,19,21.7,2
@@ -1296,14 +1296,14 @@ Age,0,65 years or over ,Slovenia,22.8,18.3,2
 Age,0,65 years or over ,Slovakia,16.7,20.6,2
 Age,0,65 years or over ,Finland,19.5,16.9,2
 Age,0,65 years or over ,Sweden,15.9,15,2
-Age,0,65 years or over ,United_Kingdom,22.3,23.1,2
+Age,0,65 years or over ,United Kingdom,22.3,23.1,2
 Age,0,65 years or over ,Iceland,5.3,13.7,2
 Age,0,65 years or over ,Norway,12.3,14.9,2
 Age,0,65 years or over ,Switzerland,27.7,17.1,2
 Age,0,65 years or over ,Croatia,34.7,31.3,2
 Education,1,levels 0-2,Belgium,32.4,20.8,2
 Education,0,levels 0-2,Bulgaria,66.7,41.6,2
-Education,0,levels 0-2,Czech_Republic,28.7,14.4,2
+Education,0,levels 0-2,Czech Republic,28.7,14.4,2
 Education,0,levels 0-2,Denmark,25.5,18.3,2
 Education,0,levels 0-2,Germany,34.5,19.7,2
 Education,0,levels 0-2,Estonia,33.2,21.7,2
@@ -1327,14 +1327,14 @@ Education,0,levels 0-2,Slovenia,36.6,18.3,2
 Education,0,levels 0-2,Slovakia,34.9,20.6,2
 Education,0,levels 0-2,Finland,25.6,16.9,2
 Education,0,levels 0-2,Sweden,24.5,15,2
-Education,0,levels 0-2,United_Kingdom,32.6,23.1,2
+Education,0,levels 0-2,United Kingdom,32.6,23.1,2
 Education,0,levels 0-2,Iceland,15,13.7,2
 Education,0,levels 0-2,Norway,24.7,14.9,2
 Education,0,levels 0-2,Switzerland,29.6,17.1,2
 Education,0,levels 0-2,Croatia,48.5,31.3,2
 Education,0,levels 3 and 4,Belgium,17.2,20.8,2
 Education,0,levels 3 and 4,Bulgaria,34.5,41.6,2
-Education,0,levels 3 and 4,Czech_Republic,12.1,14.4,2
+Education,0,levels 3 and 4,Czech Republic,12.1,14.4,2
 Education,0,levels 3 and 4,Denmark,16.7,18.3,2
 Education,0,levels 3 and 4,Germany,20.9,19.7,2
 Education,0,levels 3 and 4,Estonia,23.7,21.7,2
@@ -1358,14 +1358,14 @@ Education,0,levels 3 and 4,Slovenia,16.6,18.3,2
 Education,0,levels 3 and 4,Slovakia,19.1,20.6,2
 Education,0,levels 3 and 4,Finland,19,16.9,2
 Education,0,levels 3 and 4,Sweden,14.1,15,2
-Education,0,levels 3 and 4,United_Kingdom,22.6,23.1,2
+Education,0,levels 3 and 4,United Kingdom,22.6,23.1,2
 Education,0,levels 3 and 4,Iceland,14.3,13.7,2
 Education,0,levels 3 and 4,Norway,12.4,14.9,2
 Education,0,levels 3 and 4,Switzerland,15,17.1,2
 Education,0,levels 3 and 4,Croatia,26.7,31.3,2
 Education,0,levels 5 and 6,Belgium,9,20.8,2
 Education,0,levels 5 and 6,Bulgaria,16.4,41.6,2
-Education,0,levels 5 and 6,Czech_Republic,4.6,14.4,2
+Education,0,levels 5 and 6,Czech Republic,4.6,14.4,2
 Education,0,levels 5 and 6,Denmark,11.9,18.3,2
 Education,0,levels 5 and 6,Germany,11.1,19.7,2
 Education,0,levels 5 and 6,Estonia,9.6,21.7,2
@@ -1389,14 +1389,14 @@ Education,0,levels 5 and 6,Slovenia,5.5,18.3,2
 Education,0,levels 5 and 6,Slovakia,8.7,20.6,2
 Education,0,levels 5 and 6,Finland,6.7,16.9,2
 Education,0,levels 5 and 6,Sweden,10.2,15,2
-Education,0,levels 5 and 6,United_Kingdom,11.1,23.1,2
+Education,0,levels 5 and 6,United Kingdom,11.1,23.1,2
 Education,0,levels 5 and 6,Iceland,6.7,13.7,2
 Education,0,levels 5 and 6,Norway,10.1,14.9,2
 Education,0,levels 5 and 6,Switzerland,8.4,17.1,2
 Education,0,levels 5 and 6,Croatia,11.5,31.3,2
 Income,1,First quintile,Belgium,74.4,20.8,2
 Income,0,First quintile,Bulgaria,100,41.6,2
-Income,0,First quintile,Czech_Republic,45.7,14.4,2
+Income,0,First quintile,Czech Republic,45.7,14.4,2
 Income,0,First quintile,Denmark,79.7,18.3,2
 Income,0,First quintile,Germany,88.1,19.7,2
 Income,0,First quintile,Estonia,73.7,21.7,2
@@ -1420,14 +1420,14 @@ Income,0,First quintile,Slovenia,81.3,18.3,2
 Income,0,First quintile,Slovakia,67.6,20.6,2
 Income,0,First quintile,Finland,79.4,16.9,2
 Income,0,First quintile,Sweden,68.1,15,2
-Income,0,First quintile,United_Kingdom,92.7,23.1,2
+Income,0,First quintile,United Kingdom,92.7,23.1,2
 Income,0,First quintile,Iceland,53,13.7,2
 Income,0,First quintile,Norway,71.4,14.9,2
 Income,0,First quintile,Switzerland,83.9,17.1,2
 Income,0,First quintile,Croatia,100,31.3,2
 Income,0,Second quintile,Belgium,21,20.8,2
 Income,0,Second quintile,Bulgaria,54.8,41.6,2
-Income,0,Second quintile,Czech_Republic,11.1,14.4,2
+Income,0,Second quintile,Czech Republic,11.1,14.4,2
 Income,0,Second quintile,Denmark,18.6,18.3,2
 Income,0,Second quintile,Germany,12.7,19.7,2
 Income,0,Second quintile,Estonia,9.4,21.7,2
@@ -1451,14 +1451,14 @@ Income,0,Second quintile,Slovenia,15.6,18.3,2
 Income,0,Second quintile,Slovakia,14.2,20.6,2
 Income,0,Second quintile,Finland,13,16.9,2
 Income,0,Second quintile,Sweden,7.8,15,2
-Income,0,Second quintile,United_Kingdom,14,23.1,2
+Income,0,Second quintile,United Kingdom,14,23.1,2
 Income,0,Second quintile,Iceland,11.3,13.7,2
 Income,0,Second quintile,Norway,14.9,14.9,2
 Income,0,Second quintile,Switzerland,6.1,17.1,2
 Income,0,Second quintile,Croatia,31.5,31.3,2
 Income,0,Third quintile,Belgium,9.4,20.8,2
 Income,0,Third quintile,Bulgaria,43.6,41.6,2
-Income,0,Third quintile,Czech_Republic,9.1,14.4,2
+Income,0,Third quintile,Czech Republic,9.1,14.4,2
 Income,0,Third quintile,Denmark,9.8,18.3,2
 Income,0,Third quintile,Germany,6.4,19.7,2
 Income,0,Third quintile,Estonia,8,21.7,2
@@ -1482,14 +1482,14 @@ Income,0,Third quintile,Slovenia,5.6,18.3,2
 Income,0,Third quintile,Slovakia,16.5,20.6,2
 Income,0,Third quintile,Finland,6.1,16.9,2
 Income,0,Third quintile,Sweden,4.8,15,2
-Income,0,Third quintile,United_Kingdom,9.5,23.1,2
+Income,0,Third quintile,United Kingdom,9.5,23.1,2
 Income,0,Third quintile,Iceland,8.8,13.7,2
 Income,0,Third quintile,Norway,3.7,14.9,2
 Income,0,Third quintile,Switzerland,3.9,17.1,2
 Income,0,Third quintile,Croatia,20.5,31.3,2
 Income,0,Fourth quintile,Belgium,4.2,20.8,2
 Income,0,Fourth quintile,Bulgaria,33.6,41.6,2
-Income,0,Fourth quintile,Czech_Republic,3.6,14.4,2
+Income,0,Fourth quintile,Czech Republic,3.6,14.4,2
 Income,0,Fourth quintile,Denmark,5,18.3,2
 Income,0,Fourth quintile,Germany,3.5,19.7,2
 Income,0,Fourth quintile,Estonia,4.3,21.7,2
@@ -1513,14 +1513,14 @@ Income,0,Fourth quintile,Slovenia,3.5,18.3,2
 Income,0,Fourth quintile,Slovakia,12.8,20.6,2
 Income,0,Fourth quintile,Finland,1.7,16.9,2
 Income,0,Fourth quintile,Sweden,1,15,2
-Income,0,Fourth quintile,United_Kingdom,5.4,23.1,2
+Income,0,Fourth quintile,United Kingdom,5.4,23.1,2
 Income,0,Fourth quintile,Iceland,4.7,13.7,2
 Income,0,Fourth quintile,Norway,4.9,14.9,2
 Income,0,Fourth quintile,Switzerland,1.2,17.1,2
 Income,0,Fourth quintile,Croatia,15.2,31.3,2
 Income,0,Fifth quintile,Belgium,4.3,20.8,2
 Income,0,Fifth quintile,Bulgaria,26.5,41.6,2
-Income,0,Fifth quintile,Czech_Republic,1.5,14.4,2
+Income,0,Fifth quintile,Czech Republic,1.5,14.4,2
 Income,0,Fifth quintile,Denmark,2.1,18.3,2
 Income,0,Fifth quintile,Germany,2.5,19.7,2
 Income,0,Fifth quintile,Estonia,1.5,21.7,2
@@ -1544,14 +1544,14 @@ Income,0,Fifth quintile,Slovenia,3.8,18.3,2
 Income,0,Fifth quintile,Slovakia,4.9,20.6,2
 Income,0,Fifth quintile,Finland,2.8,16.9,2
 Income,0,Fifth quintile,Sweden,1.3,15,2
-Income,0,Fifth quintile,United_Kingdom,0.8,23.1,2
+Income,0,Fifth quintile,United Kingdom,0.8,23.1,2
 Income,0,Fifth quintile,Iceland,2.3,13.7,2
 Income,0,Fifth quintile,Norway,1.4,14.9,2
 Income,0,Fifth quintile,Switzerland,1.6,17.1,2
 Income,0,Fifth quintile,Croatia,8.9,31.3,2
 Household,1,Single person,Belgium,30.6,20.8,2
 Household,0,Single person,Bulgaria,71.7,41.6,2
-Household,0,Single person,Czech_Republic,25.5,14.4,2
+Household,0,Single person,Czech Republic,25.5,14.4,2
 Household,0,Single person,Denmark,36.4,18.3,2
 Household,0,Single person,Germany,35.6,19.7,2
 Household,0,Single person,Estonia,34.5,21.7,2
@@ -1575,14 +1575,14 @@ Household,0,Single person,Slovenia,45.8,18.3,2
 Household,0,Single person,Slovakia,32.3,20.6,2
 Household,0,Single person,Finland,37.8,16.9,2
 Household,0,Single person,Sweden,32.6,15,2
-Household,0,Single person,United_Kingdom,33.8,23.1,2
+Household,0,Single person,United Kingdom,33.8,23.1,2
 Household,0,Single person,Iceland,27.1,13.7,2
 Household,0,Single person,Norway,34.8,14.9,2
 Household,0,Single person,Switzerland,25.7,17.1,2
 Household,0,Single person,Croatia,56.1,31.3,2
 Household,0,1 adult < 65,Belgium,34.6,20.8,2
 Household,0,1 adult < 65,Bulgaria,58,41.6,2
-Household,0,1 adult < 65,Czech_Republic,27.6,14.4,2
+Household,0,1 adult < 65,Czech Republic,27.6,14.4,2
 Household,0,1 adult < 65,Denmark,42.1,18.3,2
 Household,0,1 adult < 65,Germany,41.1,19.7,2
 Household,0,1 adult < 65,Estonia,34.8,21.7,2
@@ -1606,14 +1606,14 @@ Household,0,1 adult < 65,Slovenia,45.4,18.3,2
 Household,0,1 adult < 65,Slovakia,38.2,20.6,2
 Household,0,1 adult < 65,Finland,36.7,16.9,2
 Household,0,1 adult < 65,Sweden,32.8,15,2
-Household,0,1 adult < 65,United_Kingdom,37.7,23.1,2
+Household,0,1 adult < 65,United Kingdom,37.7,23.1,2
 Household,0,1 adult < 65,Iceland,34,13.7,2
 Household,0,1 adult < 65,Norway,36.7,14.9,2
 Household,0,1 adult < 65,Switzerland,18.5,17.1,2
 Household,0,1 adult < 65,Croatia,54.8,31.3,2
 Household,0,1 adult 65+,Belgium,24.2,20.8,2
 Household,0,1 adult 65+,Bulgaria,78.9,41.6,2
-Household,0,1 adult 65+,Czech_Republic,23.2,14.4,2
+Household,0,1 adult 65+,Czech Republic,23.2,14.4,2
 Household,0,1 adult 65+,Denmark,23.6,18.3,2
 Household,0,1 adult 65+,Germany,23.9,19.7,2
 Household,0,1 adult 65+,Estonia,34.2,21.7,2
@@ -1637,14 +1637,14 @@ Household,0,1 adult 65+,Slovenia,46.2,18.3,2
 Household,0,1 adult 65+,Slovakia,26.8,20.6,2
 Household,0,1 adult 65+,Finland,39.8,16.9,2
 Household,0,1 adult 65+,Sweden,32.2,15,2
-Household,0,1 adult 65+,United_Kingdom,29.4,23.1,2
+Household,0,1 adult 65+,United Kingdom,29.4,23.1,2
 Household,0,1 adult 65+,Iceland,12.7,13.7,2
 Household,0,1 adult 65+,Norway,30.1,14.9,2
 Household,0,1 adult 65+,Switzerland,36.9,17.1,2
 Household,0,1 adult 65+,Croatia,56.9,31.3,2
 Household,0,1 person w dep. children,Belgium,49.6,20.8,2
 Household,0,1 person w dep. children,Bulgaria,65.2,41.6,2
-Household,0,1 person w dep. children,Czech_Republic,47.7,14.4,2
+Household,0,1 person w dep. children,Czech Republic,47.7,14.4,2
 Household,0,1 person w dep. children,Denmark,32.2,18.3,2
 Household,0,1 person w dep. children,Germany,53.4,19.7,2
 Household,0,1 person w dep. children,Estonia,45.2,21.7,2
@@ -1668,14 +1668,14 @@ Household,0,1 person w dep. children,Slovenia,38.3,18.3,2
 Household,0,1 person w dep. children,Slovakia,44.1,20.6,2
 Household,0,1 person w dep. children,Finland,29.7,16.9,2
 Household,0,1 person w dep. children,Sweden,37.5,15,2
-Household,0,1 person w dep. children,United_Kingdom,61.3,23.1,2
+Household,0,1 person w dep. children,United Kingdom,61.3,23.1,2
 Household,0,1 person w dep. children,Iceland,46.2,13.7,2
 Household,0,1 person w dep. children,Norway,37.4,14.9,2
 Household,0,1 person w dep. children,Switzerland,38.3,17.1,2
 Household,0,1 person w dep. children,Croatia,43.4,31.3,2
 Household,0,Single female,Belgium,30.6,20.8,2
 Household,0,Single female,Bulgaria,78.3,41.6,2
-Household,0,Single female,Czech_Republic,29.1,14.4,2
+Household,0,Single female,Czech Republic,29.1,14.4,2
 Household,0,Single female,Denmark,36.3,18.3,2
 Household,0,Single female,Germany,34.7,19.7,2
 Household,0,Single female,Estonia,31.8,21.7,2
@@ -1699,14 +1699,14 @@ Household,0,Single female,Slovenia,51,18.3,2
 Household,0,Single female,Slovakia,31.8,20.6,2
 Household,0,Single female,Finland,37.3,16.9,2
 Household,0,Single female,Sweden,36.5,15,2
-Household,0,Single female,United_Kingdom,34.2,23.1,2
+Household,0,Single female,United Kingdom,34.2,23.1,2
 Household,0,Single female,Iceland,22.2,13.7,2
 Household,0,Single female,Norway,36.7,14.9,2
 Household,0,Single female,Switzerland,29.9,17.1,2
 Household,0,Single female,Croatia,56.5,31.3,2
 Household,0,Single male,Belgium,30.8,20.8,2
 Household,0,Single male,Bulgaria,57.7,41.6,2
-Household,0,Single male,Czech_Republic,19.8,14.4,2
+Household,0,Single male,Czech Republic,19.8,14.4,2
 Household,0,Single male,Denmark,36.5,18.3,2
 Household,0,Single male,Germany,36.7,19.7,2
 Household,0,Single male,Estonia,39.4,21.7,2
@@ -1730,14 +1730,14 @@ Household,0,Single male,Slovenia,38.2,18.3,2
 Household,0,Single male,Slovakia,33.5,20.6,2
 Household,0,Single male,Finland,38.4,16.9,2
 Household,0,Single male,Sweden,28.1,15,2
-Household,0,Single male,United_Kingdom,33.3,23.1,2
+Household,0,Single male,United Kingdom,33.3,23.1,2
 Household,0,Single male,Iceland,31.7,13.7,2
 Household,0,Single male,Norway,32.9,14.9,2
 Household,0,Single male,Switzerland,19.6,17.1,2
 Household,0,Single male,Croatia,55,31.3,2
 Household,0,2 adults,Belgium,20.1,20.8,2
 Household,0,2 adults,Bulgaria,47,41.6,2
-Household,0,2 adults,Czech_Republic,11.3,14.4,2
+Household,0,2 adults,Czech Republic,11.3,14.4,2
 Household,0,2 adults,Denmark,12.3,18.3,2
 Household,0,2 adults,Germany,13.9,19.7,2
 Household,0,2 adults,Estonia,16.4,21.7,2
@@ -1761,14 +1761,14 @@ Household,0,2 adults,Slovenia,20.2,18.3,2
 Household,0,2 adults,Slovakia,17.3,20.6,2
 Household,0,2 adults,Finland,10.3,16.9,2
 Household,0,2 adults,Sweden,8.2,15,2
-Household,0,2 adults,United_Kingdom,16.5,23.1,2
+Household,0,2 adults,United Kingdom,16.5,23.1,2
 Household,0,2 adults,Iceland,6.8,13.7,2
 Household,0,2 adults,Norway,6.2,14.9,2
 Household,0,2 adults,Switzerland,15.2,17.1,2
 Household,0,2 adults,Croatia,36.7,31.3,2
 Household,0,2 adults < 65,Belgium,18.6,20.8,2
 Household,0,2 adults < 65,Bulgaria,38.7,41.6,2
-Household,0,2 adults < 65,Czech_Republic,14.5,14.4,2
+Household,0,2 adults < 65,Czech Republic,14.5,14.4,2
 Household,0,2 adults < 65,Denmark,10.6,18.3,2
 Household,0,2 adults < 65,Germany,15.5,19.7,2
 Household,0,2 adults < 65,Estonia,18.2,21.7,2
@@ -1792,14 +1792,14 @@ Household,0,2 adults < 65,Slovenia,24,18.3,2
 Household,0,2 adults < 65,Slovakia,19.9,20.6,2
 Household,0,2 adults < 65,Finland,12,16.9,2
 Household,0,2 adults < 65,Sweden,10,15,2
-Household,0,2 adults < 65,United_Kingdom,14.4,23.1,2
+Household,0,2 adults < 65,United Kingdom,14.4,23.1,2
 Household,0,2 adults < 65,Iceland,9.4,13.7,2
 Household,0,2 adults < 65,Norway,9.1,14.9,2
 Household,0,2 adults < 65,Switzerland,9.4,17.1,2
 Household,0,2 adults < 65,Croatia,42.8,31.3,2
 Household,0,"2 adults, 1+ 65+",Belgium,22.3,20.8,2
 Household,0,"2 adults, 1+ 65+",Bulgaria,54.4,41.6,2
-Household,0,"2 adults, 1+ 65+",Czech_Republic,6.9,14.4,2
+Household,0,"2 adults, 1+ 65+",Czech Republic,6.9,14.4,2
 Household,0,"2 adults, 1+ 65+",Denmark,14.9,18.3,2
 Household,0,"2 adults, 1+ 65+",Germany,12.2,19.7,2
 Household,0,"2 adults, 1+ 65+",Estonia,13.8,21.7,2
@@ -1823,14 +1823,14 @@ Household,0,"2 adults, 1+ 65+",Slovenia,16.4,18.3,2
 Household,0,"2 adults, 1+ 65+",Slovakia,14.2,20.6,2
 Household,0,"2 adults, 1+ 65+",Finland,7.2,16.9,2
 Household,0,"2 adults, 1+ 65+",Sweden,6,15,2
-Household,0,"2 adults, 1+ 65+",United_Kingdom,19.4,23.1,2
+Household,0,"2 adults, 1+ 65+",United Kingdom,19.4,23.1,2
 Household,0,"2 adults, 1+ 65+",Iceland,2.9,13.7,2
 Household,0,"2 adults, 1+ 65+",Norway,1.8,14.9,2
 Household,0,"2 adults, 1+ 65+",Switzerland,24.6,17.1,2
 Household,0,"2 adults, 1+ 65+",Croatia,32.2,31.3,2
 Household,0,2 adults w 1 dep. child,Belgium,13,20.8,2
 Household,0,2 adults w 1 dep. child,Bulgaria,29.2,41.6,2
-Household,0,2 adults w 1 dep. child,Czech_Republic,11.2,14.4,2
+Household,0,2 adults w 1 dep. child,Czech Republic,11.2,14.4,2
 Household,0,2 adults w 1 dep. child,Denmark,10.6,18.3,2
 Household,0,2 adults w 1 dep. child,Germany,12.4,19.7,2
 Household,0,2 adults w 1 dep. child,Estonia,18.4,21.7,2
@@ -1854,14 +1854,14 @@ Household,0,2 adults w 1 dep. child,Slovenia,12.8,18.3,2
 Household,0,2 adults w 1 dep. child,Slovakia,17.7,20.6,2
 Household,0,2 adults w 1 dep. child,Finland,10.1,16.9,2
 Household,0,2 adults w 1 dep. child,Sweden,8,15,2
-Household,0,2 adults w 1 dep. child,United_Kingdom,14.1,23.1,2
+Household,0,2 adults w 1 dep. child,United Kingdom,14.1,23.1,2
 Household,0,2 adults w 1 dep. child,Iceland,8.2,13.7,2
 Household,0,2 adults w 1 dep. child,Norway,6.4,14.9,2
 Household,0,2 adults w 1 dep. child,Switzerland,13,17.1,2
 Household,0,2 adults w 1 dep. child,Croatia,29.6,31.3,2
 Household,0,2 adults w 2 dep. children,Belgium,12,20.8,2
 Household,0,2 adults w 2 dep. children,Bulgaria,36,41.6,2
-Household,0,2 adults w 2 dep. children,Czech_Republic,11.8,14.4,2
+Household,0,2 adults w 2 dep. children,Czech Republic,11.8,14.4,2
 Household,0,2 adults w 2 dep. children,Denmark,7.2,18.3,2
 Household,0,2 adults w 2 dep. children,Germany,11.4,19.7,2
 Household,0,2 adults w 2 dep. children,Estonia,16.8,21.7,2
@@ -1885,14 +1885,14 @@ Household,0,2 adults w 2 dep. children,Slovenia,10.8,18.3,2
 Household,0,2 adults w 2 dep. children,Slovakia,13.4,20.6,2
 Household,0,2 adults w 2 dep. children,Finland,9.2,16.9,2
 Household,0,2 adults w 2 dep. children,Sweden,7.6,15,2
-Household,0,2 adults w 2 dep. children,United_Kingdom,16.7,23.1,2
+Household,0,2 adults w 2 dep. children,United Kingdom,16.7,23.1,2
 Household,0,2 adults w 2 dep. children,Iceland,7.8,13.7,2
 Household,0,2 adults w 2 dep. children,Norway,4.1,14.9,2
 Household,0,2 adults w 2 dep. children,Switzerland,14.6,17.1,2
 Household,0,2 adults w 2 dep. children,Croatia,22.8,31.3,2
 Household,0,2 adults w 3+ dep. children,Belgium,20.6,20.8,2
 Household,0,2 adults w 3+ dep. children,Bulgaria,76.7,41.6,2
-Household,0,2 adults w 3+ dep. children,Czech_Republic,26.3,14.4,2
+Household,0,2 adults w 3+ dep. children,Czech Republic,26.3,14.4,2
 Household,0,2 adults w 3+ dep. children,Denmark,12.1,18.3,2
 Household,0,2 adults w 3+ dep. children,Germany,24.4,19.7,2
 Household,0,2 adults w 3+ dep. children,Estonia,21.9,21.7,2
@@ -1916,14 +1916,14 @@ Household,0,2 adults w 3+ dep. children,Slovenia,16.2,18.3,2
 Household,0,2 adults w 3+ dep. children,Slovakia,33.7,20.6,2
 Household,0,2 adults w 3+ dep. children,Finland,13.9,16.9,2
 Household,0,2 adults w 3+ dep. children,Sweden,12.9,15,2
-Household,0,2 adults w 3+ dep. children,United_Kingdom,36.2,23.1,2
+Household,0,2 adults w 3+ dep. children,United Kingdom,36.2,23.1,2
 Household,0,2 adults w 3+ dep. children,Iceland,13,13.7,2
 Household,0,2 adults w 3+ dep. children,Norway,10,14.9,2
 Household,0,2 adults w 3+ dep. children,Switzerland,24,17.1,2
 Household,0,2 adults w 3+ dep. children,Croatia,38.1,31.3,2
 Household,0,2+ adults w/o dep. children,Belgium,17.5,20.8,2
 Household,0,2+ adults w/o dep. children,Bulgaria,39.1,41.6,2
-Household,0,2+ adults w/o dep. children,Czech_Republic,10.3,14.4,2
+Household,0,2+ adults w/o dep. children,Czech Republic,10.3,14.4,2
 Household,0,2+ adults w/o dep. children,Denmark,12,18.3,2
 Household,0,2+ adults w/o dep. children,Germany,12.9,19.7,2
 Household,0,2+ adults w/o dep. children,Estonia,16.3,21.7,2
@@ -1947,14 +1947,14 @@ Household,0,2+ adults w/o dep. children,Slovenia,16.9,18.3,2
 Household,0,2+ adults w/o dep. children,Slovakia,15.7,20.6,2
 Household,0,2+ adults w/o dep. children,Finland,10.5,16.9,2
 Household,0,2+ adults w/o dep. children,Sweden,8.3,15,2
-Household,0,2+ adults w/o dep. children,United_Kingdom,15.7,23.1,2
+Household,0,2+ adults w/o dep. children,United Kingdom,15.7,23.1,2
 Household,0,2+ adults w/o dep. children,Iceland,6.7,13.7,2
 Household,0,2+ adults w/o dep. children,Norway,6.3,14.9,2
 Household,0,2+ adults w/o dep. children,Switzerland,13.8,17.1,2
 Household,0,2+ adults w/o dep. children,Croatia,29.7,31.3,2
 Household,0,2+ adults with dep. children,Belgium,15.8,20.8,2
 Household,0,2+ adults with dep. children,Bulgaria,38.5,41.6,2
-Household,0,2+ adults with dep. children,Czech_Republic,12.6,14.4,2
+Household,0,2+ adults with dep. children,Czech Republic,12.6,14.4,2
 Household,0,2+ adults with dep. children,Denmark,10.2,18.3,2
 Household,0,2+ adults with dep. children,Germany,13.8,19.7,2
 Household,0,2+ adults with dep. children,Estonia,18.7,21.7,2
@@ -1978,14 +1978,14 @@ Household,0,2+ adults with dep. children,Slovenia,12.3,18.3,2
 Household,0,2+ adults with dep. children,Slovakia,20.9,20.6,2
 Household,0,2+ adults with dep. children,Finland,11.1,16.9,2
 Household,0,2+ adults with dep. children,Sweden,9.2,15,2
-Household,0,2+ adults with dep. children,United_Kingdom,20.1,23.1,2
+Household,0,2+ adults with dep. children,United Kingdom,20.1,23.1,2
 Household,0,2+ adults with dep. children,Iceland,8.8,13.7,2
 Household,0,2+ adults with dep. children,Norway,6.8,14.9,2
 Household,0,2+ adults with dep. children,Switzerland,15.9,17.1,2
 Household,0,2+ adults with dep. children,Croatia,28.8,31.3,2
 Household,0,3+ adults,Belgium,8.9,20.8,2
 Household,0,3+ adults,Bulgaria,31.6,41.6,2
-Household,0,3+ adults,Czech_Republic,8.6,14.4,2
+Household,0,3+ adults,Czech Republic,8.6,14.4,2
 Household,0,3+ adults,Denmark,7.8,18.3,2
 Household,0,3+ adults,Germany,8.2,19.7,2
 Household,0,3+ adults,Estonia,16,21.7,2
@@ -2009,14 +2009,14 @@ Household,0,3+ adults,Slovenia,12.6,18.3,2
 Household,0,3+ adults,Slovakia,14.4,20.6,2
 Household,0,3+ adults,Finland,12.5,16.9,2
 Household,0,3+ adults,Sweden,9,15,2
-Household,0,3+ adults,United_Kingdom,13.6,23.1,2
+Household,0,3+ adults,United Kingdom,13.6,23.1,2
 Household,0,3+ adults,Iceland,6.3,13.7,2
 Household,0,3+ adults,Norway,7.5,14.9,2
 Household,0,3+ adults,Switzerland,8.8,17.1,2
 Household,0,3+ adults,Croatia,23.2,31.3,2
 Household,0,3+ adults w dep. children,Belgium,19.9,20.8,2
 Household,0,3+ adults w dep. children,Bulgaria,40,41.6,2
-Household,0,3+ adults w dep. children,Czech_Republic,9.5,14.4,2
+Household,0,3+ adults w dep. children,Czech Republic,9.5,14.4,2
 Household,0,3+ adults w dep. children,Denmark,20.9,18.3,2
 Household,0,3+ adults w dep. children,Germany,10.7,19.7,2
 Household,0,3+ adults w dep. children,Estonia,19.8,21.7,2
@@ -2040,14 +2040,14 @@ Household,0,3+ adults w dep. children,Slovenia,12,18.3,2
 Household,0,3+ adults w dep. children,Slovakia,24.4,20.6,2
 Household,0,3+ adults w dep. children,Finland,14.8,16.9,2
 Household,0,3+ adults w dep. children,Sweden,11.9,15,2
-Household,0,3+ adults w dep. children,United_Kingdom,16.9,23.1,2
+Household,0,3+ adults w dep. children,United Kingdom,16.9,23.1,2
 Household,0,3+ adults w dep. children,Iceland,3.3,13.7,2
 Household,0,3+ adults w dep. children,Norway,11.4,14.9,2
 Household,0,3+ adults w dep. children,Switzerland,14.6,17.1,2
 Household,0,3+ adults w dep. children,Croatia,29,31.3,2
 Household,0,Households w/o dep. children,Belgium,21.7,20.8,2
 Household,0,Households w/o dep. children,Bulgaria,44.1,41.6,2
-Household,0,Households w/o dep. children,Czech_Republic,13.2,14.4,2
+Household,0,Households w/o dep. children,Czech Republic,13.2,14.4,2
 Household,0,Households w/o dep. children,Denmark,23,18.3,2
 Household,0,Households w/o dep. children,Germany,20.6,19.7,2
 Household,0,Households w/o dep. children,Estonia,22,21.7,2
@@ -2071,14 +2071,14 @@ Household,0,Households w/o dep. children,Slovenia,23.9,18.3,2
 Household,0,Households w/o dep. children,Slovakia,18.8,20.6,2
 Household,0,Households w/o dep. children,Finland,20.3,16.9,2
 Household,0,Households w/o dep. children,Sweden,17.3,15,2
-Household,0,Households w/o dep. children,United_Kingdom,20.5,23.1,2
+Household,0,Households w/o dep. children,United Kingdom,20.5,23.1,2
 Household,0,Households w/o dep. children,Iceland,13.6,13.7,2
 Household,0,Households w/o dep. children,Norway,17.9,14.9,2
 Household,0,Households w/o dep. children,Switzerland,16.8,17.1,2
 Household,0,Households w/o dep. children,Croatia,34,31.3,2
 Household,0,Households w dep. children,Belgium,20,20.8,2
 Household,0,Households w dep. children,Bulgaria,39.6,41.6,2
-Household,0,Households w dep. children,Czech_Republic,15.5,14.4,2
+Household,0,Households w dep. children,Czech Republic,15.5,14.4,2
 Household,0,Households w dep. children,Denmark,13.4,18.3,2
 Household,0,Households w dep. children,Germany,18.7,19.7,2
 Household,0,Households w dep. children,Estonia,21.5,21.7,2
@@ -2102,7 +2102,7 @@ Household,0,Households w dep. children,Slovenia,14,18.3,2
 Household,0,Households w dep. children,Slovakia,21.9,20.6,2
 Household,0,Households w dep. children,Finland,13.1,16.9,2
 Household,0,Households w dep. children,Sweden,12.7,15,2
-Household,0,Households w dep. children,United_Kingdom,25.7,23.1,2
+Household,0,Households w dep. children,United Kingdom,25.7,23.1,2
 Household,0,Households w dep. children,Iceland,13.8,13.7,2
 Household,0,Households w dep. children,Norway,11.9,14.9,2
 Household,0,Households w dep. children,Switzerland,17.4,17.1,2
