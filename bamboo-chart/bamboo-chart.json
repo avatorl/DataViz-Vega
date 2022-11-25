@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
-  "description": "Reproduction of the 'bamboo chart'(initially designed by Jorge Camões)",
+  "description": "Reproduction of the 'bamboo chart' initially designed by Jorge Camões",
   "usermeta": {
     "Author": "Andrzej Leszkiewicz",
     "License": "CC BY 4.0 (Share and Adapt with Attribution)",
