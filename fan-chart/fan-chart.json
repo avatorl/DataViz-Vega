@@ -1,0 +1,66 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "Reproduction of the 'fan chart' initially designed by Jorge Camões",
+  "usermeta": {
+    "Author": "Andrzej Leszkiewicz",
+    "License": "CC BY 4.0 (Share and Adapt with Attribution)",
+    "Github": "https://github.com/avatorl/Deneb-Vega/",
+    "Original Idea Author": "Jorge Camões",
+    "Original Idea URL": ""
+  },
+  "width": 500,
+  "height": 500,
+  "autosize": "none",
+  "signals": [],
+  "data": [
+    {
+      "name": "dataset-csv",
+      "url": "https://dl.dropboxusercontent.com/s/yq96fge9j2y2zdu/data-asia.csv",
+      "format": {"type": "csv", "parse": "auto", "delimiter": ","}
+    },
+    {
+      "name": "dataset",
+      "source": "dataset-csv",
+      "transform": [{"type": "filter", "expr": "true"}]
+    }
+  ],
+  "scales": [
+    {
+      "name": "angular",
+      "type": "linear",
+      "range": {"signal": "[PI, -PI]"},
+      "domain": [0, 1],
+      "domainMin": 0,
+      "domainMax": 1
+    },
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": {"data": "dataset", "field": "age"},
+      "range": {"scheme": "category20"}
+    }
+  ],
+  "marks": [
+    {
+      "type": "rule",
+      "from": {"data": "dataset"},
+      "encode": {
+        "enter": {
+          "stroke": {"scale": "color", "field": "age"},
+          "strokeWidth": {"value": 1},
+          "strokeOpacity": {"value": 1},
+          "x": {"signal": "width/2"},
+          "y": {"signal": "height/2"},
+          "x2": {
+            "signal": " width/2 * cos(scale('angular', datum.age_percent))"
+          },
+          "y2": {
+            "signal": "width/2 * sin(scale('angular', datum.age_percent))"
+          },
+          "tooltip": {"signal": "datum.age_percent"}
+        },
+        "update": {}
+      }
+    }
+  ]
+}
