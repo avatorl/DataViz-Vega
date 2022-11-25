@@ -33,23 +33,12 @@
       ]
     },
     {
-      "name": "clickCounter",
-      "value": 0,
-      "on": [
-        {
-          "events": "@legendSymbol:click,@legendLabel:click",
-          "update": "clickCounter+1",
-          "force": true
-        }
-      ]
-    },
-    {
       "name": "legendItem_clicked",
       "value": 0,
       "on": [
         {
           "events": "@legendSymbol:click,@legendLabel:click",
-          "update": "{id: clickCounter+2, country: datum.value}",
+          "update": "{country: datum.value}",
           "force": true
         }
       ]
@@ -78,11 +67,14 @@
     },
     {
       "name": "selected-countries",
-      "values": [
-        {"id": 1, "country": "Bulgaria"},
-        {"id": 2, "country": "Czech Republic"}
+      "values": [{"country": "Bulgaria"}, {"country": "Czech Republic"}],
+      "on": [
+        {
+          "trigger": "legendItem_clicked",
+          "remove": "legendItem_clicked",
+          "insert": "legendItem_clicked"
+        }
       ],
-      "on": [{"trigger": "legendItem_clicked", "insert": "legendItem_clicked"}],
       "transform": [
         {
           "type": "lookup",
@@ -91,8 +83,7 @@
           "fields": ["country"],
           "values": ["Total"],
           "as": ["total"]
-        },
-        {"type": "filter", "expr": "(datum.id>clickCounter-1)"}
+        }
       ]
     }
   ],
