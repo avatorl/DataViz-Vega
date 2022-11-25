@@ -9,6 +9,7 @@
   "height": 1000,
   "padding": 5,
   "autosize": {"type": "fit", "contains": "padding"},
+  "background": "white",
   "config": {
     "text": {"font": "Arial"},
     "axis": {
