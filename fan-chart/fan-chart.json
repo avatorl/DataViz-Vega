@@ -19,7 +19,7 @@
   "data": [
     {
       "name": "dataset-csv",
-      "url": "https://dl.dropboxusercontent.com/s/yvdhu3t1qqd7xyr/data-population.csv",
+      "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/fan-chart/data-population.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","}
     },
     {
