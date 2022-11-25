@@ -34,11 +34,11 @@
     },
     {
       "name": "legendItems_clicked",
-      "value": false,
+      "value": 0,
       "on": [
         {
           "events": "@legendSymbol:click,@legendLabel:click",
-          "update": "{country: datum.value}",
+          "update": "{data: datum.value}",
           "force": true
         }
       ]
@@ -139,7 +139,7 @@
             "fontSize": {"value": 13},
             "dy": {"value": 5},
             "fill": {
-              "signal": "datum.label==data('selected-countries')[0].country?selected1Color:datum.label==data('selected-countries')[1].country?selected2Color:lineColor"
+              "signal": "datum.label==data('selected-countries')[0].data?selected1Color:datum.label==data('selected-countries')[1].data?selected2Color:lineColor"
             },
             "opacity": {"value": 1}
           }
@@ -203,10 +203,10 @@
                     "update": {
                       "opacity": {"value": 1},
                       "strokeWidth": {
-                        "signal": "indata('selected-countries','country',datum.Country)?lineSelectedStrokeWidth:lineStrokeWidth"
+                        "signal": "indata('selected-countries','data',datum.Country)?lineSelectedStrokeWidth:lineStrokeWidth"
                       },
                       "stroke": {
-                        "signal": "datum.Country==data('selected-countries')[0].country?selected1Color:datum.Country==data('selected-countries')[1].country?selected2Color:lineColor"
+                        "signal": "datum.Country==data('selected-countries')[0].data?selected1Color:datum.Country==data('selected-countries')[1].data?selected2Color:lineColor"
                       },
                       "defined": {"signal": "true"},
                       "x": {
@@ -226,10 +226,10 @@
                     "update": {
                       "opacity": {"value": 1},
                       "strokeWidth": {
-                        "signal": "indata('selected-countries','country',datum.Country)?lineSelectedStrokeWidth:lineStrokeWidth"
+                        "signal": "indata('selected-countries','data',datum.Country)?lineSelectedStrokeWidth:lineStrokeWidth"
                       },
                       "stroke": {
-                        "signal": "datum.Country==data('selected-countries')[0].country?selected1Color:datum.Country==data('selected-countries')[1].country?selected2Color:lineColor"
+                        "signal": "datum.Country==data('selected-countries')[0].data?selected1Color:datum.Country==data('selected-countries')[1].data?selected2Color:lineColor"
                       },
                       "xc": {"scale": "scaleX", "signal": "datum.Total"},
                       "yc": {"scale": "scaleYTotal", "signal": "1"},
