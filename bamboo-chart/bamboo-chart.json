@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
-  "description": "Reproduction of the Bamboo chart (initially designed by Jorge Camoes)",
+  "description": "Reproduction of the 'bamboo chart'(initially designed by Jorge Camoes)",
   "usermeta": {
     "Author": "Andrzej Leszkiewicz",
     "License": "CC BY 4.0 (Share and Adapt with Attribution)",
@@ -22,7 +22,7 @@
     {"name": "selected1Color", "value": "#377eb8"},
     {"name": "selected2Color", "value": "#e41a1c"},
     {
-      "name": "max_selected",
+      "name": "isSelectionComplete",
       "value": -1,
       "on": [
         {
@@ -33,7 +33,7 @@
       ]
     },
     {
-      "name": "legendItems_clicked",
+      "name": "legendItem_clicked",
       "value": 0,
       "on": [
         {
@@ -58,7 +58,9 @@
         {
           "type": "aggregate",
           "groupby": ["Country"],
-          "fields": ["Country"],
+          "fields": ["Total"],
+          "ops": ["min"],
+          "as": ["Total"],
           "drop": true
         }
       ]
@@ -66,9 +68,16 @@
     {
       "name": "selected-countries",
       "values": ["Bulgaria", "Czech_Republic"],
-      "on": [
-        {"trigger": "max_selected", "remove": "true"},
-        {"trigger": "legendItems_clicked", "insert": "legendItems_clicked"}
+      "on": [{"trigger": "legendItem_clicked", "insert": "legendItem_clicked"}],
+      "transform": [
+        {
+          "type": "lookup",
+          "from": "countries",
+          "key": "Country",
+          "fields": ["data"],
+          "values": ["Total"],
+          "as": ["Total"]
+        }
       ]
     }
   ],
@@ -100,10 +109,12 @@
   ],
   "title": {
     "text": {"signal": "'People at risk of poverty or social exclusion'"},
+    "subtitle": "Reproduction of the \"bamboo chart\" initially designed by Jorge Camoes",
+    "subtitlePadding": 5,
     "dy": -10,
     "anchor": "start",
     "font": {"value": "Tahoma"},
-    "fontSize": {"value": 16},
+    "fontSize": {"value": 18},
     "fontWeight": "lighter"
   },
   "axes": [
@@ -126,8 +137,11 @@
     {
       "stroke": "color",
       "orient": "left",
-      "title": "Select 1-2 countries",
-      "padding": 20,
+      "title": "Select 2 countries",
+      "titleFont": "Tahoma",
+      "titleFontSize": 12,
+      "titleColor": "#333333",
+      "padding": 30,
       "type": "symbol",
       "symbolSize": 0,
       "symbolLimit": 50,
@@ -135,19 +149,41 @@
         "labels": {
           "name": "legendLabel",
           "interactive": true,
-          "update": {
+          "enter": {
+            "cursor": {"value": "pointer"},
             "fontSize": {"value": 13},
             "dy": {"value": 5},
-            "fill": {
-              "signal": "datum.label==data('selected-countries')[0].data?selected1Color:datum.label==data('selected-countries')[1].data?selected2Color:lineColor"
-            },
             "opacity": {"value": 1}
+          },
+          "update": {
+            "fill": {
+              "signal": "datum.label==data('selected-countries')[length(data('selected-countries'))-1].data?selected1Color:datum.label==data('selected-countries')[length(data('selected-countries'))-2].data?selected2Color:lineColor"
+            }
           }
         }
       }
     }
   ],
   "marks": [
+    {
+      "type": "text",
+      "from": {"data": "selected-countries"},
+      "encode": {
+        "enter": {"text": {"signal": "datum.data"}, "fontSize": {"value": 14}},
+        "update": {
+          "opacity": {"value": 1},
+          "x": {"scale": "scaleX", "signal": "datum.Total"},
+          "y": {
+            "signal": "datum.data==data('selected-countries')[length(data('selected-countries'))-1].data?-5:datum.data==data('selected-countries')[length(data('selected-countries'))-2].data?-25:0"
+          },
+          "dy": {"value": -25},
+          "align": {"value": "center"},
+          "fill": {
+            "signal": "datum.data==data('selected-countries')[length(data('selected-countries'))-1].data?selected1Color:datum.data==data('selected-countries')[length(data('selected-countries'))-2].data?selected2Color:'white'"
+          }
+        }
+      }
+    },
     {
       "type": "group",
       "layout": {
@@ -195,7 +231,7 @@
               },
               "marks": [
                 {
-                  "name": "line",
+                  "name": "leafLine",
                   "type": "line",
                   "interactive": true,
                   "from": {"data": "countrySeries"},
@@ -203,10 +239,10 @@
                     "update": {
                       "opacity": {"value": 1},
                       "strokeWidth": {
-                        "signal": "indata('selected-countries','data',datum.Country)?lineSelectedStrokeWidth:lineStrokeWidth"
+                        "signal": "datum.Country==data('selected-countries')[length(data('selected-countries'))-1].data?lineSelectedStrokeWidth:datum.Country==data('selected-countries')[length(data('selected-countries'))-2].data?lineSelectedStrokeWidth:lineStrokeWidth"
                       },
                       "stroke": {
-                        "signal": "datum.Country==data('selected-countries')[0].data?selected1Color:datum.Country==data('selected-countries')[1].data?selected2Color:lineColor"
+                        "signal": "datum.Country==data('selected-countries')[length(data('selected-countries'))-1].data?selected1Color:datum.Country==data('selected-countries')[length(data('selected-countries'))-2].data?selected2Color:lineColor"
                       },
                       "defined": {"signal": "true"},
                       "x": {
@@ -218,7 +254,7 @@
                   }
                 },
                 {
-                  "name": "stripe",
+                  "name": "stemRect",
                   "type": "rect",
                   "interactive": true,
                   "from": {"data": "countrySeries"},
@@ -226,10 +262,10 @@
                     "update": {
                       "opacity": {"value": 1},
                       "strokeWidth": {
-                        "signal": "indata('selected-countries','data',datum.Country)?lineSelectedStrokeWidth:lineStrokeWidth"
+                        "signal": "datum.Country==data('selected-countries')[length(data('selected-countries'))-1].data?lineSelectedStrokeWidth:datum.Country==data('selected-countries')[length(data('selected-countries'))-2].data?lineSelectedStrokeWidth:lineStrokeWidth"
                       },
                       "stroke": {
-                        "signal": "datum.Country==data('selected-countries')[0].data?selected1Color:datum.Country==data('selected-countries')[1].data?selected2Color:lineColor"
+                        "signal": "datum.Country==data('selected-countries')[length(data('selected-countries'))-1].data?selected1Color:datum.Country==data('selected-countries')[length(data('selected-countries'))-2].data?selected2Color:lineColor"
                       },
                       "xc": {"scale": "scaleX", "signal": "datum.Total"},
                       "yc": {"scale": "scaleYTotal", "signal": "1"},
