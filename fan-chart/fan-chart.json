@@ -27,14 +27,16 @@
       "source": "dataset-csv",
       "transform": [{"type": "filter", "expr": "true"}]
     },
-    {"name": "squares", "values": [1, 2, 3, 4]}
+    {"name": "squares", "values": [1, 2, 3, 4]},
+    {"name": "ages", "values": [1, 2, 3]},
+    {"name": "colors", "values": ["#ff7f0e", "#1f77b4", "#2ca02c"]}
   ],
   "scales": [
     {
       "name": "color",
       "type": "ordinal",
-      "domain": ["Adults", "Children", "Eldery"],
-      "range": ["#1f77b4", "#ff7f0e", "#2ca02c"]
+      "domain": ["Adults", "Eldery", "Children"],
+      "range": {"data": "colors", "field": "data"}
     }
   ],
   "title": {
@@ -111,7 +113,9 @@
                   "title": {
                     "text": {"signal": "data('series_year_region')[0]['year']"},
                     "color": {"signal": "'gray'"},
-                    "fontSize": 20,
+                    "fontSize": {
+                      "signal": "data('series_year_region')[0].region=='Africa'?20:14"
+                    },
                     "dy": 35,
                     "encode": {
                       "title": {
@@ -141,7 +145,7 @@
                             "signal": "radius + radius*pow(datum.population/1000000,1/10)*sin((datum.age_percent-.25)*2*PI)"
                           },
                           "tooltip": {
-                            "signal": "datum.country+', '+datum.age+': '+datum.age_percent*100+'%'"
+                            "signal": "datum.country+', '+datum.age+': '+round(datum.age_percent*100)+'%'"
                           }
                         }
                       }
@@ -149,6 +153,32 @@
                     {
                       "type": "group",
                       "marks": [
+                        {
+                          "type": "text",
+                          "from": {"data": "ages"},
+                          "encode": {
+                            "enter": {
+                              "fontSize": {"value": 14},
+                              "align": {"value": "left"},
+                              "stroke": {
+                                "signal": "data('colors')[datum.data-1].data"
+                              },
+                              "strokeWidth": {
+                                "signal": "data('series_year_region')[0].year==1960&&data('series_year_region')[0].region=='Africa'?1:0"
+                              },
+                              "xc": {
+                                "signal": "datum.data==1?radius/8:datum.data==2?radius*1.5:radius*1.4"
+                              },
+                              "yc": {
+                                "signal": "datum.data==1?radius*1.8:datum.data==2?radius*0.5:radius*1.8"
+                              },
+                              "text": {
+                                "signal": "datum.data==1?'Adults':datum.data==2?'Eldery':'Children'"
+                              },
+                              "fontWeight": {"value": "lighter"}
+                            }
+                          }
+                        },
                         {
                           "type": "rect",
                           "from": {"data": "squares"},
