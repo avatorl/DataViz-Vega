@@ -1,0 +1,185 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "width": 400,
+  "height": 400,
+  "padding": 5,
+  "signals": [
+    {"name": "radius", "update": "width/2"},
+    {"name": "ColorGridline", "value": "#EEEEEE"},
+    {"name": "StrokeWidthGridline", "value": 2}
+  ],
+  "data": [
+    {
+      "name": "dataset",
+      "url": "https://dl.dropboxusercontent.com/s/fx9xc0ikkvla3m6/nyt-spiral-covid.csv",
+      "format": {"type": "csv", "parse": "auto", "delimiter": ","}
+    },
+    {
+      "name": "months",
+      "values": [
+        "Oct",
+        "Nov",
+        "Dec",
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        ""
+      ]
+    }
+  ],
+  "scales": [
+    {"name": "xscale", "type": "linear", "range": "width", "zero": false},
+    {
+      "name": "yscale",
+      "type": "linear",
+      "range": "height",
+      "nice": true,
+      "zero": false
+    },
+    {
+      "name": "zscale",
+      "type": "linear",
+      "range": [10, 1],
+      "domain": {"data": "dataset", "field": "new_cases_sm"}
+    },
+    {
+      "name": "angular",
+      "type": "point",
+      "range": {"signal": "[-PI, PI]"},
+      "padding": 0,
+      "align": 0,
+      "domain": {"data": "months", "field": "data"}
+    }
+  ],
+  "title": {
+    "text": {"signal": "'New COVID cases, United States'"},
+    "subtitle": "Reproduction of the New York Times spiral graph",
+    "subtitlePadding": 5,
+    "dy": -10,
+    "anchor": "start",
+    "font": {"value": "Tahoma"},
+    "fontSize": {"value": 18},
+    "fontWeight": "lighter"
+  },
+  "marks": [
+    {
+      "type": "rule",
+      "name": "radial-grid 1/2",
+      "from": {"data": "months"},
+      "zindex": 0,
+      "encode": {
+        "enter": {
+          "x": {"value": 0},
+          "y": {"value": 0},
+          "x2": {
+            "signal": "1.2*radius * cos(scale('angular', datum.data))*(1.1*radius * cos(scale('angular', datum.data))>0?0.9:1)"
+          },
+          "y2": {"signal": "1.1*radius * sin(scale('angular', datum.data))"},
+          "stroke": {"signal": "'gray'"},
+          "strokeOpacity": {"signal": "0.2"},
+          "strokeWidth": {"signal": "1"}
+        }
+      }
+    },
+    {
+      "type": "trail",
+      "name": "timeSpiral",
+      "zindex": 4,
+      "from": {"data": "dataset"},
+      "encode": {
+        "enter": {"fill": {"value": "gray"}},
+        "update": {
+          "x": {
+            "signal": "-0.2*(360/365*(datum.index-1)+90)*cos(PI*(360/365*(datum.index-1)+90)/180)"
+          },
+          "y": {
+            "signal": "-0.2*(360/365*(datum.index-1)+90)*sin(PI*(360/365*(datum.index-1)+90)/180)"
+          },
+          "size": {"value": 0.5},
+          "stroke": {"value": "gray"},
+          "strokeWidth": {"value": 0}
+        }
+      }
+    },
+    {
+      "type": "trail",
+      "name": "covidTrailStroke",
+      "zindex": 0,
+      "from": {"data": "dataset"},
+      "encode": {
+        "enter": {"fill": {"value": "red"}},
+        "update": {
+          "x": {
+            "signal": "-0.2*(360/365*(datum.index-1)+90)*cos(PI*(360/365*(datum.index-1)+90)/180)"
+          },
+          "y": {
+            "signal": "-0.2*(360/365*(datum.index-1)+90)*sin(PI*(360/365*(datum.index-1)+90)/180)"
+          },
+          "size": {"signal": "1.2*datum.new_cases_sm/10000"},
+          "opacity": {"value": 1},
+          "stroke": {"value": "red"},
+          "strokeWidth": {"value": 1}
+        }
+      }
+    },
+    {
+      "type": "trail",
+      "name": "covidTrail",
+      "zindex": 3,
+      "from": {"data": "dataset"},
+      "encode": {
+        "enter": {"fill": {"value": "white"}},
+        "update": {
+          "x": {
+            "signal": "-0.2*(360/365*(datum.index-1)+90)*cos(PI*(360/365*(datum.index-1)+90)/180)"
+          },
+          "y": {
+            "signal": "-0.2*(360/365*(datum.index-1)+90)*sin(PI*(360/365*(datum.index-1)+90)/180)"
+          },
+          "size": {"signal": "1.2*datum.new_cases_sm/10000"},
+          "opacity": {"value": 0.8},
+          "strokeWidth": {"value": 0}
+        }
+      }
+    },
+    {
+      "type": "text",
+      "zinex": 0,
+      "from": {"data": "dataset"},
+      "encode": {
+        "enter": {"fill": {"value": "black"}},
+        "update": {
+          "text": {"signal": "datum.index"},
+          "xc": {"signal": "0"},
+          "yc": {"signal": "0"},
+          "fontSize": {"signal": "0"}
+        },
+        "opacity": {"value": 1},
+        "stroke": {"value": "black"},
+        "strokeWidth": {"value": 0},
+        "strokeJoin": {"value": "miter"}
+      }
+    },
+    {
+      "type": "text",
+      "name": "monthLabels",
+      "from": {"data": "months"},
+      "zindex": 0,
+      "encode": {
+        "enter": {
+          "text": {"signal": "datum.data"},
+          "xc": {
+            "signal": "1.2* radius * cos(scale('angular', datum.data))-20"
+          },
+          "yc": {"signal": "1.2* radius * sin(scale('angular', datum.data))"}
+        }
+      }
+    }
+  ]
+}
