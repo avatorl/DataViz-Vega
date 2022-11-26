@@ -1,10 +1,20 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
-  "width": 400,
-  "height": 400,
+  "description": "Reproduction of the New York Times spiral graph",
+  "usermeta": {
+    "Author": "Andrzej Leszkiewicz",
+    "License": "CC BY 4.0 (Share and Adapt with Attribution)",
+    "Github": "https://github.com/avatorl/Deneb-Vega/",
+    "Original Idea Author": "Gus Wezerek and Sara Chodosh",
+    "Original Idea URL": "https://www.nytimes.com/2022/01/06/opinion/omicron-covid-us.html"
+  },
+  "background": "white",
+  "width": 250,
+  "height": 260,
   "padding": 5,
+  "autosize": "pad",
   "signals": [
-    {"name": "radius", "update": "width/2"},
+    {"name": "radius", "update": "200"},
     {"name": "ColorGridline", "value": "#EEEEEE"},
     {"name": "StrokeWidthGridline", "value": 2}
   ],
