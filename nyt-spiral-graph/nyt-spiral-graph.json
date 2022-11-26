@@ -11,7 +11,7 @@
   "data": [
     {
       "name": "dataset",
-      "url": "https://dl.dropboxusercontent.com/s/fx9xc0ikkvla3m6/nyt-spiral-covid.csv",
+      "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/nyt-spiral-graph/us-covid-for-nyt-spiral.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","}
     },
     {
