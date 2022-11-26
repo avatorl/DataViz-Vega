@@ -10,19 +10,28 @@
   },
   "background": "white",
   "width": 250,
-  "height": 260,
-  "padding": 5,
+  "height": 250,
+  "padding": 10,
   "autosize": "pad",
   "signals": [
     {"name": "radius", "update": "200"},
-    {"name": "ColorGridline", "value": "#EEEEEE"},
-    {"name": "StrokeWidthGridline", "value": 2}
+    {"name": "colorGridLine", "value": "#CCCCCC"},
+    {"name": "colorAxisLabels", "value": "#BBBBBB"},
+    {"name": "strokeWidthGridline", "value": 2},
+    {"name": "fillColorTrail", "value": "red"},
+    {"name": "opacityTrail", "value": "0.8"}
   ],
   "data": [
     {
-      "name": "dataset",
+      "name": "dataset-csv",
       "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/nyt-spiral-graph/us-covid-for-nyt-spiral.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","}
+    },
+    {"name": "dataset", "source": "dataset-csv"},
+    {
+      "name": "dataset-years",
+      "source": "dataset",
+      "transform": [{"type": "filter", "expr": "datum.month==7&&datum.day==3"}]
     },
     {
       "name": "months",
@@ -44,18 +53,10 @@
     }
   ],
   "scales": [
-    {"name": "xscale", "type": "linear", "range": "width", "zero": false},
     {
-      "name": "yscale",
+      "name": "scaleTrailSize",
       "type": "linear",
-      "range": "height",
-      "nice": true,
-      "zero": false
-    },
-    {
-      "name": "zscale",
-      "type": "linear",
-      "range": [10, 1],
+      "range": [0, 100],
       "domain": {"data": "dataset", "field": "new_cases_sm"}
     },
     {
@@ -91,7 +92,7 @@
             "signal": "1.2*radius * cos(scale('angular', datum.data))*(1.1*radius * cos(scale('angular', datum.data))>0?0.9:1)"
           },
           "y2": {"signal": "1.1*radius * sin(scale('angular', datum.data))"},
-          "stroke": {"signal": "'gray'"},
+          "stroke": {"signal": "colorGridLine"},
           "strokeOpacity": {"signal": "0.2"},
           "strokeWidth": {"signal": "1"}
         }
@@ -123,7 +124,7 @@
       "zindex": 0,
       "from": {"data": "dataset"},
       "encode": {
-        "enter": {"fill": {"value": "red"}},
+        "enter": {"fill": {"signal": "fillColorTrail"}},
         "update": {
           "x": {
             "signal": "-0.2*(360/365*(datum.index-1)+90)*cos(PI*(360/365*(datum.index-1)+90)/180)"
@@ -131,11 +132,14 @@
           "y": {
             "signal": "-0.2*(360/365*(datum.index-1)+90)*sin(PI*(360/365*(datum.index-1)+90)/180)"
           },
-          "size": {"signal": "1.2*datum.new_cases_sm/10000"},
-          "opacity": {"value": 1},
-          "stroke": {"value": "red"},
-          "strokeWidth": {"value": 1}
-        }
+          "size": {
+            "scale": "scaleTrailSize",
+            "signal": "datum.new_cases_sm+7000"
+          }
+        },
+        "opacity": {"value": 1},
+        "stroke": {"signal": "fillColorTrail"},
+        "strokeWidth": {"value": 0}
       }
     },
     {
@@ -152,28 +156,10 @@
           "y": {
             "signal": "-0.2*(360/365*(datum.index-1)+90)*sin(PI*(360/365*(datum.index-1)+90)/180)"
           },
-          "size": {"signal": "1.2*datum.new_cases_sm/10000"},
-          "opacity": {"value": 0.8},
+          "size": {"scale": "scaleTrailSize", "signal": "datum.new_cases_sm"},
+          "opacity": {"signal": "opacityTrail"},
           "strokeWidth": {"value": 0}
         }
-      }
-    },
-    {
-      "type": "text",
-      "zinex": 0,
-      "from": {"data": "dataset"},
-      "encode": {
-        "enter": {"fill": {"value": "black"}},
-        "update": {
-          "text": {"signal": "datum.index"},
-          "xc": {"signal": "0"},
-          "yc": {"signal": "0"},
-          "fontSize": {"signal": "0"}
-        },
-        "opacity": {"value": 1},
-        "stroke": {"value": "black"},
-        "strokeWidth": {"value": 0},
-        "strokeJoin": {"value": "miter"}
       }
     },
     {
@@ -185,9 +171,41 @@
         "enter": {
           "text": {"signal": "datum.data"},
           "xc": {
-            "signal": "1.2* radius * cos(scale('angular', datum.data))-20"
+            "signal": "1.2* radius * cos(scale('angular', datum.data)+0.3)-20"
           },
-          "yc": {"signal": "1.2* radius * sin(scale('angular', datum.data))"}
+          "yc": {
+            "signal": "1.2* radius * sin(scale('angular', datum.data)+0.3)"
+          },
+          "fontSize": {"value": 18},
+          "fontWeight": {"value": "lighter"},
+          "font": {"value": "Tahoma"},
+          "fill": {"signal": "colorAxisLabels"}
+        }
+      }
+    },
+    {
+      "type": "text",
+      "name": "yearLabels",
+      "zindex": 10,
+      "from": {"data": "dataset-years"},
+      "encode": {
+        "enter": {"fill": {"signal": "colorAxisLabels"}},
+        "update": {
+          "text": {"signal": "datum.year"},
+          "xc": {
+            "signal": "-0.2*(360/365*(datum.index-1)+90)*cos(PI*(360/365*(datum.index-1)+90)/180)"
+          },
+          "yc": {
+            "signal": "-0.2*(360/365*(datum.index-1)+90)*sin(PI*(360/365*(datum.index-1)+90)/180)"
+          },
+          "align": {"value": "center"},
+          "dx": {"value": 0},
+          "dy": {"value": -15},
+          "font": {"value": "Tahoma"},
+          "fontSize": {"value": 20},
+          "fontWeight": {"value": "lighter"},
+          "opacity": {"signal": "1"},
+          "strokeWidth": {"value": 0}
         }
       }
     }
