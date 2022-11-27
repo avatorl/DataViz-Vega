@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
-  "description": "Global Temperature (Warming Stripes Chart)",
+  "description": "Global Temperature (Warming Stripes Chart). Originally designed by Ed Hawkins.",
   "usermeta": {
     "Author": "Andrzej Leszkiewicz",
     "License": "CC BY 4.0 (Share and Adapt with Attribution)",
@@ -100,7 +100,7 @@
     "font": {"value": "Tahoma"},
     "fontSize": {"value": 16},
     "fontWeight": "lighter",
-    "subtitle": "Reproduction of 'warming stripes' chart designed by Ed Hawkins",
+    "subtitle": "Reproduction of 'warming stripes' chart originally designed by Ed Hawkins",
     "subtitlePadding": 5
   },
   "axes": [
