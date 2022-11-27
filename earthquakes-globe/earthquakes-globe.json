@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
-  "description": "An interactive globe depicting earthquake locations and magnitudes",
+  "description": "An interactive globe depicting earthquake locations and mags",
   "usermeta": {
     "Author": "Andrzej Leszkiewicz",
     "License": "CC BY 4.0 (Share and Adapt with Attribution)",
@@ -27,7 +27,7 @@
     },
     {
       "name": "earthquakes",
-      "url": "https://wfs.geonet.org.nz/geonet/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=geonet:quake_search_v1&outputFormat=csv&cql_filter=magnitude>3+AND+origintime>=%272022-01-01++AND+origintime<%272022-12-31",
+      "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_month.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","},
       "transform": [
         {
@@ -52,12 +52,19 @@
     {
       "name": "color",
       "type": "linear",
-      "domain": {"data": "earthquakes", "field": "magnitude"},
-      "range": ["yellow", "white"]
+      "domain": [2, 6, 9],
+      "range": ["white", "yellow", "red"]
+    },
+    {
+      "name": "size",
+      "type": "pow",
+      "domain": [0, 2, 6, 9],
+      "range": [0.1, 10],
+      "exponent": 2
     }
   ],
   "title": {
-    "text": {"signal": "'Earthquakes in 2022, magnitude > 3'"},
+    "text": {"signal": "'Earthquakes with magnitude 2.5+, last 30 days'"},
     "subtitle": "",
     "subtitlePadding": 5,
     "dy": -10,
@@ -67,6 +74,32 @@
     "fontSize": {"value": 18},
     "fontWeight": "lighter"
   },
+  "legends": [
+    {
+      "type": "symbol",
+      "fill": "color",
+      "orient": "left",
+      "tickCount": 8,
+      "title": "Magnitude",
+      "titleColor": {"signal": "'#DDDDDD'"},
+      "titleFont": "Tahoma",
+      "titleFontSize": 14,
+      "titleFontWeight": "lighter",
+      "titleAlign": "center",
+      "titleOrient": "top",
+      "titlePadding": 20,
+      "labelColor": {"signal": "'#DDDDDD'"},
+      "labelAlign": "right",
+      "labelFontSize": 13,
+      "format": ".4",
+      "encode": {
+        "symbols": {
+          "enter": {"size": {"scale": "size", "signal": "datum.value"}}
+        },
+        "labels": {"enter": {"dx": {"value": 25}}}
+      }
+    }
+  ],
   "marks": [
     {
       "type": "shape",
@@ -76,7 +109,7 @@
         "update": {
           "fillOpacity": {"value": 0},
           "stroke": {"value": "blue"},
-          "strokeWidth": {"value": 4},
+          "strokeWidth": {"value": 5},
           "strokeOpacity": {"value": 0.3}
         }
       },
@@ -102,15 +135,17 @@
       "from": {"data": "earthquakes"},
       "encode": {
         "update": {
+          "tooltip": {"signal": "datum.mag"},
           "xc": {"signal": "datum.x"},
           "yc": {"signal": "datum.y"},
-          "fill": {"scale": "color", "field": "magnitude"},
+          "fill": {"scale": "color", "field": "mag"},
           "opacity": {"value": 1},
-          "stroke": {"scale": "color", "field": "magnitude"},
+          "stroke": {"scale": "color", "field": "mag"},
           "strokeOpacity": {"value": 1},
           "strokeWidth": {"value": 0.1},
           "size": {
-            "signal": "(abs(angle)<=90?datum.longitude>=(angle-90)&&datum.longitude<=(angle+90)?1:0:angle<-90?datum.longitude>(angle-90+360)||datum.longitude<(angle+90)?1:0:angle>90?datum.longitude>(angle-90)||datum.longitude<(angle-180-90)?1:0:0)*exp(datum.magnitude)/40"
+            "scale": "size",
+            "signal": "(abs(angle)<=90?datum.longitude>=(angle-90)&&datum.longitude<=(angle+90)?1:0:angle<-90?datum.longitude>(angle-90+360)||datum.longitude<(angle+90)?1:0:angle>90?datum.longitude>(angle-90)||datum.longitude<(angle-180-90)?1:0:0)*datum.mag"
           }
         }
       }
