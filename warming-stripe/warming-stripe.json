@@ -4,7 +4,9 @@
   "usermeta": {
     "Author": "Andrzej Leszkiewicz",
     "License": "CC BY 4.0 (Share and Adapt with Attribution)",
-    "Github": "https://github.com/avatorl/Deneb-Vega/"
+    "Github": "https://github.com/avatorl/Deneb-Vega/",
+    "Original Idea Author": "Ed Hawkins",
+    "Original Idea URL": "https://www.climate-lab-book.ac.uk/2018/warming-stripes/"
   },
   "background": "white",
   "width": 650,
@@ -97,7 +99,9 @@
     "anchor": "start",
     "font": {"value": "Tahoma"},
     "fontSize": {"value": 16},
-    "fontWeight": "lighter"
+    "fontWeight": "lighter",
+    "subtitle": "Reproduction of 'warming stripes' chart designed by Ed Hawkins",
+    "subtitlePadding": 5
   },
   "axes": [
     {
