@@ -1,16 +1,21 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
-  "description": "An interactive globe depicting earthquake locations and magnitudes.",
+  "description": "An interactive globe depicting earthquake locations and magnitudes",
+  "usermeta": {
+    "Author": "Andrzej Leszkiewicz",
+    "License": "CC BY 4.0 (Share and Adapt with Attribution)",
+    "Github": "https://github.com/avatorl/Deneb-Vega/"
+  },
+  "width": 500,
+  "height": 500,
   "padding": 5,
-  "width": 600,
-  "height": 600,
   "autosize": "pad",
   "background": "#000022",
   "signals": [
     {
-      "name": "Angle",
+      "name": "angle",
       "init": "0",
-      "on": [{"events": "timer{200}", "update": "Angle==-180?180:Angle-2"}]
+      "on": [{"events": "timer{100}", "update": "angle==-180?180:angle-1"}]
     }
   ],
   "data": [
@@ -22,7 +27,7 @@
     },
     {
       "name": "earthquakes",
-      "url": "https://wfs.geonet.org.nz/geonet/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=geonet:quake_search_v1&maxFeatures=1000&outputFormat=csv&cql_filter=magnitude>3",
+      "url": "https://wfs.geonet.org.nz/geonet/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=geonet:quake_search_v1&outputFormat=csv&cql_filter=magnitude>3+AND+origintime>=%272022-01-01++AND+origintime<%272022-12-31",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","},
       "transform": [
         {
@@ -40,7 +45,7 @@
       "scale": 225,
       "type": "orthographic",
       "translate": {"signal": "[width/2, height/2]"},
-      "rotate": [{"signal": "-Angle"}, 0, 0]
+      "rotate": [{"signal": "-angle"}, 0, 0]
     }
   ],
   "scales": [
@@ -48,33 +53,45 @@
       "name": "color",
       "type": "linear",
       "domain": {"data": "earthquakes", "field": "magnitude"},
-      "range": {"scheme": "yelloworangered"}
+      "range": ["yellow", "white"]
     }
   ],
+  "title": {
+    "text": {"signal": "'Earthquakes in 2022, magnitude > 3'"},
+    "subtitle": "",
+    "subtitlePadding": 5,
+    "dy": -10,
+    "anchor": "start",
+    "color": "#DDDDDD",
+    "font": {"value": "Tahoma"},
+    "fontSize": {"value": 18},
+    "fontWeight": "lighter"
+  },
   "marks": [
     {
       "type": "shape",
+      "name": "globe",
       "from": {"data": "sphere"},
       "encode": {
         "update": {
-          "fill": {"value": "#349AE2"},
-          "fillOpacity": {"value": 1},
+          "fillOpacity": {"value": 0},
           "stroke": {"value": "blue"},
-          "strokeWidth": {"value": 2},
-          "strokeOpacity": {"value": 0.5}
+          "strokeWidth": {"value": 4},
+          "strokeOpacity": {"value": 0.3}
         }
       },
       "transform": [{"type": "geoshape", "projection": "projection"}]
     },
     {
       "type": "shape",
+      "name": "countries",
       "from": {"data": "world"},
       "encode": {
         "update": {
           "fill": {"value": "mintcream"},
-          "fillOpacity": {"value": 1},
-          "stroke": {"value": "black"},
-          "strokeWidth": {"value": 0.1}
+          "fillOpacity": {"value": 0.1},
+          "stroke": {"value": "white"},
+          "strokeWidth": {"value": 0.2}
         }
       },
       "transform": [{"type": "geoshape", "projection": "projection"}]
@@ -87,13 +104,13 @@
         "update": {
           "xc": {"signal": "datum.x"},
           "yc": {"signal": "datum.y"},
-          "strokeOpacity": {"value": 1},
-          "opacity": {"value": 0.5},
           "fill": {"scale": "color", "field": "magnitude"},
+          "opacity": {"value": 1},
           "stroke": {"scale": "color", "field": "magnitude"},
-          "strokeWidth": {"value": 1},
+          "strokeOpacity": {"value": 1},
+          "strokeWidth": {"value": 0.1},
           "size": {
-            "signal": "(abs(Angle)<=90?datum.longitude>=(Angle-90)&&datum.longitude<=(Angle+90)?1:0:Angle<-90?datum.longitude>(Angle-90+360)||datum.longitude<(Angle+90)?1:0:Angle>90?datum.longitude>(Angle-90)||datum.longitude<(Angle-180-90)?1:0:0)*exp(datum.magnitude)/4"
+            "signal": "(abs(angle)<=90?datum.longitude>=(angle-90)&&datum.longitude<=(angle+90)?1:0:angle<-90?datum.longitude>(angle-90+360)||datum.longitude<(angle+90)?1:0:angle>90?datum.longitude>(angle-90)||datum.longitude<(angle-180-90)?1:0:0)*exp(datum.magnitude)/40"
           }
         }
       }
