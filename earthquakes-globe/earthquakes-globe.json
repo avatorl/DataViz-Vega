@@ -22,7 +22,7 @@
     {"name": "sphere", "values": [{"type": "Sphere"}]},
     {
       "name": "world",
-      "url": "data/world-110m.json",
+      "url": "https://vega.github.io/editor/data/world-110m.json",
       "format": {"type": "topojson", "feature": "countries"}
     },
     {
