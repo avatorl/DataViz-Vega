@@ -35,7 +35,8 @@
           "projection": "projection",
           "fields": ["longitude", "latitude"],
           "as": ["x", "y"]
-        }
+        },
+        {"type": "collect", "sort": {"field": ["mag"], "order": ["ascending"]}}
       ]
     }
   ],
