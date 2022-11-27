@@ -1,0 +1,108 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "Map of 44K cities",
+  "usermeta": {
+    "Author": "Andrzej Leszkiewicz",
+    "License": "CC BY 4.0 (Share and Adapt with Attribution)",
+    "Github": "https://github.com/avatorl/Deneb-Vega/"
+  },
+  "width": 500,
+  "height": 500,
+  "padding": 5,
+  "autosize": "pad",
+  "background": "#000022",
+  "signals": [{"name": "angle", "value": "0"}],
+  "data": [
+    {
+      "name": "world",
+      "url": "https://vega.github.io/editor/data/world-110m.json",
+      "format": {"type": "topojson", "feature": "countries"}
+    },
+    {
+      "name": "cities",
+      "url": "https://dl.dropboxusercontent.com/s/2av7llrnthrl298/141Kcities.csv",
+      "format": {"type": "csv", "parse": "auto", "delimiter": ","},
+      "transform": [
+        {
+          "type": "geopoint",
+          "projection": "projection",
+          "fields": ["longitude", "latitude"],
+          "as": ["x", "y"]
+        },
+        {"type": "collect", "sort": {"field": ["population"], "order": ["ascending"]}}
+      ]
+    }
+  ],
+  "projections": [
+    {
+      "name": "projection",
+      "scale": 225,
+      "type": "equirectangular",
+      "translate": {"signal": "[width/2, height/2]"},
+      "rotate": [{"signal": "-angle"}, 0, 0]
+    }
+  ],
+  "scales": [
+    {
+      "name": "color",
+      "type": "linear",
+      "domain": [0, 40000000],
+      "range": ["yellow", "red"]
+    },
+    {
+      "name": "size",
+      "type": "pow",
+      "domain": [0, 10],
+      "range": [1, 100],
+      "exponent": 2
+    }
+  ],
+  "title": {
+    "text": {"signal": "'144K Cities'"},
+    "subtitle": "",
+    "subtitlePadding": 5,
+    "dy": -10,
+    "anchor": "start",
+    "color": "#DDDDDD",
+    "font": {"value": "Tahoma"},
+    "fontSize": {"value": 18},
+    "fontWeight": "lighter"
+  },
+  "legends": [
+    
+  ],
+  "marks": [
+    {
+      "type": "shape",
+      "name": "countries",
+      "from": {"data": "world"},
+      "encode": {
+        "update": {
+          "fill": {"value": "mintcream"},
+          "fillOpacity": {"value": 0.1},
+          "stroke": {"value": "white"},
+          "strokeWidth": {"value": 0.2}
+        }
+      },
+      "transform": [{"type": "geoshape", "projection": "projection"}]
+    },
+    {
+      "type": "symbol",
+      "shape": "circle",
+      "from": {"data": "cities"},
+      "encode": {
+        "update": {
+          "tooltip": {"signal": "datum.population"},
+          "xc": {"signal": "datum.x"},
+          "yc": {"signal": "datum.y"},
+          "fill": {"scale": "color", "field": "population"},
+          "opacity": {"value": 1},
+          "stroke": {"scale": "color", "field": "population"},
+          "strokeOpacity": {"value": 1},
+          "strokeWidth": {"value": 0.1},
+          "size": {"scale": "size", "signal": "datum.population/4000000"}
+        }
+      }
+    }
+  ]
+}
