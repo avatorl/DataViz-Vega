@@ -1,10 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
-  "description": "Global Temperature (Warming Stripes Chart). Originally designed by Ed Hawkins.",
+  "description": "Warming Stripes Chart. Originally designed by Ed Hawkins.",
   "usermeta": {
     "Author": "Andrzej Leszkiewicz",
-    "License": "CC BY 4.0 (Share and Adapt with Attribution)",
     "Github": "https://github.com/avatorl/Deneb-Vega/",
+    "License": "CC BY 4.0 (Share and Adapt with Attribution)",
     "Original Idea Author": "Ed Hawkins",
     "Original Idea URL": "https://www.climate-lab-book.ac.uk/2018/warming-stripes/",
     "Read More URL": "https://en.wikipedia.org/wiki/Warming_stripes"
@@ -16,17 +16,19 @@
   "autosize": "pad",
   "config": {},
   "signals": [
-    {"name": "labelColor", "value": "gray"},
-    {"name": "labelDataSrc", "value": "#CCCCCC"},
+    {"name": "fontMain", "value": "Tahoma"},
+    {"name": "labelColor", "value": "#808080"},
+    {"name": "labelDataSrcColor", "value": "#CCCCCC"},
+    {"name": "basePeriodColor", "value": "black"},
+    {"name": "titleFontSize", "value": "16"},
     {"name": "labelFontSizeMajor", "value": "20"},
     {"name": "labelFontSizeMinor", "value": "14"},
     {"name": "legendFontSize", "value": "12"},
-    {"name": "basePeriodColor", "value": "black"},
     {"name": "basePeriodS", "value": "1951"},
     {"name": "basePeriodE", "value": "1980"},
     {
       "name": "selectedStripeTemp",
-      "description": "Temperature at the selected stripe (to dispaly as a tick on the legend)",
+      "description": "Temperature in the selected year (stripe). To dispaly as a tick on the legend.",
       "value": "0",
       "on": [
         {"events": "@stripe:mouseover", "update": "datum.temp"},
@@ -36,11 +38,10 @@
   ],
   "data": [
     {
-      "name": "dataset-csv",
+      "name": "dataset",
       "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/warming-stripe/global-temp.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","}
-    },
-    {"name": "dataset", "source": "dataset-csv"}
+    }
   ],
   "scales": [
     {
@@ -98,8 +99,8 @@
       "signal": "'Global Temperature in 1880-2021 (compared to '+ basePeriodS+'-'+basePeriodE+' average)'"
     },
     "anchor": "start",
-    "font": {"value": "Tahoma"},
-    "fontSize": {"value": 16},
+    "font": {"signal": "fontMain"},
+    "fontSize": {"signal": "titleFontSize"},
     "fontWeight": "lighter",
     "subtitle": "Reproduction of 'warming stripes' chart originally designed by Ed Hawkins",
     "subtitlePadding": 5
@@ -128,14 +129,12 @@
       "scale": "scaleX",
       "orient": "top",
       "domain": true,
-      "tickCount": {"signal": "2021-1880+1"},
+      "tickCount": {"signal": "length(data('dataset'))"},
       "labelFontSize": {"signal": "0"},
       "format": ".4",
       "encode": {
         "ticks": {
-          "update": {
-            "y": {"value": -5},
-            "y2": {"value": 0},
+          "enter": {
             "stroke": {"signal": "basePeriodColor"},
             "strokeWidth": {
               "signal": "(datum.value==basePeriodS||datum.value==basePeriodE)?1:0"
@@ -143,18 +142,18 @@
           }
         },
         "labels": {
+          "enter": {"fill": {"signal": "basePeriodColor"}},
           "update": {
-            "fill": {"signal": "basePeriodColor"},
             "fontSize": {
               "signal": "(datum.value==basePeriodS||datum.value==basePeriodE)?labelFontSizeMinor:0"
             }
           }
         },
         "domain": {
+          "enter": {"stroke": {"signal": "basePeriodColor"}},
           "update": {
             "x": {"scale": "scaleX", "signal": "basePeriodS"},
             "x2": {"scale": "scaleX", "signal": "basePeriodE"},
-            "stroke": {"signal": "basePeriodColor"},
             "strokeWidth": {"signal": "0.9"}
           }
         }
@@ -168,7 +167,6 @@
       "ticks": true,
       "tickColor": "black",
       "offset": 45,
-      "zindex": 0,
       "encode": {
         "ticks": {
           "update": {
@@ -198,10 +196,12 @@
       "titleFontSize": {"signal": "labelFontSizeMinor"},
       "encode": {
         "labels": {
-          "update": {
+          "enter": {
             "dx": {"value": 3},
             "fontSize": {"signal": "legendFontSize"},
-            "fill": {"signal": "labelColor"},
+            "fill": {"signal": "labelColor"}
+          },
+          "update": {
             "text": {
               "signal": "(datum.value>0?'+':datum.value==0?'':'')+datum.label"
             }
@@ -219,14 +219,14 @@
       "from": {"data": "dataset"},
       "encode": {
         "update": {
-          "opacity": {"value": 1},
-          "strokeWidth": {"value": 0},
-          "stroke": {"value": "gray"},
           "fill": {"scale": "colorHawkins", "field": "temp"},
-          "xc": {"scale": "scaleX", "field": "year"},
-          "yc": {"scale": "scaleY", "value": 1},
+          "opacity": {"value": 1},
           "height": {"signal": "height*0.92"},
           "width": {"signal": "4.0"},
+          "stroke": {"value": "gray"},
+          "strokeWidth": {"value": 0},
+          "xc": {"scale": "scaleX", "field": "year"},
+          "yc": {"scale": "scaleY", "value": 1},
           "tooltip": {
             "signal": "datum.year+': '+(datum.temp>0?'+':'')+datum.temp+'°C'"
           }
@@ -243,7 +243,7 @@
       "type": "text",
       "encode": {
         "enter": {
-          "fill": {"signal": "labelDataSrc"},
+          "fill": {"signal": "labelDataSrcColor"},
           "text": {"value": "Data Source: NASA 🔗"},
           "href": {
             "value": "https://climate.nasa.gov/vital-signs/global-temperature/"
