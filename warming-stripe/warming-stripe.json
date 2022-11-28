@@ -13,7 +13,7 @@
   "background": "white",
   "width": 650,
   "height": 200,
-  "padding": 5,
+  "padding": 10,
   "autosize": "pad",
   "config": {},
   "signals": [
