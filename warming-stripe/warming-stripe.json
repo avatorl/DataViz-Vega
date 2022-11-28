@@ -7,7 +7,8 @@
     "License": "CC BY 4.0 (Share and Adapt with Attribution)",
     "Original Idea Author": "Ed Hawkins",
     "Original Idea URL": "https://www.climate-lab-book.ac.uk/2018/warming-stripes/",
-    "Read More URL": "https://en.wikipedia.org/wiki/Warming_stripes"
+    "Read More URL": "https://en.wikipedia.org/wiki/Warming_stripes",
+    "Data Source URL": "https://climate.nasa.gov/vital-signs/global-temperature/"
   },
   "background": "white",
   "width": 650,
@@ -24,6 +25,7 @@
     {"name": "labelFontSizeMajor", "value": "20"},
     {"name": "labelFontSizeMinor", "value": "14"},
     {"name": "legendFontSize", "value": "12"},
+    {"name": "labelDataSrcFontSize", "value": "12"},
     {"name": "basePeriodS", "value": "1951"},
     {"name": "basePeriodE", "value": "1980"},
     {
@@ -191,7 +193,7 @@
       "padding": 20,
       "title": "°C",
       "titleColor": "gray",
-      "tickCount": 5,
+      "tickCount": 10,
       "tickMinStep": 0.2,
       "titleFontSize": {"signal": "labelFontSizeMinor"},
       "encode": {
@@ -215,7 +217,6 @@
       "name": "stripe",
       "type": "rect",
       "interactive": true,
-      "style": ["tick"],
       "from": {"data": "dataset"},
       "encode": {
         "update": {
@@ -240,6 +241,7 @@
       }
     },
     {
+      "name": "labelDataSource",
       "type": "text",
       "encode": {
         "enter": {
@@ -252,9 +254,9 @@
         },
         "update": {
           "opacity": {"value": 1},
-          "x": {"signal": "650"},
-          "y": {"signal": "250"},
-          "fontSize": {"signal": "12"}
+          "x": {"signal": "width"},
+          "y": {"signal": "height+50"},
+          "fontSize": {"signal": "labelDataSrcFontSize"}
         }
       }
     }
