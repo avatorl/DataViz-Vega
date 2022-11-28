@@ -16,12 +16,12 @@
   "data": [
     {
       "name": "world-map",
-      "url": "https://vega.github.io/editor/data/world-110m.json",
+      "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/world-map-cities/world-110m.json",
       "format": {"type": "topojson", "feature": "countries"}
     },
     {
       "name": "data-cities",
-      "url": "https://dl.dropboxusercontent.com/s/cbdj6wkx3rgnu2v/43Kcities.csv",
+      "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/world-map-cities/43Kcities%5B1%5D.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","},
       "transform": [
         {
