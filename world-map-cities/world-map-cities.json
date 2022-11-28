@@ -1,0 +1,114 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "Map of the most prominent cities in the world (large, capitals etc.), 43K cities",
+  "usermeta": {
+    "Author": "Andrzej Leszkiewicz",
+    "License": "CC BY 4.0 (Share and Adapt with Attribution)",
+    "Github": "https://github.com/avatorl/Deneb-Vega/",
+    "Data Source": "https://simplemaps.com/data/world-cities"
+  },
+  "width": 800,
+  "height": 400,
+  "padding": 5,
+  "autosize": "pad",
+  "background": "#000022",
+  "signals": [{"name": "angle", "value": "0"}],
+  "data": [
+    {
+      "name": "world-map",
+      "url": "https://vega.github.io/editor/data/world-110m.json",
+      "format": {"type": "topojson", "feature": "countries"}
+    },
+    {
+      "name": "data-cities",
+      "url": "https://dl.dropboxusercontent.com/s/cbdj6wkx3rgnu2v/43Kcities.csv",
+      "format": {"type": "csv", "parse": "auto", "delimiter": ","},
+      "transform": [
+        {
+          "type": "geopoint",
+          "projection": "projection",
+          "fields": ["longitude", "latitude"],
+          "as": ["x", "y"]
+        },
+        {
+          "type": "collect",
+          "sort": {"field": ["population"], "order": ["ascending"]}
+        }
+      ]
+    }
+  ],
+  "projections": [
+    {
+      "name": "projection",
+      "scale": 150,
+      "type": "equirectangular",
+      "translate": {"signal": "[width/2, height/2]"},
+      "rotate": [{"signal": "-angle"}, 0, 0]
+    }
+  ],
+  "scales": [
+    {
+      "name": "color",
+      "type": "linear",
+      "domain": [0, 40000000],
+      "range": ["yellow", "red"]
+    },
+    {
+      "name": "size",
+      "type": "pow",
+      "domain": [0, 40000000],
+      "range": [0, 60],
+      "exponent": 0.7
+    }
+  ],
+  "title": {
+    "text": {
+      "signal": "'Map of the most prominent cities in the world (large, capitals etc.), 43K cities'"
+    },
+    "subtitle": "",
+    "subtitlePadding": 5,
+    "dy": -10,
+    "anchor": "start",
+    "color": "#DDDDDD",
+    "font": {"value": "Tahoma"},
+    "fontSize": {"value": 18},
+    "fontWeight": "lighter"
+  },
+  "marks": [
+    {
+      "type": "shape",
+      "name": "countries",
+      "from": {"data": "world-map"},
+      "encode": {
+        "update": {
+          "fill": {"value": "mintcream"},
+          "fillOpacity": {"value": 0.1},
+          "stroke": {"value": "white"},
+          "strokeWidth": {"value": 0.2}
+        }
+      },
+      "transform": [{"type": "geoshape", "projection": "projection"}]
+    },
+    {
+      "type": "symbol",
+      "name": "cities",
+      "from": {"data": "data-cities"},
+      "encode": {
+        "enter": {
+          "shape": {"value": "circle"},
+          "xc": {"signal": "datum.x"},
+          "yc": {"signal": "datum.y"},
+          "fill": {"scale": "color", "field": "population"},
+          "opacity": {"value": 1},
+          "stroke": {"data": "data-cities", "field": "population"},
+          "strokeOpacity": {"value": 1},
+          "strokeWidth": {"value": 0.1},
+          "size": {"scale": "size", "signal": "datum.population"},
+          "tooltip": {
+            "signal": "datum.population>=1000000?datum.city+':'+round(datum.population/1000000)+'M':''"
+          }
+        }
+      }
+    }
+  ]
+}
