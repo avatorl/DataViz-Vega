@@ -1,10 +1,12 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
-  "description": "An interactive globe depicting earthquake locations and mags",
+  "description": "Rotating globe animation depicting earthquake locations",
   "usermeta": {
     "Author": "Andrzej Leszkiewicz",
+    "Github": "https://github.com/avatorl/Deneb-Vega/",
     "License": "CC BY 4.0 (Share and Adapt with Attribution)",
-    "Github": "https://github.com/avatorl/Deneb-Vega/"
+    "Data Source URL (topojson)": "https://github.com/topojson/world-atlas",
+    "Data Source URL": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/csv.php"
   },
   "width": 500,
   "height": 500,
@@ -13,16 +15,22 @@
   "background": "#000022",
   "signals": [
     {
-      "name": "angle",
+      "name": "globeRotationAngle",
+      "description": "changes from 0 to -180 and then from 180 to 0",
       "init": "0",
-      "on": [{"events": "timer{100}", "update": "angle==-180?180:angle-1"}]
+      "on": [
+        {
+          "events": "timer{100}",
+          "update": "globeRotationAngle==-180?180:globeRotationAngle-1"
+        }
+      ]
     }
   ],
   "data": [
     {"name": "sphere", "values": [{"type": "Sphere"}]},
     {
-      "name": "world",
-      "url": "https://vega.github.io/editor/data/world-110m.json",
+      "name": "worldMap",
+      "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/earthquakes-globe/countries-110m.json",
       "format": {"type": "topojson", "feature": "countries"}
     },
     {
@@ -46,18 +54,18 @@
       "scale": 225,
       "type": "orthographic",
       "translate": {"signal": "[width/2, height/2]"},
-      "rotate": [{"signal": "-angle"}, 0, 0]
+      "rotate": [{"signal": "-globeRotationAngle"}, 0, 0]
     }
   ],
   "scales": [
     {
-      "name": "color",
+      "name": "scaleColor",
       "type": "linear",
       "domain": [2, 6, 9],
       "range": ["white", "yellow", "red"]
     },
     {
-      "name": "size",
+      "name": "scaleSize",
       "type": "pow",
       "domain": [0, 2, 6, 9],
       "range": [0.1, 10],
@@ -65,7 +73,9 @@
     }
   ],
   "title": {
-    "text": {"signal": "'Earthquakes with magnitude 2.5+, last 30 days'"},
+    "text": {
+      "signal": "'Earthquakes with magnitude 2.5+, last 30 days (live feed)'"
+    },
     "subtitle": "",
     "subtitlePadding": 5,
     "dy": -10,
@@ -78,7 +88,7 @@
   "legends": [
     {
       "type": "symbol",
-      "fill": "color",
+      "fill": "scaleColor",
       "orient": "left",
       "tickCount": 8,
       "title": "Magnitude",
@@ -95,7 +105,7 @@
       "format": ".4",
       "encode": {
         "symbols": {
-          "enter": {"size": {"scale": "size", "signal": "datum.value"}}
+          "enter": {"size": {"scale": "scaleSize", "signal": "datum.value"}}
         },
         "labels": {"enter": {"dx": {"value": 25}}}
       }
@@ -119,7 +129,7 @@
     {
       "type": "shape",
       "name": "countries",
-      "from": {"data": "world"},
+      "from": {"data": "worldMap"},
       "encode": {
         "update": {
           "fill": {"value": "mintcream"},
@@ -139,14 +149,14 @@
           "tooltip": {"signal": "datum.mag"},
           "xc": {"signal": "datum.x"},
           "yc": {"signal": "datum.y"},
-          "fill": {"scale": "color", "field": "mag"},
+          "fill": {"scale": "scaleColor", "field": "mag"},
           "opacity": {"value": 1},
-          "stroke": {"scale": "color", "field": "mag"},
+          "stroke": {"scale": "scaleColor", "field": "mag"},
           "strokeOpacity": {"value": 1},
           "strokeWidth": {"value": 0.1},
           "size": {
-            "scale": "size",
-            "signal": "(abs(angle)<=90?datum.longitude>=(angle-90)&&datum.longitude<=(angle+90)?1:0:angle<-90?datum.longitude>(angle-90+360)||datum.longitude<(angle+90)?1:0:angle>90?datum.longitude>(angle-90)||datum.longitude<(angle-180-90)?1:0:0)*datum.mag"
+            "scale": "scaleSize",
+            "signal": "(abs(globeRotationAngle)<=90?datum.longitude>=(globeRotationAngle-90)&&datum.longitude<=(globeRotationAngle+90)?1:0:globeRotationAngle<-90?datum.longitude>(globeRotationAngle-90+360)||datum.longitude<(globeRotationAngle+90)?1:0:globeRotationAngle>90?datum.longitude>(globeRotationAngle-90)||datum.longitude<(globeRotationAngle-180-90)?1:0:0)*datum.mag"
           }
         }
       }
