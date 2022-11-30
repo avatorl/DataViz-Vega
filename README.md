@@ -25,7 +25,7 @@ Andrzej Leszkiewicz (Power BI developer and consultant)
 ## License: Attribution 4.0 International (CC BY 4.0)
 
 This license is applicable for Vega specifications created by Andrzej Leszkiewicz.
-Data files have been prepared using independent sources of open data and the licene terms may vary.
+Data files have been prepared using independent sources of open data and the license terms may vary.
 
 If not otherwise stated you are free to:
 - **Share** — copy and redistribute the material in any medium or format
