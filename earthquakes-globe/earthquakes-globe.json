@@ -24,7 +24,8 @@
           "update": "globeRotationAngle==-180?180:globeRotationAngle-1"
         }
       ]
-    }
+    },
+    {"name": "backSideColor", "value": "#AAAAAA"}
   ],
   "data": [
     {"name": "sphere", "values": [{"type": "Sphere"}]},
@@ -149,11 +150,11 @@
           "tooltip": {"signal": "datum.mag"},
           "xc": {"signal": "datum.x"},
           "yc": {"signal": "datum.y"},
-          "fill": {"scale": "scaleColor", "field": "mag"},
+          "fill": {
+            "signal": "(abs(globeRotationAngle)<=90?datum.longitude>=(globeRotationAngle-90)&&datum.longitude<=(globeRotationAngle+90)?1:0:globeRotationAngle<-90?datum.longitude>(globeRotationAngle-90+360)||datum.longitude<(globeRotationAngle+90)?1:0:globeRotationAngle>90?datum.longitude>(globeRotationAngle-90)||datum.longitude<(globeRotationAngle-180-90)?1:0:0)==1?scale('scaleColor',datum.mag):backSideColor"
+          },
           "opacity": {"value": 1},
-          "stroke": {"scale": "scaleColor", "field": "mag"},
-          "strokeOpacity": {"value": 1},
-          "strokeWidth": {"value": 0.1},
+          "strokeWidth": {"value": 0},
           "size": {
             "scale": "scaleSize",
             "signal": "(abs(globeRotationAngle)<=90?datum.longitude>=(globeRotationAngle-90)&&datum.longitude<=(globeRotationAngle+90)?1:0:globeRotationAngle<-90?datum.longitude>(globeRotationAngle-90+360)||datum.longitude<(globeRotationAngle+90)?1:0:globeRotationAngle>90?datum.longitude>(globeRotationAngle-90)||datum.longitude<(globeRotationAngle-180-90)?1:0:0)*datum.mag"
