@@ -98,7 +98,8 @@
                       "type": "path",
                       "encode": {
                         "update": {
-                          "strokeWidth": {"signal": "round(random()*1000,0)>500?0:1"},
+                          "strokeWidth": {"signal": "1"},
+                          "strokeOpacity": {"signal": "0.3"},
                           "stroke": {
                             "scale": "colorColumn",
                             "signal": "data('series_year_region')[0]['year']"
