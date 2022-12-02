@@ -6,7 +6,7 @@
   "data": [
     {
       "name": "dataset-csv",
-      "url": "https://dl.dropboxusercontent.com/s/9kv2o9ajgrn9y62/data.csv",
+      "url": "https://dl.dropboxusercontent.com/s/rnfol2obutkx06a/histdata-nightingale.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","}
     },
     {
@@ -20,7 +20,7 @@
     {
       "name": "r",
       "type": "sqrt",
-      "domain": {"data": "dataset", "field": "a"},
+      "domain": {"data": "dataset", "field": "Disease"},
       "zero": true,
       "range": [0, 200]
     }
@@ -59,7 +59,7 @@
                   "innerRadius": {"value": 0},
                   "outerRadius": {
                     "scale": "r",
-                    "signal": "parent.data==2?datum.a:datum.b/2"
+                    "signal": "parent.data==2?datum.Disease:datum.Wounds"
                   },
                   "stroke": {"value": "#fff"}
                 },
@@ -78,7 +78,7 @@
                   "startAngle": {"field": "startAngle"},
                   "endAngle": {"field": "endAngle"},
                   "innerRadius": {"value": 0},
-                  "outerRadius": {"scale": "r", "signal": "datum.a/3"},
+                  "outerRadius": {"scale": "r", "signal": "datum.Disease/3"},
                   "stroke": {"value": "#fff"}
                 },
                 "update": {"fill": {"value": "pink"}},
@@ -92,13 +92,17 @@
                 "enter": {
                   "x": {"field": {"group": "width"}, "mult": 0.5},
                   "y": {"field": {"group": "height"}, "mult": 0.5},
-                  "radius": {"scale": "r", "signal": "datum.a", "offset": 15},
+                  "radius": {
+                    "scale": "r",
+                    "signal": "datum.Disease",
+                    "offset": 15
+                  },
                   "theta": {"signal": "(datum.startAngle + datum.endAngle)/2"},
                   "angle": {"signal": "0"},
                   "fill": {"value": "#000000"},
                   "align": {"value": "center"},
                   "baseline": {"value": "middle"},
-                  "text": {"signal": "slice(datum.mmmm,0,3)"}
+                  "text": {"signal": "slice(datum.Month,0,3)"}
                 }
               }
             }
