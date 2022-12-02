@@ -1,0 +1,123 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "Reproduction of the 'fan chart' initially designed by Jorge Camões",
+  "usermeta": {
+    "Author": "Andrzej Leszkiewicz",
+    "License": "CC BY 4.0 (Share and Adapt with Attribution)",
+    "Github": "https://github.com/avatorl/Deneb-Vega/",
+    "Original Idea Author": "Jorge Camões",
+    "Original Idea URL": "https://www.wisevis.com/part-whole-proportions-fan-chart/"
+  },
+  "width": 200,
+  "height": 200,
+  "autosize": "pad",
+  "background": "white",
+  "signals": [
+    {"name": "radius", "update": "width/2"},
+    {"name": "gridColumns", "value": "4"}
+  ],
+  "data": [
+    {
+      "name": "dataset-csv",
+      "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/fan-chart/data-population.csv",
+      "format": {"type": "csv", "parse": "auto", "delimiter": ","}
+    },
+    {
+      "name": "dataset",
+      "source": "dataset-csv",
+      "transform": [{"type": "filter", "expr": "true"}]
+    },
+    {"name": "squares", "values": [1, 2, 3, 4]},
+    {"name": "ages", "values": [1, 2, 3]},
+    {"name": "colors", "values": ["#ff7f0e", "#1f77b4", "#2ca02c"]}
+  ],
+  "scales": [
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": ["Adults", "Eldery", "Children"],
+      "range": {"data": "colors", "field": "data"}
+    },
+    {
+      "name": "colorColumn",
+      "type": "ordinal",
+      "domain": {"data": "dataset", "field": "year"},
+      "range": ["#ff7f0e", "#1f77b4", "#2ca02c", "#ff5555"]
+    }
+  ],
+  "marks": [
+    {
+      "type": "group",
+      "layout": {
+        "align": "all",
+        "bounds": "full",
+        "columns": {"signal": "1"},
+        "padding": 10
+      },
+      "marks": [
+        {
+          "type": "group",
+          "from": {
+            "facet": {
+              "name": "series_region",
+              "data": "dataset",
+              "groupby": "region"
+            }
+          },
+          "marks": [
+            {
+              "type": "group",
+              "layout": {
+                "align": "all",
+                "bounds": "full",
+                "columns": {"signal": "gridColumns"},
+                "padding": 10
+              },
+              "marks": [
+                {
+                  "type": "group",
+                  "from": {
+                    "facet": {
+                      "name": "series_year_region",
+                      "data": "series_region",
+                      "groupby": "year"
+                    }
+                  },
+                  "marks": [
+                    {
+                      "type": "text",
+                      "encode": {
+                        "update": {
+                          "text": {"signal": "round(random()*1000,0)"},
+                          "x": {"value": 10},
+                          "y": {"value": 20}
+                        }
+                      }
+                    },
+                    {
+                      "type": "path",
+                      "encode": {
+                        "update": {
+                          "strokeWidth": {"signal": "round(random()*1000,0)>500?0:1"},
+                          "stroke": {
+                            "scale": "colorColumn",
+                            "signal": "data('series_year_region')[0]['year']"
+                          },
+                          "x": {"signal": "0"},
+                          "y": {"signal": "0"},
+                          "path": {
+                            "signal": "'m164.45436,147.30183l6.50011,-19.20039l26.00052,-4.80011l-32.50063,24.00049l-162.49936,0l0,-144.00003l194.99999,0l0,119.99954'"
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
