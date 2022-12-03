@@ -319,6 +319,86 @@
               }
             },
             {
+              "type": "arc",
+              "name": "arc-layer-1-radial",
+              "from": {"data": "dataset-year"},
+              "encode": {
+                "enter": {
+                  "x": {"field": {"group": "width"}, "mult": 0.5},
+                  "y": {"field": {"group": "height"}, "mult": 0.5},
+                  "startAngle": {"signal": "datum.startAngle"},
+                  "endAngle": {"signal": "datum.startAngle"},
+                  "innerRadius": {
+                    "scale": "scaleRadius",
+                    "signal": "datum.Chart==1?datum.Disease1:max(datum.Disease1,datum.Wounds1,datum.Other1)"
+                  },
+                  "outerRadius": {
+                    "scale": "scaleRadius",
+                    "signal": "datum.Chart==1?datum.Disease2:max(datum.Disease2,datum.Wounds2,datum.Other2)"
+                  },
+                  "strokeOpacity": {"signal": "0.7"},
+                  "strokeWidth": {"signal": "2"},
+                  "stroke": {
+                    "signal": "datum.Chart==1?colorBlueOutline:(datum.Disease>datum.Wounds&&datum.Disease>datum.Other)?colorBlueOutline:(datum.Wounds>datum.Disease&&datum.Wounds>datum.Other)?colorPinkOutline:colorBlackOutline"
+                  }
+                }
+              }
+            },
+            {
+              "type": "arc",
+              "name": "arc-layer-2-radial",
+              "from": {"data": "dataset-year"},
+              "encode": {
+                "enter": {
+                  "dx": {"signal": "200"},
+                  "x": {"field": {"group": "width"}, "mult": 0.5},
+                  "y": {"field": {"group": "height"}, "mult": 0.5},
+                  "startAngle": {"signal": "datum.startAngle"},
+                  "endAngle": {"signal": "datum.startAngle"},
+                  "innerRadius": {
+                    "scale": "scaleRadius",
+                    "signal": "datum.Chart==1?datum.Other1:(datum.Disease>datum.Wounds&&datum.Disease<datum.Other||datum.Disease<datum.Wounds&&datum.Disease>datum.Other)?datum.Disease1:(datum.Wounds>datum.Disease&&datum.Wounds<datum.Other||datum.Wounds<datum.Disease&&datum.Wounds>datum.Other)?datum.Wounds1:datum.Other1"
+                  },
+                  "outerRadius": {
+                    "scale": "scaleRadius",
+                    "signal": "datum.Chart==1?datum.Other2:(datum.Disease>datum.Wounds&&datum.Disease<datum.Other||datum.Disease<datum.Wounds&&datum.Disease>datum.Other)?datum.Disease2:(datum.Wounds>datum.Disease&&datum.Wounds<datum.Other||datum.Wounds<datum.Disease&&datum.Wounds>datum.Other)?datum.Wounds2:datum.Other2"
+                  },
+                  "strokeOpacity": {"value": 0.7},
+                  "strokeWidth": {"value": 2},
+                  "stroke": {
+                    "signal": "datum.Chart==1?colorBlackOutline:(datum.Disease>datum.Wounds&&datum.Disease<datum.Other||datum.Disease<datum.Wounds&&datum.Disease>datum.Other)?colorBlueOutline:(datum.Wounds>datum.Disease&&datum.Wounds<datum.Other||datum.Wounds<datum.Disease&&datum.Wounds>datum.Other)?colorPinkOutline:colorBlackOutline"
+                  }
+                }
+              }
+            },
+            {
+              "type": "arc",
+              "name": "arc-layer-3-radial",
+              "from": {"data": "dataset-year"},
+              "encode": {
+                "enter": {
+                  "dx": {"signal": "200"},
+                  "x": {"field": {"group": "width"}, "mult": 0.5},
+                  "y": {"field": {"group": "height"}, "mult": 0.5},
+                  "startAngle": {"signal": "datum.startAngle"},
+                  "endAngle": {"signal": "datum.startAngle"},
+                  "innerRadius": {
+                    "scale": "scaleRadius",
+                    "signal": "datum.Chart==1?datum.Wounds1:(datum.Disease<datum.Other&&datum.Disease<datum.Wounds)?datum.Disease1:(datum.Wounds<datum.Disease&&datum.Wounds<datum.Other)?datum.Wounds1:datum.Other1"
+                  },
+                  "outerRadius": {
+                    "scale": "scaleRadius",
+                    "signal": "datum.Chart==1?datum.Wounds2:(datum.Disease<datum.Other&&datum.Disease<datum.Wounds)?datum.Disease2:(datum.Wounds<datum.Disease&&datum.Wounds<datum.Other)?datum.Wounds2:datum.Other2"
+                  },
+                  "strokeOpacity": {"value": 0.7},
+                  "strokeWidth": {"value": 2},
+                  "stroke": {
+                    "signal": "datum.Chart==1?colorPinkOutline:(datum.Disease<datum.Other&&datum.Disease<datum.Wounds)?colorBlueOutline:(datum.Wounds<datum.Disease&&datum.Wounds<datum.Other)?colorPinkOutline:colorBlackOutline"
+                  }
+                }
+              }
+            },
+            {
               "type": "text",
               "name": "text-month",
               "from": {"data": "dataset-year"},
