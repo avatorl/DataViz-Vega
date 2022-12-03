@@ -56,6 +56,7 @@
     {"name": "colorPink", "value": "#FFC0CB"},
     {"name": "colorBlack", "value": "#6c6e6a"},
     {"name": "colorLabels", "value": "#333333"},
+    {"name": "colorText", "value": "#8A8A8A"},
     {"name": "colorChartTitles", "value": "#333333"}
   ],
   "scales": [
@@ -270,7 +271,7 @@
       "name": "text-description",
       "encode": {
         "enter": {
-          "fill": {"value": "#999999"},
+          "fill": {"signal": "colorText"},
           "opacity": {"value": 1},
           "font": {"value": "Vivaldi"},
           "fontSize": {"value": 18},
