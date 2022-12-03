@@ -69,7 +69,7 @@
   ],
   "title": {
     "text": "DIAGRAM of the CAUSES of MORTALITY",
-    "dy": 40,
+    "dy": 70,
     "color": {"signal": "colorChartTitles"},
     "font": "Harrington",
     "fontSize": 22,
@@ -120,7 +120,7 @@
           "strokeDash": {"signal": "[1,0,3]"},
           "x": {"signal": "105"},
           "y": {"signal": "105"},
-          "x2": {"signal": "360"},
+          "x2": {"signal": "350"},
           "y2": {"signal": "0"}
         }
       }
@@ -131,7 +131,7 @@
         "align": "all",
         "bounds": "full",
         "columns": {"signal": "2"},
-        "padding": {"signal": "115"}
+        "padding": {"signal": "110"}
       },
       "marks": [
         {
@@ -255,7 +255,7 @@
                   "baseline": {"value": "middle"},
                   "lineBreak": {"value": "\n"},
                   "text": {
-                    "signal": "(datum.Year==1854&&datum.Month=='April')?upper(datum.Month)+'\\n'+datum.Year:(datum.Year==1855&&datum.Month=='March')?upper(datum.Month)+' '+datum.Year:(datum.Year==1856&&datum.Month=='January')?upper(datum.Month)+'\\n'+datum.Year:(datum.Year==1855&&datum.Month=='April')?upper(datum.Month)+datum.Year:upper(datum.Month)"
+                    "signal": "(datum.Year==1854&&datum.Month=='April')?upper(datum.Month)+'\\n'+datum.Year:(datum.Year==1855&&datum.Month=='March')?upper(datum.Month)+' '+datum.Year:(datum.Year==1856&&datum.Month=='January')?upper(datum.Month)+'\\n'+datum.Year:(datum.Year==1855&&(datum.Month=='April'||datum.Month=='January'))?upper(datum.Month)+' '+datum.Year:upper(datum.Month)"
                   }
                 }
               }
