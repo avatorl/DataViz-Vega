@@ -17,9 +17,10 @@
       "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/nightingale-rose/nightingale-rose-data.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","}
     },
+    {"name": "dataset", "source": "dataset-csv"},
     {
       "name": "dataset1",
-      "source": "dataset-csv",
+      "source": "dataset",
       "transform": [
         {"type": "filter", "expr": "datum.Chart==1"},
         {
@@ -31,7 +32,7 @@
     },
     {
       "name": "dataset2",
-      "source": "dataset-csv",
+      "source": "dataset",
       "transform": [
         {"type": "filter", "expr": "datum.Chart==2"},
         {
@@ -41,13 +42,13 @@
         }
       ]
     },
-    {"name": "dataset", "source": ["dataset2", "dataset1"]}
+    {"name": "dataset-combined", "source": ["dataset2", "dataset1"]}
   ],
   "scales": [
     {
       "name": "r",
       "type": "sqrt",
-      "domain": {"data": "dataset", "field": "Disease"},
+      "domain": {"data": "dataset-combined", "field": "Disease"},
       "zero": true,
       "range": [0, {"signal": "width*0.8"}]
     }
@@ -61,7 +62,7 @@
     "subtitleFontSize": 18,
     "subtitleFontWeight": "lighter",
     "subtitlePadding": 10,
-    "offset": -60
+    "offset": 0
   },
   "marks": [
     {
@@ -94,9 +95,19 @@
           "from": {
             "facet": {
               "name": "dataset-year",
-              "data": "dataset",
+              "data": "dataset-combined",
               "groupby": "Chart"
             }
+          },
+          "title": {
+            "text": {"signal": "data('dataset-year')[0].Chart+'.'"},
+            "dy": -20,
+            "align": "center",
+            "subtitleFontSize": 16,
+            "subtitle": {
+              "signal": "data('dataset-year')[0].Chart==1?'APRIL 1854 to MARCH 1855':'APRIL 1855 to MARCH 1856'"
+            },
+            "subtitlePadding": 20
           },
           "marks": [
             {
