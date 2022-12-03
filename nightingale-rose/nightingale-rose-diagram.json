@@ -14,7 +14,7 @@
   "data": [
     {
       "name": "dataset-csv",
-      "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/nightingale-rose/nightingale-rose-data.csv",
+      "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/nightingale-rose/nightingale-rose.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","}
     },
     {"name": "dataset", "source": "dataset-csv"},
@@ -65,6 +65,34 @@
     "offset": 0
   },
   "marks": [
+    {
+      "type": "rule",
+      "encode": {
+        "update": {
+          "opacity": {"signal": "0.1"},
+          "strokeWidth": {"signal": "2"},
+          "strokeDash": {"signal": "[1,0,1]"},
+          "x": {"signal": "-132"},
+          "y": {"signal": "0"},
+          "x2": {"signal": "150"},
+          "y2": {"signal": "170"}
+        }
+      }
+    },
+    {
+      "type": "rule",
+      "encode": {
+        "update": {
+          "opacity": {"signal": "0.1"},
+          "strokeWidth": {"signal": "2"},
+          "strokeDash": {"signal": "[1,0,1]"},
+          "x": {"signal": "150"},
+          "y": {"signal": "170"},
+          "x2": {"signal": "370"},
+          "y2": {"signal": "0"}
+        }
+      }
+    },
     {
       "type": "image",
       "encode": {
@@ -178,17 +206,17 @@
                   "y": {"field": {"group": "height"}, "mult": 0.5},
                   "radius": {
                     "scale": "r",
-                    "signal": "pow(datum.Disease,1/0.999)",
-                    "offset": 20
+                    "signal": "pow(datum.Disease,1/0.98)<300?300:pow(datum.Disease,1/0.98)",
+                    "offset": 5
                   },
                   "theta": {"signal": "(datum.startAngle + datum.endAngle)/2"},
                   "angle": {
                     "signal": "360*(datum.startAngle+(datum.endAngle-datum.startAngle)/2)/2/PI"
                   },
-                  "fill": {"value": "#000000"},
+                  "fill": {"value": "#666666"},
                   "align": {"value": "center"},
                   "baseline": {"value": "middle"},
-                  "text": {"signal": "slice(datum.Month,0,3)"}
+                  "text": {"signal": "datum.Month"}
                 }
               }
             }
