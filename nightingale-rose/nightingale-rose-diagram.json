@@ -9,8 +9,8 @@
   },
   "width": 400,
   "height": 400,
-  "padding": 5,
-  "background": "#FFFAFC",
+  "padding": {"bottom": 40, "left": 10, "right": 10, "top": 10},
+  "background": "#FAECE6",
   "data": [
     {
       "name": "dataset-csv",
@@ -50,7 +50,7 @@
       "type": "sqrt",
       "domain": {"data": "dataset-combined", "field": "Disease"},
       "zero": true,
-      "range": [0, {"signal": "width*0.8"}]
+      "range": [0, {"signal": "width*0.85"}]
     }
   ],
   "title": {
@@ -62,37 +62,9 @@
     "subtitleFontSize": 18,
     "subtitleFontWeight": "lighter",
     "subtitlePadding": 10,
-    "offset": 0
+    "encode": {"title": {"align": {"value": ""}}}
   },
   "marks": [
-    {
-      "type": "rule",
-      "encode": {
-        "update": {
-          "opacity": {"signal": "0.1"},
-          "strokeWidth": {"signal": "2"},
-          "strokeDash": {"signal": "[1,0,1]"},
-          "x": {"signal": "-132"},
-          "y": {"signal": "0"},
-          "x2": {"signal": "150"},
-          "y2": {"signal": "170"}
-        }
-      }
-    },
-    {
-      "type": "rule",
-      "encode": {
-        "update": {
-          "opacity": {"signal": "0.1"},
-          "strokeWidth": {"signal": "2"},
-          "strokeDash": {"signal": "[1,0,1]"},
-          "x": {"signal": "150"},
-          "y": {"signal": "170"},
-          "x2": {"signal": "370"},
-          "y2": {"signal": "0"}
-        }
-      }
-    },
     {
       "type": "image",
       "encode": {
@@ -105,7 +77,35 @@
           "opacity": {"value": 0},
           "align": {"value": "left"},
           "x": {"signal": "-width/2"},
-          "y": {"signal": "-height/2"}
+          "y": {"signal": "-height/2-30"}
+        }
+      }
+    },
+    {
+      "type": "rule",
+      "encode": {
+        "update": {
+          "opacity": {"signal": "0.1"},
+          "strokeWidth": {"signal": "2"},
+          "strokeDash": {"signal": "[1,0,1]"},
+          "x": {"signal": "-140"},
+          "y": {"signal": "0"},
+          "x2": {"signal": "110"},
+          "y2": {"signal": "110"}
+        }
+      }
+    },
+    {
+      "type": "rule",
+      "encode": {
+        "update": {
+          "opacity": {"signal": "0.1"},
+          "strokeWidth": {"signal": "2"},
+          "strokeDash": {"signal": "[1,0,1]"},
+          "x": {"signal": "110"},
+          "y": {"signal": "110"},
+          "x2": {"signal": "360"},
+          "y2": {"signal": "0"}
         }
       }
     },
@@ -115,7 +115,7 @@
         "align": "all",
         "bounds": "full",
         "columns": {"signal": "2"},
-        "padding": {"signal": "width*0.35"}
+        "padding": {"signal": "110"}
       },
       "marks": [
         {
@@ -128,10 +128,15 @@
             }
           },
           "title": {
+            "color": "#777777",
             "text": {"signal": "data('dataset-year')[0].Chart+'.'"},
             "dy": -20,
-            "align": "center",
-            "subtitleFontSize": 16,
+            "dx": {"signal": "data('dataset-year')[0].Chart==1?0:-100"},
+            "align": "left",
+            "subtitleColor": "#777777",
+            "subtitleFontWeight": "bolder",
+            "subtitleFont": "Times New Roman",
+            "subtitleFontSize": 15,
             "subtitle": {
               "signal": "data('dataset-year')[0].Chart==1?'APRIL 1854 to MARCH 1855':'APRIL 1855 to MARCH 1856'"
             },
@@ -206,17 +211,21 @@
                   "y": {"field": {"group": "height"}, "mult": 0.5},
                   "radius": {
                     "scale": "r",
-                    "signal": "pow(datum.Disease,1/0.98)<300?300:pow(datum.Disease,1/0.98)",
-                    "offset": 5
+                    "signal": "pow(datum.Disease,1/0.98)<350?350:pow(datum.Disease,1/0.98)",
+                    "offset": 0
                   },
                   "theta": {"signal": "(datum.startAngle + datum.endAngle)/2"},
                   "angle": {
                     "signal": "360*(datum.startAngle+(datum.endAngle-datum.startAngle)/2)/2/PI"
                   },
-                  "fill": {"value": "#666666"},
+                  "fill": {"value": "#999999"},
+                  "fontWeight": {"value": "bolder"},
                   "align": {"value": "center"},
                   "baseline": {"value": "middle"},
-                  "text": {"signal": "datum.Month"}
+                  "lineBreak": {"value": "\n"},
+                  "text": {
+                    "signal": "(datum.Year==1854&&datum.Month=='April')?upper(datum.Month)+' '+datum.Year:(datum.Year==1855&&datum.Month=='March')?upper(datum.Month)+' '+datum.Year:(datum.Year==1856&&datum.Month=='January')?upper(datum.Month)+'\\n'+datum.Year:upper(datum.Month)"
+                  }
                 }
               }
             }
@@ -234,7 +243,7 @@
           "fontSize": {"value": 18},
           "fontWeight": {"value": "bolder"},
           "x": {"signal": "-width*0.4"},
-          "y": {"value": 200},
+          "y": {"value": 180},
           "width": {"value": 110},
           "lineBreak": {"value": "\n"},
           "text": {
