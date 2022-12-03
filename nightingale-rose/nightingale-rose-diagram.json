@@ -6,6 +6,7 @@
     "License": "CC BY 4.0 (Share and Adapt with Attribution)",
     "Github": "https://github.com/avatorl/Deneb-Vega/",
     "Original Idea Author": "Florence Nightingale (1820-1910)",
+    "Original Idea URL": "https://curiosity.lib.harvard.edu/contagion/catalog/36-990101646750203941",
     "Data Source URL": "https://archive.org/details/mortalityofbriti00lond/page/18/mode/2up?view=theater"
   },
   "width": 400,
@@ -16,7 +17,7 @@
   "data": [
     {
       "name": "dataset-csv",
-      "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/nightingale-rose/nightingale-rose.csv",
+      "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/nightingale-rose/nightingale-rose-data.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","}
     },
     {"name": "dataset", "source": "dataset-csv"},
@@ -68,7 +69,7 @@
   ],
   "title": {
     "text": "DIAGRAM of the CAUSES of MORTALITY",
-    "dy": 80,
+    "dy": 40,
     "color": {"signal": "colorChartTitles"},
     "font": "Harrington",
     "fontSize": 22,
@@ -105,7 +106,7 @@
           "x": {"signal": "-140"},
           "y": {"signal": "0"},
           "x2": {"signal": "105"},
-          "y2": {"signal": "115"}
+          "y2": {"signal": "105"}
         }
       }
     },
@@ -118,7 +119,7 @@
           "strokeWidth": {"signal": "2"},
           "strokeDash": {"signal": "[1,0,3]"},
           "x": {"signal": "105"},
-          "y": {"signal": "115"},
+          "y": {"signal": "105"},
           "x2": {"signal": "360"},
           "y2": {"signal": "0"}
         }
@@ -242,7 +243,7 @@
                   "y": {"field": {"group": "height"}, "mult": 0.5},
                   "radius": {
                     "scale": "scaleRadius",
-                    "signal": "pow(datum.Disease,1/0.9)<360?330:pow(datum.Disease,1/0.98)"
+                    "signal": "pow(datum.Disease,1/0.98)<110?110:pow(datum.Disease,1/0.98)"
                   },
                   "theta": {"signal": "(datum.startAngle + datum.endAngle)/2"},
                   "angle": {
