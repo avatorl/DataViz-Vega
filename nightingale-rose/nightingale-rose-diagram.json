@@ -14,7 +14,7 @@
   "data": [
     {
       "name": "dataset-csv",
-      "url": "https://dl.dropboxusercontent.com/s/rnfol2obutkx06a/histdata-nightingale.csv",
+      "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/nightingale-rose/nightingale-rose-data.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","}
     },
     {
