@@ -1,8 +1,16 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
-  "description": "A basic radial plot that encodes two values as the angle and radius of an arc.",
-  "width": 200,
-  "height": 200,
+  "description": "Reproduction of the Nightingale rose diagram",
+  "usermeta": {
+    "Author": "Andrzej Leszkiewicz",
+    "License": "CC BY 4.0 (Share and Adapt with Attribution)",
+    "Github": "https://github.com/avatorl/Deneb-Vega/",
+    "Original Idea Author": "Florence Nightingale (1820-1910)"
+  },
+  "width": 400,
+  "height": 400,
+  "padding": 5,
+  "background": "#FFFAFC",
   "data": [
     {
       "name": "dataset-csv",
@@ -10,11 +18,30 @@
       "format": {"type": "csv", "parse": "auto", "delimiter": ","}
     },
     {
-      "name": "dataset",
+      "name": "dataset1",
       "source": "dataset-csv",
-      "transform": [{"type": "pie", "signal": "1"}]
+      "transform": [
+        {"type": "filter", "expr": "datum.Chart==1"},
+        {
+          "type": "pie",
+          "startAngle": {"signal": "-PI/2"},
+          "endAngle": {"signal": "2*PI-PI/2"}
+        }
+      ]
     },
-    {"name": "pair", "values": ["1", "2"]}
+    {
+      "name": "dataset2",
+      "source": "dataset-csv",
+      "transform": [
+        {"type": "filter", "expr": "datum.Chart==2"},
+        {
+          "type": "pie",
+          "startAngle": {"signal": "-PI/2"},
+          "endAngle": {"signal": "2*PI-PI/2"}
+        }
+      ]
+    },
+    {"name": "dataset", "source": ["dataset2", "dataset1"]}
   ],
   "scales": [
     {
@@ -22,83 +49,131 @@
       "type": "sqrt",
       "domain": {"data": "dataset", "field": "Disease"},
       "zero": true,
-      "range": [0, 200]
+      "range": [0, {"signal": "width*0.8"}]
     }
   ],
   "title": {
     "text": "DIAGRAM of the CAUSES of MORTALITY",
     "font": "Harrington",
+    "fontSize": 22,
     "subtitle": "In the Army in the East",
-    "subtitleFont": "Cambria",
-    "subtitleFontSize": 16
+    "subtitleFont": "Tahoma",
+    "subtitleFontSize": 18,
+    "subtitleFontWeight": "lighter",
+    "subtitlePadding": 10,
+    "offset": -60
   },
   "marks": [
+    {
+      "type": "image",
+      "encode": {
+        "enter": {
+          "url": {
+            "value": "https://dl.dropboxusercontent.com/s/u7v33pq9xmib22z/3815a%20Large.png"
+          }
+        },
+        "update": {
+          "opacity": {"value": 0},
+          "align": {"value": "left"},
+          "x": {"signal": "-width/2"},
+          "y": {"signal": "-height/2"}
+        }
+      }
+    },
     {
       "type": "group",
       "layout": {
         "align": "all",
         "bounds": "full",
         "columns": {"signal": "2"},
-        "offset": 200
+        "padding": {"signal": "width*0.35"}
       },
       "marks": [
         {
           "type": "group",
-          "from": {"data": "pair"},
+          "from": {
+            "facet": {
+              "name": "dataset-year",
+              "data": "dataset",
+              "groupby": "Chart"
+            }
+          },
           "marks": [
             {
               "type": "arc",
-              "from": {"data": "dataset"},
+              "name": "arc-disease",
+              "from": {"data": "dataset-year"},
               "encode": {
                 "enter": {
                   "dx": {"signal": "200"},
                   "x": {"field": {"group": "width"}, "mult": 0.5},
                   "y": {"field": {"group": "height"}, "mult": 0.5},
-                  "startAngle": {"field": "startAngle"},
-                  "endAngle": {"field": "endAngle"},
+                  "startAngle": {"signal": "datum.startAngle"},
+                  "endAngle": {"signal": "datum.endAngle"},
                   "innerRadius": {"value": 0},
-                  "outerRadius": {
-                    "scale": "r",
-                    "signal": "parent.data==2?datum.Disease:datum.Wounds"
-                  },
+                  "outerRadius": {"scale": "r", "signal": "datum.Disease"},
                   "stroke": {"value": "#fff"}
                 },
-                "update": {"fill": {"value": "#CBD3D3"}},
-                "hover": {"fill": {"value": "pink"}}
+                "update": {
+                  "fillOpacity": {"value": 0.8},
+                  "fill": {"value": "#CBD3D3"}
+                }
               }
             },
             {
               "type": "arc",
-              "from": {"data": "dataset"},
+              "name": "arc-other",
+              "from": {"data": "dataset-year"},
               "encode": {
                 "enter": {
                   "dx": {"signal": "200"},
                   "x": {"field": {"group": "width"}, "mult": 0.5},
                   "y": {"field": {"group": "height"}, "mult": 0.5},
-                  "startAngle": {"field": "startAngle"},
-                  "endAngle": {"field": "endAngle"},
+                  "startAngle": {"signal": "datum.startAngle"},
+                  "endAngle": {"signal": "datum.endAngle"},
                   "innerRadius": {"value": 0},
-                  "outerRadius": {"scale": "r", "signal": "datum.Disease/3"},
+                  "outerRadius": {"scale": "r", "signal": "datum.Other"},
                   "stroke": {"value": "#fff"}
                 },
-                "update": {"fill": {"value": "pink"}},
-                "hover": {"fill": {"value": "pink"}}
+                "fillOpacity": {"value": 0.8},
+                "update": {"fill": {"value": "#7c6e6a"}}
+              }
+            },
+            {
+              "type": "arc",
+              "name": "arc-wounds",
+              "from": {"data": "dataset-year"},
+              "encode": {
+                "enter": {
+                  "dx": {"signal": "200"},
+                  "x": {"field": {"group": "width"}, "mult": 0.5},
+                  "y": {"field": {"group": "height"}, "mult": 0.5},
+                  "startAngle": {"signal": "datum.startAngle"},
+                  "endAngle": {"signal": "datum.endAngle"},
+                  "innerRadius": {"value": 0},
+                  "outerRadius": {"scale": "r", "signal": "datum.Wounds"},
+                  "stroke": {"value": "#fff"}
+                },
+                "fillOpacity": {"value": 0.8},
+                "update": {"fill": {"value": "pink"}}
               }
             },
             {
               "type": "text",
-              "from": {"data": "dataset"},
+              "from": {"data": "dataset-year"},
               "encode": {
                 "enter": {
                   "x": {"field": {"group": "width"}, "mult": 0.5},
                   "y": {"field": {"group": "height"}, "mult": 0.5},
                   "radius": {
                     "scale": "r",
-                    "signal": "datum.Disease",
-                    "offset": 15
+                    "signal": "pow(datum.Disease,1/0.999)",
+                    "offset": 20
                   },
                   "theta": {"signal": "(datum.startAngle + datum.endAngle)/2"},
-                  "angle": {"signal": "0"},
+                  "angle": {
+                    "signal": "360*(datum.startAngle+(datum.endAngle-datum.startAngle)/2)/2/PI"
+                  },
                   "fill": {"value": "#000000"},
                   "align": {"value": "center"},
                   "baseline": {"value": "middle"},
@@ -114,12 +189,17 @@
       "type": "text",
       "encode": {
         "update": {
-          "x": {"value": -200},
-          "y": {"value": 250},
+          "fill": {"value": "#999999"},
+          "opacity": {"value": 1},
+          "font": {"value": "Vivaldi"},
+          "fontSize": {"value": 18},
+          "fontWeight": {"value": "bolder"},
+          "x": {"signal": "-width*0.4"},
+          "y": {"value": 200},
           "width": {"value": 110},
-          "lineBreak": {"value": "."},
+          "lineBreak": {"value": "\n"},
           "text": {
-            "value": "The Areas of the blue, red, & black wedges are each measured from the centre as the common vertex. The blue wedges measured from the centre of the circle represent area for area the deaths from Preventable or Mitigable Zymotic diseases. The red wedges measured from the centre the deaths from wounds, & the black wedges measured from the centre the deaths from all other causes. The black line across the red triangle in Nov. 1854 marks the boundary of the deaths from all other causes during the month. In October 1854, & April 1855, the black area coincides with the red, in January & February 1856, the blue coincides with the black. The entire areas may be compared by following the blue, the red, & the black lines enclosing them."
+            "value": "The Areas of the blue, red, & black wedges are each measured from\n   the centre as the common vertex.\nThe blue wedges measured from the centre of the circle represent area\n   for area the deaths from Preventable or Mitigable Zymotic diseases;the\n   red wedges measured from the centre the deaths from wounds, & the\n   black wedges measured from the centre the deaths from all other causes.\nThe black line across the red triangle in Nov. 1854 marks the boundary\n   of the deaths from all other causes during the month.\nIn October 1854, & April 1855, the black area coincides with the red,\n   in January & February 1856, the blue coincides with the black.\nThe entire areas may be compared by following the blue, the red, & the\n   black lines enclosing them."
           }
         }
       }
