@@ -47,8 +47,9 @@
   "signals": [
     {"name": "colorBlue", "value": "#C8C8E8"},
     {"name": "colorPink", "value": "pink"},
-    {"name": "colorBlack", "value": "#7c6e6a"},
-    {"name": "colorLabels", "value": "#999999"}
+    {"name": "colorBlack", "value": "#6c6e6a"},
+    {"name": "colorLabels", "value": "#999999"},
+    {"name": "colorChartTitles", "value": "#666666"}
   ],
   "scales": [
     {
@@ -97,7 +98,7 @@
         "update": {
           "opacity": {"signal": "0.1"},
           "strokeWidth": {"signal": "2"},
-          "strokeDash": {"signal": "[1,0,1]"},
+          "strokeDash": {"signal": "[1,0,3]"},
           "x": {"signal": "-140"},
           "y": {"signal": "0"},
           "x2": {"signal": "110"},
@@ -111,7 +112,7 @@
         "update": {
           "opacity": {"signal": "0.1"},
           "strokeWidth": {"signal": "2"},
-          "strokeDash": {"signal": "[1,0,1]"},
+          "strokeDash": {"signal": "[1,0,3]"},
           "x": {"signal": "110"},
           "y": {"signal": "110"},
           "x2": {"signal": "360"},
@@ -140,12 +141,12 @@
           "title": {
             "anchor": "middle",
             "baseline": "middle",
-            "color": "#999999",
+            "color": {"signal": "colorChartTitles"},
             "text": {"signal": "data('dataset-year')[0].Chart+'.'"},
             "dy": 0,
             "dx": {"signal": "data('dataset-year')[0].Chart==1?0:-100"},
             "align": "left",
-            "subtitleColor": "#999999",
+            "subtitleColor": {"signal": "colorChartTitles"},
             "subtitleFontWeight": "bolder",
             "subtitleFont": "Times New Roman",
             "subtitleFontSize": 15,
@@ -245,7 +246,7 @@
                   "baseline": {"value": "middle"},
                   "lineBreak": {"value": "\n"},
                   "text": {
-                    "signal": "(datum.Year==1854&&datum.Month=='April')?upper(datum.Month)+' '+datum.Year:(datum.Year==1855&&datum.Month=='March')?upper(datum.Month)+' '+datum.Year:(datum.Year==1856&&datum.Month=='January')?upper(datum.Month)+'\\n'+datum.Year:(datum.Year==1855&&datum.Month=='April')?upper(datum.Month)+datum.Year:upper(datum.Month)"
+                    "signal": "(datum.Year==1854&&datum.Month=='April')?upper(datum.Month)+'\\n'+datum.Year:(datum.Year==1855&&datum.Month=='March')?upper(datum.Month)+' '+datum.Year:(datum.Year==1856&&datum.Month=='January')?upper(datum.Month)+'\\n'+datum.Year:(datum.Year==1855&&datum.Month=='April')?upper(datum.Month)+datum.Year:upper(datum.Month)"
                   }
                 }
               }
