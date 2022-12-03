@@ -171,11 +171,13 @@
                   "innerRadius": {"value": 0},
                   "outerRadius": {
                     "scale": "scaleRadius",
-                    "signal": "datum.Disease"
+                    "signal": "datum.Wounds>datum.Disease?datum.Wounds:datum.Disease"
                   },
                   "stroke": {"value": "gray"},
                   "strokeOpacity": {"value": 0.1},
-                  "fill": {"signal": "colorBlue"},
+                  "fill": {
+                    "signal": "datum.Wounds>datum.Disease?colorPink:colorBlue"
+                  },
                   "fillOpacity": {"value": 1}
                 }
               }
@@ -217,11 +219,13 @@
                   "innerRadius": {"value": 0},
                   "outerRadius": {
                     "scale": "scaleRadius",
-                    "signal": "datum.Wounds"
+                    "signal": "datum.Wounds>datum.Disease?datum.Disease:datum.Wounds"
                   },
                   "stroke": {"value": "gray"},
-                  "strokeOpacity": {"value": 0.05},
-                  "fill": {"signal": "colorPink"},
+                  "strokeOpacity": {"value": 0.1},
+                  "fill": {
+                    "signal": "datum.Wounds>datum.Disease?colorBlue:colorPink"
+                  },
                   "fillOpacity": {"value": 1}
                 }
               }
