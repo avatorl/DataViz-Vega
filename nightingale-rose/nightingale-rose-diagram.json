@@ -44,6 +44,12 @@
     },
     {"name": "dataset-combined", "source": ["dataset2", "dataset1"]}
   ],
+  "signals": [
+    {"name": "colorBlue", "value": "#C8C8E8"},
+    {"name": "colorPink", "value": "pink"},
+    {"name": "colorBlack", "value": "#7c6e6a"},
+    {"name": "colorLabels", "value": "#999999"}
+  ],
   "scales": [
     {
       "name": "r",
@@ -55,9 +61,13 @@
   ],
   "title": {
     "text": "DIAGRAM of the CAUSES of MORTALITY",
+    "color": "#333333",
+    "frame": "bounds",
+    "dy": 70,
     "font": "Harrington",
     "fontSize": 22,
     "subtitle": "In the Army in the East",
+    "subtitleColor": "#333333",
     "subtitleFont": "Tahoma",
     "subtitleFontSize": 18,
     "subtitleFontWeight": "lighter",
@@ -128,25 +138,28 @@
             }
           },
           "title": {
-            "color": "#777777",
+            "anchor": "middle",
+            "baseline": "middle",
+            "color": "#999999",
             "text": {"signal": "data('dataset-year')[0].Chart+'.'"},
-            "dy": -20,
+            "dy": 0,
             "dx": {"signal": "data('dataset-year')[0].Chart==1?0:-100"},
             "align": "left",
-            "subtitleColor": "#777777",
+            "subtitleColor": "#999999",
             "subtitleFontWeight": "bolder",
             "subtitleFont": "Times New Roman",
             "subtitleFontSize": 15,
             "subtitle": {
               "signal": "data('dataset-year')[0].Chart==1?'APRIL 1854 to MARCH 1855':'APRIL 1855 to MARCH 1856'"
             },
-            "subtitlePadding": 20
+            "subtitlePadding": 10
           },
           "marks": [
             {
               "type": "arc",
               "name": "arc-disease",
               "from": {"data": "dataset-year"},
+              "zindex": {"signal": "2"},
               "encode": {
                 "enter": {
                   "dx": {"signal": "200"},
@@ -159,8 +172,9 @@
                   "stroke": {"value": "#fff"}
                 },
                 "update": {
-                  "fillOpacity": {"value": 0.8},
-                  "fill": {"value": "#CECEDA"}
+                  "zindex": {"value": 0},
+                  "fillOpacity": {"value": 1},
+                  "fill": {"signal": "colorBlue"}
                 }
               }
             },
@@ -179,8 +193,10 @@
                   "outerRadius": {"scale": "r", "signal": "datum.Other"},
                   "stroke": {"value": "#fff"}
                 },
-                "fillOpacity": {"value": 0.8},
-                "update": {"fill": {"value": "#7c6e6a"}}
+                "update": {
+                  "fillOpacity": {"value": 1},
+                  "fill": {"signal": "colorBlack"}
+                }
               }
             },
             {
@@ -198,33 +214,38 @@
                   "outerRadius": {"scale": "r", "signal": "datum.Wounds"},
                   "stroke": {"value": "#fff"}
                 },
-                "fillOpacity": {"value": 0.8},
-                "update": {"fill": {"value": "pink"}}
+                "update": {
+                  "zindex": {"value": 0},
+                  "fillOpacity": {"value": 1},
+                  "fill": {"signal": "colorPink"}
+                }
               }
             },
             {
               "type": "text",
+              "name": "text-month",
               "from": {"data": "dataset-year"},
               "encode": {
                 "enter": {
+                  "fontSize": {"signal": "datum.Chart==1?11:8"},
                   "x": {"field": {"group": "width"}, "mult": 0.5},
                   "y": {"field": {"group": "height"}, "mult": 0.5},
                   "radius": {
                     "scale": "r",
-                    "signal": "pow(datum.Disease,1/0.98)<350?350:pow(datum.Disease,1/0.98)",
+                    "signal": "pow(datum.Disease,1/0.98)<300?300:pow(datum.Disease,1/0.98)",
                     "offset": 0
                   },
                   "theta": {"signal": "(datum.startAngle + datum.endAngle)/2"},
                   "angle": {
                     "signal": "360*(datum.startAngle+(datum.endAngle-datum.startAngle)/2)/2/PI"
                   },
-                  "fill": {"value": "#999999"},
+                  "fill": {"signal": "colorLabels"},
                   "fontWeight": {"value": "bolder"},
                   "align": {"value": "center"},
                   "baseline": {"value": "middle"},
                   "lineBreak": {"value": "\n"},
                   "text": {
-                    "signal": "(datum.Year==1854&&datum.Month=='April')?upper(datum.Month)+' '+datum.Year:(datum.Year==1855&&datum.Month=='March')?upper(datum.Month)+' '+datum.Year:(datum.Year==1856&&datum.Month=='January')?upper(datum.Month)+'\\n'+datum.Year:upper(datum.Month)"
+                    "signal": "(datum.Year==1854&&datum.Month=='April')?upper(datum.Month)+' '+datum.Year:(datum.Year==1855&&datum.Month=='March')?upper(datum.Month)+' '+datum.Year:(datum.Year==1856&&datum.Month=='January')?upper(datum.Month)+'\\n'+datum.Year:(datum.Year==1855&&datum.Month=='April')?upper(datum.Month)+datum.Year:upper(datum.Month)"
                   }
                 }
               }
