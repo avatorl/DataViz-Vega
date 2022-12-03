@@ -1,4 +1,4 @@
-Chart,Month,Year,Disease,Wounds,Other,d1,d2,w1,w2,o1,o2
+Chart,Month,Year,Disease,Wounds,Other,Disease1,Disease2,Wounds1,Wounds2,Other1,Other2
 1,April,1854,1.4,0,7,1.4,480.3,0,12.8,7,68.6
 1,May,1854,6.2,0,4.6,6.2,1.4,0,0,4.6,7
 1,June,1854,4.7,0,2.5,4.7,6.2,0,0,2.5,4.6
