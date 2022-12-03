@@ -200,8 +200,9 @@
                     "scale": "scaleRadius",
                     "signal": "datum.Other"
                   },
-                  "stroke": {"value": "white"},
-                  "strokeOpacity": {"value": 0.1},
+                  "stroke": {"value": "black"},
+                  "strokeOpacity": {"value": 0.2},
+                  "strokeWidth": {"value": 1},
                   "fill": {"signal": "colorBlack"},
                   "fillOpacity": {"value": 1}
                 }
@@ -224,7 +225,7 @@
                     "signal": "datum.Wounds>datum.Disease?datum.Disease:datum.Wounds"
                   },
                   "stroke": {"value": "gray"},
-                  "strokeOpacity": {"value": 0.1},
+                  "strokeOpacity": {"value": 0.2},
                   "fill": {
                     "signal": "datum.Wounds>datum.Disease?colorBlue:colorPink"
                   },
