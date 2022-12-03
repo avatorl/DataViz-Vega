@@ -256,8 +256,8 @@
                     "scale": "scaleRadius",
                     "signal": "datum.Chart==1?datum.Disease:max(datum.Disease,datum.Wounds,datum.Other)"
                   },
-                  "strokeOpacity": {"signal": "1"},
-                  "strokeWidth": {"signal": "2"},
+                  "strokeOpacity": {"signal": "0.7"},
+                  "strokeWidth": {"signal": "1.5"},
                   "stroke": {
                     "signal": "datum.Chart==1?colorBlueOutline:(datum.Disease>datum.Wounds&&datum.Disease>datum.Other)?colorBlueOutline:(datum.Wounds>datum.Disease&&datum.Wounds>datum.Other)?colorPinkOutline:colorBlackOutline"
                   }
@@ -283,8 +283,8 @@
                     "scale": "scaleRadius",
                     "signal": "datum.Chart==1?datum.Other:(datum.Disease>datum.Wounds&&datum.Disease<datum.Other||datum.Disease<datum.Wounds&&datum.Disease>datum.Other)?datum.Disease:(datum.Wounds>datum.Disease&&datum.Wounds<datum.Other||datum.Wounds<datum.Disease&&datum.Wounds>datum.Other)?datum.Wounds:datum.Other"
                   },
-                  "strokeOpacity": {"value": 1},
-                  "strokeWidth": {"value": 2},
+                  "strokeOpacity": {"value": 0.7},
+                  "strokeWidth": {"value": 1.5},
                   "stroke": {
                     "signal": "datum.Chart==1?colorBlackOutline:(datum.Disease>datum.Wounds&&datum.Disease<datum.Other||datum.Disease<datum.Wounds&&datum.Disease>datum.Other)?colorBlueOutline:(datum.Wounds>datum.Disease&&datum.Wounds<datum.Other||datum.Wounds<datum.Disease&&datum.Wounds>datum.Other)?colorPinkOutline:colorBlackOutline"
                   }
@@ -310,8 +310,8 @@
                     "scale": "scaleRadius",
                     "signal": "datum.Chart==1?datum.Wounds:(datum.Disease<datum.Other&&datum.Disease<datum.Wounds)?datum.Disease:(datum.Wounds<datum.Disease&&datum.Wounds<datum.Other)?datum.Wounds:datum.Other"
                   },
-                  "strokeOpacity": {"value": 1},
-                  "strokeWidth": {"value": 2},
+                  "strokeOpacity": {"value": 0.7},
+                  "strokeWidth": {"value": 1.5},
                   "stroke": {
                     "signal": "datum.Chart==1?colorPinkOutline:(datum.Disease<datum.Other&&datum.Disease<datum.Wounds)?colorBlueOutline:(datum.Wounds<datum.Disease&&datum.Wounds<datum.Other)?colorPinkOutline:colorBlackOutline"
                   }
