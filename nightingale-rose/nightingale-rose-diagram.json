@@ -512,11 +512,11 @@
       "encode": {
         "enter": {
           "fill": {"signal": "colorText"},
-          "opacity": {"value": 1},
+          "opacity": {"value": 0.8},
           "font": {"signal": "fontText"},
           "fontSize": {"value": 14},
           "fontWeight": {"value": "bolder"},
-          "x": {"signal": "650"},
+          "x": {"signal": "600"},
           "y": {"value": 420},
           "width": {"value": 110},
           "lineBreak": {"value": "\n"},
