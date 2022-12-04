@@ -493,12 +493,13 @@
           "fill": {"signal": "colorText"},
           "opacity": {"value": 1},
           "font": {"signal": "fontText"},
-          "fontSize": {"value": 17},
+          "fontSize": {"value": 18},
           "fontWeight": {"value": "bolder"},
           "x": {"signal": "-width*0.4"},
           "y": {"value": 190},
           "width": {"value": 110},
           "lineBreak": {"value": "\n"},
+          "lineHeight": {"value": 19},
           "text": {
             "value": "The Areas of the blue, red, & black wedges are each measured from\nthe centre as the common vertex.\nThe blue wedges measured from the centre of the circle represent area\n   for area the deaths from Preventable or Mitigable Zymotic Diseases;the\n   red wedges measured from the centre the deaths from wounds, & the\n   black wedges measured from the centre the deaths from all other causes.\nThe black line across the red triangle in Nov. 1854 marks the boundary\n   of the deaths from all other causes during the month.\nIn October 1854, & April 1855, the black area coincides with the red,\n   in January & February 1856, the blue coincides with the black.\nThe entire areas may be compared by following the blue, the red, & the\n   black lines enclosing them."
           }
