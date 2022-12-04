@@ -546,7 +546,7 @@
           "x": {"signal": "300"},
           "y": {"signal": "-150"},
           "fill": {"signal": "'red'"},
-          "opacity": {"value": 1},
+          "opacity": {"value": 0.7},
           "font": {"signal": "fontSubtitle2"},
           "fontWeight": {"value": "lighter"},
           "lineBreak": {"value": "\n"},
