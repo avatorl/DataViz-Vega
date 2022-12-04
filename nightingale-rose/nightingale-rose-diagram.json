@@ -78,17 +78,17 @@
   ],
   "signals": [
     {
-      "name": "fascimileUrl",
+      "name": "facsimileUrl",
       "description": "Original chart",
       "value": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/nightingale-rose/nightingale-facsimile.png"
     },
     {
-      "name": "fascimileOpacity",
+      "name": "facsimileOpacity",
       "value": 0,
       "on": [
         {
           "events": {"source": "view", "type": "click"},
-          "update": "1-fascimileOpacity"
+          "update": "1-facsimileOpacity"
         }
       ]
     },
@@ -135,11 +135,11 @@
     "dy": 70,
     "color": {"signal": "colorChartTitles"},
     "font": {"signal": "fontTitle"},
-    "fontSize": {"signal": "fascimileOpacity==1?0:21"},
+    "fontSize": {"signal": "facsimileOpacity==1?0:21"},
     "subtitle": "IN THE ARMY IN THE EAST",
     "subtitleColor": {"signal": "colorChartTitles"},
     "subtitleFont": {"signal": "fontSubtitle"},
-    "subtitleFontSize": {"signal": "fascimileOpacity==1?0:18"},
+    "subtitleFontSize": {"signal": "facsimileOpacity==1?0:18"},
     "subtitleFontWeight": "lighter",
     "subtitlePadding": 10
   },
@@ -528,11 +528,11 @@
       "name": "image-facsimile",
       "encode": {
         "enter": {
-          "url": {"signal": "fascimileUrl"},
+          "url": {"signal": "facsimileUrl"},
           "x": {"signal": "-width/2"},
           "y": {"signal": "-height/2-30"}
         },
-        "update": {"opacity": {"signal": "fascimileOpacity"}}
+        "update": {"opacity": {"signal": "facsimileOpacity"}}
       }
     },
     {
