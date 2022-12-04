@@ -12,18 +12,44 @@
   "width": 400,
   "height": 400,
   "autosize": "pad",
-  "padding": {"bottom": 40, "left": 10, "right": 40, "top": 10},
-  "background": "#FFF9FB",
+  "padding": {"bottom": 40, "left": 10, "right": 40, "top": 20},
+  "background": "#EFDFC5",
   "data": [
     {
       "name": "dataset-csv",
       "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/nightingale-rose/nightingale-rose-data.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","}
     },
-    {"name": "dataset", "source": "dataset-csv"},
+    {
+      "name": "dataset",
+      "source": "dataset-csv",
+      "transform": [
+        {"type": "identifier", "as": "id1"},
+        {
+          "type": "formula",
+          "as": "id2",
+          "expr": "datum.id1==1||datum.id1==13?datum.id1+12-1:datum.id1-1"
+        },
+        {"type": "formula", "as": "Chart", "expr": "datum.id1<=12?1:2"}
+      ]
+    },
+    {
+      "name": "dataset2",
+      "source": "dataset",
+      "transform": [
+        {
+          "type": "lookup",
+          "from": "dataset",
+          "key": "id1",
+          "fields": ["id2"],
+          "values": ["Disease", "Wounds", "Other"],
+          "as": ["Disease2", "Wounds2", "Other2"]
+        }
+      ]
+    },
     {
       "name": "dataset-chart-1",
-      "source": "dataset",
+      "source": "dataset2",
       "transform": [
         {"type": "filter", "expr": "datum.Chart==1"},
         {
@@ -35,7 +61,7 @@
     },
     {
       "name": "dataset-chart-2",
-      "source": "dataset",
+      "source": "dataset2",
       "transform": [
         {"type": "filter", "expr": "datum.Chart==2"},
         {
@@ -51,22 +77,55 @@
     }
   ],
   "signals": [
-    {"name": "radius", "value": "340"},
+    {
+      "name": "fascimileUrl",
+      "description": "Original chart",
+      "value": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/nightingale-rose/nightingale-facsimile.png"
+    },
+    {
+      "name": "fascimileOpacity",
+      "value": 1,
+      "on": [
+        {
+          "events": {"source": "view", "type": "click"},
+          "update": "1-fascimileOpacity"
+        }
+      ]
+    },
+    {
+      "name": "clicks",
+      "value": 0,
+      "on": [
+        {"events": {"source": "view", "type": "click"}, "update": "clicks+1"}
+      ]
+    },
+    {"name": "radius", "value": 330},
+    {"name": "positionX", "value": -8},
+    {"name": "positionY", "value": 12},
     {"name": "colorBlue", "value": "#C8C8E8"},
     {"name": "colorPink", "value": "#FFC0CB"},
     {"name": "colorBlack", "value": "#6c6e6a"},
     {"name": "colorBlueOutline", "value": "#7474E8"},
-    {"name": "colorPinkOutline", "value": "#FF8095"},
+    {"name": "colorPinkOutline", "value": "#FF3355"},
     {"name": "colorBlackOutline", "value": "#26331A"},
+    {"name": "colorChartTitles", "value": "#333333"},
     {"name": "colorLabels", "value": "#333333"},
     {"name": "colorText", "value": "#8A8A8A"},
-    {"name": "colorChartTitles", "value": "#333333"}
+    {"name": "fontTitle", "value": "Harrington"},
+    {"name": "fontSubtitle", "value": "Tahoma"},
+    {"name": "fontSubtitle2", "value": "Rockwell"},
+    {"name": "fontText", "value": "Vivaldi"},
+    {"name": "strokeOpacityOutline", "value": 0.7},
+    {"name": "strokeWidthOutline", "value": 2}
   ],
   "scales": [
     {
       "name": "scaleRadius",
       "type": "sqrt",
-      "domain": {"data": "dataset-combined", "field": "Disease"},
+      "domain": {
+        "data": "dataset-combined",
+        "fields": ["Disease", "Wounds", "Other"]
+      },
       "zero": true,
       "range": [0, {"signal": "radius"}]
     }
@@ -75,67 +134,23 @@
     "text": "DIAGRAM of the CAUSES of MORTALITY",
     "dy": 70,
     "color": {"signal": "colorChartTitles"},
-    "font": "Harrington",
-    "fontSize": 22,
+    "font": {"signal": "fontTitle"},
+    "fontSize": {"signal": "fascimileOpacity==1?0:21"},
     "subtitle": "IN THE ARMY IN THE EAST",
     "subtitleColor": {"signal": "colorChartTitles"},
-    "subtitleFont": "Tahoma",
-    "subtitleFontSize": 18,
+    "subtitleFont": {"signal": "fontSubtitle"},
+    "subtitleFontSize": {"signal": "fascimileOpacity==1?0:18"},
     "subtitleFontWeight": "lighter",
-    "subtitlePadding": 12
+    "subtitlePadding": 10
   },
   "marks": [
-    {
-      "type": "image",
-      "name": "image-facsimile",
-      "encode": {
-        "enter": {
-          "url": {
-            "value": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/nightingale-rose/nightingale-facsimile.png"
-          },
-          "x": {"signal": "-width/2"},
-          "y": {"signal": "-height/2-30"},
-          "opacity": {"value": 0}
-        }
-      }
-    },
-    {
-      "type": "rule",
-      "name": "rule-years-connector1",
-      "encode": {
-        "enter": {
-          "opacity": {"signal": "0.3"},
-          "strokeWidth": {"signal": "2"},
-          "strokeDash": {"signal": "[1,0,3]"},
-          "x": {"signal": "-140"},
-          "y": {"signal": "0"},
-          "x2": {"signal": "105"},
-          "y2": {"signal": "105"}
-        }
-      }
-    },
-    {
-      "type": "rule",
-      "name": "rule-years-connector2",
-      "encode": {
-        "enter": {
-          "opacity": {"signal": "0.3"},
-          "strokeWidth": {"signal": "2"},
-          "strokeDash": {"signal": "[1,0,3]"},
-          "x": {"signal": "105"},
-          "y": {"signal": "105"},
-          "x2": {"signal": "350"},
-          "y2": {"signal": "0"}
-        }
-      }
-    },
     {
       "type": "group",
       "layout": {
         "align": "all",
         "bounds": "full",
         "columns": {"signal": "2"},
-        "padding": {"signal": "110"}
+        "padding": {"signal": "125"}
       },
       "marks": [
         {
@@ -148,20 +163,22 @@
             }
           },
           "title": {
-            "anchor": "middle",
+            "anchor": "start",
             "baseline": "middle",
-            "color": {"signal": "colorChartTitles"},
+            "dy": {"signal": "data('dataset-year')[0].Chart==1?-5:5"},
+            "dx": {"signal": "data('dataset-year')[0].Chart==1?330:125"},
             "text": {"signal": "data('dataset-year')[0].Chart+'.'"},
-            "dx": {"signal": "data('dataset-year')[0].Chart==1?0:-100"},
-            "align": "left",
+            "align": "center",
+            "color": {"signal": "colorChartTitles"},
+            "fontSize": 12,
             "subtitleColor": {"signal": "colorChartTitles"},
-            "subtitleFontWeight": "400",
-            "subtitleFont": "Rockwell",
+            "subtitleFont": {"signal": "fontSubtitle2"},
             "subtitleFontSize": 15,
+            "subtitleFontWeight": "400",
             "subtitle": {
               "signal": "data('dataset-year')[0].Chart==1?'APRIL 1854 to MARCH 1855':'APRIL 1855 to MARCH 1856'"
             },
-            "subtitlePadding": 10
+            "subtitlePadding": 5
           },
           "marks": [
             {
@@ -170,8 +187,8 @@
               "from": {"data": "dataset-year"},
               "encode": {
                 "enter": {
-                  "x": {"field": {"group": "width"}, "mult": 0.5},
-                  "y": {"field": {"group": "height"}, "mult": 0.5},
+                  "x": {"signal": "positionX"},
+                  "y": {"signal": "positionY"},
                   "startAngle": {"signal": "datum.startAngle"},
                   "endAngle": {"signal": "datum.endAngle"},
                   "innerRadius": {"value": 0},
@@ -194,9 +211,8 @@
               "from": {"data": "dataset-year"},
               "encode": {
                 "enter": {
-                  "dx": {"signal": "200"},
-                  "x": {"field": {"group": "width"}, "mult": 0.5},
-                  "y": {"field": {"group": "height"}, "mult": 0.5},
+                  "x": {"signal": "positionX"},
+                  "y": {"signal": "positionY"},
                   "startAngle": {"signal": "datum.startAngle"},
                   "endAngle": {"signal": "datum.endAngle"},
                   "innerRadius": {"value": 0},
@@ -219,9 +235,8 @@
               "from": {"data": "dataset-year"},
               "encode": {
                 "enter": {
-                  "dx": {"signal": "200"},
-                  "x": {"field": {"group": "width"}, "mult": 0.5},
-                  "y": {"field": {"group": "height"}, "mult": 0.5},
+                  "x": {"signal": "positionX"},
+                  "y": {"signal": "positionY"},
                   "startAngle": {"signal": "datum.startAngle"},
                   "endAngle": {"signal": "datum.endAngle"},
                   "innerRadius": {"value": 0},
@@ -244,23 +259,21 @@
               "from": {"data": "dataset-year"},
               "encode": {
                 "enter": {
-                  "x": {"field": {"group": "width"}, "mult": 0.5},
-                  "y": {"field": {"group": "height"}, "mult": 0.5},
+                  "x": {"signal": "positionX"},
+                  "y": {"signal": "positionY"},
                   "startAngle": {"signal": "datum.startAngle"},
                   "endAngle": {"signal": "datum.endAngle"},
                   "innerRadius": {
                     "scale": "scaleRadius",
-                    "signal": "datum.Chart==1?datum.Disease:max(datum.Disease,datum.Wounds,datum.Other)"
+                    "signal": "datum.Disease"
                   },
                   "outerRadius": {
                     "scale": "scaleRadius",
-                    "signal": "datum.Chart==1?datum.Disease:max(datum.Disease,datum.Wounds,datum.Other)"
+                    "signal": "datum.Disease"
                   },
-                  "strokeOpacity": {"signal": "0.7"},
-                  "strokeWidth": {"signal": "1.5"},
-                  "stroke": {
-                    "signal": "datum.Chart==1?colorBlueOutline:(datum.Disease>datum.Wounds&&datum.Disease>datum.Other)?colorBlueOutline:(datum.Wounds>datum.Disease&&datum.Wounds>datum.Other)?colorPinkOutline:colorBlackOutline"
-                  }
+                  "strokeOpacity": {"signal": "strokeOpacityOutline"},
+                  "strokeWidth": {"signal": "strokeWidthOutline"},
+                  "stroke": {"signal": "colorBlueOutline"}
                 }
               }
             },
@@ -270,24 +283,21 @@
               "from": {"data": "dataset-year"},
               "encode": {
                 "enter": {
-                  "dx": {"signal": "200"},
-                  "x": {"field": {"group": "width"}, "mult": 0.5},
-                  "y": {"field": {"group": "height"}, "mult": 0.5},
+                  "x": {"signal": "positionX"},
+                  "y": {"signal": "positionY"},
                   "startAngle": {"signal": "datum.startAngle"},
                   "endAngle": {"signal": "datum.endAngle"},
                   "innerRadius": {
                     "scale": "scaleRadius",
-                    "signal": "datum.Chart==1?datum.Other:(datum.Disease>datum.Wounds&&datum.Disease<datum.Other||datum.Disease<datum.Wounds&&datum.Disease>datum.Other)?datum.Disease:(datum.Wounds>datum.Disease&&datum.Wounds<datum.Other||datum.Wounds<datum.Disease&&datum.Wounds>datum.Other)?datum.Wounds:datum.Other"
+                    "signal": "datum.Wounds"
                   },
                   "outerRadius": {
                     "scale": "scaleRadius",
-                    "signal": "datum.Chart==1?datum.Other:(datum.Disease>datum.Wounds&&datum.Disease<datum.Other||datum.Disease<datum.Wounds&&datum.Disease>datum.Other)?datum.Disease:(datum.Wounds>datum.Disease&&datum.Wounds<datum.Other||datum.Wounds<datum.Disease&&datum.Wounds>datum.Other)?datum.Wounds:datum.Other"
+                    "signal": "datum.Wounds"
                   },
-                  "strokeOpacity": {"value": 0.7},
-                  "strokeWidth": {"value": 1.5},
-                  "stroke": {
-                    "signal": "datum.Chart==1?colorBlackOutline:(datum.Disease>datum.Wounds&&datum.Disease<datum.Other||datum.Disease<datum.Wounds&&datum.Disease>datum.Other)?colorBlueOutline:(datum.Wounds>datum.Disease&&datum.Wounds<datum.Other||datum.Wounds<datum.Disease&&datum.Wounds>datum.Other)?colorPinkOutline:colorBlackOutline"
-                  }
+                  "strokeOpacity": {"signal": "strokeOpacityOutline"},
+                  "strokeWidth": {"signal": "strokeWidthOutline"},
+                  "stroke": {"signal": "colorPinkOutline"}
                 }
               }
             },
@@ -297,24 +307,21 @@
               "from": {"data": "dataset-year"},
               "encode": {
                 "enter": {
-                  "dx": {"signal": "200"},
-                  "x": {"field": {"group": "width"}, "mult": 0.5},
-                  "y": {"field": {"group": "height"}, "mult": 0.5},
+                  "x": {"signal": "positionX"},
+                  "y": {"signal": "positionY"},
                   "startAngle": {"signal": "datum.startAngle"},
                   "endAngle": {"signal": "datum.endAngle"},
                   "innerRadius": {
                     "scale": "scaleRadius",
-                    "signal": "datum.Chart==1?datum.Wounds:(datum.Disease<datum.Other&&datum.Disease<datum.Wounds)?datum.Disease:(datum.Wounds<datum.Disease&&datum.Wounds<datum.Other)?datum.Wounds:datum.Other"
+                    "signal": "datum.Other"
                   },
                   "outerRadius": {
                     "scale": "scaleRadius",
-                    "signal": "datum.Chart==1?datum.Wounds:(datum.Disease<datum.Other&&datum.Disease<datum.Wounds)?datum.Disease:(datum.Wounds<datum.Disease&&datum.Wounds<datum.Other)?datum.Wounds:datum.Other"
+                    "signal": "datum.Other"
                   },
-                  "strokeOpacity": {"value": 0.7},
-                  "strokeWidth": {"value": 1.5},
-                  "stroke": {
-                    "signal": "datum.Chart==1?colorPinkOutline:(datum.Disease<datum.Other&&datum.Disease<datum.Wounds)?colorBlueOutline:(datum.Wounds<datum.Disease&&datum.Wounds<datum.Other)?colorPinkOutline:colorBlackOutline"
-                  }
+                  "strokeOpacity": {"signal": "strokeOpacityOutline"},
+                  "strokeWidth": {"signal": "strokeWidthOutline"},
+                  "stroke": {"signal": "colorBlackOutline"}
                 }
               }
             },
@@ -324,23 +331,21 @@
               "from": {"data": "dataset-year"},
               "encode": {
                 "enter": {
-                  "x": {"field": {"group": "width"}, "mult": 0.5},
-                  "y": {"field": {"group": "height"}, "mult": 0.5},
+                  "x": {"signal": "positionX"},
+                  "y": {"signal": "positionY"},
                   "startAngle": {"signal": "datum.startAngle"},
                   "endAngle": {"signal": "datum.startAngle"},
                   "innerRadius": {
                     "scale": "scaleRadius",
-                    "signal": "datum.Chart==1?datum.Disease1:max(datum.Disease1,datum.Wounds1,datum.Other1)"
+                    "signal": "datum.Disease"
                   },
                   "outerRadius": {
                     "scale": "scaleRadius",
-                    "signal": "datum.Chart==1?datum.Disease2:max(datum.Disease2,datum.Wounds2,datum.Other2)"
+                    "signal": "datum.Disease2"
                   },
-                  "strokeOpacity": {"signal": "0.7"},
-                  "strokeWidth": {"signal": "2"},
-                  "stroke": {
-                    "signal": "datum.Chart==1?colorBlueOutline:(datum.Disease>datum.Wounds&&datum.Disease>datum.Other)?colorBlueOutline:(datum.Wounds>datum.Disease&&datum.Wounds>datum.Other)?colorPinkOutline:colorBlackOutline"
-                  }
+                  "strokeOpacity": {"signal": "strokeOpacityOutline"},
+                  "strokeWidth": {"signal": "strokeWidthOutline"},
+                  "stroke": {"signal": "colorBlueOutline"}
                 }
               }
             },
@@ -350,24 +355,21 @@
               "from": {"data": "dataset-year"},
               "encode": {
                 "enter": {
-                  "dx": {"signal": "200"},
-                  "x": {"field": {"group": "width"}, "mult": 0.5},
-                  "y": {"field": {"group": "height"}, "mult": 0.5},
+                  "x": {"signal": "positionX"},
+                  "y": {"signal": "positionY"},
                   "startAngle": {"signal": "datum.startAngle"},
                   "endAngle": {"signal": "datum.startAngle"},
                   "innerRadius": {
                     "scale": "scaleRadius",
-                    "signal": "datum.Chart==1?datum.Other1:(datum.Disease>datum.Wounds&&datum.Disease<datum.Other||datum.Disease<datum.Wounds&&datum.Disease>datum.Other)?datum.Disease1:(datum.Wounds>datum.Disease&&datum.Wounds<datum.Other||datum.Wounds<datum.Disease&&datum.Wounds>datum.Other)?datum.Wounds1:datum.Other1"
+                    "signal": "datum.Wounds"
                   },
                   "outerRadius": {
                     "scale": "scaleRadius",
-                    "signal": "datum.Chart==1?datum.Other2:(datum.Disease>datum.Wounds&&datum.Disease<datum.Other||datum.Disease<datum.Wounds&&datum.Disease>datum.Other)?datum.Disease2:(datum.Wounds>datum.Disease&&datum.Wounds<datum.Other||datum.Wounds<datum.Disease&&datum.Wounds>datum.Other)?datum.Wounds2:datum.Other2"
+                    "signal": "datum.Wounds2"
                   },
-                  "strokeOpacity": {"value": 0.7},
-                  "strokeWidth": {"value": 2},
-                  "stroke": {
-                    "signal": "datum.Chart==1?colorBlackOutline:(datum.Disease>datum.Wounds&&datum.Disease<datum.Other||datum.Disease<datum.Wounds&&datum.Disease>datum.Other)?colorBlueOutline:(datum.Wounds>datum.Disease&&datum.Wounds<datum.Other||datum.Wounds<datum.Disease&&datum.Wounds>datum.Other)?colorPinkOutline:colorBlackOutline"
-                  }
+                  "strokeOpacity": {"signal": "strokeOpacityOutline"},
+                  "strokeWidth": {"signal": "strokeWidthOutline"},
+                  "stroke": {"signal": "colorPinkOutline"}
                 }
               }
             },
@@ -377,24 +379,21 @@
               "from": {"data": "dataset-year"},
               "encode": {
                 "enter": {
-                  "dx": {"signal": "200"},
-                  "x": {"field": {"group": "width"}, "mult": 0.5},
-                  "y": {"field": {"group": "height"}, "mult": 0.5},
+                  "x": {"signal": "positionX"},
+                  "y": {"signal": "positionY"},
                   "startAngle": {"signal": "datum.startAngle"},
                   "endAngle": {"signal": "datum.startAngle"},
                   "innerRadius": {
                     "scale": "scaleRadius",
-                    "signal": "datum.Chart==1?datum.Wounds1:(datum.Disease<datum.Other&&datum.Disease<datum.Wounds)?datum.Disease1:(datum.Wounds<datum.Disease&&datum.Wounds<datum.Other)?datum.Wounds1:datum.Other1"
+                    "signal": "datum.Other"
                   },
                   "outerRadius": {
                     "scale": "scaleRadius",
-                    "signal": "datum.Chart==1?datum.Wounds2:(datum.Disease<datum.Other&&datum.Disease<datum.Wounds)?datum.Disease2:(datum.Wounds<datum.Disease&&datum.Wounds<datum.Other)?datum.Wounds2:datum.Other2"
+                    "signal": "datum.Other2"
                   },
-                  "strokeOpacity": {"value": 0.7},
-                  "strokeWidth": {"value": 2},
-                  "stroke": {
-                    "signal": "datum.Chart==1?colorPinkOutline:(datum.Disease<datum.Other&&datum.Disease<datum.Wounds)?colorBlueOutline:(datum.Wounds<datum.Disease&&datum.Wounds<datum.Other)?colorPinkOutline:colorBlackOutline"
-                  }
+                  "strokeOpacity": {"signal": "strokeOpacityOutline"},
+                  "strokeWidth": {"signal": "strokeWidthOutline"},
+                  "stroke": {"signal": "colorBlackOutline"}
                 }
               }
             },
@@ -405,8 +404,8 @@
               "encode": {
                 "enter": {
                   "fontSize": {"signal": "datum.Chart==1?11:9"},
-                  "x": {"field": {"group": "width"}, "mult": 0.5},
-                  "y": {"field": {"group": "height"}, "mult": 0.5},
+                  "x": {"signal": "positionX"},
+                  "y": {"signal": "positionY"},
                   "radius": {
                     "scale": "scaleRadius",
                     "signal": "pow(datum.Disease,1/0.98)<110?110:pow(datum.Disease,1/0.98)"
@@ -431,23 +430,104 @@
       ]
     },
     {
+      "type": "rule",
+      "name": "rule-years-connector1",
+      "encode": {
+        "enter": {
+          "opacity": {"signal": "0.3"},
+          "strokeWidth": {"signal": "2"},
+          "strokeDash": {"signal": "[1,0,3]"},
+          "x": {"signal": "-145"},
+          "y": {"signal": "10"},
+          "x2": {"signal": "105"},
+          "y2": {"signal": "115"}
+        }
+      }
+    },
+    {
+      "type": "rule",
+      "name": "rule-years-connector2",
+      "encode": {
+        "enter": {
+          "opacity": {"signal": "0.3"},
+          "strokeWidth": {"signal": "2"},
+          "strokeDash": {"signal": "[1,0,3]"},
+          "x": {"signal": "105"},
+          "y": {"signal": "115"},
+          "x2": {"signal": "350"},
+          "y2": {"signal": "10"}
+        }
+      }
+    },
+    {
       "type": "text",
       "name": "text-description",
       "encode": {
         "enter": {
           "fill": {"signal": "colorText"},
           "opacity": {"value": 1},
-          "font": {"value": "Vivaldi"},
-          "fontSize": {"value": 18},
+          "font": {"signal": "fontText"},
+          "fontSize": {"value": 17},
           "fontWeight": {"value": "bolder"},
           "x": {"signal": "-width*0.4"},
-          "y": {"value": 180},
+          "y": {"value": 190},
           "width": {"value": 110},
           "lineBreak": {"value": "\n"},
           "text": {
             "value": "The Areas of the blue, red, & black wedges are each measured from\nthe centre as the common vertex.\nThe blue wedges measured from the centre of the circle represent area\n   for area the deaths from Preventable or Mitigable Zymotic diseases;the\n   red wedges measured from the centre the deaths from wounds, & the\n   black wedges measured from the centre the deaths from all other causes.\nThe black line across the red triangle in Nov. 1854 marks the boundary\n   of the deaths from all other causes during the month.\nIn October 1854, & April 1855, the black area coincides with the red,\n   in January & February 1856, the blue coincides with the black.\nThe entire areas may be compared by following the blue, the red, & the\n   black lines enclosing them."
           }
         }
+      }
+    },
+    {
+      "type": "text",
+      "name": "text-author",
+      "encode": {
+        "enter": {
+          "fill": {"signal": "colorText"},
+          "opacity": {"value": 1},
+          "font": {"signal": "fontText"},
+          "fontSize": {"value": 14},
+          "fontWeight": {"value": "bolder"},
+          "x": {"signal": "600"},
+          "y": {"value": 420},
+          "width": {"value": 110},
+          "lineBreak": {"value": "\n"},
+          "text": {"value": "Vega Implementation: Andrzej Leszkiewicz"}
+        }
+      }
+    },
+    {
+      "type": "image",
+      "name": "image-facsimile",
+      "encode": {
+        "enter": {
+          "url": {"signal": "fascimileUrl"},
+          "x": {"signal": "-width/2"},
+          "y": {"signal": "-height/2-30"}
+        },
+        "update": {"opacity": {"signal": "fascimileOpacity"}}
+      }
+    },
+    {
+      "type": "text",
+      "name": "text-helper",
+      "encode": {
+        "enter": {
+          "align": {"value": "left"},
+          "baseline": {"value": "top"},
+          "x": {"signal": "-width/2"},
+          "y": {"signal": "-height/2-30"},
+          "fill": {"signal": "'red'"},
+          "opacity": {"value": 1},
+          "font": {"signal": "fontSubtitle2"},
+          "fontWeight": {"value": "lighter"},
+          "lineBreak": {"value": "\n"},
+          "text": {
+            "value": "Click anywere on the chart to switch between \nthe original chart and the reproduction"
+          }
+        },
+        "update": {"fontSize": {"signal": "clicks<=2?14:0"}}
       }
     }
   ]
