@@ -541,10 +541,10 @@
       "name": "text-helper",
       "encode": {
         "enter": {
-          "align": {"value": "left"},
+          "align": {"value": "center"},
           "baseline": {"value": "top"},
-          "x": {"signal": "-width/2"},
-          "y": {"signal": "-height/2"},
+          "x": {"signal": "300"},
+          "y": {"signal": "-150"},
           "fill": {"signal": "'red'"},
           "opacity": {"value": 1},
           "font": {"signal": "fontSubtitle2"},
