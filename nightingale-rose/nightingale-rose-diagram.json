@@ -399,6 +399,33 @@
             },
             {
               "type": "text",
+              "name": "text-location",
+              "from": {"data": "dataset-year"},
+              "encode": {
+                "enter": {
+                  "fontSize": {"signal": "9"},
+                  "x": {"signal": "positionX-7"},
+                  "y": {"signal": "positionY+7"},
+                  "radius": {
+                    "scale": "scaleRadius",
+                    "signal": "pow(datum.Disease,1/0.98)<110?110:pow(datum.Disease,1/0.98)/(datum.id1==4?3:0.7)"
+                  },
+                  "theta": {"signal": "datum.startAngle"},
+                  "angle": {"signal": "datum.id1==4?270:datum.id1==7?0:0"},
+                  "fill": {"signal": "colorLabels"},
+                  "fontWeight": {"value": "bolder"},
+                  "fontStyle": {"value": "italic"},
+                  "align": {"value": "center"},
+                  "baseline": {"value": "middle"},
+                  "lineBreak": {"value": "\n"},
+                  "text": {
+                    "signal": "datum.id1==4?'BULGARIA':datum.id1==7?'CRIMEA':''"
+                  }
+                }
+              }
+            },
+            {
+              "type": "text",
               "name": "text-month",
               "from": {"data": "dataset-year"},
               "encode": {
