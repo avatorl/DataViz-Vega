@@ -197,7 +197,7 @@
                     "signal": "datum.Chart==1?datum.Disease:max(datum.Disease,datum.Wounds,datum.Other)"
                   },
                   "stroke": {"value": "gray"},
-                  "strokeOpacity": {"value": 0.1},
+                  "strokeOpacity": {"value": 0.2},
                   "fill": {
                     "signal": "datum.Chart==1?colorBlue:(datum.Disease>datum.Wounds&&datum.Disease>datum.Other)?colorBlue:(datum.Wounds>datum.Disease&&datum.Wounds>datum.Other)?colorPink:colorBlack"
                   },
@@ -221,7 +221,7 @@
                     "signal": "datum.Chart==1?datum.Other:(datum.Disease>datum.Wounds&&datum.Disease<datum.Other||datum.Disease<datum.Wounds&&datum.Disease>datum.Other)?datum.Disease:(datum.Wounds>datum.Disease&&datum.Wounds<datum.Other||datum.Wounds<datum.Disease&&datum.Wounds>datum.Other)?datum.Wounds:datum.Other"
                   },
                   "stroke": {"value": "gray"},
-                  "strokeOpacity": {"value": 0.1},
+                  "strokeOpacity": {"value": 0.2},
                   "fill": {
                     "signal": "datum.Chart==1?colorBlack:(datum.Disease>datum.Wounds&&datum.Disease<datum.Other||datum.Disease<datum.Wounds&&datum.Disease>datum.Other)?colorBlue:(datum.Wounds>datum.Disease&&datum.Wounds<datum.Other||datum.Wounds<datum.Disease&&datum.Wounds>datum.Other)?colorPink:colorBlack"
                   },
@@ -245,7 +245,7 @@
                     "signal": "datum.Chart==1?datum.Wounds:(datum.Disease<datum.Other&&datum.Disease<datum.Wounds)?datum.Disease:(datum.Wounds<datum.Disease&&datum.Wounds<datum.Other)?datum.Wounds:datum.Other"
                   },
                   "stroke": {"value": "gray"},
-                  "strokeOpacity": {"value": 0.1},
+                  "strokeOpacity": {"value": 0.2},
                   "fill": {
                     "signal": "datum.Chart==1?colorPink:(datum.Disease<datum.Other&&datum.Disease<datum.Wounds)?colorBlue:(datum.Wounds<datum.Disease&&datum.Wounds<datum.Other)?colorPink:colorBlack"
                   },
