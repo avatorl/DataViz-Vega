@@ -102,9 +102,11 @@
     {"name": "radius", "value": 330},
     {"name": "positionX", "value": -8},
     {"name": "positionY", "value": 12},
+    {"name": "colorRadialLines", "value": "#AAAAAA"},
+    {"name": "strokeOpacityRadialLines", "value": 0.3},
     {"name": "colorBlue", "value": "#C8C8E8"},
     {"name": "colorPink", "value": "#FFC0CB"},
-    {"name": "colorBlack", "value": "#6c6e6a"},
+    {"name": "colorBlack", "value": "#7C7C7C"},
     {"name": "colorBlueOutline", "value": "#7474E8"},
     {"name": "colorPinkOutline", "value": "#FF3355"},
     {"name": "colorBlackOutline", "value": "#26331A"},
@@ -195,8 +197,8 @@
                     "scale": "scaleRadius",
                     "signal": "datum.Chart==1?datum.Diseases:max(datum.Diseases,datum.Wounds,datum.Other)"
                   },
-                  "stroke": {"value": "gray"},
-                  "strokeOpacity": {"value": 0.2},
+                  "stroke": {"signal": "colorRadialLines"},
+                  "strokeOpacity": {"signal": "strokeOpacityRadialLines"},
                   "fill": {
                     "signal": "datum.Chart==1?colorBlue:(datum.Diseases>datum.Wounds&&datum.Diseases>datum.Other)?colorBlue:(datum.Wounds>datum.Diseases&&datum.Wounds>datum.Other)?colorPink:colorBlack"
                   },
@@ -219,8 +221,8 @@
                     "scale": "scaleRadius",
                     "signal": "datum.Chart==1?datum.Other:(datum.Diseases>datum.Wounds&&datum.Diseases<datum.Other||datum.Diseases<datum.Wounds&&datum.Diseases>datum.Other)?datum.Diseases:(datum.Wounds>datum.Diseases&&datum.Wounds<datum.Other||datum.Wounds<datum.Diseases&&datum.Wounds>datum.Other)?datum.Wounds:datum.Other"
                   },
-                  "stroke": {"value": "gray"},
-                  "strokeOpacity": {"value": 0.2},
+                  "stroke": {"signal": "colorRadialLines"},
+                  "strokeOpacity": {"signal": "strokeOpacityRadialLines"},
                   "fill": {
                     "signal": "datum.Chart==1?colorBlack:(datum.Diseases>datum.Wounds&&datum.Diseases<datum.Other||datum.Diseases<datum.Wounds&&datum.Diseases>datum.Other)?colorBlue:(datum.Wounds>datum.Diseases&&datum.Wounds<datum.Other||datum.Wounds<datum.Diseases&&datum.Wounds>datum.Other)?colorPink:colorBlack"
                   },
@@ -243,8 +245,8 @@
                     "scale": "scaleRadius",
                     "signal": "datum.Chart==1?datum.Wounds:(datum.Diseases<datum.Other&&datum.Diseases<datum.Wounds)?datum.Diseases:(datum.Wounds<datum.Diseases&&datum.Wounds<datum.Other)?datum.Wounds:datum.Other"
                   },
-                  "stroke": {"value": "gray"},
-                  "strokeOpacity": {"value": 0.2},
+                  "stroke": {"signal": "colorRadialLines"},
+                  "strokeOpacity": {"signal": "strokeOpacityRadialLines"},
                   "fill": {
                     "signal": "datum.Chart==1?colorPink:(datum.Diseases<datum.Other&&datum.Diseases<datum.Wounds)?colorBlue:(datum.Wounds<datum.Diseases&&datum.Wounds<datum.Other)?colorPink:colorBlack"
                   },
