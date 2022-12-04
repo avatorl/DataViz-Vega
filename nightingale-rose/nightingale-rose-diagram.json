@@ -553,7 +553,7 @@
             "value": "Click anywere on the chart to switch between \nthe original chart and the reproduction"
           }
         },
-        "update": {"fontSize": {"signal": "clicks<=2?14:0"}}
+        "update": {"fontSize": {"signal": "clicks<2?14:0"}}
       }
     }
   ]
