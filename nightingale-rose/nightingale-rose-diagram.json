@@ -84,7 +84,7 @@
     },
     {
       "name": "fascimileOpacity",
-      "value": 0,
+      "value": 0.5,
       "on": [
         {
           "events": {"source": "view", "type": "click"},
@@ -165,8 +165,8 @@
           "title": {
             "anchor": "start",
             "baseline": "middle",
-            "dy": {"signal": "data('dataset-year')[0].Chart==1?-5:5"},
-            "dx": {"signal": "data('dataset-year')[0].Chart==1?330:125"},
+            "dy": {"signal": "data('dataset-year')[0].Chart==1?33:5"},
+            "dx": {"signal": "data('dataset-year')[0].Chart==1?320:160"},
             "text": {"signal": "data('dataset-year')[0].Chart+'.'"},
             "align": "center",
             "color": {"signal": "colorChartTitles"},
@@ -516,11 +516,11 @@
           "font": {"signal": "fontText"},
           "fontSize": {"value": 14},
           "fontWeight": {"value": "bolder"},
-          "x": {"signal": "600"},
+          "x": {"signal": "650"},
           "y": {"value": 420},
           "width": {"value": 110},
           "lineBreak": {"value": "\n"},
-          "text": {"value": "Vega Implementation: Andrzej Leszkiewicz"}
+          "text": {"value": "Vega Version: Andrzej Leszkiewicz"}
         }
       }
     },
@@ -544,7 +544,7 @@
           "align": {"value": "left"},
           "baseline": {"value": "top"},
           "x": {"signal": "-width/2"},
-          "y": {"signal": "-height/2-30"},
+          "y": {"signal": "-height/2"},
           "fill": {"signal": "'red'"},
           "opacity": {"value": 1},
           "font": {"signal": "fontSubtitle2"},
