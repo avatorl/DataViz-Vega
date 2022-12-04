@@ -84,7 +84,7 @@
     },
     {
       "name": "fascimileOpacity",
-      "value": 1,
+      "value": 0,
       "on": [
         {
           "events": {"source": "view", "type": "click"},
