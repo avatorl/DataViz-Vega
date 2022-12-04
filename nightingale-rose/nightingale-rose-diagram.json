@@ -543,7 +543,7 @@
           "align": {"value": "center"},
           "baseline": {"value": "top"},
           "x": {"signal": "300"},
-          "y": {"signal": "-150"},
+          "y": {"signal": "-140"},
           "fill": {"signal": "'red'"},
           "opacity": {"value": 0.7},
           "font": {"signal": "fontSubtitle2"},
