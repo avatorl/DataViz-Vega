@@ -42,8 +42,8 @@
           "from": "dataset",
           "key": "id1",
           "fields": ["id2"],
-          "values": ["Disease", "Wounds", "Other"],
-          "as": ["Disease2", "Wounds2", "Other2"]
+          "values": ["Diseases", "Wounds", "Other"],
+          "as": ["Diseases2", "Wounds2", "Other2"]
         }
       ]
     },
@@ -124,7 +124,7 @@
       "type": "sqrt",
       "domain": {
         "data": "dataset-combined",
-        "fields": ["Disease", "Wounds", "Other"]
+        "fields": ["Diseases", "Wounds", "Other"]
       },
       "zero": true,
       "range": [0, {"signal": "radius"}]
@@ -148,7 +148,6 @@
       "type": "group",
       "layout": {
         "align": "all",
-        "bounds": "full",
         "columns": {"signal": "2"},
         "padding": {"signal": "125"}
       },
@@ -194,12 +193,12 @@
                   "innerRadius": {"value": 0},
                   "outerRadius": {
                     "scale": "scaleRadius",
-                    "signal": "datum.Chart==1?datum.Disease:max(datum.Disease,datum.Wounds,datum.Other)"
+                    "signal": "datum.Chart==1?datum.Diseases:max(datum.Diseases,datum.Wounds,datum.Other)"
                   },
                   "stroke": {"value": "gray"},
                   "strokeOpacity": {"value": 0.2},
                   "fill": {
-                    "signal": "datum.Chart==1?colorBlue:(datum.Disease>datum.Wounds&&datum.Disease>datum.Other)?colorBlue:(datum.Wounds>datum.Disease&&datum.Wounds>datum.Other)?colorPink:colorBlack"
+                    "signal": "datum.Chart==1?colorBlue:(datum.Diseases>datum.Wounds&&datum.Diseases>datum.Other)?colorBlue:(datum.Wounds>datum.Diseases&&datum.Wounds>datum.Other)?colorPink:colorBlack"
                   },
                   "fillOpacity": {"value": 1}
                 }
@@ -218,12 +217,12 @@
                   "innerRadius": {"value": 0},
                   "outerRadius": {
                     "scale": "scaleRadius",
-                    "signal": "datum.Chart==1?datum.Other:(datum.Disease>datum.Wounds&&datum.Disease<datum.Other||datum.Disease<datum.Wounds&&datum.Disease>datum.Other)?datum.Disease:(datum.Wounds>datum.Disease&&datum.Wounds<datum.Other||datum.Wounds<datum.Disease&&datum.Wounds>datum.Other)?datum.Wounds:datum.Other"
+                    "signal": "datum.Chart==1?datum.Other:(datum.Diseases>datum.Wounds&&datum.Diseases<datum.Other||datum.Diseases<datum.Wounds&&datum.Diseases>datum.Other)?datum.Diseases:(datum.Wounds>datum.Diseases&&datum.Wounds<datum.Other||datum.Wounds<datum.Diseases&&datum.Wounds>datum.Other)?datum.Wounds:datum.Other"
                   },
                   "stroke": {"value": "gray"},
                   "strokeOpacity": {"value": 0.2},
                   "fill": {
-                    "signal": "datum.Chart==1?colorBlack:(datum.Disease>datum.Wounds&&datum.Disease<datum.Other||datum.Disease<datum.Wounds&&datum.Disease>datum.Other)?colorBlue:(datum.Wounds>datum.Disease&&datum.Wounds<datum.Other||datum.Wounds<datum.Disease&&datum.Wounds>datum.Other)?colorPink:colorBlack"
+                    "signal": "datum.Chart==1?colorBlack:(datum.Diseases>datum.Wounds&&datum.Diseases<datum.Other||datum.Diseases<datum.Wounds&&datum.Diseases>datum.Other)?colorBlue:(datum.Wounds>datum.Diseases&&datum.Wounds<datum.Other||datum.Wounds<datum.Diseases&&datum.Wounds>datum.Other)?colorPink:colorBlack"
                   },
                   "fillOpacity": {"value": 1}
                 }
@@ -242,12 +241,12 @@
                   "innerRadius": {"value": 0},
                   "outerRadius": {
                     "scale": "scaleRadius",
-                    "signal": "datum.Chart==1?datum.Wounds:(datum.Disease<datum.Other&&datum.Disease<datum.Wounds)?datum.Disease:(datum.Wounds<datum.Disease&&datum.Wounds<datum.Other)?datum.Wounds:datum.Other"
+                    "signal": "datum.Chart==1?datum.Wounds:(datum.Diseases<datum.Other&&datum.Diseases<datum.Wounds)?datum.Diseases:(datum.Wounds<datum.Diseases&&datum.Wounds<datum.Other)?datum.Wounds:datum.Other"
                   },
                   "stroke": {"value": "gray"},
                   "strokeOpacity": {"value": 0.2},
                   "fill": {
-                    "signal": "datum.Chart==1?colorPink:(datum.Disease<datum.Other&&datum.Disease<datum.Wounds)?colorBlue:(datum.Wounds<datum.Disease&&datum.Wounds<datum.Other)?colorPink:colorBlack"
+                    "signal": "datum.Chart==1?colorPink:(datum.Diseases<datum.Other&&datum.Diseases<datum.Wounds)?colorBlue:(datum.Wounds<datum.Diseases&&datum.Wounds<datum.Other)?colorPink:colorBlack"
                   },
                   "fillOpacity": {"value": 1}
                 }
@@ -265,11 +264,11 @@
                   "endAngle": {"signal": "datum.endAngle"},
                   "innerRadius": {
                     "scale": "scaleRadius",
-                    "signal": "datum.Disease"
+                    "signal": "datum.Diseases"
                   },
                   "outerRadius": {
                     "scale": "scaleRadius",
-                    "signal": "datum.Disease"
+                    "signal": "datum.Diseases"
                   },
                   "strokeOpacity": {"signal": "strokeOpacityOutline"},
                   "strokeWidth": {"signal": "strokeWidthOutline"},
@@ -337,11 +336,11 @@
                   "endAngle": {"signal": "datum.startAngle"},
                   "innerRadius": {
                     "scale": "scaleRadius",
-                    "signal": "datum.Disease"
+                    "signal": "datum.Diseases"
                   },
                   "outerRadius": {
                     "scale": "scaleRadius",
-                    "signal": "datum.Disease2"
+                    "signal": "datum.Diseases2"
                   },
                   "strokeOpacity": {"signal": "strokeOpacityOutline"},
                   "strokeWidth": {"signal": "strokeWidthOutline"},
@@ -408,7 +407,7 @@
                   "y": {"signal": "positionY+7"},
                   "radius": {
                     "scale": "scaleRadius",
-                    "signal": "pow(datum.Disease,1/0.98)<110?110:pow(datum.Disease,1/0.98)/(datum.id1==4?3:0.7)"
+                    "signal": "pow(datum.Diseases,1/0.98)<110?110:pow(datum.Diseases,1/0.98)/(datum.id1==4?3:0.7)"
                   },
                   "theta": {"signal": "datum.startAngle"},
                   "angle": {"signal": "datum.id1==4?270:datum.id1==7?0:0"},
@@ -435,7 +434,7 @@
                   "y": {"signal": "positionY"},
                   "radius": {
                     "scale": "scaleRadius",
-                    "signal": "pow(datum.Disease,1/0.98)<110?110:pow(datum.Disease,1/0.98)"
+                    "signal": "pow(datum.Diseases,1/0.98)<110?110:pow(datum.Diseases,1/0.98)"
                   },
                   "theta": {"signal": "(datum.startAngle + datum.endAngle)/2"},
                   "angle": {
@@ -501,7 +500,7 @@
           "width": {"value": 110},
           "lineBreak": {"value": "\n"},
           "text": {
-            "value": "The Areas of the blue, red, & black wedges are each measured from\nthe centre as the common vertex.\nThe blue wedges measured from the centre of the circle represent area\n   for area the deaths from Preventable or Mitigable Zymotic diseases;the\n   red wedges measured from the centre the deaths from wounds, & the\n   black wedges measured from the centre the deaths from all other causes.\nThe black line across the red triangle in Nov. 1854 marks the boundary\n   of the deaths from all other causes during the month.\nIn October 1854, & April 1855, the black area coincides with the red,\n   in January & February 1856, the blue coincides with the black.\nThe entire areas may be compared by following the blue, the red, & the\n   black lines enclosing them."
+            "value": "The Areas of the blue, red, & black wedges are each measured from\nthe centre as the common vertex.\nThe blue wedges measured from the centre of the circle represent area\n   for area the deaths from Preventable or Mitigable Zymotic Diseases;the\n   red wedges measured from the centre the deaths from wounds, & the\n   black wedges measured from the centre the deaths from all other causes.\nThe black line across the red triangle in Nov. 1854 marks the boundary\n   of the deaths from all other causes during the month.\nIn October 1854, & April 1855, the black area coincides with the red,\n   in January & February 1856, the blue coincides with the black.\nThe entire areas may be compared by following the blue, the red, & the\n   black lines enclosing them."
           }
         }
       }
