@@ -4,7 +4,7 @@ Read [Florence Nightingale’s Rose Diagram](https://powerofbi.org/2022/12/04/fl
 
 This Vega visualization uses non-standard fonts.
 If you don't have Harrington, Rockwell, Vivaldi fonts installed, then the titles, subtitles, text will look differently.
-Intalls the fonts or use @font-face CSS rule (when embedding Vega code into a web page), for example:
+Install the fonts, use other fonts or use @font-face CSS rule (when embedding Vega code into a web page), for example:
 
 ````
 
