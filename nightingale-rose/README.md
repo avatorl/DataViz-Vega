@@ -1,5 +1,7 @@
 # Nightingale's Rose Diagram
 
+Read [Florence Nightingale’s Rose Diagram](https://powerofbi.org/2022/12/04/florence-nightingales-rose-diagram/) about how I build this chart using Vega and what interesting facts I found about the original chart.
+
 This Vega visualization uses non-standard fonts.
 If you don't have Harrington, Rockwell, Vivaldi fonts installed, then the titles, subtitles, text will look differently.
 Intalls the fonts or use @font-face CSS rule (when embedding Vega code into a web page), for example:
