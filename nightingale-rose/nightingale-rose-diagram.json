@@ -14,6 +14,7 @@
   "autosize": "pad",
   "padding": {"bottom": 40, "left": 10, "right": 40, "top": 20},
   "background": "#EFDFC5",
+  "config": {},
   "data": [
     {
       "name": "dataset-csv",
@@ -99,10 +100,32 @@
         {"events": {"source": "view", "type": "click"}, "update": "clicks+1"}
       ]
     },
+    {
+      "name": "fontTitle",
+      "description": "Font for the main Title",
+      "value": "Harrington"
+    },
+    {
+      "name": "fontSubtitle",
+      "description": "Font for the main Subitle",
+      "value": "Tahoma"
+    },
+    {
+      "name": "fontSubtitle2",
+      "description": "Font for the individual charts Subtitles",
+      "value": "Rockwell"
+    },
+    {
+      "name": "fontText",
+      "description": "Font for the chart description text",
+      "value": "Vivaldi"
+    },
     {"name": "radius", "value": 330},
     {"name": "positionX", "value": -8},
     {"name": "positionY", "value": 12},
-    {"name": "colorRadialLines", "value": "#AAAAAA"},
+    {"name": "fillOpacitySector", "value": 1},
+    {"name": "strokeOpacityOutline", "value": 0.7},
+    {"name": "strokeWidthOutline", "value": 2},
     {"name": "strokeOpacityRadialLines", "value": 0.3},
     {"name": "colorBlue", "value": "#C8C8E8"},
     {"name": "colorPink", "value": "#FFC0CB"},
@@ -110,15 +133,12 @@
     {"name": "colorBlueOutline", "value": "#5D5DE8"},
     {"name": "colorPinkOutline", "value": "#FF3355"},
     {"name": "colorBlackOutline", "value": "#404040"},
+    {"name": "colorRadialLines", "value": "#AAAAAA"},
     {"name": "colorChartTitles", "value": "#333333"},
     {"name": "colorLabels", "value": "#333333"},
     {"name": "colorText", "value": "#8A8A8A"},
-    {"name": "fontTitle", "value": "Harrington"},
-    {"name": "fontSubtitle", "value": "Tahoma"},
-    {"name": "fontSubtitle2", "value": "Rockwell"},
-    {"name": "fontText", "value": "Vivaldi"},
-    {"name": "strokeOpacityOutline", "value": 0.7},
-    {"name": "strokeWidthOutline", "value": 2}
+    {"name": "fontSizeSubtitle2", "value": 15},
+    {"name": "fontSizeLocation", "value": 9}
   ],
   "scales": [
     {
@@ -174,7 +194,7 @@
             "fontSize": 12,
             "subtitleColor": {"signal": "colorChartTitles"},
             "subtitleFont": {"signal": "fontSubtitle2"},
-            "subtitleFontSize": 15,
+            "subtitleFontSize": {"signal": "fontSizeSubtitle2"},
             "subtitleFontWeight": "400",
             "subtitle": {
               "signal": "data('dataset-year')[0].Chart==1?'APRIL 1854 to MARCH 1855':'APRIL 1855 to MARCH 1856'"
@@ -202,7 +222,7 @@
                   "fill": {
                     "signal": "datum.Chart==1?colorBlue:(datum.Diseases>datum.Wounds&&datum.Diseases>datum.Other)?colorBlue:(datum.Wounds>datum.Diseases&&datum.Wounds>datum.Other)?colorPink:colorBlack"
                   },
-                  "fillOpacity": {"value": 1}
+                  "fillOpacity": {"signal": "fillOpacitySector"}
                 }
               }
             },
@@ -226,7 +246,7 @@
                   "fill": {
                     "signal": "datum.Chart==1?colorBlack:(datum.Diseases>datum.Wounds&&datum.Diseases<datum.Other||datum.Diseases<datum.Wounds&&datum.Diseases>datum.Other)?colorBlue:(datum.Wounds>datum.Diseases&&datum.Wounds<datum.Other||datum.Wounds<datum.Diseases&&datum.Wounds>datum.Other)?colorPink:colorBlack"
                   },
-                  "fillOpacity": {"value": 1}
+                  "fillOpacity": {"signal": "fillOpacitySector"}
                 }
               }
             },
@@ -250,7 +270,7 @@
                   "fill": {
                     "signal": "datum.Chart==1?colorPink:(datum.Diseases<datum.Other&&datum.Diseases<datum.Wounds)?colorBlue:(datum.Wounds<datum.Diseases&&datum.Wounds<datum.Other)?colorPink:colorBlack"
                   },
-                  "fillOpacity": {"value": 1}
+                  "fillOpacity": {"signal": "fillOpacitySector"}
                 }
               }
             },
@@ -404,7 +424,8 @@
               "from": {"data": "dataset-year"},
               "encode": {
                 "enter": {
-                  "fontSize": {"signal": "9"},
+                  "align": {"value": "center"},
+                  "baseline": {"value": "middle"},
                   "x": {"signal": "positionX-7"},
                   "y": {"signal": "positionY+7"},
                   "radius": {
@@ -413,15 +434,13 @@
                   },
                   "theta": {"signal": "datum.startAngle"},
                   "angle": {"signal": "datum.id1==4?270:datum.id1==7?0:0"},
-                  "fill": {"signal": "colorLabels"},
-                  "fontWeight": {"value": "bolder"},
-                  "fontStyle": {"value": "italic"},
-                  "align": {"value": "center"},
-                  "baseline": {"value": "middle"},
-                  "lineBreak": {"value": "\n"},
                   "text": {
                     "signal": "datum.id1==4?'BULGARIA':datum.id1==7?'CRIMEA':''"
-                  }
+                  },
+                  "fontSize": {"signal": "fontSizeLocation"},
+                  "fill": {"signal": "colorLabels"},
+                  "fontWeight": {"value": "bolder"},
+                  "fontStyle": {"value": "italic"}
                 }
               }
             },
