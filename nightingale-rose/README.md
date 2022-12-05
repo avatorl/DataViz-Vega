@@ -2,7 +2,7 @@
 
 This Vega visualization uses non-standard fonts.
 If you don't have Harrington, Rockwell, Vivaldi fonts installed, then the titles, subtitles, text will look differently.
-Intalls the fonts or use @font-face CSS rule, for example:
+Intalls the fonts or use @font-face CSS rule (when embedding Vega code into a web page), for example:
 
 ````
 
