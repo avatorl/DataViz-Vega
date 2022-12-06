@@ -1,0 +1,152 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "",
+  "usermeta": {
+    "Author": "Andrzej Leszkiewicz",
+    "License": "CC BY 4.0 (Share and Adapt with Attribution)",
+    "Github": "https://github.com/avatorl/Deneb-Vega/",
+    "Original Idea Author": "",
+    "Original Idea URL": "",
+    "Data Source URL": "https://www.kff.org/other/state-indicator/distribution-by-raceethnicity/?currentTimeframe=0&sortModel=%7B%22colId%22:%22Location%22,%22sort%22:%22asc%22%7D"
+  },
+  "width": 100,
+  "height": 100,
+  "autosize": "pad",
+  "background": "white",
+  "signals": [
+    {"name": "radius", "update": "width/2"},
+    {"name": "gridColumns", "value": "4"}
+  ],
+  "data": [
+    {
+      "name": "dataset-csv",
+      "url": "https://dl.dropboxusercontent.com/s/b90gn3r2zis2ga6/raw_data_population.csv",
+      "format": {"type": "csv", "parse": "auto", "delimiter": ","}
+    },
+    {
+      "name": "dataset",
+      "source": "dataset-csv",
+      "transform": [
+        {"type": "filter", "expr": "datum.Location!='United States'"},
+        {
+          "type": "formula",
+          "as": "Angle",
+          "expr": "datum.Race=='White'?0:datum.Race=='Black'?PI/2.5:datum.Race=='Hispanic'?2*PI/2.5:datum.Race=='Asian'?3*PI/2.5:datum.Race=='Other'?4*PI/2.5:5*PI/2.5"
+        }
+      ]
+    },
+    {"name": "colors", "values": ["#ff7f0e", "#1f77b4", "#2ca02c"]}
+  ],
+  "scales": [
+    {
+      "name": "flower",
+      "type": "pow",
+      "exponent": 0.5,
+      "domain": {"data": "dataset", "field": "Population"},
+      "range": [0, {"signal": "width*0.5"}],
+      "zero": true
+    },
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": {"data": "dataset", "field": "Race"},
+      "range": ["#2576B6", "#9E0B21", "D73026", "F27566", "gray"]
+    }
+  ],
+  "title": {
+    "anchor": "start",
+    "font": {"value": "Tahoma"},
+    "fontSize": {"value": 18},
+    "fontWeight": "bold",
+    "dy": -10,
+    "encode": {
+      "title": {
+        "update": {"text": {"signal": "''"}, "fill": {"signal": "'black'"}}
+      }
+    },
+    "subtitle": "",
+    "subtitlePadding": 10
+  },
+  "marks": [
+    {
+      "type": "group",
+      "layout": {
+        "align": "all",
+        "bounds": "full",
+        "columns": {"signal": "5"},
+        "padding": 10
+      },
+      "marks": [
+        {
+          "type": "group",
+          "from": {
+            "facet": {
+              "name": "series_location",
+              "data": "dataset",
+              "groupby": "Location"
+            }
+          },
+          "title": {
+            "text": {"signal": "data('series_location')[0]['Location']"},
+            "anchor": "start",
+            "color": {"signal": "'#999999'"},
+            "fontSize": 14,
+            "fontWeight": "normal",
+            "dy": 0,
+            "offset": 0,
+            "align": "left",
+            "encode": {
+              "title": {
+                "update": {
+                  "stroke": {"value": "#999999"},
+                  "strokeWidth": {"value": "0"}
+                }
+              }
+            }
+          },
+          "marks": [
+            {
+              "type": "group",
+              "layout": {
+                "align": "all",
+                "bounds": "full",
+                "columns": {"signal": "gridColumns"},
+                "padding": 10
+              },
+              "encode": {
+                "enter": {
+                  "width": {"signal": "width"},
+                  "height": {"signal": "height"}
+                }
+              },
+              "marks": [
+                {
+                  "type": "arc",
+                  "from": {"data": "series_location"},
+                  "encode": {
+                    "enter": {},
+                    "update": {
+                      "x": {"signal": "width/2"},
+                      "y": {"signal": "height/2"},
+                      "startAngle": {"signal": "datum.Angle"},
+                      "endAngle": {"signal": "datum.Angle+0.75"},
+                      "innerRadius": {"signal": "0"},
+                      "outerRadius": {"scale": "flower", "field": "Population"},
+                      "cornerRadius": {"signal": "20"},
+                      "stroke": {"scale": "color", "field": "Race"},
+                      "strokeWidth": {"signal": "0.5"},
+                      "strokeOpacity": {"signal": "0.8"},
+                      "fill": {"scale": "color", "field": "Race"},
+                      "fillOpacity": {"signal": "0.7"}
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "config": {}
+}
