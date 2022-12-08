@@ -1,0 +1,112 @@
+{
+  "width": 500,
+  "height": 300,
+  "data": [
+    {
+      "name": "fruit_data",
+      "values": [
+        {"category": "apple", "value": 35},
+        {"category": "banana", "value": 25},
+        {"category": "pear", "value": 10},
+        {"category": "grape", "value": 20},
+        {"category": "orange", "value": 30},
+        {"category": "strawberry", "value": 28},
+        {"category": "mango", "value": 40},
+        {"category": "pineapple", "value": 12},
+        {"category": "blueberry", "value": 24},
+        {"category": "cherry", "value": 32}
+      ]
+    },
+    {
+      "name": "max_value",
+      "source": "fruit_data",
+      "transform": [
+        {
+          "type": "aggregate",
+          "fields": ["value"],
+          "ops": ["max"],
+          "as": ["max_value"]
+        }
+      ]
+    }
+  ],
+  "scales": [
+    {
+      "name": "xscale",
+      "type": "band",
+      "domain": {"data": "fruit_data", "field": "category"},
+      "range": "width"
+    },
+    {
+      "name": "yscale",
+      "domain": {"data": "fruit_data", "field": "value"},
+      "nice": true,
+      "range": "height"
+    }
+  ],
+  "axes": [{"scale": "xscale", "orient": "bottom"}],
+  "marks": [
+    {
+      "type": "rect",
+      "from": {"data": "fruit_data"},
+      "encode": {
+        "enter": {
+          "x": {"scale": "xscale", "field": "category"},
+          "width": {"scale": "xscale", "band": 0.9},
+          "y": {"scale": "yscale", "field": "value"},
+          "y2": {"scale": "yscale", "value": 0},
+          "fill": {"value": "#6699CC"}
+        },
+        "update": {
+          "fill": [
+            {
+              "test": "datum.value == data('max_value')[0].max_value",
+              "value": "#FF6666"
+            },
+            {"value": "#6699CC"}
+          ]
+        }
+      }
+    },
+    {
+      "type": "text",
+      "encode": {
+        "enter": {
+          "x": {"value": 250},
+          "y": {"value": -40},
+          "fill": {"value": "black"},
+          "fontSize": {"value": 20},
+          "align": {"value": "center"},
+          "baseline": {"value": "top"},
+          "text": {"value": "Fruit Consumption"}
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {"data": "fruit_data"},
+      "encode": {
+        "enter": {
+          "x": {"scale": "xscale", "field": "category"},
+          "dx": {"scale": "xscale", "band": 0.45},
+          "y": {"scale": "yscale", "field": "value", "offset": -5},
+          "dy": {"value": -5},
+          "align": {"value": "center"},
+          "baseline": {"value": "middle"},
+          "text": {"field": "value"},
+          "fontSize": {"value": 16},
+          "fontWeight": {"value": "bold"}
+        },
+        "update": {
+          "fill": [
+            {
+              "test": "datum.value == data('max_value')[0].max_value",
+              "value": "#FF6666"
+            },
+            {"value": "#6699CC"}
+          ]
+        }
+      }
+    }
+  ]
+}
