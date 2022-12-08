@@ -1,6 +1,6 @@
 {
-  "width": 500,
-  "height": 300,
+  "width": 800,
+  "height": 500,
   "data": [
     {
       "name": "fruit_data",
@@ -44,7 +44,18 @@
       "range": "height"
     }
   ],
-  "axes": [{"scale": "xscale", "orient": "bottom"}],
+  "axes": [
+    {
+      "scale": "xscale",
+      "orient": "bottom",
+      "encode": {
+        "labels": {
+          "update": {"fontSize": {"value": 16}, "fill": {"value": "#666666"}}
+        },
+        "ticks": {"update": {"opacity": {"value": 0}}}
+      }
+    }
+  ],
   "marks": [
     {
       "type": "rect",
@@ -72,11 +83,11 @@
       "type": "text",
       "encode": {
         "enter": {
-          "x": {"value": 250},
+          "x": {"value": 0},
           "y": {"value": -40},
           "fill": {"value": "black"},
           "fontSize": {"value": 20},
-          "align": {"value": "center"},
+          "align": {"value": "left"},
           "baseline": {"value": "top"},
           "text": {"value": "Fruit Consumption"}
         }
