@@ -126,7 +126,10 @@
     "anchor": "start",
     "font": {"value": "Tahoma"},
     "fontSize": {"value": 16},
-    "fontWeight": "lighter"
+    "fontWeight": "lighter",
+    "subtitle": "Countries sorted by centroid latitude",
+    "subtitleFont": {"value": "Tahoma"},
+    "subtitlePadding": 10
   },
   "axes": [
     {
@@ -195,8 +198,7 @@
       "fill": "colorHawkins",
       "orient": "right",
       "legendX": {"signal": "width+40"},
-      "legendY": -20,
-      "padding": 0,
+      "padding": 5,
       "title": "°C",
       "titleColor": "gray",
       "tickCount": 5,
@@ -237,7 +239,7 @@
           "height": {"signal": "9.5"},
           "width": {"signal": "9.5"},
           "tooltip": {
-            "signal": "datum.country+', '+datum.year+': '+(datum.temp>0?'+':'')+datum.temp+'°C'"
+            "signal": "datum.country+' ('+round(abs(datum.latitude),0)+'° '+(datum.latitude>0?'N':'S')+'), '+datum.year+': '+(datum.temp>0?'+':'')+datum.temp+'°C'"
           }
         }
       }
@@ -283,12 +285,38 @@
       }
     },
     {
+      "name": "NoDataXLegendSymbol",
+      "type": "text",
+      "encode": {
+        "update": {
+          "text": {"value": "✕"},
+          "fontSize": {"value": 8},
+          "fill": {"signal": "'#666666'"},
+          "x": {"value": 730},
+          "y": {"value": 245}
+        }
+      }
+    },
+    {
+      "name": "NoDataXLegendText",
+      "type": "text",
+      "encode": {
+        "update": {
+          "text": {"value": "- no data"},
+          "fontSize": {"value": 10},
+          "fill": {"signal": "'#666666'"},
+          "x": {"value": 740},
+          "y": {"value": 245}
+        }
+      }
+    },
+    {
       "type": "symbol",
       "encode": {
         "enter": {"fill": {"value": "red"}, "stroke": {"value": "red"}},
         "update": {
           "x": {"signal": "-150"},
-          "y": {"signal": "1350"},
+          "y": {"signal": "1410"},
           "size": {"signal": "0.5"},
           "shape": {
             "signal": "'M43.96,7.65L4.59,87.23l39.37-20.97V7.65L43.96,7.65L43.96,7.65z M40.9,93.74l14.03,17.65V99.16 c0-1.73-0.24-2.89-0.74-3.49c-0.67-0.82-1.81-1.22-3.39-1.19v-0.73h9.41v0.73c-1.2,0.16-2.01,0.36-2.43,0.6 c-0.41,0.25-0.73,0.65-0.97,1.21c-0.23,0.56-0.34,1.53-0.34,2.87v23.72h-0.71L36.53,99.13v18.17c0,1.64,0.37,2.77,1.12,3.35 c0.75,0.58,1.62,0.87,2.59,0.87h0.67v0.73H30.77v-0.73c1.58-0.01,2.66-0.34,3.29-0.97c0.62-0.64,0.92-1.71,0.92-3.24V97.14 l-0.59-0.74c-0.6-0.77-1.13-1.28-1.6-1.53c-0.46-0.24-1.12-0.38-1.99-0.41v-0.73H40.9L40.9,93.74z M46.78,0.94l44.05,89.04 c0.35,0.71,0.06,1.58-0.66,1.93c-0.43,0.22-0.92,0.19-1.32-0.03v0.01L45.42,68.76L1.98,91.9L0,89.98L44.12,0.81h0.01 C44.36,0.33,44.85,0,45.42,0l0,0C46.03,0,46.56,0.37,46.78,0.94L46.78,0.94L46.78,0.94L46.78,0.94z'"
