@@ -10,7 +10,7 @@
   },
   "background": "white",
   "width": 800,
-  "height": 30,
+  "height": 40,
   "padding": 5,
   "autosize": "pad",
   "config": {"legends": {"font": "Tahoma", "fontSize": 18}},
