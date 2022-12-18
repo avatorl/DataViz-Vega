@@ -1,20 +1,20 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
   "description": "Box Plot Small Multiples",
-    "usermeta": {
+  "usermeta": {
     "Author": "Andrzej Leszkiewicz",
     "License": "CC BY 4.0 (Share and Adapt with Attribution)",
     "Github": "https://github.com/avatorl/Deneb-Vega/"
   },
   "height": 200,
-  "width": 250,
+  "width": 275,
   "padding": 5,
   "config": {
     "axisBand": {"bandPosition": 1, "tickExtra": true, "tickOffset": 0}
   },
   "signals": [
     {"name": "gridColumns", "value": 3},
-    {"name": "gridPadding", "value": 25},
+    {"name": "gridPadding", "value": 30},
     {"name": "boxWidth", "value": 50},
     {"name": "lineColor", "value": "gray"},
     {"name": "axeLabelColor", "value": "#AAAAAA"},
@@ -53,6 +53,14 @@
       "nice": true
     }
   ],
+  "title": {
+    "text": {"signal": "'Krakow Bicycle Counters, 2017-2022'"},
+    "anchor": "start",
+    "font": {"value": "Tahoma"},
+    "fontSize": {"value": 16},
+    "fontWeight": "bold",
+    "dy": -15
+  },
   "marks": [
     {
       "type": "group",
