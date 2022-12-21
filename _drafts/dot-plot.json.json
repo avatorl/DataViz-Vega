@@ -1,0 +1,100 @@
+//dot plot
+
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "",
+  "usermeta": {
+    "Author": "Andrzej Leszkiewicz",
+    "License": "CC BY 4.0 (Share and Adapt with Attribution)",
+    "Github": "https://github.com/avatorl/Deneb-Vega/"
+  },
+  "width": 600,
+  "height": 400,
+  "autosize": "pad",
+  "background": "white",
+  "signals": [
+    {"name": "radius", "update": "width/2"},
+    {"name": "gridColumns", "value": "4"}
+  ],
+  "data": [
+    {
+      "name": "dataset-csv",
+      "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/fan-chart/data-population.csv",
+      "format": {"type": "csv", "parse": "auto", "delimiter": ","}
+    },
+    {
+      "name": "dataset",
+      "source": "dataset-csv",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "(datum.year==2000||datum.year==2020)&&datum.population>=100000"
+        }
+      ]
+    }
+  ],
+  "scales": [
+    {
+      "name": "scaleX",
+      "type": "linear",
+      "domain": {"data": "dataset", "field": "age_percent"},
+      "range": [0, {"signal": "width"}]
+    },
+    {
+      "name": "scaleY",
+      "type": "band",
+      "domain": {"data": "dataset", "field": "country"},
+      "range": [0, {"signal": "height"}]
+    }
+  ],
+  "title": {
+    "text": {"signal": "''"},
+    "anchor": "start",
+    "color": {"signal": "'#333333'"},
+    "fontSize": 20,
+    "fontWeight": "lighter",
+    "dy": 0,
+    "offset": 0,
+    "align": "left",
+    "encode": {
+      "title": {
+        "update": {
+          "stroke": {"value": "#333333"},
+          "strokeWidth": {"value": "1"}
+        }
+      }
+    }
+  },
+  "axes": [
+    {"scale": "scaleX", "orient": "bottom"},
+    {"scale": "scaleY", "orient": "left"}
+  ],
+  "marks": [
+    {
+      "name": "circles",
+      "type": "symbol",
+      "from": {"data": "dataset"},
+      "shape": "circle",
+      "encode": {
+        "enter": {
+          "x": {"scale": "scaleX", "field": "age_percent"},
+          "y": {"scale": "scaleY", "field": "country"},
+          "fill": {"signal": "datum.year==2000?'blue':'red'"}
+        }
+      }
+    },
+    {
+      "type": "line",
+      "from": {"data": "dataset"},
+      "encode": {
+        "update": {
+          "x": {"scale": "x", "field": "age_percent"},
+          "y": {"scale": "y", "field": "country"},
+          "stroke": {"value": "#999999"},
+          "strokeWidth": {"value": 2},
+          "tooltip": {"signal": "datum"}
+        }
+      }
+    }
+  ]
+}
