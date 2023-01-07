@@ -3,11 +3,12 @@
   "description": "A basic scatter plot example depicting automobile statistics.",
   "width": 900,
   "height": 900,
-  "padding": 5,
+  "padding": 10,
+  "autosize": "pad",
   "data": [
     {
       "name": "dataset-csv",
-      "url": "https://dl.dropboxusercontent.com/s/eee46hq8s9guo32/data6.csv",
+      "url": "https://dl.dropboxusercontent.com/s/coplb2pwsynhaun/data9.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","}
     },
     {
@@ -33,13 +34,15 @@
       "title": "Instrument",
       "titleFontSize": 24,
       "labelFontSize": 20,
-      "padding": 4,
+      "offset": 25,
+      "padding": 5,
       "encode": {
         "symbols": {
           "enter": {
-            "strokeWidth": {"value": 0.5}, 
+            "strokeWidth": {"value": 0.5},
             "fillOpacity": {"value": 0.2},
-            "size": {"value": 100}}
+            "size": {"value": 100}
+          }
         }
       }
     }
@@ -50,18 +53,22 @@
       "type": "symbol",
       "from": {"data": "dataset"},
       "encode": {
-        "update": {
+        "enter": {
           "x": {"signal": "radius + radius*datum['dx']"},
           "y": {"signal": "radius + radius*datum['dy']"},
-          "size": {"signal": "pow(datum['duration'],0.99)*5"},
+          "size": {"signal": "pow(datum['duration'],0.99)*20"},
           "shape": {"value": "circle"},
           "strokeWidth": {"value": 0.5},
           "opacity": {"value": 0.5},
           "stroke": {"scale": "color", "field": "part"},
           "fill": {"scale": "color", "field": "part"},
-          "fillOpacity": {"value": 0.2}
+          "fillOpacity": {"value": 0.2},
+          "tooltip": {
+            "signal": "datum.part+' '+datum.stepname+datum.octave+' alter '+datum.alter+' duration '+datum.duration"
+          }
         }
       }
     }
-  ]
+  ],
+  "config": {}
 }
