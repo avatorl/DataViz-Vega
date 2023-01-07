@@ -7,7 +7,7 @@
   "data": [
     {
       "name": "dataset-csv",
-      "url": "https://dl.dropboxusercontent.com/s/nt73czm72w36z3o/data1.csv",
+      "url": "https://dl.dropboxusercontent.com/s/eee46hq8s9guo32/data6.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","}
     },
     {
@@ -22,10 +22,28 @@
       "name": "color",
       "type": "ordinal",
       "domain": {"data": "dataset", "field": "part"},
-      "range": {"scheme": "category20"}
+      "range": {"scheme": "set1"}
     }
   ],
   "axes": [],
+  "legends": [
+    {
+      "stroke": "color",
+      "fill": "color",
+      "title": "Instrument",
+      "titleFontSize": 24,
+      "labelFontSize": 20,
+      "padding": 4,
+      "encode": {
+        "symbols": {
+          "enter": {
+            "strokeWidth": {"value": 0.5}, 
+            "fillOpacity": {"value": 0.2},
+            "size": {"value": 100}}
+        }
+      }
+    }
+  ],
   "marks": [
     {
       "name": "marks",
@@ -33,9 +51,9 @@
       "from": {"data": "dataset"},
       "encode": {
         "update": {
-          "x": {"signal": "radius + radius*datum.dx"},
-          "y": {"signal": "radius + radius*datum.dy"},
-          "size": {"signal": "pow(datum.duration,0.99)*15"},
+          "x": {"signal": "radius + radius*datum['dx']"},
+          "y": {"signal": "radius + radius*datum['dy']"},
+          "size": {"signal": "pow(datum['duration'],0.99)*5"},
           "shape": {"value": "circle"},
           "strokeWidth": {"value": 0.5},
           "opacity": {"value": 0.5},
@@ -45,6 +63,5 @@
         }
       }
     }
-  ],
-  "config": {}
+  ]
 }
