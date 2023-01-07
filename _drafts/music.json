@@ -1,0 +1,54 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "A basic scatter plot example depicting automobile statistics.",
+  "width": 600,
+  "height": 200,
+  "padding": 5,
+  "data": [
+    {
+      "name": "dataset",
+      "url": "https://dl.dropboxusercontent.com/s/y1zukncxg8was81/twinkle.csv",
+      "format": {"type": "csv", "parse": "auto", "delimiter": ","}
+    }
+  ],
+   "signals": [
+    {"name": "radius", "update": "200"}
+    ],
+  "scales": [
+    {
+      "name": "linear",
+      "type": "linear",
+      "range": [0, 100],
+      "domain": {"data": "dataset", "field": "Hz"}
+    },
+    {
+      "name": "angular",
+      "type": "point",
+      "range": {"signal": "[-PI, PI]"},
+      "padding": 0,
+      "align": 0,
+      "domain": {"data": "dataset", "field": "angle"}
+    }
+  ],
+  "axes": [
+  ],
+  "marks": [
+    {
+      "name": "marks",
+      "type": "symbol",
+      "from": {"data": "dataset"},
+      "encode": {
+        "update": {
+          "x": {"signal": "radius + radius*datum.Hz/1000*cos((datum.angle)*2*PI)"},
+          "y": {"signal": "radius + radius*datum.Hz/1000*sin((datum.angle)*2*PI)"},
+          "size": {"signal": "datum.duration*50"},
+          "shape": {"value": "circle"},
+          "strokeWidth": {"value": 1},
+          "opacity": {"value": 0.5},
+          "stroke": {"value": "blue"},
+          "fill": {"value": "transparent"}
+        }
+      }
+    }
+  ]
+}
