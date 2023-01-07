@@ -1,37 +1,31 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
   "description": "A basic scatter plot example depicting automobile statistics.",
-  "width": 600,
-  "height": 200,
+  "width": 900,
+  "height": 900,
   "padding": 5,
   "data": [
     {
-      "name": "dataset",
-      "url": "https://dl.dropboxusercontent.com/s/y1zukncxg8was81/twinkle.csv",
+      "name": "dataset-csv",
+      "url": "https://dl.dropboxusercontent.com/s/nt73czm72w36z3o/data1.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","}
-    }
-  ],
-   "signals": [
-    {"name": "radius", "update": "200"}
-    ],
-  "scales": [
-    {
-      "name": "linear",
-      "type": "linear",
-      "range": [0, 100],
-      "domain": {"data": "dataset", "field": "Hz"}
     },
     {
-      "name": "angular",
-      "type": "point",
-      "range": {"signal": "[-PI, PI]"},
-      "padding": 0,
-      "align": 0,
-      "domain": {"data": "dataset", "field": "angle"}
+      "name": "dataset",
+      "source": "dataset-csv",
+      "transform": [{"type": "collect", "sort": {"field": "angle"}}]
     }
   ],
-  "axes": [
+  "signals": [{"name": "radius", "update": "450"}],
+  "scales": [
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": {"data": "dataset", "field": "part"},
+      "range": {"scheme": "category20"}
+    }
   ],
+  "axes": [],
   "marks": [
     {
       "name": "marks",
@@ -39,16 +33,18 @@
       "from": {"data": "dataset"},
       "encode": {
         "update": {
-          "x": {"signal": "radius + radius*datum.Hz/1000*cos((datum.angle)*2*PI)"},
-          "y": {"signal": "radius + radius*datum.Hz/1000*sin((datum.angle)*2*PI)"},
-          "size": {"signal": "datum.duration*50"},
+          "x": {"signal": "radius + radius*datum.dx"},
+          "y": {"signal": "radius + radius*datum.dy"},
+          "size": {"signal": "pow(datum.duration,0.99)*15"},
           "shape": {"value": "circle"},
-          "strokeWidth": {"value": 1},
+          "strokeWidth": {"value": 0.5},
           "opacity": {"value": 0.5},
-          "stroke": {"value": "blue"},
-          "fill": {"value": "transparent"}
+          "stroke": {"scale": "color", "field": "part"},
+          "fill": {"scale": "color", "field": "part"},
+          "fillOpacity": {"value": 0.2}
         }
       }
     }
-  ]
+  ],
+  "config": {}
 }
