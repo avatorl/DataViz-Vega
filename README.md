@@ -8,7 +8,8 @@ See [live Deneb-Vega data visualization examples](https://powerofbi.org/deneb-ve
 The visualiazations displayed there are being generated in real time using current version of the code and data files stored in this repository.
 
 The following image is just an overview of the visualizations presented in this repository. It may be outdated.
-![Power of BI: Deneb Vega Data Visualization Examples](https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/_images/vega-examples-tumbnails.png)
+![Power of BI: Deneb Vega Data Visualization Examples](https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/_images/vega-examples-tumbnails-1.png)
+![Power of BI: Deneb Vega Data Visualization Examples](https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/_images/vega-examples-tumbnails-2.png)
 
 The visualizations shared in this repository are just showcases of Deneb-Vega capabilities and results of author's experiments. Some of them may still require additional testing, debugging and code cleaning to be done. Feel free to create an Issue if you noticed any problem.
 
