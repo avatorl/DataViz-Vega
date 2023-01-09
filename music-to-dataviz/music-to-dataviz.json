@@ -1,0 +1,80 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "A basic scatter plot example depicting automobile statistics.",
+  "width": 900,
+  "height": 900,
+  "padding": 10,
+  "autosize": "pad",
+  "background": "black",
+  "data": [
+    {
+      "name": "dataset-csv",
+      "url": "https://dl.dropboxusercontent.com/s/siakzm937dohp13/data10.csv",
+      "format": {"type": "csv", "parse": "auto", "delimiter": ","}
+    },
+    {
+      "name": "dataset",
+      "source": "dataset-csv",
+      "transform": [{"type": "collect", "sort": {"field": "angle"}}]
+    }
+  ],
+  "signals": [{"name": "radius", "update": "450"}],
+  "scales": [
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": {"data": "dataset", "field": "part"},
+      "range": ["green", "yellow", "blue", "red"]
+    }
+  ],
+  "axes": [],
+  "legends": [
+    {
+      "stroke": "color",
+      "fill": "color",
+      "title": "Instrument",
+      "titleFontSize": 24,
+      "titleColor": "white",
+      "titleOpacity": 0.7,
+      "labelFontSize": 20,
+      "labelColor": "white",
+      "labelOpacity": 0.7,
+      "offset": 25,
+      "padding": 5,
+      "encode": {
+        "symbols": {
+          "enter": {
+            "strokeWidth": {"value": 1},
+            "strokeOpacity": {"value": 0.8},
+            "fillOpacity": {"value": 0.4},
+            "size": {"value": 100}
+          }
+        }
+      }
+    }
+  ],
+  "marks": [
+    {
+      "name": "marks",
+      "type": "symbol",
+      "from": {"data": "dataset"},
+      "encode": {
+        "enter": {
+          "x": {"signal": "radius + radius*datum['dx']"},
+          "y": {"signal": "radius + radius*datum['dy']"},
+          "size": {"signal": "pow(datum['duration'],0.999)*10"},
+          "shape": {"value": "circle"},
+          "strokeWidth": {"value": 0.5},
+          "opacity": {"value": 0.5},
+          "stroke": {"scale": "color", "field": "part"},
+          "fill": {"scale": "color", "field": "part"},
+          "fillOpacity": {"value": 0.2},
+          "tooltip": {
+            "signal": "datum.part+' '+datum.stepname+datum.octave+' alter '+datum.alter+' duration '+datum.duration"
+          }
+        }
+      }
+    }
+  ],
+  "config": {}
+}
