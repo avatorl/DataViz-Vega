@@ -8,8 +8,8 @@
     "Original Idea Author": "Nicholas Rougeux",
     "Original Idea URL": "https://www.c82.net/offthestaff/"
   },
-  "width": 900,
-  "height": 900,
+  "width": 850,
+  "height": 850,
   "padding": 10,
   "autosize": "pad",
   "background": "black",
@@ -25,7 +25,7 @@
       "transform": [{"type": "collect", "sort": {"field": "angle"}}]
     }
   ],
-  "signals": [{"name": "radius", "update": "450"}],
+  "signals": [{"name": "radius", "update": "475"}],
   "scales": [
     {
       "name": "color",
@@ -46,7 +46,7 @@
       "labelFontSize": 20,
       "labelColor": "white",
       "labelOpacity": 0.7,
-      "offset": 25,
+      "offset": 5,
       "padding": 5,
       "encode": {
         "symbols": {
