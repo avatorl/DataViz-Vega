@@ -1,6 +1,13 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
-  "description": "A basic scatter plot example depicting automobile statistics.",
+  "description": "",
+  "usermeta": {
+    "Author": "Andrzej Leszkiewicz",
+    "License": "CC BY 4.0 (Share and Adapt with Attribution)",
+    "Github": "https://github.com/avatorl/Deneb-Vega/",
+    "Original Idea Author": "Nicholas Rougeux",
+    "Original Idea URL": "https://www.c82.net/offthestaff/"
+  },
   "width": 900,
   "height": 900,
   "padding": 10,
@@ -9,7 +16,7 @@
   "data": [
     {
       "name": "dataset-csv",
-      "url": "https://dl.dropboxusercontent.com/s/siakzm937dohp13/data10.csv",
+      "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/music-to-dataviz/music-to-dataviz.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","}
     },
     {
