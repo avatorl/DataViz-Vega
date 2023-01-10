@@ -137,14 +137,14 @@
   ],
   "title": {
     "text": "Piano Quintet No. 2 in C Minor Op. 115 - Gabriel Fauré",
-    "color": "white",
+    "color": "#CCCCCC",
     "anchor": "start",
     "fontSize": 24,
     "subtitle": {
       "signal": "length(data('dataset'))+' musical notes, playing time 30-35 minutes'"
     },
     "subtitlePadding": 5,
-    "subtitleColor": "white",
+    "subtitleColor": "#CCCCCC",
     "subtitleFontSize": 20,
     "offset": 10
   },
@@ -157,11 +157,9 @@
       "fill": "color",
       "title": "Instrument",
       "titleFontSize": 22,
-      "titleColor": "white",
-      "titleOpacity": 0.7,
+      "titleColor": "#CCCCCC",
       "labelFontSize": 20,
-      "labelColor": "white",
-      "labelOpacity": 0.7,
+      "labelColor": "#CCCCCC",
       "offset": 5,
       "padding": 5,
       "encode": {
@@ -209,22 +207,19 @@
       "size": "size",
       "title": "Note Duration",
       "titleFontSize": 22,
-      "titleColor": "white",
-      "titleOpacity": 0.7,
+      "titleColor": "#CCCCCC",
       "labelFontSize": 20,
-      "labelColor": "white",
-      "labelOpacity": 0.7,
+      "labelColor": "#CCCCCC",
       "offset": 5,
       "padding": 5,
       "encode": {
         "symbols": {
           "update": {
-            "stroke": {"value": "white"},
+            "stroke": {"value": "#CCCCCC"},
             "strokeWidth": {"value": 1},
             "strokeOpacity": {"value": 0.8},
-            "size": {"signal": "pow(datum.value,0.999)*10"},
-            "fillOpacity": {"value": 0.4},
-            "opacity": {"value": 0.7}
+            "size": {"signal": "pow(datum.value,0.999)*5"},
+            "fillOpacity": {"value": 0.4}
           }
         },
         "labels": {"enter": {"dx": {"value": 5}, "opacity": {"value": 1}}}
@@ -240,7 +235,7 @@
         "enter": {
           "x": {"signal": "radius + radius*datum['dx']"},
           "y": {"signal": "radius + radius*datum['dy']"},
-          "size": {"signal": "pow(datum['duration'],0.999)*10"},
+          "size": {"signal": "pow(datum['duration'],0.999)*5"},
           "shape": {"value": "circle"},
           "strokeWidth": {"value": 0.5},
           "tooltip": {
@@ -285,8 +280,8 @@
       "type": "symbol",
       "encode": {
         "enter": {
-          "fill": {"value": "white"},
-          "stroke": {"value": "white"},
+          "fill": {"value": "#CCCCCC"},
+          "stroke": {"value": "#CCCCCC"},
           "baseline": {"value": "middle"},
           "x": {"signal": "-100-2"},
           "y": {"signal": "radius*2-50-30-5"},
@@ -295,7 +290,6 @@
           "shape": {"signal": "svgCircleArrow"},
           "opacity": {"value": 1},
           "strokeWidth": {"signal": "0"},
-          "fillOpacity": {"signal": "0.8"},
           "strokeOpacity": {"signal": "1"}
         }
       }
@@ -319,7 +313,7 @@
         }
       }
     },
-       {
+    {
       "type": "symbol",
       "encode": {
         "enter": {
@@ -360,7 +354,7 @@
       "type": "text",
       "encode": {
         "enter": {
-          "fill": {"value": "white"},
+          "fill": {"value": "#CCCCCC"},
           "baseline": {"value": "middle"},
           "x": {"signal": "-150+5+10+60-10+5"},
           "y": {"signal": "radius*2-150+30-25"},
@@ -368,7 +362,6 @@
           "text": {"signal": "'Time'"},
           "opacity": {"value": 1},
           "strokeWidth": {"signal": "0"},
-          "fillOpacity": {"signal": "0.8"},
           "strokeOpacity": {"signal": "1"}
         }
       }
