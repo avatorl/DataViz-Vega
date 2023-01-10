@@ -147,7 +147,8 @@
             "strokeWidth": {"value": 1},
             "strokeOpacity": {"value": 0.8},
             "fillOpacity": {"value": 0.4},
-            "size": {"value": 100}
+            "size": {"value": 100},
+            "cursor": {"value": "pointer"}
           },
           "update": {
             "fill": {"value": "transparent"},
@@ -165,6 +166,7 @@
         "labels": {
           "name": "legendLabel",
           "interactive": true,
+          "enter": {"cursor": {"value": "pointer"}},
           "update": {
             "opacity": [
               {
