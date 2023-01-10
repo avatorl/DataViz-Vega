@@ -152,7 +152,7 @@
   "legends": [
     {
       "type": "symbol",
-      "orient": "left",
+      "orient": "right",
       "stroke": "color",
       "fill": "color",
       "title": "Instrument",
@@ -205,7 +205,7 @@
     },
     {
       "type": "symbol",
-      "orient": "left",
+      "orient": "right",
       "size": "size",
       "title": "Note Duration",
       "titleFontSize": 22,
@@ -319,7 +319,7 @@
         }
       }
     },
-    {
+       {
       "type": "symbol",
       "encode": {
         "enter": {
