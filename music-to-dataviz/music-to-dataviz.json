@@ -116,10 +116,15 @@
       "name": "color",
       "type": "ordinal",
       "domain": {"data": "dataset", "field": "part"},
-      "range": ["green", "yellow", "blue", "red"]
+      "range": ["green", "yellow", "orange", "red", "blue"]
     }
   ],
-  "title": {"text": "Music", "color": "white", "align": "left", "fontSize": 24},
+  "title": {
+    "text": "Piano Quintet No. 2 in c Minor Op. 115 - Gabriel Fauré",
+    "color": "white",
+    "anchor": "start",
+    "fontSize": 24
+  },
   "axes": [],
   "legends": [
     {
