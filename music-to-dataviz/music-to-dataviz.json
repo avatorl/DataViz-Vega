@@ -23,9 +23,94 @@
       "name": "dataset",
       "source": "dataset-csv",
       "transform": [{"type": "collect", "sort": {"field": "angle"}}]
+    },
+    {
+      "name": "selected",
+      "on": [
+        {"trigger": "clear", "remove": true},
+        {"trigger": "!shift", "remove": true},
+        {"trigger": "!shift && clicked", "insert": "clicked"},
+        {"trigger": "shift && clicked", "toggle": "clicked"}
+      ]
     }
   ],
-  "signals": [{"name": "radius", "update": "475"}],
+  "signals": [
+    {"name": "radius", "update": "475"},
+    {
+      "name": "clear",
+      "value": true,
+      "on": [
+        {"events": "mouseup[!event.item]", "update": "true", "force": true}
+      ]
+    },
+    {
+      "name": "shift",
+      "value": false,
+      "on": [
+        {
+          "events": "@legendSymbol:click, @legendLabel:click",
+          "update": "event.shiftKey",
+          "force": true
+        }
+      ]
+    },
+    {
+      "name": "clicked",
+      "value": null,
+      "on": [
+        {
+          "events": "@legendSymbol:click, @legendLabel:click",
+          "update": "{value: datum.value}",
+          "force": true
+        }
+      ]
+    },
+    {
+      "name": "brush",
+      "value": 0,
+      "on": [
+        {"events": {"signal": "clear"}, "update": "clear ? [0, 0] : brush"},
+        {"events": "@xaxis:mousedown", "update": "[x(), x()]"},
+        {
+          "events": "[@xaxis:mousedown, window:mouseup] > window:mousemove!",
+          "update": "[brush[0], clamp(x(), 0, width)]"
+        },
+        {
+          "events": {"signal": "delta"},
+          "update": "clampRange([anchor[0] + delta, anchor[1] + delta], 0, width)"
+        }
+      ]
+    },
+    {
+      "name": "anchor",
+      "value": null,
+      "on": [{"events": "@brush:mousedown", "update": "slice(brush)"}]
+    },
+    {
+      "name": "xdown",
+      "value": 0,
+      "on": [{"events": "@brush:mousedown", "update": "x()"}]
+    },
+    {
+      "name": "delta",
+      "value": 0,
+      "on": [
+        {
+          "events": "[@brush:mousedown, window:mouseup] > window:mousemove!",
+          "update": "x() - xdown"
+        }
+      ]
+    },
+    {
+      "name": "domain",
+      "on": [
+        {
+          "events": {"signal": "brush"},
+          "update": "span(brush) ? invert('x', brush) : null"
+        }
+      ]
+    }
+  ],
   "scales": [
     {
       "name": "color",
@@ -34,6 +119,7 @@
       "range": ["green", "yellow", "blue", "red"]
     }
   ],
+  "title": {"text": "Music", "color": "white", "align": "left", "fontSize": 24},
   "axes": [],
   "legends": [
     {
@@ -50,11 +136,38 @@
       "padding": 5,
       "encode": {
         "symbols": {
+          "name": "legendSymbol",
+          "interactive": true,
           "enter": {
             "strokeWidth": {"value": 1},
             "strokeOpacity": {"value": 0.8},
             "fillOpacity": {"value": 0.4},
             "size": {"value": 100}
+          },
+          "update": {
+            "fill": {"value": "transparent"},
+            "strokeWidth": {"value": 2},
+            "opacity": [
+              {
+                "test": "!length(data('selected')) || indata('selected', 'value', datum.value)",
+                "value": 0.7
+              },
+              {"value": 0.15}
+            ],
+            "size": {"value": 64}
+          }
+        },
+        "labels": {
+          "name": "legendLabel",
+          "interactive": true,
+          "update": {
+            "opacity": [
+              {
+                "test": "!length(data('selected')) || indata('selected', 'value', datum.value)",
+                "value": 1
+              },
+              {"value": 0.25}
+            ]
           }
         }
       }
@@ -72,13 +185,41 @@
           "size": {"signal": "pow(datum['duration'],0.999)*10"},
           "shape": {"value": "circle"},
           "strokeWidth": {"value": 0.5},
-          "opacity": {"value": 0.5},
-          "stroke": {"scale": "color", "field": "part"},
-          "fill": {"scale": "color", "field": "part"},
-          "fillOpacity": {"value": 0.2},
           "tooltip": {
             "signal": "datum.part+' '+datum.stepname+datum.octave+' alter '+datum.alter+' duration '+datum.duration"
           }
+        },
+        "update": {
+          "stroke": [
+            {
+              "test": "(!length(data('selected')) || indata('selected', 'value', datum.part))",
+              "scale": "color",
+              "field": "part"
+            },
+            {"value": "#CCCCCC"}
+          ],
+          "fill": [
+            {
+              "test": "(!length(data('selected')) || indata('selected', 'value', datum.part))",
+              "scale": "color",
+              "field": "part"
+            },
+            {"value": "#CCCCCC"}
+          ],
+          "strokeOpacity": [
+            {
+              "test": "(!length(data('selected')) || indata('selected', 'value', datum.part))",
+              "signal": "0.5"
+            },
+            {"signal": "0.25"}
+          ],
+          "fillOpacity": [
+            {
+              "test": "(!length(data('selected')) || indata('selected', 'value', datum.part))",
+              "signal": "0.2"
+            },
+            {"signal": "0.05"}
+          ]
         }
       }
     }
