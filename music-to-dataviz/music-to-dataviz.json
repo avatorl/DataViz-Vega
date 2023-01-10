@@ -120,7 +120,7 @@
     }
   ],
   "title": {
-    "text": "Piano Quintet No. 2 in c Minor Op. 115 - Gabriel Fauré",
+    "text": "Piano Quintet No. 2 in C Minor Op. 115 - Gabriel Fauré",
     "color": "white",
     "anchor": "start",
     "fontSize": 24
@@ -146,12 +146,11 @@
           "enter": {
             "strokeWidth": {"value": 1},
             "strokeOpacity": {"value": 0.8},
-            "fillOpacity": {"value": 0.4},
             "size": {"value": 100},
             "cursor": {"value": "pointer"}
           },
           "update": {
-            "fill": {"value": "transparent"},
+            "fillOpacity": {"value": 0.4},
             "strokeWidth": {"value": 2},
             "opacity": [
               {
@@ -160,7 +159,7 @@
               },
               {"value": 0.15}
             ],
-            "size": {"value": 64}
+            "size": {"value": 100}
           }
         },
         "labels": {
