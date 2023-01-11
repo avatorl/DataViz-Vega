@@ -16,12 +16,14 @@
     {"name": "titleFontSize", "value": 24},
     {"name": "subTitleFontSize", "value": 16},
     {"name": "cellFillColor", "value": "#DDDDDD"},
-    {"name": "dataBarFillColor", "value": "#B6D2E3"},
+    {"name": "dataBarFillColorB", "value": "#D3D3D3"},
+    {"name": "dataBarFillColorG", "value": "#B6D2E3"},
     {"name": "valueTextColor", "value": "#333333"},
     {"name": "valueFontSize", "value": 16},
     {"name": "columnWidth", "value": 125},
     {"name": "firstColumnWidth", "value": 150},
-    {"name": "barRightCornerRadius", "value": 2},
+    {"name": "barRightCornerRadius", "value": 1},
+    {"name": "showChanges", "value": false},
     {
       "name": "selected",
       "value": null,
@@ -165,7 +167,10 @@
             {
               "name": "x2",
               "type": "linear",
-              "domain": {"data": "group-columns", "field": "Value"},
+              "domain": {
+                "data": "group-columns",
+                "fields": ["Value", "ValuePrev"]
+              },
               "range": [0, {"signal": "columnWidth"}]
             }
           ],
@@ -197,10 +202,41 @@
                   "height": {"scale": "y", "band": 1},
                   "cornerRadiusTopRight": {"signal": "barRightCornerRadius"},
                   "cornerRadiusBottomRight": {"signal": "barRightCornerRadius"},
-                  "fill": {"signal": "dataBarFillColor"}
+                  "fill": {
+                    "signal": "showChanges?dataBarFillColorB:dataBarFillColorG"
+                  }
                 },
                 "update": {
                   "fillOpacity": {"signal": "datum.Country==selected?1:'0.5'"}
+                }
+              }
+            },
+            {
+              "name": "rect-data-change-bar",
+              "type": "rect",
+              "from": {"data": "group-columns"},
+              "encode": {
+                "enter": {
+                  "x": {
+                    "scale": "x2",
+                    "signal": "datum.Value>=datum.ValuePrev?datum.ValuePrev:datum.Value"
+                  },
+                  "x2": {
+                    "scale": "x2",
+                    "signal": "datum.Value>=datum.ValuePrev?datum.Value:datum.ValuePrev"
+                  },
+                  "y": {"scale": "y", "field": "Country"},
+                  "height": {"scale": "y", "band": 0.2},
+                  "cornerRadiusTopRight": {"signal": "0"},
+                  "cornerRadiusBottomRight": {"signal": "0"},
+                  "fill": {
+                    "signal": "datum.Value>=datum.ValuePrev?'#00A68E':'#EF5039'"
+                  }
+                },
+                "update": {
+                  "fillOpacity": {
+                    "signal": "showChanges?datum.Country==selected?1:0.8:0"
+                  }
                 }
               }
             },
