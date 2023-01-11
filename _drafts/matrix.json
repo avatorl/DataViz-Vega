@@ -23,12 +23,12 @@
     {"name": "barRightCornerRadius", "value": "2"}
   ],
   "title": {
-    "offset": 20,
-    "text": "European Union Countries Trade (% of GDP)",
-    "color": {"signal": "titleColor"},
     "anchor": "start",
+    "offset": 20,
+    "text": "European Union Countries Trade",
+    "color": {"signal": "titleColor"},
     "fontSize": {"signal": "titleFontSize"},
-    "subtitle": "Subtitle",
+    "subtitle": "% of GDP",
     "subtitleFontSize": {"signal": "subTitleFontSize"},
     "subtitlePadding": 10
   },
@@ -80,7 +80,7 @@
         "enter": {
           "x": {"signal": "-130"},
           "y": {"signal": "-50"},
-          "width": {"signal": "630"},
+          "width": {"signal": "650"},
           "height": {"signal": "50"},
           "fill": {"signal": "'#CCCCCC'"},
           "fillOpacity": {"value": 1},
@@ -113,7 +113,7 @@
         "align": "all",
         "bounds": "full",
         "columns": {"signal": "10"},
-        "padding": 5
+        "padding": 10
       },
       "marks": [
         {
