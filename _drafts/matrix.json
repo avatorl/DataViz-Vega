@@ -1,0 +1,226 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "Table/Matrix",
+  "usermeta": {},
+  "width": 1,
+  "height": 800,
+  "padding": 10,
+  "autosize": "pad",
+  "background": "white",
+  "config": {},
+  "signals": [
+    {"name": "titleColor", "value": "black"},
+    {"name": "cellFillColor", "value": "#DDDDDD"},
+    {"name": "databarFillColor", "value": "#DDDDFF"},
+    {"name": "valueTextColor", "value": "#333333"},
+    {"name": "titleFontSize", "value": "24"},
+    {"name": "subTitleFontSize", "value": "16"},
+    {"name": "valueFontSize", "value": "16"},
+    {"name": "barRightCornerRadius", "value": "3"},
+    {"name": "columnWidth", "value": "100"}
+  ],
+  "title": {
+    "offset": 20,
+    "text": "TITLE",
+    "color": {"signal": "titleColor"},
+    "anchor": "start",
+    "fontSize": {"signal": "titleFontSize"},
+    "subtitle": "Subtitle",
+    "subtitleFontSize": {"signal": "subTitleFontSize"},
+    "subtitlePadding": 10
+  },
+  "data": [
+    {
+      "name": "dataset-csv",
+      "url": "https://dl.dropboxusercontent.com/s/uoc7d1od7a7ogol/Trade.csv",
+      "format": {"type": "csv", "parse": "auto", "delimiter": ","},
+      "transform": [{"type": "filter", "expr": "datum.Year>2011"}]
+    },
+    {"name": "dataset", "source": "dataset-csv"},
+    {
+      "name": "data-flags",
+      "url": "https://dl.dropboxusercontent.com/s/kfsochkb7hsysj1/Flags.csv",
+      "format": {"type": "csv", "parse": "auto", "delimiter": ","}
+    }
+  ],
+  "scales": [
+    {
+      "name": "x",
+      "type": "band",
+      "domain": {"data": "dataset", "field": "Year"},
+      "range": "width"
+    },
+    {
+      "name": "y",
+      "type": "band",
+      "domain": {"data": "dataset", "field": "Country"},
+      "range": "height",
+      "padding": 0.2
+    }
+  ],
+  "axes": [
+    {
+      "scale": "y",
+      "orient": "left",
+      "domain": false,
+      "ticks": false,
+      "labelFontSize": 18,
+      "offset": 35,
+      "zindex": 1
+    }
+  ],
+  "marks": [
+    {
+      "name": "table-header",
+      "type": "rect",
+      "encode": {
+        "enter": {
+          "x": {"signal": "-130"},
+          "y": {"signal": "-50"},
+          "width": {"signal": "800"},
+          "height": {"signal": "50"},
+          "fill": {"signal": "'#CCCCCC'"},
+          "fillOpacity": {"value": 1},
+          "cornerRadiusTopLeft": {"signal": "barRightCornerRadius"},
+          "cornerRadiusTopRight": {"signal": "barRightCornerRadius"}
+        }
+      }
+    },
+    {
+      "name": "row-header-background-bar",
+      "type": "rect",
+      "from": {"data": "dataset"},
+      "encode": {
+        "enter": {"url": {"field": "Flag"}},
+        "update": {
+          "opacity": {"value": 1},
+          "x": {"signal": "-130"},
+          "y": {"scale": "y", "signal": "datum.Country"},
+          "width": {"signal": "200"},
+          "height": {"scale": "y", "band": 1},
+          "fill": {"signal": "'#F9F9F9'"},
+          "fillOpacity": {"signal": "1"},
+          "cornerRadiusTopLeft": {"signal": "barRightCornerRadius"},
+          "cornerRadiusBottomLeft": {"signal": "barRightCornerRadius"}
+        }
+      }
+    },
+    {
+      "type": "group",
+      "layout": {
+        "align": "all",
+        "bounds": "full",
+        "columns": {"signal": "10"},
+        "padding": 5
+      },
+      "marks": [
+        {
+          "type": "group",
+          "from": {
+            "facet": {
+              "name": "column-metric",
+              "data": "dataset",
+              "groupby": "Year"
+            }
+          },
+          "title": {
+            "text": {"signal": "parent.Year"},
+            "align": "center",
+            "baseline": "middle",
+            "anchor": "middle",
+            "color": {"signal": "'#EEEEEE'"},
+            "fontSize": {"signal": "18"},
+            "fontWeight": {"value": "lighter"},
+            "encode": {"title": {"update": {"strokeWidth": {"value": "0"}}}}
+          },
+          "scales": [
+            {
+              "name": "x2",
+              "type": "linear",
+              "domain": {"data": "column-metric", "field": "Value"},
+              "range": [0, {"signal": "columnWidth"}]
+            }
+          ],
+          "marks": [
+            {
+              "name": "rectangles",
+              "type": "rect",
+              "from": {"data": "column-metric"},
+              "encode": {
+                "enter": {
+                  "x": {"scale": "x", "field": "Year"},
+                  "y": {"scale": "y", "field": "Country"},
+                  "width": {"signal": "columnWidth"},
+                  "height": {"scale": "y", "band": 1},
+                  "fill": {"signal": "cellFillColor"},
+                  "fillOpacity": {"value": 0.2}
+                }
+              }
+            },
+            {
+              "name": "bars",
+              "type": "rect",
+              "from": {"data": "column-metric"},
+              "encode": {
+                "enter": {
+                  "x": {"scale": "x", "field": "Year"},
+                  "y": {"scale": "y", "field": "Country"},
+                  "width": {"scale": "x2", "signal": "datum.Value"},
+                  "height": {"scale": "y", "band": 1},
+                  "fill": {"signal": "databarFillColor"},
+                  "fillOpacity": {"value": 1},
+                  "cornerRadiusTopRight": {"signal": "barRightCornerRadius"},
+                  "cornerRadiusBottomRight": {"signal": "barRightCornerRadius"}
+                }
+              }
+            },
+            {
+              "name": "value-text",
+              "type": "text",
+              "from": {"data": "rectangles"},
+              "encode": {
+                "enter": {
+                  "align": {"value": "right"},
+                  "x": {"field": "x", "offset": {"signal": "datum.width-5"}},
+                  "y": {"field": "y", "offset": 19},
+                  "text": {"signal": "format(datum.datum.Value,',.2f')"},
+                  "fill": {"signal": "valueTextColor"},
+                  "fontSize": {"signal": "valueFontSize"}
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "image-channel-icon",
+      "type": "image",
+      "from": {"data": "data-flags"},
+      "encode": {
+        "enter": {"url": {"field": "Flag"}},
+        "update": {
+          "opacity": {"value": 1},
+          "x": {"signal": "-30"},
+          "y": {"scale": "y", "signal": "datum.Country", "offset": 3},
+          "width": {"signal": "20"},
+          "height": {"signal": "20"}
+        }
+      }
+    },
+    {
+      "name": "text-country",
+      "type": "text",
+      "encode": {
+        "enter": {
+          "align": {"value": "left"},
+          "x": {"signal": "-100"},
+          "y": {"signal": "-16"},
+          "text": {"signal": "'Country'"},
+          "fill": {"signal": "'#EEEEEE'"},
+          "fontSize": {"signal": "18"}
+        }
+      }
+    }
+  ]
+}
