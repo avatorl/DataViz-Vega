@@ -13,22 +13,23 @@
   "config": {},
   "signals": [
     {"name": "titleColor", "value": "#003C7E"},
-    {"name": "titleFontSize", "value": "24"},
-    {"name": "subTitleFontSize", "value": "16"},
+    {"name": "titleFontSize", "value": 24},
+    {"name": "subTitleFontSize", "value": 16},
     {"name": "cellFillColor", "value": "#DDDDDD"},
     {"name": "dataBarFillColor", "value": "#B6D2E3"},
     {"name": "valueTextColor", "value": "#333333"},
-    {"name": "valueFontSize", "value": "16"},
-    {"name": "columnWidth", "value": "100"},
-    {"name": "barRightCornerRadius", "value": "2"}
+    {"name": "valueFontSize", "value": 16},
+    {"name": "columnWidth", "value": 125},
+    {"name": "firstColumnWidth", "value": 150},
+    {"name": "barRightCornerRadius", "value": 2}
   ],
   "title": {
     "anchor": "start",
     "offset": 20,
-    "text": "European Union Countries Trade",
+    "text": "European Union Countries Trade (% of GDP), 2017-2021",
     "color": {"signal": "titleColor"},
     "fontSize": {"signal": "titleFontSize"},
-    "subtitle": "% of GDP",
+    "subtitle": "Trade is the sum of exports and imports of goods and services measured as a share of gross domestic product",
     "subtitleFontSize": {"signal": "subTitleFontSize"},
     "subtitlePadding": 10
   },
@@ -48,7 +49,7 @@
   ],
   "scales": [
     {
-      "name": "x",
+      "name": "scaleX",
       "type": "band",
       "domain": {"data": "dataset", "field": "Year"},
       "range": "width"
@@ -78,9 +79,11 @@
       "type": "rect",
       "encode": {
         "enter": {
-          "x": {"signal": "-130"},
+          "x": {"signal": "-firstColumnWidth"},
           "y": {"signal": "-50"},
-          "width": {"signal": "650"},
+          "width": {
+            "signal": "(columnWidth+5)*(length('scaleX')-1)+firstColumnWidth+15"
+          },
           "height": {"signal": "50"},
           "fill": {"signal": "'#5692B4'"},
           "fillOpacity": {"value": 1},
@@ -96,9 +99,9 @@
       "encode": {
         "enter": {
           "opacity": {"value": 1},
-          "x": {"signal": "-130"},
+          "x": {"signal": "-firstColumnWidth"},
           "y": {"scale": "y", "signal": "datum.Country"},
-          "width": {"signal": "200"},
+          "width": {"signal": "firstColumnWidth-5"},
           "height": {"scale": "y", "band": 1},
           "fill": {"signal": "'#F9F9F9'"},
           "fillOpacity": {"signal": "1"},
@@ -150,7 +153,7 @@
               "from": {"data": "group-columns"},
               "encode": {
                 "enter": {
-                  "x": {"scale": "x", "field": "Year"},
+                  "x": {"scale": "scaleX", "field": "Year"},
                   "y": {"scale": "y", "field": "Country"},
                   "width": {"signal": "columnWidth"},
                   "height": {"scale": "y", "band": 1},
@@ -165,7 +168,7 @@
               "from": {"data": "group-columns"},
               "encode": {
                 "enter": {
-                  "x": {"scale": "x", "field": "Year"},
+                  "x": {"scale": "scaleX", "field": "Year"},
                   "y": {"scale": "y", "field": "Country"},
                   "width": {"scale": "x2", "signal": "datum.Value"},
                   "height": {"scale": "y", "band": 1},
@@ -185,7 +188,7 @@
                   "align": {"value": "right"},
                   "x": {"field": "x", "offset": {"signal": "datum.width-5"}},
                   "y": {"field": "y", "offset": 19},
-                  "text": {"signal": "format(datum.datum.Value,',.2f')"},
+                  "text": {"signal": "format(datum.datum.Value,',.0%')"},
                   "fill": {"signal": "valueTextColor"},
                   "fontSize": {"signal": "valueFontSize"}
                 }
