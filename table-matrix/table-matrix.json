@@ -252,9 +252,9 @@
       "type": "text",
       "encode": {
         "enter": {
-          "align": {"value": "left"},
-          "x": {"signal": "-100"},
-          "y": {"signal": "-16"},
+          "align": {"value": "center"},
+          "x": {"signal": "-firstColumnWidth/2"},
+          "y": {"signal": "-18"},
           "text": {"signal": "'Country'"},
           "fill": {"signal": "'#EEEEEE'"},
           "fontSize": {"signal": "18"}
