@@ -81,7 +81,8 @@
       "ticks": false,
       "labelFontSize": 18,
       "offset": 35,
-      "zindex": 1
+      "zindex": 1,
+      "encode": {"labels": {"update": {}}}
     }
   ],
   "marks": [
@@ -119,6 +120,9 @@
           "fillOpacity": {"signal": "1"},
           "cornerRadiusTopLeft": {"signal": "barRightCornerRadius"},
           "cornerRadiusBottomLeft": {"signal": "barRightCornerRadius"}
+        },
+        "update": {
+          "fill": {"signal": "datum.Country==selected?'#DEDEDE':'#F9F9F9'"}
         }
       }
     },
@@ -178,31 +182,38 @@
               "name": "rect-data-bar",
               "type": "rect",
               "from": {"data": "group-columns"},
-              "update": {
-                "x": {"scale": "scaleX", "field": "Year"},
-                "y": {"scale": "y", "field": "Country"},
-                "width": {"scale": "x2", "signal": "datum.Value"},
-                "height": {"scale": "y", "band": 1},
-                "fillOpacity": {"value": 1},
-                "cornerRadiusTopRight": {"signal": "barRightCornerRadius"},
-                "cornerRadiusBottomRight": {"signal": "barRightCornerRadius"},
-                "fill": {
-                  "signal": "indata('group-columns','Country', selected)? dataBarFillColor:'white'"
+              "encode": {
+                "update": {
+                  "x": {"scale": "scaleX", "field": "Year"},
+                  "y": {"scale": "y", "field": "Country"},
+                  "width": {"scale": "x2", "signal": "datum.Value"},
+                  "height": {"scale": "y", "band": 1},
+                  "fillOpacity": {"signal": "datum.Country==selected?1:'0.5'"},
+                  "cornerRadiusTopRight": {"signal": "barRightCornerRadius"},
+                  "cornerRadiusBottomRight": {"signal": "barRightCornerRadius"},
+                  "fill": {"signal": "dataBarFillColor"}
                 }
               }
             },
             {
               "name": "value-text",
               "type": "text",
-              "from": {"data": "rect-cell-background"},
+              "from": {"data": "group-columns"},
               "encode": {
-                "enter": {
+                "update": {
                   "align": {"value": "right"},
-                  "x": {"field": "x", "offset": {"signal": "datum.width-5"}},
-                  "y": {"field": "y", "offset": 19},
-                  "text": {"signal": "format(datum.datum.Value,',.0%')"},
+                  "x": {
+                    "scale": "scaleX",
+                    "field": "Year",
+                    "offset": {"signal": "columnWidth"}
+                  },
+                  "y": {"scale": "y", "field": "Country", "offset": 18},
+                  "text": {"signal": "format(datum.Value,',.0%')"},
                   "fill": {"signal": "valueTextColor"},
-                  "fontSize": {"signal": "valueFontSize"}
+                  "fontSize": {"signal": "valueFontSize"},
+                  "fontWeight": {
+                    "signal": "datum.Country==selected?'bold':'normal'"
+                  }
                 }
               }
             }
