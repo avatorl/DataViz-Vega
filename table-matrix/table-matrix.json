@@ -44,7 +44,7 @@
     "anchor": "start",
     "offset": 20,
     "text": {
-      "signal": "'European Union Countries Trade (% of GDP), '+data('dataset-years')[0]['Year']+'-'+data('dataset-years')[1]['Year']"
+      "signal": "'European Union Countries Trade (% of GDP), '+data('dataset-years')[0]['Year']+'-'+peek(data('dataset-years'))['Year']"
     },
     "color": {"signal": "titleColor"},
     "fontSize": {"signal": "titleFontSize"},
