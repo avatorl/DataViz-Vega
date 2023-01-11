@@ -21,7 +21,18 @@
     {"name": "valueFontSize", "value": 16},
     {"name": "columnWidth", "value": 125},
     {"name": "firstColumnWidth", "value": 150},
-    {"name": "barRightCornerRadius", "value": 2}
+    {"name": "barRightCornerRadius", "value": 2},
+    {
+      "name": "selected",
+      "value": null,
+      "on": [
+        {
+          "events": "@rect-row-header:click",
+          "update": "datum.Country",
+          "force": true
+        }
+      ]
+    }
   ],
   "title": {
     "anchor": "start",
@@ -96,6 +107,7 @@
       "name": "rect-row-header",
       "type": "rect",
       "from": {"data": "dataset"},
+      "interactive": true,
       "encode": {
         "enter": {
           "opacity": {"value": 1},
@@ -166,16 +178,16 @@
               "name": "rect-data-bar",
               "type": "rect",
               "from": {"data": "group-columns"},
-              "encode": {
-                "enter": {
-                  "x": {"scale": "scaleX", "field": "Year"},
-                  "y": {"scale": "y", "field": "Country"},
-                  "width": {"scale": "x2", "signal": "datum.Value"},
-                  "height": {"scale": "y", "band": 1},
-                  "fill": {"signal": "dataBarFillColor"},
-                  "fillOpacity": {"value": 1},
-                  "cornerRadiusTopRight": {"signal": "barRightCornerRadius"},
-                  "cornerRadiusBottomRight": {"signal": "barRightCornerRadius"}
+              "update": {
+                "x": {"scale": "scaleX", "field": "Year"},
+                "y": {"scale": "y", "field": "Country"},
+                "width": {"scale": "x2", "signal": "datum.Value"},
+                "height": {"scale": "y", "band": 1},
+                "fillOpacity": {"value": 1},
+                "cornerRadiusTopRight": {"signal": "barRightCornerRadius"},
+                "cornerRadiusBottomRight": {"signal": "barRightCornerRadius"},
+                "fill": {
+                  "signal": "indata('group-columns','Country', selected)? dataBarFillColor:'white'"
                 }
               }
             },
