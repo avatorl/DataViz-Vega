@@ -28,7 +28,7 @@
       "on": [
         {
           "events": "@rect-row-header:click",
-          "update": "datum.Country",
+          "update": "selected==datum.Country?null:datum.Country",
           "force": true
         }
       ]
