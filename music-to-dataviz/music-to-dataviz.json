@@ -226,7 +226,7 @@
                   "cornerRadiusTopRight": {"signal": "0"},
                   "cornerRadiusBottomRight": {"signal": "0"},
                   "fill": {
-                    "signal": "datum.Value>=datum.ValuePrev?'green':'red'"
+                    "signal": "datum.Value>=datum.ValuePrev?'#00A68E':'#EF5039'"
                   }
                 },
                 "update": {
