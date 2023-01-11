@@ -12,11 +12,11 @@
   "background": "white",
   "config": {},
   "signals": [
-    {"name": "titleColor", "value": "black"},
+    {"name": "titleColor", "value": "#003C7E"},
     {"name": "titleFontSize", "value": "24"},
     {"name": "subTitleFontSize", "value": "16"},
     {"name": "cellFillColor", "value": "#DDDDDD"},
-    {"name": "dataBarFillColor", "value": "#DDDDFF"},
+    {"name": "dataBarFillColor", "value": "#B6D2E3"},
     {"name": "valueTextColor", "value": "#333333"},
     {"name": "valueFontSize", "value": "16"},
     {"name": "columnWidth", "value": "100"},
@@ -82,7 +82,7 @@
           "y": {"signal": "-50"},
           "width": {"signal": "650"},
           "height": {"signal": "50"},
-          "fill": {"signal": "'#CCCCCC'"},
+          "fill": {"signal": "'#5692B4'"},
           "fillOpacity": {"value": 1},
           "cornerRadiusTopLeft": {"signal": "5"},
           "cornerRadiusTopRight": {"signal": "5"}
