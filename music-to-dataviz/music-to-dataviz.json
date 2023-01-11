@@ -165,7 +165,10 @@
             {
               "name": "x2",
               "type": "linear",
-              "domain": {"data": "group-columns", "field": "Value"},
+              "domain": {
+                "data": "group-columns",
+                "fields": ["Value", "ValuePrev"]
+              },
               "range": [0, {"signal": "columnWidth"}]
             }
           ],
@@ -201,6 +204,33 @@
                 },
                 "update": {
                   "fillOpacity": {"signal": "datum.Country==selected?1:'0.5'"}
+                }
+              }
+            },
+            {
+              "name": "rect-data-change-bar",
+              "type": "rect",
+              "from": {"data": "group-columns"},
+              "encode": {
+                "enter": {
+                  "x": {
+                    "scale": "x2",
+                    "signal": "datum.Value>=datum.ValuePrev?datum.ValuePrev:datum.Value"
+                  },
+                  "x2": {
+                    "scale": "x2",
+                    "signal": "datum.Value>=datum.ValuePrev?datum.Value:datum.ValuePrev"
+                  },
+                  "y": {"scale": "y", "field": "Country"},
+                  "height": {"scale": "y", "band": 0.33},
+                  "cornerRadiusTopRight": {"signal": "0"},
+                  "cornerRadiusBottomRight": {"signal": "0"},
+                  "fill": {
+                    "signal": "datum.Value>=datum.ValuePrev?'green':'red'"
+                  }
+                },
+                "update": {
+                  "fillOpacity": {"signal": "datum.Country==selected?1:'0.8'"}
                 }
               }
             },
