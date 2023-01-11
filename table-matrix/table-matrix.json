@@ -23,7 +23,11 @@
     {"name": "columnWidth", "value": 125},
     {"name": "firstColumnWidth", "value": 150},
     {"name": "barRightCornerRadius", "value": 1},
-    {"name": "showChanges", "value": false},
+    {
+      "name": "showChanges",
+      "description": "true - show changes from previous year (red/green mini bars)",
+      "value": false
+    },
     {
       "name": "selected",
       "value": null,
