@@ -89,7 +89,7 @@
       "labelFontSize": 18,
       "offset": 35,
       "zindex": 1,
-      "encode": {"labels": {"update": {}}}
+      "encode": {"labels": {"enter": {"dy": {"value": 1}}}}
     }
   ],
   "marks": [
@@ -101,7 +101,7 @@
           "x": {"signal": "-firstColumnWidth"},
           "y": {"signal": "-50"},
           "width": {
-            "signal": "(columnWidth+10)*length(data('dataset-years'))+firstColumnWidth-10"
+            "signal": "(columnWidth+10)*(length(data('dataset-years')))+firstColumnWidth-10"
           },
           "height": {"signal": "50"},
           "fill": {"signal": "'#5692B4'"},
@@ -159,7 +159,7 @@
             "color": {"signal": "'#EEEEEE'"},
             "fontSize": {"signal": "18"},
             "fontWeight": {"value": "lighter"},
-            "encode": {"title": {"update": {"strokeWidth": {"value": "0"}}}}
+            "encode": {"title": {"enter": {"strokeWidth": {"value": "0"}}}}
           },
           "scales": [
             {
@@ -190,15 +190,17 @@
               "type": "rect",
               "from": {"data": "group-columns"},
               "encode": {
-                "update": {
+                "enter": {
                   "x": {"scale": "scaleX", "field": "Year"},
                   "y": {"scale": "y", "field": "Country"},
                   "width": {"scale": "x2", "signal": "datum.Value"},
                   "height": {"scale": "y", "band": 1},
-                  "fillOpacity": {"signal": "datum.Country==selected?1:'0.5'"},
                   "cornerRadiusTopRight": {"signal": "barRightCornerRadius"},
                   "cornerRadiusBottomRight": {"signal": "barRightCornerRadius"},
                   "fill": {"signal": "dataBarFillColor"}
+                },
+                "update": {
+                  "fillOpacity": {"signal": "datum.Country==selected?1:'0.5'"}
                 }
               }
             },
@@ -207,7 +209,7 @@
               "type": "text",
               "from": {"data": "group-columns"},
               "encode": {
-                "update": {
+                "enter": {
                   "align": {"value": "right"},
                   "x": {
                     "scale": "scaleX",
@@ -217,7 +219,9 @@
                   "y": {"scale": "y", "field": "Country", "offset": 18},
                   "text": {"signal": "format(datum.Value,',.0%')"},
                   "fill": {"signal": "valueTextColor"},
-                  "fontSize": {"signal": "valueFontSize"},
+                  "fontSize": {"signal": "valueFontSize"}
+                },
+                "update": {
                   "fontWeight": {
                     "signal": "datum.Country==selected?'bold':'normal'"
                   }
@@ -233,8 +237,8 @@
       "type": "image",
       "from": {"data": "data-flags"},
       "encode": {
-        "enter": {"url": {"field": "Flag"}},
-        "update": {
+        "enter": {
+          "url": {"field": "Flag"},
           "opacity": {"value": 1},
           "x": {"signal": "-30"},
           "y": {"scale": "y", "signal": "datum.Country", "offset": 3},
