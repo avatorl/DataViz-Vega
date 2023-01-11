@@ -34,7 +34,7 @@
       "name": "dataset-csv",
       "url": "https://dl.dropboxusercontent.com/s/uoc7d1od7a7ogol/Trade.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","},
-      "transform": [{"type": "filter", "expr": "datum.Year>2011"}]
+      "transform": [{"type": "filter", "expr": "datum.Year>2016"}]
     },
     {"name": "dataset", "source": "dataset-csv"},
     {
@@ -77,7 +77,7 @@
         "enter": {
           "x": {"signal": "-130"},
           "y": {"signal": "-50"},
-          "width": {"signal": "800"},
+          "width": {"signal": "630"},
           "height": {"signal": "50"},
           "fill": {"signal": "'#CCCCCC'"},
           "fillOpacity": {"value": 1},
