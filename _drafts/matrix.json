@@ -1,8 +1,11 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
-  "description": "Table/Matrix",
-  "usermeta": {},
-  "width": 1,
+  "description": "Matrix",
+  "usermeta": {
+    "Author": "Andrzej Leszkiewicz",
+    "License": "CC BY 4.0 (Share and Adapt with Attribution)",
+    "Github": "https://github.com/avatorl/Deneb-Vega/"
+  },
   "height": 800,
   "padding": 10,
   "autosize": "pad",
@@ -10,18 +13,18 @@
   "config": {},
   "signals": [
     {"name": "titleColor", "value": "black"},
-    {"name": "cellFillColor", "value": "#DDDDDD"},
-    {"name": "databarFillColor", "value": "#DDDDFF"},
-    {"name": "valueTextColor", "value": "#333333"},
     {"name": "titleFontSize", "value": "24"},
     {"name": "subTitleFontSize", "value": "16"},
+    {"name": "cellFillColor", "value": "#DDDDDD"},
+    {"name": "dataBarFillColor", "value": "#DDDDFF"},
+    {"name": "valueTextColor", "value": "#333333"},
     {"name": "valueFontSize", "value": "16"},
-    {"name": "barRightCornerRadius", "value": "3"},
-    {"name": "columnWidth", "value": "100"}
+    {"name": "columnWidth", "value": "100"},
+    {"name": "barRightCornerRadius", "value": "2"}
   ],
   "title": {
     "offset": 20,
-    "text": "TITLE",
+    "text": "European Union Countries Trade (% of GDP)",
     "color": {"signal": "titleColor"},
     "anchor": "start",
     "fontSize": {"signal": "titleFontSize"},
@@ -71,7 +74,7 @@
   ],
   "marks": [
     {
-      "name": "table-header",
+      "name": "rect-matrix-header",
       "type": "rect",
       "encode": {
         "enter": {
@@ -81,18 +84,17 @@
           "height": {"signal": "50"},
           "fill": {"signal": "'#CCCCCC'"},
           "fillOpacity": {"value": 1},
-          "cornerRadiusTopLeft": {"signal": "barRightCornerRadius"},
-          "cornerRadiusTopRight": {"signal": "barRightCornerRadius"}
+          "cornerRadiusTopLeft": {"signal": "5"},
+          "cornerRadiusTopRight": {"signal": "5"}
         }
       }
     },
     {
-      "name": "row-header-background-bar",
+      "name": "rect-row-header",
       "type": "rect",
       "from": {"data": "dataset"},
       "encode": {
-        "enter": {"url": {"field": "Flag"}},
-        "update": {
+        "enter": {
           "opacity": {"value": 1},
           "x": {"signal": "-130"},
           "y": {"scale": "y", "signal": "datum.Country"},
@@ -118,7 +120,7 @@
           "type": "group",
           "from": {
             "facet": {
-              "name": "column-metric",
+              "name": "group-columns",
               "data": "dataset",
               "groupby": "Year"
             }
@@ -137,7 +139,7 @@
             {
               "name": "x2",
               "type": "linear",
-              "domain": {"data": "column-metric", "field": "Value"},
+              "domain": {"data": "group-columns", "field": "Value"},
               "range": [0, {"signal": "columnWidth"}]
             }
           ],
@@ -145,7 +147,7 @@
             {
               "name": "rectangles",
               "type": "rect",
-              "from": {"data": "column-metric"},
+              "from": {"data": "group-columns"},
               "encode": {
                 "enter": {
                   "x": {"scale": "x", "field": "Year"},
@@ -160,14 +162,14 @@
             {
               "name": "bars",
               "type": "rect",
-              "from": {"data": "column-metric"},
+              "from": {"data": "group-columns"},
               "encode": {
                 "enter": {
                   "x": {"scale": "x", "field": "Year"},
                   "y": {"scale": "y", "field": "Country"},
                   "width": {"scale": "x2", "signal": "datum.Value"},
                   "height": {"scale": "y", "band": 1},
-                  "fill": {"signal": "databarFillColor"},
+                  "fill": {"signal": "dataBarFillColor"},
                   "fillOpacity": {"value": 1},
                   "cornerRadiusTopRight": {"signal": "barRightCornerRadius"},
                   "cornerRadiusBottomRight": {"signal": "barRightCornerRadius"}
@@ -194,7 +196,7 @@
       ]
     },
     {
-      "name": "image-channel-icon",
+      "name": "image-row-icon",
       "type": "image",
       "from": {"data": "data-flags"},
       "encode": {
@@ -209,7 +211,7 @@
       }
     },
     {
-      "name": "text-country",
+      "name": "text-row-label",
       "type": "text",
       "encode": {
         "enter": {
