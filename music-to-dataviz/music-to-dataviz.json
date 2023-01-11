@@ -222,7 +222,7 @@
                     "signal": "datum.Value>=datum.ValuePrev?datum.Value:datum.ValuePrev"
                   },
                   "y": {"scale": "y", "field": "Country"},
-                  "height": {"scale": "y", "band": 0.33},
+                  "height": {"scale": "y", "band": 0.2},
                   "cornerRadiusTopRight": {"signal": "0"},
                   "cornerRadiusBottomRight": {"signal": "0"},
                   "fill": {
