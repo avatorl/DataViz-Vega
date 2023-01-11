@@ -145,7 +145,7 @@
           ],
           "marks": [
             {
-              "name": "rectangles",
+              "name": "rect-cell-background",
               "type": "rect",
               "from": {"data": "group-columns"},
               "encode": {
@@ -160,7 +160,7 @@
               }
             },
             {
-              "name": "bars",
+              "name": "rect-data-bar",
               "type": "rect",
               "from": {"data": "group-columns"},
               "encode": {
@@ -179,7 +179,7 @@
             {
               "name": "value-text",
               "type": "text",
-              "from": {"data": "rectangles"},
+              "from": {"data": "rect-cell-background"},
               "encode": {
                 "enter": {
                   "align": {"value": "right"},
