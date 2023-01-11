@@ -37,7 +37,9 @@
   "title": {
     "anchor": "start",
     "offset": 20,
-    "text": "European Union Countries Trade (% of GDP), 2017-2021",
+    "text": {
+      "signal": "'European Union Countries Trade (% of GDP), '+data('dataset-years')[0]['Year']+'-'+data('dataset-years')[1]['Year']"
+    },
     "color": {"signal": "titleColor"},
     "fontSize": {"signal": "titleFontSize"},
     "subtitle": "Trade is the sum of exports and imports of goods and services measured as a share of gross domestic product",
@@ -49,9 +51,14 @@
       "name": "dataset-csv",
       "url": "https://dl.dropboxusercontent.com/s/uoc7d1od7a7ogol/Trade.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","},
-      "transform": [{"type": "filter", "expr": "datum.Year>2016"}]
+      "transform": [{"type": "filter", "expr": "datum.Year>=2017"}]
     },
     {"name": "dataset", "source": "dataset-csv"},
+    {
+      "name": "dataset-years",
+      "source": "dataset",
+      "transform": [{"type": "aggregate", "groupby": ["Year"]}]
+    },
     {
       "name": "data-flags",
       "url": "https://dl.dropboxusercontent.com/s/kfsochkb7hsysj1/Flags.csv",
@@ -94,7 +101,7 @@
           "x": {"signal": "-firstColumnWidth"},
           "y": {"signal": "-50"},
           "width": {
-            "signal": "(columnWidth+5)*(length('scaleX')-1)+firstColumnWidth+15"
+            "signal": "(columnWidth+10)*length(data('dataset-years'))+firstColumnWidth-10"
           },
           "height": {"signal": "50"},
           "fill": {"signal": "'#5692B4'"},
@@ -131,7 +138,7 @@
       "layout": {
         "align": "all",
         "bounds": "full",
-        "columns": {"signal": "10"},
+        "columns": {"signal": "length(data('data-years'))"},
         "padding": 10
       },
       "marks": [
