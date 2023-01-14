@@ -17,8 +17,8 @@
   "signals": [
     {"name": "gridColumns", "value": 1},
     {"name": "lineColor", "value": "#AAAAAA"},
-    {"name": "lineStrokeWidth", "value": "0.3"},
-    {"name": "lineSelectedStrokeWidth", "value": "2"},
+    {"name": "lineStrokeWidth", "value": "0.5"},
+    {"name": "lineSelectedStrokeWidth", "value": "2.5"},
     {"name": "selected1Color", "value": "#377eb8"},
     {"name": "selected2Color", "value": "#e41a1c"},
     {
@@ -120,7 +120,8 @@
   "title": {
     "text": {"signal": "'People at risk of poverty or social exclusion'"},
     "subtitle": "Reproduction of the \"bamboo chart\" initially designed by Jorge Camões",
-    "subtitlePadding": 5,
+    "subtitlePadding": 10,
+    "subtitleFontSize": 14,
     "dy": -10,
     "anchor": "start",
     "font": {"value": "Tahoma"},
@@ -149,7 +150,7 @@
       "orient": "left",
       "title": "Select 2 countries",
       "titleFont": "Tahoma",
-      "titleFontSize": 15,
+      "titleFontSize": 16,
       "titleColor": "#333333",
       "titlePadding": 10,
       "padding": 30,
@@ -162,7 +163,7 @@
           "interactive": true,
           "enter": {
             "cursor": {"value": "pointer"},
-            "fontSize": {"value": 15},
+            "fontSize": {"value": 16},
             "dy": {"value": 5},
             "opacity": {"value": 1},
             "align": {"value": "left"}
@@ -183,7 +184,7 @@
       "encode": {
         "enter": {
           "text": {"signal": "datum.country"},
-          "fontSize": {"value": 18}
+          "fontSize": {"value": 20}
         },
         "update": {
           "opacity": {"value": 1},
@@ -215,13 +216,13 @@
           },
           "title": {
             "text": {"signal": "data('series')[0]['Metric']"},
-            "align": "left",
+            "align": "right",
             "color": {"value": "black"},
-            "fontSize": 14,
+            "fontSize": 18,
             "fontWeight": "lighter",
             "anchor": "start",
-            "dy": 33,
-            "dx": -120
+            "dy": 35,
+            "dx": 0
           },
           "axes": [
             {
