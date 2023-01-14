@@ -9,13 +9,13 @@
     "Original Idea URL": ""
   },
   "width": 600,
-  "height": 600,
+  "height": 1000,
   "padding": 20,
   "config": {
     "background": "black",
     "axis": {
       "titleFont": "Tahoma",
-      "titleFontSize": 14,
+      "titleFontSize": 18,
       "titleOpacity": {"signal": "opacityMain"},
       "titleColor": {"signal": "colorMain"},
       "labels": true,
@@ -134,6 +134,7 @@
       "orient": "bottom",
       "scale": "scaleX",
       "title": "% of Population",
+      "titlePadding": 15,
       "encode": {
         "labels": {"update": {"text": {"signal": "abs(datum.value)+'%'"}}}
       }
@@ -159,13 +160,13 @@
   ],
   "title": {
     "anchor": "start",
-    "fontSize": 18,
+    "fontSize": 22,
     "text": {"signal": "'Qatar Population Pyramid, 1950-2100'"},
     "color": {"signal": "colorMain"},
     "subtitle": "Reproduction of the chart initially designed by Jorge Camões",
     "subtitleColor": {"signal": "colorMain"},
     "subtitlePadding": 5,
-    "dy": -10
+    "dy": -20
   },
   "marks": [
     {
@@ -223,7 +224,7 @@
               "align": {"value": "right"},
               "text": {"value": "© Andrzej Leszkiewicz, 2022"},
               "x": {"signal": "width+50"},
-              "y": {"signal": "height+50"},
+              "y": {"signal": "height+75"},
               "fill": {"signal": "colorMain"},
               "fillOpacity": {"value": 0.7},
               "font": {"value": "Tahoma"},
@@ -241,7 +242,7 @@
               "align": {"value": "right"},
               "text": {"value": "Data Source: UN 🔗"},
               "x": {"signal": "50"},
-              "y": {"signal": "height+50"},
+              "y": {"signal": "height+75"},
               "fill": {"signal": "colorMain"},
               "fillOpacity": {"value": 0.7},
               "font": {"value": "Tahoma"},
