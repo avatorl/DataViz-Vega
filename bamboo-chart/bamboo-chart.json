@@ -163,7 +163,7 @@
           "interactive": true,
           "enter": {
             "cursor": {"value": "pointer"},
-            "fontSize": {"value": 16},
+            "fontSize": {"value": 18},
             "dy": {"value": 5},
             "opacity": {"value": 1},
             "align": {"value": "left"}
@@ -184,13 +184,14 @@
       "encode": {
         "enter": {
           "text": {"signal": "datum.country"},
-          "fontSize": {"value": 20}
+          "fontSize": {"value": 20},
+          "fontWeight": {"value": "bold"}
         },
         "update": {
           "opacity": {"value": 1},
           "x": {"scale": "scaleX", "signal": "datum.total"},
           "y": {
-            "signal": "datum.country==data('selected-countries')[length(data('selected-countries'))-1].country?-5:datum.country==data('selected-countries')[length(data('selected-countries'))-2].country?-25:0"
+            "signal": "datum.country==data('selected-countries')[length(data('selected-countries'))-1].country?-5:datum.country==data('selected-countries')[length(data('selected-countries'))-2].country?-30:0"
           },
           "dy": {"value": -25},
           "align": {"value": "center"},
