@@ -10,7 +10,7 @@
   },
   "background": "white",
   "width": 800,
-  "height": 40,
+  "height": 45,
   "padding": 5,
   "autosize": "pad",
   "config": {},
@@ -124,7 +124,7 @@
     "dy": -10,
     "anchor": "start",
     "font": {"value": "Tahoma"},
-    "fontSize": {"value": 22},
+    "fontSize": {"value": 24},
     "fontWeight": "lighter"
   },
   "axes": [
