@@ -6,9 +6,9 @@
     "License": "CC BY 4.0 (Share and Adapt with Attribution)",
     "Github": "https://github.com/avatorl/Deneb-Vega/"
   },
-  "height": 1000,
-  "padding": 5,
-  "autosize": {"type": "fit", "contains": "padding"},
+  "height": 1100,
+  "padding": 20,
+  "autosize": "fit",
   "background": "white",
   "config": {
     "text": {"font": "Arial"},
@@ -31,7 +31,7 @@
     {"name": "colorBarStroke", "value": "white"},
     {"name": "colorStackSeparator", "value": "#FFFFFF"},
     {"name": "colorStateLabel", "value": "#000000"},
-    {"name": "colorAxisTicksAndLabels", "value": "#BBBBBB"},
+    {"name": "colorOtherLabelsAndTicks", "value": "#BBBBBB"},
     {"name": "fillOpacityDefault", "value": 0.8},
     {"name": "fillOpacityHoverGray", "value": 0.3},
     {"name": "fillOpacityHoverUnclaimed", "value": 0.5},
@@ -269,7 +269,7 @@
   "title": {
     "text": "2020 US Presidential Election",
     "anchor": "start",
-    "fontSize": 18,
+    "fontSize": 22,
     "fontWeight": "lighter",
     "font": "Tahoma"
   },
@@ -808,7 +808,7 @@
               },
               "x": {"signal": "140"},
               "y": {"signal": "185"},
-              "fill": {"value": "#BBBBBB"},
+              "fill": {"signal": "colorOtherLabelsAndTicks"},
               "fontWeight": {"value": "normal"},
               "fontSize": {"value": 14},
               "lineBreak": {"value": "/n"}
@@ -820,18 +820,18 @@
     },
     {
       "type": "group",
-      "name": "grpCopyright",
+      "name": "group-copyright",
       "marks": [
         {
           "type": "text",
-          "name": "Copyright",
-          "align": "right",
+          "name": "text-copyright",
           "encode": {
             "enter": {
               "text": {"value": "© Andrzej Leszkiewicz, 2022"},
-              "x": {"signal": "width+150"},
-              "y": {"signal": "height"},
-              "fill": {"value": "#BBBBBB"},
+              "x": {"signal": "chartWidth"},
+              "y": {"signal": "height-10"},
+              "align": {"value": "right"},
+              "fill": {"signal": "colorOtherLabelsAndTicks"},
               "fillOpacity": {"value": 0.7},
               "fontWeight": {"value": "normal"},
               "fontSize": {"value": 14}
