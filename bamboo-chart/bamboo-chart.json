@@ -13,7 +13,7 @@
   "height": 40,
   "padding": 5,
   "autosize": "pad",
-  "config": {"legends": {"font": "Tahoma", "fontSize": 18}},
+  "config": {},
   "signals": [
     {"name": "gridColumns", "value": 1},
     {"name": "lineColor", "value": "#AAAAAA"},
@@ -124,7 +124,7 @@
     "dy": -10,
     "anchor": "start",
     "font": {"value": "Tahoma"},
-    "fontSize": {"value": 18},
+    "fontSize": {"value": 22},
     "fontWeight": "lighter"
   },
   "axes": [
@@ -133,7 +133,7 @@
       "orient": "top",
       "domain": false,
       "tickCount": {"signal": ""},
-      "labelFontSize": {"signal": "10"},
+      "labelFontSize": {"signal": "12"},
       "labelBaseline": "middle",
       "labelPadding": 5,
       "format": ".3",
@@ -149,7 +149,7 @@
       "orient": "left",
       "title": "Select 2 countries",
       "titleFont": "Tahoma",
-      "titleFontSize": 12,
+      "titleFontSize": 15,
       "titleColor": "#333333",
       "titlePadding": 10,
       "padding": 30,
@@ -162,7 +162,7 @@
           "interactive": true,
           "enter": {
             "cursor": {"value": "pointer"},
-            "fontSize": {"value": 13},
+            "fontSize": {"value": 15},
             "dy": {"value": 5},
             "opacity": {"value": 1},
             "align": {"value": "left"}
@@ -183,7 +183,7 @@
       "encode": {
         "enter": {
           "text": {"signal": "datum.country"},
-          "fontSize": {"value": 14}
+          "fontSize": {"value": 18}
         },
         "update": {
           "opacity": {"value": 1},
@@ -217,11 +217,11 @@
             "text": {"signal": "data('series')[0]['Metric']"},
             "align": "left",
             "color": {"value": "black"},
-            "fontSize": 12,
+            "fontSize": 14,
             "fontWeight": "lighter",
             "anchor": "start",
-            "dy": 25,
-            "dx": -100
+            "dy": 33,
+            "dx": -120
           },
           "axes": [
             {
