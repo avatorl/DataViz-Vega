@@ -15,7 +15,7 @@
   "data": [
     {
       "name": "dataset-csv",
-      "url": "https://dl.dropboxusercontent.com/s/c9n3t26pctr322e/data2.csv",
+      "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/donut-chart-multi-rings/donut-chart-multi-rings-diversity-data.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","}
     },
     {
