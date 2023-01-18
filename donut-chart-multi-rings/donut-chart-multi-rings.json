@@ -1,0 +1,187 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "",
+  "usermeta": {
+    "Author": "Andrzej Leszkiewicz",
+    "License": "CC BY 4.0 (Share and Adapt with Attribution)",
+    "Github": "https://github.com/avatorl/Deneb-Vega/",
+    "Data Source": "https://www.americanbar.org/groups/diversity/DiversityCommission/model-diversity-survey/"
+  },
+  "width": 180,
+  "height": 180,
+  "padding": 20,
+  "autosize": "pad",
+  "background": "#fdfbee",
+  "data": [
+    {
+      "name": "dataset-csv",
+      "url": "https://dl.dropboxusercontent.com/s/c9n3t26pctr322e/data2.csv",
+      "format": {"type": "csv", "parse": "auto", "delimiter": ","}
+    },
+    {
+      "name": "data-gender",
+      "source": "dataset-csv",
+      "transform": [
+        {"type": "filter", "expr": "datum.metric=='Gender Identity'"}
+      ]
+    },
+    {
+      "name": "data-firm-size-legend",
+      "source": "data-gender",
+      "transform": [
+        {"type": "filter", "expr": "datum['Role Group']=='Associates'"},
+        {
+          "type": "formula",
+          "as": "Role Group",
+          "expr": "'Firm Size, Attorneys'"
+        },
+        {"type": "formula", "as": "2019", "expr": "0"},
+        {"type": "formula", "as": "2020", "expr": "0"},
+        {"type": "formula", "as": "dif", "expr": "0"}
+      ]
+    },
+    {"name": "dataset", "source": ["data-gender", "data-firm-size-legend"]},
+    {
+      "name": "data-all-firm-sizes",
+      "source": "dataset",
+      "transform": [
+        {"type": "filter", "expr": "datum.group=='Female'"},
+        {
+          "type": "joinaggregate",
+          "groupby": ["Role Group"],
+          "fields": ["2020"],
+          "ops": ["average"],
+          "as": ["avg"]
+        }
+      ]
+    },
+    {"name": "data-no-data", "values": [0, 1, 2, 3]}
+  ],
+  "scales": [
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": ["Male", "Female"],
+      "range": ["#CCCCCC", "#AAAAFF"]
+    }
+  ],
+  "legends": [],
+  "axes": [],
+  "title": {
+    "text": "% of Female Attorneys in Law Firms",
+    "font": "Arial",
+    "fontWeight": "bold",
+    "color": "#8888FF",
+    "fontSize": 22,
+    "anchor": "start",
+    "offset": 20,
+    "subtitle": "by Attorney Role and Firm Size",
+    "subtitleColor": "#666666",
+    "subtitleFontWeight": "bold",
+    "fontStyle": "bold",
+    "subtitleFont": "Arial",
+    "subtitleFontStyle": "bold",
+    "subtitleFontSize": 20,
+    "subtitlePadding": 10
+  },
+  "marks": [
+    {
+      "type": "group",
+      "layout": {"align": "all", "bounds": "full", "columns": 3, "padding": 20},
+      "marks": [
+        {
+          "type": "group",
+          "from": {
+            "facet": {
+              "name": "group-cells",
+              "data": "dataset",
+              "groupby": "Role Group"
+            }
+          },
+          "title": {
+            "text": {"signal": "parent['Role Group']"},
+            "align": "center",
+            "baseline": "middle",
+            "anchor": "middle",
+            "color": {
+              "signal": "parent['Role Group']=='Firm Size, Attorneys'?'#999999':'#666666'"
+            },
+            "fontSize": {"signal": "20"},
+            "fontWeight": {
+              "signal": "parent['Role Group']=='Firm Size, Attorneys'?'normal':'bold'"
+            },
+            "encode": {"title": {"enter": {"strokeWidth": {"value": "0"}}}}
+          },
+          "marks": [
+            {
+              "type": "arc",
+              "from": {"data": "data-no-data"},
+              "encode": {
+                "enter": {
+                  "fill": {
+                    "signal": "parent['Role Group']=='Firm Size, Attorneys'?'#EEEEEE':'#DEDEDE'"
+                  },
+                  "x": {"signal": "width / 2"},
+                  "y": {"signal": "height / 2"}
+                },
+                "update": {
+                  "startAngle": {"field": "0"},
+                  "endAngle": {"signal": "2*PI"},
+                  "padAngle": {"signal": "0"},
+                  "innerRadius": {"signal": "width/2/4*(1+datum.data)"},
+                  "outerRadius": {"signal": "width/2/4*(2+datum.data)-5"},
+                  "cornerRadius": {"signal": "0"}
+                }
+              }
+            },
+            {
+              "type": "arc",
+              "from": {"data": "group-cells"},
+              "encode": {
+                "enter": {
+                  "fill": {"scale": "color", "field": "group"},
+                  "x": {"signal": "width / 2"},
+                  "y": {"signal": "height / 2"}
+                },
+                "update": {
+                  "startAngle": {"field": "0"},
+                  "endAngle": {
+                    "signal": "(datum.group=='Female'?1:-1)*datum['2020']*2*PI"
+                  },
+                  "padAngle": {"signal": "0"},
+                  "innerRadius": {
+                    "signal": "width/2/4*(1+(datum.size=='1-20'?0:datum.size=='21-100'?1:datum.size=='101-400'?2:3))"
+                  },
+                  "outerRadius": {
+                    "signal": "width/2/4*(2+(datum.size=='1-20'?0:datum.size=='21-100'?1:datum.size=='101-400'?2:3))-5"
+                  },
+                  "cornerRadius": {"signal": "0"}
+                }
+              }
+            },
+            {
+              "type": "text",
+              "from": {"data": "group-cells"},
+              "encode": {
+                "enter": {
+                  "text": {
+                    "signal": "parent['Role Group']=='Firm Size, Attorneys'?datum.size:''"
+                  },
+                  "fontSize": {"value": 14},
+                  "fontWeight": {"value": "normal"},
+                  "fill": {"signal": "'#999999'"},
+                  "align": {"value": "center"},
+                  "x": {"signal": "width/2"},
+                  "y": {
+                    "signal": "width/2-width/2/4*(1+(datum.size=='1-20'?0:datum.size=='21-100'?1:datum.size=='101-400'?2:3))-4"
+                  }
+                }
+              }
+            }
+          ],
+          "config": {}
+        }
+      ]
+    }
+  ]
+}
