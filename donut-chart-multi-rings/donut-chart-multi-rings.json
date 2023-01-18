@@ -69,7 +69,6 @@
   "axes": [],
   "title": {
     "text": "% of Female Attorneys in Law Firms",
-    "font": "Arial",
     "fontWeight": "bold",
     "color": "#8888FF",
     "fontSize": 22,
@@ -78,9 +77,6 @@
     "subtitle": "by Attorney Role and Firm Size",
     "subtitleColor": "#666666",
     "subtitleFontWeight": "bold",
-    "fontStyle": "bold",
-    "subtitleFont": "Arial",
-    "subtitleFontStyle": "bold",
     "subtitleFontSize": 20,
     "subtitlePadding": 10
   },
