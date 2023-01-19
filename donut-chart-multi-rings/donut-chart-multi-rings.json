@@ -63,6 +63,12 @@
       "type": "ordinal",
       "domain": ["Male", "Female"],
       "range": ["#CCCCCC", "#AAAAFF"]
+    },
+    {
+      "name": "color-change",
+      "type": "ordinal",
+      "domain": ["Decreased", "Increased"],
+      "range": ["#7777FF", "#FF7777"]
     }
   ],
   "legends": [],
@@ -74,7 +80,7 @@
     "fontSize": 22,
     "anchor": "start",
     "offset": 20,
-    "subtitle": "by Attorney Role and Firm Size",
+    "subtitle": "by Attorney Role and Firm Size, 2020 (and change over 2019)",
     "subtitleColor": "#666666",
     "subtitleFontWeight": "bold",
     "subtitleFontSize": 20,
@@ -167,9 +173,12 @@
                   "stroke": {"signal": "datum.dif>0?'#7777FF':'#FF7777'"},
                   "fill": {"signal": "datum.dif>0?'#7777FF':'#FF7777'"},
                   "fillOpacity": {
-                    "signal": "parent['Role Group']=='Firm Size, Attorneys'?0:(datum.dif>0?0.7:0.2)"
+                    "signal": "parent['Role Group']=='Firm Size, Attorneys'?0:(datum.dif>0?0.8:0.0)"
                   },
                   "strokeWidth": {
+                    "signal": "datum.group=='Female'?datum['Role Group']=='Firm Size, Attorneys'?1:(datum.dif>0?0.5:1):0"
+                  },
+                  "strokeOpacity": {
                     "signal": "datum['Role Group']=='Firm Size, Attorneys'?0:1"
                   },
                   "x": {"signal": "width / 2"},
