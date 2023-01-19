@@ -131,18 +131,56 @@
               }
             },
             {
+              "name": "arc-female",
               "type": "arc",
               "from": {"data": "group-cells"},
               "encode": {
                 "enter": {
                   "fill": {"scale": "color", "field": "group"},
                   "x": {"signal": "width / 2"},
-                  "y": {"signal": "height / 2"}
+                  "y": {"signal": "height / 2"},
+                  "strokeWidth": {"signal": "1"},
+                  "strokeOpacity": {"signal": "0"}
                 },
                 "update": {
                   "startAngle": {"field": "0"},
                   "endAngle": {
                     "signal": "(datum.group=='Female'?1:-1)*datum['2020']*2*PI"
+                  },
+                  "padAngle": {"signal": "0"},
+                  "innerRadius": {
+                    "signal": "width/2/4*(1+(datum.size=='1-20'?0:datum.size=='21-100'?1:datum.size=='101-400'?2:3))"
+                  },
+                  "outerRadius": {
+                    "signal": "width/2/4*(2+(datum.size=='1-20'?0:datum.size=='21-100'?1:datum.size=='101-400'?2:3))-5"
+                  },
+                  "cornerRadius": {"signal": "0"}
+                }
+              }
+            },
+            {
+              "name": "arc-female-change",
+              "type": "arc",
+              "from": {"data": "group-cells"},
+              "encode": {
+                "enter": {
+                  "stroke": {"signal": "datum.dif>0?'#7777FF':'#FF7777'"},
+                  "fill": {"signal": "datum.dif>0?'#7777FF':'#FF7777'"},
+                  "fillOpacity": {
+                    "signal": "parent['Role Group']=='Firm Size, Attorneys'?0:(datum.dif>0?0.7:0.3)"
+                  },
+                  "strokeWidth": {
+                    "signal": "datum['Role Group']=='Firm Size, Attorneys'?0:0.2"
+                  },
+                  "x": {"signal": "width / 2"},
+                  "y": {"signal": "height / 2"}
+                },
+                "update": {
+                  "startAngle": {
+                    "signal": "(datum.group=='Female'?1:0)*datum['2020']*2*PI-(datum.group=='Female'?1:0)*datum.dif*2*PI"
+                  },
+                  "endAngle": {
+                    "signal": "(datum.group=='Female'?1:0)*datum['2020']*2*PI"
                   },
                   "padAngle": {"signal": "0"},
                   "innerRadius": {
