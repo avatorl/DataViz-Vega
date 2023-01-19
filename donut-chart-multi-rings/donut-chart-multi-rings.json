@@ -167,10 +167,10 @@
                   "stroke": {"signal": "datum.dif>0?'#7777FF':'#FF7777'"},
                   "fill": {"signal": "datum.dif>0?'#7777FF':'#FF7777'"},
                   "fillOpacity": {
-                    "signal": "parent['Role Group']=='Firm Size, Attorneys'?0:(datum.dif>0?0.7:0.3)"
+                    "signal": "parent['Role Group']=='Firm Size, Attorneys'?0:(datum.dif>0?0.7:0.2)"
                   },
                   "strokeWidth": {
-                    "signal": "datum['Role Group']=='Firm Size, Attorneys'?0:0.2"
+                    "signal": "datum['Role Group']=='Firm Size, Attorneys'?0:1"
                   },
                   "x": {"signal": "width / 2"},
                   "y": {"signal": "height / 2"}
@@ -184,10 +184,10 @@
                   },
                   "padAngle": {"signal": "0"},
                   "innerRadius": {
-                    "signal": "width/2/4*(1+(datum.size=='1-20'?0:datum.size=='21-100'?1:datum.size=='101-400'?2:3))"
+                    "signal": "width/2/4*(1+(datum.size=='1-20'?0:datum.size=='21-100'?1:datum.size=='101-400'?2:3))+1"
                   },
                   "outerRadius": {
-                    "signal": "width/2/4*(2+(datum.size=='1-20'?0:datum.size=='21-100'?1:datum.size=='101-400'?2:3))-5"
+                    "signal": "width/2/4*(2+(datum.size=='1-20'?0:datum.size=='21-100'?1:datum.size=='101-400'?2:3))-5-1"
                   },
                   "cornerRadius": {"signal": "0"}
                 }
