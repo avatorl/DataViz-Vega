@@ -208,9 +208,7 @@
             },
             "hover": {"strokeOpacity": {"value": 0.5}}
           }
-        }
-      ]
-    },
+        },
         {
           "type": "text",
           "name": "DataSource",
