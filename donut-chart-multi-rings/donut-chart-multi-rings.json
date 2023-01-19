@@ -173,10 +173,10 @@
                   "stroke": {"signal": "datum.dif>0?'#7777FF':'#FF7777'"},
                   "fill": {"signal": "datum.dif>0?'#7777FF':'#FF7777'"},
                   "fillOpacity": {
-                    "signal": "parent['Role Group']=='Firm Size, Attorneys'?0:(datum.dif>0?0.8:0.0)"
+                    "signal": "parent['Role Group']=='Firm Size, Attorneys'?0:(datum.dif>0?0.5:0.0)"
                   },
                   "strokeWidth": {
-                    "signal": "datum.group=='Female'?datum['Role Group']=='Firm Size, Attorneys'?1:(datum.dif>0?0.5:1):0"
+                    "signal": "datum.group=='Female'?datum['Role Group']=='Firm Size, Attorneys'?1:(datum.dif>0?0.5:0.5):0"
                   },
                   "strokeOpacity": {
                     "signal": "datum['Role Group']=='Firm Size, Attorneys'?0:1"
