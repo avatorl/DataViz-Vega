@@ -1,0 +1,36 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "width": 305,
+  "height": 50,
+  "padding": 5,
+  "data": [
+    {
+      "name": "data",
+      "values": [
+        ["Example of ", "black", 0],
+        ["Red", "red", 7.5],
+        [" and ", "black", 11.5],
+        [" Blue ", "blue", 15.7],
+        [" Words in the Text ", "black", 25.9]
+      ]
+    }
+  ],
+  "scales": [],
+  "marks": [
+    {
+      "type": "text",
+      "from": {"data": "data"},
+      "encode": {
+        "enter": {
+          "text": {"signal": "datum['0']"},
+          "align": {"value": "center"},
+          "baseline": {"value": "middle"},
+          "fontSize": {"value": 18},
+          "x": {"signal": "datum['2']*9"},
+          "y": {"signal": "height/2"}
+        },
+        "update": {"fill": [{"signal": "datum['1']"}]}
+      }
+    }
+  ]
+}
