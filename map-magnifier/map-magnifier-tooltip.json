@@ -32,6 +32,13 @@
       "on": [{"events": "mousemove", "update": "invert(cloned, xy())"}]
     },
     {
+      "name": "start2",
+      "value": [-124, 26],
+      "on": [
+        {"events": "mousemove", "update": "data('counties-2')[0]['centroid']"}
+      ]
+    },
+    {
       "name": "mousePositionXY",
       "value": [82, 454],
       "on": [{"events": "mousemove", "update": "xy()"}]
@@ -55,6 +62,11 @@
           "fields": ["id"],
           "values": ["rate"]
         },
+        {
+          "type": "formula",
+          "expr": "invert(cloned, geoCentroid('projection', datum))",
+          "as": "centroid"
+        },
         {"type": "filter", "expr": "datum.rate != null"}
       ]
     },
@@ -77,7 +89,7 @@
       "type": "mercator",
       "scale": {"signal": "scale*zoom"},
       "rotate": [0, 0, 0],
-      "center": [{"signal": "start[0]"}, {"signal": "start[1]"}],
+      "center": [{"signal": "start2[0]"}, {"signal": "start2[1]"}],
       "translate": [{"signal": "100"}, {"signal": "100"}]
     }
   ],
