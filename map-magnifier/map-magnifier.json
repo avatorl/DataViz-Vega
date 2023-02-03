@@ -1,0 +1,129 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "County Unemployment",
+  "width": 960,
+  "height": 500,
+  "padding": {"top": 30},
+  "autosize": "none",
+  "signals": [
+    {"name": "scale", "value": 900},
+    {"name": "zoom", "value": 4},
+    {
+      "name": "cloned",
+      "value": null,
+      "on": [{"events": "mousemove", "update": "copy('projection')"}]
+    },
+    {
+      "name": "start",
+      "value": [-124, 26],
+      "on": [{"events": "mousemove", "update": "invert(cloned, xy())"}]
+    },
+    {
+      "name": "mousePositionXY",
+      "value": [82, 454],
+      "on": [{"events": "mousemove", "update": "xy()"}]
+    }
+  ],
+  "data": [
+    {
+      "name": "unemp",
+      "url": "https://vega.github.io/vega/data/unemployment.tsv",
+      "format": {"type": "tsv", "parse": "auto", "delimiter": "\t"}
+    },
+    {
+      "name": "counties",
+      "url": "https://vega.github.io/vega/data/us-10m.json",
+      "format": {"type": "topojson", "feature": "counties"},
+      "transform": [
+        {
+          "type": "lookup",
+          "from": "unemp",
+          "key": "id",
+          "fields": ["id"],
+          "values": ["rate"]
+        },
+        {"type": "filter", "expr": "datum.rate != null"}
+      ]
+    }
+  ],
+  "projections": [
+    {
+      "name": "projection",
+      "type": "mercator",
+      "scale": {"signal": "scale"},
+      "center": [{"signal": "-95"}, {"signal": "38"}],
+      "translate": [{"signal": "width/2"}, {"signal": "height/2"}]
+    },
+    {
+      "name": "projection2",
+      "type": "mercator",
+      "scale": {"signal": "scale*zoom"},
+      "rotate": [0, 0, 0],
+      "center": [{"signal": "start[0]"}, {"signal": "start[1]"}],
+      "translate": [{"signal": "100"}, {"signal": "100"}]
+    }
+  ],
+  "scales": [
+    {
+      "name": "color",
+      "type": "quantize",
+      "domain": [0, 0.15],
+      "range": {"scheme": "blues", "count": 7}
+    }
+  ],
+  "legends": [
+    {
+      "fill": "color",
+      "orient": "bottom-right",
+      "title": "Unemployment",
+      "format": "0.1%"
+    }
+  ],
+  "marks": [
+    {
+      "type": "text",
+      "encode": {
+        "enter": {
+          "text": {"signal": "'County Unemployment'"},
+          "fontSize": {"value": 28},
+          "x": {"value": 0},
+          "y": {"value": 0}
+        }
+      }
+    },
+    {
+      "type": "shape",
+      "from": {"data": "counties"},
+      "encode": {
+        "enter": {},
+        "update": {"fill": {"scale": "color", "field": "rate"}}
+      },
+      "transform": [{"type": "geoshape", "projection": "projection"}]
+    },
+    {
+      "type": "group",
+      "encode": {
+        "update": {
+          "x": {"signal": "mousePositionXY[0]-100"},
+          "y": {"signal": "mousePositionXY[1]-100"},
+          "width": {"signal": "200"},
+          "height": {"signal": "200"},
+          "clip": {"signal": "true"},
+          "fillOpacity": {"value": 0},
+          "cornerRadius": {"signal": "100"},
+          "strokeWidth": {"signal": "3"},
+          "fill": {"signal": "'white'"},
+          "stroke": {"signal": "'red'"}
+        }
+      },
+      "marks": [
+        {
+          "type": "shape",
+          "from": {"data": "counties"},
+          "encode": {"update": {"fill": {"scale": "color", "field": "rate"}}},
+          "transform": [{"type": "geoshape", "projection": "projection2"}]
+        }
+      ]
+    }
+  ]
+}
