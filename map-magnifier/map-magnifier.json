@@ -94,18 +94,13 @@
     {
       "type": "shape",
       "from": {"data": "counties"},
-      "encode": {
-        "enter": {},
-        "update": {"fill": {"scale": "color", "field": "rate"}}
-      },
+      "encode": {"enter": {"fill": {"scale": "color", "field": "rate"}}},
       "transform": [{"type": "geoshape", "projection": "projection"}]
     },
     {
       "type": "group",
       "encode": {
-        "update": {
-          "x": {"signal": "mousePositionXY[0]-100"},
-          "y": {"signal": "mousePositionXY[1]-100"},
+        "enter": {
           "width": {"signal": "200"},
           "height": {"signal": "200"},
           "clip": {"signal": "true"},
@@ -114,13 +109,17 @@
           "strokeWidth": {"signal": "3"},
           "fill": {"signal": "'white'"},
           "stroke": {"signal": "'red'"}
+        },
+        "update": {
+          "x": {"signal": "mousePositionXY[0]-100"},
+          "y": {"signal": "mousePositionXY[1]-100"}
         }
       },
       "marks": [
         {
           "type": "shape",
           "from": {"data": "counties"},
-          "encode": {"update": {"fill": {"scale": "color", "field": "rate"}}},
+          "encode": {"enter": {"fill": {"scale": "color", "field": "rate"}}},
           "transform": [{"type": "geoshape", "projection": "projection2"}]
         }
       ]
