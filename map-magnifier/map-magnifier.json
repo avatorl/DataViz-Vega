@@ -4,6 +4,7 @@
   "width": 960,
   "height": 500,
   "padding": {"top": 30},
+  "background": "white",
   "autosize": "none",
   "signals": [
     {"name": "scale", "value": 900},
