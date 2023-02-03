@@ -109,7 +109,7 @@
           "width": {"signal": "200"},
           "height": {"signal": "200"},
           "clip": {"signal": "true"},
-          "fillOpacity": {"value": 0},
+          "fillOpacity": {"value": 1},
           "cornerRadius": {"signal": "100"},
           "strokeWidth": {"signal": "3"},
           "fill": {"signal": "'white'"},
