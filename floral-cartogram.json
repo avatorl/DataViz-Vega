@@ -1,0 +1,561 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "How Do We Govern Our World? Data Visualization for World Data Visualization Prize 2023 - World Government Summit",
+  "usermeta": {
+    "Author": "Andrzej Leszkiewicz",
+    "License": "CC BY 4.0 (Share and Adapt with Attribution)",
+    "Github": "https://github.com/avatorl/Deneb-Vega/"
+  },
+  "width": 2950,
+  "height": 1687,
+  "background": "#000000",
+  "padding": 25,
+  "autosize": "fit",
+  "config": {},
+  "signals": [
+    {"name": "titleText", "value": "How Do We Govern Our World?"},
+    {
+      "name": "subtitleText",
+      "value": "Worldwide Governance Indicators, The World Bank, 2012-2021"
+    },
+    {
+      "name": "colorHawkins",
+      "description": "Red-White-Blue",
+      "value": [
+        "#67000D",
+        "#A50F15",
+        "#CB181D",
+        "#EF3B2C",
+        "#FB6A4A",
+        "#FC9272",
+        "#FCBBA1",
+        "#FEE0D2",
+        "#FFFFFF",
+        "#DEEBF7",
+        "#C6DBEF",
+        "#9ECAE1",
+        "#6BAED6",
+        "#4292C6",
+        "#2171B5",
+        "#08519C",
+        "#08306B"
+      ]
+    },
+    {"name": "titleColor", "value": "#FFFFFF"},
+    {"name": "subtitleColor", "value": "#EEEEEE"},
+    {"name": "fontFillColorCountries", "value": "#BBBBBB"},
+    {"name": "fontFillColorLegendLabels", "value": "#CCCCCC"},
+    {"name": "strokeColorLegendElements", "value": "#666666"},
+    {"name": "fontFillColorFootNotes", "value": "#CCCCCC"},
+    {"name": "fontSizeTitle", "value": "70"},
+    {"name": "fontSizeSubtitle", "value": "50"},
+    {"name": "fontSizeCountries", "value": "24"},
+    {"name": "fontSizeLegendLabels", "value": "34"},
+    {"name": "fontSizeFootNotes", "value": "24"},
+    {"name": "firstYear", "value": "2012"},
+    {"name": "totalYears", "value": "10"},
+    {"name": "forceIterations", "value": 1},
+    {"name": "collideIterations", "value": 100},
+    {"name": "gravityX", "value": 0.1},
+    {"name": "gravityY", "value": 0.1},
+    {"name": "collisionMultipler", "value": 1.3},
+    {"name": "collisionAdd", "value": 0},
+    {"name": "powerForCircleSize", "value": "1"},
+    {"name": "sizeMultiplier", "value": "280"},
+    {"name": "anglePetalArc", "update": "PI/6.5"},
+    {"name": "strokeWidthPetalArc", "value": "2"},
+    {"name": "strokeWidthLegendElements", "value": "8"},
+    {"name": "strokeWidthLegendElements2", "value": "5"},
+    {"name": "strokeOpacityLegendElements", "value": "0.6"},
+    {"name": "shiftX", "update": "-300"},
+    {"name": "shiftY", "update": "350"},
+    {"name": "cx", "update": "width/2"},
+    {"name": "cy", "update": "height/2"},
+    {
+      "name": "summitLogoPNG",
+      "value": "https://dl.dropboxusercontent.com/s/wk7bt5zhkyeefb5/chrome_2I3Db4Wrve.png"
+    }
+  ],
+  "data": [
+    {
+      "name": "dataset-csv",
+      "url": "https://dl.dropboxusercontent.com/s/wxmgzp2asenjplv/wgi-gdp-data-clean.csv",
+      "format": {"type": "csv", "parse": "auto", "delimiter": ","},
+      "transform": [{"type": "filter", "expr": "datum.year>=firstYear"}]
+    },
+    {"name": "dataset", "source": "dataset-csv"},
+    {
+      "name": "data-countries",
+      "source": "dataset",
+      "transform": [
+        {
+          "type": "aggregate",
+          "groupby": ["country", "code"],
+          "fields": ["GDP", "lat", "lon"],
+          "ops": ["average", "average", "average"],
+          "as": ["GDP", "lat", "lon"]
+        }
+      ]
+    },
+    {
+      "name": "data-countries-for-legend",
+      "source": "data-countries",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.country=='Somalia'||datum.country=='Singapore'||datum.country=='Malaysia'"
+        }
+      ]
+    },
+    {"name": "data-better-worse", "values": ["Better", "Worse"]},
+    {
+      "name": "data-metrics",
+      "source": "dataset",
+      "transform": [{"type": "aggregate", "groupby": ["metric"]}]
+    },
+    {"name": "data-sizes", "values": [100000, 10000]},
+    {
+      "name": "data-metrics-and-sizes",
+      "source": "data-metrics",
+      "transform": [
+        {"type": "formula", "as": "sizes", "expr": "data('data-sizes')"},
+        {"type": "flatten", "fields": ["sizes"]}
+      ]
+    },
+    {
+      "name": "data-years",
+      "source": "dataset",
+      "transform": [{"type": "aggregate", "groupby": ["year"]}]
+    },
+    {
+      "name": "data-notes",
+      "values": [
+        ["© Andrzej Leszkiewicz, Krakow, Poland", 0],
+        [
+          "Data Sources: World Dataviz Prize 2023 - Challenge Concepts & Datasets, The World Bank (WGI and GDP data)",
+          500
+        ],
+        [
+          "WGI - 2012-2021 (10 years), GDP per Capita (PPP) - 2012-2021 (10 years) average",
+          1760
+        ]
+      ]
+    }
+  ],
+  "scales": [
+    {
+      "name": "scale-petal-direction-2pi",
+      "type": "ordinal",
+      "domain": [
+        "Political Stability and Absence of Violence/Terrorism",
+        "Rule of Law",
+        "Voice and Accountability",
+        "Control of Corruption",
+        "Regulatory Quality",
+        "Government Effectiveness"
+      ],
+      "range": [
+        {"signal": "0"},
+        {"signal": "1*2*PI/6"},
+        {"signal": "2*2*PI/6"},
+        {"signal": "3*2*PI/6"},
+        {"signal": "4*2*PI/6"},
+        {"signal": "5*2*PI/6"}
+      ]
+    },
+    {
+      "name": "scale-petal-direction-2pi-text-align",
+      "type": "ordinal",
+      "domain": [
+        "Political Stability and Absence of Violence/Terrorism",
+        "Rule of Law",
+        "Voice and Accountability",
+        "Control of Corruption",
+        "Regulatory Quality",
+        "Government Effectiveness"
+      ],
+      "range": [
+        {"signal": "'center'"},
+        {"signal": "'left'"},
+        {"signal": "'left'"},
+        {"signal": "'center'"},
+        {"signal": "'right'"},
+        {"signal": "'right'"}
+      ]
+    },
+    {
+      "name": "scale-petal-color",
+      "type": "linear",
+      "domain": {"data": "dataset", "field": "value"},
+      "domainMid": 0,
+      "range": {"scheme": {"signal": "colorHawkins"}}
+    }
+  ],
+  "title": {
+    "anchor": "start",
+    "offset": -170,
+    "text": {"signal": "titleText"},
+    "color": {"signal": "titleColor"},
+    "font": "Tahoma",
+    "fontSize": {"signal": "fontSizeTitle"},
+    "fontWeight": "bold",
+    "subtitle": {"signal": "subtitleText"},
+    "subtitleColor": {"signal": "subtitleColor"},
+    "subtitleFont": "Tahoma",
+    "subtitleFontSize": {"signal": "fontSizeSubtitle"},
+    "subtitlePadding": 30
+  },
+  "marks": [
+    {
+      "name": "symbol-country-circle-placeholder",
+      "type": "symbol",
+      "from": {"data": "data-countries"},
+      "encode": {
+        "enter": {
+          "x": {"signal": "cx+datum.lon*10+shiftX"},
+          "y": {"signal": "cy-datum.lat*10+shiftY"},
+          "size": {
+            "signal": "pow(datum.GDP/1000,powerForCircleSize)*sizeMultiplier"
+          },
+          "fillOpacity": {"signal": "0"},
+          "strokeOpacity": {"signal": "0"},
+          "tooltip": {"signal": "datum.country+' $'+round(datum.GDP/1000)+'K'"}
+        }
+      },
+      "transform": [
+        {
+          "type": "force",
+          "iterations": {"signal": "forceIterations"},
+          "forces": [
+            {
+              "force": "collide",
+              "iterations": {"signal": "collideIterations"},
+              "radius": {
+                "expr": "collisionMultipler*sqrt(datum.size)/2+collisionAdd"
+              },
+              "strength": 1
+            },
+            {
+              "force": "x",
+              "x": "datum.lon",
+              "strength": {"signal": "gravityX"}
+            },
+            {"force": "y", "y": "datum.lat", "strength": {"signal": "gravityY"}}
+          ]
+        },
+        {"type": "formula", "as": "country", "expr": "datum.datum.country"}
+      ]
+    },
+    {
+      "name": "arc-flower-petal",
+      "type": "arc",
+      "from": {"data": "dataset"},
+      "encode": {
+        "enter": {
+          "x": {"signal": "datum.x"},
+          "y": {"signal": "datum.y"},
+          "startAngle": {
+            "scale": "scale-petal-direction-2pi",
+            "field": "metric",
+            "offset": {
+              "signal": "-(datum.year-firstYear+1)/totalYears*anglePetalArc"
+            }
+          },
+          "endAngle": {
+            "scale": "scale-petal-direction-2pi",
+            "field": "metric",
+            "offset": {
+              "signal": "(datum.year-firstYear+1)/totalYears*anglePetalArc"
+            }
+          },
+          "innerRadius": {
+            "signal": "sqrt(pow(datum.GDP/1000,powerForCircleSize)*sizeMultiplier)/2*(firstYear-firstYear+1)/totalYears+2"
+          },
+          "outerRadius": {
+            "signal": "sqrt(pow(datum.GDP/1000,powerForCircleSize)*sizeMultiplier)/2*(datum.year-firstYear+1)/totalYears+2"
+          },
+          "cornerRadius": {"signal": "200"},
+          "stroke": {"scale": "scale-petal-color", "field": "value"},
+          "strokeWidth": {
+            "signal": "pow(datum.GDP/1000,0.05)*strokeWidthPetalArc*((datum.year-firstYear+1)/totalYears)"
+          },
+          "strokeOpacity": {"signal": "0.9"},
+          "fillOpacity": {"signal": "0"},
+          "tooltip": {"signal": "datum.country+' $'+round(datum.GDP/1000)+'K'"}
+        }
+      },
+      "transform": [
+        {"type": "formula", "as": "country", "expr": "datum.datum.country"},
+        {
+          "type": "lookup",
+          "from": "symbol-country-circle-placeholder",
+          "key": "country",
+          "fields": ["country"],
+          "values": ["x", "y", "size"],
+          "as": ["x", "y", "size"]
+        }
+      ]
+    },
+    {
+      "name": "text-country-label",
+      "type": "text",
+      "from": {"data": "symbol-country-circle-placeholder"},
+      "encode": {
+        "update": {
+          "text": {
+            "signal": "datum.country=='United Arab Emirates'?'UAE':datum.country"
+          },
+          "fontSize": {"signal": "fontSizeCountries"},
+          "fill": {"signal": "fontFillColorCountries"}
+        }
+      },
+      "transform": [
+        {
+          "type": "label",
+          "avoidMarks": [
+            "symbol-country-circle-placeholder",
+            "arc-flower-petal"
+          ],
+          "anchor": ["top", "bottom", "right", "left"],
+          "offset": [8],
+          "size": {"signal": "[width, height]"},
+          "as": ["x", "y", "opacity", "align", "baseline"]
+        }
+      ]
+    },
+    {
+      "name": "text-foot-notes",
+      "type": "text",
+      "from": {"data": "data-notes"},
+      "encode": {
+        "enter": {
+          "x": {"signal": "datum['1']"},
+          "y": {"signal": "height"},
+          "fill": {"signal": "fontFillColorFootNotes"},
+          "fillOpacity": {"value": 0.5},
+          "font": {"value": "Tahoma"},
+          "text": {"signal": "datum['0']"},
+          "fontSize": {"signal": "fontSizeFootNotes"}
+        }
+      }
+    },
+    {
+      "type": "group",
+      "encode": {
+        "enter": {
+          "x": {"signal": "width-750"},
+          "y": {"signal": "-200"},
+          "width": {"signal": "750"},
+          "height": {"signal": "1200"},
+          "strokeWidth": {"signal": "0"},
+          "strokeOpacity": {"signal": "0"}
+        }
+      },
+      "legends": [
+        {
+          "fill": "scale-petal-color",
+          "orient": "top-right",
+          "encode": {
+            "gradient": {
+              "update": {
+                "x": {"value": -8},
+                "y": {"value": 585},
+                "height": {"value": 150}
+              }
+            }
+          }
+        }
+      ],
+      "marks": [
+        {
+          "name": "image-summit-logo",
+          "type": "image",
+          "encode": {
+            "enter": {
+              "url": {"signal": "summitLogoPNG"},
+              "x": {"signal": "0"},
+              "y": {"signal": "0"},
+              "baseline": {"value": "top"},
+              "height": {"value": 200}
+            }
+          }
+        },
+        {
+          "name": "arc-flower-petal-legend",
+          "type": "arc",
+          "from": {"data": "data-metrics"},
+          "encode": {
+            "enter": {
+              "x": {"signal": "375"},
+              "y": {"signal": "430"},
+              "startAngle": {
+                "scale": "scale-petal-direction-2pi",
+                "field": "metric",
+                "offset": {"signal": "-anglePetalArc"}
+              },
+              "endAngle": {
+                "scale": "scale-petal-direction-2pi",
+                "field": "metric",
+                "offset": {"signal": "anglePetalArc"}
+              },
+              "innerRadius": {"signal": "10"},
+              "outerRadius": {
+                "signal": "2*sqrt(pow(100,powerForCircleSize)*sizeMultiplier)/2+2"
+              },
+              "cornerRadius": {"signal": "200"},
+              "stroke": {"signal": "strokeColorLegendElements"},
+              "strokeWidth": {"signal": "strokeWidthLegendElements"},
+              "strokeOpacity": {"signal": "strokeOpacityLegendElements"},
+              "fillOpacity": {"signal": "0"}
+            }
+          }
+        },
+        {
+          "type": "text",
+          "from": {"data": "arc-flower-petal-legend"},
+          "encode": {
+            "enter": {
+              "x": {"signal": "datum.x"},
+              "y": {"signal": "datum.y"},
+              "theta": {
+                "scale": "scale-petal-direction-2pi",
+                "signal": "datum.datum.metric"
+              },
+              "baseline": {"value": "middle"},
+              "align": {
+                "scale": "scale-petal-direction-2pi-text-align",
+                "signal": "datum.datum.metric"
+              },
+              "radius": {
+                "signal": "(scale('scale-petal-direction-2pi-text-align',datum.datum.metric)=='center'?1.1:1)*sqrt(2.5*pow(100,powerForCircleSize)*sizeMultiplier)/2+2"
+              },
+              "text": {"signal": "datum.datum.metric"},
+              "fontSize": {"signal": "fontSizeLegendLabels"},
+              "fill": {"signal": "fontFillColorLegendLabels"}
+            }
+          }
+        },
+        {
+          "name": "arc-flower-years-legend",
+          "type": "arc",
+          "from": {"data": "data-years"},
+          "encode": {
+            "enter": {
+              "x": {"signal": "700"},
+              "y": {"signal": "1020"},
+              "startAngle": {"signal": "-anglePetalArc"},
+              "endAngle": {"signal": "anglePetalArc"},
+              "innerRadius": {"signal": "10"},
+              "outerRadius": {
+                "signal": "2*sqrt(pow(100,powerForCircleSize)*sizeMultiplier)/2*(datum.year-firstYear+1)/totalYears+2"
+              },
+              "cornerRadius": {"signal": "200"},
+              "stroke": {"signal": "strokeColorLegendElements"},
+              "strokeWidth": {"signal": "strokeWidthLegendElements2"},
+              "strokeOpacity": {"signal": "strokeOpacityLegendElements"},
+              "fillOpacity": {"signal": "0"}
+            }
+          }
+        },
+        {
+          "name": "text-flower-years-legend",
+          "type": "text",
+          "from": {"data": "arc-flower-years-legend"},
+          "encode": {
+            "enter": {
+              "x": {"signal": "datum.x"},
+              "y": {"signal": "datum.y"},
+              "theta": {"signal": "0"},
+              "baseline": {"value": "middle"},
+              "align": {"value": "center"},
+              "radius": {
+                "signal": "2*sqrt(pow(100,powerForCircleSize)*sizeMultiplier)/2*(datum.datum.year-firstYear+1)/totalYears+2"
+              },
+              "text": {
+                "signal": "datum.datum.year==2012||datum.datum.year==2021?datum.datum.year:''"
+              },
+              "fontSize": {"signal": "fontSizeLegendLabels"},
+              "fill": {"signal": "fontFillColorLegendLabels"}
+            }
+          }
+        },
+        {
+          "name": "arc-flower-size-legend",
+          "type": "arc",
+          "from": {"data": "data-metrics-and-sizes"},
+          "encode": {
+            "enter": {
+              "x": {"signal": "800-datum.sizes.data/1000"},
+              "y": {"signal": "(datum.sizes.data==100000?1220:1320)+10"},
+              "startAngle": {
+                "scale": "scale-petal-direction-2pi",
+                "field": "metric",
+                "offset": {"signal": "-anglePetalArc"}
+              },
+              "endAngle": {
+                "scale": "scale-petal-direction-2pi",
+                "field": "metric",
+                "offset": {"signal": "anglePetalArc"}
+              },
+              "innerRadius": {
+                "signal": "sqrt(pow(datum.sizes.data/1000,powerForCircleSize)*sizeMultiplier)/2*(firstYear-firstYear+1)/totalYears+2"
+              },
+              "outerRadius": {
+                "signal": "sqrt(pow(datum.sizes.data/1000,powerForCircleSize)*sizeMultiplier)/2+2"
+              },
+              "cornerRadius": {"signal": "200"},
+              "stroke": {"signal": "strokeColorLegendElements"},
+              "strokeWidth": {"signal": "strokeWidthLegendElements2"},
+              "strokeOpacity": {"signal": "strokeOpacityLegendElements"},
+              "fillOpacity": {"signal": "0"}
+            }
+          }
+        },
+        {
+          "name": "text-legend-circle-size",
+          "type": "text",
+          "from": {"data": "arc-flower-size-legend"},
+          "encode": {
+            "enter": {
+              "x": {"signal": "datum.x+30"},
+              "y": {"signal": "datum.y-(datum.datum.sizes.data==100000?70:25)"},
+              "align": {"value": "center"},
+              "text": {"signal": "'$'+datum.datum.sizes.data/1000+'K'"},
+              "fontSize": {"signal": "fontSizeLegendLabels"},
+              "fill": {"signal": "fontFillColorLegendLabels"}
+            }
+          }
+        },
+        {
+          "name": "text-legend-gdp-title",
+          "type": "text",
+          "encode": {
+            "enter": {
+              "x": {"signal": "700"},
+              "y": {"signal": "1105"},
+              "align": {"value": "center"},
+              "text": {"signal": "'GDP per Capita (PPP)'"},
+              "fontSize": {"signal": "fontSizeLegendLabels"},
+              "fill": {"signal": "fontFillColorLegendLabels"}
+            }
+          }
+        },
+        {
+          "name": "text-legend-colors",
+          "type": "text",
+          "from": {"data": "data-better-worse"},
+          "encode": {
+            "enter": {
+              "x": {"signal": "700"},
+              "y": {"signal": "datum.data=='Better'?595:780"},
+              "align": {"value": "center"},
+              "text": {"signal": "datum.data"},
+              "fontSize": {"signal": "fontSizeLegendLabels"},
+              "fill": {"signal": "fontFillColorLegendLabels"}
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
