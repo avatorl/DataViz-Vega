@@ -99,16 +99,6 @@
         }
       ]
     },
-    {
-      "name": "data-countries-for-legend",
-      "source": "data-countries",
-      "transform": [
-        {
-          "type": "filter",
-          "expr": "datum.country=='Somalia'||datum.country=='Singapore'||datum.country=='Malaysia'"
-        }
-      ]
-    },
     {"name": "data-better-worse", "values": ["Better", "Worse"]},
     {
       "name": "data-metrics",
