@@ -75,13 +75,13 @@
     {"name": "cy", "update": "height/2"},
     {
       "name": "summitLogoPNG",
-      "value": "https://dl.dropboxusercontent.com/s/wk7bt5zhkyeefb5/chrome_2I3Db4Wrve.png"
+      "value": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/floral-cartogram/logo.png"
     }
   ],
   "data": [
     {
       "name": "dataset-csv",
-      "url": "https://dl.dropboxusercontent.com/s/wxmgzp2asenjplv/wgi-gdp-data-clean.csv",
+      "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/floral-cartogram/wgi-gdp-data-clean.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","},
       "transform": [{"type": "filter", "expr": "datum.year>=firstYear"}]
     },
