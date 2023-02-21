@@ -10,6 +10,7 @@
   "height": 690,
   "padding": {"left": 60, "top": 100, "right": 60, "bottom": 50},
   "autosize": "none",
+  "background": "white",
   "data": [
     {
       "name": "dataset-url-for-non-deneb-usage",
