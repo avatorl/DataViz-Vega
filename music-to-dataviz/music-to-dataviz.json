@@ -397,7 +397,7 @@
           "y": {"signal": "radius*2"},
           "fontSize": {"value": 16},
           "text": {
-            "signal": "'Reproduction of the chart initially designed by Nicholas Rougeux'"
+            "signal": "'Reproduction of the music data visualization initially designed by Nicholas Rougeux'"
           },
           "opacity": {"value": 1},
           "strokeWidth": {"signal": "0"},
