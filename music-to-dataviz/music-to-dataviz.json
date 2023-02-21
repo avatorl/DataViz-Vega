@@ -12,6 +12,7 @@
   "width": 700,
   "autosize": "pad",
   "background": "black",
+  "config": {},
   "data": [
     {
       "name": "dataset-csv",
@@ -385,7 +386,24 @@
           "strokeOpacity": {"signal": "1"}
         }
       }
+    },
+    {
+      "type": "text",
+      "encode": {
+        "enter": {
+          "fill": {"value": "#CCCCCC"},
+          "baseline": {"value": "middle"},
+          "x": {"signal": "-170"},
+          "y": {"signal": "radius*2"},
+          "fontSize": {"value": 16},
+          "text": {
+            "signal": "'Reproduction of the chart initially designed by Nicholas Rougeux'"
+          },
+          "opacity": {"value": 1},
+          "strokeWidth": {"signal": "0"},
+          "strokeOpacity": {"signal": "1"}
+        }
+      }
     }
-  ],
-  "config": {}
+  ]
 }
