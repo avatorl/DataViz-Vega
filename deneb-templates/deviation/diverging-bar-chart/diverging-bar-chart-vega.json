@@ -6,62 +6,34 @@
   "autosize": "fit",
   "background": "white",
   "signals": [
-    {
-      "name": "titleColor",
-      "value": "#333333"
-    },
-    {
-      "name": "barColor1",
-      "init": "pbiColor(0)"
-    },
-    {
-      "name": "barColor2",
-      "init": "pbiColor(2)"
-    },
-    {
-      "name": "labelColor",
-      "value": "#666666"
-    },
-    {
-      "name": "titleFontSize",
-      "value": 24
-    },
-    {
-      "name": "labelFontSize",
-      "value": 24
-    },
+    {"name": "titleColor", "value": "#333333"},
+    {"name": "barColor1", "init": "'#118dff'"},
+    {"name": "barColor2", "init": "'#e66c37'"},
+    {"name": "labelColor", "value": "#666666"},
+    {"name": "titleFontSize", "value": 24},
+    {"name": "labelFontSize", "value": 24},
     {"name": "labelOffset", "value": 5}
   ],
   "data": [
-        {
+    {
       "name": "dataset-csv",
       "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/deneb-templates/deviation/diverging-bar-chart/diverging-bar-chart.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","}
     },
-    {"name": "dataset", "source": "dataset-csv"},
+    {"name": "dataset", "source": "dataset-csv"}
   ],
   "scales": [
     {
       "name": "scaleX",
       "type": "linear",
-      "domain": {
-        "data": "dataset",
-        "field": "Value"
-      },
+      "domain": {"data": "dataset", "field": "Value"},
       "domainMid": 0,
-      "range": [
-        0,
-        {"signal": "width/2"},
-        {"signal": "width"}
-      ]
+      "range": [0, {"signal": "width/2"}, {"signal": "width"}]
     },
     {
       "name": "scaleY",
       "type": "band",
-      "domain": {
-        "data": "dataset",
-        "field": "Category"
-      },
+      "domain": {"data": "dataset", "field": "Category"},
       "range": "height",
       "padding": 0.2
     }
@@ -71,9 +43,7 @@
     "anchor": "start",
     "offset": 10,
     "color": {"signal": "titleColor"},
-    "fontSize": {
-      "signal": "titleFontSize"
-    }
+    "fontSize": {"signal": "titleFontSize"}
   },
   "axes": [
     {
@@ -91,96 +61,45 @@
       "from": {"data": "dataset"},
       "encode": {
         "enter": {
-          "x": {
-            "scale": "scaleX",
-            "signal": "0"
-          },
-          "x2": {
-            "scale": "scaleX",
-            "field": "Value"
-          },
-          "y": {
-            "scale": "scaleY",
-            "field": "Category"
-          },
-          "height": {
-            "scale": "scaleY",
-            "band": 0.8
-          },
-          "fill": {
-            "signal": "datum['Value']>=0?barColor1:barColor2"
-          }
+          "x": {"scale": "scaleX", "signal": "0"},
+          "x2": {"scale": "scaleX", "field": "Value"},
+          "y": {"scale": "scaleY", "field": "Category"},
+          "height": {"scale": "scaleY", "band": 0.8},
+          "fill": {"signal": "datum['Value']>=0?barColor1:barColor2"}
         }
       }
     },
     {
       "name": "text-category-labels",
       "type": "text",
-      "from": {
-        "data": "rect-data-bars"
-      },
+      "from": {"data": "rect-data-bars"},
       "encode": {
         "enter": {
-          "text": {
-            "field": "datum['Category']"
-          },
-          "x": {
-            "scale": "scaleX",
-            "signal": "0"
-          },
-          "dx": {
-            "signal": "labelOffset*(datum.datum['Value']>=0?-1:1)"
-          },
-          "y": {
-            "signal": "datum.y+datum.height/2"
-          },
-          "fontSize": {
-            "signal": "labelFontSize"
-          },
-          "baseline": {
-            "value": "middle"
-          },
-          "align": {
-            "signal": "datum.datum['Value']<=0?'left':'right'"
-          },
-          "fill": {
-            "signal": "labelColor"
-          }
+          "text": {"field": "datum['Category']"},
+          "x": {"scale": "scaleX", "signal": "0"},
+          "dx": {"signal": "labelOffset*(datum.datum['Value']>=0?-1:1)"},
+          "y": {"signal": "datum.y+datum.height/2"},
+          "fontSize": {"signal": "labelFontSize"},
+          "baseline": {"value": "middle"},
+          "align": {"signal": "datum.datum['Value']<=0?'left':'right'"},
+          "fill": {"signal": "labelColor"}
         }
       }
     },
     {
       "name": "text-value-labels",
       "type": "text",
-      "from": {
-        "data": "rect-data-bars"
-      },
+      "from": {"data": "rect-data-bars"},
       "encode": {
         "enter": {
-          "text": {
-            "field": "datum['Value']"
-          },
-          "x": {
-            "signal": "datum.datum['Value']<=0?datum.x:datum.x2"
-          },
-          "dx": {
-            "signal": "labelOffset*(datum.datum['Value']<=0?-1:1)"
-          },
-          "y": {
-            "signal": "datum.y+datum.height/2"
-          },
-          "fontSize": {
-            "signal": "labelFontSize"
-          },
-          "baseline": {
-            "value": "middle"
-          },
-          "align": {
-            "signal": "datum.datum['Value']<=0?'right':'left'"
-          },
-          "fill": {
-            "signal": "datum.datum['Value']>=0?barColor1:barColor2"
-          }
+          "text": {"field": "datum['Value']"},
+          "x": {"signal": "datum.datum['Value']<=0?datum.x:datum.x2"},
+          "dx": {"signal": "labelOffset*(datum.datum['Value']<=0?-1:1)"},
+          "y": {"signal": "datum.y+datum.height/2"},
+          "fontSize": {"signal": "labelFontSize"},
+          "baseline": {"value": "middle"},
+          "align": {"signal": "datum.datum['Value']<=0?'right':'left'"},
+          "fill": {"signal": "datum.datum['Value']>=0?barColor1:barColor2"}
         }
       }
     }
