@@ -1,0 +1,222 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "usermeta": {
+    "deneb": {
+      "build": "1.5.0.20230306#f88facf",
+      "metaVersion": 1,
+      "provider": "vega",
+      "providerVersion": "5.23.0"
+    },
+    "interactivity": {
+      "tooltip": true,
+      "contextMenu": true,
+      "selection": true,
+      "highlight": true,
+      "dataPointLimit": 50
+    },
+    "information": {
+      "name": "Deviation - Diverging Bar Chart",
+      "description": "A basic bar graph that is capable of representing values with both positive and negative magnitudes.",
+      "author": "Andrzej Leszkiewicz (@avatorl)",
+      "uuid": "28eab3f9-3341-4cf3-b5bf-836ab4f11f1a",
+      "generated": "2023-03-08T09:09:01.329Z",
+      "previewImageBase64PNG": "data:image/png;base64,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"
+    },
+    "dataset": [
+      {
+        "key": "__0__",
+        "name": "Category",
+        "description": "Category names",
+        "type": "text",
+        "kind": "column"
+      },
+      {
+        "key": "__1__",
+        "name": "Value",
+        "description": "Values (negative and positive)",
+        "type": "numeric",
+        "kind": "column"
+      }
+    ]
+  },
+  "config": {},
+  "description": "Deviation - Diverging Bar Chart",
+  "width": 400,
+  "height": 400,
+  "padding": 15,
+  "autosize": "fit",
+  "background": "white",
+  "signals": [
+    {
+      "name": "titleColor",
+      "value": "#333333"
+    },
+    {
+      "name": "barColor1",
+      "init": "pbiColor(0)"
+    },
+    {
+      "name": "barColor2",
+      "init": "pbiColor(2)"
+    },
+    {
+      "name": "labelColor",
+      "value": "#666666"
+    },
+    {
+      "name": "titleFontSize",
+      "value": 24
+    },
+    {
+      "name": "labelFontSize",
+      "value": 24
+    },
+    {"name": "labelOffset", "value": 5}
+  ],
+  "data": [{"name": "dataset"}],
+  "scales": [
+    {
+      "name": "scaleX",
+      "type": "linear",
+      "domain": {
+        "data": "dataset",
+        "field": "__1__"
+      },
+      "domainMid": 0,
+      "range": [
+        0,
+        {"signal": "width/2"},
+        {"signal": "width"}
+      ]
+    },
+    {
+      "name": "scaleY",
+      "type": "band",
+      "domain": {
+        "data": "dataset",
+        "field": "__0__"
+      },
+      "range": "height",
+      "padding": 0.2
+    }
+  ],
+  "title": {
+    "text": "Diverging Bar Chart",
+    "anchor": "start",
+    "offset": 10,
+    "color": {"signal": "titleColor"},
+    "fontSize": {
+      "signal": "titleFontSize"
+    }
+  },
+  "axes": [
+    {
+      "orient": "left",
+      "scale": "scaleY",
+      "offset": {"signal": "-width/2"},
+      "labels": false,
+      "ticks": false
+    }
+  ],
+  "marks": [
+    {
+      "name": "rect-data-bars",
+      "type": "rect",
+      "from": {"data": "dataset"},
+      "encode": {
+        "enter": {
+          "x": {
+            "scale": "scaleX",
+            "signal": "0"
+          },
+          "x2": {
+            "scale": "scaleX",
+            "field": "__1__"
+          },
+          "y": {
+            "scale": "scaleY",
+            "field": "__0__"
+          },
+          "height": {
+            "scale": "scaleY",
+            "band": 0.8
+          },
+          "fill": {
+            "signal": "datum['__1__']>=0?barColor1:barColor2"
+          }
+        }
+      }
+    },
+    {
+      "name": "text-category-labels",
+      "type": "text",
+      "from": {
+        "data": "rect-data-bars"
+      },
+      "encode": {
+        "enter": {
+          "text": {
+            "field": "datum['__0__']"
+          },
+          "x": {
+            "scale": "scaleX",
+            "signal": "0"
+          },
+          "dx": {
+            "signal": "labelOffset*(datum.datum['__1__']>=0?-1:1)"
+          },
+          "y": {
+            "signal": "datum.y+datum.height/2"
+          },
+          "fontSize": {
+            "signal": "labelFontSize"
+          },
+          "baseline": {
+            "value": "middle"
+          },
+          "align": {
+            "signal": "datum.datum['__1__']<=0?'left':'right'"
+          },
+          "fill": {
+            "signal": "labelColor"
+          }
+        }
+      }
+    },
+    {
+      "name": "text-value-labels",
+      "type": "text",
+      "from": {
+        "data": "rect-data-bars"
+      },
+      "encode": {
+        "enter": {
+          "text": {
+            "field": "datum['__1__']"
+          },
+          "x": {
+            "signal": "datum.datum['__1__']<=0?datum.x:datum.x2"
+          },
+          "dx": {
+            "signal": "labelOffset*(datum.datum['__1__']<=0?-1:1)"
+          },
+          "y": {
+            "signal": "datum.y+datum.height/2"
+          },
+          "fontSize": {
+            "signal": "labelFontSize"
+          },
+          "baseline": {
+            "value": "middle"
+          },
+          "align": {
+            "signal": "datum.datum['__1__']<=0?'right':'left'"
+          },
+          "fill": {
+            "signal": "datum.datum['__1__']>=0?barColor1:barColor2"
+          }
+        }
+      }
+    }
+  ]
+}
