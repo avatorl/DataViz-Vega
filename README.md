@@ -13,7 +13,7 @@ The following image is just an overview of the visualizations presented in this 
 
 The visualizations shared in this repository are just showcases of Deneb-Vega capabilities and results of author's experiments. Some of them may still require additional testing, debugging and code cleaning to be done. Feel free to create an Issue if you noticed any problem.
 
-## Sponsoship
+## Sponsorship
 
 If one of the visualizations really helped you (you have used the code for your commercial projects) or if you just want to say thank you, feel free to click the Sponsor button.
 
