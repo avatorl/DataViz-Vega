@@ -13,6 +13,10 @@ The following image is just an overview of the visualizations presented in this 
 
 The visualizations shared in this repository are just showcases of Deneb-Vega capabilities and results of author's experiments. Some of them may still require additional testing, debugging and code cleaning to be done. Feel free to create an Issue if you noticed any problem.
 
+## Sponsoship
+
+If one of the visualizations really helped you (you have used the code for your commercial projects) or if you just want to say thank you, feel free to click the Sponsor button.
+
 ## Disclaimer of Warranties and Limitation of Liability
 
 The materials are provided "as is", with no promises or guarantees. The author is not responsible for the quality, accuracy, reliability or any other aspect of the shared materials. Author will not be liable for damages or losses arising from your use or inability to use the shared materials.
