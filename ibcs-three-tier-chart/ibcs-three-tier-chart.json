@@ -221,7 +221,7 @@
   "data": [
     {
       "name": "data-csv",
-      "url": "https://dl.dropboxusercontent.com/s/xyycv8vd808ye6i/IBCF%20template%2004E.csv",
+      "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/ibcs-three-tier-chart/ibcs-three-tier-chart-data.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","},
       "transform": [
         {"type": "formula", "as": "order", "expr": "datum[sortField]"}
