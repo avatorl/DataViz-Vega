@@ -6,7 +6,9 @@
     "License": "CC BY 4.0 (Share and Adapt with Attribution)",
     "To Say Thank You": "https://github.com/sponsors/avatorl/",
     "Design Style": "IBCS Multi-tier bar charts",
-    "Design Style URL": "https://www.ibcs.com/resource/multi-tier-bar-charts/"
+    "Design Style URL": "https://www.ibcs.com/resource/multi-tier-bar-charts/",
+    "Note 1": "Visualization design is based on IBCS guidelines: https://www.ibcs.com/ibcs-standards-1-2/",
+    "Note 2": "Not produced, not certified, not authorized, not endorsed by IBCS® https://www.ibcs.com/"
   },
   "padding": {"left": 15, "top": 5, "right": 5, "bottom": 5},
   "autosize": "fit",
