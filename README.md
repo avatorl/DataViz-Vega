@@ -23,9 +23,10 @@ The materials are provided "as is", with no promises or guarantees. The author i
 
 ## Author
 Andrzej Leszkiewicz (Power BI developer and consultant)
-- Web-site (blog): [Power of Business Intelligence](https://powerofbi.org/)
+- Website (blog): [Power of Business Intelligence](https://powerofbi.org/)
 - Twitter: [@avatorl](https://twitter.com/avatorl)
 - LinkedIn: [@avatorl](https://www.linkedin.com/in/avatorl/)
+- YouTube: [@power-of-bi](https://www.youtube.com/@power-of-bi)
 
 ## License: Attribution 4.0 International (CC BY 4.0)
 
