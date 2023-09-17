@@ -13,20 +13,23 @@ The following image is just an overview of the visualizations presented in this 
 
 The visualizations shared in this repository are just showcases of Deneb-Vega capabilities and results of author's experiments. Some of them may still require additional testing, debugging and code cleaning to be done. Feel free to create an Issue if you noticed any problem.
 
-## Sponsorship
+## Author of the templates
 
-If one of the visualizations really helped you (you have used the code for your commercial projects) or if you just want to say thank you, feel free to click the Sponsor button.
-
-## Disclaimer of Warranties and Limitation of Liability
-
-The materials are provided "as is", with no promises or guarantees. The author is not responsible for the quality, accuracy, reliability or any other aspect of the shared materials. Author will not be liable for damages or losses arising from your use or inability to use the shared materials.
-
-## Author
-Andrzej Leszkiewicz (Power BI developer and consultant)
+Andrzej Leszkiewicz
 - Website (blog): [Power of Business Intelligence](https://powerofbi.org/)
 - Twitter: [@avatorl](https://twitter.com/avatorl)
 - LinkedIn: [@avatorl](https://www.linkedin.com/in/avatorl/)
 - YouTube: [@power-of-bi](https://www.youtube.com/@power-of-bi)
+
+## Sponsorship
+
+If one of the visualizations really helped you (you have used the code for your commercial projects) or if you just want to say thank you, feel free to click the Sponsor button.
+
+## External Resources
+
+Deneb (custom visual for Power BI): https://deneb-viz.github.io/
+
+Vega visualization grammar: https://vega.github.io/vega/
 
 ## License: Attribution 4.0 International (CC BY 4.0)
 
@@ -43,3 +46,10 @@ Under the following terms:
 - **No additional restrictions** — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
 
 https://creativecommons.org/licenses/by/4.0/
+
+## Disclaimer of Warranties and Limitation of Liability
+
+The materials are provided 'as is,' with no promises or guarantees. 
+The author is not responsible for the quality, accuracy, reliability, or any other aspect of the shared materials. 
+The author will not be liable for damages or losses arising from your use or inability to use the shared materials.
+
