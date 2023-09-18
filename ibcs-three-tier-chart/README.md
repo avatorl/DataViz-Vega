@@ -1,6 +1,6 @@
 ## IBCS style three-tier chart to show: 1) absolute values, 2) absolute variances, 3) relative variances
 
-![ibcs](https://github.com/avatorl/Deneb-Vega/assets/59934292/e9bc34b7-b977-452f-8da1-190b6c0ed8d4)
+![International Business Communication Standards (IBCS) chart for Power BI, created using Deneb and Vega (by Andrzej Leszkiewicz) x](https://github.com/avatorl/Deneb-Vega/assets/59934292/1cd08fe8-cf08-4998-8498-34df2d0394f0)
 
 Visualization design is based on IBCS guidelines: https://www.ibcs.com/ibcs-standards-1-2/
 
