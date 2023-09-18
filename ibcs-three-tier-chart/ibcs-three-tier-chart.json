@@ -4,61 +4,45 @@
   "usermeta": {
     "Author": "Andrzej Leszkiewicz",
     "License": "CC BY 4.0 (Share and Adapt with Attribution)",
-    "To Say Thank You": "https://github.com/sponsors/avatorl/",
     "Design Style": "IBCS Multi-tier bar charts",
-    "Design Style URL": "https://www.ibcs.com/resource/multi-tier-bar-charts/",
-    "Note 1": "Visualization design is based on IBCS guidelines: https://www.ibcs.com/ibcs-standards-1-2/",
-    "Note 2": "Not produced, not certified, not authorized, not endorsed by IBCS® https://www.ibcs.com/"
+    "Design Style URL": "https://www.ibcs.com/resource/multi-tier-bar-charts/"
   },
-  "padding": {"left": 15, "top": 5, "right": 5, "bottom": 5},
+  "padding": {
+    "left": 0,
+    "top": 0,
+    "right": 0,
+    "bottom": 0
+  },
   "autosize": "fit",
   "background": "#FFFFFF",
   "signals": [
     {
-      "name": "currentYear",
-      "description": "hardcoded. need to get it from dataset",
-      "value": "2022"
-    },
-    {"name": "avgDelta", "update": "data('data-average')[0][fieldAbsVar]"},
-    {"name": "avgDeltaP", "update": "data('data-average')[0][fieldRelVar]/100"},
-    {
-      "name": "titleText",
-      "description": "Message (line above the title)",
-      "update": "'Average sales (per sales rep) '+(avgDeltaP<0?'decrease':'growth')+' is '+format(abs(avgDeltaP),'.0%')+' ('+abs(avgDelta)+' kUSD) in '+currentYear+' compared to the previous year'"
-    },
-    {
-      "name": "subtitleText",
-      "description": "Title line 1: reporting unit ('who')",
-      "value": ""
-    },
-    {
-      "name": "titleText2",
-      "description": "Title line 2: business measure(s) ('what')",
-      "value": "Net sales by sales rep in kUSD"
-    },
-    {
-      "name": "subtitleText2",
-      "description": "Title line 3: time period(s), scenario(s), and variance(s) ('when')",
-      "update": "currentYear+': AC, PY, ΔPY and ΔPY%'"
-    },
-    {
       "name": "footnoteText",
       "value": "IBCS based three-tier chart to show: 1) absolute values, 2) absolute variances, 3) relative variances. Dummy data. Author of Vega implementation: Andrzej Leszkiewicz http://powerofbi.org/."
     },
-    {"name": "width", "value": 1200},
-    {"name": "height", "value": 800},
+    {"name": "width", "value": 1000},
+    {"name": "height", "value": 600},
     {
-      "name": "paddingLeft",
-      "description": "padding to the left from the chart area (for axes Y labels)",
-      "value": -155
+      "name": "colorMain",
+      "value": "#323232"
     },
-    {"name": "colorMain", "value": "#323232"},
     {
-      "name": "colorSubtle",
+      "name": "colorPrev",
       "description": "color for previous period data",
       "value": "#c6c6c6"
     },
-    {"name": "colorNegative", "value": "#ff0000"},
+    {
+      "name": "colorNegative",
+      "value": "#ff0000"
+    },
+    {
+      "name": "labelsFontSize",
+      "value": "14"
+    },
+    {
+      "name": "titlesFontSize",
+      "value": "18"
+    },
     {
       "name": "colorPositive",
       "description": "color option: #008e96, #8cb400",
@@ -66,8 +50,8 @@
     },
     {
       "name": "sectionWidth",
-      "description": "width of each vertil chart (there are 3 charts)",
-      "update": "width/4"
+      "description": "width of each vertical chart (there are 3 charts)",
+      "update": "width/3"
     },
     {
       "name": "sectionPadding",
@@ -99,7 +83,10 @@
       "description": "relative variance - data field name",
       "value": "DeltaPYP"
     },
-    {"name": "averageRowLabel", "value": "Ø sales rep"},
+    {
+      "name": "averageRowLabel",
+      "value": "Ø sales rep"
+    },
     {
       "name": "sortFieldPrevious",
       "description": "previous sort field",
@@ -181,7 +168,10 @@
       "description": "convert 0 to 'ascending', 1 to 'descending'",
       "update": "sortOrderIndex==0?'ascending':'descending'"
     },
-    {"name": "arrowDown", "value": "🠧"},
+    {
+      "name": "arrowDown",
+      "value": "🠧"
+    },
     {"name": "arrowUp", "value": "🠥"},
     {
       "name": "titleSortName",
@@ -208,12 +198,18 @@
       "description": "name of the row (category) under cursor (to highlight)",
       "value": null,
       "on": [
-        {"events": "rect:mouseover", "update": "datum.Name"},
+        {
+          "events": "rect:mouseover",
+          "update": "datum.Name"
+        },
         {
           "events": "@text-value:mouseover, @text-abs-var:mouseover,@text-rel-var:mouseover",
           "update": "datum.datum.Name"
         },
-        {"events": "@axisNameLabels:mouseover", "update": "datum.label"},
+        {
+          "events": "@axisNameLabels:mouseover",
+          "update": "datum.label"
+        },
         {
           "events": "rect:mouseout, @text-value:mouseout,@text-abs-var:mouseout,@text-rel-var:mouseout, @axisNameLabels:mouseout",
           "update": "null"
@@ -224,10 +220,18 @@
   "data": [
     {
       "name": "data-csv",
-      "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/ibcs-three-tier-chart/ibcs-three-tier-chart-data.csv",
-      "format": {"type": "csv", "parse": "auto", "delimiter": ","},
+      "url": "https://dl.dropboxusercontent.com/s/xyycv8vd808ye6i/IBCF%20template%2004E.csv",
+      "format": {
+        "type": "csv",
+        "parse": "auto",
+        "delimiter": ","
+      },
       "transform": [
-        {"type": "formula", "as": "order", "expr": "datum[sortField]"}
+        {
+          "type": "formula",
+          "as": "order",
+          "expr": "datum[sortField]"
+        }
       ]
     },
     {
@@ -239,8 +243,18 @@
           "as": {"signal": "'order'"},
           "expr": "(sortOrderIndex==0?1:-1)*999999999999998"
         },
-        {"type": "formula", "as": {"signal": "fieldName"}, "expr": "null"},
-        {"type": "formula", "as": {"signal": "fieldValue"}, "expr": "null"}
+        {
+          "type": "formula",
+          "as": {"signal": "fieldName"},
+          "expr": "null"
+        },
+        {
+          "type": "formula",
+          "as": {
+            "signal": "fieldValue"
+          },
+          "expr": "null"
+        }
       ]
     },
     {
@@ -249,18 +263,28 @@
       "transform": [
         {
           "type": "aggregate",
-          "fields": [{"signal": "fieldValue"}, {"signal": "fieldValuePrev"}],
+          "fields": [
+            {"signal": "fieldValue"},
+            {"signal": "fieldValuePrev"}
+          ],
           "ops": ["average", "average"],
-          "as": [{"signal": "fieldValue"}, {"signal": "fieldValuePrev"}]
+          "as": [
+            {"signal": "fieldValue"},
+            {"signal": "fieldValuePrev"}
+          ]
         },
         {
           "type": "formula",
-          "as": {"signal": "fieldValue"},
+          "as": {
+            "signal": "fieldValue"
+          },
           "expr": "ceil(datum[fieldValue])"
         },
         {
           "type": "formula",
-          "as": {"signal": "fieldValuePrev"},
+          "as": {
+            "signal": "fieldValuePrev"
+          },
           "expr": "ceil(datum[fieldValuePrev])"
         },
         {
@@ -275,17 +299,51 @@
         },
         {
           "type": "formula",
-          "as": {"signal": "fieldAbsVar"},
+          "as": {
+            "signal": "fieldAbsVar"
+          },
           "expr": "datum[fieldValue]-datum[fieldValuePrev]"
         },
         {
           "type": "formula",
-          "as": {"signal": "fieldRelVar"},
+          "as": {
+            "signal": "fieldRelVar"
+          },
           "expr": "ceil((datum[fieldValue]-datum[fieldValuePrev])/datum[fieldValuePrev]*100)"
         }
       ]
     },
-    {"name": "data", "source": ["data-csv", "data-blank", "data-average"]}
+    {
+      "name": "data",
+      "source": [
+        "data-csv",
+        "data-blank",
+        "data-average"
+      ],
+      "transform": [
+        {
+          "type": "extent",
+          "field": {
+            "signal": "fieldValue"
+          },
+          "signal": "extentValue"
+        },
+        {
+          "type": "extent",
+          "field": {
+            "signal": "fieldValuePrev"
+          },
+          "signal": "extentValuePrev"
+        },
+        {
+          "type": "extent",
+          "field": {
+            "signal": "fieldAbsVar"
+          },
+          "signal": "extentAbsVar"
+        }
+      ]
+    }
   ],
   "scales": [
     {
@@ -296,7 +354,9 @@
         "field": "Name",
         "sort": {
           "field": "order",
-          "order": {"signal": "sortOrder"},
+          "order": {
+            "signal": "sortOrder"
+          },
           "op": "max"
         }
       },
@@ -306,28 +366,50 @@
     {
       "name": "scaleXValue",
       "type": "linear",
-      "domain": {"data": "data", "field": {"signal": "fieldValue"}},
-      "range": [{"signal": "0"}, {"signal": "sectionWidth"}],
+      "domain": [
+        0,
+        {
+          "signal": "max(extentValue[1],extentValuePrev[1])"
+        }
+      ],
+      "range": [
+        {"signal": "0"},
+        {"signal": "sectionWidth"}
+      ],
       "nice": true
     },
     {
       "name": "scaleXDelta",
       "type": "linear",
-      "domain": {"data": "data", "field": {"signal": "fieldAbsVar"}},
+      "domain": [
+        {"signal": "extentAbsVar[0]"},
+        {"signal": "extentAbsVar[1]"}
+      ],
       "range": [
-        {"signal": "sectionWidth+sectionPadding"},
-        {"signal": "sectionWidth+sectionPadding+sectionWidth"}
+        {
+          "signal": "sectionWidth+sectionPadding"
+        },
+        {
+          "signal": "sectionWidth+sectionPadding+sectionWidth/max(extentValue[1],extentValuePrev[1])*(extentAbsVar[1]-extentAbsVar[0])"
+        }
       ],
       "nice": true
     },
     {
       "name": "scaleXDeltaP",
       "type": "linear",
-      "domain": {"data": "data", "field": {"signal": "fieldRelVar"}},
+      "domain": {
+        "data": "data",
+        "field": {
+          "signal": "fieldRelVar"
+        }
+      },
       "range": [
-        {"signal": "sectionWidth+sectionPadding+sectionWidth+sectionPadding"},
         {
-          "signal": "sectionWidth+sectionPadding+sectionWidth+sectionPadding+sectionWidth"
+          "signal": "sectionWidth+sectionPadding+sectionWidth/max(extentValue[1],extentValuePrev[1])*(extentAbsVar[1]-extentAbsVar[0])"
+        },
+        {
+          "signal": "width-sectionWidth+sectionPadding+sectionWidth/max(extentValue[1],extentValuePrev[1])*(extentAbsVar[1]-extentAbsVar[0])"
         }
       ],
       "nice": true
@@ -342,19 +424,35 @@
       "ticks": false,
       "offset": 0,
       "labelPadding": 5,
-      "labelFontSize": 14,
-      "labelFontWeight": {"signal": "'normal'"},
-      "title": {"signal": "titleSortName"},
+      "labelFont": "Segoe UI",
+      "labelFontSize": {
+        "signal": "labelsFontSize"
+      },
+      "labelFontWeight": {
+        "signal": "'normal'"
+      },
+      "title": {
+        "signal": "titleSortName"
+      },
       "titleAnchor": "start",
       "titleAngle": 0,
       "titleAlign": "right",
       "titleX": -15,
       "titleY": -4,
-      "titleColor": {"signal": "colorMain"},
-      "titleFontSize": 18,
+      "titleColor": {
+        "signal": "colorMain"
+      },
+      "titleFont": "Segoe UI",
+      "titleFontSize": {
+        "signal": "titlesFontSize"
+      },
       "titleFontWeight": "normal",
       "encode": {
-        "axis": {"enter": {"zindex": {"value": 0}}},
+        "axis": {
+          "update": {
+            "zindex": {"value": 0}
+          }
+        },
         "labels": {
           "interactive": true,
           "name": "axisNameLabels",
@@ -370,18 +468,31 @@
         "title": {
           "interactive": true,
           "name": "axisNameTitle",
-          "enter": {"cursor": {"value": "pointer"}}
+          "update": {
+            "cursor": {
+              "value": "pointer"
+            }
+          }
         }
       }
     },
     {
       "scale": "scaleXValue",
       "orient": "top",
-      "title": {"signal": "titleSortValue"},
-      "titleColor": {"signal": "colorMain"},
-      "titleFontSize": 18,
+      "title": {
+        "signal": "titleSortValue"
+      },
+      "titleColor": {
+        "signal": "colorMain"
+      },
+      "titleFont": "Segoe UI",
+      "titleFontSize": {
+        "signal": "titlesFontSize"
+      },
       "titleFontWeight": "normal",
-      "titleX": {"signal": "sectionWidth/4"},
+      "titleX": {
+        "signal": "sectionWidth/4"
+      },
       "domain": false,
       "ticks": false,
       "labels": false,
@@ -389,18 +500,31 @@
         "title": {
           "interactive": true,
           "name": "axisValueTitle",
-          "enter": {"cursor": {"value": "pointer"}}
+          "update": {
+            "cursor": {
+              "value": "pointer"
+            }
+          }
         }
       }
     },
     {
       "scale": "scaleXValue",
       "orient": "top",
-      "title": {"signal": "titleSortValuePrev"},
-      "titleColor": {"signal": "colorSubtle"},
-      "titleFontSize": 18,
+      "title": {
+        "signal": "titleSortValuePrev"
+      },
+      "titleColor": {
+        "signal": "colorPrev"
+      },
+      "titleFont": "Segoe UI",
+      "titleFontSize": {
+        "signal": "titlesFontSize"
+      },
       "titleFontWeight": "normal",
-      "titleX": {"signal": "sectionWidth*3/4"},
+      "titleX": {
+        "signal": "sectionWidth*3/4"
+      },
       "domain": false,
       "ticks": false,
       "labels": false,
@@ -408,16 +532,27 @@
         "title": {
           "interactive": true,
           "name": "axisValuePrevTitle",
-          "enter": {"cursor": {"value": "pointer"}}
+          "update": {
+            "cursor": {
+              "value": "pointer"
+            }
+          }
         }
       }
     },
     {
       "scale": "scaleXDelta",
       "orient": "top",
-      "titleColor": {"signal": "colorMain"},
-      "title": {"signal": "titleSortDelta"},
-      "titleFontSize": 18,
+      "titleColor": {
+        "signal": "colorMain"
+      },
+      "title": {
+        "signal": "titleSortDelta"
+      },
+      "titleFont": "Segoe UI",
+      "titleFontSize": {
+        "signal": "titlesFontSize"
+      },
       "titleFontWeight": "normal",
       "domain": false,
       "ticks": false,
@@ -426,16 +561,27 @@
         "title": {
           "interactive": true,
           "name": "axisDeltaTitle",
-          "enter": {"cursor": {"value": "pointer"}}
+          "update": {
+            "cursor": {
+              "value": "pointer"
+            }
+          }
         }
       }
     },
     {
       "scale": "scaleXDeltaP",
       "orient": "top",
-      "title": {"signal": "titleSortDeltaP"},
-      "titleColor": {"signal": "colorMain"},
-      "titleFontSize": 18,
+      "title": {
+        "signal": "titleSortDeltaP"
+      },
+      "titleColor": {
+        "signal": "colorMain"
+      },
+      "titleFont": "Segoe UI",
+      "titleFontSize": {
+        "signal": "titlesFontSize"
+      },
       "titleFontWeight": "normal",
       "domain": false,
       "ticks": false,
@@ -444,69 +590,50 @@
         "title": {
           "interactive": true,
           "name": "axisDeltaPTitle",
-          "enter": {"cursor": {"value": "pointer"}}
+          "update": {
+            "cursor": {
+              "value": "pointer"
+            }
+          }
         }
       }
     }
   ],
-  "title": {
-    "text": {"signal": "titleText"},
-    "font": "Tahoma",
-    "fontSize": 20,
-    "fontWeight": "normal",
-    "anchor": "start",
-    "dx": 10,
-    "offset": 5,
-    "subtitlePadding": 5,
-    "subtitleFont": "Tahoma",
-    "subtitle": {"signal": "subtitleText"},
-    "subtitleFontSize": 18
-  },
   "marks": [
-    {
-      "name": "group-header",
-      "type": "group",
-      "encode": {
-        "enter": {
-          "x": {"signal": "paddingLeft"},
-          "y": {"value": -100},
-          "dy": {"value": -100},
-          "width": {"signal": "width-paddingLeft"},
-          "height": {"value": 1},
-          "fill": {"signal": "colorSubtle"}
-        }
-      },
-      "title": {
-        "text": {"signal": "titleText2"},
-        "font": "Tahoma",
-        "fontSize": 18,
-        "fontWeight": "normal",
-        "anchor": "start",
-        "offset": 90,
-        "dy": 140,
-        "subtitlePadding": 5,
-        "subtitleFont": "Tahoma",
-        "subtitle": {"signal": "subtitleText2"},
-        "subtitleFontSize": 18
-      }
-    },
     {
       "name": "rect-value",
       "type": "rect",
       "from": {"data": "data"},
       "zindex": 2,
       "encode": {
-        "enter": {
-          "x": {"scale": "scaleXValue", "value": 0},
-          "x2": {"scale": "scaleXValue", "field": {"signal": "fieldValue"}},
-          "height": {"scale": "scaleY", "band": 0.75},
-          "fill": {"signal": "colorMain"},
+        "update": {
+          "x": {
+            "scale": "scaleXValue",
+            "value": 0
+          },
+          "x2": {
+            "scale": "scaleXValue",
+            "field": {
+              "signal": "fieldValue"
+            }
+          },
+          "y": {
+            "scale": "scaleY",
+            "field": {
+              "signal": "fieldName"
+            },
+            "band": 0.25
+          },
+          "height": {
+            "scale": "scaleY",
+            "band": 0.665
+          },
+          "fill": {
+            "signal": "colorMain"
+          },
           "tooltip": {
             "signal": "fieldValue+': '+datum[fieldValue]+', '+fieldValuePrev+': '+datum[fieldValuePrev]"
           }
-        },
-        "update": {
-          "y": {"scale": "scaleY", "field": {"signal": "fieldName"}, "band": 0}
         }
       }
     },
@@ -516,22 +643,36 @@
       "from": {"data": "rect-value"},
       "zindex": 3,
       "encode": {
-        "enter": {
+        "update": {
           "text": {
             "signal": "datum.datum[fieldValue]==null?'':format(datum.datum[fieldValue],'d')"
           },
-          "x": {"field": "x2", "offset": 5},
-          "fontSize": {"signal": "14"},
-          "fill": {"signal": "colorMain"},
+          "x": {
+            "field": "x2",
+            "offset": 5
+          },
+          "y": {
+            "field": "y",
+            "offset": {
+              "field": "height",
+              "mult": 0.75
+            }
+          },
+          "font": {
+            "signal": "'Segoe UI'"
+          },
+          "fontSize": {
+            "signal": "labelsFontSize"
+          },
+          "fill": {
+            "signal": "colorMain"
+          },
           "fontWeight": {
             "signal": "datum.datum[fieldName]==averageRowLabel?'bold':'normal'"
           },
           "tooltip": {
             "signal": "fieldValue+': '+datum.datum[fieldValue]+', '+fieldValuePrev+': '+datum.datum[fieldValuePrev]"
           }
-        },
-        "update": {
-          "y": {"field": "y", "offset": {"field": "height", "mult": 0.75}}
         }
       }
     },
@@ -541,20 +682,33 @@
       "from": {"data": "data"},
       "zindex": 1,
       "encode": {
-        "enter": {
-          "x": {"scale": "scaleXValue", "value": 0},
-          "x2": {"scale": "scaleXValue", "field": {"signal": "fieldValuePrev"}},
-          "height": {"scale": "scaleY", "band": 0.75},
-          "fill": {"signal": "colorSubtle"},
-          "tooltip": {
-            "signal": "fieldValue+': '+datum[fieldValue]+', '+fieldValuePrev+': '+datum[fieldValuePrev]"
-          }
-        },
         "update": {
+          "x": {
+            "scale": "scaleXValue",
+            "value": 0
+          },
+          "x2": {
+            "scale": "scaleXValue",
+            "field": {
+              "signal": "fieldValuePrev"
+            }
+          },
           "y": {
             "scale": "scaleY",
-            "field": {"signal": "fieldName"},
-            "band": -0.15
+            "field": {
+              "signal": "fieldName"
+            },
+            "band": 0
+          },
+          "height": {
+            "scale": "scaleY",
+            "band": 0.665
+          },
+          "fill": {
+            "signal": "colorPrev"
+          },
+          "tooltip": {
+            "signal": "fieldValue+': '+datum[fieldValue]+', '+fieldValuePrev+': '+datum[fieldValuePrev]"
           }
         }
       }
@@ -565,17 +719,36 @@
       "from": {"data": "data"},
       "zindex": 1,
       "encode": {
-        "enter": {
-          "x": {"scale": "scaleXDelta", "value": 0},
-          "x2": {"scale": "scaleXDelta", "field": {"signal": "fieldAbsVar"}},
-          "height": {"scale": "scaleY", "band": 0.665},
+        "update": {
+          "x": {
+            "scale": "scaleXDelta",
+            "value": 0
+          },
+          "x2": {
+            "scale": "scaleXDelta",
+            "field": {
+              "signal": "fieldAbsVar"
+            }
+          },
+          "y": {
+            "scale": "scaleY",
+            "field": "Name",
+            "band": 0.17
+          },
+          "height": {
+            "scale": "scaleY",
+            "band": 0.665
+          },
           "fill": {
             "signal": "datum[fieldAbsVar]<0?colorNegative:colorPositive"
           },
-          "cornerRadius": {"signal": "1"},
-          "tooltip": {"signal": "'Δ'+fieldValuePrev+': '+datum[fieldAbsVar]"}
-        },
-        "update": {"y": {"scale": "scaleY", "field": "Name", "band": 0.1}}
+          "cornerRadius": {
+            "signal": "1"
+          },
+          "tooltip": {
+            "signal": "'Δ'+fieldValuePrev+': '+datum[fieldAbsVar]"
+          }
+        }
       }
     },
     {
@@ -584,23 +757,38 @@
       "from": {"data": "rect-abs-var"},
       "zindex": 2,
       "encode": {
-        "enter": {
+        "update": {
           "text": {
             "signal": "datum.datum[fieldValue]==null?'':format(datum.datum[fieldAbsVar],'+d')"
           },
-          "x": {"signal": "datum.datum[fieldAbsVar]<0?datum.x-5:datum.x2+5"},
-          "align": {"signal": "datum.datum[fieldAbsVar]<0?'right':'left'"},
-          "fontSize": {"signal": "14"},
+          "x": {
+            "signal": "datum.datum[fieldAbsVar]<0?datum.x-5:datum.x2+5"
+          },
+          "y": {
+            "field": "y",
+            "offset": {
+              "field": "height",
+              "mult": 0.7
+            }
+          },
+          "align": {
+            "signal": "datum.datum[fieldAbsVar]<0?'right':'left'"
+          },
+          "font": {
+            "signal": "'Segoe UI'"
+          },
+          "fontSize": {
+            "signal": "labelsFontSize"
+          },
           "fontWeight": {
             "signal": "datum.datum[fieldName]==averageRowLabel?'bold':'normal'"
           },
-          "fill": {"signal": "colorMain"},
+          "fill": {
+            "signal": "colorMain"
+          },
           "tooltip": {
             "signal": "'Δ'+fieldValuePrev+': '+datum.datum[fieldAbsVar]"
           }
-        },
-        "update": {
-          "y": {"field": "y", "offset": {"field": "height", "mult": 0.7}}
         }
       }
     },
@@ -610,23 +798,40 @@
       "from": {"data": "data"},
       "zindex": 1,
       "encode": {
-        "enter": {
+        "update": {
           "x": {
             "scale": "scaleXDeltaP",
-            "field": {"signal": "fieldRelVar"},
+            "field": {
+              "signal": "fieldRelVar"
+            },
             "offset": 5
           },
           "x2": {
             "scale": "scaleXDeltaP",
-            "field": {"signal": "fieldRelVar"},
+            "field": {
+              "signal": "fieldRelVar"
+            },
             "offset": -5
           },
-          "height": {"scale": "scaleY", "band": 0.4},
-          "fill": {"signal": "colorMain"},
-          "cornerRadius": {"signal": "1"},
-          "tooltip": {"signal": "'Δ'+fieldValuePrev+'%: '+datum[fieldRelVar]"}
-        },
-        "update": {"y": {"scale": "scaleY", "field": "Name", "band": 0.25}}
+          "y": {
+            "scale": "scaleY",
+            "field": "Name",
+            "band": 0.3
+          },
+          "height": {
+            "scale": "scaleY",
+            "band": 0.4
+          },
+          "fill": {
+            "signal": "colorMain"
+          },
+          "cornerRadius": {
+            "signal": "1"
+          },
+          "tooltip": {
+            "signal": "'Δ'+fieldValuePrev+'%: '+datum[fieldRelVar]"
+          }
+        }
       }
     },
     {
@@ -635,16 +840,33 @@
       "from": {"data": "data"},
       "zindex": 1,
       "encode": {
-        "enter": {
-          "x": {"scale": "scaleXDeltaP", "value": 0},
-          "x2": {"scale": "scaleXDeltaP", "field": {"signal": "fieldRelVar"}},
-          "height": {"scale": "scaleY", "band": 0.12},
+        "update": {
+          "x": {
+            "scale": "scaleXDeltaP",
+            "value": 0
+          },
+          "x2": {
+            "scale": "scaleXDeltaP",
+            "field": {
+              "signal": "fieldRelVar"
+            }
+          },
+          "y": {
+            "scale": "scaleY",
+            "field": "Name",
+            "band": 0.45
+          },
+          "height": {
+            "scale": "scaleY",
+            "band": 0.1
+          },
           "fill": {
             "signal": "datum[fieldRelVar]<0?colorNegative:colorPositive"
           },
-          "tooltip": {"signal": "'Δ'+fieldValuePrev+'%: '+datum[fieldRelVar]"}
-        },
-        "update": {"y": {"scale": "scaleY", "field": "Name", "band": 0.4}}
+          "tooltip": {
+            "signal": "'Δ'+fieldValuePrev+'%: '+datum[fieldRelVar]"
+          }
+        }
       }
     },
     {
@@ -653,25 +875,35 @@
       "from": {"data": "rect-rel-var"},
       "zindex": 2,
       "encode": {
-        "enter": {
+        "update": {
           "text": {
             "signal": "datum.datum[fieldValue]==null?'':format(datum.datum[fieldRelVar],'+d')"
           },
           "x": {
             "signal": "datum.datum[fieldRelVar]<0?(datum.x-10):(datum.x2+10)"
           },
-          "align": {"signal": "datum.datum[fieldRelVar]<0?'right':'left'"},
-          "fill": {"signal": "colorMain"},
-          "fontSize": {"signal": "14"},
+          "y": {
+            "field": "y",
+            "offset": {
+              "field": "height",
+              "mult": 2
+            }
+          },
+          "align": {
+            "signal": "datum.datum[fieldRelVar]<0?'right':'left'"
+          },
+          "font": {
+            "signal": "'Segoe UI'"
+          },
+          "fontSize": {
+            "signal": "labelsFontSize"
+          },
           "fontWeight": {
             "signal": "datum.datum[fieldName]==averageRowLabel?'bold':'normal'"
           },
           "tooltip": {
             "signal": "'Δ'+fieldValuePrev+'%: '+datum.datum[fieldRelVar]"
           }
-        },
-        "update": {
-          "y": {"field": "y", "offset": {"field": "height", "mult": 2}}
         }
       }
     },
@@ -681,14 +913,29 @@
       "type": "rule",
       "encode": {
         "enter": {
-          "stroke": {"signal": "'yellow'"},
-          "strokeOpacity": {"signal": "0.3"},
-          "strokeWidth": {"scale": "scaleY", "band": 1}
+          "stroke": {
+            "signal": "'yellow'"
+          },
+          "strokeOpacity": {
+            "signal": "0.3"
+          },
+          "strokeWidth": {
+            "scale": "scaleY",
+            "band": 1
+          }
         },
         "update": {
-          "x": {"signal": "highlight==null?0:paddingLeft+20"},
-          "x2": {"signal": "highlight==null?0:width"},
-          "y": {"scale": "scaleY", "signal": "highlight", "band": 0.44}
+          "x": {
+            "signal": "highlight==null?0:-120"
+          },
+          "x2": {
+            "signal": "highlight==null?0:width+160"
+          },
+          "y": {
+            "scale": "scaleY",
+            "signal": "highlight",
+            "band": 0.44
+          }
         }
       }
     },
@@ -698,10 +945,15 @@
       "zindex": 0,
       "encode": {
         "enter": {
-          "x": {"scale": "scaleXDelta", "value": 0},
+          "x": {
+            "scale": "scaleXDelta",
+            "value": 0
+          },
           "y": {"signal": "0"},
           "y2": {"signal": "height"},
-          "stroke": {"signal": "colorSubtle"},
+          "stroke": {
+            "signal": "colorPrev"
+          },
           "strokeWidth": {"signal": "2"}
         }
       }
@@ -712,10 +964,15 @@
       "zindex": 0,
       "encode": {
         "enter": {
-          "x": {"scale": "scaleXDeltaP", "value": 0},
+          "x": {
+            "scale": "scaleXDeltaP",
+            "value": 0
+          },
           "y": {"signal": "0"},
           "y2": {"signal": "height"},
-          "stroke": {"signal": "colorSubtle"},
+          "stroke": {
+            "signal": "colorPrev"
+          },
           "strokeWidth": {"signal": "2"}
         }
       }
@@ -727,11 +984,18 @@
       "zindex": 0,
       "encode": {
         "enter": {
-          "x": {"scale": "scaleXValue", "signal": "datum[fieldValue]"},
+          "x": {
+            "scale": "scaleXValue",
+            "signal": "datum[fieldValue]"
+          },
           "y": {"signal": "0"},
           "y2": {"signal": "height+5"},
-          "stroke": {"signal": "colorMain"},
-          "strokeWidth": {"signal": "0.5"}
+          "stroke": {
+            "signal": "colorMain"
+          },
+          "strokeWidth": {
+            "signal": "0.5"
+          }
         }
       }
     },
@@ -742,29 +1006,53 @@
       "zindex": 0,
       "encode": {
         "enter": {
-          "shape": {"value": "triangle-up"},
-          "x": {"scale": "scaleXValue", "signal": "datum[fieldValue]"},
+          "shape": {
+            "value": "triangle-up"
+          },
+          "x": {
+            "scale": "scaleXValue",
+            "signal": "datum[fieldValue]"
+          },
           "y": {"signal": "height+5"},
-          "fill": {"signal": "colorMain"},
-          "stroke": {"signal": "colorMain"},
-          "strokeWidth": {"signal": "0.5"}
+          "fill": {
+            "signal": "colorMain"
+          },
+          "stroke": {
+            "signal": "colorMain"
+          },
+          "strokeWidth": {
+            "signal": "0.5"
+          }
         }
       }
     },
     {
       "name": "text-average-arrow",
       "type": "text",
-      "from": {"data": "symbol-average-arrow"},
+      "from": {
+        "data": "symbol-average-arrow"
+      },
       "zindex": 2,
       "encode": {
         "enter": {
           "text": {"signal": "'ØAC'"},
           "x": {"signal": "datum.x"},
           "y": {"signal": "datum.y+17"},
-          "align": {"signal": "'center'"},
-          "fontSize": {"signal": "14"},
-          "fontWeight": {"signal": "'bold'"},
-          "fill": {"signal": "colorMain"},
+          "align": {
+            "signal": "'center'"
+          },
+          "font": {
+            "signal": "'Segoe UI'"
+          },
+          "fontSize": {
+            "signal": "labelsFontSize"
+          },
+          "fontWeight": {
+            "signal": "'bold'"
+          },
+          "fill": {
+            "signal": "colorMain"
+          },
           "tooltip": {
             "signal": "'Δ'+fieldValuePrev+': '+datum.datum[fieldAbsVar]"
           }
@@ -777,12 +1065,21 @@
       "zindex": 1,
       "encode": {
         "enter": {
-          "x": {"signal": "paddingLeft"},
+          "x": {"signal": "-155"},
           "x2": {"signal": "width"},
-          "y": {"scale": "scaleY", "signal": "null", "band": 0.44},
+          "y": {
+            "scale": "scaleY",
+            "signal": "null",
+            "band": 0.44
+          },
           "opacity": {"signal": "1"},
-          "stroke": {"signal": "'#EFEFEF'"},
-          "strokeWidth": {"scale": "scaleY", "band": 0.4}
+          "stroke": {
+            "signal": "'#EFEFEF'"
+          },
+          "strokeWidth": {
+            "scale": "scaleY",
+            "band": 0.4
+          }
         }
       }
     },
@@ -792,12 +1089,16 @@
       "zindex": 1,
       "encode": {
         "enter": {
-          "x": {"signal": "paddingLeft"},
+          "x": {"signal": "-155"},
           "x2": {"signal": "width"},
           "y": {"signal": "height+35"},
           "opacity": {"signal": "1"},
-          "stroke": {"signal": "colorMain"},
-          "strokeWidth": {"signal": "0.3"}
+          "stroke": {
+            "signal": "colorMain"
+          },
+          "strokeWidth": {
+            "signal": "0.3"
+          }
         }
       }
     },
@@ -807,12 +1108,21 @@
       "zindex": 3,
       "encode": {
         "enter": {
-          "text": {"signal": "footnoteText"},
-          "x": {"signal": "paddingLeft"},
+          "text": {
+            "signal": "footnoteText"
+          },
+          "x": {"signal": "-155"},
           "y": {"signal": "height+50"},
-          "fill": {"signal": "colorMain"},
+          "fill": {
+            "signal": "colorMain"
+          },
           "opacity": {"signal": "0.5"},
-          "fontSize": {"signal": "13"}
+          "font": {
+            "signal": "'Segoe UI'"
+          },
+          "fontSize": {
+            "signal": "labelsFontSize"
+          }
         }
       }
     }
