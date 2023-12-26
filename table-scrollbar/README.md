@@ -1,0 +1,1 @@
+An example of a vertical scrollbar in a simple one-column table. The scrollbar responds to dragging the scrollbar with a mouse, mouse wheel scrolling, and the Page Up, Page Down, Arrow Up, and Arrow Down buttons.
