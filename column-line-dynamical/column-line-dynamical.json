@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
-  "description": "A basic bar chart example, with value labels shown upon pointer hover.",
+  "description": "An example of Vega visualization that automatically switches between a column chart and a line chart depending on the number of data points",
   "usermeta": {
     "Author": "Andrzej Leszkiewicz",
     "Github": "https://github.com/avatorl/Deneb-Vega/",
@@ -8,18 +8,24 @@
   },
   "width": 800,
   "height": 400,
-  "padding": 5,
+  "padding": 35,
   "autosize": "pad",
   "config": {
+    "title": {"font": "Tahoma", "fontSize": 18},
+    "text": {"font": "Tahoma", "fontSize": 14},
     "axis": {"labelFont": "Tahoma", "labelFontSize": "12", "labelColor": "gray"}
   },
   "signals": [
     {
-      "name": "datasetSize",
-      "description": "Number of records to display on the chart",
+      "name": "DataPoints",
+      "description": "Number of data point to display on the chart",
       "value": 25,
       "bind": {"input": "range", "min": 25, "max": 200, "step": 5}
-    }
+    },
+    {"name": "colorColumn", "value": "#AAAAFF"},
+    {"name": "colorLine", "value": "#8888FF"},
+    {"name": "colorText", "value": "#000000"},
+    {"name": "interpolation", "value": "basis"}
   ],
   "data": [
     {
@@ -32,15 +38,15 @@
       "name": "dataset",
       "source": "dataset-raw",
       "transform": [
-        {"type": "filter", "expr": "datum.id<=datasetSize"},
-        {"type": "formula", "expr": "floor(random()*100)", "as": "value"}
+        {"type": "filter", "expr": "datum.id<=DataPoints"},
+        {"type": "formula", "expr": "ceil(random()*100)", "as": "value"}
       ]
     },
     {
       "name": "dataset-rect",
       "source": "dataset",
       "transform": [
-        {"type": "filter", "expr": "datasetSize<=50"},
+        {"type": "filter", "expr": "DataPoints<=50"},
         {"type": "collect", "sort": {"field": "id", "order": "ascending"}}
       ]
     },
@@ -48,7 +54,7 @@
       "name": "dataset-line",
       "source": "dataset",
       "transform": [
-        {"type": "filter", "expr": "datasetSize>50"},
+        {"type": "filter", "expr": "DataPoints>50"},
         {"type": "collect", "sort": {"field": "id", "order": "ascending"}}
       ]
     }
@@ -58,27 +64,27 @@
       "name": "scaleXRect",
       "type": "band",
       "domain": {"data": "dataset-rect", "field": "id", "sort": true},
-      "range": [30, {"signal": "width-10"}],
+      "range": [10, {"signal": "width-10"}],
       "padding": 0.05
     },
     {
       "name": "scaleXLine",
       "type": "linear",
       "domain": {"data": "dataset-line", "field": "id", "sort": true},
-      "range": [30, {"signal": "width-10"}],
+      "range": [10, {"signal": "width-10"}],
       "zero": false
     },
     {
       "name": "scaleYRect",
       "domain": {"data": "dataset-rect", "field": "value"},
       "domainMax": 100,
-      "range": [{"signal": "height"}, 20]
+      "range": [{"signal": "height"}, 0]
     },
     {
       "name": "scaleYLine",
       "domain": {"data": "dataset-line", "field": "value"},
       "domainMax": 100,
-      "range": [{"signal": "height"}, 20]
+      "range": [{"signal": "height"}, 0]
     }
   ],
   "axes": [
@@ -100,8 +106,7 @@
       "domain": false,
       "grid": true,
       "ticks": true,
-      "labels": true,
-      "offset": -20
+      "labels": true
     }
   ],
   "marks": [
@@ -109,34 +114,28 @@
       "name": "rect-columns",
       "type": "rect",
       "from": {"data": "dataset-rect"},
-      "index": 1,
       "encode": {
         "update": {
           "x": {"scale": "scaleXRect", "field": "id"},
           "width": {"scale": "scaleXRect", "band": 1},
           "y": {"scale": "scaleYRect", "field": "value"},
           "y2": {"scale": "scaleYRect", "value": 0},
-          "fill": {"signal": "'#AAAAFF'"},
-          "stroke": {"signal": "'#FFFFFF'"},
-          "strokeWidth": {"value": 1},
-          "strokeOpacity": {"value": 1},
-          "tooltip": {"signal": "'id '+datum.id+': '+datum.value"}
+          "fill": {"signal": "colorColumn"},
+          "strokeWidth": {"value": 0}
         }
       }
     },
     {
       "type": "text",
       "from": {"data": "rect-columns"},
-      "index": 2,
       "encode": {
         "update": {
           "x": {"signal": "datum.x+datum.width/2"},
           "y": {"field": "y", "offset": -8},
           "align": {"value": "center"},
           "baseline": {"value": "middle"},
-          "fill": {"signal": "'black'"},
-          "text": {"field": "datum.value"},
-          "fontSize": {"signal": "14"}
+          "fill": {"signal": "colorText"},
+          "text": {"field": "datum.value"}
         }
       }
     },
@@ -147,9 +146,9 @@
         "update": {
           "xc": {"scale": "scaleXLine", "field": "id"},
           "y": {"scale": "scaleYLine", "field": "value"},
-          "stroke": {"signal": "'#8888FF'"},
+          "stroke": {"signal": "colorLine"},
           "strokeWidth": {"value": 2},
-          "interpolate": {"signal": "'basis'"},
+          "interpolate": {"signal": "interpolation"},
           "strokeOpacity": {"value": 1}
         }
       }
