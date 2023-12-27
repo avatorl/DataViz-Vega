@@ -1,0 +1,153 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "A basic bar chart example, with value labels shown upon pointer hover.",
+  "width": 800,
+  "height": 400,
+  "padding": 5,
+  "autosize": "pad",
+  "config": {
+    "axis": {"labelFont": "Tahoma", "labelFontSize": "12", "labelColor": "gray"}
+  },
+  "signals": [
+    {
+      "name": "datasetSize",
+      "description": "Number of records to display on the chart",
+      "value": 25,
+      "bind": {"input": "range", "min": 25, "max": 200, "step": 5}
+    }
+  ],
+  "data": [
+    {
+      "name": "dataset-raw",
+      "transform": [
+        {"type": "sequence", "start": 1, "stop": 201, "step": 1, "as": "id"}
+      ]
+    },
+    {
+      "name": "dataset",
+      "source": "dataset-raw",
+      "transform": [
+        {"type": "filter", "expr": "datum.id<=datasetSize"},
+        {"type": "formula", "expr": "floor(random()*100)", "as": "value"}
+      ]
+    },
+    {
+      "name": "dataset-rect",
+      "source": "dataset",
+      "transform": [
+        {"type": "filter", "expr": "datasetSize<=50"},
+        {"type": "collect", "sort": {"field": "id", "order": "ascending"}}
+      ]
+    },
+    {
+      "name": "dataset-line",
+      "source": "dataset",
+      "transform": [
+        {"type": "filter", "expr": "datasetSize>50"},
+        {"type": "collect", "sort": {"field": "id", "order": "ascending"}}
+      ]
+    }
+  ],
+  "scales": [
+    {
+      "name": "scaleXRect",
+      "type": "band",
+      "domain": {"data": "dataset-rect", "field": "id", "sort": true},
+      "range": [30, {"signal": "width-10"}],
+      "padding": 0.05
+    },
+    {
+      "name": "scaleXLine",
+      "type": "linear",
+      "domain": {"data": "dataset-line", "field": "id", "sort": true},
+      "range": [30, {"signal": "width-10"}],
+      "zero": false
+    },
+    {
+      "name": "scaleYRect",
+      "domain": {"data": "dataset-rect", "field": "value"},
+      "domainMax": 100,
+      "range": [{"signal": "height"}, 20]
+    },
+    {
+      "name": "scaleYLine",
+      "domain": {"data": "dataset-line", "field": "value"},
+      "domainMax": 100,
+      "range": [{"signal": "height"}, 20]
+    }
+  ],
+  "axes": [
+    {
+      "orient": "bottom",
+      "scale": "scaleXRect",
+      "domain": false,
+      "tickCount": 50
+    },
+    {
+      "orient": "bottom",
+      "scale": "scaleXLine",
+      "domain": false,
+      "tickCount": 10
+    },
+    {
+      "orient": "left",
+      "scale": "scaleYLine",
+      "domain": false,
+      "grid": true,
+      "ticks": true,
+      "labels": true,
+      "offset": -20
+    }
+  ],
+  "marks": [
+    {
+      "name": "rect-columns",
+      "type": "rect",
+      "from": {"data": "dataset-rect"},
+      "index": 1,
+      "encode": {
+        "update": {
+          "x": {"scale": "scaleXRect", "field": "id"},
+          "width": {"scale": "scaleXRect", "band": 1},
+          "y": {"scale": "scaleYRect", "field": "value"},
+          "y2": {"scale": "scaleYRect", "value": 0},
+          "fill": {"signal": "'#AAAAFF'"},
+          "stroke": {"signal": "'#FFFFFF'"},
+          "strokeWidth": {"value": 1},
+          "strokeOpacity": {"value": 1},
+          "tooltip": {"signal": "'id '+datum.id+': '+datum.value"}
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {"data": "rect-columns"},
+      "index": 2,
+      "encode": {
+        "update": {
+          "x": {"signal": "datum.x+datum.width/2"},
+          "y": {"field": "y", "offset": -8},
+          "align": {"value": "center"},
+          "baseline": {"value": "middle"},
+          "fill": {"signal": "'black'"},
+          "text": {"field": "datum.value"},
+          "fontSize": {"signal": "14"}
+        }
+      }
+    },
+    {
+      "type": "line",
+      "from": {"data": "dataset-line"},
+      "encode": {
+        "update": {
+          "xc": {"scale": "scaleXLine", "field": "id"},
+          "y": {"scale": "scaleYLine", "field": "value"},
+          "stroke": {"signal": "'#8888FF'"},
+          "strokeWidth": {"value": 2},
+          "interpolate": {"signal": "'basis'"},
+          "strokeOpacity": {"value": 1}
+        }
+      }
+    }
+  ]
+}
