@@ -1,6 +1,11 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
   "description": "A basic bar chart example, with value labels shown upon pointer hover.",
+  "usermeta": {
+    "Author": "Andrzej Leszkiewicz",
+    "Github": "https://github.com/avatorl/Deneb-Vega/",
+    "License": "CC BY 4.0 (Share and Adapt with Attribution)"
+  },
   "width": 800,
   "height": 400,
   "padding": 5,
