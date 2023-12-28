@@ -6,15 +6,16 @@
     "License": "CC BY 4.0 (Share and Adapt with Attribution)",
     "Github": "https://github.com/avatorl/Deneb-Vega/"
   },
-  "height": 1100,
+  "height": 1200,
   "padding": 20,
-  "autosize": "fit",
+  "autosize": "pad",
   "background": "white",
   "config": {
-    "text": {"font": "Arial"},
+    "text": {"font": "Tahoma"},
     "axis": {
       "grid": false,
       "domain": false,
+      "labelFont": "Tahoma",
       "labelColor": "#BBBBBB",
       "labelFontSize": 12,
       "titleFontSize": 20
@@ -113,6 +114,11 @@
       "format": {"type": "csv", "parse": "auto", "delimiter": ","}
     },
     {
+      "name": "states",
+      "url": "data/us-10m.json",
+      "format": {"type": "topojson", "feature": "states"}
+    },
+    {
       "name": "data-left",
       "source": "dataset",
       "transform": [
@@ -201,7 +207,7 @@
           "type": "filter",
           "expr": "!indata('claimed-right-state', 'value', datum.index)"
         },
-        {"type": "formula", "as": "side", "expr": "nameRight"}
+        {"type": "formula", "as": "side", "expr": "nameLeft"}
       ]
     },
     {
@@ -254,6 +260,32 @@
         {"trigger": "rightGrayBar_clicked", "remove": true},
         {"trigger": "leftGrayBar_clicked", "remove": true}
       ]
+    },
+    {
+      "name": "data-state-geo",
+      "source": ["data-left-with-claimed", "data-right-with-claimed"],
+      "transform": [
+        {
+          "type": "lookup",
+          "from": "states",
+          "key": "id",
+          "fields": ["map_id"],
+          "as": ["geo"]
+        },
+        {
+          "type": "formula",
+          "as": "centroid",
+          "expr": "geoCentroid('projection', datum.geo)"
+        }
+      ]
+    }
+  ],
+  "projections": [
+    {
+      "name": "projection",
+      "type": "albersUsa",
+      "scale": 1100,
+      "translate": [{"signal": "width / 2"}, {"signal": "height/4"}]
     }
   ],
   "scales": [
@@ -284,7 +316,7 @@
           "x": {"signal": "0"},
           "y": {"scale": "scaleStatesY", "field": "index", "band": 0.5},
           "text": {"field": "state"},
-          "font": {"value": "Thahoma"},
+          "font": {"value": "Tahoma"},
           "fontSize": {"value": 14},
           "baseline": {"value": "middle"},
           "align": {"value": "center"}
@@ -400,7 +432,7 @@
               "dy": {"value": 2},
               "text": {"signal": "datum.votes"},
               "fontSize": {"signal": "datum.side==nameRight ? 11 : 0"},
-              "font": {"value": "Arial"},
+              "font": {"value": "Tahoma"},
               "align": {"value": "right"},
               "baseline": {"value": "top"},
               "fill": {"signal": "colorLeftBlue"}
@@ -513,7 +545,7 @@
               "dy": {"value": 2},
               "text": {"signal": "datum.votes"},
               "fontSize": {"signal": "datum.side==nameRight ? 11 : 0"},
-              "font": {"value": "Arial"},
+              "font": {"value": "Tahoma"},
               "align": {"value": "left"},
               "baseline": {"value": "top"},
               "fill": {"signal": "colorRightRed"}
@@ -595,7 +627,7 @@
               "dx": {"value": 5},
               "dy": {"value": 21},
               "text": {"signal": "datum.sum"},
-              "font": {"value": "Arial"},
+              "font": {"value": "Tahoma"},
               "fontSize": {"value": 14},
               "stroke": {"signal": "colorLeftBlue"},
               "fill": {"signal": "colorLeftBlue"}
@@ -619,7 +651,7 @@
               "strokeOpacity": {"value": 0.5},
               "stroke": {"signal": "colorStackSeparator"},
               "fillOpacity": {
-                "signal": "datum.side==datum.candidate? fillOpacityClaimed : fillOpacityDefault"
+                "signal": "datum.side==datum.candidate? fillOpacityDefault : fillOpacityClaimed"
               }
             },
             "hover": {"fillOpacity": {"signal": "fillOpacityHoverTotal"}}
@@ -711,7 +743,7 @@
               "dx": {"value": 5},
               "dy": {"value": 24},
               "text": {"signal": "datum.sum"},
-              "font": {"value": "Arial"},
+              "font": {"value": "Tahoma"},
               "fontSize": {"value": 14},
               "stroke": {"signal": "colorRightRed"},
               "fill": {"signal": "colorRightRed"}
@@ -820,23 +852,91 @@
     },
     {
       "type": "group",
-      "name": "group-copyright",
+      "name": "map",
+      "encode": {
+        "update": {
+          "x": {"signal": "-width/2"},
+          "y": {"signal": "height"},
+          "width": {"signal": "width"},
+          "height": {"signal": "600"},
+          "fill": {"signal": "'#FFFFFF'"}
+        }
+      },
       "marks": [
         {
-          "type": "text",
-          "name": "text-copyright",
+          "name": "circles",
+          "type": "symbol",
+          "from": {"data": "data-state-geo"},
           "encode": {
-            "enter": {
-              "text": {"value": "© Andrzej Leszkiewicz, 2022"},
-              "x": {"signal": "chartWidth"},
-              "y": {"signal": "height-10"},
-              "align": {"value": "right"},
-              "fill": {"signal": "colorOtherLabelsAndTicks"},
-              "fillOpacity": {"value": 0.7},
+            "update": {
+              "x": {"field": "centroid[0]"},
+              "y": {"field": "centroid[1]"},
+              "size": {"signal": "datum.votes*400"},
+              "opacity": {
+                "signal": "datum.side==datum.candidate? fillOpacityDefault : fillOpacityClaimed"
+              },
+              "fill": {
+                "signal": "datum.side=='Biden'?colorLeftBlue:colorRightRed"
+              },
+              "stroke": {
+                "signal": "datum.side=='Biden'?colorLeftBlue:colorRightRed"
+              },
+              "strokeWidth": {"value": 1.5}
+            }
+          },
+          "transform": [
+            {
+              "type": "force",
+              "static": false,
+              "forces": [
+                {
+                  "force": "collide",
+                  "radius": {"expr": "1.2 * sqrt(datum.size) / 2"}
+                },
+                {"force": "x", "x": "datum.centroid[0]"},
+                {"force": "y", "y": "datum.centroid[1]"}
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "interactive": false,
+          "from": {"data": "circles"},
+          "encode": {
+            "update": {
+              "align": {"value": "center"},
+              "baseline": {"value": "middle"},
+              "fontSize": {"signal": "datum.datum.votes<2?9:18"},
               "fontWeight": {"value": "normal"},
-              "fontSize": {"value": 14}
+              "text": {"field": "datum.code"},
+              "fill": {"value": "white"},
+              "x": {"field": "x"},
+              "y": {"field": "y"}
             }
           }
+        },
+        {
+          "type": "group",
+          "name": "group-copyright",
+          "marks": [
+            {
+              "type": "text",
+              "name": "text-copyright",
+              "encode": {
+                "enter": {
+                  "text": {"value": "© Andrzej Leszkiewicz, 2022"},
+                  "x": {"signal": "0"},
+                  "y": {"signal": "600"},
+                  "align": {"value": "right"},
+                  "fill": {"signal": "colorOtherLabelsAndTicks"},
+                  "fillOpacity": {"value": 0.7},
+                  "fontWeight": {"value": "normal"},
+                  "fontSize": {"value": 14}
+                }
+              }
+            }
+          ]
         }
       ]
     }
