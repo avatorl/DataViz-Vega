@@ -838,7 +838,7 @@
               "text": {
                 "value": "👈 Click on any gray bar/nto flip over the state/district/nfrom red to blue or vice versa"
               },
-              "x": {"signal": "140"},
+              "x": {"signal": "200"},
               "y": {"signal": "185"},
               "fill": {"signal": "colorOtherLabelsAndTicks"},
               "fontWeight": {"value": "normal"},
