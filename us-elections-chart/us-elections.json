@@ -881,7 +881,7 @@
               "stroke": {
                 "signal": "datum.side=='Biden'?colorLeftBlue:colorRightRed"
               },
-              "strokeWidth": {"value": 1.5},
+              "strokeWidth": {"value": 0.5},
               "tooltip": {
                 "signal": "datum.code+': ' + datum.votes + ' ' + datum.side"
               }
