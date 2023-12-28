@@ -1,57 +1,57 @@
-index,candidate,votes,state
-4,Biden,55,California
-48,Trump,38,Texas
-9,Trump,29,Florida
-37,Biden,29,New York
-13,Biden,20,Illinois
-43,Biden,20,Pennsylvania
-40,Trump,18,Ohio
-10,Biden,16,Georgia
-24,Biden,16,Michigan
-38,Trump,15,North Carolina
-35,Biden,14,New Jersey
-51,Biden,13,Virginia
-52,Biden,12,Washington
-2,Biden,11,Arizona
-14,Trump,11,Indiana
-23,Biden,11,Massachusetts
-47,Trump,11,Tennessee
-22,Biden,10,Maryland
-25,Biden,10,Minnesota
-27,Trump,10,Missouri
-54,Biden,10,Wisconsin
-0,Trump,9,Alabama
-5,Biden,9,Colorado
-45,Trump,9,South Carolina
-17,Trump,8,Kentucky
-18,Trump,8,Louisiana
-6,Biden,7,Connecticut
-41,Trump,7,Oklahoma
-42,Biden,7,Oregon
-3,Trump,6,Arkansas
-15,Trump,6,Iowa
-16,Trump,6,Kansas
-26,Trump,6,Mississippi
-33,Biden,6,Nevada
-49,Trump,6,Utah
-36,Biden,5,New Mexico
-53,Trump,5,West Virginia
-11,Biden,4,Hawaii
-12,Trump,4,Idaho
-34,Biden,4,New Hampshire
-44,Biden,4,Rhode Island
-1,Trump,3,Alaska
-8,Biden,3,D.C.
-7,Biden,3,Delaware
-28,Trump,3,Montana
-39,Trump,3,North Dakota
-46,Trump,3,South Dakota
-50,Biden,3,Vermont
-55,Trump,3,Wyoming
-19,Biden,2,Maine
-29,Trump,2,Nebraska
-20,Biden,1,ME-1
-21,Trump,1,ME-2
-30,Trump,1,NE-1
-31,Biden,1,NE-2
-32,Trump,1,NE-3
+index,candidate,votes,state,code,map_id
+4,Biden,55,California,CA,6
+48,Trump,38,Texas,TX,48
+9,Trump,29,Florida,FL,12
+37,Biden,29,New York,NY,36
+13,Biden,20,Illinois,IL,17
+43,Biden,20,Pennsylvania,PA,42
+40,Trump,18,Ohio,OH,39
+10,Biden,16,Georgia,GA,13
+24,Biden,16,Michigan,MI,26
+38,Trump,15,North Carolina,NC,37
+35,Biden,14,New Jersey,NJ,34
+51,Biden,13,Virginia,VA,51
+52,Biden,12,Washington,WA,53
+2,Biden,11,Arizona,AZ,4
+14,Trump,11,Indiana,IN,18
+23,Biden,11,Massachusetts,MA,25
+47,Trump,11,Tennessee,TN,47
+22,Biden,10,Maryland,MD,24
+25,Biden,10,Minnesota,MN,27
+27,Trump,10,Missouri,MO,29
+54,Biden,10,Wisconsin,WI,55
+0,Trump,9,Alabama,AL,1
+5,Biden,9,Colorado,CO,8
+45,Trump,9,South Carolina,SC,45
+17,Trump,8,Kentucky,KY,21
+18,Trump,8,Louisiana,LA,22
+6,Biden,7,Connecticut,CT,9
+41,Trump,7,Oklahoma,OK,40
+42,Biden,7,Oregon,OR,41
+3,Trump,6,Arkansas,AR,5
+15,Trump,6,Iowa,IA,19
+16,Trump,6,Kansas,KS,20
+26,Trump,6,Mississippi,MS,28
+33,Biden,6,Nevada,NV,32
+49,Trump,6,Utah,UT,49
+36,Biden,5,New Mexico,NM,35
+53,Trump,5,West Virginia,WV,54
+11,Biden,4,Hawaii,HI,15
+12,Trump,4,Idaho,ID,16
+34,Biden,4,New Hampshire,NH,33
+44,Biden,4,Rhode Island,RI,44
+1,Trump,3,Alaska,AK,2
+8,Biden,3,D.C.,DC,
+7,Biden,3,Delaware,DE,10
+28,Trump,3,Montana,MT,30
+39,Trump,3,North Dakota,ND,38
+46,Trump,3,South Dakota,SD,46
+50,Biden,3,Vermont,VT,50
+55,Trump,3,Wyoming,WY,56
+19,Biden,2,Maine,ME,23
+29,Trump,2,Nebraska,NE,31
+20,Biden,1,ME-1,ME-1,23
+21,Trump,1,ME-2,ME-2,23
+30,Trump,1,NE-1,NE-1,31
+31,Biden,1,NE-2,NE-2,31
+32,Trump,1,NE-3,NE-3,31
