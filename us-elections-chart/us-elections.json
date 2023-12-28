@@ -931,7 +931,7 @@
               "name": "text-copyright",
               "encode": {
                 "enter": {
-                  "text": {"value": "© Andrzej Leszkiewicz, 2022"},
+                  "text": {"value": "© Andrzej Leszkiewicz, 2022-2023"},
                   "x": {"signal": "0"},
                   "y": {"signal": "600"},
                   "align": {"value": "right"},
