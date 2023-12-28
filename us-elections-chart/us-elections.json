@@ -42,7 +42,7 @@
     {"name": "fillOpacityMadeGray", "value": 0.3},
     {"name": "tickOpacity", "value": 0.3},
     {"name": "tickOpacity270", "value": 0.5},
-    {"name": "chartWidth", "value": 350},
+    {"name": "chartWidth", "value": 400},
     {"name": "chartPad", "value": 50},
     {"name": "width", "update": "2 * chartWidth + chartPad + 2"},
     {
@@ -855,11 +855,11 @@
       "name": "map",
       "encode": {
         "update": {
-          "x": {"signal": "-width/2"},
+          "x": {"signal": "-width*1.05/2"},
           "y": {"signal": "height"},
-          "width": {"signal": "width"},
+          "width": {"signal": "width*1.05"},
           "height": {"signal": "600"},
-          "fill": {"signal": "'#FFFFFF'"}
+          "fill": {"signal": "'white'"}
         }
       },
       "marks": [
@@ -932,7 +932,7 @@
               "encode": {
                 "enter": {
                   "text": {"value": "© Andrzej Leszkiewicz, 2022-2023"},
-                  "x": {"signal": "0"},
+                  "x": {"signal": "width"},
                   "y": {"signal": "600"},
                   "align": {"value": "right"},
                   "fill": {"signal": "colorOtherLabelsAndTicks"},
