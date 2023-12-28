@@ -881,7 +881,10 @@
               "stroke": {
                 "signal": "datum.side=='Biden'?colorLeftBlue:colorRightRed"
               },
-              "strokeWidth": {"value": 1.5}
+              "strokeWidth": {"value": 1.5},
+              "tooltip": {
+                "signal": "datum.code+': ' + datum.votes + ' ' + datum.side"
+              }
             }
           },
           "transform": [
@@ -912,7 +915,10 @@
               "text": {"field": "datum.code"},
               "fill": {"value": "white"},
               "x": {"field": "x"},
-              "y": {"field": "y"}
+              "y": {"field": "y"},
+              "tooltip": {
+                "signal": "datum.datum.code+': ' + datum.datum.votes + ' ' + datum.side"
+              }
             }
           }
         },
