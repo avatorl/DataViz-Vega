@@ -115,11 +115,7 @@
       "interactive": true,
       "type": "shape",
       "from": {"data": "counties"},
-      "encode": {
-        "update": {
-          "fill": {"scale": "color", "field": "rate"}
-        }
-      },
+      "encode": {"update": {"fill": {"scale": "color", "field": "rate"}}},
       "transform": [{"type": "geoshape", "projection": "projection"}]
     },
     {
@@ -148,7 +144,8 @@
           "encode": {
             "enter": {
               "fill": {"scale": "color", "field": "rate"},
-              "stroke": {"value": "white"}
+              "stroke": {"value": "white"},
+              "strokeWidth": {"value": 1}
             }
           },
           "transform": [{"type": "geoshape", "projection": "projection2"}]
