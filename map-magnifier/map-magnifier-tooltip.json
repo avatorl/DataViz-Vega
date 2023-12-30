@@ -8,14 +8,14 @@
   "autosize": "none",
   "signals": [
     {"name": "scale", "value": 900},
-    {"name": "zoom", "value": 4},
+    {"name": "zoom", "value": 3},
     {
       "name": "county",
-      "value": "",
+      "value": "0",
       "on": [
         {
           "source": "shape-county",
-          "events": "@shape-county:mousemove",
+          "events": "@shape-county:pointermove",
           "update": "datum.id",
           "force": true
         }
@@ -24,24 +24,24 @@
     {
       "name": "cloned",
       "value": null,
-      "on": [{"events": "mousemove", "update": "copy('projection')"}]
+      "on": [{"events": "pointermove", "update": "copy('projection')"}]
     },
     {
       "name": "start",
       "value": [-124, 26],
-      "on": [{"events": "mousemove", "update": "invert(cloned, xy())"}]
+      "on": [{"events": "pointermove", "update": "invert(cloned, xy())"}]
     },
     {
       "name": "start2",
       "value": [-124, 26],
       "on": [
-        {"events": "mousemove", "update": "data('counties-2')[0]['centroid']"}
+        {"events": "pointermove", "update": "data('counties-2')[0]['centroid']"}
       ]
     },
     {
       "name": "mousePositionXY",
       "value": [82, 454],
-      "on": [{"events": "mousemove", "update": "xy()"}]
+      "on": [{"events": "pointermove", "update": "xy()"}]
     }
   ],
   "data": [
@@ -90,7 +90,7 @@
       "scale": {"signal": "scale*zoom"},
       "rotate": [0, 0, 0],
       "center": [{"signal": "start2[0]"}, {"signal": "start2[1]"}],
-      "translate": [{"signal": "100"}, {"signal": "100"}]
+      "translate": [{"signal": "75"}, {"signal": "100"}]
     }
   ],
   "scales": [
@@ -136,10 +136,10 @@
       "type": "group",
       "encode": {
         "enter": {
-          "width": {"signal": "200"},
-          "height": {"signal": "200"},
+          "width": {"signal": "150"},
+          "height": {"signal": "150"},
           "clip": {"signal": "true"},
-          "fillOpacity": {"value": 1},
+          "fillOpacity": {"value": 0.7},
           "cornerRadius": {"signal": "100"},
           "strokeWidth": {"signal": "3"},
           "fill": {"signal": "'white'"},
@@ -155,7 +155,12 @@
           "name": "shape-county-2",
           "type": "shape",
           "from": {"data": "counties-2"},
-          "encode": {"enter": {"fill": {"scale": "color", "field": "rate"}}},
+          "encode": {
+            "enter": {
+              "fill": {"scale": "color", "field": "rate"},
+              "stroke": {"value": "white"}
+            }
+          },
           "transform": [{"type": "geoshape", "projection": "projection2"}]
         },
         {
@@ -163,7 +168,7 @@
           "from": {"data": "shape-county-2"},
           "encode": {
             "update": {
-              "fontSize": {"value": 20},
+              "fontSize": {"value": 16},
               "fontWeight": {"value": "bold"},
               "align": {"value": "center"},
               "fill": {"value": "black"},
@@ -173,7 +178,7 @@
                 "signal": "'County '+datum.datum.id+'/'+format(datum.datum.rate, '0.1%')"
               },
               "lineBreak": {"value": "/"},
-              "x": {"signal": "100"},
+              "x": {"signal": "75"},
               "y": {"signal": "50"}
             }
           }
