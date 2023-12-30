@@ -111,24 +111,14 @@
   ],
   "marks": [
     {
-      "type": "text",
-      "encode": {
-        "enter": {
-          "text": {"signal": "'County Unemployment'"},
-          "fontSize": {"value": 28},
-          "x": {"value": 0},
-          "y": {"value": 0}
-        }
-      }
-    },
-    {
       "name": "shape-county",
       "interactive": true,
       "type": "shape",
       "from": {"data": "counties"},
       "encode": {
-        "update": {"fill": {"scale": "color", "field": "rate"}},
-        "hover": {"fill": {"signal": "'red'"}}
+        "update": {
+          "fill": {"scale": "color", "field": "rate"}
+        }
       },
       "transform": [{"type": "geoshape", "projection": "projection"}]
     },
@@ -141,9 +131,9 @@
           "clip": {"signal": "true"},
           "fillOpacity": {"value": 0.7},
           "cornerRadius": {"signal": "100"},
-          "strokeWidth": {"signal": "3"},
-          "fill": {"signal": "'white'"},
-          "stroke": {"signal": "'red'"}
+          "strokeWidth": {"signal": "0.5"},
+          "stroke": {"signal": "'#BBBBBB'"},
+          "fill": {"signal": "'white'"}
         },
         "update": {
           "x": {"signal": "mousePositionXY[0]"},
@@ -179,7 +169,7 @@
               },
               "lineBreak": {"value": "/"},
               "x": {"signal": "75"},
-              "y": {"signal": "50"}
+              "y": {"signal": "40"}
             }
           }
         }
