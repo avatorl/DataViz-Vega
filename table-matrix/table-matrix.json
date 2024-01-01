@@ -121,7 +121,7 @@
   "data": [
     {
       "name": "dataset-csv",
-      "url": "table-matrix-trade.csv",
+      "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/table-matrix/table-matrix-trade.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","},
       "transform": [{"type": "filter", "expr": "datum.Year>=firstYear"}]
     },
@@ -144,7 +144,7 @@
     },
     {
       "name": "data-flags",
-      "url": "table-matrix-flags.csv",
+      "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/table-matrix/table-matrix-flags.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","}
     }
   ],
