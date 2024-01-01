@@ -1,44 +1,110 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
-  "description": "Matrix",
+  "description": "An example of a table (matrix) with embedded iages (icons) and bar charts.",
   "usermeta": {
     "Author": "Andrzej Leszkiewicz",
+    "Github": "https://github.com/avatorl/Deneb-Vega/",
     "License": "CC BY 4.0 (Share and Adapt with Attribution)",
-    "Github": "https://github.com/avatorl/Deneb-Vega/"
+    "Data Source": "https://data.worldbank.org/indicator/NE.TRD.GNFS.ZS",
+    "Images (Country Flags)": "Wikimedia"
   },
-  "height": 800,
   "padding": 10,
   "autosize": "pad",
   "background": "white",
-  "config": {},
   "signals": [
-    {"name": "titleColor", "value": "#003C7E"},
-    {"name": "titleFontSize", "value": 24},
-    {"name": "subTitleFontSize", "value": 16},
-    {"name": "cellFillColor", "value": "#DDDDDD"},
-    {"name": "dataBarFillColorB", "value": "#D3D3D3"},
-    {"name": "dataBarFillColorG", "value": "#B6D2E3"},
-    {"name": "valueTextColor", "value": "#333333"},
-    {"name": "valueFontSize", "value": 16},
-    {"name": "columnWidth", "value": 125},
-    {"name": "firstColumnWidth", "value": 150},
-    {"name": "barRightCornerRadius", "value": 1},
     {
-      "name": "showChanges",
-      "description": "true - show changes from previous year (red/green mini bars)",
-      "value": false
+      "name": "firstYear",
+      "description": "First year to include (e.g. 2017)",
+      "value": 2017
     },
     {
-      "name": "selected",
-      "value": null,
-      "on": [
-        {
-          "events": "@rect-row-header:click",
-          "update": "selected==datum.Country?null:datum.Country",
-          "force": true
-        }
-      ]
-    }
+      "name": "titleColor",
+      "description": "Table title font color",
+      "value": "#003C7E"
+    },
+    {
+      "name": "tableHeaderColor",
+      "description": "Table header fill color",
+      "value": "#5692B4"
+    },
+    {
+      "name": "titleFontSize",
+      "description": "Table title font size",
+      "value": 24
+    },
+    {
+      "name": "subTitleFontSize",
+      "description": "Table subtitle font size",
+      "value": 16
+    },
+    {
+      "name": "valueFontSize",
+      "description": "Data value font size",
+      "value": 16
+    },
+    {
+      "name": "columnHeaderFontSize",
+      "description": "Column header font size",
+      "value": 18
+    },
+    {
+      "name": "rowHeaderFontSize",
+      "description": "Row header font size",
+      "value": 18
+    },
+    {
+      "name": "dataBarFillColor",
+      "description": "Data bar fill color",
+      "value": "#BBBBBB"
+    },
+    {
+      "name": "dataBarFillOpacity",
+      "description": "Data bar default fill opacity",
+      "value": "0.5"
+    },
+    {
+      "name": "dataChangePositiveColor",
+      "description": "Variance bar fill color (positive)",
+      "value": "#00A68E"
+    },
+    {
+      "name": "dataChangeNegativeColor",
+      "description": "Variance bar fill color (negative)",
+      "value": "#EF5039"
+    },
+    {
+      "name": "valueTextColor",
+      "description": "Data label text color",
+      "value": "#333333"
+    },
+    {
+      "name": "headerTextColor",
+      "description": "Column header text color",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "highlightColor",
+      "description": "Color of the highlighted row background",
+      "value": "#FFFFDE"
+    },
+    {"name": "columnWidth", "description": "Columb width", "value": 150},
+    {"name": "barWidth", "description": "Bar width", "value": 100},
+    {
+      "name": "columnPadding",
+      "description": "Column right padding",
+      "value": 10
+    },
+    {
+      "name": "firstColumnWidth",
+      "description": "First column width",
+      "value": 150
+    },
+    {
+      "name": "tableHeaderHeight",
+      "description": "Table header height",
+      "value": 50
+    },
+    {"name": "tableRowHeight", "description": "Table row height", "value": 45}
   ],
   "title": {
     "anchor": "start",
@@ -55,11 +121,22 @@
   "data": [
     {
       "name": "dataset-csv",
-      "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/table-matrix/table-matrix-trade.csv",
+      "url": "table-matrix-trade.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","},
-      "transform": [{"type": "filter", "expr": "datum.Year>=2017"}]
+      "transform": [{"type": "filter", "expr": "datum.Year>=firstYear"}]
     },
-    {"name": "dataset", "source": "dataset-csv"},
+    {
+      "name": "dataset",
+      "source": "dataset-csv",
+      "transform": [
+        {"type": "collect", "sort": {"field": "Year", "order": "ascending"}}
+      ]
+    },
+    {
+      "name": "dataset-countries",
+      "source": "dataset",
+      "transform": [{"type": "aggregate", "groupby": ["Country"]}]
+    },
     {
       "name": "dataset-years",
       "source": "dataset",
@@ -67,32 +144,26 @@
     },
     {
       "name": "data-flags",
-      "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/table-matrix/table-matrix-flags.csv",
+      "url": "table-matrix-flags.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","}
     }
   ],
   "scales": [
     {
-      "name": "scaleX",
-      "type": "band",
-      "domain": {"data": "dataset", "field": "Year"},
-      "range": "width"
-    },
-    {
-      "name": "y",
+      "name": "scaleY",
       "type": "band",
       "domain": {"data": "dataset", "field": "Country"},
-      "range": "height",
+      "range": [0, {"signal": "length('dataset-countries')*tableRowHeight"}],
       "padding": 0.2
     }
   ],
   "axes": [
     {
-      "scale": "y",
+      "scale": "scaleY",
       "orient": "left",
       "domain": false,
       "ticks": false,
-      "labelFontSize": 18,
+      "labelFontSize": {"signal": "rowHeaderFontSize"},
       "offset": 35,
       "zindex": 1,
       "encode": {"labels": {"enter": {"dy": {"value": 1}}}}
@@ -105,12 +176,12 @@
       "encode": {
         "enter": {
           "x": {"signal": "-firstColumnWidth"},
-          "y": {"signal": "-50"},
+          "y": {"signal": "-tableHeaderHeight"},
           "width": {
-            "signal": "(columnWidth+10)*(length(data('dataset-years')))+firstColumnWidth-10"
+            "signal": "firstColumnWidth+(columnWidth+columnPadding)*(length(data('dataset-years')))"
           },
-          "height": {"signal": "50"},
-          "fill": {"signal": "'#5692B4'"},
+          "height": {"signal": "tableHeaderHeight"},
+          "fill": {"signal": "tableHeaderColor"},
           "fillOpacity": {"value": 1},
           "cornerRadiusTopLeft": {"signal": "5"},
           "cornerRadiusTopRight": {"signal": "5"}
@@ -118,34 +189,12 @@
       }
     },
     {
-      "name": "rect-row-header",
-      "type": "rect",
-      "from": {"data": "dataset"},
-      "interactive": true,
-      "encode": {
-        "enter": {
-          "opacity": {"value": 1},
-          "x": {"signal": "-firstColumnWidth"},
-          "y": {"scale": "y", "signal": "datum.Country"},
-          "width": {"signal": "firstColumnWidth-5"},
-          "height": {"scale": "y", "band": 1},
-          "fill": {"signal": "'#F9F9F9'"},
-          "fillOpacity": {"signal": "1"},
-          "cornerRadiusTopLeft": {"signal": "barRightCornerRadius"},
-          "cornerRadiusBottomLeft": {"signal": "barRightCornerRadius"}
-        },
-        "update": {
-          "fill": {"signal": "datum.Country==selected?'#DEDEDE':'#F9F9F9'"}
-        }
-      }
-    },
-    {
       "type": "group",
       "layout": {
-        "align": "all",
+        "align": "each",
         "bounds": "full",
         "columns": {"signal": "length(data('data-years'))"},
-        "padding": 10
+        "padding": {"signal": "columnPadding"}
       },
       "marks": [
         {
@@ -162,109 +211,73 @@
             "align": "center",
             "baseline": "middle",
             "anchor": "middle",
-            "color": {"signal": "'#EEEEEE'"},
-            "fontSize": {"signal": "18"},
+            "color": {"signal": "headerTextColor"},
+            "fontSize": {"signal": "columnHeaderFontSize"},
             "fontWeight": {"value": "lighter"},
             "encode": {"title": {"enter": {"strokeWidth": {"value": "0"}}}}
           },
           "scales": [
             {
-              "name": "x2",
+              "name": "ScaleXDataBar",
               "type": "linear",
               "domain": {
                 "data": "group-columns",
                 "fields": ["Value", "ValuePrev"]
               },
-              "range": [0, {"signal": "columnWidth"}]
+              "range": [0, {"signal": "barWidth"}]
             }
           ],
           "marks": [
-            {
-              "name": "rect-cell-background",
-              "type": "rect",
-              "from": {"data": "group-columns"},
-              "encode": {
-                "enter": {
-                  "x": {"scale": "scaleX", "field": "Year"},
-                  "y": {"scale": "y", "field": "Country"},
-                  "width": {"signal": "columnWidth"},
-                  "height": {"scale": "y", "band": 1},
-                  "fill": {"signal": "cellFillColor"},
-                  "fillOpacity": {"value": 0.2}
-                }
-              }
-            },
             {
               "name": "rect-data-bar",
               "type": "rect",
               "from": {"data": "group-columns"},
               "encode": {
                 "enter": {
-                  "x": {"scale": "scaleX", "field": "Year"},
-                  "y": {"scale": "y", "field": "Country"},
-                  "width": {"scale": "x2", "signal": "datum.Value"},
-                  "height": {"scale": "y", "band": 1},
-                  "cornerRadiusTopRight": {"signal": "barRightCornerRadius"},
-                  "cornerRadiusBottomRight": {"signal": "barRightCornerRadius"},
-                  "fill": {
-                    "signal": "showChanges?dataBarFillColorB:dataBarFillColorG"
-                  }
-                },
-                "update": {
-                  "fillOpacity": {"signal": "datum.Country==selected?1:'0.5'"}
+                  "x": {"signal": "0"},
+                  "y": {"scale": "scaleY", "field": "Country"},
+                  "width": {"scale": "ScaleXDataBar", "signal": "datum.Value"},
+                  "height": {"scale": "scaleY", "band": 1},
+                  "fill": {"signal": "dataBarFillColor"},
+                  "fillOpacity": {"signal": "dataBarFillOpacity"}
                 }
               }
             },
             {
-              "name": "rect-data-change-bar",
+              "name": "rect-value-change-bar",
               "type": "rect",
               "from": {"data": "group-columns"},
               "encode": {
                 "enter": {
                   "x": {
-                    "scale": "x2",
+                    "scale": "ScaleXDataBar",
                     "signal": "datum.Value>=datum.ValuePrev?datum.ValuePrev:datum.Value"
                   },
                   "x2": {
-                    "scale": "x2",
+                    "scale": "ScaleXDataBar",
                     "signal": "datum.Value>=datum.ValuePrev?datum.Value:datum.ValuePrev"
                   },
-                  "y": {"scale": "y", "field": "Country"},
-                  "height": {"scale": "y", "band": 0.2},
-                  "cornerRadiusTopRight": {"signal": "0"},
-                  "cornerRadiusBottomRight": {"signal": "0"},
+                  "y": {"scale": "scaleY", "field": "Country"},
+                  "height": {"scale": "scaleY", "band": 0.2},
                   "fill": {
-                    "signal": "datum.Value>=datum.ValuePrev?'#00A68E':'#EF5039'"
-                  }
-                },
-                "update": {
-                  "fillOpacity": {
-                    "signal": "showChanges?datum.Country==selected?1:0.8:0"
+                    "signal": "datum.Value>=datum.ValuePrev?dataChangePositiveColor:dataChangeNegativeColor"
                   }
                 }
               }
             },
             {
-              "name": "value-text",
+              "name": "text-value",
               "type": "text",
               "from": {"data": "group-columns"},
               "encode": {
                 "enter": {
+                  "x": {"signal": "columnWidth"},
                   "align": {"value": "right"},
-                  "x": {
-                    "scale": "scaleX",
-                    "field": "Year",
-                    "offset": {"signal": "columnWidth"}
-                  },
-                  "y": {"scale": "y", "field": "Country", "offset": 18},
+                  "y": {"scale": "scaleY", "field": "Country", "offset": 18},
                   "text": {"signal": "format(datum.Value,',.0%')"},
                   "fill": {"signal": "valueTextColor"},
-                  "fontSize": {"signal": "valueFontSize"}
-                },
-                "update": {
-                  "fontWeight": {
-                    "signal": "datum.Country==selected?'bold':'normal'"
-                  }
+                  "fontSize": {"signal": "valueFontSize"},
+                  "fontWeight": {"signal": "'normal'"}
                 }
               }
             }
@@ -273,31 +286,31 @@
       ]
     },
     {
-      "name": "image-row-icon",
+      "name": "image-country-flag",
       "type": "image",
       "from": {"data": "data-flags"},
       "encode": {
         "enter": {
           "url": {"field": "Flag"},
-          "opacity": {"value": 1},
           "x": {"signal": "-30"},
-          "y": {"scale": "y", "signal": "datum.Country", "offset": 3},
+          "y": {"scale": "scaleY", "signal": "datum.Country", "offset": 3},
           "width": {"signal": "20"},
-          "height": {"signal": "20"}
+          "height": {"signal": "20"},
+          "opacity": {"value": 1}
         }
       }
     },
     {
-      "name": "text-row-label",
+      "name": "text-counrty-column-label",
       "type": "text",
       "encode": {
         "enter": {
-          "align": {"value": "center"},
           "x": {"signal": "-firstColumnWidth/2"},
           "y": {"signal": "-18"},
           "text": {"signal": "'Country'"},
-          "fill": {"signal": "'#EEEEEE'"},
-          "fontSize": {"signal": "18"}
+          "align": {"value": "center"},
+          "fill": {"signal": "headerTextColor"},
+          "fontSize": {"signal": "columnHeaderFontSize"}
         }
       }
     }
