@@ -1,4 +1,4 @@
-﻿Year,Day of Year,Temp Anomaly daily,Date,Temp,Title,BaseMean,SecondMean,Max,Last,MaxPrev,Prev,Min,MinPrev
+﻿Year,Day,TempAnom,Date,Temp,Title,BaseMean,SecondMean,Max,Last,MaxPrev,Prev,Min,MinPrev
 1982,1,-0.35,2024-01-01 00:00:00,12.19,,12.54,12.84,13.23,13.52,13.23,13.14,12.08,12.08
 1982,2,-0.41,2024-01-02 00:00:00,12.13,,12.54,12.84,13.22,13.44,13.22,13.14,12.05,12.05
 1982,3,-0.46,2024-01-03 00:00:00,12.08,,12.54,12.84,13.19,13.37,13.19,13.11,11.98,11.98
