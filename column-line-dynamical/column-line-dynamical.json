@@ -4,7 +4,7 @@
   "usermeta": {
     "Author": "Andrzej Leszkiewicz",
     "Github": "https://github.com/avatorl/Deneb-Vega/",
-    "License": "CC BY 4.0 (Share and Adapt with Attribution)",
+    "License": "MIT Expat License (https://en.wikipedia.org/wiki/MIT_License)",
     "Data": "Random sequence"
   },
   "width": 800,
