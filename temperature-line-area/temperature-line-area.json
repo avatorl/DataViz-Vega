@@ -11,7 +11,7 @@
   "height": 800,
   "autosize": "pad",
   "background": "white",
-  "config": {"mark": {"font": "Segoe UI"}},
+  "config": {},
   "signals": [
     {
       "name": "showHelper",
