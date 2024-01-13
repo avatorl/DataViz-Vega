@@ -21,6 +21,10 @@ Andrzej Leszkiewicz
 - LinkedIn: [@avatorl](https://www.linkedin.com/in/avatorl/)
 - YouTube: [@power-of-bi](https://www.youtube.com/@power-of-bi)
 
+### Deneb Vega Help
+
+Do you need help with Deneb/Vega data visualizations? See https://github.com/avatorl/Deneb-Vega-Help/
+
 ## Sponsorship
 
 If one of the visualizations really helped you (you have used the code for your commercial projects) or if you just want to say thank you, feel free to click the Sponsor button.
