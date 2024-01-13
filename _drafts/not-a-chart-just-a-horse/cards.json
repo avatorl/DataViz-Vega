@@ -3,7 +3,7 @@
   "description": "Reproduction of the 'fan chart' initially designed by Jorge Camões",
   "usermeta": {
     "Author": "Andrzej Leszkiewicz",
-    "License": "CC BY 4.0 (Share and Adapt with Attribution)",
+    "License": "MIT Expat License (https://en.wikipedia.org/wiki/MIT_License)",
     "Github": "https://github.com/avatorl/Deneb-Vega/",
     "Original Idea Author": "Jorge Camões",
     "Original Idea URL": "https://www.wisevis.com/part-whole-proportions-fan-chart/"
