@@ -3,6 +3,7 @@
 ## Note
 
 This license is applicable for Vega specifications and documentation created by Andrzej Leszkiewicz.
+
 Data files have been prepared using independent sources of open data and the license terms may vary.
 
 ## Copyright and Permission Notice
