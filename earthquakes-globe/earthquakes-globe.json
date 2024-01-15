@@ -1,14 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
   "description": "Rotating globe animation depicting earthquake locations. Background - pseudorandomly distributed 'stars'.",
-  "usermeta": {
-    "Copyright": "Andrzej Leszkiewicz",
-    "License": "MIT Expat License (https://en.wikipedia.org/wiki/MIT_License)",
-    "Permission": "Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.",
-    "Github": "https://github.com/avatorl/Deneb-Vega/",
-    "Data Source URL (topojson)": "https://vega.github.io/vega/examples/earthquakes/",
-    "Data Source URL (earthquakes)": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/csv.php"
-  },
   "width": 600,
   "height": 600,
   "padding": 5,
@@ -16,6 +8,11 @@
   "background": "#000000",
   "signals": [
     {"name": "scale", "description": "globe scale", "value": 225},
+    {
+      "name": "circleSize",
+      "description": "Earthquaqe circle size",
+      "value": 1.8
+    },
     {"name": "textColorMain", "value": "#dddddd"},
     {"name": "textColorSubtitle", "value": "#888888"},
     {"name": "backSideColor", "value": "#aaaaaa"},
@@ -46,17 +43,8 @@
     },
     {
       "name": "data-earthquakes",
-      "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_month.csv",
-      "format": {"type": "csv", "parse": "auto", "delimiter": ","},
-      "transform": [
-        {
-          "type": "geopoint",
-          "projection": "projection",
-          "fields": ["longitude", "latitude"],
-          "as": ["x", "y"]
-        },
-        {"type": "collect", "sort": {"field": ["mag"], "order": ["ascending"]}}
-      ]
+      "url": "https://vega.github.io/vega/data/earthquakes.json",
+      "format": {"type": "json", "property": "features"}
     },
     {
       "name": "stars",
@@ -99,10 +87,9 @@
     },
     {
       "name": "scaleSize",
-      "type": "pow",
-      "domain": [0, 1.9, 9.9],
-      "range": [0, 10, 2000],
-      "exponent": 10
+      "type": "sqrt",
+      "domain": [0, 100],
+      "range": [0, {"signal": "circleSize"}]
     }
   ],
   "title": {
@@ -141,7 +128,17 @@
       "format": ".4",
       "encode": {
         "symbols": {
-          "update": {"size": {"scale": "scaleSize", "signal": "datum.value"}}
+          "update": {
+            "size": {
+              "signal": "datum.value<2?0:3.14*scale('scaleSize', exp(datum.value))*scale('scaleSize', exp(datum.value))"
+            },
+            "strokeOpacity": {"value": 1},
+            "fillOpacity": {"value": 0},
+            "strokeWidth": {
+              "signal": "1+scale('scaleSize', exp(datum.value))*0.15"
+            },
+            "stroke": {"signal": "scale('scaleColor', datum.value)"}
+          }
         },
         "labels": {
           "update": {
@@ -213,27 +210,30 @@
       "transform": [{"type": "geoshape", "projection": "projection"}]
     },
     {
-      "name": "symbol-circle-earthquakes",
-      "type": "symbol",
-      "shape": "circle",
+      "name": "shape-circle-earthquakes",
+      "type": "shape",
       "from": {"data": "data-earthquakes"},
       "index": 3,
       "encode": {
-        "enter": {
-          "fillOpacity": {"value": 1},
-          "tooltip": {"signal": "datum.mag +' - ' + datum.place"}
-        },
         "update": {
-          "xc": {"signal": "datum.x"},
-          "yc": {"signal": "datum.y"},
-          "fill": {
-            "signal": "(abs(globeRotationAngle)<=90?datum.longitude>=(globeRotationAngle-90)&&datum.longitude<=(globeRotationAngle+90)?1:0:globeRotationAngle<-90?datum.longitude>(globeRotationAngle-90+360)||datum.longitude<(globeRotationAngle+90)?1:0:globeRotationAngle>90?datum.longitude>(globeRotationAngle-90)||datum.longitude<(globeRotationAngle-180-90)?1:0:0)==1?scale('scaleColor',datum.mag):backSideColor"
+          "strokeOpacity": {"value": 1},
+          "fillOpacity": {"value": 0},
+          "strokeWidth": {
+            "signal": "1+scale('scaleSize', exp(datum.properties.mag))*0.15"
           },
-          "size": {
-            "signal": "(abs(globeRotationAngle)<=90?datum.longitude>=(globeRotationAngle-90)&&datum.longitude<=(globeRotationAngle+90)?1:0:globeRotationAngle<-90?datum.longitude>(globeRotationAngle-90+360)||datum.longitude<(globeRotationAngle+90)?1:0:globeRotationAngle>90?datum.longitude>(globeRotationAngle-90)||datum.longitude<(globeRotationAngle-180-90)?1:0:0)*scale('scaleSize',datum.mag)"
+          "stroke": {"signal": "scale('scaleColor', datum.properties.mag)"},
+          "fill": {"signal": "scale('scaleColor', datum.properties.mag)"}
+        }
+      },
+      "transform": [
+        {
+          "type": "geoshape",
+          "projection": "projection",
+          "pointRadius": {
+            "expr": "scale('scaleSize', exp(datum.properties.mag))"
           }
         }
-      }
+      ]
     }
   ]
 }
