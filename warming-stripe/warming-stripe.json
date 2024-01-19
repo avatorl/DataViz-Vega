@@ -55,12 +55,6 @@
       "zero": false
     },
     {
-      "name": "scaleY",
-      "type": "point",
-      "domain": [1],
-      "range": [0, {"signal": "height"}]
-    },
-    {
       "name": "scaleYForLegendTick",
       "type": "linear",
       "domain": {"data": "dataset", "field": "temp"},
@@ -112,8 +106,8 @@
     {
       "scale": "scaleX",
       "orient": "bottom",
+      "offset": 5,
       "domain": false,
-      "tickCount": {"signal": "5"},
       "labelColor": {"signal": "labelColor"},
       "format": ".4",
       "encode": {
@@ -132,6 +126,7 @@
       "scale": "scaleX",
       "orient": "top",
       "domain": true,
+      "offset": 5,
       "tickCount": {"signal": "length(data('dataset'))"},
       "labelFontSize": {"signal": "0"},
       "format": ".4",
@@ -223,19 +218,19 @@
         "update": {
           "fill": {"scale": "colorHawkins", "field": "temp"},
           "opacity": {"value": 1},
-          "height": {"signal": "height*0.92"},
+          "height": {"signal": "height"},
           "width": {"signal": "4.0"},
           "stroke": {"value": "gray"},
           "strokeWidth": {"value": 0},
           "xc": {"scale": "scaleX", "field": "year"},
-          "yc": {"scale": "scaleY", "value": 1},
           "tooltip": {
             "signal": "datum.year+': '+(datum.temp>0?'+':'')+datum.temp+'°C'"
-          }
+          },
+          "y": {"signal": "0"}
         },
         "hover": {
-          "y": {"value": 3},
-          "height": {"signal": "height*0.92+10"},
+          "y": {"value": -5},
+          "height": {"signal": "height+10"},
           "width": {"signal": "4.2"},
           "strokeWidth": {"value": 0.05}
         }
