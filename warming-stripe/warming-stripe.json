@@ -215,18 +215,20 @@
       "interactive": true,
       "from": {"data": "dataset"},
       "encode": {
-        "update": {
+        "enter": {
           "fill": {"scale": "colorHawkins", "field": "temp"},
-          "opacity": {"value": 1},
-          "height": {"signal": "height"},
-          "width": {"signal": "4.0"},
-          "stroke": {"value": "gray"},
-          "strokeWidth": {"value": 0},
           "xc": {"scale": "scaleX", "field": "year"},
+          "stroke": {"value": "gray"},
+          "opacity": {"value": 1},
           "tooltip": {
             "signal": "datum.year+': '+(datum.temp>0?'+':'')+datum.temp+'°C'"
-          },
-          "y": {"signal": "0"}
+          }
+        },
+        "update": {
+          "y": {"signal": "0"},
+          "height": {"signal": "height"},
+          "width": {"signal": "4.0"},
+          "strokeWidth": {"value": 0}
         },
         "hover": {
           "y": {"value": -5},
@@ -246,12 +248,10 @@
           "href": {
             "value": "https://climate.nasa.gov/vital-signs/global-temperature/"
           },
-          "cursor": {"value": "pointer"}
-        },
-        "update": {
-          "opacity": {"value": 1},
+          "cursor": {"value": "pointer"},
           "x": {"signal": "width"},
           "y": {"signal": "height+50"},
+          "opacity": {"value": 1},
           "fontSize": {"signal": "labelDataSrcFontSize"}
         }
       }
