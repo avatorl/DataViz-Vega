@@ -29,6 +29,7 @@
     {"name": "labelDataSrcFontSize", "value": "12"},
     {"name": "basePeriodS", "value": "1951"},
     {"name": "basePeriodE", "value": "1980"},
+    {"name": "stripeWidth", "update": "width/length(data('dataset'))"},
     {
       "name": "selectedStripeTemp",
       "description": "Temperature in the selected year (stripe). To dispaly as a tick on the legend.",
@@ -43,7 +44,10 @@
     {
       "name": "dataset",
       "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/warming-stripe/global-temp.csv",
-      "format": {"type": "csv", "parse": "auto", "delimiter": ","}
+      "format": {"type": "csv", "parse": "auto", "delimiter": ","},
+      "transform": [
+        {"type": "extent", "field": "year", "signal": "year_extent"}
+      ]
     }
   ],
   "scales": [
@@ -93,7 +97,7 @@
   ],
   "title": {
     "text": {
-      "signal": "'Global Temperature in 1880-2021 (compared to '+ basePeriodS+'-'+basePeriodE+' average)'"
+      "signal": "'Global Temperature in '+year_extent[0]+'-'+year_extent[1]+' (compared to '+ basePeriodS+'-'+basePeriodE+' average)'"
     },
     "anchor": "start",
     "font": {"signal": "fontMain"},
@@ -218,7 +222,7 @@
         "enter": {
           "fill": {"scale": "colorHawkins", "field": "temp"},
           "xc": {"scale": "scaleX", "field": "year"},
-          "stroke": {"value": "gray"},
+          "stroke": {"value": "#666666"},
           "opacity": {"value": 1},
           "tooltip": {
             "signal": "datum.year+': '+(datum.temp>0?'+':'')+datum.temp+'°C'"
@@ -227,14 +231,14 @@
         "update": {
           "y": {"signal": "0"},
           "height": {"signal": "height"},
-          "width": {"signal": "4.0"},
+          "width": {"signal": "stripeWidth*0.9"},
           "strokeWidth": {"value": 0}
         },
         "hover": {
-          "y": {"value": -5},
-          "height": {"signal": "height+10"},
-          "width": {"signal": "4.2"},
-          "strokeWidth": {"value": 0.05}
+          "y": {"value": -4},
+          "height": {"signal": "height+8"},
+          "width": {"signal": "stripeWidth*0.9"},
+          "strokeWidth": {"signal": "stripeWidth*0.05"}
         }
       }
     },
