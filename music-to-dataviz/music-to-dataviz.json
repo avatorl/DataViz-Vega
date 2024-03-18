@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
-  "description": "",
+  "description": "Visualization of music. Piano Quintet No. 2 in C Minor Op. 115 - Gabriel Fauré. Author of the original design idea: Nicholas Rougeux. Vega implementation: Andrzej Leszkiewicz. Each bubble represents a note. Click on an instrument name to highlight its notes.",
   "usermeta": {
     "Copyright": "Andrzej Leszkiewicz",
     "License": "MIT Expat License (https://en.wikipedia.org/wiki/MIT_License)",
