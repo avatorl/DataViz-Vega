@@ -153,7 +153,7 @@
           "url": {"signal": "facsimileUrl"},
           "x": {"signal": "-240"},
           "y": {"signal": "-230"},
-                    "width": {"signal": "1100"},
+          "width": {"signal": "1100"},
           "height": {"signal": "680"}
         },
         "update": {"opacity": {"signal": "true"}}
@@ -179,7 +179,7 @@
             "update": {
               "x": {"signal": "-dividerMouseDragX"},
               "y": {"signal": "230"},
-              "x2": {"signal": "width+195"},
+              "x2": {"signal": "1100"},
               "height": {"signal": "680"},
               "clip": {"signal": "false"}
             }
