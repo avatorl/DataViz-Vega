@@ -151,8 +151,10 @@
       "encode": {
         "enter": {
           "url": {"signal": "facsimileUrl"},
-          "x": {"signal": "-width/2"},
-          "y": {"signal": "-height/2-30"}
+          "x": {"signal": "-240"},
+          "y": {"signal": "-230"},
+                    "width": {"signal": "1100"},
+          "height": {"signal": "680"}
         },
         "update": {"opacity": {"signal": "true"}}
       }
