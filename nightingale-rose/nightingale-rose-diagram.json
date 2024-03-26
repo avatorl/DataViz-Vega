@@ -646,7 +646,7 @@
           "x": {"signal": "dividerMouseDragX"},
           "y": {"signal": "-225"},
           "x2": {"signal": "dividerMouseDragX"},
-          "y2": {"signal": "455"},
+          "y2": {"signal": "445"},
           "opacity": {"signal": "1"},
           "stroke": {"signal": "showDividerText?'red':'black'"},
           "strokeWidth": {"signal": "1"},
@@ -664,7 +664,7 @@
           "x": {"signal": "dividerMouseDragX"},
           "y": {"signal": "-225"},
           "x2": {"signal": "dividerMouseDragX"},
-          "y2": {"signal": "455"},
+          "y2": {"signal": "445"},
           "opacity": {"signal": "0"},
           "strokeWidth": {"signal": "10"},
           "cursor": {"value": "col-resize"}
