@@ -713,7 +713,7 @@
       "type": "text",
       "encode": {
         "enter": {
-          "text": {"value": "Vega Reproduction (2022-2024)"},
+          "text": {"value": "Reproduction by Andrzej Leszkiewicz (2022-2024)"},
           "y": {"signal": "-255"},
           "align": {"value": "left"},
           "fill": {"signal": "'grey'"},
@@ -722,7 +722,7 @@
         },
         "update": {
           "x": {"signal": "dividerMouseDragX+10"},
-          "fontSize": {"signal": "dividerMouseDragX<=570?18:0"}
+          "fontSize": {"signal": "dividerMouseDragX<=415?18:0"}
         }
       }
     }
