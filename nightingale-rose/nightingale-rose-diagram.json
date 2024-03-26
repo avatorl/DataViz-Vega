@@ -696,7 +696,7 @@
       "type": "text",
       "encode": {
         "enter": {
-          "text": {"value": "Facsimile of the 1958 Original"},
+          "text": {"value": "Facsimile of the 1959 Original"},
           "y": {"signal": "-255"},
           "align": {"value": "right"},
           "fill": {"signal": "'grey'"},
