@@ -127,7 +127,7 @@
       "on": [
         {
           "events": "[@rule-divider:pointerdown, window:pointerup] > window:pointermove",
-          "update": "round(clamp(x(),-195,850))"
+          "update": "round(clamp(x(),-195,835))"
         }
       ]
     }
