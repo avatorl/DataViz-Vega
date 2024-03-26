@@ -197,7 +197,7 @@
           "width": {"signal": "850-dividerMouseDragX"},
           "height": {"signal": "680"},
           "clip": {"signal": "true"},
-          "opacity": {"value": 0.1},
+          "opacity": {"value": 1},
           "fill": {"signal": "'#EFDFC5'"}
         }
       },
