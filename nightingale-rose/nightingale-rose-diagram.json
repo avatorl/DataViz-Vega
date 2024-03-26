@@ -695,7 +695,7 @@
       "type": "text",
       "encode": {
         "enter": {
-          "text": {"value": "Florence Nightingale's Rose Diagram (1959)"},
+          "text": {"value": "Florence Nightingale's Rose Diagram (1859)"},
           "y": {"signal": "-255"},
           "align": {"value": "right"},
           "fill": {"signal": "'grey'"},
