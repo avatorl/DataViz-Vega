@@ -131,7 +131,7 @@
       "name": "showDividerText",
       "description": "will be set to false when the split screen divider line moved to right. used to hide the line.",
       "value": "true",
-      "update": "(showDividerText&&dividerMouseDragX>-195)?false:showDividerText"
+      "update": "(showDividerText&&dividerMouseDragX>-190)?false:showDividerText"
     },
     {
       "name": "dividerMouseDragX",
@@ -166,7 +166,7 @@
           "x": {"signal": "-215"},
           "y": {"signal": "-280"},
           "width": {"signal": "1040"},
-          "height": {"signal": "780"},
+          "height": {"signal": "735"},
           "clip": {"signal": "true"},
           "opacity": {"value": 1},
           "fill": {"signal": "'#eedec4'"}
@@ -646,7 +646,7 @@
           "x": {"signal": "dividerMouseDragX"},
           "y": {"signal": "-280"},
           "x2": {"signal": "dividerMouseDragX"},
-          "y2": {"signal": "500"},
+          "y2": {"signal": "455"},
           "opacity": {"signal": "1"},
           "stroke": {"signal": "showDividerText?'red':'black'"},
           "strokeWidth": {"signal": "1"},
@@ -664,7 +664,7 @@
           "x": {"signal": "dividerMouseDragX"},
           "y": {"signal": "-280"},
           "x2": {"signal": "dividerMouseDragX"},
-          "y2": {"signal": "480"},
+          "y2": {"signal": "455"},
           "opacity": {"signal": "0"},
           "strokeWidth": {"signal": "10"},
           "cursor": {"value": "col-resize"}
