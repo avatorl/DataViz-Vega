@@ -249,7 +249,7 @@
                     "anchor": "start",
                     "baseline": "middle",
                     "dy": {"signal": "data('data-year')[0].Chart==1?33:6"},
-                    "dx": {"signal": "data('data-year')[0].Chart==1?320:160"},
+                    "dx": {"signal": "data('data-year')[0].Chart==1?318:158"},
                     "text": {"signal": "data('data-year')[0].Chart+'.'"},
                     "align": "center",
                     "color": {"signal": "colorChartTitles"},
