@@ -723,7 +723,7 @@
           "lineBreak": {"value": "\n"}
         },
         "update": {
-          "x": {"signal": "dividerMouseDragX+5"},
+          "x": {"signal": "dividerMouseDragX+10"},
           "fontSize": {"signal": "dividerMouseDragX<=500?18:0"}
         }
       }
