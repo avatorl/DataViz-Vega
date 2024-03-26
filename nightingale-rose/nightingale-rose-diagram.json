@@ -16,13 +16,13 @@
   "config": {},
   "data": [
     {
-      "name": "dataset-csv",
+      "name": "data-csv",
       "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/nightingale-rose/nightingale-rose-data.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","}
     },
     {
       "name": "dataset",
-      "source": "dataset-csv",
+      "source": "data-csv",
       "transform": [
         {"type": "identifier", "as": "id1"},
         {
@@ -48,7 +48,7 @@
       ]
     },
     {
-      "name": "dataset-chart-1",
+      "name": "data-chart-1",
       "source": "dataset2",
       "transform": [
         {"type": "filter", "expr": "datum.Chart==1"},
@@ -60,7 +60,7 @@
       ]
     },
     {
-      "name": "dataset-chart-2",
+      "name": "data-chart-2",
       "source": "dataset2",
       "transform": [
         {"type": "filter", "expr": "datum.Chart==2"},
@@ -71,17 +71,14 @@
         }
       ]
     },
+    {"name": "data-combined", "source": ["data-chart-2", "data-chart-1"]},
     {
-      "name": "dataset-combined",
-      "source": ["dataset-chart-2", "dataset-chart-1"]
-    },
-    {
-      "name": "dataset-horizontal-lines",
+      "name": "data-horizontal-lines",
       "values": [
         {"x": "-95", "x2": "25", "y": "-164"},
         {"x": "190", "x2": "420", "y": "-150"},
         {"x": "212", "x2": "401", "y": "-153"},
-        {"x": "578", "x2": "686", "y": "-164"}
+        {"x": "578", "x2": "686", "y": "-165"}
       ]
     }
   ],
@@ -154,7 +151,7 @@
       "name": "scaleRadius",
       "type": "sqrt",
       "domain": {
-        "data": "dataset-combined",
+        "data": "data-combined",
         "fields": ["Diseases", "Wounds", "Other"]
       },
       "zero": true,
@@ -243,19 +240,17 @@
                   "type": "group",
                   "from": {
                     "facet": {
-                      "name": "dataset-year",
-                      "data": "dataset-combined",
+                      "name": "data-year",
+                      "data": "data-combined",
                       "groupby": "Chart"
                     }
                   },
                   "title": {
                     "anchor": "start",
                     "baseline": "middle",
-                    "dy": {"signal": "data('dataset-year')[0].Chart==1?33:6"},
-                    "dx": {
-                      "signal": "data('dataset-year')[0].Chart==1?320:160"
-                    },
-                    "text": {"signal": "data('dataset-year')[0].Chart+'.'"},
+                    "dy": {"signal": "data('data-year')[0].Chart==1?33:6"},
+                    "dx": {"signal": "data('data-year')[0].Chart==1?320:160"},
+                    "text": {"signal": "data('data-year')[0].Chart+'.'"},
                     "align": "center",
                     "color": {"signal": "colorChartTitles"},
                     "fontSize": 12,
@@ -264,7 +259,7 @@
                     "subtitleFontSize": {"signal": "fontSizeSubtitle2"},
                     "subtitleFontWeight": "400",
                     "subtitle": {
-                      "signal": "data('dataset-year')[0].Chart==1?'APRIL 1854 to MARCH 1855':'APRIL 1855 to MARCH 1856'"
+                      "signal": "data('data-year')[0].Chart==1?'APRIL 1854 to MARCH 1855':'APRIL 1855 to MARCH 1856'"
                     },
                     "subtitlePadding": 5
                   },
@@ -272,7 +267,7 @@
                     {
                       "type": "arc",
                       "name": "arc-layer-1",
-                      "from": {"data": "dataset-year"},
+                      "from": {"data": "data-year"},
                       "encode": {
                         "enter": {
                           "x": {"signal": "positionX"},
@@ -298,7 +293,7 @@
                     {
                       "type": "arc",
                       "name": "arc-layer-2",
-                      "from": {"data": "dataset-year"},
+                      "from": {"data": "data-year"},
                       "encode": {
                         "enter": {
                           "x": {"signal": "positionX"},
@@ -324,7 +319,7 @@
                     {
                       "type": "arc",
                       "name": "arc-layer-3",
-                      "from": {"data": "dataset-year"},
+                      "from": {"data": "data-year"},
                       "encode": {
                         "enter": {
                           "x": {"signal": "positionX"},
@@ -350,7 +345,7 @@
                     {
                       "type": "arc",
                       "name": "arc-layer-1-outline",
-                      "from": {"data": "dataset-year"},
+                      "from": {"data": "data-year"},
                       "encode": {
                         "enter": {
                           "x": {"signal": "positionX"},
@@ -374,7 +369,7 @@
                     {
                       "type": "arc",
                       "name": "arc-layer-2-outline",
-                      "from": {"data": "dataset-year"},
+                      "from": {"data": "data-year"},
                       "encode": {
                         "enter": {
                           "x": {"signal": "positionX"},
@@ -398,7 +393,7 @@
                     {
                       "type": "arc",
                       "name": "arc-layer-3-outline",
-                      "from": {"data": "dataset-year"},
+                      "from": {"data": "data-year"},
                       "encode": {
                         "enter": {
                           "x": {"signal": "positionX"},
@@ -422,7 +417,7 @@
                     {
                       "type": "arc",
                       "name": "arc-layer-1-radial",
-                      "from": {"data": "dataset-year"},
+                      "from": {"data": "data-year"},
                       "encode": {
                         "enter": {
                           "x": {"signal": "positionX"},
@@ -446,7 +441,7 @@
                     {
                       "type": "arc",
                       "name": "arc-layer-2-radial",
-                      "from": {"data": "dataset-year"},
+                      "from": {"data": "data-year"},
                       "encode": {
                         "enter": {
                           "x": {"signal": "positionX"},
@@ -470,7 +465,7 @@
                     {
                       "type": "arc",
                       "name": "arc-layer-3-radial",
-                      "from": {"data": "dataset-year"},
+                      "from": {"data": "data-year"},
                       "encode": {
                         "enter": {
                           "x": {"signal": "positionX"},
@@ -494,7 +489,7 @@
                     {
                       "type": "text",
                       "name": "text-location",
-                      "from": {"data": "dataset-year"},
+                      "from": {"data": "data-year"},
                       "encode": {
                         "enter": {
                           "align": {"value": "center"},
@@ -522,7 +517,7 @@
                     {
                       "type": "text",
                       "name": "text-month",
-                      "from": {"data": "dataset-year"},
+                      "from": {"data": "data-year"},
                       "encode": {
                         "enter": {
                           "fontSize": {"signal": "datum.Chart==1?11:9"},
@@ -556,7 +551,7 @@
             {
               "type": "rule",
               "name": "rule-horizontal-lines",
-              "from": {"data": "dataset-horizontal-lines"},
+              "from": {"data": "data-horizontal-lines"},
               "encode": {
                 "enter": {
                   "opacity": {"signal": "1"},
