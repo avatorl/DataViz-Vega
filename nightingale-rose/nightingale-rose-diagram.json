@@ -140,7 +140,7 @@
       "on": [
         {
           "events": "[@rule-divider-wide:pointerdown, window:pointerup] > window:pointermove",
-          "update": "round(clamp(x(),-200,830))",
+          "update": "round(clamp(x(),-200,835))",
           "force": true
         }
       ]
@@ -165,7 +165,7 @@
         "update": {
           "x": {"signal": "-215"},
           "y": {"signal": "-280"},
-          "width": {"signal": "1045"},
+          "width": {"signal": "1060"},
           "height": {"signal": "735"},
           "clip": {"signal": "true"},
           "opacity": {"value": 1},
@@ -195,7 +195,7 @@
         "update": {
           "x": {"signal": "dividerMouseDragX"},
           "y": {"signal": "-280"},
-          "width": {"signal": "1040"},
+          "width": {"signal": "1045"},
           "height": {"signal": "800"},
           "clip": {"signal": "true"},
           "opacity": {"value": 1},
