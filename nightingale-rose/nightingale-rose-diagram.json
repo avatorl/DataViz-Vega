@@ -11,7 +11,7 @@
     "Data Source URL": "https://archive.org/details/mortalityofbriti00lond/page/18/mode/2up?view=theater"
   },
   "autosize": "pad",
-  "padding": {"bottom": 10, "left": 10, "right": 10, "top": 20},
+  "padding": {"bottom": 0, "left": 0, "right": 0, "top": 20},
   "background": "#EFDFC5",
   "config": {},
   "data": [
@@ -560,8 +560,8 @@
                   "font": {"signal": "fontText"},
                   "fontSize": {"value": 18},
                   "fontWeight": {"value": "bolder"},
-                  "x": {"signal": "-180"},
-                  "y": {"value": 190},
+                  "x": {"signal": "-182"},
+                  "y": {"value": 191},
                   "width": {"value": 110},
                   "lineBreak": {"value": "\n"},
                   "lineHeight": {"value": 19},
@@ -581,8 +581,8 @@
                   "font": {"signal": "fontText"},
                   "fontSize": {"value": 14},
                   "fontWeight": {"value": "bolder"},
-                  "x": {"signal": "600"},
-                  "y": {"value": 420},
+                  "x": {"signal": "635"},
+                  "y": {"value": 417},
                   "width": {"value": 110},
                   "lineBreak": {"value": "\n"},
                   "text": {"value": "Vega Version: Andrzej Leszkiewicz"}
