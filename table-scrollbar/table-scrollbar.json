@@ -1,209 +1,629 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
-  "description": "An example of a simple table with a scrollbar",
+  "description": "Reproduction of the Nightingale's rose diagram",
   "usermeta": {
     "Copyright": "Andrzej Leszkiewicz",
     "License": "MIT Expat License (https://en.wikipedia.org/wiki/MIT_License)",
     "Permission": "Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.",
-    "Github": "https://github.com/avatorl/Deneb-Vega/"
+    "Github": "https://github.com/avatorl/Deneb-Vega/",
+    "Original Idea Author": "Florence Nightingale (1820-1910)",
+    "Original Idea URL": "https://curiosity.lib.harvard.edu/contagion/catalog/36-990101646750203941",
+    "Data Source URL": "https://archive.org/details/mortalityofbriti00lond/page/18/mode/2up?view=theater"
   },
-  "width": 300,
-  "height": 400,
-  "padding": 5,
-  "background": "#FFFFFF",
-  "config": {
-    "title": {"font": "Tahoma", "fontSize": 18},
-    "text": {"font": "Tahoma", "fontSize": 16}
-  },
-  "signals": [
-    {
-      "name": "rowsToDisplay",
-      "description": "The number of rows displayed in the table (visible without scrolling)",
-      "value": 10
-    },
-    {"name": "rowHeight", "description": "Row height in pixels", "value": 40},
-    {
-      "name": "scrollAreaHeight",
-      "description": "Scroll area height in pixels",
-      "update": "rowHeight*rowsToDisplay"
-    },
-    {
-      "name": "scrollBarWidth",
-      "description": "Scrollbar width in pixels",
-      "init": "12"
-    },
-    {
-      "name": "scrollBarHeight",
-      "description": "Scrollbar height: Dynamically calculated based on the percentage of visible rows out of all data rows, with a range limited to minimum and maximum values",
-      "init": "clamp((rowHeight*rowsToDisplay)*rowsToDisplay/length(data('dataset-raw')),30,600)"
-    },
-    {
-      "name": "scrollPositionMax",
-      "update": "length(data('dataset-raw'))-rowsToDisplay+1"
-    },
-    {
-      "name": "scrollbarMouseDragY",
-      "init": "0",
-      "on": [
-        {
-          "events": "[@rect-scrollbar:pointerdown, window:pointerup] > window:pointermove",
-          "update": "clamp(y(),1,scrollAreaHeight)"
-        }
-      ]
-    },
-    {
-      "name": "scrollPosition",
-      "description": "Scrollbar Position: The scrollbar responds to dragging the scrollbar with a mouse, mouse wheel scrolling, and the Home, End, Page Up, Page Down, Arrow Up, and Arrow Down buttons",
-      "value": 1,
-      "on": [
-        {
-          "events": {"type": "wheel", "consume": true},
-          "update": "clamp(round(scrollPosition+event.deltaY/abs(event.deltaY)*pow(1.0001, event.deltaY*pow(16, event.deltaMode)),0),1,scrollPositionMax)"
-        },
-        {
-          "events": "window:keydown",
-          "update": "event.code=='Home'?1:event.code=='End'?scrollPositionMax:scrollPosition"
-        },
-        {
-          "events": "window:keydown",
-          "update": "clamp(event.code=='PageDown'?(scrollPosition+rowsToDisplay):event.code=='PageUp'?(scrollPosition-rowsToDisplay):scrollPosition,1,scrollPositionMax)"
-        },
-        {
-          "events": "window:keydown",
-          "update": "clamp(event.code=='ArrowDown'?(scrollPosition+1):event.code=='ArrowUp'?(scrollPosition-1):scrollPosition,1,scrollPositionMax)"
-        },
-        {
-          "events": "[@rect-scrollbar:pointerdown, window:pointerup] > window:pointermove",
-          "update": "clamp(round(invert('scaleScrollBarY',scrollbarMouseDragY),0),1,scrollPositionMax)"
-        }
-      ]
-    },
-    {
-      "name": "scrollbarFillOpacity",
-      "value": 0.2,
-      "on": [
-        {"events": "view:pointerover", "update": "0.4"},
-        {"events": "view:pointerout", "update": "0.2"}
-      ]
-    }
-  ],
+  "autosize": "pad",
+  "padding": {"bottom": 10, "left": 10, "right": 10, "top": 20},
+  "background": "#EFDFC5",
+  "config": {},
   "data": [
     {
-      "name": "dataset-raw",
-      "transform": [
-        {"type": "sequence", "start": 1, "stop": 251, "step": 1, "as": "id"}
-      ]
+      "name": "dataset-csv",
+      "url": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/nightingale-rose/nightingale-rose-data.csv",
+      "format": {"type": "csv", "parse": "auto", "delimiter": ","}
     },
     {
       "name": "dataset",
-      "source": "dataset-raw",
+      "source": "dataset-csv",
+      "transform": [
+        {"type": "identifier", "as": "id1"},
+        {
+          "type": "formula",
+          "as": "id2",
+          "expr": "datum.id1==1||datum.id1==13?datum.id1+12-1:datum.id1-1"
+        },
+        {"type": "formula", "as": "Chart", "expr": "datum.id1<=12?1:2"}
+      ]
+    },
+    {
+      "name": "dataset2",
+      "source": "dataset",
       "transform": [
         {
-          "type": "filter",
-          "expr": "(datum.id>=scrollPosition)&&(datum.id<(scrollPosition+rowsToDisplay))"
-        },
-        {"type": "collect", "sort": {"field": "id", "order": "ascending"}}
+          "type": "lookup",
+          "from": "dataset",
+          "key": "id1",
+          "fields": ["id2"],
+          "values": ["Diseases", "Wounds", "Other"],
+          "as": ["Diseases2", "Wounds2", "Other2"]
+        }
+      ]
+    },
+    {
+      "name": "dataset-chart-1",
+      "source": "dataset2",
+      "transform": [
+        {"type": "filter", "expr": "datum.Chart==1"},
+        {
+          "type": "pie",
+          "startAngle": {"signal": "-PI/2"},
+          "endAngle": {"signal": "2*PI-PI/2"}
+        }
+      ]
+    },
+    {
+      "name": "dataset-chart-2",
+      "source": "dataset2",
+      "transform": [
+        {"type": "filter", "expr": "datum.Chart==2"},
+        {
+          "type": "pie",
+          "startAngle": {"signal": "-PI/2"},
+          "endAngle": {"signal": "2*PI-PI/2"}
+        }
+      ]
+    },
+    {
+      "name": "dataset-combined",
+      "source": ["dataset-chart-2", "dataset-chart-1"]
+    }
+  ],
+  "signals": [
+    {
+      "name": "facsimileUrl",
+      "description": "Original chart",
+      "value": "https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/nightingale-rose/nightingale-facsimile.png"
+    },
+    {
+      "name": "fontTitle",
+      "description": "Font for the main Title",
+      "value": "Harrington"
+    },
+    {
+      "name": "fontSubtitle",
+      "description": "Font for the main Subitle",
+      "value": "Tahoma"
+    },
+    {
+      "name": "fontSubtitle2",
+      "description": "Font for the individual charts Subtitles",
+      "value": "Rockwell"
+    },
+    {
+      "name": "fontText",
+      "description": "Font for the chart description text",
+      "value": "Vivaldi"
+    },
+    {"name": "radius", "value": 330},
+    {"name": "positionX", "value": -8},
+    {"name": "positionY", "value": 12},
+    {"name": "fillOpacitySector", "value": 1},
+    {"name": "strokeOpacityOutline", "value": 0.7},
+    {"name": "strokeWidthOutline", "value": 2},
+    {"name": "strokeOpacityRadialLines", "value": 0.3},
+    {"name": "colorBlue", "value": "#C8C8E8"},
+    {"name": "colorPink", "value": "#FFC0CB"},
+    {"name": "colorBlack", "value": "#7C7C7C"},
+    {"name": "colorBlueOutline", "value": "#5D5DE8"},
+    {"name": "colorPinkOutline", "value": "#FF3355"},
+    {"name": "colorBlackOutline", "value": "#404040"},
+    {"name": "colorRadialLines", "value": "#AAAAAA"},
+    {"name": "colorChartTitles", "value": "#333333"},
+    {"name": "colorLabels", "value": "#333333"},
+    {"name": "colorText", "value": "#8A8A8A"},
+    {"name": "fontSizeSubtitle2", "value": 15},
+    {"name": "fontSizeLocation", "value": 9},
+    {
+      "name": "dividerMouseDragX",
+      "init": "-195",
+      "on": [
+        {
+          "events": "[@rule-divider:pointerdown, window:pointerup] > window:pointermove",
+          "update": "round(clamp(x(),-195,850))"
+        }
       ]
     }
   ],
   "scales": [
     {
-      "name": "scaleY",
-      "type": "band",
-      "domain": {"data": "dataset", "field": "id", "sort": true},
-      "range": [
-        {"signal": "0"},
-        {"signal": "rowHeight*length(data('dataset'))"}
-      ]
-    },
-    {
-      "name": "scaleScrollBarY",
-      "type": "linear",
-      "domain": [1, {"signal": "scrollPositionMax"}],
-      "range": [
-        {"signal": "0"},
-        {"signal": "rowHeight*rowsToDisplay-scrollBarHeight-1"}
-      ]
-    },
-    {
-      "name": "scaleRowStripeColors",
-      "type": "ordinal",
-      "domain": [0, 1],
-      "range": ["#FFFFFF", "#EAEAEA"]
+      "name": "scaleRadius",
+      "type": "sqrt",
+      "domain": {
+        "data": "dataset-combined",
+        "fields": ["Diseases", "Wounds", "Other"]
+      },
+      "zero": true,
+      "range": [0, {"signal": "radius"}]
     }
   ],
-  "title": {"text": "Scrollbar Example"},
   "marks": [
     {
-      "name": "rule-scrolltrack-1",
+      "type": "image",
+      "name": "image-facsimile",
+      "encode": {
+        "enter": {
+          "url": {"signal": "facsimileUrl"},
+          "x": {"signal": "-width/2"},
+          "y": {"signal": "-height/2-30"}
+        },
+        "update": {"opacity": {"signal": "true"}}
+      }
+    },
+    {
+      "type": "group",
+      "encode": {
+        "update": {
+          "x": {"signal": "dividerMouseDragX"},
+          "y": {"signal": "-230"},
+          "width": {"signal": "850-dividerMouseDragX"},
+          "height": {"signal": "680"},
+          "clip": {"signal": "true"},
+          "opacity": {"value": 1},
+          "fill": {"signal": "'#EFDFC5'"}
+        }
+      },
+      "marks": [
+        {
+          "type": "group",
+          "encode": {
+            "update": {
+              "x": {"signal": "-dividerMouseDragX"},
+              "y": {"signal": "230"},
+              "x2": {"signal": "width+195"},
+              "height": {"signal": "680"},
+              "clip": {"signal": "false"}
+            }
+          },
+          "marks": [
+            {
+              "type": "group",
+              "layout": {
+                "align": "all",
+                "columns": {"signal": "2"},
+                "padding": {"signal": "125"}
+              },
+              "title": {
+                "text": "DIAGRAM of the CAUSES of MORTALITY",
+                "dy": 38,
+                "color": {"signal": "colorChartTitles"},
+                "font": {"signal": "fontTitle"},
+                "fontSize": {"signal": "21"},
+                "subtitle": "IN THE ARMY IN THE EAST",
+                "subtitleColor": {"signal": "colorChartTitles"},
+                "subtitleFont": {"signal": "fontSubtitle"},
+                "subtitleFontSize": {"signal": "18"},
+                "subtitleFontWeight": "lighter",
+                "subtitlePadding": 10
+              },
+              "marks": [
+                {
+                  "type": "group",
+                  "from": {
+                    "facet": {
+                      "name": "dataset-year",
+                      "data": "dataset-combined",
+                      "groupby": "Chart"
+                    }
+                  },
+                  "title": {
+                    "anchor": "start",
+                    "baseline": "middle",
+                    "dy": {"signal": "data('dataset-year')[0].Chart==1?33:5"},
+                    "dx": {
+                      "signal": "data('dataset-year')[0].Chart==1?320:160"
+                    },
+                    "text": {"signal": "data('dataset-year')[0].Chart+'.'"},
+                    "align": "center",
+                    "color": {"signal": "colorChartTitles"},
+                    "fontSize": 12,
+                    "subtitleColor": {"signal": "colorChartTitles"},
+                    "subtitleFont": {"signal": "fontSubtitle2"},
+                    "subtitleFontSize": {"signal": "fontSizeSubtitle2"},
+                    "subtitleFontWeight": "400",
+                    "subtitle": {
+                      "signal": "data('dataset-year')[0].Chart==1?'APRIL 1854 to MARCH 1855':'APRIL 1855 to MARCH 1856'"
+                    },
+                    "subtitlePadding": 5
+                  },
+                  "marks": [
+                    {
+                      "type": "arc",
+                      "name": "arc-layer-1",
+                      "from": {"data": "dataset-year"},
+                      "encode": {
+                        "enter": {
+                          "x": {"signal": "positionX"},
+                          "y": {"signal": "positionY"},
+                          "startAngle": {"signal": "datum.startAngle"},
+                          "endAngle": {"signal": "datum.endAngle"},
+                          "innerRadius": {"value": 0},
+                          "outerRadius": {
+                            "scale": "scaleRadius",
+                            "signal": "datum.Chart==1?datum.Diseases:max(datum.Diseases,datum.Wounds,datum.Other)"
+                          },
+                          "stroke": {"signal": "colorRadialLines"},
+                          "strokeOpacity": {
+                            "signal": "strokeOpacityRadialLines"
+                          },
+                          "fill": {
+                            "signal": "datum.Chart==1?colorBlue:(datum.Diseases>datum.Wounds&&datum.Diseases>datum.Other)?colorBlue:(datum.Wounds>datum.Diseases&&datum.Wounds>datum.Other)?colorPink:colorBlack"
+                          },
+                          "fillOpacity": {"signal": "fillOpacitySector"}
+                        }
+                      }
+                    },
+                    {
+                      "type": "arc",
+                      "name": "arc-layer-2",
+                      "from": {"data": "dataset-year"},
+                      "encode": {
+                        "enter": {
+                          "x": {"signal": "positionX"},
+                          "y": {"signal": "positionY"},
+                          "startAngle": {"signal": "datum.startAngle"},
+                          "endAngle": {"signal": "datum.endAngle"},
+                          "innerRadius": {"value": 0},
+                          "outerRadius": {
+                            "scale": "scaleRadius",
+                            "signal": "datum.Chart==1?datum.Other:(datum.Diseases>datum.Wounds&&datum.Diseases<datum.Other||datum.Diseases<datum.Wounds&&datum.Diseases>datum.Other)?datum.Diseases:(datum.Wounds>datum.Diseases&&datum.Wounds<datum.Other||datum.Wounds<datum.Diseases&&datum.Wounds>datum.Other)?datum.Wounds:datum.Other"
+                          },
+                          "stroke": {"signal": "colorRadialLines"},
+                          "strokeOpacity": {
+                            "signal": "strokeOpacityRadialLines"
+                          },
+                          "fill": {
+                            "signal": "datum.Chart==1?colorBlack:(datum.Diseases>datum.Wounds&&datum.Diseases<datum.Other||datum.Diseases<datum.Wounds&&datum.Diseases>datum.Other)?colorBlue:(datum.Wounds>datum.Diseases&&datum.Wounds<datum.Other||datum.Wounds<datum.Diseases&&datum.Wounds>datum.Other)?colorPink:colorBlack"
+                          },
+                          "fillOpacity": {"signal": "fillOpacitySector"}
+                        }
+                      }
+                    },
+                    {
+                      "type": "arc",
+                      "name": "arc-layer-3",
+                      "from": {"data": "dataset-year"},
+                      "encode": {
+                        "enter": {
+                          "x": {"signal": "positionX"},
+                          "y": {"signal": "positionY"},
+                          "startAngle": {"signal": "datum.startAngle"},
+                          "endAngle": {"signal": "datum.endAngle"},
+                          "innerRadius": {"value": 0},
+                          "outerRadius": {
+                            "scale": "scaleRadius",
+                            "signal": "datum.Chart==1?datum.Wounds:(datum.Diseases<datum.Other&&datum.Diseases<datum.Wounds)?datum.Diseases:(datum.Wounds<datum.Diseases&&datum.Wounds<datum.Other)?datum.Wounds:datum.Other"
+                          },
+                          "stroke": {"signal": "colorRadialLines"},
+                          "strokeOpacity": {
+                            "signal": "strokeOpacityRadialLines"
+                          },
+                          "fill": {
+                            "signal": "datum.Chart==1?colorPink:(datum.Diseases<datum.Other&&datum.Diseases<datum.Wounds)?colorBlue:(datum.Wounds<datum.Diseases&&datum.Wounds<datum.Other)?colorPink:colorBlack"
+                          },
+                          "fillOpacity": {"signal": "fillOpacitySector"}
+                        }
+                      }
+                    },
+                    {
+                      "type": "arc",
+                      "name": "arc-layer-1-outline",
+                      "from": {"data": "dataset-year"},
+                      "encode": {
+                        "enter": {
+                          "x": {"signal": "positionX"},
+                          "y": {"signal": "positionY"},
+                          "startAngle": {"signal": "datum.startAngle"},
+                          "endAngle": {"signal": "datum.endAngle"},
+                          "innerRadius": {
+                            "scale": "scaleRadius",
+                            "signal": "datum.Diseases"
+                          },
+                          "outerRadius": {
+                            "scale": "scaleRadius",
+                            "signal": "datum.Diseases"
+                          },
+                          "strokeOpacity": {"signal": "strokeOpacityOutline"},
+                          "strokeWidth": {"signal": "strokeWidthOutline"},
+                          "stroke": {"signal": "colorBlueOutline"}
+                        }
+                      }
+                    },
+                    {
+                      "type": "arc",
+                      "name": "arc-layer-2-outline",
+                      "from": {"data": "dataset-year"},
+                      "encode": {
+                        "enter": {
+                          "x": {"signal": "positionX"},
+                          "y": {"signal": "positionY"},
+                          "startAngle": {"signal": "datum.startAngle"},
+                          "endAngle": {"signal": "datum.endAngle"},
+                          "innerRadius": {
+                            "scale": "scaleRadius",
+                            "signal": "datum.Wounds"
+                          },
+                          "outerRadius": {
+                            "scale": "scaleRadius",
+                            "signal": "datum.Wounds"
+                          },
+                          "strokeOpacity": {"signal": "strokeOpacityOutline"},
+                          "strokeWidth": {"signal": "strokeWidthOutline"},
+                          "stroke": {"signal": "colorPinkOutline"}
+                        }
+                      }
+                    },
+                    {
+                      "type": "arc",
+                      "name": "arc-layer-3-outline",
+                      "from": {"data": "dataset-year"},
+                      "encode": {
+                        "enter": {
+                          "x": {"signal": "positionX"},
+                          "y": {"signal": "positionY"},
+                          "startAngle": {"signal": "datum.startAngle"},
+                          "endAngle": {"signal": "datum.endAngle"},
+                          "innerRadius": {
+                            "scale": "scaleRadius",
+                            "signal": "datum.Other"
+                          },
+                          "outerRadius": {
+                            "scale": "scaleRadius",
+                            "signal": "datum.Other"
+                          },
+                          "strokeOpacity": {"signal": "strokeOpacityOutline"},
+                          "strokeWidth": {"signal": "strokeWidthOutline"},
+                          "stroke": {"signal": "colorBlackOutline"}
+                        }
+                      }
+                    },
+                    {
+                      "type": "arc",
+                      "name": "arc-layer-1-radial",
+                      "from": {"data": "dataset-year"},
+                      "encode": {
+                        "enter": {
+                          "x": {"signal": "positionX"},
+                          "y": {"signal": "positionY"},
+                          "startAngle": {"signal": "datum.startAngle"},
+                          "endAngle": {"signal": "datum.startAngle"},
+                          "innerRadius": {
+                            "scale": "scaleRadius",
+                            "signal": "datum.Diseases"
+                          },
+                          "outerRadius": {
+                            "scale": "scaleRadius",
+                            "signal": "datum.Diseases2"
+                          },
+                          "strokeOpacity": {"signal": "strokeOpacityOutline"},
+                          "strokeWidth": {"signal": "strokeWidthOutline"},
+                          "stroke": {"signal": "colorBlueOutline"}
+                        }
+                      }
+                    },
+                    {
+                      "type": "arc",
+                      "name": "arc-layer-2-radial",
+                      "from": {"data": "dataset-year"},
+                      "encode": {
+                        "enter": {
+                          "x": {"signal": "positionX"},
+                          "y": {"signal": "positionY"},
+                          "startAngle": {"signal": "datum.startAngle"},
+                          "endAngle": {"signal": "datum.startAngle"},
+                          "innerRadius": {
+                            "scale": "scaleRadius",
+                            "signal": "datum.Wounds"
+                          },
+                          "outerRadius": {
+                            "scale": "scaleRadius",
+                            "signal": "datum.Wounds2"
+                          },
+                          "strokeOpacity": {"signal": "strokeOpacityOutline"},
+                          "strokeWidth": {"signal": "strokeWidthOutline"},
+                          "stroke": {"signal": "colorPinkOutline"}
+                        }
+                      }
+                    },
+                    {
+                      "type": "arc",
+                      "name": "arc-layer-3-radial",
+                      "from": {"data": "dataset-year"},
+                      "encode": {
+                        "enter": {
+                          "x": {"signal": "positionX"},
+                          "y": {"signal": "positionY"},
+                          "startAngle": {"signal": "datum.startAngle"},
+                          "endAngle": {"signal": "datum.startAngle"},
+                          "innerRadius": {
+                            "scale": "scaleRadius",
+                            "signal": "datum.Other"
+                          },
+                          "outerRadius": {
+                            "scale": "scaleRadius",
+                            "signal": "datum.Other2"
+                          },
+                          "strokeOpacity": {"signal": "strokeOpacityOutline"},
+                          "strokeWidth": {"signal": "strokeWidthOutline"},
+                          "stroke": {"signal": "colorBlackOutline"}
+                        }
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "name": "text-location",
+                      "from": {"data": "dataset-year"},
+                      "encode": {
+                        "enter": {
+                          "align": {"value": "center"},
+                          "baseline": {"value": "middle"},
+                          "x": {"signal": "positionX-7"},
+                          "y": {"signal": "positionY+7"},
+                          "radius": {
+                            "scale": "scaleRadius",
+                            "signal": "pow(datum.Diseases,1/0.98)<110?110:pow(datum.Diseases,1/0.98)/(datum.id1==4?3:0.7)"
+                          },
+                          "theta": {"signal": "datum.startAngle"},
+                          "angle": {
+                            "signal": "datum.id1==4?270:datum.id1==7?0:0"
+                          },
+                          "text": {
+                            "signal": "datum.id1==4?'BULGARIA':datum.id1==7?'CRIMEA':''"
+                          },
+                          "fontSize": {"signal": "fontSizeLocation"},
+                          "fill": {"signal": "colorLabels"},
+                          "fontWeight": {"value": "bolder"},
+                          "fontStyle": {"value": "italic"}
+                        }
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "name": "text-month",
+                      "from": {"data": "dataset-year"},
+                      "encode": {
+                        "enter": {
+                          "fontSize": {"signal": "datum.Chart==1?11:9"},
+                          "x": {"signal": "positionX"},
+                          "y": {"signal": "positionY"},
+                          "radius": {
+                            "scale": "scaleRadius",
+                            "signal": "pow(datum.Diseases,1/0.98)<110?110:pow(datum.Diseases,1/0.98)"
+                          },
+                          "theta": {
+                            "signal": "(datum.startAngle + datum.endAngle)/2"
+                          },
+                          "angle": {
+                            "signal": "360*(datum.startAngle+(datum.endAngle-datum.startAngle)/2)/2/PI"
+                          },
+                          "fill": {"signal": "colorLabels"},
+                          "fontWeight": {"value": "bolder"},
+                          "align": {"value": "center"},
+                          "baseline": {"value": "middle"},
+                          "lineBreak": {"value": "\n"},
+                          "text": {
+                            "signal": "(datum.Year==1854&&datum.Month=='April')?upper(datum.Month)+'\\n'+datum.Year:(datum.Year==1855&&datum.Month=='March')?upper(datum.Month)+' '+datum.Year:(datum.Year==1856&&datum.Month=='January')?upper(datum.Month)+'\\n'+datum.Year:(datum.Year==1855&&(datum.Month=='April'||datum.Month=='January'))?upper(datum.Month)+' '+datum.Year:upper(datum.Month)"
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "rule",
+              "name": "rule-years-connector1",
+              "encode": {
+                "enter": {
+                  "opacity": {"signal": "0.3"},
+                  "strokeWidth": {"signal": "2"},
+                  "strokeDash": {"signal": "[1,0,3]"},
+                  "x": {"signal": "-145"},
+                  "y": {"signal": "10"},
+                  "x2": {"signal": "105"},
+                  "y2": {"signal": "115"}
+                }
+              }
+            },
+            {
+              "type": "rule",
+              "name": "rule-years-connector2",
+              "encode": {
+                "enter": {
+                  "opacity": {"signal": "0.3"},
+                  "strokeWidth": {"signal": "2"},
+                  "strokeDash": {"signal": "[1,0,3]"},
+                  "x": {"signal": "105"},
+                  "y": {"signal": "115"},
+                  "x2": {"signal": "350"},
+                  "y2": {"signal": "10"}
+                }
+              }
+            },
+            {
+              "type": "text",
+              "name": "text-description",
+              "encode": {
+                "enter": {
+                  "fill": {"signal": "colorText"},
+                  "opacity": {"value": 1},
+                  "font": {"signal": "fontText"},
+                  "fontSize": {"value": 18},
+                  "fontWeight": {"value": "bolder"},
+                  "x": {"signal": "-width*0.4"},
+                  "y": {"value": 190},
+                  "width": {"value": 110},
+                  "lineBreak": {"value": "\n"},
+                  "lineHeight": {"value": 19},
+                  "text": {
+                    "value": "The Areas of the blue, red, & black wedges are each measured from\nthe centre as the common vertex.\nThe blue wedges measured from the centre of the circle represent area\nfor area the deaths from Preventable or Mitigable Zymotic Diseases;the\n   red wedges measured from the centre the deaths from wounds, & the\n   black wedges measured from the centre the deaths from all other causes.\nThe black line across the red triangle in Nov. 1854 marks the boundary\n   of the deaths from all other causes during the month.\nIn October 1854, & April 1855, the black area coincides with the red,\n   in January & February 1856, the blue coincides with the black.\nThe entire areas may be compared by following the blue, the red, & the\n   black lines enclosing them."
+                  }
+                }
+              }
+            },
+            {
+              "type": "text",
+              "name": "text-author",
+              "encode": {
+                "enter": {
+                  "fill": {"signal": "colorText"},
+                  "opacity": {"value": 0.8},
+                  "font": {"signal": "fontText"},
+                  "fontSize": {"value": 14},
+                  "fontWeight": {"value": "bolder"},
+                  "x": {"signal": "600"},
+                  "y": {"value": 420},
+                  "width": {"value": 110},
+                  "lineBreak": {"value": "\n"},
+                  "text": {"value": "Vega Version: Andrzej Leszkiewicz"}
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "rule-divider",
       "type": "rule",
       "encode": {
         "update": {
-          "x": {"signal": "width-scrollBarWidth-2"},
-          "x2": {"signal": "width-scrollBarWidth-2"},
-          "y": {"signal": "0"},
-          "y2": {"signal": "scrollAreaHeight"},
+          "opacity": {"signal": "0.5"},
           "stroke": {"signal": "'black'"},
-          "strokeWidth": {"signal": "0.2"}
+          "strokeWidth": {"signal": "5"},
+          "x": {"signal": "dividerMouseDragX"},
+          "y": {"signal": "-225"},
+          "x2": {"signal": "dividerMouseDragX"},
+          "y2": {"signal": "455"},
+          "cursor": {"value": "col-resize"}
         }
       }
     },
     {
-      "name": "rule-scrolltrack-2",
-      "type": "rule",
-      "encode": {
-        "update": {
-          "x": {"signal": "width"},
-          "x2": {"signal": "width"},
-          "y": {"signal": "0"},
-          "y2": {"signal": "scrollAreaHeight"},
-          "stroke": {"signal": "'black'"},
-          "strokeWidth": {"signal": "0.2"}
-        }
-      }
-    },
-    {
-      "name": "rect-scrollbar",
-      "type": "rect",
-      "encode": {
-        "update": {
-          "x": {"signal": "width-scrollBarWidth-1"},
-          "y": {"scale": "scaleScrollBarY", "signal": "scrollPosition"},
-          "width": {"signal": "scrollBarWidth"},
-          "height": {"signal": "scrollBarHeight"},
-          "fill": {"value": "#666666"},
-          "fillOpacity": {"signal": "scrollbarFillOpacity"}
-        }
-      }
-    },
-    {
-      "name": "rect-table-cell",
-      "type": "rect",
-      "from": {"data": "dataset"},
-      "encode": {
-        "update": {
-          "x": {"signal": "0"},
-          "x2": {"signal": "width-scrollBarWidth-3"},
-          "y": {"scale": "scaleY", "field": "id", "band": 0},
-          "height": {"signal": "rowHeight"},
-          "fill": {
-            "scale": "scaleRowStripeColors",
-            "signal": "(ceil(datum.id/2,0)==datum.id/2)?1:0"
-          }
-        }
-      }
-    },
-    {
-      "name": "text-cell-content",
       "type": "text",
-      "from": {"data": "dataset"},
+      "name": "text-helper",
       "encode": {
-        "update": {
-          "text": {"signal": "'Test Row #'+datum.id"},
-          "dx": {"value": 5},
-          "y": {"scale": "scaleY", "field": "id", "band": 0.5},
-          "baseline": {"value": "middle"},
-          "align": {"value": "left"}
+        "enter": {
+          "align": {"value": "left"},
+          "baseline": {"value": "top"},
+          "x": {"signal": "-195"},
+          "y": {"signal": "-260"},
+          "fill": {"signal": "'red'"},
+          "font": {"signal": "fontSubtitle2"},
+          "fontSize": {"value": 14},
+          "fontWeight": {"value": "lighter"},
+          "lineBreak": {"value": "\n"},
+          "text": {
+            "value": "Drag the line to switch between the reproduction \nand the original chart designed by Florence Nightingale"
+          }
         }
       }
     }
