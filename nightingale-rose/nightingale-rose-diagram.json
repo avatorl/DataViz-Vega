@@ -11,7 +11,7 @@
     "Data Source URL": "https://archive.org/details/mortalityofbriti00lond/page/18/mode/2up?view=theater"
   },
   "autosize": "pad",
-  "padding": {"bottom": 0, "left": 0, "right": 0, "top": 20},
+  "padding": {"bottom": 20, "left": 0, "right": 0, "top": 15},
   "background": "#EFDFC5",
   "config": {},
   "data": [
@@ -74,6 +74,15 @@
     {
       "name": "dataset-combined",
       "source": ["dataset-chart-2", "dataset-chart-1"]
+    },
+    {
+      "name": "dataset-horizontal-lines",
+      "values": [
+        {"x": "-95", "x2": "25", "y": "-164"},
+        {"x": "190", "x2": "420", "y": "-150"},
+        {"x": "212", "x2": "401", "y": "-153"},
+        {"x": "578", "x2": "686", "y": "-164"}
+      ]
     }
   ],
   "signals": [
@@ -124,13 +133,8 @@
     {
       "name": "showDividerText",
       "description": "will be set to false when the split screen divider line moved to right. used to hide the line.",
-      "init": "true",
-      "on": [
-        {
-          "events": "[@rule-divider:pointerdown, window:pointerup] > window:pointermove",
-          "update": "(showDividerText&&dividerMouseDragX>-185)?false:showDividerText"
-        }
-      ]
+      "value": "true",
+      "update": "(showDividerText&&dividerMouseDragX>-165)?false:showDividerText"
     },
     {
       "name": "dividerMouseDragX",
@@ -138,7 +142,7 @@
       "init": "-195",
       "on": [
         {
-          "events": "[@rule-divider:pointerdown, window:pointerup] > window:pointermove",
+          "events": "[@rule-divider-wide:pointerdown, window:pointerup] > window:pointermove",
           "update": "round(clamp(x(),-195,835))",
           "force": true
         }
@@ -165,7 +169,7 @@
           "x": {"signal": "-215"},
           "y": {"signal": "-232"},
           "width": {"signal": "1040"},
-          "height": {"signal": "690"},
+          "height": {"signal": "680"},
           "clip": {"signal": "true"},
           "opacity": {"value": 1},
           "fill": {"signal": "'#EFDFC5'"}
@@ -247,7 +251,7 @@
                   "title": {
                     "anchor": "start",
                     "baseline": "middle",
-                    "dy": {"signal": "data('dataset-year')[0].Chart==1?33:5"},
+                    "dy": {"signal": "data('dataset-year')[0].Chart==1?33:6"},
                     "dx": {
                       "signal": "data('dataset-year')[0].Chart==1?320:160"
                     },
@@ -551,6 +555,21 @@
             },
             {
               "type": "rule",
+              "name": "rule-horizontal-lines",
+              "from": {"data": "dataset-horizontal-lines"},
+              "encode": {
+                "enter": {
+                  "opacity": {"signal": "1"},
+                  "strokeWidth": {"signal": "0.5"},
+                  "x": {"field": "x"},
+                  "x2": {"field": "x2"},
+                  "y": {"field": "y"},
+                  "y2": {"field": "y"}
+                }
+              }
+            },
+            {
+              "type": "rule",
               "name": "rule-years-connector1",
               "encode": {
                 "enter": {
@@ -623,38 +642,55 @@
       ]
     },
     {
-      "name": "rule-divider",
-      "comment": "split screen divider line",
+      "name": "rule-divider-narrow",
+      "comment": "Split screen divider line: narrow and visible, looks better than the wide one.",
       "type": "rule",
+      "zindex": 1,
       "encode": {
         "update": {
-          "opacity": {"signal": "0.5"},
-          "stroke": {"signal": "'black'"},
-          "strokeWidth": {"signal": "5"},
           "x": {"signal": "dividerMouseDragX"},
           "y": {"signal": "-225"},
           "x2": {"signal": "dividerMouseDragX"},
           "y2": {"signal": "455"},
+          "opacity": {"signal": "1"},
+          "stroke": {"signal": "showDividerText?'red':'black'"},
+          "strokeWidth": {"signal": "1"},
           "cursor": {"value": "col-resize"}
         }
       }
     },
     {
+      "name": "rule-divider-wide",
+      "comment": "Split screen divider line: wide but invisible, easier to catch and drug.",
+      "type": "rule",
+      "zindex": 2,
+      "encode": {
+        "update": {
+          "x": {"signal": "dividerMouseDragX"},
+          "y": {"signal": "-225"},
+          "x2": {"signal": "dividerMouseDragX"},
+          "y2": {"signal": "455"},
+          "opacity": {"signal": "0"},
+          "strokeWidth": {"signal": "10"},
+          "cursor": {"value": "col-resize"}
+        }
+      }
+    },
+    {
+      "name": "text-rule-divider-helper",
+      "comment": "To instruct a user that the vertical line is draggable. The text dissapears when the line has been moved to the right.",
       "type": "text",
-      "name": "text-helper",
       "encode": {
         "enter": {
+          "text": {
+            "value": "Drag the line to switch between the Vega reproduction \nand the facsimile of the original Florence Nightingale's rose diagram"
+          },
+          "x": {"signal": "-197"},
+          "y": {"signal": "-245"},
           "align": {"value": "left"},
-          "baseline": {"value": "top"},
-          "x": {"signal": "-195"},
-          "y": {"signal": "-260"},
           "fill": {"signal": "'red'"},
           "font": {"signal": "fontSubtitle2"},
-          "fontWeight": {"value": "lighter"},
-          "lineBreak": {"value": "\n"},
-          "text": {
-            "value": "Drag the line to switch between the reproduction \nand the original chart designed by Florence Nightingale"
-          }
+          "lineBreak": {"value": "\n"}
         },
         "update": {"fontSize": {"signal": "showDividerText?14:0"}}
       }
