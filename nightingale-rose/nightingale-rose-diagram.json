@@ -12,7 +12,7 @@
   },
   "autosize": "pad",
   "padding": {"bottom": 20, "left": 0, "right": 0, "top": 15},
-  "background": "#EFDFC5",
+  "background": "#EEEEEE",
   "config": {},
   "data": [
     {
@@ -140,7 +140,7 @@
       "on": [
         {
           "events": "[@rule-divider-wide:pointerdown, window:pointerup] > window:pointermove",
-          "update": "round(clamp(x(),-195,835))",
+          "update": "round(clamp(x(),-195,830))",
           "force": true
         }
       ]
@@ -169,7 +169,7 @@
           "height": {"signal": "680"},
           "clip": {"signal": "true"},
           "opacity": {"value": 1},
-          "fill": {"signal": "'#EFDFC5'"}
+          "fill": {"signal": "'#EEEEEE'"}
         }
       },
       "marks": [
@@ -195,11 +195,11 @@
         "update": {
           "x": {"signal": "dividerMouseDragX"},
           "y": {"signal": "-230"},
-          "width": {"signal": "1050"},
+          "width": {"signal": "1040"},
           "height": {"signal": "680"},
           "clip": {"signal": "true"},
           "opacity": {"value": 1},
-          "fill": {"signal": "'#EFDFC5'"}
+          "fill": {"signal": "'#EEEEEE'"}
         }
       },
       "marks": [
@@ -681,7 +681,7 @@
             "value": "Drag the line to switch between the Vega reproduction \nand the facsimile of the original Florence Nightingale's rose diagram"
           },
           "x": {"signal": "-197"},
-          "y": {"signal": "-245"},
+          "y": {"signal": "-250"},
           "align": {"value": "left"},
           "fill": {"signal": "'red'"},
           "font": {"signal": "fontSubtitle2"},
