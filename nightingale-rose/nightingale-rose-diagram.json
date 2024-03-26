@@ -560,7 +560,7 @@
                   "font": {"signal": "fontText"},
                   "fontSize": {"value": 18},
                   "fontWeight": {"value": "bolder"},
-                  "x": {"signal": "-width*0.4"},
+                  "x": {"signal": "-180"},
                   "y": {"value": 190},
                   "width": {"value": 110},
                   "lineBreak": {"value": "\n"},
