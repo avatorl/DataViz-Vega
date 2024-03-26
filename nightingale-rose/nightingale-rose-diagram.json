@@ -12,7 +12,7 @@
   },
   "autosize": "pad",
   "padding": {"bottom": 20, "left": 0, "right": 0, "top": 15},
-  "background": "#EEEEEE",
+  "background": "#FFFFFF",
   "config": {},
   "data": [
     {
@@ -131,16 +131,16 @@
       "name": "showDividerText",
       "description": "will be set to false when the split screen divider line moved to right. used to hide the line.",
       "value": "true",
-      "update": "(showDividerText&&dividerMouseDragX>-165)?false:showDividerText"
+      "update": "(showDividerText&&dividerMouseDragX>-195)?false:showDividerText"
     },
     {
       "name": "dividerMouseDragX",
       "description": "x position of the split screen divider line",
-      "init": "-195",
+      "init": "-200",
       "on": [
         {
           "events": "[@rule-divider-wide:pointerdown, window:pointerup] > window:pointermove",
-          "update": "round(clamp(x(),-195,830))",
+          "update": "round(clamp(x(),-200,830))",
           "force": true
         }
       ]
@@ -164,12 +164,12 @@
       "encode": {
         "update": {
           "x": {"signal": "-215"},
-          "y": {"signal": "-232"},
+          "y": {"signal": "-280"},
           "width": {"signal": "1040"},
-          "height": {"signal": "680"},
+          "height": {"signal": "780"},
           "clip": {"signal": "true"},
           "opacity": {"value": 1},
-          "fill": {"signal": "'#EEEEEE'"}
+          "fill": {"signal": "'#eedec4'"}
         }
       },
       "marks": [
@@ -180,7 +180,7 @@
             "enter": {
               "url": {"signal": "facsimileUrl"},
               "x": {"signal": "14"},
-              "y": {"signal": "0"},
+              "y": {"signal": "48"},
               "width": {"signal": "1026"},
               "height": {"signal": "690"}
             },
@@ -194,12 +194,12 @@
       "encode": {
         "update": {
           "x": {"signal": "dividerMouseDragX"},
-          "y": {"signal": "-230"},
+          "y": {"signal": "-280"},
           "width": {"signal": "1040"},
-          "height": {"signal": "680"},
+          "height": {"signal": "800"},
           "clip": {"signal": "true"},
           "opacity": {"value": 1},
-          "fill": {"signal": "'#EEEEEE'"}
+          "fill": {"signal": "'#ffffff'"}
         }
       },
       "marks": [
@@ -208,9 +208,9 @@
           "encode": {
             "update": {
               "x": {"signal": "-dividerMouseDragX"},
-              "y": {"signal": "230"},
+              "y": {"signal": "280"},
               "x2": {"signal": "1050"},
-              "height": {"signal": "680"},
+              "height": {"signal": "800"},
               "clip": {"signal": "false"}
             }
           },
@@ -644,9 +644,9 @@
       "encode": {
         "update": {
           "x": {"signal": "dividerMouseDragX"},
-          "y": {"signal": "-225"},
+          "y": {"signal": "-280"},
           "x2": {"signal": "dividerMouseDragX"},
-          "y2": {"signal": "445"},
+          "y2": {"signal": "500"},
           "opacity": {"signal": "1"},
           "stroke": {"signal": "showDividerText?'red':'black'"},
           "strokeWidth": {"signal": "1"},
@@ -662,9 +662,9 @@
       "encode": {
         "update": {
           "x": {"signal": "dividerMouseDragX"},
-          "y": {"signal": "-225"},
+          "y": {"signal": "-280"},
           "x2": {"signal": "dividerMouseDragX"},
-          "y2": {"signal": "445"},
+          "y2": {"signal": "480"},
           "opacity": {"signal": "0"},
           "strokeWidth": {"signal": "10"},
           "cursor": {"value": "col-resize"}
@@ -680,14 +680,52 @@
           "text": {
             "value": "Drag the line to switch between the Vega reproduction \nand the facsimile of the original Florence Nightingale's rose diagram"
           },
-          "x": {"signal": "-197"},
-          "y": {"signal": "-250"},
+          "x": {"signal": "-190"},
+          "y": {"signal": "465"},
           "align": {"value": "left"},
           "fill": {"signal": "'red'"},
           "font": {"signal": "fontSubtitle2"},
           "lineBreak": {"value": "\n"}
         },
         "update": {"fontSize": {"signal": "showDividerText?14:0"}}
+      }
+    },
+    {
+      "name": "text-view-original",
+      "comment": "Facsimile of the 1959 Original",
+      "type": "text",
+      "encode": {
+        "enter": {
+          "text": {"value": "Facsimile of the 1958 Original"},
+          "y": {"signal": "-255"},
+          "align": {"value": "right"},
+          "fill": {"signal": "'grey'"},
+          "font": {"signal": "fontSubtitle2"},
+          "lineBreak": {"value": "\n"}
+        },
+        "update": {
+          "x": {"signal": "dividerMouseDragX-10"},
+          "fontSize": {"signal": "dividerMouseDragX>=50?18:0"}
+        }
+      }
+    },
+    {
+      "name": "text-view-vega",
+      "comment": "Vega Reproduction by Andrzej Leszkiewicz (2022-2024)",
+      "type": "text",
+      "encode": {
+        "enter": {
+          "text": {"value": "Reproduction by Andrzej Leszkiewicz"},
+          "y": {"signal": "-255"},
+          "align": {"value": "left"},
+          "fill": {"signal": "'grey'"},
+          "font": {"signal": "fontSubtitle2"},
+          "lineBreak": {"value": "\n"}
+        },
+        "update": {
+          "x": {"signal": "dividerMouseDragX+5"},
+          "fontSize": {"signal": "dividerMouseDragX<=500?18:0"}
+        }
       }
     }
   ]
