@@ -209,7 +209,7 @@
             "update": {
               "x": {"signal": "-dividerMouseDragX"},
               "y": {"signal": "230"},
-              "x2": {"signal": "1100"},
+              "x2": {"signal": "1050"},
               "height": {"signal": "680"},
               "clip": {"signal": "false"}
             }
