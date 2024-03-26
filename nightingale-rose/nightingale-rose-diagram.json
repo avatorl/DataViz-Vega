@@ -165,7 +165,7 @@
         "update": {
           "x": {"signal": "-215"},
           "y": {"signal": "-280"},
-          "width": {"signal": "1040"},
+          "width": {"signal": "1045"},
           "height": {"signal": "735"},
           "clip": {"signal": "true"},
           "opacity": {"value": 1},
