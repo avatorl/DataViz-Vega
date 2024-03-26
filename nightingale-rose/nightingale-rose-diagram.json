@@ -195,7 +195,7 @@
         "update": {
           "x": {"signal": "dividerMouseDragX"},
           "y": {"signal": "-230"},
-          "width": {"signal": "850-dividerMouseDragX"},
+          "width": {"signal": "1030"},
           "height": {"signal": "680"},
           "clip": {"signal": "true"},
           "opacity": {"value": 1},
@@ -570,7 +570,7 @@
                 "enter": {
                   "opacity": {"signal": "0.3"},
                   "strokeWidth": {"signal": "2"},
-                  "strokeDash": {"signal": "[1,0,3]"},
+                  "strokeDash": {"signal": "[1,0,1]"},
                   "x": {"signal": "-145"},
                   "y": {"signal": "10"},
                   "x2": {"signal": "105"},
@@ -585,7 +585,7 @@
                 "enter": {
                   "opacity": {"signal": "0.3"},
                   "strokeWidth": {"signal": "2"},
-                  "strokeDash": {"signal": "[1,0,3]"},
+                  "strokeDash": {"signal": "[1,0,1]"},
                   "x": {"signal": "105"},
                   "y": {"signal": "115"},
                   "x2": {"signal": "350"},
