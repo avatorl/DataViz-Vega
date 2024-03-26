@@ -622,7 +622,7 @@
           "fontWeight": {"value": "lighter"},
           "lineBreak": {"value": "\n"},
           "text": {
-            "value": "Drag the line to switch between the reproduction \nand the original chart designed by Florence Nightingale"
+            "value": "Drag the line to switch between the Vega reproduction \nand the original Florence Nightingale's Rose Diagram"
           }
         }
       }
