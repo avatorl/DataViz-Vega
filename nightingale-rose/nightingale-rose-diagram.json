@@ -692,11 +692,10 @@
     },
     {
       "name": "text-view-original",
-      "comment": "Facsimile of the 1959 Original",
       "type": "text",
       "encode": {
         "enter": {
-          "text": {"value": "Facsimile of the 1959 Original"},
+          "text": {"value": "Florence Nightingale's Rose Diagram (1959)"},
           "y": {"signal": "-255"},
           "align": {"value": "right"},
           "fill": {"signal": "'grey'"},
@@ -705,17 +704,16 @@
         },
         "update": {
           "x": {"signal": "dividerMouseDragX-10"},
-          "fontSize": {"signal": "dividerMouseDragX>=50?18:0"}
+          "fontSize": {"signal": "dividerMouseDragX>=165?18:0"}
         }
       }
     },
     {
       "name": "text-view-vega",
-      "comment": "Vega Reproduction by Andrzej Leszkiewicz (2022-2024)",
       "type": "text",
       "encode": {
         "enter": {
-          "text": {"value": "Reproduction by Andrzej Leszkiewicz"},
+          "text": {"value": "Vega Reproduction (2022-2024)"},
           "y": {"signal": "-255"},
           "align": {"value": "left"},
           "fill": {"signal": "'grey'"},
@@ -724,7 +722,7 @@
         },
         "update": {
           "x": {"signal": "dividerMouseDragX+10"},
-          "fontSize": {"signal": "dividerMouseDragX<=500?18:0"}
+          "fontSize": {"signal": "dividerMouseDragX<=570?18:0"}
         }
       }
     }
