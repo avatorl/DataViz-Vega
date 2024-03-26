@@ -159,18 +159,34 @@
   ],
   "marks": [
     {
-      "type": "image",
-      "name": "image-facsimile",
+      "type": "group",
       "encode": {
-        "enter": {
-          "url": {"signal": "facsimileUrl"},
-          "x": {"signal": "-240"},
+        "update": {
+          "x": {"signal": "-215"},
           "y": {"signal": "-230"},
-          "width": {"signal": "1100"},
-          "height": {"signal": "680"}
-        },
-        "update": {"opacity": {"signal": "true"}}
-      }
+          "width": {"signal": "1050"},
+          "height": {"signal": "680"},
+          "clip": {"signal": "true"},
+          "opacity": {"value": 1},
+          "fill": {"signal": "'#EFDFC5'"}
+        }
+      },
+      "marks": [
+        {
+          "type": "image",
+          "name": "image-facsimile",
+          "encode": {
+            "enter": {
+              "url": {"signal": "facsimileUrl"},
+              "x": {"signal": "0"},
+              "y": {"signal": "3"},
+              "width": {"signal": "1050"},
+              "height": {"signal": "680"}
+            },
+            "update": {"opacity": {"signal": "true"}}
+          }
+        }
+      ]
     },
     {
       "type": "group",
