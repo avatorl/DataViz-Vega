@@ -122,12 +122,25 @@
     {"name": "fontSizeSubtitle2", "value": 15},
     {"name": "fontSizeLocation", "value": 9},
     {
+      "name": "showDividerText",
+      "description": "will be set to false when the split screen divider line moved to right. used to hide the line.",
+      "init": "true",
+      "on": [
+        {
+          "events": "[@rule-divider:pointerdown, window:pointerup] > window:pointermove",
+          "update": "(showDividerText&&dividerMouseDragX>-185)?false:showDividerText"
+        }
+      ]
+    },
+    {
       "name": "dividerMouseDragX",
+      "description": "x position of the split screen divider line",
       "init": "-195",
       "on": [
         {
           "events": "[@rule-divider:pointerdown, window:pointerup] > window:pointermove",
-          "update": "round(clamp(x(),-195,835))"
+          "update": "round(clamp(x(),-195,835))",
+          "force": true
         }
       ]
     }
@@ -595,6 +608,7 @@
     },
     {
       "name": "rule-divider",
+      "comment": "split screen divider line",
       "type": "rule",
       "encode": {
         "update": {
@@ -620,13 +634,13 @@
           "y": {"signal": "-260"},
           "fill": {"signal": "'red'"},
           "font": {"signal": "fontSubtitle2"},
-          "fontSize": {"value": 14},
           "fontWeight": {"value": "lighter"},
           "lineBreak": {"value": "\n"},
           "text": {
             "value": "Drag the line to switch between the reproduction \nand the original chart designed by Florence Nightingale"
           }
-        }
+        },
+        "update": {"fontSize": {"signal": "showDividerText?14:0"}}
       }
     }
   ]
