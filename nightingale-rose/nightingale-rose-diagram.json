@@ -163,9 +163,9 @@
       "encode": {
         "update": {
           "x": {"signal": "-215"},
-          "y": {"signal": "-230"},
-          "width": {"signal": "1050"},
-          "height": {"signal": "680"},
+          "y": {"signal": "-232"},
+          "width": {"signal": "1040"},
+          "height": {"signal": "690"},
           "clip": {"signal": "true"},
           "opacity": {"value": 1},
           "fill": {"signal": "'#EFDFC5'"}
@@ -178,10 +178,10 @@
           "encode": {
             "enter": {
               "url": {"signal": "facsimileUrl"},
-              "x": {"signal": "0"},
-              "y": {"signal": "3"},
-              "width": {"signal": "1050"},
-              "height": {"signal": "680"}
+              "x": {"signal": "14"},
+              "y": {"signal": "0"},
+              "width": {"signal": "1026"},
+              "height": {"signal": "690"}
             },
             "update": {"opacity": {"signal": "true"}}
           }
@@ -197,7 +197,7 @@
           "width": {"signal": "850-dividerMouseDragX"},
           "height": {"signal": "680"},
           "clip": {"signal": "true"},
-          "opacity": {"value": 1},
+          "opacity": {"value": 0.1},
           "fill": {"signal": "'#EFDFC5'"}
         }
       },
@@ -590,7 +590,7 @@
                   "fontSize": {"value": 18},
                   "fontWeight": {"value": "bolder"},
                   "x": {"signal": "-182"},
-                  "y": {"value": 191},
+                  "y": {"value": 193},
                   "width": {"value": 110},
                   "lineBreak": {"value": "\n"},
                   "lineHeight": {"value": 19},
@@ -610,8 +610,8 @@
                   "font": {"signal": "fontText"},
                   "fontSize": {"value": 14},
                   "fontWeight": {"value": "bolder"},
-                  "x": {"signal": "635"},
-                  "y": {"value": 417},
+                  "x": {"signal": "640"},
+                  "y": {"value": 421},
                   "width": {"value": 110},
                   "lineBreak": {"value": "\n"},
                   "text": {"value": "Vega Version: Andrzej Leszkiewicz"}
