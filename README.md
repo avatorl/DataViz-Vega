@@ -41,3 +41,7 @@ Deneb (custom visual for Power BI): https://deneb-viz.github.io/
 
 Vega visualization grammar: https://vega.github.io/vega/
 
+---
+
+© Andrzej Leszkiewicz
+
