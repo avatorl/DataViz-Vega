@@ -13,17 +13,19 @@ The following image is just an overview of the visualizations presented in this 
 
 The visualizations shared in this repository are just showcases of Deneb-Vega capabilities and results of author's experiments. Some of them may still require additional testing, debugging and code cleaning to be done. Feel free to create an Issue if you noticed any problem.
 
-## Author of the templates
+## Deneb Vega Help
+
+Do you need help with Deneb custom visual for Power BI and/or Vega visualization grammar?
+
+See https://github.com/avatorl/Deneb-Vega-Help/
+
+## Author of the Examples
 
 Andrzej Leszkiewicz
 - Website (blog): [Power of Business Intelligence](https://powerofbi.org/)
 - Twitter: [@avatorl](https://twitter.com/avatorl)
 - LinkedIn: [@avatorl](https://www.linkedin.com/in/avatorl/)
 - YouTube: [@power-of-bi](https://www.youtube.com/@power-of-bi)
-
-### Deneb Vega Help
-
-Do you need help with Deneb/Vega data visualizations? See https://github.com/avatorl/Deneb-Vega-Help/
 
 ## Sponsorship
 
