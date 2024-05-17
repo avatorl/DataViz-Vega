@@ -27,10 +27,6 @@ Andrzej Leszkiewicz
 
 Subscribe / Follow
 
-## Sponsorship
-
-If one of the visualizations really helped you (you have used the code for a commercial projects) or if you just want to say thank you, feel free to click the Sponsor button.
-
 ## Other Resources
 
 Deneb (custom visual for Power BI): https://deneb-viz.github.io/
@@ -40,6 +36,10 @@ Vega visualization grammar: https://vega.github.io/vega/
 Data visualization templates for Deneb: https://github.com/avatorl/Deneb-Vega-Templates/.
 
 The templates are examples of Vega data visualizations that can be used in Deneb as is or as a starting point for developing more advanced custom data visualizations.
+
+## Sponsorship
+
+If one of the visualizations really helped you (you have used the code for a commercial projects) or if you just want to say thank you, feel free to click the Sponsor button.
 
 ---
 
