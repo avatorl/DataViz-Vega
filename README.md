@@ -4,7 +4,9 @@ This repository contains source code and data for data visualizations created by
 
 Each folder in this repository usually contains one visualization example: one Vega specification file (JSON) and at least one data file (CSV or JSON). Some examples may be presented in multiple variations and therefore have more than one Vega specification file per folder.
 
-Live visualization, generated on the fly using the files from this repository: https://powerofbi.org/deneb-vega-data-visualization-examples/
+Live visualization, generated on the fly using the files from this repository:
+
+https://powerofbi.org/deneb-vega-data-visualization-examples/
 
 The following images are just snapshots of the visualizations. They may be outdated and incomplete.
 
