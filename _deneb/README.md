@@ -1,1 +1,1 @@
-# Various Deneb/Vega Solutions other than Data Visualizations
+# Various Deneb/Vega Solutions other then Data Visualizations
