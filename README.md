@@ -1,6 +1,6 @@
 # Data Visualizations Created Using Vega Visualization Grammar
 
-This repository contains source code and data for data visualizations created by Andrzej Leszkiewicz using Vega visualization grammar. The visualizations presented here can be embedded into any Power BI report using the Deneb custom visual, as well as directly into any web page or app.
+This repository contains source code and data for data visualizations created by Andrzej Leszkiewicz using Vega visualization grammar.
 
 Each folder in this repository usually contains one visualization example: one Vega specification file (JSON) and at least one data file (CSV or JSON). Some examples may be presented in multiple variations and therefore have more than one Vega specification file per folder.
 
@@ -12,6 +12,13 @@ The following images are just snapshots of the visualizations. They may be outda
 
 ![Power of BI: Deneb Vega Data Visualization Examples](https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/_images/vega-examples-tumbnails-1.png)
 ![Power of BI: Deneb Vega Data Visualization Examples](https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/_images/vega-examples-tumbnails-2.png)
+
+Vega visualizations can be embedded into reports/dashboards created using one of the following tools:
+- Power BI ([Deneb, certified custom visual for Power BI](https://deneb-viz.github.io/)) /Microsoft/
+- Looker Studio /Google/
+- OpenSearch Dashboards /Amazon Web Services/
+  
+As well as they can be embedded into any web page or app.
 
 ## Deneb Vega Help
 
