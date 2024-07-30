@@ -14,9 +14,9 @@ The following images are just snapshots of the visualizations. They may be outda
 ![Power of BI: Deneb Vega Data Visualization Examples](https://raw.githubusercontent.com/avatorl/Deneb-Vega/main/_images/vega-examples-tumbnails-2.png)
 
 Vega visualizations can be embedded into reports/dashboards created using one of the following tools:
-- Power BI ([Deneb, certified custom visual for Power BI](https://deneb-viz.github.io/)) /Microsoft/
-- Looker Studio /Google/
-- OpenSearch Dashboards /Amazon Web Services/
+- Power BI ([Deneb, certified custom visual for Power BI](https://deneb-viz.github.io/)) - Microsoft
+- Looker Studio - Google
+- OpenSearch Dashboards - Amazon Web Services
   
 As well as they can be embedded into any web page or app.
 
