@@ -158,8 +158,8 @@
         {"signal": "countyCentroid[1]"}
       ],
       "translate": [
-        {"signal": "tooltipSize/2"},
-        {"signal": "tooltipSize/2*1.25"}
+        {"signal": "tooltipSize*0.5"},
+        {"signal": "tooltipSize*0.6"}
       ]
     }
   ],
@@ -204,8 +204,12 @@
         "update": {
           "x": {"signal": "mousePositionXY[0]"},
           "y": {"signal": "mousePositionXY[1]"},
-          "width": {"signal": "county==null ? 0 : tooltipSize"},
-          "height": {"signal": "county==null ? 0 : tooltipSize"}
+          "width": {
+            "signal": "county==null || mousePositionXY[0] == null ? 0 : tooltipSize"
+          },
+          "height": {
+            "signal": "county==null || mousePositionXY[1] == null ? 0 : tooltipSize"
+          }
         }
       },
       "marks": [
