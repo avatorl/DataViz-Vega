@@ -136,414 +136,397 @@
       "domain": {"data": "dataset", "field": "Date"},
       "range": [0, {"signal": "width"}],
       "nice": true
+    },
+    {
+      "name": "scaleY",
+      "type": "linear",
+      "domain": {"data": "dataset", "field": "Temp"},
+      "range": [{"signal": "chartHeight"}, 0],
+      "zero": false,
+      "nice": true
     }
   ],
+  "axes": [
+    {
+      "scale": "scaleY",
+      "orient": "left",
+      "title": {"signal": "unit"},
+      "titleColor": {"signal": "labelColor"},
+      "titleFont": "Tahoma",
+      "titleFontSize": {"signal": "labelFontSize"},
+      "titleFontWeight": "normal",
+      "titleAnchor": "end",
+      "titleAngle": 0,
+      "titlePadding": 10,
+      "domain": false,
+      "ticks": true,
+      "tickCount": 6,
+      "grid": true,
+      "gridColor": {"signal": "labelColor"},
+      "gridDash": [2],
+      "gridWidth": 0.2,
+      "offset": 20,
+      "labelFontSize": {"signal": "labelFontSize"},
+      "labels": true,
+      "labelColor": {"signal": "labelColor"},
+      "encode": {
+        "ticks": {"update": {"x": {"signal": "12"}, "x2": {"signal": "16"}}},
+        "labels": {"update": {"x": {"signal": "12"}}}
+      }
+    },
+    {
+      "scale": "scaleX",
+      "orient": "bottom",
+      "titleColor": {"signal": "labelColor"},
+      "titleFont": "Tahoma",
+      "titleFontSize": {"signal": "labelFontSize"},
+      "titleFontWeight": "normal",
+      "domain": false,
+      "ticks": true,
+      "labels": true,
+      "offset": {"signal": "chartHeight+20"},
+      "tickCount": {"interval": "month", "step": 2},
+      "labelColor": {"signal": "labelColor"},
+      "labelFontSize": {"signal": "labelFontSize"},
+      "encode": {
+        "labels": {
+          "update": {
+            "text": {
+              "signal": "(substring(datum.label,0,1)=='2'?'Jan':substring(datum.label,0,3))+' 1st'"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "title": {
+    "text": {
+      "signal": "title+', 1982-'+data('data-period-years')[0]['Year']+' daily mean'"
+    },
+    "anchor": "start",
+    "font": {"value": "Tahoma"},
+    "fontSize": {"signal": "titleFontSize"},
+    "fontWeight": "lighter",
+    "color": {"signal": "titleColor"},
+    "subtitleFont": {"value": "Tahoma"},
+    "subtitleColor": {"signal": "baseColor"},
+    "subtitleFontSize": {"signal": "subTitleFontSize"},
+    "subtitlePadding": 10,
+    "offset": 13
+  },
   "marks": [
     {
       "type": "group",
-      "scales": [
-        {
-          "name": "scaleY",
-          "type": "linear",
-          "domain": {"data": "dataset", "field": "Temp"},
-          "range": [{"signal": "chartHeight"}, 0],
-          "zero": false,
-          "nice": true
-        }
-      ],
-      "axes": [
-        {
-          "scale": "scaleY",
-          "orient": "left",
-          "title": {"signal": "unit"},
-          "titleColor": {"signal": "labelColor"},
-          "titleFont": "Tahoma",
-          "titleFontSize": {"signal": "labelFontSize"},
-          "titleFontWeight": "normal",
-          "titleAnchor": "end",
-          "titleAngle": 0,
-          "titlePadding": 10,
-          "domain": false,
-          "ticks": true,
-          "tickCount": 6,
-          "grid": true,
-          "gridColor": {"signal": "labelColor"},
-          "gridDash": [2],
-          "gridWidth": 0.2,
-          "offset": 20,
-          "labelFontSize": {"signal": "labelFontSize"},
-          "labels": true,
-          "labelColor": {"signal": "labelColor"},
-          "encode": {
-            "ticks": {
-              "update": {"x": {"signal": "12"}, "x2": {"signal": "16"}}
-            },
-            "labels": {"update": {"x": {"signal": "12"}}}
-          }
-        },
-        {
-          "scale": "scaleX",
-          "orient": "bottom",
-          "titleColor": {"signal": "labelColor"},
-          "titleFont": "Tahoma",
-          "titleFontSize": {"signal": "labelFontSize"},
-          "titleFontWeight": "normal",
-          "domain": false,
-          "ticks": true,
-          "labels": true,
-          "offset": {"signal": "chartHeight+20"},
-          "tickCount": {"interval": "month", "step": 2},
-          "labelColor": {"signal": "labelColor"},
-          "labelFontSize": {"signal": "labelFontSize"},
-          "encode": {
-            "labels": {
-              "update": {
-                "text": {
-                  "signal": "(substring(datum.label,0,1)=='2'?'Jan':substring(datum.label,0,3))+' 1st'"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "title": {
-        "text": {
-          "signal": "title+', 1982-'+data('data-period-years')[0]['Year']+' daily mean'"
-        },
-        "anchor": "start",
-        "font": {"value": "Tahoma"},
-        "fontSize": {"signal": "titleFontSize"},
-        "fontWeight": "lighter",
-        "color": {"signal": "titleColor"},
-        "subtitleFont": {"value": "Tahoma"},
-        "subtitleColor": {"signal": "baseColor"},
-        "subtitleFontSize": {"signal": "subTitleFontSize"},
-        "subtitlePadding": 10,
-        "offset": 13
+      "name": "group-main",
+      "from": {
+        "facet": {"name": "year-series", "data": "dataset", "groupby": "Year"}
       },
       "marks": [
         {
-          "type": "group",
-          "from": {
-            "facet": {
-              "name": "year-series",
-              "data": "dataset",
-              "groupby": "Year"
-            }
-          },
-          "marks": [
-            {
-              "name": "area-temp",
-              "type": "area",
-              "from": {"data": "data-max"},
-              "zindex": 1,
-              "defined": true,
-              "encode": {
-                "enter": {
-                  "x": {"scale": "scaleX", "field": "Date"},
-                  "y": {"scale": "scaleY", "field": "Last"},
-                  "y2": {
-                    "scale": "scaleY",
-                    "signal": "title=='Antarctic Sea Ice Extent'?(datum.Last<datum.Min?datum.Min:datum.Last):(datum.Last>datum.Max?datum.Max:datum.Last)"
-                  },
-                  "fill": {"signal": "'#FF0000'"},
-                  "strokeWidth": {"signal": "0"},
-                  "opacity": {"signal": "0.01"}
-                }
-              }
-            },
-            {
-              "name": "area-temp-prev",
-              "type": "area",
-              "from": {"data": "data-max-prev"},
-              "zindex": 1,
-              "defined": false,
-              "encode": {
-                "enter": {
-                  "x": {"scale": "scaleX", "field": "Date"},
-                  "y": {"scale": "scaleY", "signal": "datum['Prev']"},
-                  "y2": {
-                    "scale": "scaleY",
-                    "signal": "title=='Antarctic Sea Ice Extent'?(datum['Prev']<datum['MinPrev']?datum['MinPrev']:datum['Prev']):(datum['Prev']>datum['MaxPrev']?datum['MaxPrev']:datum['Prev'])"
-                  },
-                  "fill": {"signal": "highlightColor2"},
-                  "strokeWidth": {"signal": "0"},
-                  "opacity": {"signal": "0.01"}
-                }
-              }
-            },
-            {
-              "name": "line-temp-abs-annual",
-              "type": "line",
-              "from": {"data": "year-series"},
-              "zindex": 2,
-              "defined": true,
-              "encode": {
-                "enter": {
-                  "x": {"scale": "scaleX", "field": "Date"},
-                  "y": {"scale": "scaleY", "field": "Temp"},
-                  "stroke": {
-                    "signal": "datum['Year']==extent[1]?highlightColor:datum['Year']==(extent[1]-1)?highlightColor2:seriesColor"
-                  },
-                  "strokeWidth": {"signal": "datum['Year']>=(extent[1]-1)?2:1"},
-                  "opacity": {"signal": "1"},
-                  "interpolate": {"signal": "interpolate"}
-                }
-              }
-            }
-          ]
-        },
-        {
-          "name": "symbol-circle",
-          "type": "symbol",
-          "from": {"data": "data-period-years"},
+          "name": "area-temp",
+          "type": "area",
+          "from": {"data": "data-max"},
+          "zindex": 1,
+          "defined": true,
           "encode": {
             "enter": {
-              "shape": {"value": "circle"},
               "x": {"scale": "scaleX", "field": "Date"},
-              "y": {"scale": "scaleY", "field": "Temp"},
-              "size": {"signal": "100"},
-              "fill": {"signal": "highlightColor"},
-              "stroke": {"signal": "highlightColor"}
-            }
-          }
-        },
-        {
-          "type": "text",
-          "from": {"data": "data-period-years"},
-          "encode": {
-            "enter": {
-              "text": {
-                "signal": "timeFormat(datum['Date'], '%b %d, %Y')+' '+format(datum['Temp'],'.1f')+unit"
+              "y": {"scale": "scaleY", "field": "Last"},
+              "y2": {
+                "scale": "scaleY",
+                "signal": "title=='Antarctic Sea Ice Extent'?(datum.Last<datum.Min?datum.Min:datum.Last):(datum.Last>datum.Max?datum.Max:datum.Last)"
               },
-              "x": {"scale": "scaleX", "field": "Date"},
-              "y": {"scale": "scaleY", "field": "Temp"},
-              "font": {"signal": "'Tahoma'"},
-              "fontSize": {"signal": "subTitleFontSize"},
-              "fontWeight": {"value": "bold"},
-              "fill": {"signal": "highlightColor"},
-              "dx": {"signal": "5"},
-              "dy": {"signal": "-15"}
+              "fill": {"signal": "'#FF0000'"},
+              "strokeWidth": {"signal": "0"},
+              "opacity": {"signal": "0.01"}
             }
           }
         },
         {
-          "type": "text",
-          "from": {"data": "data-period-years-prev"},
+          "name": "area-temp-prev",
+          "type": "area",
+          "from": {"data": "data-max-prev"},
+          "zindex": 1,
+          "defined": false,
           "encode": {
             "enter": {
-              "text": {"signal": "extent[1]-1"},
               "x": {"scale": "scaleX", "field": "Date"},
-              "y": {"scale": "scaleY", "field": "Temp"},
-              "font": {"signal": "'Tahoma'"},
-              "fontSize": {"signal": "subTitleFontSize"},
-              "fontWeight": {"value": "bold"},
+              "y": {"scale": "scaleY", "signal": "datum['Prev']"},
+              "y2": {
+                "scale": "scaleY",
+                "signal": "title=='Antarctic Sea Ice Extent'?(datum['Prev']<datum['MinPrev']?datum['MinPrev']:datum['Prev']):(datum['Prev']>datum['MaxPrev']?datum['MaxPrev']:datum['Prev'])"
+              },
               "fill": {"signal": "highlightColor2"},
-              "dx": {"signal": "5"},
-              "dy": {"signal": "-15"}
+              "strokeWidth": {"signal": "0"},
+              "opacity": {"signal": "0.01"}
             }
           }
         },
         {
-          "type": "rule",
-          "from": {"data": "data-period-years"},
+          "name": "line-temp-abs-annual",
+          "type": "line",
+          "from": {"data": "year-series"},
+          "zindex": 2,
+          "defined": true,
           "encode": {
             "enter": {
               "x": {"scale": "scaleX", "field": "Date"},
-              "y": {"signal": "0"},
-              "y2": {"signal": "chartHeight"},
-              "stroke": {"signal": "'red'"},
-              "strokeDash": {"value": [1, 3]},
-              "opacity": {"signal": "1"},
-              "strokeWidth": {"signal": "1"}
-            }
-          }
-        },
-        {
-          "type": "rule",
-          "from": {"data": "data-period-years"},
-          "encode": {
-            "enter": {
               "y": {"scale": "scaleY", "field": "Temp"},
-              "x": {"signal": "0"},
-              "x2": {"signal": "width"},
-              "stroke": {"signal": "'red'"},
-              "strokeDash": {"value": [1, 3]},
-              "opacity": {"signal": "1"},
-              "strokeWidth": {"signal": "1"}
-            }
-          }
-        },
-        {
-          "type": "rule",
-          "encode": {
-            "enter": {
-              "stroke": {"signal": "'red'"},
-              "opacity": {"signal": "1"}
-            },
-            "update": {
-              "x": {"signal": "scale('scaleX',invert('scaleX', hoverX))"},
-              "y": {"signal": "0"},
-              "y2": {"signal": "chartHeight+15"},
-              "strokeWidth": {"signal": "hoverX==null?0:0.5"}
-            }
-          }
-        },
-        {
-          "type": "text",
-          "interactive": true,
-          "encode": {
-            "enter": {
-              "fill": {"signal": "'red'"},
-              "fontSize": {"signal": "14"}
-            },
-            "update": {
-              "text": {
-                "signal": "isValid(hoverX)?timeFormat(invert('scaleX',hoverX),'%d %b'):''"
+              "stroke": {
+                "signal": "datum['Year']==extent[1]?highlightColor:datum['Year']==(extent[1]-1)?highlightColor2:seriesColor"
               },
-              "x": {"signal": "hoverX+5"},
-              "y": {"signal": "chartHeight+15"}
-            }
-          }
-        },
-        {
-          "type": "group",
-          "encode": {
-            "enter": {
-              "x": {"signal": "0"},
-              "y": {"signal": "0"},
-              "width": {"signal": "width"},
-              "height": {"signal": "height"}
-            }
-          },
-          "marks": [
-            {
-              "type": "text",
-              "name": "text-last-year-help-label",
-              "interactive": true,
-              "encode": {
-                "enter": {
-                  "x": {"signal": "65"},
-                  "y": {"signal": "height/2-65"},
-                  "fill": {"signal": "highlightColor"},
-                  "lineBreak": {"value": "/n"},
-                  "lineHeight": {"value": 25}
-                },
-                "update": {
-                  "text": {
-                    "signal": "'Difference between '+extent[1]+'/n and previous daily record'"
-                  },
-                  "fontSize": {"signal": "showHelper ?  24 : 0"}
-                }
-              }
-            },
-            {
-              "type": "symbol",
-              "name": "symbol-last-year-help-label",
-              "encode": {
-                "enter": {
-                  "fill": {"signal": "highlightColor"},
-                  "stroke": {"value": "white"},
-                  "baseline": {"value": "middle"},
-                  "x": {"signal": "5"},
-                  "y": {"signal": "height/2+130"},
-                  "angle": {"signal": "250"},
-                  "size": {"signal": "0.0005"},
-                  "shape": {"signal": "svgArrow"},
-                  "strokeWidth": {"signal": "0"}
-                },
-                "update": {"fillOpacity": {"signal": "showHelper ?  0.4 : 0"}}
-              }
-            },
-            {
-              "type": "text",
-              "name": "text-previous-year-help-label",
-              "interactive": true,
-              "encode": {
-                "enter": {
-                  "x": {"signal": "width-350"},
-                  "y": {"signal": "height/2-360"},
-                  "fill": {"signal": "highlightColor2"},
-                  "lineBreak": {"value": "/n"},
-                  "lineHeight": {"value": 25}
-                },
-                "update": {
-                  "text": {
-                    "signal": "'Difference between '+(extent[1]-1)+'/nand previous daily record'"
-                  },
-                  "fontSize": {"signal": "showHelper ?  24 : 0"}
-                }
-              }
-            },
-            {
-              "type": "symbol",
-              "name": "symbol-previous-year-help-label",
-              "encode": {
-                "enter": {
-                  "fill": {"signal": "highlightColor2"},
-                  "stroke": {"value": "white"},
-                  "baseline": {"value": "middle"},
-                  "x": {"signal": "width-520"},
-                  "y": {"signal": "80"},
-                  "angle": {"signal": "300"},
-                  "size": {"signal": "0.0005"},
-                  "shape": {"signal": "svgArrow"},
-                  "strokeWidth": {"signal": "0"}
-                },
-                "update": {"fillOpacity": {"signal": "showHelper ?  0.4 : 0"}}
-              }
-            },
-            {
-              "type": "text",
-              "name": "text-other-year-help-label",
-              "interactive": true,
-              "encode": {
-                "enter": {
-                  "text": {"signal": "'Each line represents a year'"},
-                  "x": {"signal": "width/2+20"},
-                  "y": {"signal": "height/2+30"},
-                  "fill": {"signal": "seriesColor"}
-                },
-                "update": {"fontSize": {"signal": "showHelper ?  24 : 0"}}
-              }
-            },
-            {
-              "type": "symbol",
-              "name": "symbol-other-year-help-label",
-              "encode": {
-                "enter": {
-                  "fill": {"signal": "seriesColor"},
-                  "stroke": {"value": "white"},
-                  "baseline": {"value": "middle"},
-                  "x": {"signal": "width/2"},
-                  "y": {"signal": "height/2-175"},
-                  "angle": {"signal": "45"},
-                  "size": {"signal": "0.0005"},
-                  "shape": {"signal": "svgArrow"},
-                  "strokeWidth": {"signal": "0"}
-                },
-                "update": {"fillOpacity": {"signal": "showHelper ?  0.4 : 0"}}
-              }
-            }
-          ]
-        },
-        {
-          "name": "text-question",
-          "type": "text",
-          "interactive": true,
-          "encode": {
-            "enter": {
-              "text": {"signal": "'❓'"},
-              "x": {"signal": "width+20"},
-              "y": {"signal": "50"},
-              "fill": {"signal": "seriesColor"},
-              "fontSize": {"signal": "60"},
-              "fillOpacity": {"signal": "0.7"},
-              "cursor": {"value": "help"}
+              "strokeWidth": {"signal": "datum['Year']>=(extent[1]-1)?2:1"},
+              "opacity": {"signal": "1"},
+              "interpolate": {"signal": "interpolate"}
             }
           }
         }
       ]
+    },
+    {
+      "name": "symbol-circle",
+      "type": "symbol",
+      "from": {"data": "data-period-years"},
+      "encode": {
+        "enter": {
+          "shape": {"value": "circle"},
+          "x": {"scale": "scaleX", "field": "Date"},
+          "y": {"scale": "scaleY", "field": "Temp"},
+          "size": {"signal": "100"},
+          "fill": {"signal": "highlightColor"},
+          "stroke": {"signal": "highlightColor"}
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {"data": "data-period-years"},
+      "encode": {
+        "enter": {
+          "text": {
+            "signal": "timeFormat(datum['Date'], '%b %d, %Y')+' '+format(datum['Temp'],'.1f')+unit"
+          },
+          "x": {"scale": "scaleX", "field": "Date"},
+          "y": {"scale": "scaleY", "field": "Temp"},
+          "font": {"signal": "'Tahoma'"},
+          "fontSize": {"signal": "subTitleFontSize"},
+          "fontWeight": {"value": "bold"},
+          "fill": {"signal": "highlightColor"},
+          "dx": {"signal": "5"},
+          "dy": {"signal": "-15"}
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {"data": "data-period-years-prev"},
+      "encode": {
+        "enter": {
+          "text": {"signal": "extent[1]-1"},
+          "x": {"scale": "scaleX", "field": "Date"},
+          "y": {"scale": "scaleY", "field": "Temp"},
+          "font": {"signal": "'Tahoma'"},
+          "fontSize": {"signal": "subTitleFontSize"},
+          "fontWeight": {"value": "bold"},
+          "fill": {"signal": "highlightColor2"},
+          "dx": {"signal": "5"},
+          "dy": {"signal": "-15"}
+        }
+      }
+    },
+    {
+      "type": "rule",
+      "from": {"data": "data-period-years"},
+      "encode": {
+        "enter": {
+          "x": {"scale": "scaleX", "field": "Date"},
+          "y": {"signal": "0"},
+          "y2": {"signal": "chartHeight"},
+          "stroke": {"signal": "'red'"},
+          "strokeDash": {"value": [1, 3]},
+          "opacity": {"signal": "1"},
+          "strokeWidth": {"signal": "1"}
+        }
+      }
+    },
+    {
+      "type": "rule",
+      "from": {"data": "data-period-years"},
+      "encode": {
+        "enter": {
+          "y": {"scale": "scaleY", "field": "Temp"},
+          "x": {"signal": "0"},
+          "x2": {"signal": "width"},
+          "stroke": {"signal": "'red'"},
+          "strokeDash": {"value": [1, 3]},
+          "opacity": {"signal": "1"},
+          "strokeWidth": {"signal": "1"}
+        }
+      }
+    },
+    {
+      "type": "rule",
+      "encode": {
+        "enter": {"stroke": {"signal": "'red'"}, "opacity": {"signal": "1"}},
+        "update": {
+          "x": {"signal": "scale('scaleX',invert('scaleX', hoverX))"},
+          "y": {"signal": "0"},
+          "y2": {"signal": "chartHeight+15"},
+          "strokeWidth": {"signal": "hoverX==null?0:0.5"}
+        }
+      }
+    },
+    {
+      "type": "text",
+      "interactive": true,
+      "encode": {
+        "enter": {"fill": {"signal": "'red'"}, "fontSize": {"signal": "14"}},
+        "update": {
+          "text": {
+            "signal": "isValid(hoverX)?timeFormat(invert('scaleX',hoverX),'%d %b'):''"
+          },
+          "x": {"signal": "hoverX+5"},
+          "y": {"signal": "chartHeight+15"}
+        }
+      }
+    },
+    {
+      "type": "group",
+      "name": "group-helper",
+      "encode": {
+        "enter": {
+          "x": {"signal": "0"},
+          "y": {"signal": "0"},
+          "width": {"signal": "width"},
+          "height": {"signal": "height"}
+        }
+      },
+      "marks": [
+        {
+          "type": "text",
+          "name": "text-last-year-help-label",
+          "interactive": true,
+          "encode": {
+            "enter": {
+              "x": {"signal": "65"},
+              "y": {"signal": "height/2-65"},
+              "fill": {"signal": "highlightColor"},
+              "lineBreak": {"value": "/n"},
+              "lineHeight": {"value": 25}
+            },
+            "update": {
+              "text": {
+                "signal": "'Difference between '+extent[1]+'/n and previous daily record'"
+              },
+              "fontSize": {"signal": "showHelper ?  24 : 0"}
+            }
+          }
+        },
+        {
+          "type": "symbol",
+          "name": "symbol-last-year-help-label",
+          "encode": {
+            "enter": {
+              "fill": {"signal": "highlightColor"},
+              "stroke": {"value": "white"},
+              "baseline": {"value": "middle"},
+              "x": {"signal": "5"},
+              "y": {"signal": "height/2+130"},
+              "angle": {"signal": "250"},
+              "size": {"signal": "0.0005"},
+              "shape": {"signal": "svgArrow"},
+              "strokeWidth": {"signal": "0"}
+            },
+            "update": {"fillOpacity": {"signal": "showHelper ?  0.4 : 0"}}
+          }
+        },
+        {
+          "type": "text",
+          "name": "text-previous-year-help-label",
+          "interactive": true,
+          "encode": {
+            "enter": {
+              "x": {"signal": "width-350"},
+              "y": {"signal": "height/2-360"},
+              "fill": {"signal": "highlightColor2"},
+              "lineBreak": {"value": "/n"},
+              "lineHeight": {"value": 25}
+            },
+            "update": {
+              "text": {
+                "signal": "'Difference between '+(extent[1]-1)+'/nand previous daily record'"
+              },
+              "fontSize": {"signal": "showHelper ?  24 : 0"}
+            }
+          }
+        },
+        {
+          "type": "symbol",
+          "name": "symbol-previous-year-help-label",
+          "encode": {
+            "enter": {
+              "fill": {"signal": "highlightColor2"},
+              "stroke": {"value": "white"},
+              "baseline": {"value": "middle"},
+              "x": {"signal": "width-520"},
+              "y": {"signal": "80"},
+              "angle": {"signal": "300"},
+              "size": {"signal": "0.0005"},
+              "shape": {"signal": "svgArrow"},
+              "strokeWidth": {"signal": "0"}
+            },
+            "update": {"fillOpacity": {"signal": "showHelper ?  0.4 : 0"}}
+          }
+        },
+        {
+          "type": "text",
+          "name": "text-other-year-help-label",
+          "interactive": true,
+          "encode": {
+            "enter": {
+              "text": {"signal": "'Each line represents a year'"},
+              "x": {"signal": "width/2+20"},
+              "y": {"signal": "height/2+30"},
+              "fill": {"signal": "seriesColor"}
+            },
+            "update": {"fontSize": {"signal": "showHelper ?  24 : 0"}}
+          }
+        },
+        {
+          "type": "symbol",
+          "name": "symbol-other-year-help-label",
+          "encode": {
+            "enter": {
+              "fill": {"signal": "seriesColor"},
+              "stroke": {"value": "white"},
+              "baseline": {"value": "middle"},
+              "x": {"signal": "width/2"},
+              "y": {"signal": "height/2-175"},
+              "angle": {"signal": "45"},
+              "size": {"signal": "0.0005"},
+              "shape": {"signal": "svgArrow"},
+              "strokeWidth": {"signal": "0"}
+            },
+            "update": {"fillOpacity": {"signal": "showHelper ?  0.4 : 0"}}
+          }
+        }
+      ]
+    },
+    {
+      "name": "text-question",
+      "type": "text",
+      "interactive": true,
+      "encode": {
+        "enter": {
+          "text": {"signal": "'❓'"},
+          "x": {"signal": "width+20"},
+          "y": {"signal": "50"},
+          "fill": {"signal": "seriesColor"},
+          "fontSize": {"signal": "60"},
+          "fillOpacity": {"signal": "0.7"},
+          "cursor": {"value": "help"}
+        }
+      }
     }
   ]
 }
