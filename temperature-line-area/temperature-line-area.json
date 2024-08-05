@@ -418,24 +418,8 @@
           },
           "marks": [
             {
-              "type": "symbol",
-              "encode": {
-                "enter": {
-                  "fill": {"value": "black"},
-                  "stroke": {"value": "white"},
-                  "baseline": {"value": "middle"},
-                  "x": {"signal": "width-500"},
-                  "y": {"signal": "180"},
-                  "angle": {"signal": "285"},
-                  "size": {"signal": "0.0005"},
-                  "shape": {"signal": "svgArrow"},
-                  "strokeWidth": {"signal": "0"}
-                },
-                "update": {"fillOpacity": {"signal": "showHelper ?  0.3 : 0"}}
-              }
-            },
-            {
               "type": "text",
+              "name": "text-last-year-help-label",
               "interactive": true,
               "encode": {
                 "enter": {
@@ -455,9 +439,10 @@
             },
             {
               "type": "symbol",
+              "name": "symbol-last-year-help-label",
               "encode": {
                 "enter": {
-                  "fill": {"value": "black"},
+                  "fill": {"signal": "highlightColor"},
                   "stroke": {"value": "white"},
                   "baseline": {"value": "middle"},
                   "x": {"signal": "5"},
@@ -467,16 +452,17 @@
                   "shape": {"signal": "svgArrow"},
                   "strokeWidth": {"signal": "0"}
                 },
-                "update": {"fillOpacity": {"signal": "showHelper ?  0.3 : 0"}}
+                "update": {"fillOpacity": {"signal": "showHelper ?  0.4 : 0"}}
               }
             },
             {
               "type": "text",
+              "name": "text-previous-year-help-label",
               "interactive": true,
               "encode": {
                 "enter": {
                   "x": {"signal": "width-350"},
-                  "y": {"signal": "height/2-350"},
+                  "y": {"signal": "height/2-360"},
                   "fill": {"signal": "highlightColor2"},
                   "lineBreak": {"value": "/n"},
                   "lineHeight": {"value": 25}
@@ -491,32 +477,52 @@
             },
             {
               "type": "symbol",
+              "name": "symbol-previous-year-help-label",
               "encode": {
                 "enter": {
-                  "fill": {"value": "black"},
+                  "fill": {"signal": "highlightColor2"},
                   "stroke": {"value": "white"},
                   "baseline": {"value": "middle"},
-                  "x": {"signal": "width/2"},
-                  "y": {"signal": "height/2-200"},
-                  "angle": {"signal": "45"},
+                  "x": {"signal": "width-520"},
+                  "y": {"signal": "80"},
+                  "angle": {"signal": "300"},
                   "size": {"signal": "0.0005"},
                   "shape": {"signal": "svgArrow"},
                   "strokeWidth": {"signal": "0"}
                 },
-                "update": {"fillOpacity": {"signal": "showHelper ?  0.3 : 0"}}
+                "update": {"fillOpacity": {"signal": "showHelper ?  0.4 : 0"}}
               }
             },
             {
               "type": "text",
+              "name": "text-other-year-help-label",
               "interactive": true,
               "encode": {
                 "enter": {
                   "text": {"signal": "'Each line represents a year'"},
                   "x": {"signal": "width/2+20"},
-                  "y": {"signal": "height/2"},
+                  "y": {"signal": "height/2+30"},
                   "fill": {"signal": "seriesColor"}
                 },
                 "update": {"fontSize": {"signal": "showHelper ?  24 : 0"}}
+              }
+            },
+            {
+              "type": "symbol",
+              "name": "symbol-other-year-help-label",
+              "encode": {
+                "enter": {
+                  "fill": {"signal": "seriesColor"},
+                  "stroke": {"value": "white"},
+                  "baseline": {"value": "middle"},
+                  "x": {"signal": "width/2"},
+                  "y": {"signal": "height/2-175"},
+                  "angle": {"signal": "45"},
+                  "size": {"signal": "0.0005"},
+                  "shape": {"signal": "svgArrow"},
+                  "strokeWidth": {"signal": "0"}
+                },
+                "update": {"fillOpacity": {"signal": "showHelper ?  0.4 : 0"}}
               }
             }
           ]
