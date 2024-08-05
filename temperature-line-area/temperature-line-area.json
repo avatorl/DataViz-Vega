@@ -486,7 +486,7 @@
             "enter": {
               "text": {"signal": "'Each line represents a year'"},
               "x": {"signal": "width/2+20"},
-              "y": {"signal": "height/2+30"},
+              "y": {"signal": "height/2+70"},
               "fill": {"signal": "seriesColor"}
             },
             "update": {"fontSize": {"signal": "showHelper ?  24 : 0"}}
@@ -501,7 +501,7 @@
               "stroke": {"value": "white"},
               "baseline": {"value": "middle"},
               "x": {"signal": "width/2"},
-              "y": {"signal": "height/2-175"},
+              "y": {"signal": "height/2-130"},
               "angle": {"signal": "45"},
               "size": {"signal": "0.0005"},
               "shape": {"signal": "svgArrow"},
