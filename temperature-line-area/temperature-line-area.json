@@ -184,7 +184,7 @@
       "domain": false,
       "ticks": true,
       "labels": true,
-      "offset": {"signal": "chartHeight+20"},
+      "offset": {"signal": "20"},
       "tickCount": {"interval": "month", "step": 2},
       "labelColor": {"signal": "labelColor"},
       "labelFontSize": {"signal": "labelFontSize"},
