@@ -239,7 +239,7 @@
               "zindex": 1,
               "defined": true,
               "encode": {
-                "update": {
+                "enter": {
                   "x": {"scale": "scaleX", "field": "Date"},
                   "y": {"scale": "scaleY", "field": "Last"},
                   "y2": {
@@ -259,7 +259,7 @@
               "zindex": 1,
               "defined": false,
               "encode": {
-                "update": {
+                "enter": {
                   "x": {"scale": "scaleX", "field": "Date"},
                   "y": {"scale": "scaleY", "signal": "datum['Prev']"},
                   "y2": {
@@ -279,7 +279,7 @@
               "zindex": 2,
               "defined": true,
               "encode": {
-                "update": {
+                "enter": {
                   "x": {"scale": "scaleX", "field": "Date"},
                   "y": {"scale": "scaleY", "field": "Temp"},
                   "stroke": {
@@ -348,7 +348,7 @@
           "type": "rule",
           "from": {"data": "data-period-years"},
           "encode": {
-            "update": {
+            "enter": {
               "x": {"scale": "scaleX", "field": "Date"},
               "y": {"signal": "0"},
               "y2": {"signal": "chartHeight"},
@@ -363,7 +363,7 @@
           "type": "rule",
           "from": {"data": "data-period-years"},
           "encode": {
-            "update": {
+            "enter": {
               "y": {"scale": "scaleY", "field": "Temp"},
               "x": {"signal": "0"},
               "x2": {"signal": "width"},
@@ -377,12 +377,14 @@
         {
           "type": "rule",
           "encode": {
+            "enter": {
+              "stroke": {"signal": "'red'"},
+              "opacity": {"signal": "1"}
+            },
             "update": {
               "x": {"signal": "scale('scaleX',invert('scaleX', hoverX))"},
               "y": {"signal": "0"},
               "y2": {"signal": "chartHeight+15"},
-              "stroke": {"signal": "'red'"},
-              "opacity": {"signal": "1"},
               "strokeWidth": {"signal": "hoverX==null?0:0.5"}
             }
           }
@@ -391,21 +393,23 @@
           "type": "text",
           "interactive": true,
           "encode": {
+            "enter": {
+              "fill": {"signal": "'red'"},
+              "fontSize": {"signal": "14"}
+            },
             "update": {
               "text": {
                 "signal": "isValid(hoverX)?timeFormat(invert('scaleX',hoverX),'%d %b'):''"
               },
               "x": {"signal": "hoverX+5"},
-              "y": {"signal": "chartHeight+15"},
-              "fill": {"signal": "'red'"},
-              "fontSize": {"signal": "14"}
+              "y": {"signal": "chartHeight+15"}
             }
           }
         },
         {
           "type": "group",
           "encode": {
-            "update": {
+            "enter": {
               "x": {"signal": "0"},
               "y": {"signal": "0"},
               "width": {"signal": "width"},
@@ -416,7 +420,7 @@
             {
               "type": "symbol",
               "encode": {
-                "update": {
+                "enter": {
                   "fill": {"value": "black"},
                   "stroke": {"value": "white"},
                   "baseline": {"value": "middle"},
@@ -425,32 +429,34 @@
                   "angle": {"signal": "285"},
                   "size": {"signal": "0.0005"},
                   "shape": {"signal": "svgArrow"},
-                  "strokeWidth": {"signal": "0"},
-                  "fillOpacity": {"signal": "showHelper ?  0.3 : 0"}
-                }
+                  "strokeWidth": {"signal": "0"}
+                },
+                "update": {"fillOpacity": {"signal": "showHelper ?  0.3 : 0"}}
               }
             },
             {
               "type": "text",
               "interactive": true,
               "encode": {
+                "enter": {
+                  "x": {"signal": "65"},
+                  "y": {"signal": "height/2-65"},
+                  "fill": {"signal": "highlightColor"},
+                  "lineBreak": {"value": "/n"},
+                  "lineHeight": {"value": 25}
+                },
                 "update": {
                   "text": {
                     "signal": "'Difference between '+extent[1]+'/n and previous daily record'"
                   },
-                  "x": {"signal": "65"},
-                  "y": {"signal": "height/2-65"},
-                  "fill": {"signal": "highlightColor"},
-                  "fontSize": {"signal": "showHelper ?  24 : 0"},
-                  "lineBreak": {"value": "/n"},
-                  "lineHeight": {"value": 25}
+                  "fontSize": {"signal": "showHelper ?  24 : 0"}
                 }
               }
             },
             {
               "type": "symbol",
               "encode": {
-                "update": {
+                "enter": {
                   "fill": {"value": "black"},
                   "stroke": {"value": "white"},
                   "baseline": {"value": "middle"},
@@ -459,32 +465,34 @@
                   "angle": {"signal": "250"},
                   "size": {"signal": "0.0005"},
                   "shape": {"signal": "svgArrow"},
-                  "strokeWidth": {"signal": "0"},
-                  "fillOpacity": {"signal": "showHelper ?  0.3 : 0"}
-                }
+                  "strokeWidth": {"signal": "0"}
+                },
+                "update": {"fillOpacity": {"signal": "showHelper ?  0.3 : 0"}}
               }
             },
             {
               "type": "text",
               "interactive": true,
               "encode": {
+                "enter": {
+                  "x": {"signal": "width-350"},
+                  "y": {"signal": "height/2-350"},
+                  "fill": {"signal": "highlightColor2"},
+                  "lineBreak": {"value": "/n"},
+                  "lineHeight": {"value": 25}
+                },
                 "update": {
                   "text": {
                     "signal": "'Difference between '+(extent[1]-1)+'/nand previous daily record'"
                   },
-                  "x": {"signal": "width-350"},
-                  "y": {"signal": "height/2-350"},
-                  "fill": {"signal": "highlightColor2"},
-                  "fontSize": {"signal": "showHelper ?  24 : 0"},
-                  "lineBreak": {"value": "/n"},
-                  "lineHeight": {"value": 25}
+                  "fontSize": {"signal": "showHelper ?  24 : 0"}
                 }
               }
             },
             {
               "type": "symbol",
               "encode": {
-                "update": {
+                "enter": {
                   "fill": {"value": "black"},
                   "stroke": {"value": "white"},
                   "baseline": {"value": "middle"},
@@ -493,22 +501,22 @@
                   "angle": {"signal": "45"},
                   "size": {"signal": "0.0005"},
                   "shape": {"signal": "svgArrow"},
-                  "strokeWidth": {"signal": "0"},
-                  "fillOpacity": {"signal": "showHelper ?  0.3 : 0"}
-                }
+                  "strokeWidth": {"signal": "0"}
+                },
+                "update": {"fillOpacity": {"signal": "showHelper ?  0.3 : 0"}}
               }
             },
             {
               "type": "text",
               "interactive": true,
               "encode": {
-                "update": {
+                "enter": {
                   "text": {"signal": "'Each line represents a year'"},
                   "x": {"signal": "width/2+20"},
                   "y": {"signal": "height/2"},
-                  "fill": {"signal": "seriesColor"},
-                  "fontSize": {"signal": "showHelper ?  24 : 0"}
-                }
+                  "fill": {"signal": "seriesColor"}
+                },
+                "update": {"fontSize": {"signal": "showHelper ?  24 : 0"}}
               }
             }
           ]
