@@ -1,6 +1,6 @@
 {
   "description": "Climate Change",
-    "usermeta": {
+  "usermeta": {
     "Copyright": "Andrzej Leszkiewicz",
     "License": "MIT Expat License (https://en.wikipedia.org/wiki/MIT_License)",
     "Permission": "Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.",
@@ -52,6 +52,11 @@
       "name": "hoverX",
       "description": "returns x coordinate of the cursor",
       "on": [
+        {
+          "events": [{"source": "view", "type": "mouseover"}],
+          "update": "(x()<0||x()>width)?null:clamp(x(), 0, width)",
+          "force": true
+        },
         {
           "events": [{"source": "view", "type": "mousemove"}],
           "update": "(x()<0||x()>width)?null:clamp(x(), 0, width)",
@@ -373,9 +378,9 @@
           "type": "rule",
           "encode": {
             "update": {
-              "x": {"signal": "hoverX"},
+              "x": {"signal": "scale('scaleX',invert('scaleX', hoverX))"},
               "y": {"signal": "0"},
-              "y2": {"signal": "chartHeight"},
+              "y2": {"signal": "chartHeight+15"},
               "stroke": {"signal": "'red'"},
               "opacity": {"signal": "1"},
               "strokeWidth": {"signal": "hoverX==null?0:0.5"}
@@ -431,13 +436,14 @@
               "encode": {
                 "update": {
                   "text": {
-                    "signal": "'Difference between '+(extent[1])+'/nand previous daily record'"
+                    "signal": "'Difference between '+extent[1]+'/n and previous daily record'"
                   },
                   "x": {"signal": "65"},
                   "y": {"signal": "height/2-65"},
                   "fill": {"signal": "highlightColor"},
                   "fontSize": {"signal": "showHelper ?  24 : 0"},
-                  "lineBreak": {"value": "/n"}
+                  "lineBreak": {"value": "/n"},
+                  "lineHeight": {"value": 25}
                 }
               }
             },
@@ -470,7 +476,8 @@
                   "y": {"signal": "height/2-350"},
                   "fill": {"signal": "highlightColor2"},
                   "fontSize": {"signal": "showHelper ?  24 : 0"},
-                  "lineBreak": {"value": "/n"}
+                  "lineBreak": {"value": "/n"},
+                  "lineHeight": {"value": 25}
                 }
               }
             },
@@ -511,13 +518,14 @@
           "type": "text",
           "interactive": true,
           "encode": {
-            "update": {
+            "enter": {
               "text": {"signal": "'❓'"},
               "x": {"signal": "width+20"},
               "y": {"signal": "50"},
               "fill": {"signal": "seriesColor"},
               "fontSize": {"signal": "60"},
-              "fillOpacity": {"signal": "0.7"}
+              "fillOpacity": {"signal": "0.7"},
+              "cursor": {"value": "help"}
             }
           }
         }
