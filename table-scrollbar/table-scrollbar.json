@@ -119,9 +119,9 @@
     {
       "name": "scaleScrollBarY",
       "type": "linear",
-      "domain": [1, {"signal": "scrollPositionMax"}],
+      "domain": [0, {"signal": "scrollPositionMax-1"}],
       "range": [
-        {"signal": "0"},
+        {"signal": "1"},
         {"signal": "rowHeight*rowsToDisplay-scrollBarHeight-1"}
       ]
     },
@@ -168,7 +168,7 @@
       "encode": {
         "update": {
           "x": {"signal": "width-scrollBarWidth-1"},
-          "y": {"scale": "scaleScrollBarY", "signal": "scrollPosition"},
+          "y": {"scale": "scaleScrollBarY", "signal": "scrollPosition-1"},
           "width": {"signal": "scrollBarWidth"},
           "height": {"signal": "scrollBarHeight"},
           "fill": {"value": "#666666"},
